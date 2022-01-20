@@ -23,17 +23,25 @@ $mobile: 320px;
 
 // Цвета
 :root {
+    // Текст
     --text-primary: #383838;
     --text-second-d: #888888;
     --text-second-l: #AFAFAF;
+    --text-accent: #467EF3;
 
     // Кнопки
+    // -Главная
     --btn-primary-default: #467EF3;
     --btn-primary-pressed: #3865C2;
     --btn-primary-disabled: #B5CBFA;
+    // -Вторичная
+    --btn-second-default: #D1DFFC;
+    --btn-second-pressed: #BDC9E3;
 
+    // Инпуты
     --input-placeholder: #AFAFAF;
 
+    // Акцентные цвета
     --accent-primary: #004CFF;
     --accent-second: #383838;
 
@@ -54,9 +62,13 @@ $mobile: 320px;
 $text-primary: var(--text-primary);
 $text-second-d: var(--text-second-d);
 $text-second-l: var(--text-second-l);
+$text-accent: var(--text-accent);
 
 $btn-primary-default: var(--btn-primary-default);
 $btn-primary-pressed: var(--btn-primary-pressed);
+$btn-primary-disabled: var(--btn-primary-disabled);
+$btn-second-default: var(--btn-second-default);
+$btn-second-pressed: var(--btn-second-pressed);
 
 $input-placeholder: var(--input-placeholder);
 
