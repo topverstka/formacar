@@ -1,24 +1,32 @@
 // Основная кнопка
 .btn {
-    width: fit-content;
+    width: 100%;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
+    line-height: 22px;
     color: #fff;
-    padding: 16px 32px;
-    background: $accent-primary;
-    border-radius: 8px;
-    overflow: hidden;
+    text-transform: uppercase;
+    padding: 9px;
+    background: $btn-primary-default;
+    border-radius: $radius;
+    // overflow: hidden;
+    transition: $tr;
 
-    // &:hover {
+    @media (max-width: $laptop-m) {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    &:hover {
         
-    //     @media (min-width: $minHover) {
-    //         background: $accent-hover;
-    //     }
-    // }
+        @media (min-width: $minHover) {
+            box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
+        }
+    }
 
-    // &:active {
-    //     background: $accent-active;
-    // }
+    &:active {
+        background: $btn-primary-pressed;
+    }
 }
 
 .btn_disabled {

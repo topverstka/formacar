@@ -44,6 +44,7 @@ body {
     font-weight: 500;
     font-style: normal;
     line-height: 1.5;
+    background: $bg-page;
 
     &._lock {
         overflow: hidden;

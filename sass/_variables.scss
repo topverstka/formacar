@@ -27,24 +27,43 @@ $mobile: 320px;
     --text-second-d: #888888;
     --text-second-l: #AFAFAF;
 
+    // Кнопки
+    --btn-primary-default: #467EF3;
+    --btn-primary-pressed: #3865C2;
+    --btn-primary-disabled: #B5CBFA;
+
+    --input-placeholder: #AFAFAF;
+
     --accent-primary: #004CFF;
     --accent-second: #383838;
+
+    // Иконки
+    --icon-primary-l: #383838;
+
+    --bg-page: #F6F8FD;
+    --error: #E83D3D;
 
     --accent-hover: #44BD99;
     --accent-active: #37866E;
     --accent2: #DC8B2D;
     --accent2-active: #C27B29;
     --outline: #C0C0C0;
-    --bg-page: #FFF;
     --bg-block: #F8F8F8;
-    --error: #E83D3D;
 }
 
 $text-primary: var(--text-primary);
 $text-second-d: var(--text-second-d);
 $text-second-l: var(--text-second-l);
 
+$btn-primary-default: var(--btn-primary-default);
+$btn-primary-pressed: var(--btn-primary-pressed);
+
+$input-placeholder: var(--input-placeholder);
+
 $accent-primary: var(--accent-primary);
 $accent-second: var(--accent-second);
 
+$icon-primary-l: var(--icon-primary-l);
+
+$bg-page: var(--bg-page);
 $error: var(--error);
