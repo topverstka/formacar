@@ -137,17 +137,17 @@ function menu() {
 	})
 }
 
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.recent-card__slider', {
   
-  slidesPerView: 1, // Кол-во показываемых слайдов
-  spaceBetween: 0, // Расстояние между слайдами
-  loop: true, // Бесконечный слайдер
-  freeMode: true, // Слайдеры не зафиксированны
-  centeredSlides: false, // Размещать слайдеры по центру
+  slidesPerView: 2, // Кол-во показываемых слайдов
+  spaceBetween: 4, // Расстояние между слайдами
+//   loop: true, // Бесконечный слайдер
+//   freeMode: true, // Слайдеры не зафиксированны
+//   centeredSlides: false, // Размещать слайдеры по центру
 
-  autoplay: { // автопрокрутка
-      delay: 5000, // задержка
-  },
+//   autoplay: { // автопрокрутка
+//       delay: 5000, // задержка
+//   },
 
   breakpoints: {
     1200: {
@@ -161,18 +161,14 @@ const swiper = new Swiper('.swiper-container', {
     }
   },
 
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
   navigation: {
-    nextEl: '.swiper__arrow-next',
-    prevEl: '.swiper__arrow-prev',
+    nextEl: '.recent-card__slider-arrow_next',
+    prevEl: '.recent-card__slider-arrow_prev',
   },
 
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
 });
 
 // Функции для модальных окон
@@ -276,5 +272,17 @@ function modal() {
         modal.classList.remove('_show')
         bodyLock(false)
         resetHash()
+    }
+}
+
+liked()
+function liked() {
+    const likeElems = findAll('.like')
+    
+    for (let i = 0; i < likeElems.length; i++) {
+        const elem = likeElems[i]
+        elem.addEventListener('click', e => {
+            elem.classList.toggle('_liked')
+        })
     }
 }

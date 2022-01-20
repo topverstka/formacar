@@ -1,3 +1,189 @@
 .footer {
-    margin: auto 0 0 0;
+    margin: auto 0 64px 0;
+}
+
+.footer__wrap {
+
+}
+
+.footer__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-nav {
+
+}
+
+.footer-nav__list {
+    display: flex;
+    align-items: center;
+}
+
+.footer-nav__item {
+    
+    &:not(:last-child) {
+        margin: 0 50px 0 0;
+    }
+}
+
+.footer-nav__link {
+    padding: 8px 0;
+}
+
+// Изменение языка
+.footer__lang {
+    display: flex;
+    align-items: center;
+}
+
+.footer__lang-text {
+
+}
+
+.change-lang {
+    margin-left: 25px;
+}
+
+.change-lang__header {
+    width: 178px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $outline-d;
+    border-radius: $radius;
+}
+
+.change-lang__title {
+    display: inline-block;
+    padding: 8px;
+}
+
+.change-lang__body {
+
+}
+
+.change-lang__list {
+
+}
+
+// Нижняя часть
+.footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $outline-d;
+    padding-top: 30px; 
+    margin-top: 30px;
+}
+
+.footer__content {
+    max-width: 1110px;
+    width: 100%;
+}
+
+.logo_footer {
+
+}
+
+.footer__descr {
+    line-height: 24px;
+    margin-top: 25px;
+}
+
+.footer__more {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.footer__social-list {
+    display: flex;
+    align-items: center;
+}
+
+.footer__social-item {
+
+    &:not(:last-child) {
+        margin: 0 15px 0 0;
+    }
+}
+
+.footer__social-link {
+    width: 30px;
+    height: 30px;
+}
+
+.footer__copyright {
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 35px;
+}
+
+.footer__user-agree {
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 50px;
+}
+
+.footer-app {
+    max-width: 480px;
+    width: 100%;
+    border-radius: $radius;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
+    margin-left: 16px;
+}
+
+.footer-app__header {
+    color: #fff;
+    background: #383838;
+    padding: 25px;
+}
+
+.footer-app__title {
+    font-family: $ffHeader;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.footer-app__text {
+    display: inline-block;
+    margin: 10px 0 0 0;
+}
+
+.footer-app__body {
+    display: flex;
+    align-items: center;
+    padding: 17px 25px 22px;
+}
+
+// Скачать приложение
+.download-app {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px 5px 25px;
+
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+}
+
+.download-app-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.download-app__content {
+    margin-left: 15px;
+}
+
+.download-app__label {
+    font-size: 9px;
+}
+
+.download-app__title {
+    font-size: 16px;
 }
