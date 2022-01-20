@@ -1,0 +1,50 @@
+// Пользовательские переменные
+:root {
+    --ffMain: 'Montserrat', sans-serif;
+    --ffHeader: 'Akzidenz Grotest Pro', sans-serif;
+    --tr: .3s;  // Плавность перехода
+    --radius: 10px; // border-radius
+}
+
+$ffMain: var(--ffMain);
+$ffHeader: var(--ffHeader);
+$tr: var(--tr);
+$minHover: 769px; // Минимальное разрешения экрана для hover-эффекта
+$radius: var(--radius);
+// $container: 1158px; // В данном проекте у контейнера нет максимальной ширины. Ширина 100%
+
+$laptop-l: 1440px;
+$laptop-m: 1280px;
+$laptop: 1024px;
+$tablet: 768px;
+$mobile-l: 425px;
+$mobile-m: 375px;
+$mobile: 320px;
+
+// Цвета
+:root {
+    --text-primary: #383838;
+    --text-second-d: #888888;
+    --text-second-l: #AFAFAF;
+
+    --accent-primary: #004CFF;
+    --accent-second: #383838;
+
+    --accent-hover: #44BD99;
+    --accent-active: #37866E;
+    --accent2: #DC8B2D;
+    --accent2-active: #C27B29;
+    --outline: #C0C0C0;
+    --bg-page: #FFF;
+    --bg-block: #F8F8F8;
+    --error: #E83D3D;
+}
+
+$text-primary: var(--text-primary);
+$text-second-d: var(--text-second-d);
+$text-second-l: var(--text-second-l);
+
+$accent-primary: var(--accent-primary);
+$accent-second: var(--accent-second);
+
+$error: var(--error);

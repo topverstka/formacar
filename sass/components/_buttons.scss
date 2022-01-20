@@ -1,0 +1,79 @@
+// Основная кнопка
+.btn {
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    padding: 16px 32px;
+    background: $accent-primary;
+    border-radius: 8px;
+    overflow: hidden;
+
+    // &:hover {
+        
+    //     @media (min-width: $minHover) {
+    //         background: $accent-hover;
+    //     }
+    // }
+
+    // &:active {
+    //     background: $accent-active;
+    // }
+}
+
+.btn_disabled {
+    color: $text-second-d;
+    background: #F8F8F8;
+    pointer-events: none;
+}
+
+// Ссылки
+.link {
+    
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            color: $accent-primary;
+        }
+    }
+
+    &:active {
+        color: $accent-primary;
+    }
+}
+
+// Стрелка в слайдерах
+// .slider-arrow {
+//     width: 56px;
+//     height: 56px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     background: $accent-primary;
+//     border-radius: 50%;
+
+//     &:hover {
+        
+//         @media (min-width: $minHover) {
+//             background: $accent-hover;
+//         }
+//     }
+
+//     &:active {
+//         background: $accent-active;
+//     }
+
+//     &.swiper-button-disabled {
+//         background: #F8F8F8; 
+//         // pointer-events: none;
+
+//         & svg path {
+//             fill: $text-second-d;
+//         }
+//     }
+
+//     & svg {
+//         width: 24px;
+//         height: 24px;
+//     }
+// }
