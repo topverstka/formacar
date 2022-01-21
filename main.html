@@ -13,6 +13,7 @@
 
 <body>
 	<div class="wrapper">
+		<div class="menu-bg"></div>
 		<header class="header">
 			<div class="header__wrap">
 				<div class="header__top">
@@ -27,14 +28,14 @@
 								<a href="/" class="logo logo_header"><img src="./img/logo-header.svg" alt="Логотип"></a>
 							</div>
 							<div class="header__top-right">
-								<div class="search search_header">
-									<input class="search__input" id="search-input" type="text" placeholder="Поиск по объявлениям">
-									<label class="search__label" for="search-input">Поиск по объявлениям</label>
-									<span class="search__icon"><img src="./img/icons/search.svg" alt="Поиск"></span>
+								<div class="search-area search-area_header">
+									<input class="search-area__input" id="search-area-input" type="text" placeholder="Поиск по объявлениям">
+									<label class="search-area__label" for="search-area-input">Поиск по объявлениям</label>
+									<span class="search-area__icon"><img src="./img/icons/search.svg" alt="Поиск"></span>
 								</div>
 								<button class="btn header__sell">Продать</button>
 								<div class="user__options">
-									<button class="user-option _active">
+									<button class="user-option">
 										<div class="user-option__icon">
 											<svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M24.4725 6H14.9219C14.0221 6 13.1698 6.40389 12.6 7.10031L9.00023 11.5001L3.34602 13.1155C2.53794 13.3464 1.96039 14.0578 1.90051 14.8961L1.72979 17.2863C1.60574 19.0229 2.50023 20.5 5.79653 20.5C5.79653 18.567 7.45473 17 9.50023 17C11.5457 17 13.0002 18.567 13.0002 20.5H23.5928C23.5928 18.567 25.251 17 27.2965 17C29.342 17 31.0002 18.567 31.0002 20.5H32.0002C33.1048 20.5 34.0002 19.6055 34.0002 18.5009V14.7346C34.0002 13.9771 33.5722 13.286 32.8946 12.9472L30.0002 11.5001L26.8988 7.23551C26.3342 6.45926 25.4324 6 24.4725 6Z"/>
@@ -98,6 +99,206 @@
 									<span class="location__quantity">+<span>4</span></span>
 								</div>
 							</butt>
+						</div>
+					</div>
+				</div>
+				<div class="menu">
+					<div class="menu__wrap">
+						<div class="menu__left">
+							<div class="menu__left-wrap">
+								<ul class="menu__left-list">
+									<li class="menu__left-item _active" data-menu-cat="marketplace"><a href="#" class="link menu__left-link">Маркетплейс</a></li>
+									<li class="menu__left-item" data-menu-cat="tuning_catalog"><a href="#" class="link menu__left-link">Каталог тюнинга</a></li>
+									<li class="menu__left-item" data-menu-cat="news"><a href="#" class="link menu__left-link">Новости</a></li>
+									<li class="menu__left-item" data-menu-cat="events"><a href="#" class="link menu__left-link">События</a></li>
+									<li class="menu__left-item" data-menu-cat="configurations"><a href="#" class="link menu__left-link">3D Конфигуратор</a></li>
+									<li class="menu__left-item" data-menu-cat="support"><a href="#" class="link menu__left-link">Поддержка</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__right _show" data-menu-links="marketplace">
+							<div class="menu__right-wrap">
+								<ul class="menu__right-list">
+									<li class="menu__right-item">
+										<a href="#" class="link menu__right-link">Транспорт</a>
+										<ul class="menu__right-list">
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Легковые авто</a></li>
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Коммерческие авто</a></li>
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Мотоциклы</a></li>
+										</ul>
+									</li>
+									<li class="menu__right-item">
+										<a href="#" class="link menu__right-link">Диски и шины</a>
+										<ul class="menu__right-list">
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Диски</a></li>
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Шины</a></li>
+										</ul>
+									</li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Тюнинг</a></li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Выхлопные системы</a></li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Подвеска</a></li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Тормозные системы</a></li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Интерьер</a></li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Услуги</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__right" data-menu-links="tuning_catalog">
+							<div class="menu__right-wrap">
+								<ul class="menu__right-list">
+									<li class="menu__right-item">
+										<a href="#" class="link menu__right-link">Что-то другое</a>
+										<ul class="menu__right-list">
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Легковые авто</a></li>
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Коммерческие авто</a></li>
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Мотоциклы</a></li>
+										</ul>
+									</li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Тюнинг</a></li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Выхлопные системы</a></li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Подвеска</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__right" data-menu-links="news">
+							<div class="menu__right-wrap">
+								<ul class="menu__right-list">
+									<li class="menu__right-item">
+										<a href="#" class="link menu__right-link">Что-то другое</a>
+										<ul class="menu__right-list">
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Легковые авто</a></li>
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Коммерческие авто</a></li>
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Мотоциклы</a></li>
+										</ul>
+									</li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Подвеска</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__right" data-menu-links="events">
+							<div class="menu__right-wrap">
+								<ul class="menu__right-list">
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Тюнинг</a></li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Выхлопные системы</a></li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Подвеска</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__right" data-menu-links="configurations">
+							<div class="menu__right-wrap">
+								<ul class="menu__right-list">
+									<li class="menu__right-item">
+										<a href="#" class="link menu__right-link">Что-то другое 222</a>
+										<ul class="menu__right-list">
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Легковые авто</a></li>
+										</ul>
+									</li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Тюнинг</a></li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Выхлопные системы</a></li>
+									<li class="menu__right-item"><a href="#" class="link menu__right-link">Подвеска</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="menu__right" data-menu-links="support">
+							<div class="menu__right-wrap">
+								<ul class="menu__right-list">
+									<li class="menu__right-item">
+										<a href="#" class="link menu__right-link">Что-то другое</a>
+										<ul class="menu__right-list">
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Легковые авто</a></li>
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Коммерческие авто</a></li>
+											<li class="menu__right-item"><a href="#" class="link menu__right-link">Мотоциклы</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="search">
+					<div class="search__wrap">
+						<div class="search__top">
+							<div class="search__top-wrap">
+								<div class="search__services">
+									<div class="container">
+										<div class="search__services-wrap">
+
+										</div>
+									</div>
+								</div>
+								<div class="search__result">
+									<div class="container">
+										<div class="search__result-wrap">
+											<h3 class="search__title">Результаты поиска</h3>
+											<div class="search__result-list">
+												<a href="#" class="link s-result-card">
+													<div class="s-result-card__wrap">
+														<div class="s-result-card__text">
+															<h4 class="s-result-card__title">BMW</h4>
+															<span class="s-result-card__cat">Транспорт</span>
+														</div>
+														<span class="s-result-card__quantity">1290</span>
+													</div>
+												</a>
+												<a href="#" class="link s-result-card">
+													<div class="s-result-card__wrap">
+														<div class="s-result-card__text">
+															<h4 class="s-result-card__title">BMW</h4>
+															<span class="s-result-card__cat">Диски и шины</span>
+														</div>
+														<span class="s-result-card__quantity">1290</span>
+													</div>
+												</a>
+												<a href="#" class="link s-result-card">
+													<div class="s-result-card__wrap">
+														<div class="s-result-card__text">
+															<h4 class="s-result-card__title">BMW</h4>
+															<span class="s-result-card__cat">Тюнинг</span>
+														</div>
+														<span class="s-result-card__quantity">1290</span>
+													</div>
+												</a>
+												<a href="#" class="link s-result-card">
+													<div class="s-result-card__wrap">
+														<div class="s-result-card__text">
+															<h4 class="s-result-card__title">BMW</h4>
+															<span class="s-result-card__cat">Выхлопные системы</span>
+														</div>
+														<span class="s-result-card__quantity">1290</span>
+													</div>
+												</a>
+												<a href="#" class="link s-result-card">
+													<div class="s-result-card__wrap">
+														<div class="s-result-card__text">
+															<h4 class="s-result-card__title">BMW</h4>
+															<span class="s-result-card__cat">Подвеска</span>
+														</div>
+														<span class="s-result-card__quantity">1290</span>
+													</div>
+												</a>
+												<a href="#" class="link s-result-card">
+													<div class="s-result-card__wrap">
+														<div class="s-result-card__text">
+															<h4 class="s-result-card__title">BMW</h4>
+															<span class="s-result-card__cat">Тормозные системы</span>
+														</div>
+														<span class="s-result-card__quantity">1290</span>
+													</div>
+												</a>
+												<a href="#" class="link s-result-card">
+													<div class="s-result-card__wrap">
+														<div class="s-result-card__text">
+															<h4 class="s-result-card__title">BMW</h4>
+															<span class="s-result-card__cat">Интерьер</span>
+														</div>
+														<span class="s-result-card__quantity">1290</span>
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -41,12 +41,12 @@
     &:hover {
         
         @media (min-width: $minHover) {
-            color: $accent-primary;
+            color: $text-accent;
         }
     }
 
     &:active {
-        color: $accent-primary;
+        color: $text-accent;
     }
 }
 

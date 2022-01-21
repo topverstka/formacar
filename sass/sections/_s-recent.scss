@@ -30,6 +30,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 24px;
+
+    @media (max-width: $laptop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 // Карточка со свежим объявлением
@@ -47,6 +51,13 @@
             & .recent-card__slider-arrow:not(.swiper-button-disabled) {
                 opacity: 1;
             }
+        }
+    }
+
+    @media (max-width: $laptop) {
+        
+        &:last-child {
+            display: none;
         }
     }
 }

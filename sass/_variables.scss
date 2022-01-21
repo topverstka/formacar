@@ -54,7 +54,9 @@ $mobile: 320px;
     --outline-l: #ECECEC;
 
     --bg-page: #F6F8FD;
+    --bg-second-l: #F6F8FD;
     --error: #E83D3D;
+    --bg-modal: rgba(0, 0, 0, .3);
 
     --accent-hover: #44BD99;
     --accent-active: #37866E;
@@ -87,4 +89,6 @@ $outline-d: var(--outline-d);
 $outline-l: var(--outline-l);
 
 $bg-page: var(--bg-page);
+$bg-second-l: var(--bg-second-l);
 $error: var(--error);
+$bg-modal: var(--bg-modal);

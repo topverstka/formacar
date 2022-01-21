@@ -26,6 +26,10 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 24px;
+
+    @media (max-width: $laptop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 // Карточки новостей
@@ -39,6 +43,13 @@
             & .news-card__title {
                 color: $text-accent;
             }
+        }
+    }
+
+    @media (max-width: $laptop) {
+        
+        &:last-child {
+            display: none;
         }
     }
 }

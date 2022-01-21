@@ -1,0 +1,87 @@
+.search {
+
+}
+
+.search__wrap {
+
+}
+
+// Верхняя часть
+.search__top {
+    background: $bg-second-l; 
+}
+
+.search__top-wrap {
+
+}
+
+// Усдуги
+.search__services {
+
+}
+
+// Результат поиска
+.search__result {
+    border-top: 1px solid $outline-l;
+    padding: 30px 0 20px 0;
+}
+
+.search__result-wrap {
+
+}
+
+.search__title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.search__result-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0 0 0;
+}
+
+// Карточка результата поиска
+.s-result-card {
+    background: #fff;
+    border-radius: $radius;
+    padding: 10px 20px;
+    margin: 0 20px 10px 0;
+    transition: $tr;
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
+        }
+    }
+}
+
+.s-result-card__wrap {
+    display: flex;
+    align-items: center;
+}
+
+.s-result-card__text {
+
+}
+
+.s-result-card__title {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.s-result-card__cat {
+    font-size: 11px;
+    font-weight: 500;
+    margin: 5px 0 0 0;
+}
+
+.s-result-card__quantity {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 0 40px;
+}

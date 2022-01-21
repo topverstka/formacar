@@ -117,28 +117,61 @@ function sumbitForm() {
 }
 
 // Мобильное меню
-// menu()
+menu()
 function menu() {
 	const burger = find('.burger')
 	const menu = find('.menu');
+    const menuWrap = menu.querySelector('.menu__wrap')
+    const menuBg = find('.menu-bg')
 	
 	// Высота меню
-	window.addEventListener('resize', () => {
-		const headerHeight = find('.header').clientHeight
+	// window.addEventListener('resize', () => {
+	// 	const headerHeight = find('.header').clientHeight
 
-		if (window.innerWidth <= 768) {
-			menu.style.paddingTop = headerHeight + 'px'
-		}
-		else {
-			menu.style.paddingTop = 0
-		}
-	})
+	// 	if (window.innerWidth <= 768) {
+	// 		menu.style.paddingTop = headerHeight + 'px'
+	// 	}
+	// 	else {
+	// 		menu.style.paddingTop = 0
+	// 	}
+	// })
 
 	burger.addEventListener('click', (e) => {
-		burger.classList.toggle('burger_close')
+		burger.classList.toggle('_close')
 		menu.classList.toggle('_show')
-		bodyLock()
+        menuBg.classList.toggle('_show')
+
+		// bodyLock()
 	})
+
+    menuBg.addEventListener('click', e => {
+		burger.classList.remove('_close')
+		menu.classList.remove('_show')
+        menuBg.classList.remove('_show')
+    })
+}
+
+// Отображение ссылок при наведении на соответствующую категорию в меню
+catLinksMenu()
+function catLinksMenu() {
+    const catElems = findAll('.menu__left-item')
+
+    for (let i = 0; i < catElems.length; i++) {
+        const cat = catElems[i];
+        
+        cat.addEventListener('mouseenter', e => {
+            const catData = cat.dataset.menuCat
+            const catLinks = find(`[data-menu-links=${catData}]`)
+
+            // Показываем ссылки по категории
+            find('.menu__right._show').classList.remove('_show')
+            catLinks.classList.add('_show')
+
+            // Присваеваем активный класс ссылке категории
+            find('.menu__left-item._active').classList.remove('_active')
+            cat.classList.add('_active')
+        })
+    }
 }
 
 const swiper = new Swiper('.recent-card__slider', {
