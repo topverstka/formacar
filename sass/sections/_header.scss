@@ -39,6 +39,24 @@
     width: 30px;
     height: 30px;
 
+    &._close {
+
+        & span {
+
+            &:nth-child(1) {
+                transform: translate(-50%, -50%) rotate(45deg); 
+            }
+
+            &:nth-child(2) {
+                width: 0;
+            }
+
+            &:nth-child(3) {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+
     & span {
         position: absolute;
         top: 50%;
@@ -47,6 +65,7 @@
         height: 3px;
         background: $icon-primary-l;
         border-radius: 20px;
+        transition: $tr;
 
         &:nth-child(1) {
             transform: translate(-50%, calc(-50% - 10px)); 
@@ -130,6 +149,7 @@
     width: 20px;
     height: 20px;
     display: flex;
+    pointer-events: none;
 }
 
 // Кнопка "Продать"
@@ -154,6 +174,37 @@
     flex-direction: column;
     align-items: center;
 
+    &._active {
+
+        & .user-option__icon {
+
+            & svg path {
+                stroke: $accent-primary;
+
+                &:nth-child(1) {
+                    fill: $accent-primary;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+
+            & .user-option__icon {
+
+                & svg path {
+                    stroke: $accent-primary;
+                }
+            }
+            
+            & .user-option__title {
+                color: $text-second-l;
+            }
+        }
+    }
+
     &:not(:last-child) {
         margin: 0 20px 0 0; 
     }
@@ -162,6 +213,10 @@
 .user-option__icon {
     height: 30px;
     display: flex;
+
+    & svg path {
+        transition: $tr;
+    }
 }
 
 .user-option__title {
@@ -169,6 +224,7 @@
     font-weight: 600;
     color: $text-second-d;
     margin: 2px 0 0 0;
+    transition: $tr;
 }
 
 // Меню пользователя
@@ -184,6 +240,15 @@
 .user-menu__header {
     display: flex;
     align-items: center;
+    padding: 8px 6px 8px 10px;
+    transition: $tr;
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            background: #F6F8FD;
+        }
+    }
 }
 
 .user-menu__name {

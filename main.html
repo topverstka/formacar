@@ -34,9 +34,10 @@
 								</div>
 								<button class="btn header__sell">Продать</button>
 								<div class="user__options">
-									<button class="user-option">
+									<button class="user-option _active">
 										<div class="user-option__icon">
 											<svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M24.4725 6H14.9219C14.0221 6 13.1698 6.40389 12.6 7.10031L9.00023 11.5001L3.34602 13.1155C2.53794 13.3464 1.96039 14.0578 1.90051 14.8961L1.72979 17.2863C1.60574 19.0229 2.50023 20.5 5.79653 20.5C5.79653 18.567 7.45473 17 9.50023 17C11.5457 17 13.0002 18.567 13.0002 20.5H23.5928C23.5928 18.567 25.251 17 27.2965 17C29.342 17 31.0002 18.567 31.0002 20.5H32.0002C33.1048 20.5 34.0002 19.6055 34.0002 18.5009V14.7346C34.0002 13.9771 33.5722 13.286 32.8946 12.9472L30.0002 11.5001L26.8988 7.23551C26.3342 6.45926 25.4324 6 24.4725 6Z"/>
 												<path d="M5.79653 20.5C2.50023 20.5 1.60574 19.0229 1.72979 17.2863L1.90051 14.8961C1.96039 14.0578 2.53794 13.3464 3.34602 13.1155L9.00023 11.5001L12.6 7.10031C13.1698 6.40389 14.0221 6 14.9219 6H24.4725C25.4324 6 26.3342 6.45926 26.8988 7.23551L30.0002 11.5001L32.8946 12.9472C33.5722 13.286 34.0002 13.9771 34.0002 14.7346V18.5009C34.0002 19.6055 33.1048 20.5 32.0002 20.5H31.0002M5.79653 20.5C5.79653 22.433 7.45473 24 9.50023 24C11.5457 24 13.0002 22.433 13.0002 20.5M5.79653 20.5C5.79653 18.567 7.45473 17 9.50023 17C11.5457 17 13.0002 18.567 13.0002 20.5M31.0002 20.5C31.0002 22.433 29.342 24 27.2965 24C25.251 24 23.5928 22.433 23.5928 20.5M31.0002 20.5C31.0002 18.567 29.342 17 27.2965 17C25.251 17 23.5928 18.567 23.5928 20.5M13.0002 20.5H23.5928" stroke="#383838" stroke-width="2"/>
 											</svg>												
 										</div>
@@ -60,7 +61,7 @@
 									</button>
 								</div>
 								<button class="user-menu">
-									<div class="user-menu__header">
+									<a href="#" class="user-menu__header">
 										<h2 class="user-menu__name">user Nickname</h2>
 										<div class="user-menu__avatar"><img src="./img/avatar.png" alt="Avatar"></div>
 										<div class="user-menu__header-arrow">
@@ -68,7 +69,7 @@
 												<path d="M5.27418 8.27465C4.90861 8.6396 4.90861 9.22798 5.27418 9.59293L11.474 15.7821C11.765 16.0726 12.235 16.0726 12.526 15.7821L18.7258 9.59293C19.0914 9.22798 19.0914 8.6396 18.7258 8.27465C18.3602 7.9097 17.7708 7.9097 17.4053 8.27465L11.9963 13.6669L6.58726 8.2672C6.22915 7.9097 5.63229 7.9097 5.27418 8.27465Z" fill="#B4B4BF"/>
 											</svg>																							
 										</div>
-									</div>
+									</a>
 								</button>
 							</div>
 						</div>
@@ -557,7 +558,7 @@
 						<div class="footer__lang">
 							<span class="footer__lang-text">Язык</span>
 							<div class="change-lang">
-								<button class="change-lang__header">
+								<button class="change-lang__header" data-modal-open="lang">
 									<span class="change-lang__title">Русский</span>
 								</button>
 								<div class="change-lang__body">
@@ -598,8 +599,10 @@
 										</a>
 									</li>
 								</ul>
-								<span class="footer__copyright">© 2018-2021 FormaCar. Все права защищены. 18+</span>
-								<a href="#" class="link footer__user-agree">Пользовательское соглашение</a>
+								<div class="footer__more-rules">
+									<span class="footer__copyright">© 2018-2021 FormaCar. Все права защищены. 18+</span>
+									<a href="#" class="link footer__user-agree">Пользовательское соглашение</a>
+								</div>
 							</div>
 						</div>
 						<div class="footer-app">
@@ -631,47 +634,37 @@
 	</div>
 
 	<!-- Модальные окна -->
-	<div class="modal" id="consultation">
-		<div class="modal__body">
-			<div class="modal__content">
-				<h2 class="modal__title">Запись на консультацию</h2>
-				<form action="#" method="POST" class="form modal__form" id="modal__form">
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="text" id="user_name" name="name" placeholder=" ">
-						<label class="form-elem__label" for="name">Имя</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="tel" id="user_phone" name="phone"
-							placeholder=" ">
-						<label class="form-elem__label" for="phone">Номер телефона</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area _required" type="email" id="user_email" name="email"
-							placeholder=" ">
-						<label class="form-elem__label" for="email">E-mail</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area" type="text" id="user_company" name="company" placeholder=" ">
-						<label class="form-elem__label" for="company">Название вашей компании</label>
-					</div>
-					<div class="form-elem">
-						<input class="form-elem__area" type="text" id="user_working_pos" name="working_pos"
-							placeholder=" ">
-						<label class="form-elem__label" for="working_pos">Ваша должность</label>
-					</div>
-					<div class="form-elem">
-						<textarea class="form-elem__area" type="text" id="user_message" name="message"
-							placeholder=" "></textarea>
-						<label class="form-elem__label" for="message">Комментарий</label>
-					</div>
-					<span class="modal__attention">Нажав на кнопку, вы соглашаетесь с обработкой персональных
-						данных.</span>
-					<button class="btn modal__submit" type="submit">Проконсультироваться</button>
-				</form>
-				<button class="modal__close">
-					<span></span>
-					<span></span>
-				</button>
+	<div class="modal modal-lang" id="lang">
+		<div class="modal__wrap modal-lang__wrap">
+			<div class="modal__popup modal-lang__popup">
+				<div class="modal-lang__header">
+					<button class="modal__close modal-lang__arrow">
+						<svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M19.6567 23.6573C19.2005 24.1142 18.465 24.1142 18.0088 23.6573L10.2723 15.9075C9.90923 15.5438 9.90923 14.9562 10.2723 14.5925L18.0088 6.84273C18.465 6.38576 19.2005 6.38576 19.6567 6.84273C20.1129 7.29969 20.1129 8.03644 19.6567 8.49341L12.9163 15.2547L19.666 22.0159C20.1129 22.4636 20.1129 23.2096 19.6567 23.6573Z" fill="#B4B4BF"/>
+						</svg>
+					</button>
+					<h2 class="modal-lang__title">Язык интерфейса</h2>
+				</div>
+				<div class="modal-lang__body">
+					<ul class="modal-lang__list">
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Arabic</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Chinese</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Deutsch</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">English</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Español</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">France</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Hindi</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Indonesian</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Japanese</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Korean</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Malay</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Nederlands</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Português</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Türkçe</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Ελληνικά</a></li>
+						<li class="modal-lang__item"><a href="#" class="modal-lang__link _active">Русский</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>

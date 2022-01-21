@@ -41,6 +41,10 @@ function bodyLock(con) {
 	}
 }
 
+window.addEventListener('click', e => {
+    if (e.target.classList.contains('modal-lang__link')) changeLang(e) // Смена языка
+})
+
 // Валидация формы
 function validationForm() {
     const name = find('#user_name')
@@ -150,8 +154,8 @@ const swiper = new Swiper('.recent-card__slider', {
 //   },
 
   breakpoints: {
-    1200: {
-
+    1440: {
+        slidesPerView: 2,
     },
     700: {
 
@@ -172,8 +176,8 @@ const swiper = new Swiper('.recent-card__slider', {
 });
 
 // Функции для модальных окон
-modal()
-function modal() {
+// modal()
+// function modal() {
     
     // Открытие модальных окон при клике по кнопке
     openModalWhenClickingOnBtn()
@@ -223,7 +227,7 @@ function modal() {
             const target = e.target
             const modal = document.querySelector('.modal._show')
 
-            if (modal && target.classList.contains('modal__body')) closeModal(modal)
+            if (modal && target.classList.contains('modal__wrap')) closeModal(modal)
         })
     }
 
@@ -269,20 +273,33 @@ function modal() {
 
     // Закрытие модального окна
     function closeModal(modal) {
+        if (modal == undefined) modal = find('.modal._show')
         modal.classList.remove('_show')
         bodyLock(false)
         resetHash()
     }
-}
+// }
 
+// Лайк поста
 liked()
 function liked() {
     const likeElems = findAll('.like')
     
     for (let i = 0; i < likeElems.length; i++) {
         const elem = likeElems[i]
-        elem.addEventListener('click', e => {
-            elem.classList.toggle('_liked')
-        })
+        elem.addEventListener('click', e => elem.classList.toggle('_liked'))
     }
+}
+
+// Смена языка
+// Если при клике осуществляется переход на страницу с другим языком, то эту функцию нужно удалить.
+function changeLang(e) {
+    const target = e.target
+    const langTitle = find('.change-lang__title')
+    
+    e.preventDefault()
+    langTitle.innerText = target.innerText
+    find('.modal-lang__link._active').classList.remove('_active')
+    target.classList.add('_active')
+    closeModal()
 }

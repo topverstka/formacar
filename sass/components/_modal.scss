@@ -16,13 +16,13 @@
         opacity: 1;
         overflow-y: auto;
 
-        & .modal__body {
+        & .modal__wrap {
             transform: translate(0, 0);
         }
     }
 }
 
-.modal__body {
+.modal__wrap {
     min-height: 100%;
     transform: translate(0, 100vh);
     display: flex; 
@@ -30,13 +30,9 @@
     align-items: center;
     padding: 30px 16px;
     transition: $tr;
-
-    & h2 {
-        margin: 0 0 8px 0;
-    }
 }
 
-.modal__content {
+.modal__popup {
     position: relative;
     max-width: 540px;
     background: #fff;
@@ -93,6 +89,92 @@
 
         &:nth-child(2) {
             transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}
+
+// Смена языка
+.modal-lang {
+
+}
+
+.modal-lang__wrap {
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0;
+    transform: translate(100%, 0);
+}
+
+.modal-lang__popup {
+    max-width: 320px;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    padding: 0;
+}
+
+.modal-lang__header {
+    display: flex;
+    align-items: center;
+    background: #F6F8FD;
+    padding: 18px;
+}
+
+.modal-lang__arrow {
+    position: initial;
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            
+            & svg path {
+                fill: $text-primary
+            }
+        }
+    }
+
+    & svg path {
+        transition: $tr;
+    }
+}
+
+.modal-lang__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 40px;
+}
+
+.modal-lang__body {
+    background: #fff;
+    padding: 12px 0;
+}
+
+.modal-lang__list {
+
+}
+
+.modal-lang__item {
+
+}
+
+.modal-lang__link {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px 10px 15px 20px;
+    transition: $tr;
+
+    &._active {
+        color: $text-accent;
+    }
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            color: $text-accent;
+            background: #EEF1F9;
         }
     }
 }
