@@ -55,7 +55,7 @@
     }
 
     &._error {
-        border: 1px solid $error !important;
+        border: 1px solid $input-error !important;
 
         & + .form-elem__label {
 
@@ -80,7 +80,7 @@
     &::after {
         content: 'Error';
         font-size: inherit;
-        color: $error;
+        color: $input-error;
         margin: 0 0 0 6px;
         opacity: 0;
     }

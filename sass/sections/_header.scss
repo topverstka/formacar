@@ -137,6 +137,11 @@
     border: 1px solid $input-placeholder;
     border-radius: $radius;
     padding: 10px 10px 10px 40px;
+    transition: $tr;
+
+    &:focus {
+        border: 1px solid $input-focus;
+    }
 }
 
 .search-area__label {
@@ -152,6 +157,41 @@
     height: 20px;
     display: flex;
     pointer-events: none;
+}
+
+.search-area__clear {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    transition: $tr;
+    opacity: 0;
+    visibility: hidden;
+
+    &._show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            
+            & svg path {
+
+                &:nth-child(1) {
+                    fill: $icon-primary-l;
+                }
+            }
+        }
+    }
+
+    & svg path {
+        transition: $tr;
+    }
 }
 
 // Кнопка "Продать"

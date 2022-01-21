@@ -1,5 +1,14 @@
 .search {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: $tr;
 
+    &._show {
+        transform: translate(0, 100%);
+    }
 }
 
 .search__wrap {

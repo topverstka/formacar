@@ -40,6 +40,8 @@ $mobile: 320px;
 
     // Инпуты
     --input-placeholder: #AFAFAF;
+    --input-focus: #467EF3;
+    --input-error: #CC3334;
 
     // Акцентные цвета
     --accent-primary: #004CFF;
@@ -55,7 +57,6 @@ $mobile: 320px;
 
     --bg-page: #F6F8FD;
     --bg-second-l: #F6F8FD;
-    --error: #E83D3D;
     --bg-modal: rgba(0, 0, 0, .3);
 
     --accent-hover: #44BD99;
@@ -78,6 +79,8 @@ $btn-second-default: var(--btn-second-default);
 $btn-second-pressed: var(--btn-second-pressed);
 
 $input-placeholder: var(--input-placeholder);
+$input-focus: var(--input-focus);
+$input-error: var(--input-error);
 
 $accent-primary: var(--accent-primary);
 $accent-second: var(--accent-second);

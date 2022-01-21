@@ -42,7 +42,10 @@ function bodyLock(con) {
 }
 
 window.addEventListener('click', e => {
-    if (e.target.classList.contains('modal-lang__link')) changeLang(e) // Смена языка
+    // Смена языка
+    if (e.target.classList.contains('modal-lang__link')) changeLang(e)
+
+    // 
 })
 
 // Валидация формы
@@ -122,19 +125,6 @@ function menu() {
 	const burger = find('.burger')
 	const menu = find('.menu');
     const menuWrap = menu.querySelector('.menu__wrap')
-    const menuBg = find('.menu-bg')
-	
-	// Высота меню
-	// window.addEventListener('resize', () => {
-	// 	const headerHeight = find('.header').clientHeight
-
-	// 	if (window.innerWidth <= 768) {
-	// 		menu.style.paddingTop = headerHeight + 'px'
-	// 	}
-	// 	else {
-	// 		menu.style.paddingTop = 0
-	// 	}
-	// })
 
 	burger.addEventListener('click', (e) => {
 		burger.classList.toggle('_close')
@@ -143,12 +133,51 @@ function menu() {
 
 		// bodyLock()
 	})
+}
+
+// Что закрывается при клике по заднему фону
+clickOnMenuBg()
+function clickOnMenuBg() {
+    const menuBg = find('.menu-bg')
 
     menuBg.addEventListener('click', e => {
 		burger.classList.remove('_close')
 		menu.classList.remove('_show')
         menuBg.classList.remove('_show')
     })
+}
+
+// Поиск по сайту
+siteSearch()
+function siteSearch() {
+    const input = find('.search-area__input')
+    const clear = find('.search-area__clear')
+
+    input.addEventListener('input', e => {
+        siteSearchData(input)
+    })
+    clear.addEventListener('click', e => {
+        input.value = ''
+        siteSearchData(input)
+    })
+}
+
+function siteSearchData(input) {
+    const search = find('.search')
+    const menuBg = find('.menu-bg')
+    const clear = find('.search-area__clear')
+    const value = input.value
+
+    if (value != '') {
+        search.classList.add('_show')
+        menuBg.classList.add('_show')
+        clear.classList.add('_show')
+    }
+    else {
+        search.classList.remove('_show')
+        menuBg.classList.remove('_show')
+        clear.classList.remove('_show')
+    }
 }
 
 // Отображение ссылок при наведении на соответствующую категорию в меню
