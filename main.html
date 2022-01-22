@@ -25,49 +25,80 @@
 									<span></span>
 									<span></span>
 								</button>
-								<a href="/" class="logo logo_header"><img src="./img/logo-header.svg" alt="Логотип"></a>
+								<a href="/" class="logo logo_header"><img src="./img/logos/logo_market.svg" alt="Логотип"></a>
 							</div>
 							<div class="header__top-right">
-								<div class="search-area search-area_header">
-									<input class="search-area__input" id="search-area-input" type="text" placeholder="Поиск по объявлениям">
+								<form method="GET" class="search-area search-area_header">
+									<input class="search-area__input" id="search-area-input" type="search" placeholder="Поиск по объявлениям">
 									<label class="search-area__label" for="search-area-input">Поиск по объявлениям</label>
-									<span class="search-area__icon"><img src="./img/icons/search.svg" alt="Поиск"></span>
+									<button type="submit" class="search-area__icon"><img src="./img/icons/search.svg" alt="Поиск"></button>
 									<button class="search-area__clear">
 										<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<path d="M10.5 0C4.97 0 0.5 4.47 0.5 10C0.5 15.53 4.97 20 10.5 20C16.03 20 20.5 15.53 20.5 10C20.5 4.47 16.03 0 10.5 0Z" fill="#B4B4BF"/>
 											<path d="M14.0833 13.5835C13.7583 13.9085 13.2333 13.9085 12.9083 13.5835L10.4999 11.1752L8.09159 13.5835C7.76659 13.9085 7.24159 13.9085 6.91659 13.5835C6.76055 13.4278 6.67285 13.2164 6.67285 12.996C6.67285 12.7756 6.76055 12.5642 6.91659 12.4085L9.32492 10.0002L6.91659 7.59185C6.76055 7.43615 6.67285 7.22478 6.67285 7.00435C6.67285 6.78391 6.76055 6.57254 6.91659 6.41685C7.24159 6.09185 7.76659 6.09185 8.09159 6.41685L10.4999 8.82518L12.9083 6.41685C13.2333 6.09185 13.7583 6.09185 14.0833 6.41685C14.4083 6.74185 14.4083 7.26685 14.0833 7.59185L11.6749 10.0002L14.0833 12.4085C14.3999 12.7252 14.3999 13.2585 14.0833 13.5835Z" fill="white"/>
 										</svg>											
 									</button>
-								</div>
+								</form>
 								<button class="btn header__sell">Продать</button>
 								<div class="user__options">
-									<button class="user-option">
-										<div class="user-option__icon">
-											<svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M24.4725 6H14.9219C14.0221 6 13.1698 6.40389 12.6 7.10031L9.00023 11.5001L3.34602 13.1155C2.53794 13.3464 1.96039 14.0578 1.90051 14.8961L1.72979 17.2863C1.60574 19.0229 2.50023 20.5 5.79653 20.5C5.79653 18.567 7.45473 17 9.50023 17C11.5457 17 13.0002 18.567 13.0002 20.5H23.5928C23.5928 18.567 25.251 17 27.2965 17C29.342 17 31.0002 18.567 31.0002 20.5H32.0002C33.1048 20.5 34.0002 19.6055 34.0002 18.5009V14.7346C34.0002 13.9771 33.5722 13.286 32.8946 12.9472L30.0002 11.5001L26.8988 7.23551C26.3342 6.45926 25.4324 6 24.4725 6Z"/>
-												<path d="M5.79653 20.5C2.50023 20.5 1.60574 19.0229 1.72979 17.2863L1.90051 14.8961C1.96039 14.0578 2.53794 13.3464 3.34602 13.1155L9.00023 11.5001L12.6 7.10031C13.1698 6.40389 14.0221 6 14.9219 6H24.4725C25.4324 6 26.3342 6.45926 26.8988 7.23551L30.0002 11.5001L32.8946 12.9472C33.5722 13.286 34.0002 13.9771 34.0002 14.7346V18.5009C34.0002 19.6055 33.1048 20.5 32.0002 20.5H31.0002M5.79653 20.5C5.79653 22.433 7.45473 24 9.50023 24C11.5457 24 13.0002 22.433 13.0002 20.5M5.79653 20.5C5.79653 18.567 7.45473 17 9.50023 17C11.5457 17 13.0002 18.567 13.0002 20.5M31.0002 20.5C31.0002 22.433 29.342 24 27.2965 24C25.251 24 23.5928 22.433 23.5928 20.5M31.0002 20.5C31.0002 18.567 29.342 17 27.2965 17C25.251 17 23.5928 18.567 23.5928 20.5M13.0002 20.5H23.5928" stroke="#383838" stroke-width="2"/>
-											</svg>												
+									<div class="user-option">
+										<a href="#" class="user-option__header">
+											<div class="user-option__icon">
+												<svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M24.4725 6H14.9219C14.0221 6 13.1698 6.40389 12.6 7.10031L9.00023 11.5001L3.34602 13.1155C2.53794 13.3464 1.96039 14.0578 1.90051 14.8961L1.72979 17.2863C1.60574 19.0229 2.50023 20.5 5.79653 20.5C5.79653 18.567 7.45473 17 9.50023 17C11.5457 17 13.0002 18.567 13.0002 20.5H23.5928C23.5928 18.567 25.251 17 27.2965 17C29.342 17 31.0002 18.567 31.0002 20.5H32.0002C33.1048 20.5 34.0002 19.6055 34.0002 18.5009V14.7346C34.0002 13.9771 33.5722 13.286 32.8946 12.9472L30.0002 11.5001L26.8988 7.23551C26.3342 6.45926 25.4324 6 24.4725 6Z"/>
+													<path d="M5.79653 20.5C2.50023 20.5 1.60574 19.0229 1.72979 17.2863L1.90051 14.8961C1.96039 14.0578 2.53794 13.3464 3.34602 13.1155L9.00023 11.5001L12.6 7.10031C13.1698 6.40389 14.0221 6 14.9219 6H24.4725C25.4324 6 26.3342 6.45926 26.8988 7.23551L30.0002 11.5001L32.8946 12.9472C33.5722 13.286 34.0002 13.9771 34.0002 14.7346V18.5009C34.0002 19.6055 33.1048 20.5 32.0002 20.5H31.0002M5.79653 20.5C5.79653 22.433 7.45473 24 9.50023 24C11.5457 24 13.0002 22.433 13.0002 20.5M5.79653 20.5C5.79653 18.567 7.45473 17 9.50023 17C11.5457 17 13.0002 18.567 13.0002 20.5M31.0002 20.5C31.0002 22.433 29.342 24 27.2965 24C25.251 24 23.5928 22.433 23.5928 20.5M31.0002 20.5C31.0002 18.567 29.342 17 27.2965 17C25.251 17 23.5928 18.567 23.5928 20.5M13.0002 20.5H23.5928" stroke="#383838" stroke-width="2"/>
+												</svg>																																		
+											</div>
+											<span class="user-option__title">Мой гараж</span>
+										</a>
+										<div class="sub-menu user-option__body">
+											<div class="sub-menu__wrap">
+												<ul class="sub-menu__list">
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои объявления</a></li>
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои магазины</a></li>
+												</ul>
+											</div>
 										</div>
-										<span class="user-option__title">Мой гараж</span>
-									</button>
-									<button class="user-option">
-										<div class="user-option__icon">
-											<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M26.8409 5.12177C26.1568 4.44911 25.3445 3.9155 24.4504 3.55144C23.5563 3.18738 22.598 3 21.6302 3C20.6625 3 19.7042 3.18738 18.8101 3.55144C17.916 3.9155 17.1037 4.44911 16.4195 5.12177L14.9996 6.51714L13.5798 5.12177C12.1978 3.76368 10.3234 3.0007 8.36905 3.0007C6.41466 3.0007 4.54031 3.76368 3.15835 5.12177C1.77638 6.47987 1 8.32185 1 10.2425C1 12.1631 1.77638 14.0051 3.15835 15.3632L4.57823 16.7586L14.9996 27L25.4211 16.7586L26.8409 15.3632C27.5254 14.6909 28.0684 13.8926 28.4389 13.0139C28.8093 12.1353 29 11.1936 29 10.2425C29 9.29142 28.8093 8.34967 28.4389 7.47104C28.0684 6.59241 27.5254 5.79412 26.8409 5.12177V5.12177Z" stroke="#383838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-											</svg>											
+									</div>
+									<div class="user-option">
+										<a href="#" class="user-option__header">
+											<div class="user-option__icon">
+												<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M26.8409 5.12177C26.1568 4.44911 25.3445 3.9155 24.4504 3.55144C23.5563 3.18738 22.598 3 21.6302 3C20.6625 3 19.7042 3.18738 18.8101 3.55144C17.916 3.9155 17.1037 4.44911 16.4195 5.12177L14.9996 6.51714L13.5798 5.12177C12.1978 3.76368 10.3234 3.0007 8.36905 3.0007C6.41466 3.0007 4.54031 3.76368 3.15835 5.12177C1.77638 6.47987 1 8.32185 1 10.2425C1 12.1631 1.77638 14.0051 3.15835 15.3632L4.57823 16.7586L14.9996 27L25.4211 16.7586L26.8409 15.3632C27.5254 14.6909 28.0684 13.8926 28.4389 13.0139C28.8093 12.1353 29 11.1936 29 10.2425C29 9.29142 28.8093 8.34967 28.4389 7.47104C28.0684 6.59241 27.5254 5.79412 26.8409 5.12177V5.12177Z" stroke="#383838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>																																		
+											</div>
+											<span class="user-option__title">Избранное</span>
+										</a>
+										<div class="sub-menu user-option__body">
+											<div class="sub-menu__wrap">
+												<ul class="sub-menu__list">
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Перейти в профиль</a></li>
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Настройки профиля</a></li>
+												</ul>
+												<div class="sub-menu__separator"></div>
+												<ul class="sub-menu__list">
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои группы</a></li>
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои машины</a></li>
+												</ul>
+												<div class="sub-menu__separator"></div>
+												<ul class="sub-menu__list">
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Выйти</a></li>
+												</ul>
+											</div>
 										</div>
-										<span class="user-option__title">Избранное</span>
-									</button>
-									<button class="user-option">
-										<div class="user-option__icon">
-											<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M26.25 18.75C26.25 19.413 25.9866 20.0489 25.5178 20.5178C25.0489 20.9866 24.413 21.25 23.75 21.25H8.75L3.75 26.25V6.25C3.75 5.58696 4.01339 4.95107 4.48223 4.48223C4.95107 4.01339 5.58696 3.75 6.25 3.75H23.75C24.413 3.75 25.0489 4.01339 25.5178 4.48223C25.9866 4.95107 26.25 5.58696 26.25 6.25V18.75Z" stroke="#383838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-											</svg>																																			
-										</div>
-										<span class="user-option__title">Сообщения</span>
-									</button>
+									</div>
+									<div class="user-option">
+										<a href="#" class="user-option__header">
+											<div class="user-option__icon">
+												<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M26.25 18.75C26.25 19.413 25.9866 20.0489 25.5178 20.5178C25.0489 20.9866 24.413 21.25 23.75 21.25H8.75L3.75 26.25V6.25C3.75 5.58696 4.01339 4.95107 4.48223 4.48223C4.95107 4.01339 5.58696 3.75 6.25 3.75H23.75C24.413 3.75 25.0489 4.01339 25.5178 4.48223C25.9866 4.95107 26.25 5.58696 26.25 6.25V18.75Z" stroke="#383838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+												</svg>																																			
+											</div>
+											<span class="user-option__title">Сообщения</span>
+										</a>
+									</div>
 								</div>
-								<button class="user-menu">
+								<div class="user-menu">
 									<a href="#" class="user-menu__header">
 										<h2 class="user-menu__name">user Nickname</h2>
 										<div class="user-menu__avatar"><img src="./img/avatar.png" alt="Avatar"></div>
@@ -77,7 +108,24 @@
 											</svg>																							
 										</div>
 									</a>
-								</button>
+									<div class="sub-menu user-menu__body">
+										<div class="sub-menu__wrap">
+											<ul class="sub-menu__list">
+												<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Перейти в профиль</a></li>
+												<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Настройки профиля</a></li>
+											</ul>
+											<div class="sub-menu__separator"></div>
+											<ul class="sub-menu__list">
+												<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои группы</a></li>
+												<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои машины</a></li>
+											</ul>
+											<div class="sub-menu__separator"></div>
+											<ul class="sub-menu__list">
+												<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Выйти</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -226,9 +274,73 @@
 						<div class="search__top">
 							<div class="search__top-wrap">
 								<div class="search__services">
-									<div class="container">
-										<div class="search__services-wrap">
-
+									<div class="search__services-wrap">
+										<div class="search__services-list">
+											<a href="#" class="service-card service-card_colorful" style="background-color: #9578FA;">
+												<div class="service-card__wrap">
+													<div class="service-card__info">
+														<h3 class="service-card__title">Транспорт</h3>
+														<span class="service-card__correction">Легковые, комтранс, Мото</span>
+													</div>
+													<div class="service-card__img"><img src="./img/services/transport.png" alt=""></div>
+												</div>
+											</a>
+											<a href="#" class="service-card service-card_colorful" style="background-color: #5891F0;">
+												<div class="service-card__wrap">
+													<div class="service-card__info">
+														<h3 class="service-card__title">Диски<br>и шины</h3>
+													</div>
+													<div class="service-card__img"><img src="./img/services/wheels_and_tires.png" alt=""></div>
+												</div>
+											</a>
+											<a href="#" class="service-card service-card_colorful" style="background-color: #7588F0;">
+												<div class="service-card__wrap">
+													<div class="service-card__info">
+														<h3 class="service-card__title">Тюнинг</h3>
+													</div>
+													<div class="service-card__img"><img src="./img/services/tuning.png" alt=""></div>
+												</div>
+											</a>
+											<a href="#" class="service-card">
+												<div class="service-card__wrap">
+													<div class="service-card__info">
+														<h3 class="service-card__title">Выхлопные<br>системы</h3>
+													</div>
+													<div class="service-card__img"><img src="./img/services/exhaust_systems.png" alt=""></div>
+												</div>
+											</a>
+											<a href="#" class="service-card">
+												<div class="service-card__wrap">
+													<div class="service-card__info">
+														<h3 class="service-card__title">Подвеска</h3>
+													</div>
+													<div class="service-card__img"><img src="./img/services/pendant.png" alt=""></div>
+												</div>
+											</a>
+											<a href="#" class="service-card">
+												<div class="service-card__wrap">
+													<div class="service-card__info">
+														<h3 class="service-card__title">Тормозные<br>системы</h3>
+													</div>
+													<div class="service-card__img"><img src="./img/services/brake_systems.png" alt=""></div>
+												</div>
+											</a>
+											<a href="#" class="service-card">
+												<div class="service-card__wrap">
+													<div class="service-card__info">
+														<h3 class="service-card__title">Интерьер</h3>
+													</div>
+													<div class="service-card__img"><img src="./img/services/interior.png" alt=""></div>
+												</div>
+											</a>
+											<a href="#" class="service-card">
+												<div class="service-card__wrap">
+													<div class="service-card__info">
+														<h3 class="service-card__title">Услуги</h3>
+													</div>
+													<div class="service-card__img"><img src="./img/services/services.png" alt=""></div>
+												</div>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -237,7 +349,7 @@
 										<div class="search__result-wrap">
 											<h3 class="search__title">Результаты поиска</h3>
 											<div class="search__result-list">
-												<a href="#" class="link s-result-card">
+												<!-- <a href="#" class="link s-result-card">
 													<div class="s-result-card__wrap">
 														<div class="s-result-card__text">
 															<h4 class="s-result-card__title">BMW</h4>
@@ -299,10 +411,76 @@
 														</div>
 														<span class="s-result-card__quantity">1290</span>
 													</div>
-												</a>
+												</a> -->
+												<div class="search__result-not-found">
+													<div class="search__result-not-found-icon">
+														<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M19 34C27.2843 34 34 27.2843 34 19C34 10.7157 27.2843 4 19 4C10.7157 4 4 10.7157 4 19C4 27.2843 10.7157 34 19 34Z" stroke="#B4B4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+															<path d="M36 36L30 30" stroke="#B4B4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+														</svg>															
+													</div>
+													<span class="search__result-not-found-text">По запросу “<span>Машина Бэтмена”</span>”<br>Ничего не найдено</span>
+												</div>
+												<div class="search__result-loading">
+													<div class="search__result-loading-icon">
+														<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M20 40C16.0444 40 12.1776 38.827 8.88859 36.6294C5.59961 34.4318 3.03616 31.3082 1.52241 27.6537C0.00865634 23.9991 -0.38741 19.9778 0.384295 16.0982C1.156 12.2186 3.06082 8.65491 5.85787 5.85786C8.65492 3.06081 12.2186 1.156 16.0982 0.384294C19.9778 -0.38741 23.9991 0.00865721 27.6537 1.52241C31.3082 3.03616 34.4318 5.59961 36.6294 8.8886C38.827 12.1776 40 16.0444 40 20L35 20C35 17.0333 34.1203 14.1332 32.472 11.6664C30.8238 9.19971 28.4811 7.27712 25.7403 6.14181C22.9994 5.00649 19.9834 4.70944 17.0736 5.28822C14.1639 5.867 11.4912 7.29561 9.3934 9.3934C7.29561 11.4912 5.867 14.1639 5.28822 17.0736C4.70944 19.9834 5.00649 22.9994 6.14181 25.7403C7.27712 28.4811 9.19971 30.8238 11.6664 32.472C14.1332 34.1203 17.0333 35 20 35L20 40Z" fill="#AFAFAF"/>
+														</svg>																										
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
+								</div>
+							</div>
+						</div>
+						<div class="search__bottom">
+							<div class="search__bottom-wrap">
+								<div class="search__section search__history">
+									<!-- <div class="container"> -->
+										<div class="search__section-wrap">
+											<div class="container">
+												<h3 class="search__title">История поиска</h3>
+											</div>
+											<div class="search__section-list">
+												<a href="#" class="link s-history-card">
+													<div class="s-history-card__wrap">
+														<h4 class="s-history-card__title">BMW</h4>
+														<span class="s-history-card__cat">Транспорт</span>
+													</div>
+												</a>
+												<a href="#" class="link s-history-card">
+													<div class="s-history-card__wrap">
+														<h4 class="s-history-card__title">BMW Cross Spoke</h4>
+														<span class="s-history-card__cat">Диски и шины</span>
+													</div>
+												</a>
+												<a href="#" class="link s-history-card">
+													<div class="s-history-card__wrap">
+														<h4 class="s-history-card__title">Titanium Racing Muffler Exhaust</h4>
+														<span class="s-history-card__cat">Выхлопные системы</span>
+													</div>
+												</a>
+											</div>
+										</div>
+									<!-- </div> -->
+								</div>
+								<div class="search__section search__often">
+									<!-- <div class="container"> -->
+										<div class="search__section-wrap">
+											<div class="container">
+												<h3 class="search__title">Часто ищут</h3>
+											</div>
+											<div class="search__section-list">
+												<a href="#" class="link s-often-link">BMW 2001 года</a>
+												<a href="#" class="link s-often-link">БМВ в хорошем состоянии</a>
+												<a href="#" class="link s-often-link">БМВ матовая</a>
+												<a href="#" class="link s-often-link">БМВ С класса</a>
+												<a href="#" class="link s-often-link">Диски на БМВ</a>
+												<a href="#" class="link s-often-link">Ремонт BMW S</a>
+											</div>
+										</div>
+									<!-- </div> -->
 								</div>
 							</div>
 						</div>
@@ -394,10 +572,10 @@
 						<div class="s-recent__list">
 							<div class="recent-card">
 								<div class="recent-card__wrap">
-									<div class="recent-card__header">
+									<a href="#" class="recent-card__header">
 										<h3 class="recent-card__title">Audi Q3 I (8U)<br>Рестайлинг 2018</h3>
 										<span class="recent-card__price">3 500 000 ₽</span>
-									</div>
+									</a>
 									<div class="swiper-container recent-card__slider">
 										<div class="swiper-wrapper">
 											<div class="swiper-slide"><img src="./img/recent/1.png" alt=""></div>
@@ -444,10 +622,10 @@
 							</div>
 							<div class="recent-card">
 								<div class="recent-card__wrap">
-									<div class="recent-card__header">
+									<a href="#" class="recent-card__header">
 										<h3 class="recent-card__title">Audi Q3 I (8U)<br>Рестайлинг 2018</h3>
 										<span class="recent-card__price">3 500 000 ₽</span>
-									</div>
+									</a>
 									<div class="swiper-container recent-card__slider">
 										<div class="swiper-wrapper">
 											<div class="swiper-slide"><img src="./img/recent/1.png" alt=""></div>
@@ -494,10 +672,10 @@
 							</div>
 							<div class="recent-card">
 								<div class="recent-card__wrap">
-									<div class="recent-card__header">
+									<a href="#" class="recent-card__header">
 										<h3 class="recent-card__title">Audi Q3 I (8U)<br>Рестайлинг 2018</h3>
 										<span class="recent-card__price">3 500 000 ₽</span>
-									</div>
+									</a>
 									<div class="swiper-container recent-card__slider">
 										<div class="swiper-wrapper">
 											<div class="swiper-slide"><img src="./img/recent/1.png" alt=""></div>
@@ -544,10 +722,10 @@
 							</div>
 							<div class="recent-card">
 								<div class="recent-card__wrap">
-									<div class="recent-card__header">
+									<a href="#" class="recent-card__header">
 										<h3 class="recent-card__title">Audi Q3 I (8U)<br>Рестайлинг 2018</h3>
 										<span class="recent-card__price">3 500 000 ₽</span>
-									</div>
+									</a>
 									<div class="swiper-container recent-card__slider">
 										<div class="swiper-wrapper">
 											<div class="swiper-slide"><img src="./img/recent/1.png" alt=""></div>
@@ -776,7 +954,7 @@
 					</div>
 					<div class="footer__bottom">
 						<div class="footer__content">
-							<a href="/" class="logo logo_footer"><img src="./img/logo-header.svg" alt="Логотип"></a>
+							<a href="/" class="logo logo_footer"><img src="./img/logos/logo.svg" alt="Логотип"></a>
 							<p class="footer__descr">Formacar — это автомобильный информационный портал с собственным 3D Конфигуратором, социальной сетью, новостным разделом, каталогом производителей и официальных дилеров автомобильных деталей и элементов тюнинга по всему миру.</p>
 							<div class="footer__more">
 								<ul class="footer__social-list">

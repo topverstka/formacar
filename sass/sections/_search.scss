@@ -26,7 +26,277 @@
 
 // Усдуги
 .search__services {
+    padding: 30px 0 20px;
+}
 
+.search__services-wrap {
+}
+
+.search__services-list {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px 300px 150px;
+    grid-template-rows: 75px 75px;
+    gap: 10px 20px;
+    width: 100%;
+    padding: 0 72px 10px;
+    margin: 0 auto;
+    overflow-y: auto;
+    
+    &::-webkit-scrollbar {
+        height: 3px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: $outline-d;
+    }
+
+    @media (max-width: $laptop-l) {
+        grid-template-columns: 300px 150px 150px 300px 300px 150px;
+    }
+    
+    @media (max-width: $laptop-l) {
+        padding: 0 30px 10px;
+    }
+    
+    @media (max-width: $mobile-l) {
+        padding: 0 15px 10px;
+    }
+
+    & .service-card {
+        grid-row-start: 1;
+        grid-row-end: 3;
+
+        &:nth-child(4),
+        &:nth-child(6) {
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        &:nth-child(5),
+        &:nth-child(7) {
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+
+        & .service-card__info {
+            top: 15px;
+            left: 20px;
+        }
+
+        & .service-card__title {
+            font-size: 14px;
+        }
+
+        & .service-card__correction {
+            font-size: 11px;
+        }
+
+        &:nth-child(1) {
+    
+            & .service-card__img {
+                left: 27px;
+                bottom: 0px;
+                width: 280px;
+    
+                // @media (max-width: $laptop-l) {
+                //     left: auto;
+                //     right: 0;
+                //     width: 306px;   
+                // }
+            }
+    
+            // @media (max-width: $tablet) {
+            //     height: 170px;
+            // }
+        }
+    
+        &:nth-child(2) {
+    
+            & .service-card__img {
+                right: -18px;
+                bottom: -26px;
+                width: 206px;
+    
+                @media (max-width: $laptop-l) {
+                    right: -25px;
+                    bottom: -14px;
+                    width: 144px;
+                }
+    
+                // @media (max-width: $laptop) {
+                //     right: -23px;
+                //     bottom: -33px;
+                //     width: 183px;
+                // }
+            }
+    
+            // @media (max-width: $tablet) {
+            //     height: 170px;
+            //     grid-column-start: 1;
+            //     grid-column-end: 2;
+            // }
+        }
+    
+        &:nth-child(3) {
+    
+            & .service-card__img {
+                right: -96px;
+                bottom: 12px;
+                width: 360px;
+    
+                @media (max-width: $laptop-l) {
+                    right: -233px;
+                    bottom: 0px;
+                    width: 375px;
+                }
+    
+                // @media (max-width: $laptop) {
+                //     right: -264px;
+                // }
+            }
+    
+            // @media (max-width: $tablet) {
+            //     height: 170px;
+            //     grid-column-start: 2;
+            //     grid-column-end: 3;
+            // }
+        }
+    
+        &:nth-child(4) {
+    
+            & .service-card__img {
+                left: 150px;
+                bottom: -14px;
+                width: 197px;
+    
+                // @media (max-width: $laptop-l) {
+                //     left: 94px;
+                //     width: 254px;
+                // }
+    
+                // @media (max-width: $laptop) {
+                //     left: 52px;
+                //     bottom: -13px;
+                // }
+    
+                // @media (max-width: $tablet) {
+                //     left: auto;
+                //     right: 12px; 
+                // }
+            }
+        }
+    
+        &:nth-child(5) {
+    
+            & .service-card__img {
+                left: 150px;
+                bottom: -14px;
+                width: 171px;
+    
+                // @media (max-width: $laptop-l) {
+                //     left: 75px;
+                //     bottom: -9px;
+                //     width: 252px;
+                // }
+    
+                // @media (max-width: $laptop) {
+                //     left: 14px;
+                //     bottom: -7px;
+                //     width: 240px;
+                // }
+    
+                // @media (max-width: $tablet) {
+                //     left: auto;
+                //     right: 12px; 
+                // }
+            }
+        }
+    
+        &:nth-child(6) {
+    
+            & .service-card__img {
+                left: 140px;
+                bottom: -88px;
+                width: 187px;
+    
+                // @media (max-width: $laptop-l) {
+                //     left: 89px;
+                //     bottom: -76px;
+                //     width: 256px;
+                // }
+    
+                // @media (max-width: $laptop-m) {
+                //     left: 83px;
+                //     width: 240px;
+                // }
+    
+                // @media (max-width: $laptop) {
+                //     left: auto;
+                //     right: -30px;
+                //     bottom: -66px;
+                //     width: 200px;
+                //     height: 200px;
+                // }
+            }
+        }
+    
+        &:nth-child(7) {
+    
+            & .service-card__img {
+                left: 150px;
+                bottom: -68px;
+                width: 164px;
+                transform: scale(-1, 1);
+    
+                // @media (max-width: $laptop-l) {
+                //     left: 106px;
+                //     bottom: -89px;
+                //     width: 200px;
+                //     height: 245px;
+                //     transform: scale(-1,1);
+                // }
+    
+                // @media (max-width: $laptop) {
+                //     left: auto;
+                //     right: -24px;
+                //     bottom: -93px;
+                //     width: 165px;
+                //     height: 284px;
+                // }
+            }
+        }
+    
+        &:nth-child(8) {
+    
+            & .service-card__img {
+                right: -33px;
+                bottom: -41px;
+                width: 137px;
+    
+                // @media (max-width: $laptop-l) {
+                //     right: 7px;
+                //     bottom: -73px;
+                //     width: 182px;
+                // }
+    
+                // @media (max-width: $laptop-m) {
+                //     right: -26px;
+                // }
+    
+                // @media (max-width: $laptop) {
+                //     right: -32px;
+                //     bottom: -52px;
+                //     width: 182px;
+                //     height: 227px;
+                // }
+            }
+    
+            // @media (min-width: $tablet) and (max-width: 850px) {
+            //     grid-column-start: 2;
+            //     grid-column-end: 4;
+            // }
+        }
+    }
 }
 
 // Результат поиска
@@ -46,6 +316,8 @@
 }
 
 .search__result-list {
+    position: relative;
+    min-height: 50px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -93,4 +365,146 @@
     font-size: 14px;
     font-weight: 500;
     margin: 0 0 0 40px;
+}
+
+// Ничего не найдено
+.search__result-not-found {
+    display: none;
+    align-items: center;
+
+    &._show {
+        display: flex;
+    }
+}
+
+.search__result-not-found-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+}
+
+.search__result-not-found-text {
+    font-size: 14px;
+    color: $text-second-d;
+    margin: 0 0 0 20px;
+}
+
+// Загрузка результатов поиска
+.search__result-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    // transition: $tr;
+
+    &._show {
+        opacity: 1;
+    }
+}
+
+.search__result-loading-icon {
+    width: 24px;
+    height: 24px;
+    animation: spinning 1.5s linear infinite;
+}
+
+// Нижняя часть
+.search__bottom {
+    background: #fff;
+    border-top: 1px solid $outline-l;
+    padding: 30px 0;
+}
+
+.search__bottom-wrap {
+
+}
+
+.search__section {
+
+    &:not(:last-child) {
+        margin: 0 0 40px 0;
+    }
+}
+
+.search__history {
+
+}
+
+.search__section-wrap {
+
+}
+
+.search__title {
+
+}
+
+.search__section-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 72px;
+    margin: 10px auto 0 auto;
+    overflow-x: auto;
+
+    @media (max-width: $laptop-l) {
+        padding: 0 30px;
+    }
+
+    @media (max-width: $mobile-l) {
+        padding: 0 15px;
+    }
+
+    &::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $outline-d;
+    }
+}
+
+// Карточки раздела "История поиска"
+.s-history-card {
+    padding: 10px;
+    white-space: nowrap;
+
+    &:not(:last-child) {
+        margin: 0 80px 0 0;
+    }
+}
+
+.s-history-card__wrap {
+
+}
+
+.s-history-card__title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.s-history-card__cat {
+    font-size: 11px;
+    margin: 5px 0 0 0;
+}
+
+// Раздел "Часто ищут"
+.search__often {
+
+}
+
+// Ссылки раздела "Часто ищут"
+.s-often-link {
+    display: block;
+    padding: 10px;
+    white-space: nowrap;
+
+    &:not(:last-child) {
+        margin: 0 80px 0 0;
+    }
 }

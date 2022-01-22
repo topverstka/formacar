@@ -84,207 +84,210 @@
     pointer-events: none;
 }
 
-.service-card {
+.s-services__list {
 
-    &:nth-child(1) {
-
-        & .service-card__img {
-            left: 117px;
-            bottom: 0;
-            width: 383px;
-
-            @media (max-width: $laptop-l) {
-                left: auto;
-                right: 0;
-                width: 306px;   
-            }
-        }
-
-        @media (max-width: $tablet) {
-            height: 170px;
-        }
-    }
-
-    &:nth-child(2) {
-
-        & .service-card__img {
-            right: -11px;
-            bottom: -15px;
-            width: 263px;
-
-            @media (max-width: $laptop-l) {
-                width: 200px;
-            }
-
-            @media (max-width: $laptop) {
-                right: -23px;
-                bottom: -33px;
-                width: 183px;
-            }
-        }
-
-        @media (max-width: $tablet) {
-            height: 170px;
-            grid-column-start: 1;
-            grid-column-end: 2;
-        }
-    }
-
-    &:nth-child(3) {
-
-        & .service-card__img {
-            right: -224px;
-            bottom: 7px;
-            width: 573px;
-
-            @media (max-width: $laptop-l) {
+    & .service-card {
+    
+        &:nth-child(1) {
+    
+            & .service-card__img {
+                left: 117px;
                 bottom: 0;
-                width: 493px;
+                width: 383px;
+    
+                @media (max-width: $laptop-l) {
+                    left: auto;
+                    right: 0;
+                    width: 306px;   
+                }
             }
-
-            @media (max-width: $laptop) {
-                right: -264px;
+    
+            @media (max-width: $tablet) {
+                height: 170px;
             }
         }
-
-        @media (max-width: $tablet) {
-            height: 170px;
-            grid-column-start: 2;
-            grid-column-end: 3;
-        }
-    }
-
-    &:nth-child(4) {
-
-        & .service-card__img {
-            left: 113px;
-            bottom: -20px;
-            width: 348px;
-
-            @media (max-width: $laptop-l) {
-                left: 94px;
-                width: 254px;
+    
+        &:nth-child(2) {
+    
+            & .service-card__img {
+                right: -11px;
+                bottom: -15px;
+                width: 263px;
+    
+                @media (max-width: $laptop-l) {
+                    width: 200px;
+                }
+    
+                @media (max-width: $laptop) {
+                    right: -23px;
+                    bottom: -33px;
+                    width: 183px;
+                }
             }
-
-            @media (max-width: $laptop) {
-                left: 52px;
+    
+            @media (max-width: $tablet) {
+                height: 170px;
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+        }
+    
+        &:nth-child(3) {
+    
+            & .service-card__img {
+                right: -224px;
+                bottom: 7px;
+                width: 573px;
+    
+                @media (max-width: $laptop-l) {
+                    bottom: 0;
+                    width: 493px;
+                }
+    
+                @media (max-width: $laptop) {
+                    right: -264px;
+                }
+            }
+    
+            @media (max-width: $tablet) {
+                height: 170px;
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
+        }
+    
+        &:nth-child(4) {
+    
+            & .service-card__img {
+                left: 113px;
+                bottom: -20px;
+                width: 348px;
+    
+                @media (max-width: $laptop-l) {
+                    left: 94px;
+                    width: 254px;
+                }
+    
+                @media (max-width: $laptop) {
+                    left: 52px;
+                    bottom: -13px;
+                }
+    
+                @media (max-width: $tablet) {
+                    left: auto;
+                    right: 12px; 
+                }
+            }
+        }
+    
+        &:nth-child(5) {
+    
+            & .service-card__img {
+                left: 93px;
                 bottom: -13px;
-            }
-
-            @media (max-width: $tablet) {
-                left: auto;
-                right: 12px; 
-            }
-        }
-    }
-
-    &:nth-child(5) {
-
-        & .service-card__img {
-            left: 93px;
-            bottom: -13px;
-            width: 351px;
-
-            @media (max-width: $laptop-l) {
-                left: 75px;
-                bottom: -9px;
-                width: 252px;
-            }
-
-            @media (max-width: $laptop) {
-                left: 14px;
-                bottom: -7px;
-                width: 240px;
-            }
-
-            @media (max-width: $tablet) {
-                left: auto;
-                right: 12px; 
+                width: 351px;
+    
+                @media (max-width: $laptop-l) {
+                    left: 75px;
+                    bottom: -9px;
+                    width: 252px;
+                }
+    
+                @media (max-width: $laptop) {
+                    left: 14px;
+                    bottom: -7px;
+                    width: 240px;
+                }
+    
+                @media (max-width: $tablet) {
+                    left: auto;
+                    right: 12px; 
+                }
             }
         }
-    }
-
-    &:nth-child(6) {
-
-        & .service-card__img {
-            left: 125px;
-            bottom: -95px;
-            width: 356px;
-
-            @media (max-width: $laptop-l) {
-                left: 89px;
-                bottom: -76px;
-                width: 256px;
-            }
-
-            @media (max-width: $laptop-m) {
-                left: 83px;
-                width: 240px;
-            }
-
-            @media (max-width: $laptop) {
-                left: auto;
-                right: -30px;
-                bottom: -66px;
-                width: 200px;
-                height: 200px;
-            }
-        }
-    }
-
-    &:nth-child(7) {
-
-        & .service-card__img {
-            left: 133px;
-            bottom: -61px;
-            width: 320px;
-
-            @media (max-width: $laptop-l) {
-                left: 106px;
-                bottom: -89px;
-                width: 200px;
-                height: 245px;
-                transform: scale(-1,1);
-            }
-
-            @media (max-width: $laptop) {
-                left: auto;
-                right: -24px;
-                bottom: -93px;
-                width: 165px;
-                height: 284px;
+    
+        &:nth-child(6) {
+    
+            & .service-card__img {
+                left: 125px;
+                bottom: -95px;
+                width: 356px;
+    
+                @media (max-width: $laptop-l) {
+                    left: 89px;
+                    bottom: -76px;
+                    width: 256px;
+                }
+    
+                @media (max-width: $laptop-m) {
+                    left: 83px;
+                    width: 240px;
+                }
+    
+                @media (max-width: $laptop) {
+                    left: auto;
+                    right: -30px;
+                    bottom: -66px;
+                    width: 200px;
+                    height: 200px;
+                }
             }
         }
-    }
-
-    &:nth-child(8) {
-
-        & .service-card__img {
-            right: 9px;
-            bottom: -53px;
-            width: 214px;
-
-            @media (max-width: $laptop-l) {
-                right: 7px;
-                bottom: -73px;
-                width: 182px;
-            }
-
-            @media (max-width: $laptop-m) {
-                right: -26px;
-            }
-
-            @media (max-width: $laptop) {
-                right: -32px;
-                bottom: -52px;
-                width: 182px;
-                height: 227px;
+    
+        &:nth-child(7) {
+    
+            & .service-card__img {
+                left: 133px;
+                bottom: -61px;
+                width: 320px;
+    
+                @media (max-width: $laptop-l) {
+                    left: 106px;
+                    bottom: -89px;
+                    width: 200px;
+                    height: 245px;
+                    transform: scale(-1,1);
+                }
+    
+                @media (max-width: $laptop) {
+                    left: auto;
+                    right: -24px;
+                    bottom: -93px;
+                    width: 165px;
+                    height: 284px;
+                }
             }
         }
-
-        @media (min-width: $tablet) and (max-width: 850px) {
-            grid-column-start: 2;
-            grid-column-end: 4;
+    
+        &:nth-child(8) {
+    
+            & .service-card__img {
+                right: 9px;
+                bottom: -53px;
+                width: 214px;
+    
+                @media (max-width: $laptop-l) {
+                    right: 7px;
+                    bottom: -73px;
+                    width: 182px;
+                }
+    
+                @media (max-width: $laptop-m) {
+                    right: -26px;
+                }
+    
+                @media (max-width: $laptop) {
+                    right: -32px;
+                    bottom: -52px;
+                    width: 182px;
+                    height: 227px;
+                }
+            }
+    
+            @media (min-width: $tablet) and (max-width: 850px) {
+                grid-column-start: 2;
+                grid-column-end: 4;
+            }
         }
     }
 }

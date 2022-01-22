@@ -72,6 +72,12 @@
 
 .recent-card__header {
 
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            color: $text-accent;
+        }
+    }
 }
 
 .recent-card__title {
@@ -80,6 +86,7 @@
 }
 
 .recent-card__price {
+    display: block;
     font-size: 18px;
     font-weight: 700;
     margin: 8px 0 0 0;

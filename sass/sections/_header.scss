@@ -141,9 +141,20 @@
 
     &:focus {
         border: 1px solid $input-focus;
+
+        & ~ .search-area__clear._show {
+            // opacity: 1;
+            // pointer-events: all;
+            // cursor: pointer;
+
+            & svg {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
     }
 }
-
+ 
 .search-area__label {
     display: none;
 }
@@ -156,7 +167,7 @@
     width: 20px;
     height: 20px;
     display: flex;
-    pointer-events: none;
+    // pointer-events: none;
 }
 
 .search-area__clear {
@@ -167,13 +178,16 @@
     width: 20px;
     height: 20px;
     display: flex;
-    transition: $tr;
-    opacity: 0;
-    visibility: hidden;
-
-    &._show {
-        opacity: 1;
-        visibility: visible;
+    background: #fff;
+    border-radius: 50%;
+    // cursor: text;
+    // pointer-events: none;
+    // opacity: 0;
+    
+    & svg {
+        transition: $tr;
+        opacity: 0;
+        visibility: hidden;
     }
 
     &:hover {
@@ -212,9 +226,7 @@
 }
 
 .user-option {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
 
     &._active {
 
@@ -244,6 +256,12 @@
             & .user-option__title {
                 color: $text-second-l;
             }
+
+            & .user-option__body {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+            }
         }
     }
 
@@ -262,17 +280,38 @@
 }
 
 .user-option__title {
+    display: inline-block;
     font-size: 10px;
     font-weight: 600;
     color: $text-second-d;
+    text-align: center;
     margin: 2px 0 0 0;
     transition: $tr;
 }
 
+.user-option__body {
+    width: auto;
+}
+
 // Меню пользователя
 .user-menu {
-    padding: 0 6px 0 10px;
+    position: relative;
+    // padding: 0 6px 0 10px;
     margin: 0 0 0 20px;
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+
+            & .user-menu__header {
+                background: $bg-second-l;
+            }
+            
+            & .user-menu__header-arrow {
+                transform: scale(1, -1);
+            }
+        }
+    }
 
     @media (max-width: $laptop-l) {
         // padding: 0;
@@ -288,7 +327,12 @@
     &:hover {
         
         @media (min-width: $minHover) {
-            background: $bg-second-l;
+
+            & + .user-menu__body {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+            }
         }
     }
 }
@@ -320,6 +364,7 @@
     width: 24px;
     height: 24px;
     margin: 0 0 0 2px;
+    transition: $tr;
 }
 
 // ------------------------

@@ -4,7 +4,6 @@ const d = document;
 const body = document.querySelector('body');
 
 // Служебные функции
-
 function find(selector) {
 	return document.querySelector(selector)
 }
@@ -41,10 +40,37 @@ function bodyLock(con) {
 	}
 }
 
+const popups = ['.search', '.menu']
+
 window.addEventListener('click', e => {
     // Смена языка
     if (e.target.classList.contains('modal-lang__link')) changeLang(e)
+    if (find('.menu._show') && (e.target.classList.contains('search-area') || e.target.closest('.search-area'))) {
+        console.log('is search')
 
+        // const burger = find('.burger')
+        // const menu = find('.menu')
+        // const menuBg = find('.menu-bg')
+        
+		// burger.classList.remove('_close')
+		// menu.classList.remove('_show')
+        // menuBg.classList.remove('_show')
+    }
+    if (
+        (find('.menu._show') && find('.search._found') && (e.target.classList.contains('search-area') || e.target.closest('.search-area'))) ||
+        (find('.menu._show') && !(e.target.classList.contains('header') || e.target.closest('.header')))
+    ) {
+        console.log('menu close')
+        
+        const burger = find('.burger')
+        const menu = find('.menu')
+        const menuBg = find('.menu-bg')
+        
+		burger.classList.remove('_close')
+		menu.classList.remove('_show')
+        menuBg.classList.remove('_show')
+    }
+    console.log(e.target)
     // 
 })
 
@@ -125,6 +151,7 @@ function menu() {
 	const burger = find('.burger')
 	const menu = find('.menu');
     const menuWrap = menu.querySelector('.menu__wrap')
+    const menuBg = find('.menu-bg')
 
 	burger.addEventListener('click', (e) => {
 		burger.classList.toggle('_close')
@@ -136,7 +163,7 @@ function menu() {
 }
 
 // Что закрывается при клике по заднему фону
-clickOnMenuBg()
+// clickOnMenuBg()
 function clickOnMenuBg() {
     const menuBg = find('.menu-bg')
 
@@ -150,35 +177,142 @@ function clickOnMenuBg() {
 // Поиск по сайту
 siteSearch()
 function siteSearch() {
+    const form = find('.search-area')
     const input = find('.search-area__input')
     const clear = find('.search-area__clear')
-
-    input.addEventListener('input', e => {
-        siteSearchData(input)
-    })
-    clear.addEventListener('click', e => {
-        input.value = ''
-        siteSearchData(input)
-    })
-}
-
-function siteSearchData(input) {
     const search = find('.search')
     const menuBg = find('.menu-bg')
-    const clear = find('.search-area__clear')
-    const value = input.value
+    const loader = find('.search__result-loading')
+    const notFound = find('.search__result-not-found')
 
-    if (value != '') {
-        search.classList.add('_show')
-        menuBg.classList.add('_show')
-        clear.classList.add('_show')
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        siteSearchPopup(input)
+        showLoader()
+
+        setTimeout(e => { // Имитация загрузки результатов поиска
+            siteSearchData(input)   
+        }, 1500)
+    })
+    input.addEventListener('input', e => {
+        console.log(input.value)
+        if (input.value != '') { 
+            clear.classList.add('_show')
+        }
+    })
+    input.addEventListener('focus', e => {
+        siteSearchFocus(input)
+        // console.log('focus')
+    })
+    input.addEventListener('blur', e => {
+        siteSearchBlur(input)
+        // console.log('blur')
+    })
+    console.log(clear)
+    clear.addEventListener('click', e => {
+        // if (clear.classList.contains('_show')) {
+            e.preventDefault()
+            input.value = ''
+            input.focus()
+            siteSearchPopup(input)
+            // siteSearchData(input)
+        // }
+    })
+
+    function siteSearchFocus(input) {
+        if (input.value != '') {
+            search.classList.add('_show')
+            menuBg.classList.add('_show')
+        }
     }
-    else {
+
+    function siteSearchBlur(input) {
         search.classList.remove('_show')
         menuBg.classList.remove('_show')
-        clear.classList.remove('_show')
+    }
+
+    function siteSearchPopup(input) {
+        const value = input.value
+    
+        if (value != '') {
+            search.classList.add('_show')
+            menuBg.classList.add('_show')
+            clear.classList.add('_show')
+        }
+        else {
+            search.classList.remove('_show')
+            menuBg.classList.remove('_show')
+            clear.classList.remove('_show')
+        }
+
+    }
+
+    function showLoader() {
+        const cardsShow = findAll('.search__result-list .s-result-card')
+        
+        for (let i = 0; i < cardsShow.length; i++) {
+            const card = cardsShow[i];
+            card.remove()
+        }
+
+        notFound.classList.remove('_show')
+        loader.classList.add('_show')
+    }
+    
+    async function siteSearchData(input) {
+        const value = input.value.toLowerCase()
+        const result = find('.search__result-list')
+
+        // Поиск в бд запроса поиска
+        let response = await fetch('../db.json')
+
+        if (response.ok) {
+            let data = await response.json()
+            const dataArr = []
+
+            console.log(data.length)
+            
+            data.forEach(elem => { if (elem['title'].toLowerCase() === value) dataArr.push(elem['category']) })
+            
+            if (dataArr.length === 0) {
+                loader.classList.remove('_show')
+                notFound.classList.add('_show')
+            }
+            else {
+                const quantityCat = dataArr.reduce((arr, elem) => {
+                    arr[elem] = (arr[elem] || 0) + 1
+                    return arr
+                }, {})
+    
+                // console.log(value, data, quantityCat)
+                loader.classList.remove('_show')
+    
+                for (const [title, quantity] of Object.entries(quantityCat)) {
+                    const card = document.createElement('a')
+                    card.setAttribute('href', '#')
+                    card.classList.add('link', 's-result-card')
+                    card.innerHTML = 
+                    `
+                        <div class="s-result-card__wrap">
+                            <div class="s-result-card__text">
+                                <h4 class="s-result-card__title">${value.toUpperCase()}</h4>
+                                <span class="s-result-card__cat">${title}</span>
+                            </div>
+                            <span class="s-result-card__quantity">${quantity}</span>
+                        </div>
+                    `
+    
+                    result.append(card)
+                }
+            }
+
+        }
+        else {
+            console.log('Error' + response.status)
+        }
     }
 }
+
 
 // Отображение ссылок при наведении на соответствующую категорию в меню
 catLinksMenu()
