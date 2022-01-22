@@ -70,8 +70,6 @@ window.addEventListener('click', e => {
 		menu.classList.remove('_show')
         menuBg.classList.remove('_show')
     }
-    console.log(e.target)
-    // 
 })
 
 // Валидация формы
@@ -162,18 +160,6 @@ function menu() {
 	})
 }
 
-// Что закрывается при клике по заднему фону
-// clickOnMenuBg()
-function clickOnMenuBg() {
-    const menuBg = find('.menu-bg')
-
-    menuBg.addEventListener('click', e => {
-		burger.classList.remove('_close')
-		menu.classList.remove('_show')
-        menuBg.classList.remove('_show')
-    })
-}
-
 // Поиск по сайту
 siteSearch()
 function siteSearch() {
@@ -181,6 +167,8 @@ function siteSearch() {
     const input = find('.search-area__input')
     const clear = find('.search-area__clear')
     const search = find('.search')
+    const menu = find('.menu')
+    const burger = find('.burger')
     const menuBg = find('.menu-bg')
     const loader = find('.search__result-loading')
     const notFound = find('.search__result-not-found')
@@ -190,25 +178,27 @@ function siteSearch() {
         siteSearchPopup(input)
         showLoader()
 
-        setTimeout(e => { // Имитация загрузки результатов поиска
+        if (find('.menu._show')) {
+            find('.menu').classList.remove('_show')
+            burger.classList.remove('_close')
+        }
+        
+        // Имитация загрузки результатов поиска
+        setTimeout(e => { 
             siteSearchData(input)   
         }, 1500)
     })
     input.addEventListener('input', e => {
-        console.log(input.value)
         if (input.value != '') { 
             clear.classList.add('_show')
         }
     })
     input.addEventListener('focus', e => {
         siteSearchFocus(input)
-        // console.log('focus')
     })
     input.addEventListener('blur', e => {
         siteSearchBlur(input)
-        // console.log('blur')
     })
-    console.log(clear)
     clear.addEventListener('click', e => {
         // if (clear.classList.contains('_show')) {
             e.preventDefault()
@@ -223,6 +213,11 @@ function siteSearch() {
         if (input.value != '') {
             search.classList.add('_show')
             menuBg.classList.add('_show')
+
+            if (find('.menu._show')) {
+                find('.menu').classList.remove('_show')
+                burger.classList.remove('_close')
+            }
         }
     }
 
@@ -314,6 +309,23 @@ function siteSearch() {
     }
 }
 
+// Фиксация шапки
+// fixHeader()
+function fixHeader() {
+    const header = find('.header')
+    const wrapper = find('.wrapper')
+    const headerBottom = find('.header__bottom')
+
+    wrapper.style.marginTop = header.clientHeight + 'px'
+    window.addEventListener('scroll', e => {
+        if (window.scrollY > 200) {
+            headerBottom.classList.add('_hide')
+        }
+        else {
+            headerBottom.classList.remove('_hide')
+        }
+    })
+}
 
 // Отображение ссылок при наведении на соответствующую категорию в меню
 catLinksMenu()

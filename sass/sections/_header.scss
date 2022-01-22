@@ -1,4 +1,8 @@
 .header {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
     position: relative;
     z-index: 2;
 }
@@ -371,6 +375,10 @@
 // Нижняя часть
 .header__bottom {
     border-top: 1px solid $bg-second-l;
+
+    // &._hide {
+    //     display: none;
+    // }
 
     @media (max-width: $laptop) {
         display: none;
