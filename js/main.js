@@ -260,7 +260,7 @@ function siteSearch() {
     }
     
     async function siteSearchData(input) {
-        const value = input.value.toLowerCase()
+        const value = input.value
         const result = find('.search__result-list')
 
         // Поиск в бд запроса поиска
@@ -272,11 +272,12 @@ function siteSearch() {
 
             console.log(data.length)
             
-            data.forEach(elem => { if (elem['title'].toLowerCase() === value) dataArr.push(elem['category']) })
+            data.forEach(elem => { if (elem['title'].toLowerCase() === value.toLowerCase()) dataArr.push(elem['category']) })
             
             if (dataArr.length === 0) {
                 loader.classList.remove('_show')
                 notFound.classList.add('_show')
+                notFound.querySelector('.search__result-not-found-text span').innerText = value
             }
             else {
                 const quantityCat = dataArr.reduce((arr, elem) => {
@@ -295,7 +296,7 @@ function siteSearch() {
                     `
                         <div class="s-result-card__wrap">
                             <div class="s-result-card__text">
-                                <h4 class="s-result-card__title">${value.toUpperCase()}</h4>
+                                <h4 class="s-result-card__title">${value}</h4>
                                 <span class="s-result-card__cat">${title}</span>
                             </div>
                             <span class="s-result-card__quantity">${quantity}</span>
