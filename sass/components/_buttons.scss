@@ -29,6 +29,37 @@
     }
 }
 
+// Второстепенная кнопка
+.btn-second {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    color: $text-accent;
+    text-transform: uppercase;
+    padding: 9px;
+    background: $btn-second-default;
+    border-radius: $radius;
+    // overflow: hidden;
+    transition: $tr;
+
+    @media (max-width: $laptop-m) {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
+        }
+    }
+
+    &:active {
+        background: $btn-second-pressed;
+    }
+}
+
 .btn_disabled {
     color: $text-second-d;
     background: #F8F8F8;

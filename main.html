@@ -14,7 +14,7 @@
 <body>
 	<div class="wrapper">
 		<div class="menu-bg"></div>
-		<header class="header">
+		<header class="header _auth">
 			<div class="header__wrap">
 				<div class="header__top">
 					<div class="container">
@@ -39,37 +39,80 @@
 										</svg>											
 									</button>
 								</form>
-								<button class="btn header__sell">Продать</button>
-								<div class="user__options">
-									<div class="user-option">
-										<a href="#" class="user-option__header">
-											<div class="user-option__icon">
-												<svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M24.4725 6H14.9219C14.0221 6 13.1698 6.40389 12.6 7.10031L9.00023 11.5001L3.34602 13.1155C2.53794 13.3464 1.96039 14.0578 1.90051 14.8961L1.72979 17.2863C1.60574 19.0229 2.50023 20.5 5.79653 20.5C5.79653 18.567 7.45473 17 9.50023 17C11.5457 17 13.0002 18.567 13.0002 20.5H23.5928C23.5928 18.567 25.251 17 27.2965 17C29.342 17 31.0002 18.567 31.0002 20.5H32.0002C33.1048 20.5 34.0002 19.6055 34.0002 18.5009V14.7346C34.0002 13.9771 33.5722 13.286 32.8946 12.9472L30.0002 11.5001L26.8988 7.23551C26.3342 6.45926 25.4324 6 24.4725 6Z"/>
-													<path d="M5.79653 20.5C2.50023 20.5 1.60574 19.0229 1.72979 17.2863L1.90051 14.8961C1.96039 14.0578 2.53794 13.3464 3.34602 13.1155L9.00023 11.5001L12.6 7.10031C13.1698 6.40389 14.0221 6 14.9219 6H24.4725C25.4324 6 26.3342 6.45926 26.8988 7.23551L30.0002 11.5001L32.8946 12.9472C33.5722 13.286 34.0002 13.9771 34.0002 14.7346V18.5009C34.0002 19.6055 33.1048 20.5 32.0002 20.5H31.0002M5.79653 20.5C5.79653 22.433 7.45473 24 9.50023 24C11.5457 24 13.0002 22.433 13.0002 20.5M5.79653 20.5C5.79653 18.567 7.45473 17 9.50023 17C11.5457 17 13.0002 18.567 13.0002 20.5M31.0002 20.5C31.0002 22.433 29.342 24 27.2965 24C25.251 24 23.5928 22.433 23.5928 20.5M31.0002 20.5C31.0002 18.567 29.342 17 27.2965 17C25.251 17 23.5928 18.567 23.5928 20.5M13.0002 20.5H23.5928" stroke="#383838" stroke-width="2"/>
-												</svg>																																		
-											</div>
-											<span class="user-option__title">Мой гараж</span>
-										</a>
-										<div class="sub-menu user-option__body">
-											<div class="sub-menu__wrap">
-												<ul class="sub-menu__list">
-													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои объявления</a></li>
-													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои магазины</a></li>
-												</ul>
+								<div class="header__top-content">
+									<div class="header__top-buttons">
+										<button class="btn-second header__sign-in">Войти</button>
+										<button class="btn header__sell">Продать</button>
+									</div>
+									<div class="user__options">
+										<div class="user-option">
+											<a href="#" class="user-option__header">
+												<div class="user-option__icon">
+													<svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M24.4725 6H14.9219C14.0221 6 13.1698 6.40389 12.6 7.10031L9.00023 11.5001L3.34602 13.1155C2.53794 13.3464 1.96039 14.0578 1.90051 14.8961L1.72979 17.2863C1.60574 19.0229 2.50023 20.5 5.79653 20.5C5.79653 18.567 7.45473 17 9.50023 17C11.5457 17 13.0002 18.567 13.0002 20.5H23.5928C23.5928 18.567 25.251 17 27.2965 17C29.342 17 31.0002 18.567 31.0002 20.5H32.0002C33.1048 20.5 34.0002 19.6055 34.0002 18.5009V14.7346C34.0002 13.9771 33.5722 13.286 32.8946 12.9472L30.0002 11.5001L26.8988 7.23551C26.3342 6.45926 25.4324 6 24.4725 6Z"/>
+														<path d="M5.79653 20.5C2.50023 20.5 1.60574 19.0229 1.72979 17.2863L1.90051 14.8961C1.96039 14.0578 2.53794 13.3464 3.34602 13.1155L9.00023 11.5001L12.6 7.10031C13.1698 6.40389 14.0221 6 14.9219 6H24.4725C25.4324 6 26.3342 6.45926 26.8988 7.23551L30.0002 11.5001L32.8946 12.9472C33.5722 13.286 34.0002 13.9771 34.0002 14.7346V18.5009C34.0002 19.6055 33.1048 20.5 32.0002 20.5H31.0002M5.79653 20.5C5.79653 22.433 7.45473 24 9.50023 24C11.5457 24 13.0002 22.433 13.0002 20.5M5.79653 20.5C5.79653 18.567 7.45473 17 9.50023 17C11.5457 17 13.0002 18.567 13.0002 20.5M31.0002 20.5C31.0002 22.433 29.342 24 27.2965 24C25.251 24 23.5928 22.433 23.5928 20.5M31.0002 20.5C31.0002 18.567 29.342 17 27.2965 17C25.251 17 23.5928 18.567 23.5928 20.5M13.0002 20.5H23.5928" stroke="#383838" stroke-width="2"/>
+													</svg>																																		
+												</div>
+												<span class="user-option__title">Мой гараж</span>
+											</a>
+											<div class="sub-menu user-option__body">
+												<div class="sub-menu__wrap">
+													<ul class="sub-menu__list">
+														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои объявления</a></li>
+														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои магазины</a></li>
+													</ul>
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="user-option">
-										<a href="#" class="user-option__header">
-											<div class="user-option__icon">
-												<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M26.8409 5.12177C26.1568 4.44911 25.3445 3.9155 24.4504 3.55144C23.5563 3.18738 22.598 3 21.6302 3C20.6625 3 19.7042 3.18738 18.8101 3.55144C17.916 3.9155 17.1037 4.44911 16.4195 5.12177L14.9996 6.51714L13.5798 5.12177C12.1978 3.76368 10.3234 3.0007 8.36905 3.0007C6.41466 3.0007 4.54031 3.76368 3.15835 5.12177C1.77638 6.47987 1 8.32185 1 10.2425C1 12.1631 1.77638 14.0051 3.15835 15.3632L4.57823 16.7586L14.9996 27L25.4211 16.7586L26.8409 15.3632C27.5254 14.6909 28.0684 13.8926 28.4389 13.0139C28.8093 12.1353 29 11.1936 29 10.2425C29 9.29142 28.8093 8.34967 28.4389 7.47104C28.0684 6.59241 27.5254 5.79412 26.8409 5.12177V5.12177Z" stroke="#383838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-												</svg>																																		
+										<div class="user-option">
+											<a href="#" class="user-option__header">
+												<div class="user-option__icon">
+													<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M26.8409 5.12177C26.1568 4.44911 25.3445 3.9155 24.4504 3.55144C23.5563 3.18738 22.598 3 21.6302 3C20.6625 3 19.7042 3.18738 18.8101 3.55144C17.916 3.9155 17.1037 4.44911 16.4195 5.12177L14.9996 6.51714L13.5798 5.12177C12.1978 3.76368 10.3234 3.0007 8.36905 3.0007C6.41466 3.0007 4.54031 3.76368 3.15835 5.12177C1.77638 6.47987 1 8.32185 1 10.2425C1 12.1631 1.77638 14.0051 3.15835 15.3632L4.57823 16.7586L14.9996 27L25.4211 16.7586L26.8409 15.3632C27.5254 14.6909 28.0684 13.8926 28.4389 13.0139C28.8093 12.1353 29 11.1936 29 10.2425C29 9.29142 28.8093 8.34967 28.4389 7.47104C28.0684 6.59241 27.5254 5.79412 26.8409 5.12177V5.12177Z" stroke="#383838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>																																		
+												</div>
+												<span class="user-option__title">Избранное</span>
+											</a>
+											<div class="sub-menu user-option__body">
+												<div class="sub-menu__wrap">
+													<ul class="sub-menu__list">
+														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Перейти в профиль</a></li>
+														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Настройки профиля</a></li>
+													</ul>
+													<div class="sub-menu__separator"></div>
+													<ul class="sub-menu__list">
+														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои группы</a></li>
+														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои машины</a></li>
+													</ul>
+													<div class="sub-menu__separator"></div>
+													<ul class="sub-menu__list">
+														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Выйти</a></li>
+													</ul>
+												</div>
 											</div>
-											<span class="user-option__title">Избранное</span>
+										</div>
+										<div class="user-option">
+											<a href="#" class="user-option__header">
+												<div class="user-option__icon">
+													<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M26.25 18.75C26.25 19.413 25.9866 20.0489 25.5178 20.5178C25.0489 20.9866 24.413 21.25 23.75 21.25H8.75L3.75 26.25V6.25C3.75 5.58696 4.01339 4.95107 4.48223 4.48223C4.95107 4.01339 5.58696 3.75 6.25 3.75H23.75C24.413 3.75 25.0489 4.01339 25.5178 4.48223C25.9866 4.95107 26.25 5.58696 26.25 6.25V18.75Z" stroke="#383838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+													</svg>																																			
+												</div>
+												<span class="user-option__title">Сообщения</span>
+											</a>
+										</div>
+									</div>
+									<div class="user-menu">
+										<a href="#" class="user-menu__header">
+											<h2 class="user-menu__name">user Nickname</h2>
+											<div class="user-menu__avatar"><img src="./img/avatar.png" alt="Avatar"></div>
+											<div class="user-menu__header-arrow">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M5.27418 8.27465C4.90861 8.6396 4.90861 9.22798 5.27418 9.59293L11.474 15.7821C11.765 16.0726 12.235 16.0726 12.526 15.7821L18.7258 9.59293C19.0914 9.22798 19.0914 8.6396 18.7258 8.27465C18.3602 7.9097 17.7708 7.9097 17.4053 8.27465L11.9963 13.6669L6.58726 8.2672C6.22915 7.9097 5.63229 7.9097 5.27418 8.27465Z" fill="#B4B4BF"/>
+												</svg>																							
+											</div>
 										</a>
-										<div class="sub-menu user-option__body">
+										<div class="sub-menu user-menu__body">
 											<div class="sub-menu__wrap">
 												<ul class="sub-menu__list">
 													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Перейти в профиль</a></li>
@@ -85,44 +128,6 @@
 													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Выйти</a></li>
 												</ul>
 											</div>
-										</div>
-									</div>
-									<div class="user-option">
-										<a href="#" class="user-option__header">
-											<div class="user-option__icon">
-												<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<path d="M26.25 18.75C26.25 19.413 25.9866 20.0489 25.5178 20.5178C25.0489 20.9866 24.413 21.25 23.75 21.25H8.75L3.75 26.25V6.25C3.75 5.58696 4.01339 4.95107 4.48223 4.48223C4.95107 4.01339 5.58696 3.75 6.25 3.75H23.75C24.413 3.75 25.0489 4.01339 25.5178 4.48223C25.9866 4.95107 26.25 5.58696 26.25 6.25V18.75Z" stroke="#383838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-												</svg>																																			
-											</div>
-											<span class="user-option__title">Сообщения</span>
-										</a>
-									</div>
-								</div>
-								<div class="user-menu">
-									<a href="#" class="user-menu__header">
-										<h2 class="user-menu__name">user Nickname</h2>
-										<div class="user-menu__avatar"><img src="./img/avatar.png" alt="Avatar"></div>
-										<div class="user-menu__header-arrow">
-											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M5.27418 8.27465C4.90861 8.6396 4.90861 9.22798 5.27418 9.59293L11.474 15.7821C11.765 16.0726 12.235 16.0726 12.526 15.7821L18.7258 9.59293C19.0914 9.22798 19.0914 8.6396 18.7258 8.27465C18.3602 7.9097 17.7708 7.9097 17.4053 8.27465L11.9963 13.6669L6.58726 8.2672C6.22915 7.9097 5.63229 7.9097 5.27418 8.27465Z" fill="#B4B4BF"/>
-											</svg>																							
-										</div>
-									</a>
-									<div class="sub-menu user-menu__body">
-										<div class="sub-menu__wrap">
-											<ul class="sub-menu__list">
-												<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Перейти в профиль</a></li>
-												<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Настройки профиля</a></li>
-											</ul>
-											<div class="sub-menu__separator"></div>
-											<ul class="sub-menu__list">
-												<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои группы</a></li>
-												<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои машины</a></li>
-											</ul>
-											<div class="sub-menu__separator"></div>
-											<ul class="sub-menu__list">
-												<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Выйти</a></li>
-											</ul>
 										</div>
 									</div>
 								</div>

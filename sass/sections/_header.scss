@@ -5,6 +5,21 @@
     // width: 100%;
     position: relative;
     z-index: 2;
+
+    &._auth {
+
+        & .header__sign-in {
+            display: none;
+        }
+
+        & .user-menu {
+            display: block;
+        }
+
+        & .header__top-content {
+            flex-direction: row;
+        }
+    }
 }
 
 .header__wrap {
@@ -32,7 +47,7 @@
     align-items: center;
     margin: 0 12px 0 0;
 
-    @media (max-width: $laptop) {
+    @media (max-width: 920px) {
         width: 100%;
         flex-direction: row-reverse;
         justify-content: space-between;
@@ -98,6 +113,10 @@
     margin: 0 0 0 30px;
 
     @media (max-width: $laptop) {
+        margin: 0 0 0 10px;
+    }
+
+    @media (max-width: 920px) {
         margin: 0;
     }
 }
@@ -112,7 +131,7 @@
     align-items: center;
     justify-content: flex-end;
 
-    @media (max-width: $laptop) {
+    @media (max-width: 920px) {
         display: none;
     }
 }
@@ -212,13 +231,42 @@
     }
 }
 
-// Кнопка "Продать"
-.header__sell {
-    max-width: 180px;
+.header__top-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.header__top-buttons {
+    display: flex;
+    align-items: center;
     margin: 0 0 0 20px;
+}
+
+.header__sign-in {
+    width: 180px;
+    margin: 0 20px 0 0 ;
 
     @media (max-width: $laptop-m) {
-        max-width: 130px;
+        width: 130px;
+        margin: 0 10px 0 0;
+    }
+
+    @media (max-width: $laptop) {
+        width: 100px;
+    }
+}
+
+// Кнопка "Продать"
+.header__sell {
+    width: 180px;
+
+    @media (max-width: $laptop-m) {
+        width: 130px;
+    }
+
+    @media (max-width: $laptop) {
+        width: 100px;
     }
 }
 
@@ -299,8 +347,8 @@
 
 // Меню пользователя
 .user-menu {
+    display: none;
     position: relative;
-    // padding: 0 6px 0 10px;
     margin: 0 0 0 20px;
 
     &:hover {
