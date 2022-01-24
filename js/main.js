@@ -309,6 +309,30 @@ function siteSearch() {
     }
 }
 
+// Плейсхолдер поиска
+labelSearch()
+function labelSearch() {
+    const searchElems = document.querySelectorAll('.search-area')
+
+        for (let i = 0; i < searchElems.length; i++) {
+            const parent = searchElems[i];
+            const input = parent.querySelector('input')
+            const label = parent.querySelector('label')
+
+            input.addEventListener('input', e => {
+                if (input.value != '') {
+                    label.classList.add('_change-label')
+                }
+            })
+
+            input.addEventListener('blur', e => {
+                if (input.value === '') {
+                    label.classList.remove('_change-label')
+                }
+            })
+        }
+}
+
 // Фиксация шапки
 // fixHeader()
 function fixHeader() {

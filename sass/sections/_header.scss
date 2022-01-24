@@ -29,9 +29,9 @@
 
 // Верхняя часть шапки
 .header__top {
-    padding: 8px 0;
+    // padding: 8px 0;
 
-    @media (max-width: $laptop) {
+    @media (max-width: 920px) {
         padding: 10px 0;
     }
 }
@@ -105,7 +105,7 @@
 // Логотип
 .logo {
     width: 150px;
-    height: 24px;
+    height: 25px;
     display: flex;
 }
 
@@ -176,10 +176,48 @@
             }
         }
     }
+
+    // &:focus {
+
+    //     & + .search-area__label {
+    //         font-size: 10px;
+    //         color: $text-second-d;
+    //         transform: translate(0, calc(-50% - 9px));
+    //         // display: none;
+    //     }
+    // }
+
+    // &:not(:placeholder-shown).search-area__input:not(:focus) {
+    //     // border: 1px solid $accent-primary;
+
+    //     & + .search-area__label {
+    //         font-size: 10px;
+    //         color: $text-second-d;
+    //         transform: translate(0, calc(-50% - 9px)); 
+    //         // display: none;
+    //     }
+    // }
 }
- 
+
 .search-area__label {
-    display: none;
+    // display: none;
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translate(0, -50%);
+    width: 70%;
+    font-size: 14px;
+    font-weight: 400;
+    color: $input-placeholder;
+    white-space: nowrap;
+    transition: $tr;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    pointer-events: none;
+    
+    &._change-label {
+        display: none;
+    }
 }
 
 .search-area__icon {
@@ -428,7 +466,7 @@
     //     display: none;
     // }
 
-    @media (max-width: $laptop) {
+    @media (max-width: 920px) {
         display: none;
     }
 }
@@ -472,16 +510,19 @@
 }
 
 .header-nav__link {
-    display: block;
+    height: 50px;
+    display: flex;
+    align-items: center;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     white-space: nowrap;
-    padding: 16px 0;
+    // padding: 16px 0;
 }
 
 // Местоположение
 .location {
+    position: relative;
     background: #fff;
     margin-left: 28px;
     transition: $tr;
@@ -505,11 +546,15 @@
     }
 }
 
+.location__header {
 
-.location__wrap {
+}
+
+.location__header-wrap {
+    height: 50px;
     display: flex;
     align-items: center;
-    padding: 16px 20px;
+    padding: 0 20px;
 }
 
 .locaiton__icon {
@@ -548,4 +593,74 @@
     border-radius: 50%;
     padding: 0 4px;
     margin-left: 10px;
+}
+
+// Появляющееся меню
+.location__body {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 320px;
+    transform: translate(0, 100%); 
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: $tr;
+}
+
+.location__body-wrap {
+    padding: 5px 0;
+}
+
+.location__select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 16px;
+    border-bottom: 1px solid $outline-l;
+}
+
+.location__select_cities {
+
+}
+
+.location__select-left {
+
+}
+
+.location__title {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.location__cities {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+    color: $text-accent;
+    margin: 5px 0 0 0;
+}
+
+.location__select-arrow {
+    width: 24px;
+    height: 24px;
+    display: flex;
+}
+
+.location__select_regions {
+
+}
+
+.location__body-footer {
+
+}
+
+.location__reset {
+
+}
+
+.location__save {
+
 }

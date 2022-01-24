@@ -74,8 +74,10 @@
 }
 
 .service-card__correction {
+    font-family: $ffLabel;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: .5px;
     text-transform: uppercase;
 }
 

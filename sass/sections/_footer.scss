@@ -191,7 +191,7 @@
 .footer-app__header {
     color: #fff;
     background: #383838;
-    padding: 25px;
+    padding: 24px 25px;
 }
 
 .footer-app__title {
@@ -212,7 +212,7 @@
 .footer-app__body {
     display: flex;
     align-items: center;
-    padding: 17px 25px 22px;
+    padding: 13px 25px 18px;
 
     @media (max-width: $laptop) {
         padding: 20px;

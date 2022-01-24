@@ -29,7 +29,7 @@
 							</div>
 							<div class="header__top-right">
 								<form method="GET" class="search-area search-area_header">
-									<input class="search-area__input" id="search-area-input" type="search" placeholder="Поиск по объявлениям">
+									<input class="search-area__input" id="search-area-input" type="search">
 									<label class="search-area__label" for="search-area-input">Поиск по объявлениям</label>
 									<button type="submit" class="search-area__icon"><img src="./img/icons/search.svg" alt="Поиск"></button>
 									<button class="search-area__clear">
@@ -58,8 +58,8 @@
 											<div class="sub-menu user-option__body">
 												<div class="sub-menu__wrap">
 													<ul class="sub-menu__list">
-														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои объявления</a></li>
-														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои магазины</a></li>
+														<li class="sub-menu__item"><a href="#" class="link sub-menu__link"><span class="sub-menu__text">Мои объявления</span></a></li>
+														<li class="sub-menu__item"><a href="#" class="link sub-menu__link"><span class="sub-menu__text">Мои магазины</span></a></li>
 													</ul>
 												</div>
 											</div>
@@ -76,17 +76,37 @@
 											<div class="sub-menu user-option__body">
 												<div class="sub-menu__wrap">
 													<ul class="sub-menu__list">
-														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Перейти в профиль</a></li>
-														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Настройки профиля</a></li>
-													</ul>
-													<div class="sub-menu__separator"></div>
-													<ul class="sub-menu__list">
-														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои группы</a></li>
-														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои машины</a></li>
-													</ul>
-													<div class="sub-menu__separator"></div>
-													<ul class="sub-menu__list">
-														<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Выйти</a></li>
+														<li class="sub-menu__item">
+															<a href="#" class="sub-menu__link">
+																<div class="sub-menu__icon sub-menu__icon_stroke">
+																	<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M17.8943 3.41452C17.4382 2.96607 16.8966 2.61034 16.3006 2.36763C15.7045 2.12492 15.0657 2 14.4205 2C13.7753 2 13.1364 2.12492 12.5404 2.36763C11.9443 2.61034 11.4028 2.96607 10.9467 3.41452L10.0001 4.34476L9.0535 3.41452C8.13219 2.50912 6.88262 2.00047 5.57969 2.00047C4.27676 2.00047 3.0272 2.50912 2.10589 3.41452C1.18458 4.31992 0.666992 5.5479 0.666992 6.82833C0.666992 8.10875 1.18458 9.33674 2.10589 10.2421L3.05248 11.1724L10.0001 18L16.9477 11.1724L17.8943 10.2421C18.3506 9.79391 18.7126 9.26171 18.9596 8.67596C19.2065 8.0902 19.3337 7.46237 19.3337 6.82833C19.3337 6.19428 19.2065 5.56645 18.9596 4.9807C18.7126 4.39494 18.3506 3.86275 17.8943 3.41452V3.41452Z" stroke="#383838" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+																	</svg>
+																</div>
+																<span class="sub-menu__text">Избранные Объявления</span>
+															</a>
+														</li>
+														<li class="sub-menu__item">
+															<a href="#" class="sub-menu__link">
+																<div class="sub-menu__icon sub-menu__icon_fill">
+																	<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M10.8333 19.1666H9.16667V0.833252H10.8333V19.1666ZM7.5 15.8333H4.16667V4.16659H7.5V2.49992H4.16667C3.24167 2.49992 2.5 3.24159 2.5 4.16659V15.8333C2.5 16.2753 2.67559 16.6992 2.98816 17.0118C3.30072 17.3243 3.72464 17.4999 4.16667 17.4999H7.5V15.8333ZM15.8333 5.83325V7.49992H17.5V5.83325H15.8333ZM15.8333 4.16659H17.5C17.5 3.72456 17.3244 3.30063 17.0118 2.98807C16.6993 2.67551 16.2754 2.49992 15.8333 2.49992V4.16659ZM17.5 12.4999H15.8333V14.1666H17.5V12.4999ZM15.8333 9.16659V10.8333H17.5V9.16659H15.8333ZM14.1667 2.49992H12.5V4.16659H14.1667V2.49992ZM15.8333 17.4999C16.7583 17.4999 17.5 16.7583 17.5 15.8333H15.8333V17.4999ZM14.1667 15.8333H12.5V17.4999H14.1667V15.8333Z" fill="#383838"/>
+																	</svg>																		
+																</div>
+																<span class="sub-menu__text">Сравнения</span>
+															</a>
+														</li>
+														<li class="sub-menu__item">
+															<a href="#" class="sub-menu__link">
+																<div class="sub-menu__icon sub-menu__icon_stroke">
+																	<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M15 6.66675C15 5.34067 14.4732 4.0689 13.5355 3.13121C12.5979 2.19353 11.3261 1.66675 10 1.66675C8.67392 1.66675 7.40215 2.19353 6.46447 3.13121C5.52678 4.0689 5 5.34067 5 6.66675C5 12.5001 2.5 14.1667 2.5 14.1667H17.5C17.5 14.1667 15 12.5001 15 6.66675Z" stroke="#383838" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+																		<path d="M11.4419 17.5C11.2954 17.7526 11.0851 17.9622 10.8321 18.1079C10.5791 18.2537 10.2922 18.3304 10.0003 18.3304C9.70828 18.3304 9.42142 18.2537 9.1684 18.1079C8.91539 17.9622 8.7051 17.7526 8.55859 17.5" stroke="#383838" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+																	</svg>																																			
+																</div>
+																<span class="sub-menu__text">Следить за ценой</span>
+															</a>
+														</li>
 													</ul>
 												</div>
 											</div>
@@ -115,17 +135,17 @@
 										<div class="sub-menu user-menu__body">
 											<div class="sub-menu__wrap">
 												<ul class="sub-menu__list">
-													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Перейти в профиль</a></li>
-													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Настройки профиля</a></li>
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link"><span class="sub-menu__text">Перейти в профиль</span></a></li>
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link"><span class="sub-menu__text">Настройки профиля</span></a></li>
 												</ul>
 												<div class="sub-menu__separator"></div>
 												<ul class="sub-menu__list">
-													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои группы</a></li>
-													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Мои машины</a></li>
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link"><span class="sub-menu__text">Мои группы</span></a></li>
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link"><span class="sub-menu__text">Мои машины</span></a></li>
 												</ul>
 												<div class="sub-menu__separator"></div>
 												<ul class="sub-menu__list">
-													<li class="sub-menu__item"><a href="#" class="link sub-menu__link">Выйти</a></li>
+													<li class="sub-menu__item"><a href="#" class="link sub-menu__link"><span class="sub-menu__text">Выйти</span></a></li>
 												</ul>
 											</div>
 										</div>
@@ -150,14 +170,46 @@
 									<li class="header-nav__item"><a href="#" class="link header-nav__link">Услуги</a></li>
 								</ul>
 							</div>
-							<button class="location location_several-cities">
-								<div class="location__wrap">
-									<div class="locaiton__icon"><img src="./img/icons/location.svg" alt="Местоположение"></div>
-									<span class="location__city">Краснодар</span>
-									<span class="location__distance">+<span>300</span> км</span>
-									<span class="location__quantity">+<span>4</span></span>
+							<div class="location location_several-cities">
+								<div class="location__header">
+									<div class="location__header-wrap">
+										<div class="locaiton__icon"><img src="./img/icons/location.svg" alt="Местоположение"></div>
+										<span class="location__city">Краснодар</span>
+										<span class="location__distance">+<span>300</span> км</span>
+										<span class="location__quantity">+<span>4</span></span>
+									</div>
 								</div>
-							</butt>
+								<div class="location__body">
+									<div class="location__body-wrap">
+										<button class="location__select location__select_cities">
+											<div class="location__select-left">
+												<h3 class="location__title">Страна поиска</h3>
+												<p class="location__cities"><span>Россия</span></p>
+											</div>
+											<div class="location__select-arrow">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
+												</svg>													
+											</div>
+										</button>
+										<button class="location__select location__select_regions">
+											<div class="location__select-left">
+												<h3 class="location__title">Регион, город, населённый пункт</h3>
+												<p class="location__cities"><span>Краснодар</span></p>
+											</div>
+											<div class="location__select-arrow">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
+												</svg>													
+											</div>
+										</button>
+										<div class="location__body-footer">
+											<button class="location__reset">Сбросить</button>
+											<button class="location__save">Сохранить</button>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -783,10 +835,9 @@
 		<section class="section s-shops">
 			<div class="container">
 				<div class="s-shops__wrap">
-					<a href="#" class="section__header s-shops__header">
+					<div class="section__header s-shops__header">
 						<h2 class="section-title s-shops__title">Магазины</h2>
-						<div class="section-arrow s-shops__arrow"><img src="./img/icons/s_arrow.svg" alt=""></div>
-					</a>
+					</div>
 					<div class="s-shops__body">
 						<div class="s-shops__list">
 							<a href="#" class="shop-card">

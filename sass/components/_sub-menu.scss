@@ -39,13 +39,56 @@
 
 .sub-menu__link {
     width: 100%;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+
+            & .sub-menu__icon {
+
+                &_fill {
+
+                    & svg path {
+                        fill: $text-accent;
+                    }
+                }
+
+                &_stroke {
+
+                    & svg path {
+                        stroke: $text-accent;
+                    }
+                }
+            }
+            
+            & .sub-menu__text {
+                color: $text-accent;
+            }
+        }
+    }
+}
+
+.sub-menu__icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    margin: 0 20px 0 0;
+
+    & svg path {
+        transition: $tr;
+    }
+}
+
+.sub-menu__text {
     font-size: 12px;
     line-height: 1;
     text-transform: uppercase;
     text-align: left;
     white-space: nowrap;
-    padding: 10px 25px;
+    transition: $tr;
 }
 
 .sub-menu__separator {

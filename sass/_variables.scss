@@ -2,12 +2,14 @@
 :root {
     --ffMain: 'Montserrat', sans-serif;
     --ffHeader: 'Akzidenz Grotest Pro', sans-serif;
+    --ffLabel: 'Oswald', sans-serif;
     --tr: .3s;  // Плавность перехода
     --radius: 10px; // border-radius
 }
 
 $ffMain: var(--ffMain);
 $ffHeader: var(--ffHeader);
+$ffLabel: var(--ffLabel);
 $tr: var(--tr);
 $minHover: 769px; // Минимальное разрешения экрана для hover-эффекта
 $radius: var(--radius);
