@@ -1,0 +1,47 @@
+.rangeslider {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    height: 25px;
+    width: 100%
+}
+
+.rangeslider__fill,
+.rangeslider__fill__bg,
+.rangeslider__handle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    z-index: 2;
+    background: $btn-primary-default;
+    border-radius: 10px;
+    will-change: width
+}
+
+.rangeslider__handle {
+    will-change: width, height, top;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    z-index: 3;
+    cursor: pointer;
+    box-shadow: 0px 7px 20px rgba(57, 145, 255, 0.4);
+    border-radius: 50%;
+    -webkit-transition: width .1s ease-in-out, height .1s ease-in-out, top .1s ease-in-out;
+    transition: width .1s ease-in-out, height .1s ease-in-out, top .1s ease-in-out
+}
+
+.rangeslider__handle:active,
+.rangeslider__handle:hover {
+    background: $btn-primary-pressed;
+}
+
+.rangeslider__fill__bg {
+    background: $btn-primary-disabled;
+    width: 100%
+}
+
+.rangeslider--disabled {
+    opacity: .4
+}

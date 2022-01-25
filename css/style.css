@@ -81,7 +81,7 @@
   --icon-blue-l: #467EF3;
   --outline-d: #B4B4BF;
   --outline-l: #ECECEC;
-  --bg-page: bg-main;
+  --bg-page: #F6F8FD;
   --bg-second-l: #F6F8FD;
   --bg-modal: rgba(0, 0, 0, .3);
   --accent-hover: #44BD99;
@@ -1503,8 +1503,24 @@ body._lock {
   margin: 0 20px 0 0;
 }
 
+.user-option__header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .user-option__icon {
-  height: 30px;
+  height: 28px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1785,9 +1801,6 @@ body._lock {
       -ms-transform: translate(0, 100%);
           transform: translate(0, 100%);
   background: #fff;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
   -webkit-box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
           box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
   -webkit-border-radius: 0 0 5px 5px;
@@ -1890,43 +1903,6 @@ body._lock {
 
 .location__radius-range {
   width: 100%;
-}
-
-.location__radius-range input[type="range"] {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 3px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  background: var(--btn-second-default);
-  outline: none;
-  -webkit-transition: .2s;
-  -webkit-transition: opacity .2s;
-  -o-transition: opacity .2s;
-  transition: opacity .2s;
-  padding: 0;
-}
-
-.location__radius-range input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  background: var(--btn-primary-default);
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
-  -webkit-box-shadow: 0px 7px 20px rgba(57, 145, 255, 0.4);
-          box-shadow: 0px 7px 20px rgba(57, 145, 255, 0.4);
-  cursor: pointer;
-}
-
-.location__radius-range input[type="range"]::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  background: var(--btn-primary-default);
-  border-radius: 100%;
-  box-shadow: 0px 7px 20px rgba(57, 145, 255, 0.4);
-  cursor: pointer;
 }
 
 .location__body-footer {
@@ -6186,6 +6162,58 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .swiper-btn-next:hover::after {
     border-left: 15px solid #fff;
   }
+}
+
+.rangeslider {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  height: 25px;
+  width: 100%;
+}
+
+.rangeslider__fill,
+.rangeslider__fill__bg,
+.rangeslider__handle {
+  display: block;
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  z-index: 2;
+  background: var(--btn-primary-default);
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  will-change: width;
+}
+
+.rangeslider__handle {
+  will-change: width, height, top;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  z-index: 3;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 7px 20px rgba(57, 145, 255, 0.4);
+          box-shadow: 0px 7px 20px rgba(57, 145, 255, 0.4);
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  -webkit-transition: width .1s ease-in-out, height .1s ease-in-out, top .1s ease-in-out;
+  -o-transition: width .1s ease-in-out, height .1s ease-in-out, top .1s ease-in-out;
+  transition: width .1s ease-in-out, height .1s ease-in-out, top .1s ease-in-out;
+}
+
+.rangeslider__handle:active,
+.rangeslider__handle:hover {
+  background: var(--btn-primary-pressed);
+}
+
+.rangeslider__fill__bg {
+  background: var(--btn-primary-disabled);
+  width: 100%;
+}
+
+.rangeslider--disabled {
+  opacity: .4;
 }
 
 /* Стили анимации пульсации кругов */

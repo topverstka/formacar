@@ -29,8 +29,8 @@
 							</div>
 							<div class="header__top-right">
 								<form method="GET" class="search-area search-area_header">
-									<input class="search-area__input" id="search-area-input" type="search">
-									<label class="search-area__label" for="search-area-input">Поиск по объявлениям</label>
+									<input class="search-area__input" id="search-site" type="search">
+									<label class="search-area__label" for="search-site">Поиск по объявлениям</label>
 									<button type="submit" class="search-area__icon"><img src="./img/icons/search.svg" alt="Поиск"></button>
 									<button class="search-area__clear">
 										<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -182,36 +182,36 @@
 								<div class="location__body">
 									<div class="location__body-wrap">
 										<button class="location__select location__select_cities">
-											<div class="location__select-left">
+											<span class="location__select-left">
 												<h3 class="location__title">Страна поиска</h3>
 												<p class="location__cities"><span>Россия</span></p>
 												<span class="location__empty">Выбрать страну поиска</span>
-											</div>
-											<div class="location__select-arrow">
+											</span>
+											<span class="location__select-arrow">
 												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
 												</svg>													
-											</div>
+											</span>
 										</button>
 										<button class="location__select location__select_regions">
-											<div class="location__select-left">
+											<span class="location__select-left">
 												<h3 class="location__title">Регион, город, населённый пункт</h3>
 												<p class="location__cities"><span>Краснодар</span></p>
-											</div>
-											<div class="location__select-arrow">
+											</span>
+											<span class="location__select-arrow">
 												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
 												</svg>													
-											</div>
+											</span>
 										</button>
 										<div class="location__radius">
 											<div class="location__radius-header">
 												<h3 class="location__radius-title">Радиус поиска</h3>
-												<span class="location__radius-value"><span>300</span> км</span>
+												<span class="location__radius-value"><span>1</span> км</span>
 											</div>
 											<div class="location__radius-body">
 												<div class="location__radius-range">
-													<input type="range" min="1" max="1000" value="1">
+													<input type="range" min="1" max="1000" value="1" step="1">
 												</div>
 											</div>
 										</div>
@@ -1132,8 +1132,8 @@
 				<div class="modal-regions__body">
 					<div class="modal-regions__search">
 						<form method="GET" class="search-area search-area_regions">
-							<input class="search-area__input" id="search-area-input" type="search">
-							<label class="search-area__label" for="search-area-input">Страна</label>
+							<input class="search-area__input" id="search-cities" type="search">
+							<label class="search-area__label" for="search-cities">Страна</label>
 							<button type="submit" class="search-area__icon"><img src="./img/icons/search.svg" alt="Поиск"></button>
 							<button class="search-area__clear">
 								<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1145,19 +1145,19 @@
 					</div>
 					<div class="modal-regions__one-country">
 						<button class="modal-regions__country">
-							<div class="modal-regions__country-wrap">
+							<span class="modal-regions__country-wrap">
 								<span class="modal-regions__country-text">Азербайджан</span>
 								<div class="modal-regions__country-arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
 									</svg>
 								</div>
-							</div>
+							</span>
 						</button>
 						<h3 class="modal-regions__more-country-title">Другие страны</h3>
 						<h3 class="modal-regions__more-regions-title">Все регионы</h3>
 					</div>
-					<div class="modal-regions__countries" style="display: none;">
+					<div class="modal-regions__countries">
 						<div class="regions-checkbox regions-checkbox_select-all">
 							<input class="regions-checkbox__input" type="checkbox">
 							<div class="regions-checkbox__wrap">
@@ -1442,6 +1442,7 @@
 
 	<!-- Подключение скриптов -->
 	<script src="./js/libs/swiper-bundle.min.js"></script>
+	<script src="./js/libs/rangeslider-js.min.js"></script>
 	<script src="./js/main.js"></script>
 </body>
 
