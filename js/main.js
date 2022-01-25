@@ -23,6 +23,24 @@ function removeAll(items,itemClass) {
     }
 }
 
+// Получаем все соседние элементы
+function getSiblings(elem) {
+    var siblings = [];
+    var sibling = elem;
+    while (sibling.previousSibling) {
+        sibling = sibling.previousSibling;
+        sibling.nodeType == 1 && siblings.push(sibling);
+    }
+
+    sibling = elem;
+    while (sibling.nextSibling) {
+        sibling = sibling.nextSibling;
+        sibling.nodeType == 1 && siblings.push(sibling);
+    }
+
+    return siblings;
+}
+
 function bodyLock(con) {
     if (con === true) {
         body.classList.add('_lock');
@@ -314,24 +332,37 @@ labelSearch()
 function labelSearch() {
     const searchElems = document.querySelectorAll('.search-area')
 
-        for (let i = 0; i < searchElems.length; i++) {
-            const parent = searchElems[i];
-            const input = parent.querySelector('input')
-            const label = parent.querySelector('label')
+    for (let i = 0; i < searchElems.length; i++) {
+        const parent = searchElems[i];
+        const input = parent.querySelector('input')
+        const label = parent.querySelector('label')
 
-            input.addEventListener('input', e => {
-                if (input.value != '') {
-                    label.classList.add('_change-label')
-                }
-            })
+        input.addEventListener('input', e => {
+            if (input.value != '') {
+                label.classList.add('_change-label')
+            }
+        })
 
-            input.addEventListener('blur', e => {
-                if (input.value === '') {
-                    label.classList.remove('_change-label')
-                }
-            })
-        }
+        input.addEventListener('blur', e => {
+            if (input.value === '') {
+                label.classList.remove('_change-label')
+            }
+        })
+    }
 }
+
+changeRangeInputCities()
+function changeRangeInputCities() {
+    const block = find('.location__radius')
+    const elemValue = block.querySelector('.location__radius-value span')
+    const range = block.querySelector('.location__radius-range input')
+
+    range.addEventListener('input', e => {
+        elemValue.innerText = range.value
+    })
+}
+
+
 
 // Фиксация шапки
 // fixHeader()
@@ -472,9 +503,11 @@ const swiper = new Swiper('.recent-card__slider', {
             const modal = modalElems[i];
             const closeThisModal = modal.querySelector('.modal__close')
     
-            closeThisModal.addEventListener('click', () => {
-                closeModal(modal)
-            })
+            if (closeThisModal) {
+                closeThisModal.addEventListener('click', () => {
+                    closeModal(modal)
+                })
+            }
         }
     }
 
@@ -535,4 +568,94 @@ function changeLang(e) {
     find('.modal-lang__link._active').classList.remove('_active')
     target.classList.add('_active')
     closeModal()
+}
+
+// функционал чекбоксов
+selectAllModalRegions()
+function selectAllModalRegions() {
+    const mRegions = find('#regions')
+    const selectAll = mRegions.querySelector('.regions-checkbox_select-all input')
+    const checkboxElems = mRegions.querySelectorAll('.regions-checkbox input:not(.regions-checkbox_select-all input)')
+
+    selectAll.addEventListener('change', e => {
+        if (selectAll.checked) {
+            for (let i = 0; i < checkboxElems.length; i++) {
+                const checkbox = checkboxElems[i];
+                checkbox.checked = true
+            }
+        }
+        else {
+            for (let i = 0; i < checkboxElems.length; i++) {
+                const checkbox = checkboxElems[i];
+                checkbox.checked = false
+            }
+        }
+    })
+
+    for (let i = 0; i < checkboxElems.length; i++) {
+        const checkbox = checkboxElems[i];
+        
+        checkbox.addEventListener('click', e => {
+            if (selectAll.checked) {
+                selectAll.checked = false
+            }
+        })
+    }
+}
+
+// Выбор региона
+selectRegion()
+function selectRegion() {
+    const btn = find('.modal-regions__country')
+    const parent = btn.parentElement
+
+    btn.addEventListener('click', e => {
+        parent.classList.toggle('_regions')
+    })
+}
+
+// Аккордеон
+accFAQ()
+function accFAQ() {
+  const hiddenSiblingAcc = true // Скрывать соседние аккордеоны. false если не нужно.
+  const accHeaderElems = document.querySelectorAll('.acc-open')
+  
+  for (let i = 0; i < accHeaderElems.length; i++) {
+    const accHeader = accHeaderElems[i]
+    
+    accHeader.addEventListener('click', e => {
+      const container = (!accHeader.closest('.acc-body')) ? accHeader.parentElement.parentElement : accHeader.closest('.acc-body')
+      const parent = accHeader.closest('.modal-regions__acc')
+      const accBody = accHeader.closest('.modal-regions__acc-header').nextElementSibling
+
+      parent.classList.toggle('_show') 
+      accHeader.classList.toggle('_show') 
+      
+      if (accBody.style.maxHeight) { 
+        accBody.style.maxHeight = null
+        parent.classList.remove('_show') 
+        accHeader.classList.remove('_show') 
+      }
+      else {
+        const adjacentElems = getSiblings(parent)
+        console.log(parent, adjacentElems)
+        
+        if (hiddenSiblingAcc) {
+          for (let i = 0; i < adjacentElems.length; i++) {
+            const elem = adjacentElems[i]
+            const elemHeader = elem.querySelector('.acc-open')
+            const elemBody = elem.querySelector('.acc-body')
+            console.log(elem, elemBody  )
+
+            elem.classList.remove('_show') 
+            elemHeader.classList.remove('_show')  
+            elemBody.style.maxHeight = null
+          }
+        }
+        
+        accBody.style.maxHeight = accBody.scrollHeight + 'px'
+        container.style.maxHeight = parseInt(container.scrollHeight) + accBody.scrollHeight + 'px'
+      }
+    })
+  }
 }

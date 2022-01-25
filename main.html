@@ -185,6 +185,7 @@
 											<div class="location__select-left">
 												<h3 class="location__title">Страна поиска</h3>
 												<p class="location__cities"><span>Россия</span></p>
+												<span class="location__empty">Выбрать страну поиска</span>
 											</div>
 											<div class="location__select-arrow">
 												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -203,9 +204,20 @@
 												</svg>													
 											</div>
 										</button>
+										<div class="location__radius">
+											<div class="location__radius-header">
+												<h3 class="location__radius-title">Радиус поиска</h3>
+												<span class="location__radius-value"><span>300</span> км</span>
+											</div>
+											<div class="location__radius-body">
+												<div class="location__radius-range">
+													<input type="range" min="1" max="1000" value="1">
+												</div>
+											</div>
+										</div>
 										<div class="location__body-footer">
-											<button class="location__reset">Сбросить</button>
-											<button class="location__save">Сохранить</button>
+											<button class="location__body-footer-btn location__reset">Сбросить</button>
+											<button class="location__body-footer-btn location__save">Сохранить</button>
 										</div>
 									</div>
 								</div>
@@ -1075,9 +1087,9 @@
 	</div>
 
 	<!-- Модальные окна -->
-	<div class="modal modal-lang" id="lang">
-		<div class="modal__wrap modal-lang__wrap">
-			<div class="modal__popup modal-lang__popup">
+	<div class="modal modal-right modal-lang" id="lang">
+		<div class="modal__wrap modal-right__wrap modal-lang__wrap">
+			<div class="modal__popup modal-right__popup modal-lang__popup">
 				<div class="modal-lang__header">
 					<button class="modal__close modal-lang__arrow">
 						<svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1105,6 +1117,324 @@
 						<li class="modal-lang__item"><a href="#" class="modal-lang__link">Ελληνικά</a></li>
 						<li class="modal-lang__item"><a href="#" class="modal-lang__link _active">Русский</a></li>
 					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal modal-right modal-regions" id="regions">
+		<div class="modal__wrap modal-right__wrap modal-regions__wrap">
+			<div class="modal__popup modal-right__popup modal-regions__popup">
+				<div class="modal-regions__header">
+					<h2 class="modal-regions__title">Страна поиска</h2>
+					<button class="modal-regions__reset _show">Сбросить</button>
+				</div>
+				<div class="modal-regions__body">
+					<div class="modal-regions__search">
+						<form method="GET" class="search-area search-area_regions">
+							<input class="search-area__input" id="search-area-input" type="search">
+							<label class="search-area__label" for="search-area-input">Страна</label>
+							<button type="submit" class="search-area__icon"><img src="./img/icons/search.svg" alt="Поиск"></button>
+							<button class="search-area__clear">
+								<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M10.5 0C4.97 0 0.5 4.47 0.5 10C0.5 15.53 4.97 20 10.5 20C16.03 20 20.5 15.53 20.5 10C20.5 4.47 16.03 0 10.5 0Z" fill="#B4B4BF"/>
+									<path d="M14.0833 13.5835C13.7583 13.9085 13.2333 13.9085 12.9083 13.5835L10.4999 11.1752L8.09159 13.5835C7.76659 13.9085 7.24159 13.9085 6.91659 13.5835C6.76055 13.4278 6.67285 13.2164 6.67285 12.996C6.67285 12.7756 6.76055 12.5642 6.91659 12.4085L9.32492 10.0002L6.91659 7.59185C6.76055 7.43615 6.67285 7.22478 6.67285 7.00435C6.67285 6.78391 6.76055 6.57254 6.91659 6.41685C7.24159 6.09185 7.76659 6.09185 8.09159 6.41685L10.4999 8.82518L12.9083 6.41685C13.2333 6.09185 13.7583 6.09185 14.0833 6.41685C14.4083 6.74185 14.4083 7.26685 14.0833 7.59185L11.6749 10.0002L14.0833 12.4085C14.3999 12.7252 14.3999 13.2585 14.0833 13.5835Z" fill="white"/>
+								</svg>											
+							</button>
+						</form>
+					</div>
+					<div class="modal-regions__one-country">
+						<button class="modal-regions__country">
+							<div class="modal-regions__country-wrap">
+								<span class="modal-regions__country-text">Азербайджан</span>
+								<div class="modal-regions__country-arrow">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
+									</svg>
+								</div>
+							</div>
+						</button>
+						<h3 class="modal-regions__more-country-title">Другие страны</h3>
+						<h3 class="modal-regions__more-regions-title">Все регионы</h3>
+					</div>
+					<div class="modal-regions__countries" style="display: none;">
+						<div class="regions-checkbox regions-checkbox_select-all">
+							<input class="regions-checkbox__input" type="checkbox">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Выбрать все</span>
+									<span class="regions-checkbox__label">Select all</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Австралия</span>
+									<span class="regions-checkbox__label">Australia</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Австрия</span>
+									<span class="regions-checkbox__label">Österreich</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Автономное Силезское воеводство</span>
+									<span class="regions-checkbox__label">Województwo śląskie</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Азербайджан</span>
+									<span class="regions-checkbox__label">Azərbaycan</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Албания</span>
+									<span class="regions-checkbox__label">Shqipëria</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Америка́нское Само́а</span>
+									<span class="regions-checkbox__label">American Samoa</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Ангилья</span>
+									<span class="regions-checkbox__label">Anguilla</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Англия</span>
+									<span class="regions-checkbox__label">England</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Австралийский Союз</span>
+									<span class="regions-checkbox__label">Australia</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Андорра</span>
+									<span class="regions-checkbox__label">Andorra</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Антигуа и Барбуда</span>
+									<span class="regions-checkbox__label">Antigua and Barbuda</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Аргентина</span>
+									<span class="regions-checkbox__label">Argentina</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+						<div class="regions-checkbox">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралия">
+							<div class="regions-checkbox__wrap">
+								<div class="regions-checkbox__content">
+									<span class="regions-checkbox__title">Армения</span>
+									<span class="regions-checkbox__label">Armenia</span>
+								</div>
+								<div class="regions-checkbox__box"></div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-regions__regions">
+						<div class="modal-regions__acc">
+							<div class="modal-regions__acc-header">
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<button class="acc-open regions-checkbox__arrow">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M5.27418 8.27465C4.90861 8.6396 4.90861 9.22798 5.27418 9.59293L11.474 15.7821C11.765 16.0726 12.235 16.0726 12.526 15.7821L18.7258 9.59293C19.0914 9.22798 19.0914 8.6396 18.7258 8.27465C18.3602 7.9097 17.7708 7.9097 17.4053 8.27465L11.9963 13.6669L6.58726 8.2672C6.22915 7.9097 5.63229 7.9097 5.27418 8.27465Z" fill="#B4B4BF"/>
+											</svg>										
+										</button>
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Алтайский край</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+							</div>
+							<div class="acc-body modal-regions__acc-body">
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Архангельск</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Архангельск</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Архангельск</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Архангельск</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Архангельск</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-regions__acc">
+							<div class="modal-regions__acc-header">
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<button class="acc-open regions-checkbox__arrow">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M5.27418 8.27465C4.90861 8.6396 4.90861 9.22798 5.27418 9.59293L11.474 15.7821C11.765 16.0726 12.235 16.0726 12.526 15.7821L18.7258 9.59293C19.0914 9.22798 19.0914 8.6396 18.7258 8.27465C18.3602 7.9097 17.7708 7.9097 17.4053 8.27465L11.9963 13.6669L6.58726 8.2672C6.22915 7.9097 5.63229 7.9097 5.27418 8.27465Z" fill="#B4B4BF"/>
+											</svg>										
+										</button>
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Алтайский край</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+							</div>
+							<div class="acc-body modal-regions__acc-body">
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Архангельск</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Архангельск</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Архангельск</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Архангельск</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+								<div class="regions-checkbox">
+									<input class="regions-checkbox__input" type="checkbox">
+									<div class="regions-checkbox__wrap">
+										<div class="regions-checkbox__content">
+											<span class="regions-checkbox__title">Архангельск</span>
+										</div>
+										<div class="regions-checkbox__box"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="modal-regions__apply-block">
+						<button class="btn modal-regions__apply">Применить</button>
+					</div>
 				</div>
 			</div>
 		</div>

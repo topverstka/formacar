@@ -1,6 +1,6 @@
 .modal {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -98,14 +98,14 @@
 
 }
 
-.modal-lang__wrap {
+.modal-right__wrap {
     align-items: flex-start;
     justify-content: flex-end;
     padding: 0;
     transform: translate(100%, 0);
 }
 
-.modal-lang__popup {
+.modal-right__popup {
     max-width: 320px;
     width: 100%;
     height: 100vh;
@@ -176,5 +176,150 @@
             color: $text-accent;
             background: #EEF1F9;
         }
+    }
+}
+
+// Регионы и страны
+.modal-regions__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $bg-second-l;
+    padding: 18px;
+}
+
+.modal-regions__title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.modal-regions__reset {
+    display: none;
+    font-size: 14;
+    font-weight: 600;
+    color: $text-accent;
+
+    &._show {
+        display: block;
+    }
+}
+
+.modal-regions__body {
+    background: #fff;
+}
+
+.modal-regions__search {
+    padding: 20px 16px;
+}
+
+// Выбран один город
+.modal-regions__one-country {
+
+    &._regions {
+
+        & .modal-regions__more-regions-title {
+            display: block;
+        }
+
+        & .modal-regions__more-country-title {
+            display: none;
+        }
+
+        & .modal-regions__country-arrow {
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+.modal-regions__country {
+    position: relative;
+    width: 100%;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        max-width: 284px;
+        width: 100%;
+        height: 1px;
+        background: $outline-l;
+    }
+}
+
+.modal-regions__country-wrap {
+    // width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 18px;
+}
+
+.modal-regions__country-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: $text-accent;
+}
+
+.modal-regions__country-arrow {
+    width: 24px;
+    height: 24px;
+    transition: $tr;
+}
+
+.modal-regions__more-country-title,
+.modal-regions__more-regions-title {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 18px 10px;
+}
+
+.modal-regions__more-country-title {
+
+}
+
+.modal-regions__more-regions-title {
+    display: none;
+}
+
+// Чекбоксы со странами
+.modal-regions__countries,
+.modal-regions__regions {
+    margin: 0 0 30px 0;
+}
+
+.modal-regions__apply-block {
+    position: sticky;
+    bottom: 20px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-regions__apply {
+    max-width: 292px;
+    width: 100%;
+    box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
+    // filter: drop-shadow(0px 5px 20px rgba(70, 126, 243, 0.5));
+}
+
+// Аккордеон
+.modal-regions__acc-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: $tr;
+
+    & .regions-checkbox {
+        margin: 0 0 0 18px;
+    }
+}
+
+.regions-checkbox__arrow {
+    transition: $tr;
+
+    &._show {
+        transform: rotate(180deg);
     }
 }

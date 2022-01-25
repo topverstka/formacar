@@ -51,13 +51,14 @@ $mobile: 320px;
 
     // Иконки
     --icon-primary-l: #383838;
+    --icon-second: #ACACAC;
     --icon-blue-l: #467EF3;
 
     // Обводка
     --outline-d: #B4B4BF;
     --outline-l: #ECECEC;
 
-    --bg-page: #F6F8FD;
+    --bg-page: bg-main;
     --bg-second-l: #F6F8FD;
     --bg-modal: rgba(0, 0, 0, .3);
 
@@ -88,6 +89,7 @@ $accent-primary: var(--accent-primary);
 $accent-second: var(--accent-second);
 
 $icon-primary-l: var(--icon-primary-l);
+$icon-second: var(--icon-second);
 $icon-blue-l: var(--icon-blue-l);
 
 $outline-d: var(--outline-d);
