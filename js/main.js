@@ -604,23 +604,292 @@ function selectAllModalRegions() {
                 checkbox.checked = false
             }
         }
+
+        selectedCountry()
     })
 
     for (let i = 0; i < checkboxElems.length; i++) {
         const checkbox = checkboxElems[i];
         
         checkbox.addEventListener('click', e => {
+            let cond = true
+
             if (selectAll.checked) {
                 selectAll.checked = false
             }
+
+            for (let i = 0; i < checkboxElems.length; i++) {
+                const checkbox = checkboxElems[i];
+                
+                if (!checkbox.checked) {
+                    cond = false
+                }
+            }
+
+            if (cond === true) {
+                selectAll.checked = true
+            }
+
+            selectedCountry()
         })
     }
 }
 
+// Выбранные чекбоксы
+function selectedCountry() {
+    let selectedC = findAll('.modal-regions__countries .regions-checkbox input:checked:not(.modal-regions__countries .regions-checkbox_select-all input:checked)')
+    const oneCountry = find('.modal-regions__one-country')
+    const chipsBlock = find('.modal-regions__chips')
+    const chipsList = find('.modal-regions__chips-list')
+    const showAll = find('.modal-regions__show-all')
+
+    if (selectedC.length === 1) {
+        oneCountry.classList.add('_show')
+        oneCountry.querySelector('.modal-regions__one-country-text').innerText = selectedC[0].value
+        
+        // Сохраняем страны в localStorage
+        localStorage.setItem('country', JSON.stringify(Array(selectedC[0].value)))
+    }
+    else {
+        oneCountry.classList.remove('_show')
+    }
+
+    if (selectedC.length > 1) {
+        let arrC = []
+        chipsBlock.classList.add('_show')
+        chipsList.innerHTML = ''
+
+        for (let i = 0; i < selectedC.length; i++) {
+            const checkbox = selectedC[i];
+
+            if (i < 5 && showAll.classList.contains('_text-show') || showAll.classList.contains('_text-hide')) {
+                const chips = document.createElement('button')
+                
+                chips.classList.add('regions-chips')
+                chips.innerHTML = `<span class="regions-chips__title">${checkbox.value}</span>`
+                
+                chipsList.append(chips)
+                arrC.push(checkbox.value)
+            }
+        }
+
+        // Сохраняем страны в localStorage
+        localStorage.setItem('country', JSON.stringify(arrC))
+
+        if (selectedC.length > 5) {
+            showAll.querySelector('.modal-regions__show-all-quantity span').innerText = selectedC.length - 5
+            showAll.classList.add('_show')
+        }
+        else {
+            showAll.classList.remove('_show')
+        }
+
+        const chipsElems = chipsList.querySelectorAll('.regions-chips')
+
+        for (let i = 0; i < chipsElems.length; i++) {
+            const chips = chipsElems[i];
+
+            chips.addEventListener('click', e => {
+                chips.remove()
+                selectedC[i].checked = false
+
+                if (chipsList.querySelectorAll('.regions-chips').length === 0) {
+                    chipsBlock.classList.remove('_show')
+                }
+
+                selectedCountry()
+            })
+        }
+    }
+    else {
+        chipsBlock.classList.remove('_show')
+        chipsList.innerHTML = ''
+    }
+}
+
+// Показать все карточки городов
+showAllCities()
+function showAllCities() {
+    const showAll = find('.modal-regions__show-all')
+
+    showAll.addEventListener('click', e => {
+        if (showAll.classList.contains('_text-show')) {
+            showAll.classList.add('_text-hide')
+            showAll.classList.remove('_text-show')
+        }
+        else {
+            showAll.classList.add('_text-show')
+            showAll.classList.remove('_text-hide')
+        }
+    
+        selectedCountry()
+        selectedRegions()
+    })
+}
+
+// Выбрать регионы страны
+selectRegions()
+function selectRegions() {
+    const btn = find('.modal-regions__one-country')
+    const blockC = find('.modal-regions__countries')
+    const blockR = find('.modal-regions__regions')
+
+    btn.addEventListener('click', e => {
+        btn.classList.toggle('_active')
+
+        if (btn.classList.contains('_active')) {
+            blockC.classList.remove('_show')
+            blockR.classList.add('_show')
+        }
+        else {
+            blockC.classList.add('_show')
+            blockR.classList.remove('_show')
+        }
+    })
+}
+
+// Чекбоксы регионов
+checkboxesRegions()
+function checkboxesRegions() {
+    const accElems = findAll('.modal-regions__acc')
+
+    for (let i = 0; i < accElems.length; i++) {
+        const acc = accElems[i];
+        const selectAll = acc.querySelector('.regions-checkbox input')
+        const checkboxElems = acc.querySelectorAll('.modal-regions__acc-body .regions-checkbox input')
+        
+        selectAll.addEventListener('click', e => {
+
+            if (selectAll.checked === true) {
+                for (let i = 0; i < checkboxElems.length; i++) {                    
+                    checkboxElems[i].checked = true
+                }
+            }
+            else {
+                for (let i = 0; i < checkboxElems.length; i++) {                    
+                    checkboxElems[i].checked = false
+                }
+            }
+
+            selectedRegions()
+        })
+
+        for (let i = 0; i < checkboxElems.length; i++) {
+            const checkbox = checkboxElems[i];
+            
+            checkbox.addEventListener('click', e => {
+
+                for (let i = 0; i < checkboxElems.length; i++) {
+                    const checkbox = checkboxElems[i];
+                    let cond = true
+
+                    if (checkbox.checked === false) cond = false
+
+                    if (cond === false) selectAll.checked = false
+                }
+
+                selectedRegions()
+            })
+        }
+    }
+}
+
+// Выбранные регионы
+function selectedRegions() {
+    const selectedC = findAll('.modal-regions__acc-body .regions-checkbox input:checked')
+    const chipsBlock = find('.modal-regions__chips')
+    const chipsList = find('.modal-regions__chips-list')
+    const showAll = find('.modal-regions__show-all')
+
+    if (selectedC.length > 0) {
+        let arrC = []
+        chipsBlock.classList.add('_show')
+        chipsList.innerHTML = ''
+
+        for (let i = 0; i < selectedC.length; i++) {
+            const checkbox = selectedC[i];
+            
+            if (i < 5 && showAll.classList.contains('_text-show') || showAll.classList.contains('_text-hide')) {
+                const chips = document.createElement('button')
+                
+                chips.classList.add('regions-chips')
+                chips.innerHTML = `<span class="regions-chips__title">${checkbox.value}</span>`
+                
+                chipsList.append(chips)
+            }
+
+            arrC.push(checkbox.value)
+        }
+
+        // Сохраняем города в localStorage
+        localStorage.setItem('regions', JSON.stringify(arrC))
+    }
+    else {
+        chipsBlock.classList.remove('_show')
+        chipsList.innerHTML = ''
+    }
+    
+    if (selectedC.length > 5) {
+        showAll.querySelector('.modal-regions__show-all-quantity span').innerText = selectedC.length - 5
+        showAll.classList.add('_show')
+    }
+    else {
+        showAll.classList.remove('_show')
+    }
+
+    const chipsElems = chipsList.querySelectorAll('.regions-chips')
+
+    for (let i = 0; i < chipsElems.length; i++) {
+        const chips = chipsElems[i];
+
+        chips.addEventListener('click', e => {
+            chips.remove()
+            selectedC[i].checked = false
+            selectedC[i].closest('.modal-regions__acc').querySelector('input').checked = false
+
+            if (chipsList.querySelectorAll('.regions-chips').length === 0) {
+                chipsBlock.classList.remove('_show')
+            }
+
+            selectedRegions()
+        })
+    }
+}
+
+// Применить настройки городов и регионов
+modalRegionsApply()
+function modalRegionsApply() {
+    const btn = find('.modal-regions__apply')
+
+    btn.addEventListener('click', e => {
+        closeModal()
+    })
+}
+
+// Показать все карточки городов
+// showAllRegions()
+// function showAllRegions() {
+//     const showAllReg = find('.modal-regions__show-all')
+
+//     showAllReg.addEventListener('click', e => {
+//         console.log(showAllReg)
+//         if (showAllReg.classList.contains('_text-show')) {
+//             showAllReg.classList.add('_text-hide')
+//             showAllReg.classList.remove('_text-show')
+//         }
+//         else {
+//             showAllReg.classList.add('_text-show')
+//             showAllReg.classList.remove('_text-hide')
+//         }
+    
+//         selectedRegions()
+//     })
+// }
+
 // Выбор региона
 selectRegion()
 function selectRegion() {
-    const btn = find('.modal-regions__country')
+    const btn = find('.modal-regions__one-country')
     const parent = btn.parentElement
 
     btn.addEventListener('click', e => {
@@ -631,7 +900,7 @@ function selectRegion() {
 // Аккордеон
 accFAQ()
 function accFAQ() {
-  const hiddenSiblingAcc = true // Скрывать соседние аккордеоны. false если не нужно.
+  const hiddenSiblingAcc = false // Скрывать соседние аккордеоны. false если не нужно.
   const accHeaderElems = document.querySelectorAll('.acc-open')
   
   for (let i = 0; i < accHeaderElems.length; i++) {
@@ -652,7 +921,6 @@ function accFAQ() {
       }
       else {
         const adjacentElems = getSiblings(parent)
-        console.log(parent, adjacentElems)
         
         if (hiddenSiblingAcc) {
           for (let i = 0; i < adjacentElems.length; i++) {
