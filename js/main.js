@@ -648,7 +648,7 @@ function selectedCountry() {
         oneCountry.querySelector('.modal-regions__one-country-text').innerText = selectedC[0].value
         
         // Сохраняем страны в localStorage
-        localStorage.setItem('country', JSON.stringify(Array(selectedC[0].value)))
+        // localStorage.setItem('country', JSON.stringify(Array(selectedC[0].value)))
     }
     else {
         oneCountry.classList.remove('_show')
@@ -674,7 +674,7 @@ function selectedCountry() {
         }
 
         // Сохраняем страны в localStorage
-        localStorage.setItem('country', JSON.stringify(arrC))
+        // localStorage.setItem('country', JSON.stringify(arrC))
 
         if (selectedC.length > 5) {
             showAll.querySelector('.modal-regions__show-all-quantity span').innerText = selectedC.length - 5
@@ -822,7 +822,7 @@ function selectedRegions() {
         }
 
         // Сохраняем города в localStorage
-        localStorage.setItem('regions', JSON.stringify(arrC))
+        // localStorage.setItem('regions', JSON.stringify(arrC))
     }
     else {
         chipsBlock.classList.remove('_show')
@@ -862,6 +862,10 @@ function modalRegionsApply() {
     const btn = find('.modal-regions__apply')
 
     btn.addEventListener('click', e => {
+        const countryElems = findAll('regions-checkbox__input[data-space=region]')
+        const regionElems = findAll('regions-checkbox__input[data-space=country]:checked')
+
+        console.log(countryElems, regionElems)
         closeModal()
     })
 }

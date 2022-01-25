@@ -78,6 +78,10 @@
     font-weight: 400;
     // line-height: 1;
     transition: $tr;
+
+    @media (max-width: $laptop) {
+        font-size: 14px;
+    }
 }
 
 .news-card__date {
@@ -86,4 +90,8 @@
     font-weight: 400;
     color: $text-second-d;
     margin-top: 10px;
+
+    @media (max-width: $laptop) {
+        font-size: 12px;
+    }
 }

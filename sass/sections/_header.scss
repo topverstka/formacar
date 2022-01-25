@@ -525,6 +525,10 @@
     text-transform: uppercase;
     white-space: nowrap;
     // padding: 16px 0;
+
+    @media (max-width: $laptop) {
+        font-size: 11px;
+    }
 }
 
 // Местоположение
