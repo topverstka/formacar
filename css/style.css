@@ -1552,7 +1552,7 @@ body._lock {
 .user-menu {
   display: none;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   margin: 0 0 0 20px;
 }
 
@@ -1740,6 +1740,10 @@ body._lock {
   display: block;
 }
 
+.location__header {
+  cursor: default;
+}
+
 .location__header-wrap {
   height: 50px;
   display: -webkit-box;
@@ -1801,6 +1805,9 @@ body._lock {
       -ms-transform: translate(0, 100%);
           transform: translate(0, 100%);
   background: #fff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   -webkit-box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
           box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
   -webkit-border-radius: 0 0 5px 5px;
@@ -2340,6 +2347,7 @@ body._lock {
 }
 
 .recent-card__slider .swiper-slide {
+  width: 200px;
   overflow: hidden;
 }
 
@@ -2387,7 +2395,7 @@ body._lock {
 }
 
 .recent-card__info-table tr td {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -2397,6 +2405,12 @@ body._lock {
 
 .recent-card__info-table tr td:nth-child(2) {
   padding-left: 20px;
+}
+
+@media (max-width: 1440px) {
+  .recent-card__info-table tr td {
+    font-size: 12px;
+  }
 }
 
 .recent-card__footer {
@@ -2431,10 +2445,17 @@ body._lock {
 
 .recent-card__address,
 .recent-card__date {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1;
   color: var(--text-second-d);
+}
+
+@media (max-width: 1440px) {
+  .recent-card__address,
+  .recent-card__date {
+    font-size: 12px;
+  }
 }
 
 .recent-card__date {
@@ -2552,7 +2573,7 @@ body._lock {
 }
 
 .s-news {
-  margin-bottom: 167px;
+  margin-bottom: 154px;
 }
 
 .s-news__list {
@@ -3410,6 +3431,8 @@ body._lock {
 }
 
 .download-app {
+  max-width: 180px;
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3418,7 +3441,7 @@ body._lock {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5px 15px 5px 25px;
+  padding: 5px 15px 5px 15px;
 }
 
 @media (max-width: 1280px) {
@@ -3429,12 +3452,6 @@ body._lock {
 
 .download-app:not(:last-child) {
   margin-right: 15px;
-}
-
-@media (max-width: 1280px) {
-  .download-app:not(:last-child) {
-    margin-right: 30px;
-  }
 }
 
 @media (max-width: 1024px) {

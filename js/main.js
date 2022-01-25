@@ -80,13 +80,16 @@ window.addEventListener('click', e => {
     ) {
         console.log('menu close')
         
-        const burger = find('.burger')
-        const menu = find('.menu')
-        const menuBg = find('.menu-bg')
-        
-		burger.classList.remove('_close')
-		menu.classList.remove('_show')
-        menuBg.classList.remove('_show')
+		find('.burger').classList.remove('_close')
+		find('.menu').classList.remove('_show')
+        find('.menu-bg').classList.remove('_show')
+    }
+
+    if (find('.search._show') && !(e.target.classList.contains('search') || e.target.closest('.search') || e.target.classList.contains('search-area_header') || e.target.closest('.search-area_header'))) {
+        find('.search').classList.remove('_show')
+        if (!find('.menu').classList.contains('_show')) {
+            find('.menu-bg').classList.remove('_show')
+        }
     }
 })
 
@@ -161,23 +164,6 @@ function sumbitForm() {
     })
 }
 
-// Мобильное меню
-menu()
-function menu() {
-	const burger = find('.burger')
-	const menu = find('.menu');
-    const menuWrap = menu.querySelector('.menu__wrap')
-    const menuBg = find('.menu-bg')
-
-	burger.addEventListener('click', (e) => {
-		burger.classList.toggle('_close')
-		menu.classList.toggle('_show')
-        menuBg.classList.toggle('_show')
-
-		// bodyLock()
-	})
-}
-
 // Поиск по сайту
 siteSearch()
 function siteSearch() {
@@ -214,9 +200,9 @@ function siteSearch() {
     input.addEventListener('focus', e => {
         siteSearchFocus(input)
     })
-    input.addEventListener('blur', e => {
-        siteSearchBlur(input)
-    })
+    // input.addEventListener('blur', e => {
+    //     siteSearchBlur(input)
+    // })
     clear.addEventListener('click', e => {
         // if (clear.classList.contains('_show')) {
             e.preventDefault()
@@ -239,10 +225,10 @@ function siteSearch() {
         }
     }
 
-    function siteSearchBlur(input) {
-        search.classList.remove('_show')
-        menuBg.classList.remove('_show')
-    }
+    // function siteSearchBlur(input) {
+    //     search.classList.remove('_show')
+    //     menuBg.classList.remove('_show')
+    // }
 
     function siteSearchPopup(input) {
         const value = input.value
@@ -283,7 +269,7 @@ function siteSearch() {
             let data = await response.json()
             const dataArr = []
 
-            console.log(data.length)
+            // console.log(data.length)
             
             data.forEach(elem => { if (elem['title'].toLowerCase() === value.toLowerCase()) dataArr.push(elem['category']) })
             
@@ -325,6 +311,29 @@ function siteSearch() {
             console.log('Error' + response.status)
         }
     }
+}
+
+// Мобильное меню
+menu()
+function menu() {
+	const burger = find('.burger')
+	const menu = find('.menu');
+    const menuWrap = menu.querySelector('.menu__wrap')
+    const menuBg = find('.menu-bg')
+
+	burger.addEventListener('click', (e) => {
+		burger.classList.toggle('_close')
+		menu.classList.toggle('_show')
+
+        if (menu.classList.contains('_show')) {
+            menuBg.classList.add('_show')
+            console.log('add')
+        }
+        else {
+            menuBg.classList.remove('_show')
+            console.log('remove')
+        }
+	})
 }
 
 // Плейсхолдер поиска
@@ -416,7 +425,7 @@ function catLinksMenu() {
 
 const swiper = new Swiper('.recent-card__slider', {
   
-  slidesPerView: 2, // Кол-во показываемых слайдов
+  slidesPerView: 'auto', // Кол-во показываемых слайдов
   spaceBetween: 4, // Расстояние между слайдами
 //   loop: true, // Бесконечный слайдер
 //   freeMode: true, // Слайдеры не зафиксированны
@@ -428,7 +437,7 @@ const swiper = new Swiper('.recent-card__slider', {
 
   breakpoints: {
     1440: {
-        slidesPerView: 2,
+        // slidesPerView: 'auto',
     },
     700: {
 
@@ -441,11 +450,7 @@ const swiper = new Swiper('.recent-card__slider', {
   navigation: {
     nextEl: '.recent-card__slider-arrow_next',
     prevEl: '.recent-card__slider-arrow_prev',
-  },
-
-//   scrollbar: {
-//     el: '.swiper-scrollbar',
-//   },
+  }
 });
 
 // Функции для модальных окон
