@@ -45,6 +45,13 @@
     &_colorful {
         color: #fff;
     }
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
+        }
+    }
 }
 
 .service-card__wrap {

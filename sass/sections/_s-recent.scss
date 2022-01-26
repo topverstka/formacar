@@ -23,17 +23,32 @@
 }
 
 .s-recent__body {
+    position: relative;
 
+    &:hover {
+
+        @media (min-width: $minHover) {
+            
+            & .section-slider-arrow:not(.section-slider-arrow.swiper-button-disabled) {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+}
+
+.s-recent__slider {
+    overflow: hidden;
 }
 
 .s-recent__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 24px;
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    // column-gap: 24px;
 
-    @media (max-width: $laptop) {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    // @media (max-width: $laptop) {
+    //     grid-template-columns: repeat(3, 1fr);
+    // }
 }
 
 // Карточка со свежим объявлением
@@ -48,7 +63,7 @@
         @media (min-width: $minHover) {
             box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
 
-            & .recent-card__slider-arrow:not(.swiper-button-disabled) {
+            & .recent-card__slider-arrow:not(.recent-card__slider-arrow.swiper-button-disabled) {
                 opacity: 1;
             }
         }

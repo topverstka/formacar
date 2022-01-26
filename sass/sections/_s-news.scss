@@ -19,17 +19,32 @@
 }
 
 .s-news__body {
+    position: relative;
 
+    &:hover {
+
+        @media (min-width: $minHover) {
+            
+            & .section-slider-arrow:not(.swiper-button-disabled) {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+}
+
+.s-news__slider {
+    overflow: hidden;
 }
 
 .s-news__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 24px;
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    // column-gap: 24px;
 
-    @media (max-width: $laptop) {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    // @media (max-width: $laptop) {
+    //     grid-template-columns: repeat(3, 1fr);
+    // }
 }
 
 // Карточки новостей

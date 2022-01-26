@@ -353,11 +353,9 @@ function menu() {
 
         if (menu.classList.contains('_show')) {
             menuBg.classList.add('_show')
-            console.log('add')
         }
         else {
             menuBg.classList.remove('_show')
-            console.log('remove')
         }
 	})
 }
@@ -438,24 +436,19 @@ function catLinksMenu() {
     }
 }
 
-const swiper = new Swiper('.recent-card__slider', {
-  
-  slidesPerView: 'auto', // Кол-во показываемых слайдов
-  spaceBetween: 4, // Расстояние между слайдами
+const sliderRecent = new Swiper('.s-recent__slider', {
+
+  slidesPerView: 4, // Кол-во показываемых слайдов
+  spaceBetween: 24, // Расстояние между слайдами
 //   loop: true, // Бесконечный слайдер
 //   freeMode: true, // Слайдеры не зафиксированны
-//   centeredSlides: false, // Размещать слайдеры по центру
-
-//   autoplay: { // автопрокрутка
-//       delay: 5000, // задержка
-//   },
 
   breakpoints: {
-    1440: {
-        // slidesPerView: 'auto',
+    1024: {
+        slidesPerView: 4
     },
     700: {
-
+        slidesPerView: 3
     },
     400: {
 
@@ -463,8 +456,81 @@ const swiper = new Swiper('.recent-card__slider', {
   },
 
   navigation: {
-    nextEl: '.recent-card__slider-arrow_next',
-    prevEl: '.recent-card__slider-arrow_prev',
+    nextEl: '.s-recent__arrow-next',
+    prevEl: '.s-recent__arrow-prev',
+  }
+});
+
+const sliderInsideRecentCard = new Swiper('.recent-card__slider', {
+  
+    slidesPerView: 'auto',
+    spaceBetween: 4,
+  
+    breakpoints: {
+      1440: {
+          // slidesPerView: 'auto',
+      },
+      700: {
+  
+      },
+      400: {
+  
+      }
+    },
+  
+    navigation: {
+      nextEl: '.recent-card__slider-arrow_next',
+      prevEl: '.recent-card__slider-arrow_prev',
+    }
+  });
+
+const sliderNews = new Swiper('.s-news__slider', {
+
+  slidesPerView: 4, // Кол-во показываемых слайдов
+  spaceBetween: 24, // Расстояние между слайдами
+//   loop: true, // Бесконечный слайдер
+//   freeMode: true, // Слайдеры не зафиксированны
+
+  breakpoints: {
+    1024: {
+        slidesPerView: 4
+    },
+    700: {
+        slidesPerView: 3
+    },
+    400: {
+
+    }
+  },
+
+  navigation: {
+    nextEl: '.s-news__arrow-next',
+    prevEl: '.s-news__arrow-prev',
+  }
+});
+
+const sliderShops = new Swiper('.s-shops__slider', {
+
+  slidesPerView: 4, // Кол-во показываемых слайдов
+  spaceBetween: 24, // Расстояние между слайдами
+//   loop: true, // Бесконечный слайдер
+//   freeMode: true, // Слайдеры не зафиксированны
+
+  breakpoints: {
+    1024: {
+        slidesPerView: 4
+    },
+    700: {
+        slidesPerView: 3
+    },
+    400: {
+
+    }
+  },
+
+  navigation: {
+    nextEl: '.s-shops__arrow-next',
+    prevEl: '.s-shops__arrow-prev',
   }
 });
 
@@ -1214,7 +1280,7 @@ function loadCheckedFromLocalStorage() {
     for (let i = 0; i < regionsArr.length; i++) {
         const nameR = regionsArr[i];
         const checkbox = find(`[data-space="region"][value="${nameR}"]`)
-        console.log(checkbox)
+        // console.log(checkbox)
         checkbox.checked = true
     }
 
