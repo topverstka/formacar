@@ -750,9 +750,6 @@ body._lock {
 .modal-regions__one-country-arrow {
   width: 24px;
   height: 24px;
-  -webkit-transition: var(--tr);
-  -o-transition: var(--tr);
-  transition: var(--tr);
 }
 
 .modal-regions__more-country-title,

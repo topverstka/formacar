@@ -932,6 +932,7 @@ function resetSettingsPlaces() {
     const title = find('.modal-regions__title')
     const blockC = find('.modal-regions__countries')
     const blockR = find('.modal-regions__regions')
+    const oneCountry = find('.modal-regions__one-country')
     
     for (let i = 0; i < btnElems.length; i++) {
         const btn = btnElems[i];
@@ -948,6 +949,8 @@ function resetSettingsPlaces() {
             
             blockC.classList.add('_show')
             blockR.classList.remove('_show')
+            oneCountry.classList.remove('_active')
+
             title.innerText = 'Страна поиска'
         
             selectedCountry()
