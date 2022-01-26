@@ -987,8 +987,8 @@ function settingsPopupPlaces() {
     const distance = find('.location__distance')
     const quantity = find('.location__quantity')
 
-    const countryArr = JSON.parse(localStorage.getItem('country'))
-    const regionsArr = JSON.parse(localStorage.getItem('regions'))
+    const countryArr = localStorage.getItem('country') ? JSON.parse(localStorage.getItem('country')) : []
+    const regionsArr = localStorage.getItem('regions') ? JSON.parse(localStorage.getItem('regions')) : []
 
     // Выбрано 0 стран и 0 регионов
     if (regionsArr.length === 0 && countryArr.length === 0) {
@@ -1201,8 +1201,8 @@ function savePopupPlaces() {
 // Выделение чекбоксов, значение value которых совпадает с элементом массива в localStorage
 loadCheckedFromLocalStorage()
 function loadCheckedFromLocalStorage() {
-    const countryArr = JSON.parse(localStorage.getItem('country'))
-    const regionsArr = JSON.parse(localStorage.getItem('regions'))
+    const countryArr = localStorage.getItem('country') ? JSON.parse(localStorage.getItem('country')) : []
+    const regionsArr = localStorage.getItem('regions') ? JSON.parse(localStorage.getItem('regions')) : []    
 
     for (let i = 0; i < countryArr.length; i++) {
         const nameC = countryArr[i];
