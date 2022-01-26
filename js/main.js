@@ -461,28 +461,30 @@ const sliderRecent = new Swiper('.s-recent__slider', {
   }
 });
 
-const sliderInsideRecentCard = new Swiper('.recent-card__slider', {
-  
-    slidesPerView: 'auto',
-    spaceBetween: 4,
-  
-    breakpoints: {
-      1440: {
-          // slidesPerView: 'auto',
-      },
-      700: {
-  
-      },
-      400: {
-  
-      }
-    },
-  
-    navigation: {
-      nextEl: '.recent-card__slider-arrow_next',
-      prevEl: '.recent-card__slider-arrow_prev',
-    }
-  });
+setTimeout(e => {
+    const sliderInsideRecentCard = new Swiper('.recent-card__slider', {
+      
+        slidesPerView: 'auto',
+        spaceBetween: 4,
+      
+        breakpoints: {
+          1440: {
+              // slidesPerView: 'auto',
+          },
+          700: {
+      
+          },
+          400: {
+      
+          }
+        },
+      
+        navigation: {
+          nextEl: '.recent-card__slider-arrow_next',
+          prevEl: '.recent-card__slider-arrow_prev',
+        }
+    });
+}, 500)
 
 const sliderNews = new Swiper('.s-news__slider', {
 
