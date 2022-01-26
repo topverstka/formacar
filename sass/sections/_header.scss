@@ -539,23 +539,27 @@
     margin-left: 28px;
     transition: $tr;
 
-    &:hover {
+    // &:hover {
         
-        @media (min-width: $minHover) {
-            background: #EEF1F9;
+    //     @media (min-width: $minHover) {
+    //         background: #EEF1F9;
 
-            &:hover {
-                
-                @media (min-width: $minHover) {
-                    
-                    & .location__body {
-                        opacity: 1;
-                        visibility: visible;
-                        pointer-events: all;
-                    }
-                }
+    //         & .location__body {
+    //             opacity: 1!important;
+    //             visibility: visible!important;
+    //             pointer-events: all!important;
+    //         }
+    //     }
+    // }
+
+    &._show-popup {
+        background: #EEF1F9;
+
+            & .location__body {
+                opacity: 1!important;
+                visibility: visible!important;
+                pointer-events: all!important;
             }
-        }
     }
 
     // &_several-cities { // Если несколько городов. Дистанция скроется, кол-во городов появится

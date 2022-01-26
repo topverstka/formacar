@@ -923,6 +923,7 @@ body._lock {
 .modal-regions__apply-block {
   position: -webkit-sticky;
   position: sticky;
+  z-index: 1;
   bottom: 20px;
   right: 14px;
   display: -webkit-box;
@@ -1878,18 +1879,14 @@ body._lock {
   transition: var(--tr);
 }
 
-@media (min-width: 769px) {
-  .location:hover {
-    background: #EEF1F9;
-  }
+.location._show-popup {
+  background: #EEF1F9;
 }
 
-@media (min-width: 769px) and (min-width: 769px) {
-  .location:hover:hover .location__body {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-  }
+.location._show-popup .location__body {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: all !important;
 }
 
 .location__header {

@@ -441,6 +441,7 @@
 
 .modal-regions__apply-block {
     position: sticky;
+    z-index: 1;
     bottom: 20px;
     right: 14px;
     display: flex;
