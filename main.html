@@ -174,17 +174,17 @@
 								<div class="location__header">
 									<div class="location__header-wrap">
 										<div class="locaiton__icon"><img src="./img/icons/location.svg" alt="Местоположение"></div>
-										<span class="location__city">Краснодар</span>
+										<span class="location__places"><span></span></span>
 										<span class="location__distance">+<span>300</span> км</span>
 										<span class="location__quantity">+<span>4</span></span>
 									</div>
 								</div>
 								<div class="location__body">
 									<div class="location__body-wrap">
-										<button class="location__select location__select_cities" data-modal-open="regions">
+										<button class="location__select location__select_countries" data-modal-open="regions">
 											<span class="location__select-left">
 												<h3 class="location__title">Страна поиска</h3>
-												<p class="location__cities"><span>Россия</span></p>
+												<p class="location__countries"><span>Россия</span></p>
 												<!-- <span class="location__empty">Выбрать страну поиска</span> -->
 											</span>
 											<span class="location__select-arrow">
@@ -193,7 +193,7 @@
 												</svg>													
 											</span>
 										</button>
-										<button class="location__select location__select_empty" data-modal-open="regions">
+										<button class="location__select location__select_empty _show" data-modal-open="regions">
 											<span class="location__select-left">
 												<span class="location__empty">Выбрать страну поиска</span>
 											</span>
@@ -206,7 +206,7 @@
 										<button class="location__select location__select_regions" data-modal-open="regions">
 											<span class="location__select-left">
 												<h3 class="location__title">Регион, город, населённый пункт</h3>
-												<p class="location__cities"><span>Краснодар</span></p>
+												<p class="location__countries"><span>Краснодар</span></p>
 											</span>
 											<span class="location__select-arrow">
 												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -226,8 +226,8 @@
 											</div>
 										</div>
 										<div class="location__body-footer">
-											<button class="location__body-footer-btn location__reset">Сбросить</button>
-											<button class="location__body-footer-btn location__save">Сохранить</button>
+											<button class="location__body-footer-btn location__body-footer-btn-reset location__reset">Сбросить</button>
+											<button class="location__body-footer-btn location__body-footer-btn-save location__save">Сохранить</button>
 										</div>
 									</div>
 								</div>
@@ -1137,7 +1137,7 @@
 			<div class="modal__popup modal-right__popup modal-regions__popup">
 				<div class="modal-regions__header">
 					<h2 class="modal-regions__title">Страна поиска</h2>
-					<button class="modal-regions__reset _show">Сбросить</button>
+					<button class="modal-regions__reset location__reset">Сбросить</button>
 				</div>
 				<div class="modal-regions__body">
 					<div class="modal-regions__search">
@@ -1179,6 +1179,7 @@
 							</button>
 						</div>
 					</div>
+					<h3 class="modal-regions__more-title">Другие страны</h3>
 					<div class="modal-regions__subtitles">
 						<h3 class="modal-regions__more-country-title">Другие страны</h3>
 						<h3 class="modal-regions__more-regions-title">Все регионы</h3>
@@ -1245,7 +1246,7 @@
 							</div>
 						</div>
 						<div class="regions-checkbox">
-							<input class="regions-checkbox__input" type="checkbox" value="Австралия" data-space="country">
+							<input class="regions-checkbox__input" type="checkbox" value="Америка́нское Само́а" data-space="country">
 							<div class="regions-checkbox__wrap">
 								<div class="regions-checkbox__content">
 									<span class="regions-checkbox__title">Америка́нское Само́а</span>
@@ -1255,7 +1256,7 @@
 							</div>
 						</div>
 						<div class="regions-checkbox">
-							<input class="regions-checkbox__input" type="checkbox" value="Австралия" data-space="country">
+							<input class="regions-checkbox__input" type="checkbox" value="Ангилья" data-space="country">
 							<div class="regions-checkbox__wrap">
 								<div class="regions-checkbox__content">
 									<span class="regions-checkbox__title">Ангилья</span>
@@ -1265,7 +1266,7 @@
 							</div>
 						</div>
 						<div class="regions-checkbox">
-							<input class="regions-checkbox__input" type="checkbox" value="Австралия" data-space="country">
+							<input class="regions-checkbox__input" type="checkbox" value="Англия" data-space="country">
 							<div class="regions-checkbox__wrap">
 								<div class="regions-checkbox__content">
 									<span class="regions-checkbox__title">Англия</span>
@@ -1275,7 +1276,7 @@
 							</div>
 						</div>
 						<div class="regions-checkbox">
-							<input class="regions-checkbox__input" type="checkbox" value="Австралия" data-space="country">
+							<input class="regions-checkbox__input" type="checkbox" value="Австралийский Союз" data-space="country">
 							<div class="regions-checkbox__wrap">
 								<div class="regions-checkbox__content">
 									<span class="regions-checkbox__title">Австралийский Союз</span>
@@ -1285,7 +1286,7 @@
 							</div>
 						</div>
 						<div class="regions-checkbox">
-							<input class="regions-checkbox__input" type="checkbox" value="Австралия" data-space="country">
+							<input class="regions-checkbox__input" type="checkbox" value="Андорра" data-space="country">
 							<div class="regions-checkbox__wrap">
 								<div class="regions-checkbox__content">
 									<span class="regions-checkbox__title">Андорра</span>
@@ -1295,7 +1296,7 @@
 							</div>
 						</div>
 						<div class="regions-checkbox">
-							<input class="regions-checkbox__input" type="checkbox" value="Австралия" data-space="country">
+							<input class="regions-checkbox__input" type="checkbox" value="Антигуа и Барбуда" data-space="country">
 							<div class="regions-checkbox__wrap">
 								<div class="regions-checkbox__content">
 									<span class="regions-checkbox__title">Антигуа и Барбуда</span>
@@ -1305,7 +1306,7 @@
 							</div>
 						</div>
 						<div class="regions-checkbox">
-							<input class="regions-checkbox__input" type="checkbox" value="Австралия" data-space="country">
+							<input class="regions-checkbox__input" type="checkbox" value="Аргентина" data-space="country">
 							<div class="regions-checkbox__wrap">
 								<div class="regions-checkbox__content">
 									<span class="regions-checkbox__title">Аргентина</span>
@@ -1315,7 +1316,7 @@
 							</div>
 						</div>
 						<div class="regions-checkbox">
-							<input class="regions-checkbox__input" type="checkbox" value="Австралия" data-space="country">
+							<input class="regions-checkbox__input" type="checkbox" value="Армения" data-space="country">
 							<div class="regions-checkbox__wrap">
 								<div class="regions-checkbox__content">
 									<span class="regions-checkbox__title">Армения</span>
@@ -1329,7 +1330,7 @@
 						<div class="modal-regions__acc">
 							<div class="modal-regions__acc-header">
 								<div class="regions-checkbox">
-									<input class="regions-checkbox__input" type="checkbox" value="Алтайский край">
+									<input class="regions-checkbox__input" type="checkbox" value="Архангельская область">
 									<div class="regions-checkbox__wrap">
 										<button class="acc-open regions-checkbox__arrow">
 											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1337,7 +1338,7 @@
 											</svg>										
 										</button>
 										<div class="regions-checkbox__content">
-											<span class="regions-checkbox__title">Алтайский край</span>
+											<span class="regions-checkbox__title">Архангельская область</span>
 										</div>
 										<div class="regions-checkbox__box"></div>
 									</div>
@@ -1354,37 +1355,28 @@
 									</div>
 								</div>
 								<div class="regions-checkbox">
-									<input class="regions-checkbox__input" type="checkbox" value="Архангельск" data-space="region">
+									<input class="regions-checkbox__input" type="checkbox" value="Коряжма" data-space="region">
 									<div class="regions-checkbox__wrap">
 										<div class="regions-checkbox__content">
-											<span class="regions-checkbox__title">Архангельск</span>
+											<span class="regions-checkbox__title">Коряжма</span>
 										</div>
 										<div class="regions-checkbox__box"></div>
 									</div>
 								</div>
 								<div class="regions-checkbox">
-									<input class="regions-checkbox__input" type="checkbox" value="Архангельск" data-space="region">
+									<input class="regions-checkbox__input" type="checkbox" value="Котлас" data-space="region">
 									<div class="regions-checkbox__wrap">
 										<div class="regions-checkbox__content">
-											<span class="regions-checkbox__title">Архангельск</span>
+											<span class="regions-checkbox__title">Котлас</span>
 										</div>
 										<div class="regions-checkbox__box"></div>
 									</div>
 								</div>
 								<div class="regions-checkbox">
-									<input class="regions-checkbox__input" type="checkbox" value="Архангельск" data-space="region">
+									<input class="regions-checkbox__input" type="checkbox" value="Мирный (ЗАТО)" data-space="region">
 									<div class="regions-checkbox__wrap">
 										<div class="regions-checkbox__content">
-											<span class="regions-checkbox__title">Архангельск</span>
-										</div>
-										<div class="regions-checkbox__box"></div>
-									</div>
-								</div>
-								<div class="regions-checkbox">
-									<input class="regions-checkbox__input" type="checkbox" value="Архангельск" data-space="region">
-									<div class="regions-checkbox__wrap">
-										<div class="regions-checkbox__content">
-											<span class="regions-checkbox__title">Архангельск</span>
+											<span class="regions-checkbox__title">Мирный (ЗАТО)</span>
 										</div>
 										<div class="regions-checkbox__box"></div>
 									</div>
@@ -1410,46 +1402,28 @@
 							</div>
 							<div class="acc-body modal-regions__acc-body">
 								<div class="regions-checkbox">
-									<input class="regions-checkbox__input" type="checkbox" value="Архангельск" data-space="region">
+									<input class="regions-checkbox__input" type="checkbox" value="Новодвинск" data-space="region">
 									<div class="regions-checkbox__wrap">
 										<div class="regions-checkbox__content">
-											<span class="regions-checkbox__title">Архангельск</span>
+											<span class="regions-checkbox__title">Новодвинск</span>
 										</div>
 										<div class="regions-checkbox__box"></div>
 									</div>
 								</div>
 								<div class="regions-checkbox">
-									<input class="regions-checkbox__input" type="checkbox" value="Архангельск" data-space="region">
+									<input class="regions-checkbox__input" type="checkbox" value="Онега" data-space="region">
 									<div class="regions-checkbox__wrap">
 										<div class="regions-checkbox__content">
-											<span class="regions-checkbox__title">Архангельск</span>
+											<span class="regions-checkbox__title">Онега</span>
 										</div>
 										<div class="regions-checkbox__box"></div>
 									</div>
 								</div>
 								<div class="regions-checkbox">
-									<input class="regions-checkbox__input" type="checkbox" value="Архангельск" data-space="region">
+									<input class="regions-checkbox__input" type="checkbox" value="Северодвинск" data-space="region">
 									<div class="regions-checkbox__wrap">
 										<div class="regions-checkbox__content">
-											<span class="regions-checkbox__title">Архангельск</span>
-										</div>
-										<div class="regions-checkbox__box"></div>
-									</div>
-								</div>
-								<div class="regions-checkbox">
-									<input class="regions-checkbox__input" type="checkbox" value="Архангельск" data-space="region">
-									<div class="regions-checkbox__wrap">
-										<div class="regions-checkbox__content">
-											<span class="regions-checkbox__title">Архангельск</span>
-										</div>
-										<div class="regions-checkbox__box"></div>
-									</div>
-								</div>
-								<div class="regions-checkbox">
-									<input class="regions-checkbox__input" type="checkbox" value="Архангельск" data-space="region">
-									<div class="regions-checkbox__wrap">
-										<div class="regions-checkbox__content">
-											<span class="regions-checkbox__title">Архангельск</span>
+											<span class="regions-checkbox__title">Северодвинск</span>
 										</div>
 										<div class="regions-checkbox__box"></div>
 									</div>

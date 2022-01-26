@@ -278,6 +278,17 @@
     }
 }
 
+.modal-regions__more-title {
+    display: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 18px 10px;
+
+    &._show {
+        display: block;
+    }
+}
+
 // .modal-regions__more-country-title {
 //     display: none;
 // }

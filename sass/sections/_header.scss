@@ -558,16 +558,16 @@
         }
     }
 
-    &_several-cities { // Если несколько городов. Дистанция скроется, кол-во городов появится
+    // &_several-cities { // Если несколько городов. Дистанция скроется, кол-во городов появится
     
-        & .location__distance {
-            display: none;
-        }
+    //     & .location__distance {
+    //         display: none;
+    //     }
     
-        & .location__quantity {
-            display: block;
-        }
-    }
+    //     & .location__quantity {
+    //         display: block;
+    //     }
+    // }
 }
 
 .location__header {
@@ -587,7 +587,7 @@
     display: flex;
 }
 
-.location__city,
+.location__places,
 .location__distance {
     font-size: 12px;
     font-weight: 700;
@@ -597,10 +597,21 @@
     white-space: nowrap;
 }
 
-.location__city {
+.location__places {
     max-width: 150px;
     text-overflow: ellipsis;
     overflow: hidden;
+
+    & span {
+
+        &:not(:last-child) {
+            margin: 0 4px 0 0;
+
+            &::after {
+                content: ',';
+            }
+        }
+    }
 }
 
 .location__distance {
@@ -608,7 +619,6 @@
 }
 
 .location__quantity {
-    display: none; 
     font-size: 11px;
     font-weight: 700;
     line-height: 22px;
@@ -617,6 +627,15 @@
     border-radius: 50%;
     padding: 0 4px;
     margin-left: 10px;
+}
+
+.location__distance,
+.location__quantity {
+    display: none;
+
+    &._show {
+        display: block;
+    }
 }
 
 // Появляющееся меню
@@ -642,14 +661,18 @@
 
 .location__select {
     width: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     padding: 10px 16px;
     border-bottom: 1px solid $outline-l;
+
+    &._show {
+        display: flex;
+    }
 }
 
-.location__select_cities {
+.location__select_countries {
 
 }
 
@@ -661,10 +684,10 @@
 
 }
 
-// .location__select_cities-empty {
+// .location__select_countries-empty {
 
 //     & .location__title,
-//     & .location__cities {
+//     & .location__countries {
 //         display: none;
 //     }
 
@@ -683,12 +706,26 @@
     text-align: left;
 }
 
-.location__cities {
+.location__countries {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     font-size: 16px;
     font-weight: 600;
     text-align: left;
     color: $text-accent;
     margin: 5px 0 0 0;
+
+    & span {
+
+        &:not(:last-child) {
+            margin: 0 4px 0 0;
+
+            &::after {
+                content: ',';
+            }
+        }
+    }
 }
 
 .location__empty {
@@ -699,6 +736,7 @@
 }
 
 .location__select-arrow {
+    min-width: 24px;
     width: 24px;
     height: 24px;
     display: flex;
@@ -706,7 +744,12 @@
 
 // Ползунок
 .location__radius {
+    display: none;
     padding: 15px 16px 20px;
+
+    &._show {
+        display: block;
+    }
 }
 
 .location__radius-header {
@@ -735,10 +778,14 @@
 }
 
 .location__body-footer {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     background: $bg-second-l;
+
+    &._show {
+        display: flex;
+    }
 }
 
 .location__body-footer-btn {
@@ -747,10 +794,10 @@
     padding: 16px;
 }
 
-.location__reset {
+.location__body-footer-btn-reset {
     color: $text-second-d;
 }
 
-.location__save {
+.location__body-footer-btn-save {
     color: $text-accent;
 }

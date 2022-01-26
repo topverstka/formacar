@@ -205,9 +205,9 @@ function siteSearch() {
     // })
     clear.addEventListener('click', e => {
         // if (clear.classList.contains('_show')) {
-            e.preventDefault()
-            input.value = ''
-            input.focus()
+            // e.preventDefault()
+            // input.value = ''
+            // input.focus()
             siteSearchPopup(input)
             // siteSearchData(input)
         // }
@@ -313,6 +313,32 @@ function siteSearch() {
     }
 }
 
+// Показать крестик у поиска
+siteSearchShowClear()
+function siteSearchShowClear() {
+    const searchElems = findAll('.search-area')
+    for (let i = 0; i < searchElems.length; i++) {
+        const search = searchElems[i];
+        const clear = search.querySelector('.search-area__clear')
+        const input = search.querySelector('.search-area__input')
+        
+        input.addEventListener('input', e => {
+            if (input.value != '') {
+                clear.classList.add('_show')
+            }
+            else {
+                clear.classList.remove('_show')
+            }
+        })
+
+        clear.addEventListener('click', e => {
+            e.preventDefault()
+            input.value = ''
+            input.focus()
+        })
+    }
+}
+
 // Мобильное меню
 menu()
 function menu() {
@@ -375,10 +401,11 @@ function changeRangeInputCities() {
 rangeChangeCities()
 function rangeChangeCities() {
     const range = find('.location__radius-range input')
-    const elemValue = find('.location__radius-value span')
+    const distance = find('.location__radius-value span')
+    const distanceBtn = find('.location__distance span')
     
     rangesliderJs.create(range, {
-        onSlide: e => elemValue.innerText = e
+        onSlide: e => { distance.innerText = e; distanceBtn.innerText = e }
     })
 }
 
@@ -585,9 +612,9 @@ function changeLang(e) {
 }
 
 // функционал чекбоксов
-selectAllModalRegions()
-function selectAllModalRegions() {
-    const mRegions = find('#regions')
+selectAllModalCountry()
+function selectAllModalCountry() {
+    const mRegions = find('.modal-regions__countries')
     const selectAll = mRegions.querySelector('.regions-checkbox_select-all input')
     const checkboxElems = mRegions.querySelectorAll('.regions-checkbox input:not(.regions-checkbox_select-all input)')
 
@@ -642,11 +669,20 @@ function selectedCountry() {
     const chipsBlock = find('.modal-regions__chips')
     const chipsList = find('.modal-regions__chips-list')
     const showAll = find('.modal-regions__show-all')
+    const checkboxRegionsElems = findAll('.modal-regions__regions .regions-checkbox input')
+    const moreTitle = find('.modal-regions__more-title')
+    const btnReset = find('.modal-regions__reset')
+
+    // for (let i = 0; i < checkboxRegionsElems.length; i++) {
+    //     const checkbox = checkboxRegionsElems[i];
+        
+    //     checkbox.checked = false
+    // }
 
     if (selectedC.length === 1) {
         oneCountry.classList.add('_show')
         oneCountry.querySelector('.modal-regions__one-country-text').innerText = selectedC[0].value
-        
+
         // Сохраняем страны в localStorage
         // localStorage.setItem('country', JSON.stringify(Array(selectedC[0].value)))
     }
@@ -654,11 +690,23 @@ function selectedCountry() {
         oneCountry.classList.remove('_show')
     }
 
+    if (selectedC.length >= 1) {
+        btnReset.classList.add('_show')
+        moreTitle.classList.add('_show')
+        moreTitle.innerText = 'Другие страны'
+    }
+    else {
+        btnReset.classList.remove('_show')
+        moreTitle.classList.remove('_show')
+        moreTitle.innerText = ''
+    }
+
     if (selectedC.length > 1) {
-        let arrC = []
+        // let arrC = []
         chipsBlock.classList.add('_show')
         chipsList.innerHTML = ''
 
+        // console.log('innerHTML = ""', selectedC)
         for (let i = 0; i < selectedC.length; i++) {
             const checkbox = selectedC[i];
 
@@ -669,7 +717,7 @@ function selectedCountry() {
                 chips.innerHTML = `<span class="regions-chips__title">${checkbox.value}</span>`
                 
                 chipsList.append(chips)
-                arrC.push(checkbox.value)
+                // arrC.push(checkbox.value)
             }
         }
 
@@ -682,9 +730,11 @@ function selectedCountry() {
         }
         else {
             showAll.classList.remove('_show')
+            // console.log('remove2')
         }
 
         const chipsElems = chipsList.querySelectorAll('.regions-chips')
+        console.log(chipsElems)
 
         for (let i = 0; i < chipsElems.length; i++) {
             const chips = chipsElems[i];
@@ -705,6 +755,8 @@ function selectedCountry() {
         chipsBlock.classList.remove('_show')
         chipsList.innerHTML = ''
     }
+
+    console.log(chipsList)
 }
 
 // Показать все карточки городов
@@ -713,6 +765,7 @@ function showAllCities() {
     const showAll = find('.modal-regions__show-all')
 
     showAll.addEventListener('click', e => {
+        console.log('ok')
         if (showAll.classList.contains('_text-show')) {
             showAll.classList.add('_text-hide')
             showAll.classList.remove('_text-show')
@@ -722,17 +775,25 @@ function showAllCities() {
             showAll.classList.remove('_text-hide')
         }
     
-        selectedCountry()
-        selectedRegions()
+        if (find('.modal-regions__acc-body .regions-checkbox input:checked')) {
+            selectedRegions()
+            console.log('selectedRegions')
+        }
+        else {
+            selectedCountry()
+            console.log('selectedCountry')
+        }
     })
 }
 
 // Выбрать регионы страны
-selectRegions()
-function selectRegions() {
+activeRegion()
+function activeRegion() {
     const btn = find('.modal-regions__one-country')
+    const title = find('.modal-regions__title')
     const blockC = find('.modal-regions__countries')
     const blockR = find('.modal-regions__regions')
+    const moreTitle = find('.modal-regions__more-title')
 
     btn.addEventListener('click', e => {
         btn.classList.toggle('_active')
@@ -740,10 +801,14 @@ function selectRegions() {
         if (btn.classList.contains('_active')) {
             blockC.classList.remove('_show')
             blockR.classList.add('_show')
+            title.innerText = 'Регион поиска'
+            moreTitle.innerText = 'Все регионы'
         }
         else {
             blockC.classList.add('_show')
             blockR.classList.remove('_show')
+            title.innerText = 'Страна поиска'
+            moreTitle.innerText = 'Другие страны'
         }
     })
 }
@@ -801,11 +866,13 @@ function selectedRegions() {
     const chipsList = find('.modal-regions__chips-list')
     const showAll = find('.modal-regions__show-all')
 
+    // console.log(selectedC)
     if (selectedC.length > 0) {
-        let arrC = []
+        // let arrC = []
         chipsBlock.classList.add('_show')
         chipsList.innerHTML = ''
 
+        console.log(selectedC)
         for (let i = 0; i < selectedC.length; i++) {
             const checkbox = selectedC[i];
             
@@ -818,7 +885,7 @@ function selectedRegions() {
                 chipsList.append(chips)
             }
 
-            arrC.push(checkbox.value)
+            // arrC.push(checkbox.value)
         }
 
         // Сохраняем города в localStorage
@@ -835,6 +902,7 @@ function selectedRegions() {
     }
     else {
         showAll.classList.remove('_show')
+        console.log('remove')
     }
 
     const chipsElems = chipsList.querySelectorAll('.regions-chips')
@@ -856,18 +924,271 @@ function selectedRegions() {
     }
 }
 
+// Сбросить настройки
+resetSettingsPlaces()
+function resetSettingsPlaces() {
+    const modal = find('#regions')
+    const btnElems = findAll('.location__reset')
+    const title = find('.modal-regions__title')
+    const blockC = find('.modal-regions__countries')
+    const blockR = find('.modal-regions__regions')
+    
+    for (let i = 0; i < btnElems.length; i++) {
+        const btn = btnElems[i];
+        
+        btn.addEventListener('click', e => {
+            console.log(btn)
+            const checkboxElems = modal.querySelectorAll('.regions-checkbox input')
+
+            for (let i = 0; i < checkboxElems.length; i++) {
+                const checkbox = checkboxElems[i];
+                
+                checkbox.checked = false
+            }
+            
+            blockC.classList.add('_show')
+            blockR.classList.remove('_show')
+            title.innerText = 'Страна поиска'
+        
+            selectedCountry()
+            selectedRegions()
+            
+            const countryElems = findAll('.regions-checkbox__input[data-space="country"]:checked')
+            const regionElems = findAll('.regions-checkbox__input[data-space="region"]:checked')
+            
+            localStorage.setItem('country', JSON.stringify([...countryElems].map(e => { return e.value })))
+            localStorage.setItem('regions', JSON.stringify([...regionElems].map(e => { return e.value })))
+
+            settingsPopupPlaces()
+        })
+    }    
+}
+
 // Применить настройки городов и регионов
-modalRegionsApply()
-function modalRegionsApply() {
+applySettingsPlaces()
+function applySettingsPlaces() {
     const btn = find('.modal-regions__apply')
 
     btn.addEventListener('click', e => {
-        const countryElems = findAll('regions-checkbox__input[data-space=region]')
-        const regionElems = findAll('regions-checkbox__input[data-space=country]:checked')
-
-        console.log(countryElems, regionElems)
+        const countryElems = findAll('.regions-checkbox__input[data-space="country"]:checked')
+        const regionElems = findAll('.regions-checkbox__input[data-space="region"]:checked')
+        
+        localStorage.setItem('country', JSON.stringify([...countryElems].map(e => { return e.value })))
+        localStorage.setItem('regions', JSON.stringify([...regionElems].map(e => { return e.value })))
         closeModal()
+        settingsPopupPlaces()
     })
+}
+
+// Настройка всплывашки
+settingsPopupPlaces()
+function settingsPopupPlaces() {
+    const countries = find('.location__select_countries')
+    const countriesList = find('.location__select_countries .location__countries')
+    const regions = find('.location__select_regions')
+    const regionsList = find('.location__select_regions .location__countries')
+    const empty = find('.location__select_empty')
+    const radius = find('.location__radius')
+    const radiusInput = radius.querySelector('input[type="range"]')
+    const footer = find('.location__body-footer')
+
+    const places = find('.location__places')
+    const distance = find('.location__distance')
+    const quantity = find('.location__quantity')
+
+    const countryArr = JSON.parse(localStorage.getItem('country'))
+    const regionsArr = JSON.parse(localStorage.getItem('regions'))
+
+    // Выбрано 0 стран и 0 регионов
+    if (regionsArr.length === 0 && countryArr.length === 0) {
+        removeAllBlocksToPopup()
+        empty.classList.add('_show')
+        changeBtnPlace()
+    }
+
+    // Выбрано несколько стран
+    if (countryArr.length > 1) {
+        showCountries()
+        changeBtnPlace()
+    }
+
+    // Выбрана 1 страна и/или несколько городов
+    if (countryArr.length === 1) {
+        showCountries()
+        showRegions()
+        changeBtnPlace()
+    }
+
+    function showCountries() {
+        removeAllBlocksToPopup()
+        countries.classList.add('_show')
+        footer.classList.add('_show')
+
+        countriesList.innerHTML = ''
+        for (let i = 0; i < countryArr.length; i++) {
+            const country = countryArr[i];
+
+            if (i < 5) {
+                const elem = document.createElement('span')
+                elem.innerText = country
+    
+                countriesList.append(elem)
+            }
+        }
+
+        if (countryArr.length > 5) {
+            const elem = document.createElement('span')
+            elem.innerText = `+${countryArr.length - 5}`
+
+            countriesList.append(elem)
+        }
+    }
+
+    function showRegions() {
+        if (regionsArr.length === 1) {
+            const elem = document.createElement('span')
+
+            regions.classList.add('_show')
+            radius.classList.add('_show')
+
+            regionsList.innerHTML = ''
+            elem.innerText = regionsArr[0]
+            regionsList.append(elem)
+        }
+
+        if (regionsArr.length > 0) {
+            regions.classList.add('_show')
+
+            regionsList.innerHTML = ''
+            for (let i = 0; i < regionsArr.length; i++) {
+                const region = regionsArr[i];
+
+                if (i < 5) {
+                    const elem = document.createElement('span')
+                    elem.innerText = region
+        
+                    regionsList.append(elem)
+                }
+            }
+            
+            if (regionsArr.length > 5) {
+                const elem = document.createElement('span')
+                elem.innerText = `+${regionsArr.length - 5}`
+                regionsList.append(elem)
+            }
+        }
+    }
+    
+    function changeBtnPlace() {
+
+        if (regionsArr.length === 0 && countryArr.length === 0) {
+            places.innerText = 'По всему миру'
+            distance.classList.remove('_show')
+            quantity.classList.remove('_show')
+        }
+
+        // Если выбран 1 регион
+        if (regionsArr.length === 1) {
+            places.innerText = regionsArr[0]
+            distance.classList.add('_show')
+            quantity.classList.remove('_show')
+            distance.querySelector('span').innerText = radiusInput.value
+        }
+
+        // Если выбрана 1 страна
+        if (countryArr.length === 1 && regionsArr.length === 0) {
+            places.innerText = countryArr[0]
+            distance.classList.remove('_show')
+            quantity.classList.remove('_show')
+            // distance.querySelector('span').innerText = radiusInput.value
+        }
+
+        // Если выбрано больше 2 регионов
+        if (regionsArr.length >= 2) {
+            quantity.classList.add('_show')
+            distance.classList.remove('_show')
+
+            quantity.querySelector('span').innerText = regionsArr.length - 2
+
+            places.innerHTML = ''
+            for (let i = 0; i < regionsArr.length; i++) {
+                
+                if (i < 2) {
+                    const elem = document.createElement('span')
+                    elem.innerText = regionsArr[i]
+
+                    places.append(elem)
+                }
+            }
+        }
+
+        // Если выбрано больше 2 стран
+        if (countryArr.length >= 2) {
+            quantity.classList.add('_show')
+            distance.classList.remove('_show')
+
+            quantity.querySelector('span').innerText = countryArr.length - 2
+
+            places.innerHTML = ''
+            for (let i = 0; i < countryArr.length; i++) {
+                
+                if (i < 2) {
+                    const elem = document.createElement('span')
+                    elem.innerText = countryArr[i]
+
+                    places.append(elem)
+                }
+            }
+        }
+    }
+
+    function removeAllBlocksToPopup() {
+        const arrBlocks = [countries, regions, empty, radius, footer]
+
+        for (let i = 0; i < arrBlocks.length; i++) {
+            const elem = arrBlocks[i];
+            
+            elem.classList.remove('_show')
+        }
+    }
+    
+    function removeAllBlocksToBtn() {
+        const arrBlocks = [places, distance, quantity]
+
+        for (let i = 0; i < arrBlocks.length; i++) {
+            const elem = arrBlocks[i];
+            
+            elem.classList.remove('_show')
+        }
+    }
+}
+
+// Выделение чекбоксов, значение value которых совпадает с элементом массива в localStorage
+loadCheckedFromLocalStorage()
+function loadCheckedFromLocalStorage() {
+    const countryArr = JSON.parse(localStorage.getItem('country'))
+    const regionsArr = JSON.parse(localStorage.getItem('regions'))
+
+    console.log(countryArr)
+    for (let i = 0; i < countryArr.length; i++) {
+        const nameC = countryArr[i];
+        const checkbox = find(`[data-space="country"][value="${nameC}"]`)
+
+        checkbox.checked = true
+        console.log(checkbox)
+    }
+    
+    console.log(regionsArr)
+    for (let i = 0; i < regionsArr.length; i++) {
+        const nameR = regionsArr[i];
+        const checkbox = find(`[data-space="region"][value="${nameR}"]`)
+
+        checkbox.checked = true
+        console.log(checkbox)
+    }
+
+    selectedCountry()
+    selectedRegions()
 }
 
 // Показать все карточки городов
