@@ -667,6 +667,7 @@ function selectedCountry() {
     const checkboxRegionsElems = findAll('.modal-regions__regions .regions-checkbox input')
     const moreTitle = find('.modal-regions__more-title')
     const btnReset = find('.modal-regions__reset')
+    const selectAll = find('.regions-checkbox_select-all input')
 
     // for (let i = 0; i < checkboxRegionsElems.length; i++) {
     //     const checkbox = checkboxRegionsElems[i];
@@ -734,6 +735,7 @@ function selectedCountry() {
             chips.addEventListener('click', e => {
                 chips.remove()
                 selectedC[i].checked = false
+                selectAll.checked = false
 
                 if (chipsList.querySelectorAll('.regions-chips').length === 0) {
                     chipsBlock.classList.remove('_show')

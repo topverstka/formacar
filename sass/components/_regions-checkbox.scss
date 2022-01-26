@@ -21,7 +21,14 @@
             & + .regions-checkbox__wrap {
                 background: $bg-second-l;
 
-                & .regions-checkbox__title {
+                & .regions-checkbox__arrow {
+
+                    & svg path {
+                        fill: $text-accent;
+                    }
+                }
+
+                & .regions-checkbox__title { 
                     color: $text-accent;
                 }
 
@@ -49,6 +56,17 @@
 
         & + .regions-checkbox__wrap {
 
+            & .regions-checkbox__arrow {
+
+                & svg path {
+                    fill: $text-accent;
+                }
+            }
+
+            & .regions-checkbox__title { 
+                color: $text-accent;
+            }
+
             & .regions-checkbox__box { 
                 background-color: #383838;
             }
@@ -72,6 +90,10 @@
     height: 24px;
     display: flex;
     margin: 0 10px 0 0;
+
+    & svg path {
+        transition: $tr;
+    }
 }
 
 .regions-checkbox__content {
