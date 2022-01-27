@@ -1581,6 +1581,7 @@ body._lock {
 .search-area__input {
   width: 100%;
   height: 100%;
+  font-size: 14px;
   border: 1px solid var(--input-placeholder);
   -webkit-border-radius: var(--radius);
           border-radius: var(--radius);
