@@ -327,3 +327,20 @@
     text-align: center;
     margin: 20px 0 0 0;
 }
+
+// Локация
+.mob-menu__location {
+    margin: 0;
+
+    & .location__header-wrap {
+        padding: 0;
+    }
+
+    & .location__body {
+        position: initial;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        box-shadow: none;
+    }
+}
