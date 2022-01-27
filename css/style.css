@@ -3949,6 +3949,7 @@ body._lock {
 
 .change-lang__title {
   display: inline-block;
+  font-size: 14px;
   padding: 8px 15px;
 }
 
