@@ -492,6 +492,7 @@ setTimeout(e => {
 }, 500)
 
 const sliderNews = new Swiper('.s-news__slider', {
+    spaceBetween: 24,
 
 //   slidesPerView: 4, // Кол-во показываемых слайдов
 //   spaceBetween: 24, // Расстояние между слайдами
@@ -504,7 +505,6 @@ const sliderNews = new Swiper('.s-news__slider', {
     },
     768: {
         slidesPerView: 3,
-        spaceBetween: 24,
         allowTouchMove: false
     },
     500: {
@@ -513,7 +513,6 @@ const sliderNews = new Swiper('.s-news__slider', {
     },
     0: {
         slidesPerView: 1.3,
-        spaceBetween: 24,
     }
   },
 
@@ -524,19 +523,14 @@ const sliderNews = new Swiper('.s-news__slider', {
 });
 
 const sliderShops = new Swiper('.s-shops__slider', {
+    spaceBetween: 24,
 
-//   slidesPerView: 4, // Кол-во показываемых слайдов
-//   spaceBetween: 24, // Расстояние между слайдами
-//   loop: true, // Бесконечный слайдер
-//   freeMode: true, // Слайдеры не зафиксированны
-
-  breakpoints: {
+    breakpoints: {
     1024: {
         slidesPerView: 4
     },
     768: {
         slidesPerView: 3,
-        spaceBetween: 24,
         allowTouchMove: false
     },
     425: {
@@ -547,18 +541,15 @@ const sliderShops = new Swiper('.s-shops__slider', {
         slidesPerView: 1,
         spaceBetween: 12,
     }
-  },
+    },
 
-  navigation: {
+    navigation: {
     nextEl: '.s-shops__arrow-next',
     prevEl: '.s-shops__arrow-prev',
-  }
+    }
 });
 
 // Функции для модальных окон
-// modal()
-// function modal() {
-    
 // Открытие модальных окон при клике по кнопке
 openModalWhenClickingOnBtn()
 function openModalWhenClickingOnBtn() {
@@ -765,18 +756,9 @@ function selectedCountry() {
     const btnReset = find('.modal-regions__reset')
     const selectAll = find('.regions-checkbox_select-all input')
 
-    // for (let i = 0; i < checkboxRegionsElems.length; i++) {
-    //     const checkbox = checkboxRegionsElems[i];
-        
-    //     checkbox.checked = false
-    // }
-
     if (selectedC.length === 1) {
         oneCountry.classList.add('_show')
         oneCountry.querySelector('.modal-regions__one-country-text').innerText = selectedC[0].value
-
-        // Сохраняем страны в localStorage
-        // localStorage.setItem('country', JSON.stringify(Array(selectedC[0].value)))
     }
     else {
         oneCountry.classList.remove('_show')
@@ -794,7 +776,6 @@ function selectedCountry() {
     }
 
     if (selectedC.length > 1) {
-        // let arrC = []
         chipsBlock.classList.add('_show')
         chipsList.innerHTML = ''
 
@@ -1442,4 +1423,28 @@ function paddingFooterTopMobile() {
     const footerTop = find('.footer__top')
     const footerApp = find('.footer-app:not(.footer-app.mob-menu__footer)')
     footerTop.style.paddingTop = footerApp.clientHeight + 20 + 'px'
+}
+
+// Поиск в мобильном меню
+searchMobMenu()
+function searchMobMenu() {
+    const mobMenu = find('#mob-menu')
+    const mobMenuHeader = mobMenu.querySelector('.mob-menu__header')
+    const mobMenuBody = mobMenu.querySelector('.mob-menu__body')
+    const search = mobMenu.querySelector('.mob-search')
+    const searchArea = mobMenu.querySelector('.search-area_mob-menu')
+    const cancelSearch = mobMenu.querySelector('.mob-menu__cancel-search')
+
+    searchArea.addEventListener('submit', e => {
+        e.preventDefault()
+        search.classList.add('_show')
+        mobMenuHeader.classList.add('_search')
+        mobMenuBody.style.maxHeight = 0
+    })
+
+    cancelSearch.addEventListener('click', e => {
+        search.classList.remove('_show')
+        mobMenuHeader.classList.remove('_search')
+        mobMenuBody.style.maxHeight = mobMenuBody.scrollHeight + 'px'
+    })
 }

@@ -22,10 +22,34 @@
 }
 
 .mob-menu__header {
+    position: relative;
+    z-index: 1;
+
+    &._search {
+
+        & .mob-menu__cancel-search {
+            display: block;
+        }
+
+        & .mob-menu__close {
+            display: none;
+        }
+    }
+}
+
+.mob-menu__header-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: #fff;
     padding: 10px 15px;
+}
+
+.mob-menu__cancel-search {
+    display: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 0 10px;
 }
 
 .mob-menu__close {
@@ -50,6 +74,8 @@
 .mob-menu__body {
     background: #fff;
     padding: 20px 15px 40px;
+    overflow: hidden;
+    transition: $tr;
 }
 
 .mob-menu__body-wrap {
@@ -145,4 +171,157 @@
 .mob-menu__footer {
     border-top: none;
     padding: 0;
+}
+
+// Поиск в мобильном меню
+.mob-search {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    transition: $tr;
+
+    &._show {
+        transform: translate(0, 100%);
+    }
+}
+
+.mob-search__wrap {
+
+}
+
+.mob-search__services {
+    background: $bg-second-l;
+    border-bottom: 1px solid $outline-d;
+}
+
+.mob-search__services-wrap {
+    padding: 15px 0;
+
+}
+
+.mob-search__services-list {
+    display: flex;
+    padding: 0 15px 10px;
+    overflow-x: auto;
+}
+
+// Карточка
+.m-search-card {
+    width: 72px;
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+        margin: 0 15px 0 0;
+    }
+}
+
+.m-search-card__img {
+    width: 72px;
+    height: 72px;
+    border-radius: $radius;
+    overflow: hidden;
+    background: #fff;
+
+    & img {
+        object-fit: cover;
+    }
+}
+
+.m-search-card__title {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    margin: 5px 0 0 0;
+}
+
+// Разделы
+.mob-search__section-header {
+    background: $bg-second-l;
+    padding: 15px;
+}
+
+.mob-search__section-header-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.mob-search__section-body {
+
+}
+
+.mob-search__section-list {
+
+}
+
+// Карточки разделов
+.ms-section-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.ms-section-card__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.ms-section-card__title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ms-section-card__cat {
+    font-size: 12px;
+    margin: 2px 0 0 0;
+}
+
+.ms-section-card__quantity {
+
+}
+
+// Раздел с результатом
+.mob-search__result {
+
+}
+
+.mob-search__result-wrap {
+
+}
+
+.mob-search__result-header {
+
+}
+
+// Ничего не найдено
+.mob-search__not-found {
+    width: 100%;
+    // height: 100%;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mob-search__not-found-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mob-search__not-found-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.mob-search__not-found-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: $text-second-d;
+    text-align: center;
+    margin: 20px 0 0 0;
 }
