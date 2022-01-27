@@ -1420,12 +1420,11 @@ function rangeChangeCities() {
 // Отступ у footer__top на планшете и ниже
 paddingFooterTopMobile()
 function paddingFooterTopMobile() {
-    window.addEventListener('load', e => {
+    if (window.innerWidth <= 920) {
         const footerTop = find('.footer__top')
         const footerApp = find('.footer-app:not(.footer-app.mob-menu__footer)')
-        
-        footerTop.style.paddingTop = footerApp.clientHeight + 20 + 'px'
-    })
+        window.addEventListener('load', footerTop.style.paddingTop = footerApp.clientHeight + 20 + 'px')
+    }
 }
 
 // Поиск в мобильном меню

@@ -337,10 +337,12 @@
     }
 
     & .location__body {
+        width: 100%;
         position: initial;
         opacity: 1;
         visibility: visible;
         pointer-events: all;
         box-shadow: none;
+        transform: translate(0,0);
     }
 }

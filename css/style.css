@@ -4663,12 +4663,16 @@ body._lock {
 }
 
 .mob-menu__location .location__body {
+  width: 100%;
   position: initial;
   opacity: 1;
   visibility: visible;
   pointer-events: all;
   -webkit-box-shadow: none;
           box-shadow: none;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 [data-aos][data-aos][data-aos-duration="50"], body[data-aos-duration="50"] [data-aos] {
