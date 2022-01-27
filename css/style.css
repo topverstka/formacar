@@ -2868,6 +2868,12 @@ body._lock {
           border-radius: 10px 0 0 10px;
 }
 
+.recent-card__slider .swiper-slide:first-child img {
+  -webkit-border-radius: 10px 0 0 10px;
+          border-radius: 10px 0 0 10px;
+  overflow: hidden;
+}
+
 .recent-card__slider .swiper-slide:last-child {
   -webkit-border-radius: 0 10px 10px 0;
           border-radius: 0 10px 10px 0;
