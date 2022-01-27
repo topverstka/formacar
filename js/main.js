@@ -63,19 +63,9 @@ const popups = ['.search', '.menu']
 window.addEventListener('click', e => {
     // Смена языка
     if (e.target.classList.contains('modal-lang__link')) changeLang(e)
-    if (find('.menu._show') && (e.target.classList.contains('search-area') || e.target.closest('.search-area'))) {
-        console.log('is search')
 
-        // const burger = find('.burger')
-        // const menu = find('.menu')
-        // const menuBg = find('.menu-bg')
-        
-		// burger.classList.remove('_close')
-		// menu.classList.remove('_show')
-        // menuBg.classList.remove('_show')
-    }
     if (
-        (find('.menu._show') && find('.search._found') && (e.target.classList.contains('search-area') || e.target.closest('.search-area'))) ||
+        (find('.menu._show') && find('.search._found') && (e.target.classList.contains('search-area_header') || e.target.closest('.search-area_header'))) ||
         (find('.menu._show') && !(e.target.classList.contains('header') || e.target.closest('.header')))
     ) {
         console.log('menu close')
@@ -167,9 +157,9 @@ function sumbitForm() {
 // Поиск по сайту
 siteSearch()
 function siteSearch() {
-    const form = find('.search-area')
-    const input = find('.search-area__input')
-    const clear = find('.search-area__clear')
+    const form = find('.search-area_header')
+    const input = form.querySelector('.search-area__input')
+    const clear = form.querySelector('.search-area__clear')
     const search = find('.search')
     const menu = find('.menu')
     const burger = find('.burger')
@@ -316,7 +306,7 @@ function siteSearch() {
 // Показать крестик у поиска
 siteSearchShowClear()
 function siteSearchShowClear() {
-    const searchElems = findAll('.search-area')
+    const searchElems = findAll('.search-area_header')
     for (let i = 0; i < searchElems.length; i++) {
         const search = searchElems[i];
         const clear = search.querySelector('.search-area__clear')
@@ -344,18 +334,25 @@ menu()
 function menu() {
 	const burger = find('.burger')
 	const menu = find('.menu');
-    const menuWrap = menu.querySelector('.menu__wrap')
+    const menuMob = find('#mob-menu')
     const menuBg = find('.menu-bg')
 
 	burger.addEventListener('click', (e) => {
-		burger.classList.toggle('_close')
-		menu.classList.toggle('_show')
-
-        if (menu.classList.contains('_show')) {
-            menuBg.classList.add('_show')
+        
+        if (window.innerWidth > 920) {
+            burger.classList.toggle('_close')
+            menu.classList.toggle('_show')
+    
+            if (menu.classList.contains('_show')) {
+                menuBg.classList.add('_show')
+            }
+            else {
+                menuBg.classList.remove('_show')
+            }
         }
         else {
-            menuBg.classList.remove('_show')
+            openModal(menuMob)
+            window.location.hash = 'mob-menu'
         }
 	})
 }
@@ -438,20 +435,24 @@ function catLinksMenu() {
 
 const sliderRecent = new Swiper('.s-recent__slider', {
 
-  slidesPerView: 4, // Кол-во показываемых слайдов
-  spaceBetween: 24, // Расстояние между слайдами
+//   slidesPerView: 4, // Кол-во показываемых слайдов
+//   spaceBetween: 24, // Расстояние между слайдами
 //   loop: true, // Бесконечный слайдер
 //   freeMode: true, // Слайдеры не зафиксированны
 
   breakpoints: {
     1024: {
-        slidesPerView: 4
+        slidesPerView: 4,
     },
-    700: {
-        slidesPerView: 3
+    768: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        allowTouchMove: false
     },
-    400: {
-
+    0: {
+        slidesPerView: 2,
+        spaceBetween: 12,
+        allowTouchMove: true
     }
   },
 
@@ -463,19 +464,23 @@ const sliderRecent = new Swiper('.s-recent__slider', {
 
 setTimeout(e => {
     const sliderInsideRecentCard = new Swiper('.recent-card__slider', {
-      
-        slidesPerView: 'auto',
         spaceBetween: 4,
-      
+
         breakpoints: {
           1440: {
               // slidesPerView: 'auto',
           },
-          700: {
+          768: {
       
           },
-          400: {
-      
+          500: {
+            slidesPerView: 'auto',
+            spaceBetween: 4,
+          },
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            allowTouchMove: false
           }
         },
       
@@ -488,8 +493,8 @@ setTimeout(e => {
 
 const sliderNews = new Swiper('.s-news__slider', {
 
-  slidesPerView: 4, // Кол-во показываемых слайдов
-  spaceBetween: 24, // Расстояние между слайдами
+//   slidesPerView: 4, // Кол-во показываемых слайдов
+//   spaceBetween: 24, // Расстояние между слайдами
 //   loop: true, // Бесконечный слайдер
 //   freeMode: true, // Слайдеры не зафиксированны
 
@@ -497,11 +502,18 @@ const sliderNews = new Swiper('.s-news__slider', {
     1024: {
         slidesPerView: 4
     },
-    700: {
-        slidesPerView: 3
+    768: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        allowTouchMove: false
     },
-    400: {
-
+    500: {
+        slidesPerView: 2,
+        allowTouchMove: true
+    },
+    0: {
+        slidesPerView: 1.3,
+        spaceBetween: 24,
     }
   },
 
@@ -513,8 +525,8 @@ const sliderNews = new Swiper('.s-news__slider', {
 
 const sliderShops = new Swiper('.s-shops__slider', {
 
-  slidesPerView: 4, // Кол-во показываемых слайдов
-  spaceBetween: 24, // Расстояние между слайдами
+//   slidesPerView: 4, // Кол-во показываемых слайдов
+//   spaceBetween: 24, // Расстояние между слайдами
 //   loop: true, // Бесконечный слайдер
 //   freeMode: true, // Слайдеры не зафиксированны
 
@@ -522,11 +534,18 @@ const sliderShops = new Swiper('.s-shops__slider', {
     1024: {
         slidesPerView: 4
     },
-    700: {
-        slidesPerView: 3
+    768: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        allowTouchMove: false
     },
-    400: {
-
+    425: {
+        slidesPerView: 2,
+        allowTouchMove: true
+    },
+    0: {
+        slidesPerView: 1,
+        spaceBetween: 12,
     }
   },
 
@@ -588,7 +607,7 @@ function closeModalWhenClickingOnBg() {
         const target = e.target
         const modal = document.querySelector('.modal._show')
 
-        if (modal && target.classList.contains('modal__wrap')) closeModal(modal)
+        if (modal && target.classList.contains('modal__wrap')) closeModal()
     })
 }
 
@@ -630,13 +649,18 @@ function resetHash() {
 
 // Открытие модального окна
 function openModal(modal) {
+    closeModal()
     modal.classList.add('_show')
     bodyLock(true)
 }
 
 // Закрытие модального окна
 function closeModal(modal) {
-    if (modal == undefined) modal = find('.modal._show')
+    if (modal == undefined) {
+        modal = find('.modal._show')
+
+        if (!modal) return
+    }
     modal.classList.remove('_show')
     bodyLock(false)
     resetHash()
@@ -658,10 +682,14 @@ function liked() {
 // Если при клике осуществляется переход на страницу с другим языком, то эту функцию нужно удалить.
 function changeLang(e) {
     const target = e.target
-    const langTitle = find('.change-lang__title')
+    const langTitleElems = findAll('.change-lang__title')
     
     e.preventDefault()
-    langTitle.innerText = target.innerText
+    for (let i = 0; i < langTitleElems.length; i++) {
+        const langTitle = langTitleElems[i];
+        
+        langTitle.innerText = target.innerText
+    }
     find('.modal-lang__link._active').classList.remove('_active')
     target.classList.add('_active')
     closeModal()
@@ -1406,4 +1434,12 @@ function rangeChangeCities() {
     })
 
     distance.innerText = range.value
+}
+
+// Отступ у footer__top на планшете и ниже
+paddingFooterTopMobile()
+function paddingFooterTopMobile() {
+    const footerTop = find('.footer__top')
+    const footerApp = find('.footer-app:not(.footer-app.mob-menu__footer)')
+    footerTop.style.paddingTop = footerApp.clientHeight + 20 + 'px'
 }

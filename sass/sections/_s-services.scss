@@ -24,6 +24,10 @@
         grid-template-columns: 1fr 1fr;
         grid-auto-rows: auto;
     }
+
+    @media (max-width: $mobile-m) {
+        gap: 11px 10px;
+    }
 }
 
 // Карточки услуг
@@ -78,6 +82,10 @@
     @media (max-width: $laptop) {
         font-size: 16px;
     }
+
+    @media (max-width: $tablet) {
+        font-size: 14px;
+    }
 }
 
 .service-card__correction {
@@ -90,7 +98,7 @@
 
 .service-card__img {
     position: absolute;
-    pointer-events: none;
+    // pointer-events: none;
 }
 
 .s-services__list {
@@ -107,7 +115,11 @@
                 @media (max-width: $laptop-l) {
                     left: auto;
                     right: 0;
-                    width: 306px;   
+                    width: 306px;
+                }
+
+                @media (max-width: $mobile-l) {
+                    right: -64px;
                 }
             }
     
@@ -132,6 +144,16 @@
                     bottom: -33px;
                     width: 183px;
                 }
+
+                @media (max-width: $tablet) {
+                    right: -20px;
+                    bottom: -10px;
+                    width: 160px;                
+                }
+
+                @media (max-width: $mobile-l) {
+                    right: -55px;               
+                }
             }
     
             @media (max-width: $tablet) {
@@ -155,6 +177,16 @@
     
                 @media (max-width: $laptop) {
                     right: -264px;
+                }
+
+                @media (max-width: $tablet) {
+                    right: -230px;
+                    bottom: 0;
+                    width: 456px;
+                }
+                
+                @media (max-width: $mobile-l) {
+                    right: -278px;
                 }
             }
     
@@ -185,6 +217,12 @@
                 @media (max-width: $tablet) {
                     left: auto;
                     right: 12px; 
+                    width: 166px;
+                }
+
+                @media (max-width: $mobile-l) {
+                    right: -41px;
+                    bottom: -23px;
                 }
             }
         }
@@ -211,6 +249,12 @@
                 @media (max-width: $tablet) {
                     left: auto;
                     right: 12px; 
+                    width: 171px;
+                }
+
+                @media (max-width: $mobile-l) {
+                    right: -26px;
+                    bottom: -20px;
                 }
             }
         }
@@ -240,6 +284,16 @@
                     width: 200px;
                     height: 200px;
                 }
+
+                @media (max-width: $tablet) {
+                    width: 168px;
+                    height: 163px;
+                }
+
+                @media (max-width: $mobile-l) {
+                    right: -23px;
+                    bottom: -87px;
+                }
             }
         }
     
@@ -264,6 +318,13 @@
                     bottom: -93px;
                     width: 165px;
                     height: 284px;
+                }
+
+                @media (max-width: $tablet) {
+                    width: 144px;
+                    height: auto;
+                    right: 3px;
+                    bottom: -52px;
                 }
             }
         }
@@ -290,6 +351,13 @@
                     bottom: -52px;
                     width: 182px;
                     height: 227px;
+                }
+
+                @media (max-width: $tablet) {
+                    width: 104px;
+                    height: auto;
+                    right: 13px;
+                    bottom: -35px;
                 }
             }
     

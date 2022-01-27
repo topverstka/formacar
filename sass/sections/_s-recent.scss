@@ -27,7 +27,7 @@
 
     &:hover {
 
-        @media (min-width: $minHover) {
+        @media (min-width: $tablet-l) {
             
             & .section-slider-arrow:not(.section-slider-arrow.swiper-button-disabled) {
                 opacity: 1;
@@ -58,13 +58,18 @@
     overflow: hidden;
     transition: $tr;
 
+    @media (max-width: $tablet-s) {
+        position: relative;
+    }
+
     &:hover {
         
-        @media (min-width: $minHover) {
+        @media (min-width: $tablet-l) {
             box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
 
             & .recent-card__slider-arrow:not(.recent-card__slider-arrow.swiper-button-disabled) {
                 opacity: 1;
+                pointer-events: all;
             }
         }
     }
@@ -78,7 +83,13 @@
 }
 
 .recent-card__wrap {
+    display: flex;
+    flex-direction: column;
     padding: 18px 16px 14px;
+
+    @media (max-width: $tablet-s) {
+        padding: 0;
+    }
 }
 
 .recent-card__container {
@@ -86,6 +97,15 @@
 }
 
 .recent-card__header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $tablet-s) {
+        position: initial;
+        padding: 0 8px;
+        margin: 8px 0 0 0;
+    }
 
     &:hover {
         
@@ -98,6 +118,10 @@
 .recent-card__title {
     font-size: 16px;
     font-weight: 500;
+
+    @media (max-width: $tablet-s) {
+        font-size: 12px;
+    }
 }
 
 .recent-card__price {
@@ -105,24 +129,70 @@
     font-size: 18px;
     font-weight: 700;
     margin: 8px 0 0 0;
+
+    @media (max-width: $tablet-s) {
+        font-size: 14px;
+        margin: 4px 0 0 0;
+    }
 }
+
+.recent-card__link {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    display: block;
+
+    // display: none;
+} 
 
 .recent-card__slider {
     position: relative;
     width: 100%;
     height: 150px;
     margin-top: 12px;
+
+    @media (max-width: $tablet) {
+        height: 120px;
+    }
+
+    @media (max-width: $tablet-s) {
+        order: -1;
+        margin: 0;
+    }
+
+    @media (max-width: $mobile-l) {
+        height: 102px;
+    }
     
     & .swiper-slide {
         width: 200px;
         overflow: hidden;
+
+        @media (max-width: $tablet) {
+            width: 180px;
+        }
+
+        @media (max-width: $tablet-s) {
+            width: 100%;
+        }
         
         &:first-child {
             border-radius: 10px 0 0 10px;
+
+            @media (max-width: $tablet-s) {
+                border-radius: 0;
+            }
         }
 
         &:last-child {
             border-radius: 0 10px 10px 0;
+
+            @media (max-width: $tablet-s) {
+                border-radius: 0;
+            }
         }
 
         img {
@@ -143,8 +213,19 @@
     width: 32px;
     height: 32px;
     opacity: 0;
+    pointer-events: none;
     // background: #fff;
     // border-radius: 50%;
+
+    @media (max-width: $tablet-l) {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    @media (max-width: $tablet-s) {
+        opacity: 0;
+        pointer-events: none;
+    }
 
     &_prev {
         left: 0;
@@ -157,6 +238,14 @@
 
 .recent-card__info {
     margin: 12px 0 0 0;
+
+    @media (max-width: $tablet-s) {
+        padding: 0 8px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin: 8px 0 0 0;
+    }
 }
 
 .recent-card__info-table {
@@ -173,10 +262,18 @@
 
             &:nth-child(1) {
                 color: $text-second-l;
+
+                @media (max-width: $tablet-s) {
+                    display: none;
+                }
             }
 
             &:nth-child(2) {
                 padding-left: 20px;
+
+                @media (max-width: $tablet-s) {
+                    padding: 0;
+                }
             }
 
             @media (max-width: $laptop-l) {
@@ -193,6 +290,16 @@
     border-top: 1px solid #ECECEC;
     padding-top: 12px;
     margin-top: 12px;
+
+    @media (max-width: $tablet-s) { 
+        padding: 12px 8px 0;
+        margin: 12px 0 8px;
+    }
+
+    @media (max-width: $mobile-l) {
+        padding: 0 8px;
+        border-top: none;
+    }
 }
 
 .recent-card__footer-info {
@@ -210,16 +317,32 @@
     @media (max-width: $laptop-l) {
         font-size: 12px;
     }
+
+    @media (max-width: $mobile-l) {
+        font-size: 10px;
+    }
 }
 
 .recent-card__date {
     margin-top: 8px;
+
+    @media (max-width: $mobile-l) {
+        margin-top: 2px;
+    }
 }
 
 .recent-card__like {
+    min-width: 30px;
     width: 30px;
     height: 30px;
     display: flex;
+    margin: 0 0 0 8px;
+
+    @media (max-width: $tablet-s) {
+        min-width: 20px;
+        width: 20px;
+        height: 20px;
+    }
 
     &._liked { // Иконка окрашивается голубым цветом
 

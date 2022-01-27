@@ -651,19 +651,26 @@
 		<section class="section s-recent">
 			<div class="container">
 				<div class="s-recent__wrap">
-					<a href="#" class="section__header s-recent__header">
-						<h2 class="section-title s-recent__title">Свежие объявления</h2>
-						<div class="section-arrow s-recent__arrow"><img src="./img/icons/s_arrow.svg" alt=""></div>
-					</a>
+					<div class="section__header s-recent__header">
+						<a href="#" class="section__header-link">
+							<h2 class="section-title s-recent__title">Свежие объявления</h2>
+							<div class="section-arrow s-recent__arrow"><img src="./img/icons/s_arrow.svg" alt=""></div>
+						</a>
+						<div class="section-slider-arrows s-recent__arrows">
+							<button class="section-slider-arrow section-slider-arrow_prev s-recent__arrow s-recent__arrow-prev"><img src="./img/icons/slider_arrow.svg" alt=""></button>
+							<button class="section-slider-arrow section-slider-arrow_next s-recent__arrow s-recent__arrow-next"><img src="./img/icons/slider_arrow.svg" alt="" style="transform: rotate(180deg)"></button>
+						</div>
+					</div>
 					<div class="s-recent__body">
 						<div class="s-recent__slider">
 							<div class="swiper-wrapper s-recent__list">
 								<div class="swiper-slide recent-card">
 									<div class="recent-card__wrap">
-										<a href="#" class="recent-card__header">
+										<div class="recent-card__header">
 											<h3 class="recent-card__title">Audi Q3 I (8U)<br>Рестайлинг 2018</h3>
 											<span class="recent-card__price">3 500 000 ₽</span>
-										</a>
+											<a href="#" class="recent-card__link"></a>
+										</div>
 										<div class="swiper-container recent-card__slider">
 											<div class="swiper-wrapper">
 												<div class="swiper-slide"><img src="./img/recent/1.png" alt=""></div>
@@ -960,10 +967,6 @@
 								</div>
 							</div>
 						</div>
-						<div class="section-slider-arrows s-recent__arrows">
-							<button class="section-slider-arrow section-slider-arrow_prev s-recent__arrow s-recent__arrow-prev"><img src="./img/icons/slider_arrow.svg" alt=""></button>
-							<button class="section-slider-arrow section-slider-arrow_next s-recent__arrow s-recent__arrow-next"><img src="./img/icons/slider_arrow.svg" alt="" style="transform: rotate(180deg)"></button>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -973,6 +976,10 @@
 				<div class="s-shops__wrap">
 					<div class="section__header s-shops__header">
 						<h2 class="section-title s-shops__title">Магазины</h2>
+						<div class="section-slider-arrows s-shops__arrows">
+							<button class="section-slider-arrow section-slider-arrow_prev s-shops__arrow s-shops__arrow-prev"><img src="./img/icons/slider_arrow.svg" alt=""></button>
+							<button class="section-slider-arrow section-slider-arrow_next s-shops__arrow s-shops__arrow-next"><img src="./img/icons/slider_arrow.svg" alt="" style="transform: rotate(180deg)"></button>
+						</div>
 					</div>
 					<div class="s-shops__body">
 						<div class="s-shops__slider">
@@ -1089,10 +1096,6 @@
 								</a>
 							</div>
 						</div>
-						<div class="section-slider-arrows s-shops__arrows">
-							<button class="section-slider-arrow section-slider-arrow_prev s-shops__arrow s-shops__arrow-prev"><img src="./img/icons/slider_arrow.svg" alt=""></button>
-							<button class="section-slider-arrow section-slider-arrow_next s-shops__arrow s-shops__arrow-next"><img src="./img/icons/slider_arrow.svg" alt="" style="transform: rotate(180deg)"></button>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -1100,10 +1103,16 @@
 		<section class="section s-news">
 			<div class="container">
 				<div class="s-news__wrap">
-					<a href="#" class="section__header s-news__header">
-						<h2 class="section-title s-news__title">Новости</h2>
-						<div class="section-arrow s-news__arrow"><img src="./img/icons/s_arrow.svg" alt=""></div>
-					</a>
+					<div class="section__header s-news__header">
+						<a href="#" class="section__header-link">
+							<h2 class="section-title s-news__title">Новости</h2>
+							<div class="section-arrow s-news__arrow"><img src="./img/icons/s_arrow.svg" alt=""></div>
+						</a>
+						<div class="section-slider-arrows s-news__arrows">
+							<button class="section-slider-arrow section-slider-arrow_prev s-news__arrow s-news__arrow-prev"><img src="./img/icons/slider_arrow.svg" alt=""></button>
+							<button class="section-slider-arrow section-slider-arrow_next s-news__arrow s-news__arrow-next"><img src="./img/icons/slider_arrow.svg" alt="" style="transform: rotate(180deg)"></button>
+						</div>
+					</div>
 					<div class="s-news__body">
 						<div class="s-news__slider">
 							<div class="swiper-wrapper s-news__list">
@@ -1153,10 +1162,6 @@
 									</div>
 								</a>
 							</div>
-						</div>
-						<div class="section-slider-arrows s-news__arrows">
-							<button class="section-slider-arrow section-slider-arrow_prev s-news__arrow s-news__arrow-prev"><img src="./img/icons/slider_arrow.svg" alt=""></button>
-							<button class="section-slider-arrow section-slider-arrow_next s-news__arrow s-news__arrow-next"><img src="./img/icons/slider_arrow.svg" alt="" style="transform: rotate(180deg)"></button>
 						</div>
 					</div>
 				</div>
@@ -1591,6 +1596,138 @@
 					</div>
 					<div class="modal-regions__apply-block">
 						<button class="btn modal-regions__apply">Применить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="modal modal-right mob-menu mob-menu_auth" id="mob-menu">
+		<div class="modal__wrap modal-right__wrap mob-menu__wrap">
+			<div class="modal__popup modal-right__popup mob-menu__popup">
+				<div class="mob-menu__header">
+					<form method="GET" class="search-area search-area_mob-menu">
+						<input class="search-area__input" id="search-site" type="search">
+						<label class="search-area__label" for="search-site">Поиск</label>
+						<button type="submit" class="search-area__icon"><img src="./img/icons/search.svg" alt="Поиск"></button>
+						<button class="search-area__clear">
+							<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10.5 0C4.97 0 0.5 4.47 0.5 10C0.5 15.53 4.97 20 10.5 20C16.03 20 20.5 15.53 20.5 10C20.5 4.47 16.03 0 10.5 0Z" fill="#B4B4BF"/>
+								<path d="M14.0833 13.5835C13.7583 13.9085 13.2333 13.9085 12.9083 13.5835L10.4999 11.1752L8.09159 13.5835C7.76659 13.9085 7.24159 13.9085 6.91659 13.5835C6.76055 13.4278 6.67285 13.2164 6.67285 12.996C6.67285 12.7756 6.76055 12.5642 6.91659 12.4085L9.32492 10.0002L6.91659 7.59185C6.76055 7.43615 6.67285 7.22478 6.67285 7.00435C6.67285 6.78391 6.76055 6.57254 6.91659 6.41685C7.24159 6.09185 7.76659 6.09185 8.09159 6.41685L10.4999 8.82518L12.9083 6.41685C13.2333 6.09185 13.7583 6.09185 14.0833 6.41685C14.4083 6.74185 14.4083 7.26685 14.0833 7.59185L11.6749 10.0002L14.0833 12.4085C14.3999 12.7252 14.3999 13.2585 14.0833 13.5835Z" fill="white"/>
+							</svg>											
+						</button>
+					</form>
+					<button class="modal__close mob-menu__close">
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+				<div class="mob-menu__body">
+					<div class="mob-menu__body-wrap">
+						<ul class="mob-menu__list">
+							<li class="mob-menu__item mob-menu__item-sign-in"><a href="#" class="link mob-menu__link">Войти</a></li>
+							<li class="mob-menu__item mob-menu__item-auth">
+								<a href="#" class="mob-menu__item-auth-link">
+									<div class="mob-menu__item-auth-avatar">
+										<img src="./img/avatar.png" alt="">
+									</div>
+									<h3 class="mob-menu__item-auth-username">User Nickname</h3>
+								</a>
+								<button class="mob-menu__item-auth-log-out">
+									<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M15 7.5V5C15 4.33696 14.7366 3.70107 14.2678 3.23223C13.7989 2.76339 13.163 2.5 12.5 2.5H3.75C3.08696 2.5 2.45107 2.76339 1.98223 3.23223C1.51339 3.70107 1.25 4.33696 1.25 5V20C1.25 20.663 1.51339 21.2989 1.98223 21.7678C2.45107 22.2366 3.08696 22.5 3.75 22.5H12.5C13.163 22.5 13.7989 22.2366 14.2678 21.7678C14.7366 21.2989 15 20.663 15 20V17.5" stroke="#383838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M6.25 12.5H23.75M23.75 12.5L20 8.75M23.75 12.5L20 16.25" stroke="#383838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>										
+								</button>
+							</li>
+							<li class="mob-menu__item"><a href="#" class="link mob-menu__link">Мои объявления</a></li>
+							<li class="mob-menu__item"><a href="#" class="link mob-menu__link">Мои магазины</a></li>
+							<li class="mob-menu__item"><a href="#" class="link mob-menu__link">Избранное</a></li>
+							<li class="mob-menu__item"><a href="#" class="link mob-menu__link">Сообщения</a></li>
+							<li class="mob-menu__item"><a href="#" class="link mob-menu__link mob-menu__link_accent mob-menu__link_icon">
+								<span class="mob-menu__link-text">Разместить объявление</span>
+								<span class="mob-menu__link-icon">
+									<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.3934 25.6067C10.2513 31.4645 19.7487 31.4645 25.6066 25.6067C31.4645 19.7488 31.4645 10.2513 25.6066 4.39347C19.7487 -1.4644 10.2513 -1.4644 4.3934 4.39347C-1.46447 10.2513 -1.46447 19.7488 4.3934 25.6067Z" fill="#D1DFFC"/>
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M14.9231 7.26367C14.2549 7.26367 13.7132 7.80543 13.7132 8.47373V14.1178L8.17714 14.1178C7.50896 14.1178 6.96729 14.6596 6.96729 15.3279C6.96729 15.9961 7.50896 16.5379 8.17714 16.5379H13.7132V22.182C13.7132 22.8503 14.2549 23.392 14.9231 23.392C15.5912 23.392 16.1329 22.8503 16.1329 22.182V16.5379H21.669C22.3371 16.5379 22.8788 15.9962 22.8788 15.3279C22.8788 14.6596 22.3371 14.1178 21.669 14.1178L16.1329 14.1178V8.47373C16.1329 7.80543 15.5912 7.26367 14.9231 7.26367Z" fill="#467EF3"/>
+									</svg>										
+								</span>
+							</a></li>
+						</ul>
+						<div class="mob-menu__separator"></div>
+						<ul class="mob-menu__list">
+							<li class="mob-menu__item"><a href="#" class="link mob-menu__link">Маркетплейс</a></li>
+							<li class="mob-menu__item"><a href="#" class="link mob-menu__link">Каталог тюнинга</a></li>
+							<li class="mob-menu__item"><a href="#" class="link mob-menu__link">Новости</a></li>
+							<li class="mob-menu__item"><a href="#" class="link mob-menu__link">События</a></li>
+							<li class="mob-menu__item"><a href="#" class="link mob-menu__link">3D Конфигуратор</a></li>
+							<li class="mob-menu__item"><a href="#" class="link mob-menu__link">Поддержка</a></li>
+						</ul>
+						<div class="mob-menu__separator"></div>
+						<div class="footer__wrap mob-menu__footer">
+							<div class="footer__top">
+								<nav class="footer-nav">
+									<ul class="footer-nav__list">
+										<li class="footer-nav__item"><a href="#" class="link footer-nav__link">О проекте</a></li>
+										<li class="footer-nav__item"><a href="#" class="link footer-nav__link">Редакция новостей</a></li>
+										<li class="footer-nav__item"><a href="#" class="link footer-nav__link">Разместить рекламу</a></li>
+										<li class="footer-nav__item"><a href="#" class="link footer-nav__link">Дилерам</a></li>
+										<li class="footer-nav__item"><a href="#" class="link footer-nav__link">Обратная связь</a></li>
+									</ul>
+								</nav>
+								<div class="footer__lang">
+									<span class="footer__lang-text">Язык</span>
+									<div class="change-lang">
+										<button class="change-lang__header" data-modal-open="lang">
+											<span class="change-lang__title">Русский</span>
+										</button>
+										<div class="change-lang__body">
+											<ul class="change-lang__list"></ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="footer__bottom">
+								<div class="footer__content">
+									<a href="/" class="logo logo_footer"><img src="./img/logos/logo.svg" alt="Логотип"></a>
+									<p class="footer__descr">Formacar — это автомобильный информационный портал с собственным 3D Конфигуратором, социальной сетью, новостным разделом, каталогом производителей и официальных дилеров автомобильных деталей и элементов тюнинга по всему миру.</p>
+									<div class="footer__more">
+										<ul class="footer__social-list">
+											<li class="footer__social-item">
+												<a href="#" class="footer__social-link">
+													<img src="./img/socials/facebook.svg" alt="">
+												</a>
+											</li>
+											<li class="footer__social-item">
+												<a href="#" class="footer__social-link">
+													<img src="./img/socials/twitter.svg" alt="">
+												</a>
+											</li>
+											<li class="footer__social-item">
+												<a href="#" class="footer__social-link">
+													<img src="./img/socials/vk.svg" alt="">
+												</a>
+											</li>
+											<li class="footer__social-item">
+												<a href="#" class="footer__social-link">
+													<img src="./img/socials/youtube.svg" alt="">
+												</a>
+											</li>
+											<li class="footer__social-item">
+												<a href="#" class="footer__social-link">
+													<img src="./img/socials/instagram.svg" alt="">
+												</a>
+											</li>
+										</ul>
+										<div class="footer__more-rules">
+											<span class="footer__copyright">© 2018-2021 FormaCar. Все права защищены. 18+</span>
+											<a href="#" class="link footer__user-agree">Пользовательское соглашение</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

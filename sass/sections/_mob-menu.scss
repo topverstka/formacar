@@ -1,0 +1,148 @@
+.mob-menu {
+
+}
+
+.mob-menu_auth {
+
+    & .mob-menu__item-sign-in {
+        display: none;
+    }
+
+    & .mob-menu__item-auth {
+        display: flex;
+    }
+}
+
+.mob-menu__wrap {
+
+}
+
+.mob-menu__popup {
+    height: 100%;
+}
+
+.mob-menu__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.mob-menu__close {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 25px;
+    height: 25px;
+    margin: 0 0 0 20px;
+
+    & span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 25px;
+        height: 2.5px;
+        background: $icon-primary-l;
+    }
+}
+
+.mob-menu__body {
+    background: #fff;
+    padding: 20px 15px 40px;
+}
+
+.mob-menu__body-wrap {
+
+}
+
+.mob-menu__list {
+
+}
+
+.mob-menu__item {
+    
+    &:not(:last-child) {
+        margin: 0 0 20px 0;
+    }
+}
+
+.mob-menu__item-auth {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    // margin: 0 0 10px 0;
+}
+
+.mob-menu__item-auth-link {
+    display: flex;
+    align-items: center;
+}
+
+.mob-menu__item-auth-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    & img {
+        object-fit: cover;
+    }
+}
+
+.mob-menu__item-auth-username {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 0 10px;
+}
+
+.mob-menu__item-auth-log-out {
+    width: 25px;
+    height: 25px;
+    display: flex;
+}
+
+.mob-menu__link {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    // padding: 10px 0;
+    transition: $tr;
+
+    &:active {
+        color: $text-accent;
+    }
+}
+
+.mob-menu__link_accent {
+
+}
+
+.mob-menu__link_icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .mob-menu__link-text {
+        color: $text-accent;
+    }
+
+    & .mob-menu__link-icon {
+        width: 30px;
+        height: 30px;
+        display: flex;
+    }
+}
+
+.mob-menu__separator {
+    width: 100%;
+    height: 1px;
+    background: $outline-l;
+    margin: 20px 0;
+}
+
+.mob-menu__footer {
+    border-top: none;
+    padding: 0;
+}
