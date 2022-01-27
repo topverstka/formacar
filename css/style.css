@@ -4483,12 +4483,14 @@ body._lock {
   left: 0;
   width: 100%;
   background: #fff;
+  opacity: 0;
   -webkit-transition: var(--tr);
   -o-transition: var(--tr);
   transition: var(--tr);
 }
 
 .mob-search._show {
+  opacity: 1;
   -webkit-transform: translate(0, 100%);
       -ms-transform: translate(0, 100%);
           transform: translate(0, 100%);

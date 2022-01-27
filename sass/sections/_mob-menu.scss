@@ -181,9 +181,11 @@
     left: 0;
     width: 100%;
     background: #fff;
+    opacity: 0;
     transition: $tr;
 
     &._show {
+        opacity: 1;
         transform: translate(0, 100%);
     }
 }
