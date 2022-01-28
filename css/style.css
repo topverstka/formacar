@@ -4528,6 +4528,10 @@ body._lock {
   overflow-x: auto;
 }
 
+.mob-search__services-list::-webkit-scrollbar {
+  height: 0;
+}
+
 .m-search-card {
   width: 72px;
   display: -webkit-box;

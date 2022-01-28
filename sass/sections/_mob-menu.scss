@@ -211,6 +211,10 @@
     display: flex;
     padding: 0 15px 10px;
     overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        height: 0;
+    }
 }
 
 // Карточка
