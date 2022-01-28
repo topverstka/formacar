@@ -2770,7 +2770,6 @@ body._lock {
 
 @media (max-width: 500px) {
   .recent-card__header {
-    position: initial;
     padding: 0 8px;
     margin: 8px 0 0 0;
   }
@@ -2919,8 +2918,8 @@ body._lock {
 
 @media (max-width: 500px) {
   .recent-card__slider-arrow {
-    opacity: 0;
-    pointer-events: none;
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -2928,8 +2927,20 @@ body._lock {
   left: 0;
 }
 
+@media (max-width: 500px) {
+  .recent-card__slider-arrow_prev {
+    left: 4px;
+  }
+}
+
 .recent-card__slider-arrow_next {
   right: 0;
+}
+
+@media (max-width: 500px) {
+  .recent-card__slider-arrow_next {
+    right: 4px;
+  }
 }
 
 .recent-card__info {
