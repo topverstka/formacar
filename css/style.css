@@ -1654,7 +1654,6 @@ body._lock {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #fff;
   -webkit-border-radius: 50%;
           border-radius: 50%;
 }

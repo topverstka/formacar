@@ -448,7 +448,7 @@ const sliderRecent = new Swiper('.s-recent__slider', {
 //   freeMode: true, // Слайдеры не зафиксированны
 
   breakpoints: {
-    1024: {
+    1025: {
         slidesPerView: 4,
     },
     768: {
@@ -507,7 +507,7 @@ const sliderNews = new Swiper('.s-news__slider', {
 //   freeMode: true, // Слайдеры не зафиксированны
 
   breakpoints: {
-    1024: {
+    1025: {
         slidesPerView: 4
     },
     768: {
@@ -533,7 +533,7 @@ const sliderShops = new Swiper('.s-shops__slider', {
     spaceBetween: 24,
 
     breakpoints: {
-    1024: {
+    1025: {
         slidesPerView: 4
     },
     768: {
