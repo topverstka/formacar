@@ -443,7 +443,7 @@ function catLinksMenu() {
 const sliderRecent = new Swiper('.s-recent__slider', {
 
 //   slidesPerView: 4, // Кол-во показываемых слайдов
-//   spaceBetween: 24, // Расстояние между слайдами
+  spaceBetween: 24, // Расстояние между слайдами
 //   loop: true, // Бесконечный слайдер
 //   freeMode: true, // Слайдеры не зафиксированны
 
@@ -453,7 +453,6 @@ const sliderRecent = new Swiper('.s-recent__slider', {
     },
     768: {
         slidesPerView: 3,
-        spaceBetween: 24,
         allowTouchMove: false
     },
     0: {
