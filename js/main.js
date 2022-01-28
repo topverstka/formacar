@@ -1279,16 +1279,22 @@ function savePopupPlaces() {
     const location = find('.location')
     const range = find('.location__radius-range input')
     const distanceBtn = find('.location__distance span')
+    const menuMob = find('#mob-menu')
 
     if (localStorage.getItem('distance')) {
         distanceBtn.innerText = localStorage.getItem('distance')
         range.setAttribute('value', localStorage.getItem('distance'))
     }
 
+    
     save.addEventListener('click', e => {
         location.classList.remove('_show-popup')
         distanceBtn.innerText = range.value
         localStorage.setItem('distance', range.value)
+        
+        if (menuMob.classList.contains('_show')) {
+            closeModal()
+        }
     })
 }
 
