@@ -318,7 +318,6 @@ function siteSearchShowClear() {
         const clear = search.querySelector('.search-area__clear')
         const input = search.querySelector('.search-area__input')
         
-        console.log(clear, input)
         input.addEventListener('input', e => {
             if (input.value != '') {
                 clear.classList.add('_show')
