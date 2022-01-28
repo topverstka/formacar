@@ -1,5 +1,8 @@
 .mob-menu {
 
+    @media (min-width: 921px) {
+        display: none;
+    }
 }
 
 .mob-menu_auth {
@@ -170,7 +173,7 @@
 
 .mob-menu__footer {
     border-top: none;
-    padding: 0;
+    padding: 20px 0 0 0;
 }
 
 // Поиск в мобильном меню
@@ -331,6 +334,10 @@
 // Локация
 .mob-menu__location {
     margin: 0;
+
+    &._show-popup {
+        background: none;
+    }
 
     & .location__header-wrap {
         padding: 0;

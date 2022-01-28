@@ -154,6 +154,18 @@ function sumbitForm() {
     })
 }
 
+// Добавление выбора локации в мобильное меню
+addLocationToMobMenu()
+function addLocationToMobMenu() {
+    if (window.innerWidth <= 920) {
+        const location = find('.location_several-cities')
+        const menuBlock = find('.mob-menu__location')
+
+        menuBlock.innerHTML = location.innerHTML
+        location.remove()
+    }
+}
+
 // Поиск по сайту
 siteSearch()
 function siteSearch() {
@@ -194,13 +206,7 @@ function siteSearch() {
     //     siteSearchBlur(input)
     // })
     clear.addEventListener('click', e => {
-        // if (clear.classList.contains('_show')) {
-            // e.preventDefault()
-            // input.value = ''
-            // input.focus()
             siteSearchPopup(input)
-            // siteSearchData(input)
-        // }
     })
 
     function siteSearchFocus(input) {
@@ -306,12 +312,13 @@ function siteSearch() {
 // Показать крестик у поиска
 siteSearchShowClear()
 function siteSearchShowClear() {
-    const searchElems = findAll('.search-area_header')
+    const searchElems = findAll('.search-area')
     for (let i = 0; i < searchElems.length; i++) {
         const search = searchElems[i];
         const clear = search.querySelector('.search-area__clear')
         const input = search.querySelector('.search-area__input')
         
+        console.log(clear, input)
         input.addEventListener('input', e => {
             if (input.value != '') {
                 clear.classList.add('_show')
@@ -465,6 +472,7 @@ const sliderRecent = new Swiper('.s-recent__slider', {
 setTimeout(e => {
     const sliderInsideRecentCard = new Swiper('.recent-card__slider', {
         spaceBetween: 4,
+        slidesPerView: 'auto',
 
         breakpoints: {
           1440: {
@@ -1043,8 +1051,18 @@ function applySettingsPlaces() {
         
         localStorage.setItem('country', JSON.stringify([...countryElems].map(e => { return e.value })))
         localStorage.setItem('regions', JSON.stringify([...regionElems].map(e => { return e.value })))
-        closeModal()
         settingsPopupPlaces()
+        
+        // if (window.innerWidth <= 920) {
+        //     const mobMenu = find('#mob-menu')
+        //     openModal(mobMenu)
+        //     console.log('<= 920', mobMenu)
+        //     mobMenu.classList.add('_show')
+            
+        // }
+        // else {
+        // }
+        closeModal()
     })
 }
 
@@ -1423,7 +1441,9 @@ function paddingFooterTopMobile() {
     if (window.innerWidth <= 920) {
         const footerTop = find('.footer__top')
         const footerApp = find('.footer-app:not(.footer-app.mob-menu__footer)')
-        window.addEventListener('load', footerTop.style.paddingTop = footerApp.clientHeight + 20 + 'px')
+        window.addEventListener('load', e => {
+            footerTop.style.paddingTop = footerApp.clientHeight + 20 + 'px'
+        })
     }
 }
 

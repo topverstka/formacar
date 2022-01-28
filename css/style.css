@@ -4290,6 +4290,12 @@ body._lock {
   }
 }
 
+@media (min-width: 921px) {
+  .mob-menu {
+    display: none;
+  }
+}
+
 .mob-menu_auth .mob-menu__item-sign-in {
   display: none;
 }
@@ -4481,7 +4487,7 @@ body._lock {
 
 .mob-menu__footer {
   border-top: none;
-  padding: 0;
+  padding: 20px 0 0 0;
 }
 
 .mob-search {
@@ -4657,6 +4663,10 @@ body._lock {
 
 .mob-menu__location {
   margin: 0;
+}
+
+.mob-menu__location._show-popup {
+  background: none;
 }
 
 .mob-menu__location .location__header-wrap {
