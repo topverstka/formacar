@@ -4674,6 +4674,10 @@ body._lock {
   padding: 0;
 }
 
+.mob-sub-menu._show .mob-sub-menu__body {
+  margin: 20px 0 0 0;
+}
+
 .mob-sub-menu__header {
   width: 100%;
   display: -webkit-box;
@@ -4725,7 +4729,6 @@ body._lock {
 .mob-sub-menu__body {
   max-height: 0;
   overflow: hidden;
-  margin: 20px 0 0 0;
   -webkit-transition: var(--tr);
   -o-transition: var(--tr);
   transition: var(--tr);

@@ -361,8 +361,11 @@
 // Подменю "Маркетплейс"
 .mob-sub-menu {
 
-    &._show-sub-menu {
-
+    &._show {
+        
+        & .mob-sub-menu__body {
+            margin: 20px 0 0 0;
+        }
     }
 }
 
@@ -410,7 +413,6 @@
 .mob-sub-menu__body {
     max-height: 0;
     overflow: hidden;
-    margin: 20px 0 0 0;
     transition: $tr;
 }
 

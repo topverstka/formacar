@@ -1259,20 +1259,24 @@ showPopupPlaces()
 function showPopupPlaces() {
     const location = find('.location')
 
-    // if (window.innerWidth <= 920) {
-    //     location.addEventListener('click', e => {
-    //         location.classList.toggle('_show-popup')
-    //     })
-    // }
-    // else {
-    // }
-    location.addEventListener('mouseenter', e => {
-        location.classList.add('_show-popup')
-    })
+    if (window.innerWidth <= 920) {
+        location.addEventListener('mouseleave', e => {
+            location.classList.remove('_show-popup')
+        })
 
-    location.addEventListener('mouseleave', e => {
-        location.classList.remove('_show-popup')
-    })
+        location.addEventListener('click', e => {
+            location.classList.toggle('_show-popup')
+        })
+    }
+    else {
+        location.addEventListener('mouseenter', e => {
+            location.classList.add('_show-popup')
+        })
+    
+        location.addEventListener('mouseleave', e => {
+            location.classList.remove('_show-popup')
+        })
+    }
 }
 
 // Сохранить данные в всплывашке
