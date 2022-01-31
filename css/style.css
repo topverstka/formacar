@@ -69,7 +69,7 @@
   --btn-primary-default: #467EF3;
   --btn-primary-pressed: #3865C2;
   --btn-primary-disabled: #B5CBFA;
-  --btn-second-default: #D1DFFC;
+  --btn-second-default: #99B8F8;
   --btn-second-pressed: #BDC9E3;
   --input-placeholder: #AFAFAF;
   --input-focus: #467EF3;
@@ -4370,7 +4370,6 @@ body._lock {
 .mob-menu__body {
   background: #fff;
   padding: 20px 15px 40px;
-  overflow: hidden;
   -webkit-transition: var(--tr);
   -o-transition: var(--tr);
   transition: var(--tr);
@@ -4675,17 +4674,84 @@ body._lock {
   padding: 0;
 }
 
-.mob-menu__location .location__body {
+.mob-sub-menu__header {
   width: 100%;
-  position: initial;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
-          transform: translate(0, 0);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mob-sub-menu__header._show .mob-sub-menu__header-title {
+  color: var(--text-accent);
+  font-weight: 700;
+}
+
+.mob-sub-menu__header._show .mob-sub-menu__header-icon {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.mob-sub-menu__header._show .mob-sub-menu__header-icon svg path:nth-child(2) {
+  fill: var(--btn-second-default);
+}
+
+.mob-sub-menu__header-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.mob-sub-menu__header-icon {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: var(--tr);
+  -o-transition: var(--tr);
+  transition: var(--tr);
+}
+
+.mob-sub-menu__body {
+  max-height: 0;
+  overflow: hidden;
+  margin: 20px 0 0 0;
+  -webkit-transition: var(--tr);
+  -o-transition: var(--tr);
+  transition: var(--tr);
+}
+
+.mob-sub-menu__block {
+  margin: 0 0 30px 20px;
+}
+
+.mob-sub-menu__title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.mob-sub-menu__list {
+  margin: 5px 0 0 0;
+}
+
+.mob-sub-menu__item:not(:last-child) {
+  margin: 0 0 5px 0;
+}
+
+.mob-sub-menu__link {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 0;
 }
 
 [data-aos][data-aos][data-aos-duration="50"], body[data-aos-duration="50"] [data-aos] {

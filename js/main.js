@@ -81,6 +81,12 @@ window.addEventListener('click', e => {
             find('.menu-bg').classList.remove('_show')
         }
     }
+
+    // Закрытие всплывашек при клике по фону, если они открыты
+    // if (find('.mob-menu__location._show-popup') && !(e.target.classList.contains('location__body') || e.target.closest('.location__body'))) {
+    //     find('.mob-menu__location._show-popup').classList.remove('_show-popup')
+    //     console.log('ok')
+    // }
 })
 
 // Валидация формы
@@ -1050,16 +1056,7 @@ function applySettingsPlaces() {
         localStorage.setItem('country', JSON.stringify([...countryElems].map(e => { return e.value })))
         localStorage.setItem('regions', JSON.stringify([...regionElems].map(e => { return e.value })))
         settingsPopupPlaces()
-        
-        // if (window.innerWidth <= 920) {
-        //     const mobMenu = find('#mob-menu')
-        //     openModal(mobMenu)
-        //     console.log('<= 920', mobMenu)
-        //     mobMenu.classList.add('_show')
-            
-        // }
-        // else {
-        // }
+
         closeModal()
     })
 }
@@ -1262,6 +1259,13 @@ showPopupPlaces()
 function showPopupPlaces() {
     const location = find('.location')
 
+    // if (window.innerWidth <= 920) {
+    //     location.addEventListener('click', e => {
+    //         location.classList.toggle('_show-popup')
+    //     })
+    // }
+    // else {
+    // }
     location.addEventListener('mouseenter', e => {
         location.classList.add('_show-popup')
     })
@@ -1381,9 +1385,9 @@ function selectRegion() {
     })
 }
 
-// Аккордеон
-accFAQ()
-function accFAQ() {
+// Аккордеоны
+accordions()
+function accordions() {
   const hiddenSiblingAcc = false // Скрывать соседние аккордеоны. false если не нужно.
   const accHeaderElems = document.querySelectorAll('.acc-open')
   
@@ -1392,8 +1396,8 @@ function accFAQ() {
     
     accHeader.addEventListener('click', e => {
       const container = (!accHeader.closest('.acc-body')) ? accHeader.parentElement.parentElement : accHeader.closest('.acc-body')
-      const parent = accHeader.closest('.modal-regions__acc')
-      const accBody = accHeader.closest('.modal-regions__acc-header').nextElementSibling
+      const parent = accHeader.closest('.acc')
+      const accBody = accHeader.closest('.acc-header').nextElementSibling
 
       parent.classList.toggle('_show') 
       accHeader.classList.toggle('_show') 

@@ -77,7 +77,7 @@
 .mob-menu__body {
     background: #fff;
     padding: 20px 15px 40px;
-    overflow: hidden;
+    // overflow: hidden;
     transition: $tr;
 }
 
@@ -347,13 +347,99 @@
         padding: 0;
     }
 
-    & .location__body {
-        width: 100%;
-        position: initial;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-        box-shadow: none;
-        transform: translate(0,0);
+    // & .location__body {
+    //     width: 100%;
+    //     position: initial;
+    //     opacity: 1;
+    //     visibility: visible;
+    //     pointer-events: all;
+    //     box-shadow: none;
+    //     transform: translate(0,0);
+    // }
+}
+
+// Подменю "Маркетплейс"
+.mob-sub-menu {
+
+    &._show-sub-menu {
+
     }
+}
+
+.mob-sub-menu__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &._show {
+
+        & .mob-sub-menu__header-title {
+            color: $text-accent;
+            font-weight: 700;
+        }
+
+        & .mob-sub-menu__header-icon {
+            transform: rotate(-180deg);
+
+            & svg {
+
+                & path {
+
+                    &:nth-child(2) {
+                        fill: $btn-second-default;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mob-sub-menu__header-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.mob-sub-menu__header-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    transition: $tr;
+}
+
+.mob-sub-menu__body {
+    max-height: 0;
+    overflow: hidden;
+    margin: 20px 0 0 0;
+    transition: $tr;
+}
+
+.mob-sub-menu__block {
+    margin: 0 0 30px 20px;
+
+    // &:not(:last-child) {
+    //     margin-bottom: 30px;
+    // }
+}
+
+.mob-sub-menu__title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.mob-sub-menu__list {
+    margin: 5px 0 0 0;
+}
+
+.mob-sub-menu__item {
+
+    &:not(:last-child) {
+        margin: 0 0 5px 0;
+    }
+}
+
+.mob-sub-menu__link {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 0;
 }
