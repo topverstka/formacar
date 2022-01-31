@@ -390,7 +390,7 @@
                 & path {
 
                     &:nth-child(2) {
-                        fill: $btn-second-default;
+                        fill: $btn-second-disabled; 
                     }
                 }
             }

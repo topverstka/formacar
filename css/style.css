@@ -69,8 +69,9 @@
   --btn-primary-default: #467EF3;
   --btn-primary-pressed: #3865C2;
   --btn-primary-disabled: #B5CBFA;
-  --btn-second-default: #99B8F8;
+  --btn-second-default: #D1DFFC;
   --btn-second-pressed: #BDC9E3;
+  --btn-second-disabled: #99B8F8;
   --input-placeholder: #AFAFAF;
   --input-focus: #467EF3;
   --input-error: #CC3334;
@@ -4706,7 +4707,7 @@ body._lock {
 }
 
 .mob-sub-menu__header._show .mob-sub-menu__header-icon svg path:nth-child(2) {
-  fill: var(--btn-second-default);
+  fill: var(--btn-second-disabled);
 }
 
 .mob-sub-menu__header-title {
