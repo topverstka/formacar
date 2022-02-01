@@ -90,74 +90,148 @@ window.addEventListener('click', e => {
 })
 
 // Валидация формы
-function validationForm() {
-    const name = find('#user_name')
-    const phone = find('#user_phone')
-    const email = find('#user_email')
+// function validationForm() {
+//     const name = find('#user_name')
+//     const phone = find('#user_phone')
+//     const email = find('#user_email')
 
-    let con = true
+//     let con = true
 
-    for (let i = 0; i < [name, phone, email].length; i++) {
-        const elem = [name, phone, email][i];
-        const elemValue = elem.value.trim()
+//     for (let i = 0; i < [name, phone, email].length; i++) {
+//         const elem = [name, phone, email][i];
+//         const elemValue = elem.value.trim()
 
-        if (elemValue === '') {
-            elem.classList.add('_error')
-            con = false
-        } else {
-            elem.classList.remove('_error')
-            con = true
-        }
-    }
+//         if (elemValue === '') {
+//             elem.classList.add('_error')
+//             con = false
+//         } else {
+//             elem.classList.remove('_error')
+//             con = true
+//         }
+//     }
 
-    return con
-}
+//     return con
+// }
 
 // Отправка формы
 // sumbitForm()
-function sumbitForm() {
-    const form = find('.modal__form')
+// function sumbitForm() {
+//     const form = find('.modal__form')
 
-    form.addEventListener('submit', async e => {
-        const modal = find('.modal._show')
-        const btnSend = form.querySelector('[type=submit]')
-        btnSend.classList.add('send-preloader')
+//     form.addEventListener('submit', async e => {
+//         const modal = find('.modal._show')
+//         const btnSend = form.querySelector('[type=submit]')
+//         btnSend.classList.add('send-preloader')
 
-        e.preventDefault()
+//         e.preventDefault()
         
-        let con = validationForm()
+//         let con = validationForm()
 
-        if (con === true) {
-            const formData = new FormData()
-            const action = form.getAttribute('action')
+//         if (con === true) {
+//             const formData = new FormData()
+//             const action = form.getAttribute('action')
     
-            let response = await fetch(action, {
-                method: 'POST',
-                body: formData
-            })
+//             let response = await fetch(action, {
+//                 method: 'POST',
+//                 body: formData
+//             })
             
-            // settimeout здесь для того, чтобы показать работу отправки формы. В дальнейшем это нужно убрать
-            setTimeout(() => {
-                if (response.ok) {
-                    console.log('Successful')
-                    form.reset()
+//             // settimeout здесь для того, чтобы показать работу отправки формы. В дальнейшем это нужно убрать
+//             setTimeout(() => {
+//                 if (response.ok) {
+//                     console.log('Successful')
+//                     form.reset()
     
-                    modal.classList.remove('_show')
-                    find('#send-done').classList.add('_show')
-                    btnSend.classList.remove('send-preloader')
-                }
-                else {
-                    console.log('Error')
-                    form.reset()
+//                     modal.classList.remove('_show')
+//                     find('#send-done').classList.add('_show')
+//                     btnSend.classList.remove('send-preloader')
+//                 }
+//                 else {
+//                     console.log('Error')
+//                     form.reset()
     
-                    modal.classList.remove('_show')
-                    find('#send-error').classList.add('_show')
-                    btnSend.classList.remove('send-preloader')
-                }
-            }, 2000)
+//                     modal.classList.remove('_show')
+//                     find('#send-error').classList.add('_show')
+//                     btnSend.classList.remove('send-preloader')
+//                 }
+//             }, 2000)
 
-        }
-    })
+//         }
+//     })
+// }
+
+// Текстовым полям, которые имеют класс clear-by-cross, будет добавлена кнопка, кликнув по которой, содержимое инпута очиститься
+clearByCross()
+function clearByCross() {
+    const textfieldElems = findAll('.clear-by-cross')
+    
+    for (let i = 0; i < textfieldElems.length; i++) {
+        const textfield = textfieldElems[i];
+        const input = textfield.querySelector('input')
+        const btn = document.createElement('div')
+        
+        btn.classList.add('textfield__clear')
+        btn.innerHTML = `<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 0C4.97 0 0.5 4.47 0.5 10C0.5 15.53 4.97 20 10.5 20C16.03 20 20.5 15.53 20.5 10C20.5 4.47 16.03 0 10.5 0Z" fill="#B4B4BF"/><path d="M14.0833 13.5835C13.7583 13.9085 13.2333 13.9085 12.9083 13.5835L10.4999 11.1752L8.09159 13.5835C7.76659 13.9085 7.24159 13.9085 6.91659 13.5835C6.76055 13.4278 6.67285 13.2164 6.67285 12.996C6.67285 12.7756 6.76055 12.5642 6.91659 12.4085L9.32492 10.0002L6.91659 7.59185C6.76055 7.43615 6.67285 7.22478 6.67285 7.00435C6.67285 6.78391 6.76055 6.57254 6.91659 6.41685C7.24159 6.09185 7.76659 6.09185 8.09159 6.41685L10.4999 8.82518L12.9083 6.41685C13.2333 6.09185 13.7583 6.09185 14.0833 6.41685C14.4083 6.74185 14.4083 7.26685 14.0833 7.59185L11.6749 10.0002L14.0833 12.4085C14.3999 12.7252 14.3999 13.2585 14.0833 13.5835Z" fill="white"/></svg>`
+
+        textfield.append(btn)
+
+        btn.addEventListener('click', e => {
+            input.value = ''
+            input.focus()
+            btn.classList.remove('_show')
+        })
+
+        input.addEventListener('input', e => {
+            if (input.value != '') {
+                btn.classList.add('_show')
+            }
+            else {
+                btn.classList.remove('_show')
+            }
+        })
+    }
+}
+
+// Текстовым полям, которые имеют класс show-pass-by-eye, будет добавлена кнопка, кликнув по которой, пароль будет показан
+showPassword()
+function showPassword() {
+    const textfieldElems = findAll('.show-pass-by-eye')
+    
+    for (let i = 0; i < textfieldElems.length; i++) {
+        const textfield = textfieldElems[i];
+        const input = textfield.querySelector('input')
+        const btn = document.createElement('div')
+        
+        btn.classList.add('textfield__show-pass')
+        btn.innerHTML = "<svg class='eye-show'><use href='./img/sprite.svg#eye-show'></use></svg><svg class='eye-hide'><use href='./img/sprite.svg#eye-hide'></use></svg>"
+
+        textfield.append(btn)
+
+        input.classList.add('_hide-pass')
+        btn.addEventListener('click', e => {
+            input.classList.toggle('_hide-pass')
+            input.classList.toggle('_show-pass')
+            btn.classList.toggle('_active')
+
+            if (input.classList.contains('_show-pass')) {
+                input.type = 'text'
+            }
+            else {
+                input.type = 'password'
+            }
+
+            input.focus()
+        })
+
+        input.addEventListener('input', e => {
+            if (input.value != '') {
+                btn.classList.add('_show')
+            }
+            else {
+                btn.classList.remove('_show')
+            }
+        })
+    }
 }
 
 // Добавление выбора локации в мобильное меню
@@ -177,7 +251,7 @@ siteSearch()
 function siteSearch() {
     const form = find('.search-area_header')
     const input = form.querySelector('.search-area__input')
-    const clear = form.querySelector('.search-area__clear')
+    const clear = form.querySelector('.textfield__clear')
     const search = find('.search')
     const menu = find('.menu')
     const burger = find('.burger')
@@ -200,11 +274,11 @@ function siteSearch() {
             siteSearchData(input)   
         }, 1500)
     })
-    input.addEventListener('input', e => {
-        if (input.value != '') { 
-            clear.classList.add('_show')
-        }
-    })
+    // input.addEventListener('input', e => {
+    //     if (input.value != '') { 
+    //         clear.classList.add('_show')
+    //     }
+    // })
     input.addEventListener('focus', e => {
         siteSearchFocus(input)
     })
@@ -316,30 +390,31 @@ function siteSearch() {
 }
 
 // Показать крестик у поиска
-siteSearchShowClear()
-function siteSearchShowClear() {
-    const searchElems = findAll('.search-area')
-    for (let i = 0; i < searchElems.length; i++) {
-        const search = searchElems[i];
-        const clear = search.querySelector('.search-area__clear')
-        const input = search.querySelector('.search-area__input')
+// siteSearchShowClear()
+// function siteSearchShowClear() {
+//     const searchElems = findAll('.textfield')
+//     for (let i = 0; i < searchElems.length; i++) {
+//         const search = searchElems[i];
+//         const clear = search.querySelector('.textfield__clear')
+//         const input = search.querySelector('.search-area__input')
         
-        input.addEventListener('input', e => {
-            if (input.value != '') {
-                clear.classList.add('_show')
-            }
-            else {
-                clear.classList.remove('_show')
-            }
-        })
+//         input.addEventListener('input', e => {
+//             if (input.value != '') {
+//                 clear.classList.add('_show')
+//             }
+//             else {
+//                 clear.classList.remove('_show')
+//             }
+//         })
 
-        clear.addEventListener('click', e => {
-            e.preventDefault()
-            input.value = ''
-            input.focus()
-        })
-    }
-}
+//         clear.addEventListener('click', e => {
+//             e.preventDefault()
+//             input.value = ''
+//             input.focus()
+//         })
+//     }
+// }
+
 
 // Мобильное меню
 menu()
@@ -372,7 +447,7 @@ function menu() {
 // Плейсхолдер поиска
 labelSearch()
 function labelSearch() {
-    const searchElems = document.querySelectorAll('.search-area')
+    const searchElems = document.querySelectorAll('.textfield')
 
     for (let i = 0; i < searchElems.length; i++) {
         const parent = searchElems[i];
@@ -610,7 +685,7 @@ function closeModalWhenClickingOnBg() {
         const target = e.target
         const modal = document.querySelector('.modal._show')
 
-        if (modal && target.classList.contains('modal__wrap')) closeModal()
+        if (modal && !modal.classList.contains('modal-auth') && target.classList.contains('modal__wrap')) closeModal()
     })
 }
 
@@ -652,7 +727,10 @@ function resetHash() {
 
 // Открытие модального окна
 function openModal(modal) {
-    closeModal()
+    if (find('.modal._show')) {
+        find('.modal._show').classList.remove('_show')
+    }
+    
     modal.classList.add('_show')
     bodyLock(true)
 }
@@ -1480,5 +1558,49 @@ function searchMobMenu() {
         search.classList.remove('_show')
         mobMenuHeader.classList.remove('_search')
         mobMenuBody.style.maxHeight = mobMenuBody.scrollHeight + 'px'
+    })
+}
+
+// Select'ы
+select()
+function select() {
+    const selectElems = findAll('.select')
+
+    for (let i = 0; i < selectElems.length; i++) {
+        const select = selectElems[i];
+        const selectedItem = select.querySelector('.select-dropdown__item._selected')
+        
+        if (selectedItem) {
+            const sTitle = select.querySelector('.select-input__title')
+
+            sTitle.innerText = selectedItem.innerHTML
+
+            console.log(select, sTitle, selectedItem.innerHTML)
+        }
+    }
+
+    window.addEventListener('click', e => {
+        const target = e.target
+
+        if (find('.select._open') && !target.classList.contains('select') && !target.closest('.select')) {
+            find('.select._open').classList.remove('_open')
+        }
+
+        if (target.classList.contains('select-input')) {
+            target.parentElement.classList.toggle('_open')
+        }
+
+        if (target.classList.contains('select-dropdown__item')) {
+            const parent = target.closest('.select')
+            const sTitle = parent.querySelector('.select-input__title')
+            const neighbourTargets = target.parentElement.querySelectorAll('.select-dropdown__item')
+
+            sTitle.innerText = target.innerText
+
+            removeAll(neighbourTargets, '_selected')
+            target.classList.add('_selected')
+
+            parent.classList.remove('_open')
+        }
     })
 }

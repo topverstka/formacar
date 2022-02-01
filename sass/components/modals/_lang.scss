@@ -1,0 +1,58 @@
+// Смена языка
+.modal-lang__header {
+    display: flex;
+    align-items: center;
+    background: $bg-second-l;
+    padding: 18px;
+}
+
+.modal-lang__arrow {
+    position: initial;
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            
+            & svg path {
+                fill: $text-primary
+            }
+        }
+    }
+
+    & svg path {
+        transition: $tr;
+    }
+}
+
+.modal-lang__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 40px;
+}
+
+.modal-lang__body {
+    background: #fff;
+    padding: 12px 0;
+}
+
+.modal-lang__link {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px 10px 15px 20px;
+    transition: $tr;
+
+    &._active {
+        color: $text-accent;
+    }
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            color: $text-accent;
+            background: #EEF1F9;
+        }
+    }
+}

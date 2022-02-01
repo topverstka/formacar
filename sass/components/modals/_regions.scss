@@ -1,0 +1,290 @@
+// Регионы и страны
+.modal-regions__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $bg-second-l;
+    padding: 18px;
+}
+
+.modal-regions__title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.modal-regions__reset {
+    display: none;
+    font-size: 14;
+    font-weight: 600;
+    color: $text-accent;
+
+    &._show {
+        display: block;
+    }
+}
+
+.modal-regions__body {
+    background: #fff;
+}
+
+.modal-regions__search {
+    padding: 20px 16px;
+}
+
+// Выбран один город
+.modal-regions__one-country {
+    display: none;
+
+    &._show {
+        display: block;
+    }
+
+    &._active {
+
+        & .modal-regions__one-country-arrow {
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+.modal-regions__one-country {
+    position: relative;
+    width: 100%;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        max-width: 284px;
+        width: 100%;
+        height: 1px;
+        background: $outline-l;
+    }
+}
+
+.modal-regions__one-country-wrap {
+    // width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 18px;
+}
+
+.modal-regions__one-country-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: $text-accent;
+    text-align: left;
+}
+
+.modal-regions__one-country-arrow {
+    width: 24px;
+    height: 24px;
+    // transition: $tr;
+}
+
+.modal-regions__more-country-title,
+.modal-regions__more-regions-title {
+    display: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 18px 10px;
+
+    &._show {
+        display: block;
+    }
+}
+
+.modal-regions__more-title {
+    display: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px 18px 10px;
+
+    &._show {
+        display: block;
+    }
+}
+
+// Выбранные города, регионы
+.modal-regions__chips {
+    display: none;
+    padding: 20px 0 10px 0;
+
+    &._show {
+        display: block;
+    }
+}
+
+.modal-regions__chips-wrap {
+    padding: 0 18px;
+}
+
+.modal-regions__chips-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+// Выбранные элементы
+.regions-chips {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    background: $btn-second-default;
+    border-radius: $radius;
+    padding: 8px 10px;
+    margin: 0 6px 13px 0;
+
+    &::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        margin: 0 0 0 10px;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0C4.47 0 0 4.47 0 10C0 15.53 4.47 20 10 20C15.53 20 20 15.53 20 10C20 4.47 15.53 0 10 0Z' fill='%23B4B4BF'/%3E%3Cpath d='M13.5833 13.5835C13.2583 13.9085 12.7333 13.9085 12.4083 13.5835L9.99998 11.1752L7.59165 13.5835C7.26665 13.9085 6.74165 13.9085 6.41665 13.5835C6.26061 13.4278 6.17291 13.2164 6.17291 12.996C6.17291 12.7756 6.26061 12.5642 6.41665 12.4085L8.82498 10.0002L6.41665 7.59185C6.26061 7.43615 6.17291 7.22478 6.17291 7.00435C6.17291 6.78391 6.26061 6.57254 6.41665 6.41685C6.74165 6.09185 7.26665 6.09185 7.59165 6.41685L9.99998 8.82518L12.4083 6.41685C12.7333 6.09185 13.2583 6.09185 13.5833 6.41685C13.9083 6.74185 13.9083 7.26685 13.5833 7.59185L11.175 10.0002L13.5833 12.4085C13.9 12.7252 13.9 13.2585 13.5833 13.5835Z' fill='white'/%3E%3C/svg%3E ");
+    }
+}
+
+.regions-chips__title {
+    max-width: 220px;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    color: $text-accent;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.regions-chips__close {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 10px;
+}
+
+// Подзаголовки
+.modal-regions__subtitles {
+
+    &._country {
+
+        & .modal-regions__more-country-title {
+            display: block;
+        }
+    }
+
+    &._regions {
+
+        & .modal-regions__more-regions-title {
+            display: block;
+        }
+    }
+}
+
+// Показать все
+.modal-regions__show-all {
+    display: none;
+    align-items: center;
+    margin: 15px 0 0 0;
+    
+    &._show {
+        display: flex;
+    }
+
+    &._text-show {
+
+        & .modal-regions__show-all-show {
+            display: block;
+        }
+    }
+
+    &._text-hide {
+
+        & .modal-regions__show-all-quantity {
+            display: none;
+        }
+
+        & .modal-regions__show-all-hide {
+            display: block;
+        }
+    }
+}
+
+.modal-regions__show-all-quantity {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 22px;
+    color: $text-accent;
+    background: $btn-second-default;
+    border-radius: 50%;
+    padding: 0 4px;
+    margin: 0 10px 0 0;
+}
+
+.modal-regions__show-all-text {
+    display: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: $text-accent;
+}
+
+// Чекбоксы со странами
+.modal-regions__countries,
+.modal-regions__regions {
+    display: none;
+    margin: 0 0 30px 0;
+
+    &._show {
+        display: block;
+    }
+}
+
+.modal-regions__apply-block {
+    position: sticky;
+    z-index: 1;
+    bottom: 20px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-regions__apply {
+    max-width: 292px;
+    width: 100%;
+    box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
+    // filter: drop-shadow(0px 5px 20px rgba(70, 126, 243, 0.5));
+}
+
+// Аккордеон
+.modal-regions__acc {
+
+    &._show {
+
+        & .modal-regions__acc-body {
+            border-bottom: 1px solid $outline-l;
+        }
+    }
+}
+
+.modal-regions__acc-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: $tr;
+
+    & .regions-checkbox {
+        margin: 0 0 0 18px;
+    }
+}
+
+.regions-checkbox__arrow {
+    transition: $tr;
+
+    &._show {
+        transform: rotate(180deg);
+    }
+}

@@ -8,6 +8,10 @@
 
     &._auth {
 
+        & .header__top {
+            padding: 0;
+        }
+
         & .header__sign-in {
             display: none;
         }
@@ -29,7 +33,7 @@
 
 // Верхняя часть шапки
 .header__top {
-    // padding: 8px 0;
+    padding: 10px 0;
 
     @media (max-width: $tablet-l) {
         padding: 10px 0;
@@ -155,7 +159,7 @@
 }
 
 // Поиск
-.search-area {
+.textfield {
     position: relative;
     width: 100%;
 }
@@ -172,22 +176,19 @@
     }
 }
 
-.search-area__input {
+.textfield input {
     width: 100%;
-    height: 100%;
+    height: 40px;
     font-size: 14px;
     border: 1px solid $input-placeholder;
     border-radius: $radius;
-    padding: 10px 10px 10px 40px;
+    padding: 0 30px 0 20px;
     transition: $tr;
 
     &:focus {
         border: 1px solid $input-focus;
 
-        & ~ .search-area__clear._show {
-            // opacity: 1;
-            // pointer-events: all;
-            // cursor: pointer;
+        & ~ .textfield__clear._show{
 
             & svg {
                 opacity: 1;
@@ -195,34 +196,12 @@
             }
         }
     }
-
-    // &:focus {
-
-    //     & + .search-area__label {
-    //         font-size: 10px;
-    //         color: $text-second-d;
-    //         transform: translate(0, calc(-50% - 9px));
-    //         // display: none;
-    //     }
-    // }
-
-    // &:not(:placeholder-shown).search-area__input:not(:focus) {
-    //     // border: 1px solid $accent-primary;
-
-    //     & + .search-area__label {
-    //         font-size: 10px;
-    //         color: $text-second-d;
-    //         transform: translate(0, calc(-50% - 9px)); 
-    //         // display: none;
-    //     }
-    // }
 }
 
-.search-area__label {
-    // display: none;
+.textfield label {
     position: absolute;
     top: 50%;
-    left: 40px;
+    left: 20px;
     transform: translate(0, -50%);
     width: 70%;
     font-size: 14px;
@@ -239,7 +218,18 @@
     }
 }
 
-.search-area__icon {
+.search-area {
+
+    & input {
+        padding: 10px 40px;
+    }
+
+    & label {
+        left: 40px;
+    }
+}
+
+.search-area__submit {
     position: absolute;
     top: 50%;
     left: 10px;
@@ -250,7 +240,8 @@
     // pointer-events: none;
 }
 
-.search-area__clear {
+.textfield__clear,
+.textfield__show-pass {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -258,11 +249,7 @@
     width: 20px;
     height: 20px;
     display: flex;
-    // background: #fff;
     border-radius: 50%;
-    // cursor: text;
-    // pointer-events: none;
-    // opacity: 0;
     
     & svg {
         transition: $tr;
@@ -288,6 +275,101 @@
     }
 }
 
+.textfield__show-pass {
+    
+    &._show {
+
+        & .eye-show {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        & .eye-hide {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &._active {
+
+            & .eye-hide {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+    
+            & .eye-show {
+                display: none;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+        }
+    }
+}
+
+// Checkbox
+.checkbox {
+    position: relative;
+
+    & input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+
+        &:checked {
+
+            & + label {
+
+                &::before {
+                    background-color: $btn-primary-default;
+                    border-color: $btn-primary-default;
+                }
+            }
+        }
+
+        &:hover {
+            
+            @media (min-width: $minHover) {
+                
+                & + label {
+                    
+                    &::before {
+                        border-color: $btn-primary-default;
+                    }
+                }
+            }
+        }
+    }
+
+    & label {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: $text-second-d;
+
+        &::before {
+            content: '';
+            display: block;
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.00002 16.2001L4.80002 12.0001L3.40002 13.4001L9.00002 19.0001L21 7.0001L19.6 5.6001L9.00002 16.2001Z' fill='white'/%3E%3C/svg%3E") no-repeat;
+            background-size: contain;
+            background-position: center center;
+            background-color: #fff;
+            border: 1px solid $icon-second;
+            border-radius: 4px;
+            margin: -2px 15px 0 0;
+            transition: $tr;
+        }
+    }
+}
+
 .header__top-content {
     display: flex;
     align-items: center;
@@ -302,6 +384,7 @@
 
 .header__sign-in {
     width: 180px;
+    height: 40px;
     margin: 0 20px 0 0 ;
 
     @media (max-width: $laptop-m) {
@@ -317,6 +400,7 @@
 // Кнопка "Продать"
 .header__sell {
     width: 180px;
+    height: 40px;
 
     @media (max-width: $laptop-m) {
         width: 130px;
@@ -558,19 +642,6 @@
     margin-left: 28px;
     transition: $tr;
 
-    // &:hover {
-        
-    //     @media (min-width: $minHover) {
-    //         background: #EEF1F9;
-
-    //         & .location__body {
-    //             opacity: 1!important;
-    //             visibility: visible!important;
-    //             pointer-events: all!important;
-    //         }
-    //     }
-    // }
-
     &._show-popup {
         background: #EEF1F9;
 
@@ -580,17 +651,6 @@
                 pointer-events: all!important;
             }
     }
-
-    // &_several-cities { // Если несколько городов. Дистанция скроется, кол-во городов появится
-    
-    //     & .location__distance {
-    //         display: none;
-    //     }
-    
-    //     & .location__quantity {
-    //         display: block;
-    //     }
-    // }
 }
 
 .location__header {

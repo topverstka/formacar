@@ -67,6 +67,7 @@ body {
 @import 'components/_section';
 @import 'components/_sub-menu';
 @import 'components/_regions-checkbox';
+@import 'components/_select';
  
 // Текстовые компоненты
 @import 'components/text/_text';
@@ -82,6 +83,11 @@ body {
 @import 'sections/_search';
 @import 'sections/_footer';
 @import 'sections/_mob-menu';
+
+// Модальные окна
+@import 'components/modals/_lang';
+@import 'components/modals/_regions';
+@import 'components/modals/_auth';
 
 // Страницы
 

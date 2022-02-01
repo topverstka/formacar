@@ -1,0 +1,151 @@
+.modal-auth {
+
+
+    & .modal__popup {
+        width: 100%;
+        height: 100%;
+        padding: 0 30px;
+    }
+
+    & .modal-auth__popup-wrap {
+        max-width: 340px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+}
+
+.modal-auth__close {
+    width: 30px;
+    height: 30px;
+}
+
+.modal-auth__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-auth__header-img {
+    width: 192px;
+    height: 192px;
+    display: flex;
+}
+
+.modal-auth__title {
+    font-family: $ffHeader;
+    font-size: 18px;
+
+    &_error {
+        color: $input-error;
+    }
+}
+
+.modal-auth__text {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 20px 0 0 0;
+}
+
+// Тело модального окна
+.modal-auth__body {
+    margin: 30px 0 0 0;
+}
+
+.modal-auth__variants {
+
+}
+
+.modal-auth__variants-btn {
+    margin: 15px 0 0 0;
+}
+
+.modal-auth__btn-log-in {
+
+}
+
+.modal-auth__btn-sign-in {
+
+}
+
+.modal-auth__btn-log-in-not-reg {
+    height: 32px;
+}
+
+.modal-auth__socials {
+    display: flex;
+    align-items: center;
+    margin: 32px 0 0 0;
+}
+
+.modal-auth__socials-list {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 32px;
+}
+
+.modal-auth__socials-text {
+    font-size: 12px;
+    font-weight: 400;
+    color: $text-second-d;
+}
+
+.modal-auth__socials-link {
+    width: 30px;
+    height: 30px;
+    display: flex;
+
+    &:not(:last-child) {
+        margin: 0 32px 0 0;
+    }
+}
+
+.modal-auth__label {
+    font-size: 12px;
+    color: $text-second-d;
+    line-height: 20px;
+    text-align: center;
+    margin: 30px 0 0 0;
+
+    & a {
+        color: $text-accent;
+    }
+}
+
+// Вход
+.modal-auth__form-field {
+
+    &:not(:last-child) {
+        margin: 0 0 15px 0;
+    }
+}
+
+.sign-in__form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+}
+
+.sign-in__forgot-pass {
+    font-size: 12px;
+    color: $text-second-d;
+    text-align: right;
+    margin: 0 0 0 6px;
+}
+
+// Регистрация
+.sign-up__submit {
+    // height: 48px;
+}
+
+// Ошибка
+.modal-error__title {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+// .modal-error__btn {
+//     margin: 30px;
+// }

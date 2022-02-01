@@ -20,7 +20,7 @@
 <body>
 	<div class="wrapper">
 		<div class="menu-bg"></div>
-		<header class="header _auth">
+		<header class="header">
 			<div class="header__wrap">
 				<div class="header__top">
 					<div class="container">
@@ -34,20 +34,14 @@
 								<a href="/" class="logo logo_header"><img src="./img/logos/logo_market.svg" alt="Логотип"></a>
 							</div>
 							<div class="header__top-right">
-								<form method="GET" class="search-area search-area_header">
+								<form method="GET" class="textfield clear-by-cross search-area search-area_header">
 									<input class="search-area__input" id="search-site" type="text">
 									<label class="search-area__label" for="search-site">Поиск по объявлениям</label>
-									<button type="submit" class="search-area__icon"><img src="./img/icons/search.svg" alt="Поиск"></button>
-									<button class="search-area__clear">
-										<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M10.5 0C4.97 0 0.5 4.47 0.5 10C0.5 15.53 4.97 20 10.5 20C16.03 20 20.5 15.53 20.5 10C20.5 4.47 16.03 0 10.5 0Z" fill="#B4B4BF"/>
-											<path d="M14.0833 13.5835C13.7583 13.9085 13.2333 13.9085 12.9083 13.5835L10.4999 11.1752L8.09159 13.5835C7.76659 13.9085 7.24159 13.9085 6.91659 13.5835C6.76055 13.4278 6.67285 13.2164 6.67285 12.996C6.67285 12.7756 6.76055 12.5642 6.91659 12.4085L9.32492 10.0002L6.91659 7.59185C6.76055 7.43615 6.67285 7.22478 6.67285 7.00435C6.67285 6.78391 6.76055 6.57254 6.91659 6.41685C7.24159 6.09185 7.76659 6.09185 8.09159 6.41685L10.4999 8.82518L12.9083 6.41685C13.2333 6.09185 13.7583 6.09185 14.0833 6.41685C14.4083 6.74185 14.4083 7.26685 14.0833 7.59185L11.6749 10.0002L14.0833 12.4085C14.3999 12.7252 14.3999 13.2585 14.0833 13.5835Z" fill="white"/>
-										</svg>											
-									</button>
+									<button type="submit" class="search-area__submit"><img src="./img/icons/search.svg" alt="Поиск"></button>
 								</form>
 								<div class="header__top-content">
 									<div class="header__top-buttons">
-										<button class="btn-second header__sign-in">Войти</button>
+										<button class="btn-second header__sign-in" data-modal-open="auth">Войти</button>
 										<button class="btn header__sell">Продать</button>
 									</div>
 									<div class="user__options">
@@ -1556,16 +1550,10 @@
 				</div>
 				<div class="modal-regions__body">
 					<div class="modal-regions__search">
-						<form method="GET" class="search-area search-area_regions">
+						<form method="GET" class="textfield clear-by-cross search-area search-area_regions">
 							<input class="search-area__input" id="search-cities" type="text">
 							<label class="search-area__label" for="search-cities">Страна</label>
-							<button type="submit" class="search-area__icon"><img src="./img/icons/search.svg" alt="Поиск"></button>
-							<button class="search-area__clear">
-								<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M10.5 0C4.97 0 0.5 4.47 0.5 10C0.5 15.53 4.97 20 10.5 20C16.03 20 20.5 15.53 20.5 10C20.5 4.47 16.03 0 10.5 0Z" fill="#B4B4BF"/>
-									<path d="M14.0833 13.5835C13.7583 13.9085 13.2333 13.9085 12.9083 13.5835L10.4999 11.1752L8.09159 13.5835C7.76659 13.9085 7.24159 13.9085 6.91659 13.5835C6.76055 13.4278 6.67285 13.2164 6.67285 12.996C6.67285 12.7756 6.76055 12.5642 6.91659 12.4085L9.32492 10.0002L6.91659 7.59185C6.76055 7.43615 6.67285 7.22478 6.67285 7.00435C6.67285 6.78391 6.76055 6.57254 6.91659 6.41685C7.24159 6.09185 7.76659 6.09185 8.09159 6.41685L10.4999 8.82518L12.9083 6.41685C13.2333 6.09185 13.7583 6.09185 14.0833 6.41685C14.4083 6.74185 14.4083 7.26685 14.0833 7.59185L11.6749 10.0002L14.0833 12.4085C14.3999 12.7252 14.3999 13.2585 14.0833 13.5835Z" fill="white"/>
-								</svg>											
-							</button>
+							<button type="submit" class="search-area__submit"><img src="./img/icons/search.svg" alt="Поиск"></button>
 						</form>
 					</div>
 					<button class="modal-regions__one-country">
@@ -1855,22 +1843,15 @@
 		</div>
 	</div>
 
-	
 	<div class="modal modal-right mob-menu mob-menu_auth" id="mob-menu">
 		<div class="modal__wrap modal-right__wrap mob-menu__wrap">
 			<div class="modal__popup modal-right__popup mob-menu__popup">
 				<div class="mob-menu__header">
 					<div class="mob-menu__header-wrap">
-						<form method="GET" class="search-area search-area_mob-menu">
+						<form method="GET" class="textfield clear-by-cross search-area search-area_mob-menu">
 							<input class="search-area__input" id="search-site" type="text">
 							<label class="search-area__label" for="search-site">Поиск</label>
-							<button type="submit" class="search-area__icon"><img src="./img/icons/search.svg" alt="Поиск"></button>
-							<button class="search-area__clear">
-								<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M10.5 0C4.97 0 0.5 4.47 0.5 10C0.5 15.53 4.97 20 10.5 20C16.03 20 20.5 15.53 20.5 10C20.5 4.47 16.03 0 10.5 0Z" fill="#B4B4BF"/>
-									<path d="M14.0833 13.5835C13.7583 13.9085 13.2333 13.9085 12.9083 13.5835L10.4999 11.1752L8.09159 13.5835C7.76659 13.9085 7.24159 13.9085 6.91659 13.5835C6.76055 13.4278 6.67285 13.2164 6.67285 12.996C6.67285 12.7756 6.76055 12.5642 6.91659 12.4085L9.32492 10.0002L6.91659 7.59185C6.76055 7.43615 6.67285 7.22478 6.67285 7.00435C6.67285 6.78391 6.76055 6.57254 6.91659 6.41685C7.24159 6.09185 7.76659 6.09185 8.09159 6.41685L10.4999 8.82518L12.9083 6.41685C13.2333 6.09185 13.7583 6.09185 14.0833 6.41685C14.4083 6.74185 14.4083 7.26685 14.0833 7.59185L11.6749 10.0002L14.0833 12.4085C14.3999 12.7252 14.3999 13.2585 14.0833 13.5835Z" fill="white"/>
-								</svg>											
-							</button>
+							<button type="submit" class="search-area__submit"><img src="./img/icons/search.svg" alt="Поиск"></button>
 						</form>
 						<button class="mob-menu__cancel-search">Отменить</button>
 						<button class="modal__close mob-menu__close">
@@ -2253,6 +2234,259 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="modal modal-bg_light modal-auth" id="auth">
+		<div class="modal__wrap modal-auth__wrap">
+			<div class="modal__popup">
+				<div class="modal-auth__popup-wrap">
+					<div class="modal-auth__header">
+						<div class="modal-auth__header-img"><img src="./img/auth/auth-img.png" alt=""></div>
+						<h2 class="modal-auth__title">Начните использовать<br>Formacar в полную силу!</h2>
+						<p class="modal-auth__text">Зарегистрируйтесь, чтобы работать с приложением на 100%.</p>
+					</div>
+					<div class="modal-auth__body">
+						<div class="modal-auth__variants">
+							<button class="btn-second modal-auth__variants-btn modal-auth__btn-log-in" data-modal-open="sign-in">войти</button>
+							<button class="btn modal-auth__variants-btn modal-auth__btn-sign-in" data-modal-open="sign-up">зарегистрироваться</button>
+							<button class="btn-linear modal-auth__variants-btn modal-auth__btn-log-in-not-reg">Войти без регистрации</button>
+						</div>
+						<div class="modal-auth__socials">
+							<p class="modal-auth__socials-text">или войдите через следующие сервисы:</p>
+							<div class="modal-auth__socials-list">
+								<a href="#" class="modal-auth__socials-link">
+									<svg><use href="./img/sprite.svg#vk"></use></svg>
+								</a>
+								<a href="#" class="modal-auth__socials-link">
+									<svg><use href="./img/sprite.svg#facebook"></use></svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="modal__close modal-auth__close">
+				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z" fill="#F6F8FD"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M20.6255 9.62558C20.153 9.1531 19.3869 9.15317 18.9144 9.62572L14.9234 13.6167L11.0088 9.70209C10.5363 9.22962 9.77024 9.22968 9.29769 9.70224C8.82513 10.1748 8.82507 10.9409 9.29755 11.4134L13.2121 15.328L9.22117 19.3189C8.74861 19.7915 8.74855 20.5576 9.22103 21.0301C9.69351 21.5025 10.4596 21.5025 10.9322 21.0299L14.9231 17.039L18.8377 20.9535C19.3102 21.426 20.0763 21.426 20.5488 20.9534C21.0214 20.4808 21.0215 19.7147 20.549 19.2423L16.6344 15.3277L20.6254 11.3367C21.0979 10.8642 21.098 10.0981 20.6255 9.62558Z" fill="#B4B4BF"/>
+				</svg>						
+			</button>
+		</div>
+	</div>
+
+	<div class="modal modal-bg_light modal-auth modal-sign-in" id="sign-in">
+		<div class="modal__wrap modal-auth__wrap">
+			<div class="modal__popup">
+				<div class="modal-auth__popup-wrap">
+					<div class="modal-auth__header">
+						<div class="modal-auth__header-img"><img src="./img/auth/auth-img.png" alt=""></div>
+						<h2 class="modal-auth__title">Авторизация</h2>
+					</div>
+					<div class="modal-auth__body">
+						<form action="#" class="sign-in__form">
+							<div class="textfield modal-auth__form-field clear-by-cross">
+								<input type="email" id="sign-in-email">
+								<label for="sign-in-email">Email</label>
+							</div>
+							<div class="textfield modal-auth__form-field show-pass-by-eye">
+								<input type="password" id="sign-in-password">
+								<label for="sign-in-password">Пароль</label>
+							</div>
+						</form>
+						<div class="sign-in__form-footer">
+							<div class="checkbox sign-in__form-checkbox">
+								<input type="checkbox" id="remember-me">
+								<label for="remember-me">Оставаться в системе</label>
+							</div>
+							<a href="#" class="link sign-in__forgot-pass">Забыли пароль</a>
+						</div>
+						<div class="modal-auth__variants">
+							<button class="btn-second modal-auth__variants-btn modal-auth__btn-log-in">войти</button>
+							<button class="btn modal-auth__variants-btn modal-auth__btn-sign-in">зарегистрироваться</button>
+							<button class="btn-linear modal-auth__variants-btn modal-auth__btn-log-in-not-reg">Войти без регистрации</button>
+						</div>
+						<div class="modal-auth__socials">
+							<p class="modal-auth__socials-text">или войдите через следующие сервисы:</p>
+							<div class="modal-auth__socials-list">
+								<a href="#" class="modal-auth__socials-link">
+									<svg><use href="./img/sprite.svg#vk"></use></svg>
+								</a>
+								<a href="#" class="modal-auth__socials-link">
+									<svg><use href="./img/sprite.svg#facebook"></use></svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="modal__close modal-auth__close">
+				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z" fill="#F6F8FD"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M20.6255 9.62558C20.153 9.1531 19.3869 9.15317 18.9144 9.62572L14.9234 13.6167L11.0088 9.70209C10.5363 9.22962 9.77024 9.22968 9.29769 9.70224C8.82513 10.1748 8.82507 10.9409 9.29755 11.4134L13.2121 15.328L9.22117 19.3189C8.74861 19.7915 8.74855 20.5576 9.22103 21.0301C9.69351 21.5025 10.4596 21.5025 10.9322 21.0299L14.9231 17.039L18.8377 20.9535C19.3102 21.426 20.0763 21.426 20.5488 20.9534C21.0214 20.4808 21.0215 19.7147 20.549 19.2423L16.6344 15.3277L20.6254 11.3367C21.0979 10.8642 21.098 10.0981 20.6255 9.62558Z" fill="#B4B4BF"/>
+				</svg>						
+			</button>
+		</div>
+	</div>
+
+	<div class="modal modal-bg_light modal-auth" id="sign-up">
+		<div class="modal__wrap modal-auth__wrap">
+			<div class="modal__popup">
+				<div class="modal-auth__popup-wrap">
+					<div class="modal-auth__header">
+						<h2 class="modal-auth__title">Регистрация</h2>
+					</div>
+					<div class="modal-auth__body">
+						<form action="#" class="sign-up__form">
+							<div class="textfield modal-auth__form-field clear-by-cross">
+								<input type="email" id="sign-in-email">
+								<label for="sign-in-email">Email</label>
+							</div>
+							<div class="textfield modal-auth__form-field show-pass-by-eye">
+								<input type="password" id="sign-in-password">
+								<label for="sign-in-password">Пароль</label>
+							</div>
+							<div class="select modal-auth__form-field">
+								<div class="select-input">
+									<span class="select-input__title">Страна</span>
+									<div class="select-input__chevron">
+										<svg><use href='./img/sprite.svg#chevron'></use></svg>
+									</div>
+								</div>
+								<div class="select-dropdown">
+									<ul class="select-dropdown__list">
+										<li class="select-dropdown__item _selected">Россия</li>
+										<li class="select-dropdown__item">Англия</li>
+										<li class="select-dropdown__item">Германия</li>
+										<li class="select-dropdown__item">Монголия</li>
+									</ul>
+								</div>
+							</div>
+							<button type="submit" class="btn sign-up__submit">Создать аккаунт</button>
+							<p class="modal-auth__label">Нажимая кнопку «Продолжить»<br>Вы соглашаетесь с условиями<br><a class="link" href="#">Пользовательского соглашения</a></p>
+						</form>
+					</div>
+				</div>
+			</div>
+			<button class="modal__close modal-auth__close">
+				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z" fill="#F6F8FD"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M20.6255 9.62558C20.153 9.1531 19.3869 9.15317 18.9144 9.62572L14.9234 13.6167L11.0088 9.70209C10.5363 9.22962 9.77024 9.22968 9.29769 9.70224C8.82513 10.1748 8.82507 10.9409 9.29755 11.4134L13.2121 15.328L9.22117 19.3189C8.74861 19.7915 8.74855 20.5576 9.22103 21.0301C9.69351 21.5025 10.4596 21.5025 10.9322 21.0299L14.9231 17.039L18.8377 20.9535C19.3102 21.426 20.0763 21.426 20.5488 20.9534C21.0214 20.4808 21.0215 19.7147 20.549 19.2423L16.6344 15.3277L20.6254 11.3367C21.0979 10.8642 21.098 10.0981 20.6255 9.62558Z" fill="#B4B4BF"/>
+				</svg>						
+			</button>
+		</div>
+	</div>
+
+	<div class="modal modal-bg_light modal-auth" id="select-country">
+		<div class="modal__wrap modal-auth__wrap">
+			<div class="modal__popup">
+				<div class="modal-auth__popup-wrap">
+					<div class="modal-auth__header">
+						<h2 class="modal-auth__title">Выберите страну</h2>
+					</div>
+					<div class="modal-auth__body">
+						<form action="#" class="sign-up__form">
+							<div class="select modal-auth__form-field">
+								<div class="select-input">
+									<span class="select-input__title">Страна</span>
+									<div class="select-input__chevron">
+										<svg><use href='./img/sprite.svg#chevron'></use></svg>
+									</div>
+								</div>
+								<div class="select-dropdown">
+									<ul class="select-dropdown__list">
+										<li class="select-dropdown__item _selected">Россия</li>
+										<li class="select-dropdown__item">Англия</li>
+										<li class="select-dropdown__item">Германия</li>
+										<li class="select-dropdown__item">Монголия</li>
+									</ul>
+								</div>
+							</div>
+							<button type="submit" class="btn-second sign-up__submit">Продолжить</button>
+							<p class="modal-auth__label">Нажимая кнопку «Продолжить»<br>Вы соглашаетесь с условиями<br><a class="link" href="#">Пользовательского соглашения</a></p>
+						</form>
+					</div>
+				</div>
+			</div>
+			<button class="modal__close modal-auth__close">
+				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z" fill="#F6F8FD"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M20.6255 9.62558C20.153 9.1531 19.3869 9.15317 18.9144 9.62572L14.9234 13.6167L11.0088 9.70209C10.5363 9.22962 9.77024 9.22968 9.29769 9.70224C8.82513 10.1748 8.82507 10.9409 9.29755 11.4134L13.2121 15.328L9.22117 19.3189C8.74861 19.7915 8.74855 20.5576 9.22103 21.0301C9.69351 21.5025 10.4596 21.5025 10.9322 21.0299L14.9231 17.039L18.8377 20.9535C19.3102 21.426 20.0763 21.426 20.5488 20.9534C21.0214 20.4808 21.0215 19.7147 20.549 19.2423L16.6344 15.3277L20.6254 11.3367C21.0979 10.8642 21.098 10.0981 20.6255 9.62558Z" fill="#B4B4BF"/>
+				</svg>						
+			</button>
+		</div>
+	</div>
+
+	<div class="modal modal-bg_light modal-auth" id="recover-pass">
+		<div class="modal__wrap modal-auth__wrap">
+			<div class="modal__popup">
+				<div class="modal-auth__popup-wrap">
+					<div class="modal-auth__header">
+						<h2 class="modal-auth__title">Восстановление</h2>
+					</div>
+					<div class="modal-auth__body">
+						<form action="#" class="sign-up__form">
+							<div class="textfield modal-auth__form-field clear-by-cross">
+								<input type="email" id="sign-in-email">
+								<label for="sign-in-email">Email</label>
+							</div>
+							<button type="submit" class="btn-second sign-up__submit">Выслать код</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<button class="modal__close modal-auth__close">
+				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z" fill="#F6F8FD"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M20.6255 9.62558C20.153 9.1531 19.3869 9.15317 18.9144 9.62572L14.9234 13.6167L11.0088 9.70209C10.5363 9.22962 9.77024 9.22968 9.29769 9.70224C8.82513 10.1748 8.82507 10.9409 9.29755 11.4134L13.2121 15.328L9.22117 19.3189C8.74861 19.7915 8.74855 20.5576 9.22103 21.0301C9.69351 21.5025 10.4596 21.5025 10.9322 21.0299L14.9231 17.039L18.8377 20.9535C19.3102 21.426 20.0763 21.426 20.5488 20.9534C21.0214 20.4808 21.0215 19.7147 20.549 19.2423L16.6344 15.3277L20.6254 11.3367C21.0979 10.8642 21.098 10.0981 20.6255 9.62558Z" fill="#B4B4BF"/>
+				</svg>						
+			</button>
+		</div>
+	</div>
+
+	<div class="modal modal-bg_light modal-auth modal-error-sign-in" id="error-sign-in">
+		<div class="modal__wrap modal-auth__wrap">
+			<div class="modal__popup">
+				<div class="modal-auth__popup-wrap">
+					<div class="modal-auth__header">
+						<h2 class="modal-auth__title modal-auth__title_error">Ошибка входа</h2>
+						<p class="modal-auth__text">Не удалось выполнить вход. Пожалуйста, проверьте правильность введённых данных.</p>
+					</div>
+					<div class="modal-auth__body">
+						<div class="modal-auth__variants">
+							<button class="btn-second modal-auth__variants-btn">Забыли пароль?</button>
+							<button class="btn-linear modal-auth__variants-btn">Вернуться назад</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="modal__close modal-auth__close">
+				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z" fill="#F6F8FD"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M20.6255 9.62558C20.153 9.1531 19.3869 9.15317 18.9144 9.62572L14.9234 13.6167L11.0088 9.70209C10.5363 9.22962 9.77024 9.22968 9.29769 9.70224C8.82513 10.1748 8.82507 10.9409 9.29755 11.4134L13.2121 15.328L9.22117 19.3189C8.74861 19.7915 8.74855 20.5576 9.22103 21.0301C9.69351 21.5025 10.4596 21.5025 10.9322 21.0299L14.9231 17.039L18.8377 20.9535C19.3102 21.426 20.0763 21.426 20.5488 20.9534C21.0214 20.4808 21.0215 19.7147 20.549 19.2423L16.6344 15.3277L20.6254 11.3367C21.0979 10.8642 21.098 10.0981 20.6255 9.62558Z" fill="#B4B4BF"/>
+				</svg>						
+			</button>
+		</div>
+	</div>
+
+	<div class="modal modal-bg_light modal-auth modal-error" id="error">
+		<div class="modal__wrap modal-auth__wrap">
+			<div class="modal__popup">
+				<div class="modal-auth__popup-wrap">
+					<div class="modal-auth__heade">
+						<h2 class="modal-error__title">Введен email<br>не найден в системе</h2>
+					</div>
+					<div class="modal-auth__body">
+						<button class="btn-second modal-error__btn">Отмена</button>
+					</div>
+				</div>
+			</div>
+			<button class="modal__close modal-auth__close">
+				<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z" fill="#F6F8FD"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M20.6255 9.62558C20.153 9.1531 19.3869 9.15317 18.9144 9.62572L14.9234 13.6167L11.0088 9.70209C10.5363 9.22962 9.77024 9.22968 9.29769 9.70224C8.82513 10.1748 8.82507 10.9409 9.29755 11.4134L13.2121 15.328L9.22117 19.3189C8.74861 19.7915 8.74855 20.5576 9.22103 21.0301C9.69351 21.5025 10.4596 21.5025 10.9322 21.0299L14.9231 17.039L18.8377 20.9535C19.3102 21.426 20.0763 21.426 20.5488 20.9534C21.0214 20.4808 21.0215 19.7147 20.549 19.2423L16.6344 15.3277L20.6254 11.3367C21.0979 10.8642 21.098 10.0981 20.6255 9.62558Z" fill="#B4B4BF"/>
+				</svg>						
+			</button>
 		</div>
 	</div>
 
