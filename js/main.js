@@ -1574,8 +1574,7 @@ function select() {
             const sTitle = select.querySelector('.select-input__title')
 
             sTitle.innerText = selectedItem.innerHTML
-
-            console.log(select, sTitle, selectedItem.innerHTML)
+            select.classList.add('_item-select')
         }
     }
 
@@ -1601,6 +1600,7 @@ function select() {
             target.classList.add('_selected')
 
             parent.classList.remove('_open')
+            parent.classList.add('_item-select')
         }
     })
 }

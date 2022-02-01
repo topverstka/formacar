@@ -12,6 +12,14 @@
             visibility: visible;
         }
     }
+
+    &._item-select {
+
+        & .select-input__title {
+            font-weight: 500;
+            color: $text-primary;
+        }
+    }
 }
 
 .select-input {
@@ -29,6 +37,8 @@
 
 .select-input__title {
     font-size: 14px;
+    font-weight: 400;
+    color: $input-placeholder;
 }
 
 .select-input__chevron {
@@ -60,6 +70,18 @@
     max-height: 200px;
     padding: 4px 0;
     overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: none;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: $icon-second;
+    }
 }
 
 .select-dropdown__item {

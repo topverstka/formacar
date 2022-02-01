@@ -1022,6 +1022,11 @@ body._lock {
   visibility: visible;
 }
 
+.select._item-select .select-input__title {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
 .select-input {
   position: relative;
   width: 100%;
@@ -1047,6 +1052,8 @@ body._lock {
 
 .select-input__title {
   font-size: 14px;
+  font-weight: 400;
+  color: var(--input-placeholder);
 }
 
 .select-input__chevron {
@@ -1088,6 +1095,18 @@ body._lock {
   max-height: 200px;
   padding: 4px 0;
   overflow-y: auto;
+}
+
+.select-dropdown__list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.select-dropdown__list::-webkit-scrollbar-track {
+  background: none;
+}
+
+.select-dropdown__list::-webkit-scrollbar-thumb {
+  background-color: var(--icon-second);
 }
 
 .select-dropdown__item {
