@@ -1,15 +1,13 @@
 .na-sidebar {
-    position: absolute;
-    top: 0;
-    right: 0;
     max-width: 306px;
     width: 100%;
-    display: flex;
-    background: #fff;
-    border-radius: $radius;
 }
 
 .na-sidebar__wrap {
+    position: sticky;
+    top: 12px;
+    background: #fff;
+    border-radius: $radius;
     padding: 30px 20px;
 }
 

@@ -55,6 +55,7 @@
 .select-dropdown {
     width: 100%;
     position: absolute;
+    z-index: 1;
     bottom: 0;
     left: 0;
     transform: translate(0, 100%);
