@@ -197,6 +197,11 @@
     font-weight: 400;
     color: $text-second-d;
     margin-top: 10px;
+
+    @media (max-width: $mobile-l) {
+        font-size: 10px;
+        margin-top: 5px;
+    }
 }
 
 // Список
@@ -306,3 +311,165 @@
     width: fit-content;
     margin: 0 0 0 auto;
 }
+
+// Загрузка картинок
+.na-dropzone {
+    position: relative;
+    min-height: 98px;
+    display: flex;
+    flex-wrap: wrap;
+    // grid-template-columns: ;
+    // align-items: center;
+    // justify-content: center;
+    gap: 20px;
+    border: 1px dashed $icon-blue-l;
+    border-radius: $radius;
+    transition: $tr;
+
+    & .dz-button {
+        display: none;
+    }
+
+    // Перемещение файлов на область загрузки
+    &.dz-drag-hover {
+        background-color: #F6F8FD;
+
+        & .na-dropzone__add-more {
+            border-style: solid;
+            background-color: #F6F8FD;
+
+            & .na-dropzone__add-more-icon {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        &:not(.dz-started.dz-drag-hover) {
+
+            & .na-dropzone__icon {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    // Выбраны картинки
+    &.dz-started {
+        border: none;
+        padding: 0;
+
+        & .na-dropzone__block {
+            display: none;
+        }
+
+        & .na-dropzone__add-more {
+            display: inline-block;
+        }
+    }
+
+    // Удалить картинку
+    & .dz-remove {
+        position: absolute;
+        z-index: 2;
+        top: -10px;
+        right: -9px;
+        width: 20px;
+        height: 20px;
+        // cursor: pointer !important;
+    }
+}
+
+.na-dropzone__block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.na-dropzone__icon {
+    // min-width: 30px;
+    transition: $tr;
+    
+    & svg {
+        width: 30px;
+        height: 30px;
+        
+    }
+}
+
+.na-dropzone__content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.na-dropzone__title {
+    font-size: 13px;
+    font-weight: 500;
+
+    @media (max-width: $mobile-l) {
+        display: none;
+        font-size: 12px;
+    }
+
+    & span {
+        color: $text-accent;
+    }
+
+    &-mobile {
+        display: none;
+
+        @media (max-width: $mobile-l) {
+            display: inline;
+        }
+    }
+}
+
+.na-dropzone__formats {
+    font-size: 14px;
+    font-weight: 400;
+    color: $text-second-d;
+    margin-top: 5px;
+
+    @media (max-width: $mobile-l) {
+        font-size: 12px;
+        margin: 0;
+    }
+}
+
+// Добавить больше
+.na-dropzone__add-more {
+    display: none;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border: 1px dashed $icon-blue-l;
+    border-radius: $radius;
+    pointer-events: none;
+    cursor: pointer;
+
+    @media (max-width: $mobile-l) {
+        width: 46%;
+        height: auto;
+
+        &::after {
+            content: '';
+            padding-top: 100%;
+            display: block;
+        }
+    }
+}
+
+.na-dropzone__add-more-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    transition: $tr;
+}
+

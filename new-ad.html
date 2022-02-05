@@ -1144,13 +1144,25 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="na-margin na-block na-descr">
+                        <section class="na-margin na-block na-media">
                             <div class="na-block__header na-block__header_column">
                                 <h2 class="na-title">Добавьте фотографии и  видео</h2>
 								<p class="na-text">Краткое описание запретов.</p>
                             </div>
                             <div class="na-block__body">
-								<form action="/target" class="dropzone" id="my-great-dropzone"></form>							  
+								<form action="/img" class="dropzone na-dropzone" id="my-great-dropzone">
+									<div class="na-dropzone__block">
+										<div class="na-dropzone__icon"><svg><use href='./img/sprite.svg#dropzone-plus'></use></svg></div>
+										<div class="na-dropzone__content">
+											<span class="na-dropzone__title">Перетащите сюда медиафайлы или <span class="link">загрузите вручную</span></span>
+											<span class="na-dropzone__title na-dropzone__title-mobile">Добавить медиа.</span>
+											<span class="na-dropzone__formats">jpeg, png, gif</span>
+										</div>
+									</div>
+									<div class="na-dropzone__add-more">
+										<div class="na-dropzone__add-more-icon"><svg><use href='./img/sprite.svg#dropzone-plus'></use></svg></div>
+									</div>
+								</form>							  
                             </div>
                         </section>
 						<button class="btn btn_primary btn_icon btn_icon-arrow na-submit" disabled>Продолжить</button>
@@ -2251,19 +2263,21 @@
 
 	<!-- Подключение скриптов -->
 	<script src="./js/libs//dropzone.min.js"></script>
-
 	<script>
-		// Dropzone.options.myGreatDropzone = { // camelized version of the `id`
-		// 	paramName: "file", // The name that will be used to transfer the file
-		// 	maxFilesize: 2, // MB
-		// 	accept: function(file, done) {
-		// 	if (file.name == "justinbieber.jpg") {
-		// 		done("Naha, you don't.");
-		// 	}
-		// 	else { done(); }
-		// 	}
-		// };
-		
+		Dropzone.options.myGreatDropzone = { // camelized version of the `id`
+			paramName: "file", // The name that will be used to transfer the file
+			maxFilesize: 2, // MB
+            addRemoveLinks: true,
+			init: function() {
+				this.on('addedfile', file => {
+					const form = this.element
+					const addMore = form.querySelector('.na-dropzone__add-more')
+					
+					addMore.remove()
+					form.append(addMore)
+				})
+			}
+		};
 	</script>
 
 	<script src="./js/libs/swiper-bundle.min.js"></script>
