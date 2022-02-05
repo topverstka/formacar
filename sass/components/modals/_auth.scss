@@ -113,10 +113,20 @@
 }
 
 // Вход
-.modal-auth__form-field {
+.sign-in__form {
 
-    &:not(:last-child) {
-        margin: 0 0 15px 0;
+    & > * {
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.sign-in__form-checkbox {
+
+    & label {
+        font-size: 12px;
     }
 }
 

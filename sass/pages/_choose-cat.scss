@@ -1,0 +1,66 @@
+.choose-cat {
+    margin-bottom: 50px;
+}
+
+.choose-cat__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, max-content);
+    gap: 20px 24px;
+    margin: 20px 0 0 0;
+
+    @media (max-width: $laptop-l) {
+        grid-auto-rows: minmax(80px, max-content);
+    }
+
+    @media (max-width: $tablet-l) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px
+    }
+
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $mobile-l) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: minmax(60px, max-content);
+        row-gap: 20px;
+    }
+}
+
+// Карточка категории
+.choose-cat-card {
+    background: #fff;
+    border-radius: 10px;
+    transition: $tr;
+
+    &:hover {
+        
+        @media (min-width: $minHover) {
+            box-shadow: $card-shadow;
+        }
+    }
+
+    &.choose-cat-card_colorful {
+
+        & .choose-cat-card__title {
+            color: #fff;
+        }
+    }
+}
+
+.choose-cat-card__wrap {
+    padding: 15px;
+}
+
+.choose-cat-card__title {
+    font-family: $ffHeader;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    @media (max-width: $mobile-l) {
+        width: 50%;
+        font-size: 12px;
+    }
+}

@@ -1,17 +1,21 @@
-.container {
+%container-style {
     width: 100%;
     padding: 0 72px;
     margin: 0 auto;
-
+    
     @media (max-width: $laptop-l) {
         padding: 0 30px;
     }
-
+    
     @media (max-width: $tablet-s) {
         padding: 0 20px;
     }
-
+    
     @media (max-width: $mobile-l) {
         padding: 0 15px;
     }
+}
+
+.container {
+    @extend %container-style;
 }

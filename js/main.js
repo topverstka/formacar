@@ -65,7 +65,7 @@ window.addEventListener('click', e => {
     if (e.target.classList.contains('modal-lang__link')) changeLang(e)
 
     if (
-        (find('.menu._show') && find('.search._found') && (e.target.classList.contains('search-area_header') || e.target.closest('.search-area_header'))) ||
+        (find('.menu._show') && find('.search._found') && (e.target.classList.contains('textfield_search-header') || e.target.closest('.textfield_search-header'))) ||
         (find('.menu._show') && !(e.target.classList.contains('header') || e.target.closest('.header')))
     ) {
         console.log('menu close')
@@ -75,7 +75,7 @@ window.addEventListener('click', e => {
         find('.menu-bg').classList.remove('_show')
     }
 
-    if (find('.search._show') && !(e.target.classList.contains('search') || e.target.closest('.search') || e.target.classList.contains('search-area_header') || e.target.closest('.search-area_header'))) {
+    if (find('.search._show') && !(e.target.classList.contains('search') || e.target.closest('.search') || e.target.classList.contains('textfield_search-header') || e.target.closest('.textfield_search-header'))) {
         find('.search').classList.remove('_show')
         if (!find('.menu').classList.contains('_show')) {
             find('.menu-bg').classList.remove('_show')
@@ -167,7 +167,7 @@ function clearByCross() {
     
     for (let i = 0; i < textfieldElems.length; i++) {
         const textfield = textfieldElems[i];
-        const input = textfield.querySelector('input')
+        const input = textfield.querySelector('input, textarea')
         const btn = document.createElement('div')
         
         btn.classList.add('textfield__clear')
@@ -249,8 +249,8 @@ function addLocationToMobMenu() {
 // Поиск по сайту
 siteSearch()
 function siteSearch() {
-    const form = find('.search-area_header')
-    const input = form.querySelector('.search-area__input')
+    const form = find('.textfield_search-header')
+    const input = form.querySelector('input')
     const clear = form.querySelector('.textfield__clear')
     const search = find('.search')
     const menu = find('.menu')
@@ -389,33 +389,6 @@ function siteSearch() {
     }
 }
 
-// Показать крестик у поиска
-// siteSearchShowClear()
-// function siteSearchShowClear() {
-//     const searchElems = findAll('.textfield')
-//     for (let i = 0; i < searchElems.length; i++) {
-//         const search = searchElems[i];
-//         const clear = search.querySelector('.textfield__clear')
-//         const input = search.querySelector('.search-area__input')
-        
-//         input.addEventListener('input', e => {
-//             if (input.value != '') {
-//                 clear.classList.add('_show')
-//             }
-//             else {
-//                 clear.classList.remove('_show')
-//             }
-//         })
-
-//         clear.addEventListener('click', e => {
-//             e.preventDefault()
-//             input.value = ''
-//             input.focus()
-//         })
-//     }
-// }
-
-
 // Мобильное меню
 menu()
 function menu() {
@@ -451,7 +424,7 @@ function labelSearch() {
 
     for (let i = 0; i < searchElems.length; i++) {
         const parent = searchElems[i];
-        const input = parent.querySelector('input')
+        const input = parent.querySelector('input, textarea')
         const label = parent.querySelector('label')
 
         input.addEventListener('input', e => {
@@ -465,6 +438,24 @@ function labelSearch() {
                 label.classList.remove('_change-label')
             }
         })
+    }
+}
+
+// В инпуте могут быть только цифры если у textfield есть класс only-digit
+onlyDigit()
+function onlyDigit() {
+    const textfieldElems = document.querySelectorAll('.only-digit')
+
+    for (let i = 0; i < textfieldElems.length; i++) {
+        const input = textfieldElems[i].querySelector('input')
+
+        input.addEventListener('keypress', function(e) {
+            const inputValue = e.charCode;
+        
+            if(!(inputValue >= 48 && inputValue <= 57) && (inputValue != 43 && inputValue != 0 && inputValue != 40 && inputValue != 41 && inputValue != 45)) {
+                e.preventDefault();
+            }
+        }); 
     }
 }
 
@@ -1471,23 +1462,23 @@ function selectRegion() {
 accordions()
 function accordions() {
   const hiddenSiblingAcc = false // Скрывать соседние аккордеоны. false если не нужно.
-  const accHeaderElems = document.querySelectorAll('.acc-open')
+  const accOpenElems = document.querySelectorAll('.acc-open')
   
-  for (let i = 0; i < accHeaderElems.length; i++) {
-    const accHeader = accHeaderElems[i]
+  for (let i = 0; i < accOpenElems.length; i++) {
+    const accOpen = accOpenElems[i]
     
-    accHeader.addEventListener('click', e => {
-      const container = (!accHeader.closest('.acc-body')) ? accHeader.parentElement.parentElement : accHeader.closest('.acc-body')
-      const parent = accHeader.closest('.acc')
-      const accBody = accHeader.closest('.acc-header').nextElementSibling
+    accOpen.addEventListener('click', e => {
+      const container = (!accOpen.closest('.acc-body')) ? accOpen.parentElement.parentElement : accOpen.closest('.acc-body')
+      const parent = accOpen.closest('.acc')
+      const accBody = accOpen.closest('.acc-header').nextElementSibling
 
       parent.classList.toggle('_show') 
-      accHeader.classList.toggle('_show') 
+      accOpen.classList.toggle('_show') 
       
       if (accBody.style.maxHeight) { 
         accBody.style.maxHeight = null
         parent.classList.remove('_show') 
-        accHeader.classList.remove('_show') 
+        accOpen.classList.remove('_show') 
       }
       else {
         const adjacentElems = getSiblings(parent)

@@ -58,6 +58,26 @@ body {
     overflow: hidden;
 }
 
+.content {
+    // position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0 0 0;
+}
+
+.content_na__wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 1700px) {
+        justify-content: flex-start;
+    }
+}
+
 @import '_grid'; // Сетка
 
 // Компоненты
@@ -68,13 +88,14 @@ body {
 @import 'components/_sub-menu';
 @import 'components/_regions-checkbox';
 @import 'components/_select';
- 
+
 // Текстовые компоненты
 @import 'components/text/_text';
 @import 'components/text/_titles';
 
 // Секции
 @import 'sections/_header';
+@import 'sections/_breadcrumbs';
 @import 'sections/_s-services';
 @import 'sections/_s-recent';
 @import 'sections/_s-shops';
@@ -83,6 +104,10 @@ body {
 @import 'sections/_search';
 @import 'sections/_footer';
 @import 'sections/_mob-menu';
+
+// Страницы
+@import 'pages/_choose-cat';
+@import 'pages/empty-form/_empty-form';
 
 // Модальные окна
 @import 'components/modals/_lang';

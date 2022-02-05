@@ -1,0 +1,21 @@
+.na-brand__list {
+    
+}
+
+.na-brand__item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.na-brand__item-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+}
+
+.na-brand__item-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+}

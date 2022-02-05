@@ -1,17 +1,35 @@
 .section {
-    margin: 60px 0;
+    // margin: 60px 0;
+
+    // @media (max-width: $laptop-m) {
+    //     margin: 50px 0;
+    // }
+
+    // @media (max-width: $laptop) {
+    //     margin: 40px 0;
+    // }
+
+    // @media (max-width: $mobile-l) {
+    //     margin: 25px 0;
+    // } 
+
+    margin-bottom: 120px;
 
     @media (max-width: $laptop-m) {
-        margin: 50px 0;
+        margin-bottom: 100px;
     }
 
     @media (max-width: $laptop) {
-        margin: 40px 0;
+        margin-bottom: 80px;
     }
 
     @media (max-width: $mobile-l) {
-        margin: 25px 0;
+        margin-bottom: 50px;
     }
+}
+
+.section_na {
+    
 }
 
 .section__header {
@@ -50,6 +68,19 @@
 
     @media (max-width: $tablet) {
         font-size: 18px;
+    }
+}
+
+.section-subtitle {
+    font-size: 18px;
+    font-weight: 600;
+
+    @media (max-width: $tablet) {
+        font-size: 16px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 12px;
     }
 }
 

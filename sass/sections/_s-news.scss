@@ -1,9 +1,5 @@
 .s-news {
-    margin-bottom: 154px;
-
-    @media (max-width: $tablet-l) {
-        margin-bottom: 100px;
-    }
+    margin-bottom: 100px;
 
     @media (max-width: $mobile-l) {
         margin-bottom: 70px;

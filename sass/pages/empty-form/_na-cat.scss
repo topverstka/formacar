@@ -1,0 +1,27 @@
+.na-cat {
+}
+
+.na-cat__wrap {
+
+    & .section__header {
+        margin-bottom: 40px;
+    }
+}
+
+.na-cat__list {
+    display: grid;
+    grid-template-columns: 196px;
+    grid-auto-rows: 80px;
+}
+
+.na-cat-card {
+    position: relative;
+
+    & .na-cat-card__close {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px; 
+    }
+}

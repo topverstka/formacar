@@ -1,9 +1,9 @@
 .s-services {
-    margin-top: 100px;
+    margin-top: 50px;
 
     @media (max-width: $laptop-l) {
-        margin-top: 50px;
-    }
+        margin-top: 0;
+    } 
 }
 
 .s-services__wrap {
