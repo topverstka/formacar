@@ -6,19 +6,20 @@
 	<meta name="viewport" content="width=device-width">
 	<title>FormaCar</title>
 	<meta name="description" content="Описание сайта">
-	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+
+	<!-- <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
 	<link rel="manifest" href="./site.webmanifest">
 	<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="#ffffff"> -->
 
 	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper wrapper_sidebar">
 		<div class="menu-bg"></div>
 		<header class="header">
 			<div class="header__wrap">
@@ -41,8 +42,8 @@
 								</form>
 								<div class="header__top-content">
 									<div class="header__top-buttons">
-										<button class="btn-second header__sign-in" data-modal-open="auth">Войти</button>
-										<button class="btn header__sell">Продать</button>
+										<button class="btn btn_second header__sign-in" data-modal-open="auth">Войти</button>
+										<button class="btn btn_primary header__sell">Продать</button>
 									</div>
 									<div class="user__options">
 										<div class="user-option">
@@ -567,73 +568,239 @@
 				</div>
 			</div>
 		</header>
+        <!-- na - new ad -->
         <div class="content">
-            <div class="breadcrumbs">
-                <ul class="breadcrumbs__list breadcrumbs-container">
-                    <li class="breadcrumbs__item"><a class="link" href="#">Продажа автомобилей</a></li>
-                    <li class="breadcrumbs__item">Купить автомобиль в Краснодарском крае</li>
-                </ul>
-            </div>
-            <section class="section choose-cat">
-                <div class="container">
-                    <div class="choose-cat__wrap">
-                        <div class="section__header">
-                            <h1 class="section-title">Новое объявление</h1>
-                        </div>
-                        <div class="section__body">
-                            <h2 class="section-subtitle">Выберите категорию</h2>
-                            <div class="choose-cat__list">
-                                <a href="#" class="choose-cat-card choose-cat-card_colorful" style="background-color: #9578FA;">
-                                    <div class="choose-cat-card__wrap">
-                                        <h3 class="choose-cat-card__title">Легковые автомобили</h3>
+            <div class="container">
+                <div class="content_na__wrap">
+                    <div class="na-content">
+                        <section class="na-margin na-cat">
+                            <div class="na-cat__wrap">
+                                <div class="section__header">
+                                    <h1 class="section-title">Новое объявление</h1>
+                                </div>
+                                <div class="section__body">
+                                    <div class="na-cat__list">
+                                        <div class="choose-cat-card na-cat-card choose-cat-card_colorful " style="background-color: #5891F0;">
+                                            <div class="choose-cat-card__wrap">
+                                                <h3 class="choose-cat-card__title">Диски</h3>
+                                            </div>
+                                            <button class="na-cat-card__close"><svg><use href='./img/sprite.svg#close-circle'></use></svg></button>
+                                        </div>
                                     </div>
-                                </a>
-                                <a href="#" class="choose-cat-card choose-cat-card_colorful" style="background-color: #5891F0;">
-                                    <div class="choose-cat-card__wrap">
-                                        <h3 class="choose-cat-card__title">Диски</h3>
-                                    </div>
-                                </a>
-                                <a href="#" class="choose-cat-card choose-cat-card_colorful" style="background-color: #5891F0;">
-                                    <div class="choose-cat-card__wrap">
-                                        <h3 class="choose-cat-card__title">Шины</h3>
-                                    </div>
-                                </a>
-                                <a href="#" class="choose-cat-card choose-cat-card_colorful" style="background-color: #7588F0;">
-                                    <div class="choose-cat-card__wrap">
-                                        <h3 class="choose-cat-card__title">Тюнинг</h3>
-                                    </div>
-                                </a>
-                                <a href="#" class="choose-cat-card">
-                                    <div class="choose-cat-card__wrap">
-                                        <h3 class="choose-cat-card__title">Выхлопные системы</h3>
-                                    </div>
-                                </a>
-                                <a href="#" class="choose-cat-card">
-                                    <div class="choose-cat-card__wrap">
-                                        <h3 class="choose-cat-card__title">Подвеска</h3>
-                                    </div>
-                                </a>
-                                <a href="#" class="choose-cat-card">
-                                    <div class="choose-cat-card__wrap">
-                                        <h3 class="choose-cat-card__title">Тормозные системы</h3>
-                                    </div>
-                                </a>
-                                <a href="#" class="choose-cat-card">
-                                    <div class="choose-cat-card__wrap">
-                                        <h3 class="choose-cat-card__title">Интерьер</h3>
-                                    </div>
-                                </a>
-                                <a href="#" class="choose-cat-card">
-                                    <div class="choose-cat-card__wrap">
-                                        <h3 class="choose-cat-card__title">Услуги</h3>
-                                    </div>
-                                </a>
+                                </div>
                             </div>
+                        </section>
+                        <section class="na-margin na-block na-descr">
+                            <div class="na-block__header">
+                                <h2 class="na-title">Название объявления</h2>
+                            </div>
+                            <div class="na-block__body">
+								<div class="textfield clear-by-cross">
+									<input type="text" id="">
+									<label for="">Введите текст</label>
+								</div>
+                            </div>
+                        </section>
+                        <section class="na-margin na-block na-brand">
+                            <div class="na-block__header">
+                                <h2 class="na-title">Бренд</h2>
+                            </div>
+                            <div class="na-block__body">
+                                <form method="GET" class="textfield textfield-l textfield_search clear-by-cross na-block__search">
+                                    <input id="search-cities" type="text">
+                                    <label for="search-cities">Выберите марку</label>
+                                    <button type="submit" class="textfield_search-submit"><svg><use href='./img/sprite.svg#search'></use></svg></button>
+                                </form>
+                                <div class="na-list na-brand__list">
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                    <div class="na-brand__item">
+                                        <div class="na-brand__item-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <span class="na-brand__item-title">Audi</span>
+                                    </div>
+                                </div>
+                                <button class="na-more">
+                                    <span class="na-more__title">Все марки</span>
+                                    <span class="na-more__icon"><svg><use href='./img/sprite.svg#na-more-chevron'></use></svg></span>
+                                </button>
+                            </div>
+                        </section>
+                        <section class="na-margin na-block na-type-body">
+                            <div class="na-block__body">
+                                <div class="na-row">
+                                    <h2 class="na-title na-row__title">Диаметр ”</h2>
+                                    <div class="na-row__block">
+                                        <div class="select na-row__select">
+                                            <div class="select-input">
+                                                <span class="select-input__title">Не выбрано</span>
+                                                <div class="select-input__chevron">
+                                                    <svg><use href='./img/sprite.svg#chevron'></use></svg>
+                                                </div>
+                                            </div>
+                                            <div class="select-dropdown">
+                                                <ul class="select-dropdown__list">
+                                                    <li class="select-dropdown__item">16</li>
+                                                    <li class="select-dropdown__item">17</li>
+                                                    <li class="select-dropdown__item">18</li>
+                                                    <li class="select-dropdown__item">19</li>
+                                                    <li class="select-dropdown__item">20</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="na-margin na-block na-price">
+                            <div class="na-block__body">
+                                <div class="na-row">
+                                    <h2 class="na-title na-row__title">Цена</h2>
+                                    <div class="na-row__block">
+                                        <div class="textfield clear-by-cross only-digit">
+                                            <input type="text" id="">
+                                            <label for="">Введите цену</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="na-margin na-block na-descr">
+                            <div class="na-block__header">
+                                <h2 class="na-title">Описание</h2>
+                            </div>
+                            <div class="na-block__body">
+								<div class="textfield clear-by-cross">
+									<textarea name="" id=""></textarea>
+									<label for="">Введите текст</label>
+								</div>
+                            </div>
+                        </section>
+                        <section class="na-margin na-block na-contacts">
+                            <div class="na-block__body">
+								<div class="na-row na-row-engine-power">
+									<h3 class="na-title na-row__title">Контактное лицо</h3>
+									<div class="na-row__block">
+										<div class="textfield clear-by-cross">
+											<input type="text" id="">
+											<label for="">Введите имя</label>
+										</div>
+									</div>
+								</div>
+								<div class="na-row na-row-engine-power">
+									<h3 class="na-title na-row__title">Номер телефона</h3>
+									<div class="na-row__block">
+										<div class="textfield clear-by-cross only-digit mask-phone">
+											<input type="text" id="" placeholder="+7 (___) ___-__-__">
+											<!-- <label for="">+7 (___) ___-__-__</label> -->
+										</div>
+									</div>
+								</div>
+                            </div>
+                        </section>
+                        <section class="na-margin na-block na-city">
+                            <div class="na-block__body">
+                                <div class="na-row">
+                                    <h2 class="na-title na-row__title">Город</h2>
+                                    <div class="na-row__block">
+                                        <form method="GET" class="textfield textfield_search clear-by-cross">
+											<input id="search-cities" type="text">
+											<label for="search-cities">Введите город</label>
+											<button type="submit" class="textfield_search-submit"><svg><use href='./img/sprite.svg#search'></use></svg></button>
+										</form>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="na-margin na-block na-descr">
+                            <div class="na-block__header na-block__header_column">
+                                <h2 class="na-title">Добавьте фотографии и  видео</h2>
+								<p class="na-text">Краткое описание запретов.</p>
+                            </div>
+                            <div class="na-block__body">
+								<form action="/target" class="dropzone" id="my-great-dropzone"></form>							  
+                            </div>
+                        </section>
+						<button class="btn btn_primary btn_icon btn_icon-arrow na-submit" disabled>Продолжить</button>
+                    </div>
+                    <div class="na-sidebar">
+                        <div class="na-sidebar__wrap">
+                            <h2 class="na-title">Заполнение</h2>
+                            <ul class="na-sidebar__list">
+                                <li class="na-sidebar__item">Марка</li>
+                                <li class="na-sidebar__item">Модель</li>
+                                <li class="na-sidebar__item">Поколение</li>
+                                <li class="na-sidebar__item">Кузов</li>
+                                <li class="na-sidebar__item">Модификация</li>
+                                <li class="na-sidebar__item">Год выпуска</li>
+                                <li class="na-sidebar__item">Пробег</li>
+                                <li class="na-sidebar__item">Другие параметры</li>
+                                <li class="na-sidebar__item">Цена</li>
+                                <li class="na-sidebar__item">Описание</li>
+                                <li class="na-sidebar__item">Контакты</li>
+                                <li class="na-sidebar__item">Фото и/или видео</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </section>
-
+            </div>
         </div>
 		<footer class="footer">
 			<div class="container">
@@ -668,7 +835,7 @@
 								<ul class="footer__social-list">
 									<li class="footer__social-item">
 										<a href="#" class="footer__social-link">
-											<svg><use href='./img/sprite.svg#facebook'></use></svg>
+                                            <svg><use href='./img/sprite.svg#facebook'></use></svg>
 										</a>
 									</li>
 									<li class="footer__social-item">
@@ -1707,6 +1874,22 @@
 	</div>
 
 	<!-- Подключение скриптов -->
+	<script src="./js/libs//dropzone.min.js"></script>
+
+	<script>
+		// Dropzone.options.myGreatDropzone = { // camelized version of the `id`
+		// 	paramName: "file", // The name that will be used to transfer the file
+		// 	maxFilesize: 2, // MB
+		// 	accept: function(file, done) {
+		// 	if (file.name == "justinbieber.jpg") {
+		// 		done("Naha, you don't.");
+		// 	}
+		// 	else { done(); }
+		// 	}
+		// };
+		
+	</script>
+
 	<script src="./js/libs/swiper-bundle.min.js"></script>
 	<script src="./js/libs/rangeslider-js.min.js"></script>
 	<script src="./js/main.js"></script>

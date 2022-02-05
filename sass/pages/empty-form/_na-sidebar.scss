@@ -1,6 +1,18 @@
 .na-sidebar {
     max-width: 306px;
     width: 100%;
+
+    @media (max-width: $laptop) {
+        max-width: 250px;
+    }
+
+    @media (max-width: $tablet-l) {
+        max-width: 200px;
+    }
+
+    @media (max-width: $tablet) {
+        display: none;  
+    }
 }
 
 .na-sidebar__wrap {
@@ -17,6 +29,10 @@
 
 .na-sidebar__list {
     margin-top: 30px;
+
+    @media (max-width: $tablet-l) {
+        margin-top: 24px;
+    }
 }
 
 .na-sidebar__item {
@@ -44,5 +60,17 @@
 
     &:not(:last-child) {
         margin-bottom: 30px;
+
+        @media (max-width: $tablet-l) {
+            margin-bottom: 16px;
+        }
+    }
+
+    @media (max-width: $tablet-l) {
+        font-size: 13px;
+        
+        &::before {
+            margin-right: 10px;
+        }
     }
 }

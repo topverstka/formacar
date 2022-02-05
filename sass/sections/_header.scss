@@ -33,6 +33,8 @@
 
 // Верхняя часть шапки
 .header__top {
+    position: relative;
+    z-index: 2;
     padding: 10px 0;
 
     @media (max-width: $tablet-l) {

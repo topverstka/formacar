@@ -69,6 +69,14 @@
     @media (max-width: $tablet) {
         font-size: 18px;
     }
+
+    @media (max-width: $mobile-l) {
+        font-size: 16px;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 14px;
+    }
 }
 
 .section-subtitle {

@@ -5,6 +5,14 @@
     &::-webkit-scrollbar {
         height: 0;
     }
+
+    @media (max-width: $mobile-l) {
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: $mobile) {
+        margin-bottom: 5px;
+    }
 }
 
 .breadcrumbs-container {
@@ -17,6 +25,7 @@
 }
 
 .breadcrumbs__item {
+    font-size: 14px;
     color: $text-second-l;
     white-space: nowrap;
 
@@ -31,5 +40,9 @@
             vertical-align: middle;
             padding: 0 5px;
         }
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 12px;
     }
 }

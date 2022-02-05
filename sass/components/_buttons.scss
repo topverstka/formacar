@@ -1,22 +1,28 @@
-// Основная кнопка
 .btn {
     width: 100%;
     height: 48px;
     font-size: 14px;
     font-weight: 700;
-    line-height: 22px;
-    color: #fff;
     text-transform: uppercase;
-    padding: 9px;
-    background: $btn-primary-default;
+    padding: 0 9px;
     border-radius: $radius;
-    // overflow: hidden;
     transition: $tr;
 
+    &:disabled {
+        opacity: .5;
+        pointer-events: none;
+    }
+
     @media (max-width: $laptop-m) {
+        height: 40px;
         font-size: 12px;
         line-height: 1.5;
     }
+}
+
+.btn_primary {
+    color: #fff;
+    background: $btn-primary-default;
 
     &:hover {
         
@@ -30,25 +36,9 @@
     }
 }
 
-// Второстепенная кнопка
-.btn-second {
-    width: 100%;
-    height: 48px;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 22px;
+.btn_second {
     color: $text-accent;
-    text-transform: uppercase;
-    padding: 9px;
     background: $btn-second-default;
-    border-radius: $radius;
-    // overflow: hidden;
-    transition: $tr;
-
-    @media (max-width: $laptop-m) {
-        font-size: 12px;
-        line-height: 1.5;
-    }
 
     &:hover {
         
@@ -62,20 +52,9 @@
     }
 }
 
-.btn-linear {
-    width: 100%;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 22px;
+.btn_linear {
     color: $text-accent;
-    text-transform: uppercase;
-    padding: 5px;
-    transition: $tr;
-
-    @media (max-width: $laptop-m) {
-        font-size: 12px;
-        line-height: 1.5;
-    }
+    padding: 0 5px;
 
     &:hover {
         
@@ -88,6 +67,129 @@
         color: $btn-primary-pressed;
     }
 }
+
+$m-icon: 30px; // Отступ иконки от текста
+
+.btn_icon {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+
+    &::after {
+        content: '';
+        display: block;
+        min-width: 24px;
+        width: 24px;
+        height: 24px;
+        margin-left: $m-icon; 
+    }
+    
+    &-arrow::after {
+        background: center/contain no-repeat url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.77465 18.7258C9.1396 19.0914 9.72798 19.0914 10.0929 18.7258L16.2821 12.526C16.5726 12.235 16.5726 11.765 16.2821 11.474L10.0929 5.27418C9.72798 4.90861 9.1396 4.90861 8.77465 5.27418C8.4097 5.63975 8.4097 6.22915 8.77465 6.59472L14.1669 12.0037L8.7672 17.4127C8.4097 17.7709 8.4097 18.3677 8.77465 18.7258Z' fill='white'/%3E%3C/svg%3E");
+    }
+}
+
+.btn_icon-left {
+    flex-direction: row-reverse;
+
+    &::after {
+        margin: 0 $m-icon 0 0;
+    }
+}
+
+// Основная кнопка
+// .btn {
+//     width: 100%;
+//     height: 48px;
+//     font-size: 14px;
+//     font-weight: 700;
+//     line-height: 22px;
+//     color: #fff;
+//     text-transform: uppercase;
+//     padding: 9px;
+//     background: $btn-primary-default;
+//     border-radius: $radius;
+//     transition: $tr;
+
+//     @media (max-width: $laptop-m) {
+//         font-size: 12px;
+//         line-height: 1.5;
+//     }
+
+//     &:hover {
+        
+//         @media (min-width: $minHover) {
+//             box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
+//         }
+//     }
+
+//     &:active {
+//         background: $btn-primary-pressed;
+//     }
+// }
+
+// // Второстепенная кнопка
+// .btn-second {
+//     width: 100%;
+//     height: 48px;
+//     font-size: 14px;
+//     font-weight: 700;
+//     line-height: 22px;
+//     color: $text-accent;
+//     text-transform: uppercase;
+//     padding: 9px;
+//     background: $btn-second-default;
+//     border-radius: $radius;
+//     // overflow: hidden;
+//     transition: $tr;
+
+//     @media (max-width: $laptop-m) {
+//         font-size: 12px;
+//         line-height: 1.5;
+//     }
+
+//     &:hover {
+        
+//         @media (min-width: $minHover) {
+//             box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
+//         }
+//     }
+
+//     &:active {
+//         background: $btn-second-pressed;
+//     }
+// }
+
+// .btn-icon {
+
+// }
+
+// .btn-linear {
+//     width: 100%;
+//     font-size: 14px;
+//     font-weight: 700;
+//     line-height: 22px;
+//     color: $text-accent;
+//     text-transform: uppercase;
+//     padding: 5px;
+//     transition: $tr;
+
+//     @media (max-width: $laptop-m) {
+//         font-size: 12px;
+//         line-height: 1.5;
+//     }
+
+//     &:hover {
+        
+//         @media (min-width: $minHover) {
+//             color: $btn-primary-pressed;
+//         }
+//     }
+
+//     &:active {
+//         color: $btn-primary-pressed;
+//     }
+// }
 
 .btn_disabled {
     color: $text-second-d;

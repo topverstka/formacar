@@ -24,7 +24,7 @@
     border: 1px solid $input-placeholder;
     border-radius: $radius;
     padding: 0 30px 0 20px;
-    transition: $tr;
+    transition: border-color $tr;
 
     &:focus {
         border: 1px solid $input-focus;
@@ -45,10 +45,23 @@
         top: 20px;
         transform: none;
     }
+
+    @media (max-width: $mobile-l) {
+        padding: 12px 10px;
+
+        & + label {
+            top: 12px;
+            left: 10px;
+        }
+    }
 }
 
 .textfield-l input {
     height: 50px; 
+
+    @media (max-width: $mobile-l) {
+        height: 40px;
+    }
 }
 
 .textfield label {
@@ -182,8 +195,8 @@
             & + label {
 
                 &::before {
-                    background-color: $btn-primary-default;
-                    border-color: $btn-primary-default;
+                    background-color: #383838;
+                    border-color: #383838;
                 }
             }
         }
@@ -195,7 +208,7 @@
                 & + label {
                     
                     &::before {
-                        border-color: $btn-primary-default;
+                        border-color: #383838;
                     }
                 }
             }
@@ -206,7 +219,6 @@
         display: flex;
         align-items: center;
         font-size: 14px;
-        color: $text-second-d;
 
         &::before {
             content: '';
@@ -214,9 +226,9 @@
             min-width: 20px;
             width: 20px;
             height: 20px;
-            background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.00002 16.2001L4.80002 12.0001L3.40002 13.4001L9.00002 19.0001L21 7.0001L19.6 5.6001L9.00002 16.2001Z' fill='white'/%3E%3C/svg%3E") no-repeat;
-            background-size: contain;
-            background-position: center center;
+            background: center/8px 7px no-repeat url("data:image/svg+xml,%3Csvg width='8' height='7' viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.03854 0.429263C6.39259 -0.0379573 7.07178 -0.139509 7.55554 0.202441C8.0393 0.544391 8.14445 1.20035 7.79039 1.66757L4.43119 6.10046C4.06878 6.5787 3.36974 6.63233 2.93862 6.21496L0.317012 3.67696C-0.106383 3.26707 -0.105565 2.6033 0.318838 2.19438C0.743241 1.78546 1.43052 1.78625 1.85391 2.19614L3.49539 3.78526L6.03854 0.429263Z' fill='white'/%3E%3C/svg%3E");
+            // background-size: contain;
+            // background-position: center center;
             background-color: #fff;
             border: 1px solid $icon-second;
             border-radius: 4px;
@@ -260,12 +272,21 @@
 
         &::before {
             content: '';
+            min-width: 22px;
             width: 22px;
             height: 22px;
             display: inline-block;
             background: center / contain no-repeat url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='10.947' cy='10.947' rx='10.24' ry='10.24' stroke='%23B4B4BF'/%3E%3C/svg%3E");
             margin-right: 20px;
             transition: $tr;
+        }
+
+        @media (max-width: $mobile-l) {
+            font-size: 12px;
+
+            &::before {
+                margin-right: 10px;
+            }
         }
     }
 }

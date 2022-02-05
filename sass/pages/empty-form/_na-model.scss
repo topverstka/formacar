@@ -1,3 +1,7 @@
 .na-model__list {
     gap: 15px 24px;
+
+    & > * {
+        width: 20%;
+    }
 }

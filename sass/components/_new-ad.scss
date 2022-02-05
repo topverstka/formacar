@@ -3,11 +3,32 @@
     max-width: 876px;
     width: calc(100% - 306px);
     padding-right: 24px;
+
+    @media (max-width: $laptop) {
+        width: calc(100% - 250px);
+    }
+
+    @media (max-width: $tablet-l) {
+        width: calc(100% - 200px);
+    }
+
+    @media (max-width: $tablet) {
+        width: 100%;
+        padding: 0;
+    }
 }
 
 // Отступы белых блоков
 .na-margin {
     margin-bottom: 40px;
+
+    @media (max-width: $tablet) {
+        margin-bottom: 30px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-bottom: 20px;
+    }
 
     // @media (max-width: $laptop-m) {
     //     margin-bottom: 100px;
@@ -31,12 +52,34 @@
     background: #fff;
     border-radius: $radius;
     padding: 20px;
+
+    @media (max-width: $mobile-l) {
+        min-height: 80px;
+        padding: 10px;
+    }
 }
 
 .na-block__header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+
+    @media (max-width: $mobile-l) {
+        margin-bottom: 10px;
+    }
+
+    &_column {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+// Разделяющая линия
+.na-block__separator {
+    width: 100%;
+    height: 1px;
+    background: $outline-l;
+    margin: 10px 0 30px;
 }
 
 // Заголовок в блоке с выбором модели
@@ -58,14 +101,18 @@
     display: flex;
     align-items: center;
     margin-left: 20px;
+
+    @media (max-width: $mobile-l) {
+        margin-left: 10px;
+    }
 }
 
 .na-block__header-info-item {
     position: relative;
-    margin-right: 10px;
-    padding-right: 10px;
-
+    
     &:not(:last-child) {
+        margin-right: 10px;
+        padding-right: 10px;
 
         &::after {
             content: '';
@@ -86,12 +133,17 @@
 
         &:not(:last-child) {
             margin-bottom: 30px;
+
+            @media (max-width: $mobile-l) {
+                margin-bottom: 20px;
+            }
         }
     }
 }
 
 // Закрыть блок
 .na-block__close {
+    min-width: 30px;
     width: 30px;
     height: 30px;
     display: flex;
@@ -107,20 +159,64 @@
 .na-title {
     font-size: 18px;
     font-weight: 600;
+
+    @media (max-width: $tablet) {
+        font-size: 16px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 14px;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 12px;
+    }
 }
 
 // Подзаголовок
 .na-subtitle {
     font-size: 16px;
     font-weight: 600;
+
+    @media (max-width: $tablet) {
+        font-size: 15px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 14px;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 12px;
+    }
+}
+
+// Описание
+.na-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: $text-second-d;
+    margin-top: 10px;
 }
 
 // Список
 .na-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 5px 24px;
     // margin-top: 20px;
+
+    // & > * {
+    //     width: 22%;
+    // }
+
+    @media (max-width: $mobile-m) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 // Столбики списка подстраиваются под элемент с самой большой шириной
@@ -155,12 +251,26 @@
 .na-row {
     display: flex;
     align-items: center;
+
+    @media (max-width: $tablet-s) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 .na-row__title {
     max-width: 286px;
     width: 100%;
     margin-right: 24px;
+
+    @media (max-width: $tablet) {
+        max-width: none;
+        width: 70%;
+    }
+
+    @media (max-width: $tablet-s) {
+        margin: 0 0 10px 0;
+    }
 }
 
 .na-row__block {
@@ -169,17 +279,30 @@
     & .select,
     & .textfield {
         max-width: 306px;
+
+        @media (max-width: $tablet-s) {
+            max-width: none;
+        }
     }
 }
 
 .na-row__block-list {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 48px;
 
     & > * {
         
         &:not(:last-child) {
-            margin-right: 48px;
+            // margin: 4px 48px 4px 0;
+            // margin-right: 48px;
         }
     }
+}
+
+// Кнопка "Продолжить"
+.na-submit {
+    width: fit-content;
+    margin: 0 0 0 auto;
 }

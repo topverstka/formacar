@@ -1,3 +1,32 @@
 .na-version__list {
+    // gap: 20px 48px;
+
+    // @media (max-width: 1200px) {
+    //     grid-template-columns: repeat(3, 1fr);
+    // }
+
+    // display: flex;
+    // align-items: center;
+    // flex-wrap: wrap;
+    
+    display: grid;
+    grid-template-columns: repeat(4, minmax(min-content, 170px));
     gap: 20px 48px;
+
+    @media (max-width: 1120px) {
+        grid-template-columns: repeat(3, minmax(100px, 170px));
+    }
+    
+    @media (max-width: $tablet-l) {
+        gap: 10px 24px;
+    }
+    
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 24px;
+    }
+
+    @media (max-width: $tablet-s) {
+        grid-template-columns: 1fr;
+    }
 }

@@ -451,20 +451,18 @@ function menu() {
 	})
 }
 
-// Плейсхолдер поиска
-labelSearch()
-function labelSearch() {
-    const searchElems = document.querySelectorAll('.textfield')
+// Плейсхолдер текстовых полей
+labelTextfield()
+function labelTextfield() {
+    const textfieldElems = document.querySelectorAll('.textfield')
 
-    for (let i = 0; i < searchElems.length; i++) {
-        const parent = searchElems[i];
+    for (let i = 0; i < textfieldElems.length; i++) {
+        const parent = textfieldElems[i];
         const input = parent.querySelector('input, textarea')
         const label = parent.querySelector('label')
 
-        input.addEventListener('input', e => {
-            if (input.value != '') {
-                label.classList.add('_change-label')
-            }
+        input.addEventListener('focus', e => {
+            label.classList.add('_change-label')
         })
 
         input.addEventListener('blur', e => {
@@ -1594,7 +1592,7 @@ function select() {
     for (let i = 0; i < selectElems.length; i++) {
         const select = selectElems[i];
         const selectedItem = select.querySelector('.select-dropdown__item._selected')
-        
+
         if (selectedItem) {
             const sTitle = select.querySelector('.select-input__title')
 
@@ -1606,7 +1604,7 @@ function select() {
     window.addEventListener('click', e => {
         const target = e.target
 
-        if (find('.select._open') && !target.classList.contains('select') && !target.closest('.select')) {
+        if (find('.select._open') && !target.classList.contains('select') && !target.closest('.select._open')) {
             find('.select._open').classList.remove('_open')
         }
 
@@ -1628,4 +1626,54 @@ function select() {
             parent.classList.add('_item-select')
         }
     })
+}
+
+// Маска телефона
+window.addEventListener("DOMContentLoaded", function() {
+    [].forEach.call( document.querySelectorAll('.mask-phone input'), function(input) {
+    var keyCode;
+    function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        var pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        var matrix = "+7 (___) ___-__-__",
+            i = 0,
+            def = matrix.replace(/\D/g, ""),
+            val = this.value.replace(/\D/g, ""),
+            new_value = matrix.replace(/[_\d]/g, function(a) {
+                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+            });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+            i < 5 && (i = 3);
+            new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+            function(a) {
+                return "\\d{1," + a.length + "}"
+            }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        if (event.type == "blur" && this.value.length < 5)  this.value = ""
+    }
+    input.addEventListener("input", mask, false);
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, false);
+    input.addEventListener("keydown", mask, false)
+  });
+});
+
+
+// Максимальная и минимальная ширина текстового поля - textarea
+widthTextarea()
+function widthTextarea() {
+    const taElems = findAll('textarea')
+
+    for (let i = 0; i < taElems.length; i++) {
+        const ta = taElems[i];
+        const taWidth = ta.offsetWidth
+
+        ta.style.maxWidth = taWidth + 'px'
+        ta.style.minWidth = taWidth + 'px'
+    }
 }

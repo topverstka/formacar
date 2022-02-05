@@ -1,5 +1,12 @@
 .na-brand__list {
     
+    & > * {
+        width: 20%;
+
+        @media (max-width: $tablet-s) {
+            width: auto
+        }
+    }
 }
 
 .na-brand__item {
@@ -9,9 +16,11 @@
 }
 
 .na-brand__item-icon {
-    width: 30px;
-    height: 30px;
-    display: flex;
+    
+    & img {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 .na-brand__item-title {

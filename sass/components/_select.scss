@@ -10,6 +10,7 @@
         & .select-dropdown {
             opacity: 1;
             visibility: visible;
+            pointer-events: all;
         }
     }
 
@@ -65,6 +66,7 @@
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: $tr;
 }
 
@@ -124,5 +126,9 @@
         @media (min-width: $minHover) {
             background: $bg-second-l;
         }
+    }
+
+    &:active {
+        background: $bg-second-l;
     }
 }

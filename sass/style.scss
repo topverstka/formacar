@@ -35,6 +35,10 @@
 //     background-color: #CAC1BC;
 // }
 
+*::-webkit-input-placeholder {
+    color: $input-placeholder;
+}
+
 body {
     font-family: $ffMain;
     color: $text-primary;
@@ -59,6 +63,10 @@ body {
 
     &_sidebar {
         overflow: initial;
+
+        @media (max-width: $tablet) {
+            overflow: hidden;
+        }
     }
 }
 
@@ -68,7 +76,15 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin: 50px 0 0 0;
+    margin-top: 50px;
+
+    @media (max-width: $tablet) {
+        margin-top: 40px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 30px;
+    }
 }
 
 .content_na__wrap {
@@ -81,6 +97,13 @@ body {
         justify-content: space-between;
     }
 }
+
+// Библиотеки
+@import 'libs/_aos';
+@import 'libs/_lightgallery';
+@import 'libs/_swiper';
+@import 'libs/_rangeslider-js';
+@import 'libs/_dropzone';
 
 @import '_grid'; // Сетка
 
@@ -119,12 +142,6 @@ body {
 @import 'components/modals/_auth';
 
 // Страницы
-
-// Библиотеки
-@import 'libs/_aos';
-@import 'libs/_lightgallery';
-@import 'libs/_swiper';
-@import 'libs/_rangeslider-js';
 
 // Анимация
 @import 'components/_animation';
