@@ -150,6 +150,16 @@
     // height: 48px;
 }
 
+.sign-up__form {
+
+    & > * {
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}
+
 // Ошибка
 .modal-error__title {
     font-size: 18px;

@@ -9510,6 +9510,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   margin: 0 0 0 6px;
 }
 
+.sign-up__form > *:not(:last-child) {
+  margin-bottom: 15px;
+}
+
 .modal-error__title {
   font-size: 18px;
   font-weight: 500;
