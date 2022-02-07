@@ -3,6 +3,10 @@
     & > * {
         width: 20%;
 
+        @media (max-width: $laptop){
+            width: 29%;
+        }
+
         @media (max-width: $tablet-s) {
             width: auto
         }
