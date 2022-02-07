@@ -339,6 +339,7 @@
     border: 1px dashed $icon-blue-l;
     border-radius: $radius;
     transition: $tr;
+    background-color: #F6F8FD;
 
     & .dz-button {
         display: none;
@@ -369,6 +370,7 @@
     &.dz-started {
         border: none;
         padding: 0;
+        background-color: transparent;
 
         & .na-dropzone__block {
             display: none;
