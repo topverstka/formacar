@@ -3789,6 +3789,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   transition: var(--tr);
 }
 
+.textfield__show-pass {
+  opacity: 1;
+}
+
 .textfield__show-pass._show .eye-show {
   display: block;
   opacity: 1;
