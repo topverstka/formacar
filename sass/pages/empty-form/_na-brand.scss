@@ -9,13 +9,32 @@
     }
 }
 
-.na-brand__item {
+.na-brand__radio {
+    position: relative;
+    width: fit-content;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    
+    & input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked {
+
+            & ~ .na-brand__radio-title {
+                color: $text-accent;
+            }
+        }
+    }
 }
 
-.na-brand__item-icon {
+.na-brand__radio-icon {
+    margin-right: 10px;
     
     & img {
         width: 30px;
@@ -23,8 +42,7 @@
     }
 }
 
-.na-brand__item-title {
+.na-brand__radio-title {
     font-size: 14px;
     font-weight: 500;
-    margin-left: 10px;
 }

@@ -8794,7 +8794,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
-.na-brand__item {
+.na-brand__radio {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8803,18 +8807,34 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.na-brand__radio input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
   cursor: pointer;
 }
 
-.na-brand__item-icon img {
+.na-brand__radio input:checked ~ .na-brand__radio-title {
+  color: var(--text-accent);
+}
+
+.na-brand__radio-icon {
+  margin-right: 10px;
+}
+
+.na-brand__radio-icon img {
   width: 30px;
   height: 30px;
 }
 
-.na-brand__item-title {
+.na-brand__radio-title {
   font-size: 14px;
   font-weight: 500;
-  margin-left: 10px;
 }
 
 .na-model__list {

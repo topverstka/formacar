@@ -1677,3 +1677,29 @@ function widthTextarea() {
         ta.style.minWidth = taWidth + 'px'
     }
 }
+
+// Наполнение сайдбара пунктами с названиями блоков для заполнения
+naSidebar()
+function naSidebar() {
+    const sidebar = document.getElementById('na-sidebar')
+    const list = sidebar.querySelector('.na-sidebar__list')
+    const blockElems = findAll('.na-block')
+
+    for (let i = 0; i < blockElems.length; i++) {
+        const block = blockElems[i]
+        const title = block.dataset.title
+        const type = block.dataset.type
+
+        list.innerHTML = list.innerHTML + `<li class="na-sidebar__item na-sidebar__item-${type}">${title}</li>`
+    
+        // ========
+    }
+
+
+}
+
+// Активация пунктов сайдбара, если блоки не пустые
+activeItemSidebar()
+function activeItemSidebar() {
+    
+}
