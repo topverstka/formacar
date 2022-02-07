@@ -35,6 +35,17 @@
             // pointer-events: all;
         }
     }
+
+    /* Скрытие скролла */
+    /* хром, сафари */
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    /* ie 10+ */
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+
 }
 
 .textfield textarea {
