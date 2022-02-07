@@ -1665,18 +1665,18 @@ window.addEventListener("DOMContentLoaded", function() {
 
 
 // Максимальная и минимальная ширина текстового поля - textarea
-widthTextarea()
-function widthTextarea() {
-    const taElems = findAll('textarea')
+// widthTextarea()
+// function widthTextarea() {
+//     const taElems = findAll('textarea')
 
-    for (let i = 0; i < taElems.length; i++) {
-        const ta = taElems[i];
-        const taWidth = ta.offsetWidth
+//     for (let i = 0; i < taElems.length; i++) {
+//         const ta = taElems[i];
+//         const taWidth = ta.offsetWidth
 
-        ta.style.maxWidth = taWidth + 'px'
-        ta.style.minWidth = taWidth + 'px'
-    }
-}
+//         ta.style.maxWidth = taWidth + 'px'
+//         ta.style.minWidth = taWidth + 'px'
+//     }
+// }
 
 // Наполнение сайдбара пунктами с названиями блоков для заполнения
 naSidebar()
