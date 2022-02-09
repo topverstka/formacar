@@ -18,12 +18,19 @@
 // }
 
 .na-row-color__list {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+    gap: 15px;
+
+    // display: flex;
+    // align-items: center;
+    // flex-wrap: wrap;
     margin-top: 20px;
 
     @media (max-width: $tablet-s) {
+        grid-template-columns: repeat(auto-fit, 32px);
+        gap: 10px 12px;
         margin: 0;
     }
 }
@@ -31,10 +38,11 @@
 // Выбор цвета
 .color-radio {
     position: relative;
-    margin: 0 15px 15px 0;
+    // margin: 0 15px 15px 0;
 
     & input {
         position: absolute;
+        z-index: 1;
         top: 0;
         left: 0;
         width: 100%;
@@ -54,6 +62,7 @@
     }
 
     & label {
+        position: relative;
         width: 32px;
         height: 32px;
         display: block;

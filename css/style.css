@@ -3924,15 +3924,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   transition: var(--tr);
 }
 
-@media (max-width: 425px) {
-  .radio label {
-    font-size: 12px;
-  }
-  .radio label::before {
-    margin-right: 10px;
-  }
-}
-
 .modal {
   position: fixed;
   z-index: 2;
@@ -8348,7 +8339,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 768px) {
   .na-content {
     width: 100%;
-    padding: 0;
+    margin: 0;
   }
 }
 
@@ -8496,12 +8487,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   margin-bottom: 30px;
 }
 
-@media (max-width: 425px) {
-  .na-block__body > .na-row:not(:last-child) {
-    margin-bottom: 20px;
-  }
-}
-
 .na-block__close {
   min-width: 30px;
   width: 30px;
@@ -8534,7 +8519,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
   .na-title {
     font-size: 12px;
   }
@@ -9054,6 +9039,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .na-version__list {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    row-gap: 20px;
   }
 }
 
@@ -9072,33 +9058,31 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .na-row-color__list {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(32px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+  gap: 15px;
   margin-top: 20px;
 }
 
 @media (max-width: 500px) {
   .na-row-color__list {
+    -ms-grid-columns: (32px)[auto-fit];
+        grid-template-columns: repeat(auto-fit, 32px);
+    gap: 10px 12px;
     margin: 0;
   }
 }
 
 .color-radio {
   position: relative;
-  margin: 0 15px 15px 0;
 }
 
 .color-radio input {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -9112,6 +9096,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .color-radio label {
+  position: relative;
   width: 32px;
   height: 32px;
   display: block;
