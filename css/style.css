@@ -3655,8 +3655,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .textfield textarea {
-  height: 74px;
+  height: auto;
   padding: 20px 30px 20px 20px;
+  overflow-y: auto;
+  resize: none;
 }
 
 .textfield textarea + label {
@@ -3664,6 +3666,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
+}
+
+.textfield textarea ~ .textfield__clear {
+  top: 20px;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 @media (max-width: 425px) {
@@ -8280,7 +8289,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
           justify-content: center;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1441px) {
   .na-content__wrap {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;

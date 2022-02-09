@@ -179,6 +179,11 @@ function clearByCross() {
             input.value = ''
             input.focus()
             btn.classList.remove('_show')
+
+            if (btn.parentElement.querySelector('textarea')) {
+                const textarea = btn.parentElement.querySelector('textarea')
+                textarea.style.height = 'auto'
+            }
         })
 
         input.addEventListener('input', e => {
@@ -1614,7 +1619,6 @@ function selectCreateInput() {
         const select = selectElems[i];
         const input = document.createElement('input')
         input.type = 'text'
-        // input.classList.add('_full')
         
         select.prepend(input)
     }
@@ -1680,7 +1684,7 @@ function select() {
         const sTitle = select.querySelector('.select-input__title')
         const sInput = select.querySelector('input')
 
-        sTitle.innerText = selectedItem.innerText
+        sTitle.innerText = selectedItem.innerHTML
         sInput.value = selectedItem.innerText
         sInput.classList.add('_full')
         // console.log(sInput)
@@ -1850,7 +1854,6 @@ function validFormChangeDisabledSubmit() {
         const form = formElems[i]
         const btnSubmit = form.querySelector('[type=submit]')
         const inputElems = form.querySelectorAll('input')
-        // const selectElems = form.querySelectorAll('.select')
         
         for (let i = 0; i < inputElems.length; i++) {
             const input = inputElems[i];
@@ -1888,46 +1891,55 @@ function checkValidTextfields(form) {
     return valid
 }
 
-// class ClassWatcher {
+// Изменение размера текстового поля textarea
+resizeHeightTextarea()
+function resizeHeightTextarea() {
+    var observe;
+    if (window.attachEvent) {
+        observe = function (element, event, handler) {
+            element.attachEvent('on'+event, handler);
+        };
+    }
+    else {
+        observe = function (element, event, handler) {
+            element.addEventListener(event, handler, false);
+        };
+    }
+    function init (maxH) {
+        var textElems = findAll('textarea');
 
-//     constructor(targetNode, classToWatch, classAddedCallback, classRemovedCallback) {
-//         this.targetNode = targetNode
-//         this.classToWatch = classToWatch
-//         this.classAddedCallback = classAddedCallback
-//         this.classRemovedCallback = classRemovedCallback
-//         this.observer = null
-//         this.lastClassState = targetNode.classList.contains(this.classToWatch)
+        for (let i = 0; i < textElems.length; i++) {
+            const text = textElems[i];
+            var maxHeight=maxH;
+            var oldHeight=  text.scrollHeight;
+            var newHeight;
+            function resize () {
+    
+            text.style.height = 'auto';
+            newHeight= text.scrollHeight;
+            if(newHeight>oldHeight && newHeight>maxHeight)
+            {
+                text.style.height=oldHeight+'px';
+    
+            }
+            else{
+                text.style.height = newHeight+'px';
+                oldHeight=  text.scrollHeight;
+            }
+    
+            }
+            
+            function delayedResize () {
+                window.setTimeout(resize, 0);
+            }
+            observe(text, 'change',  resize);
+            observe(text, 'cut',     delayedResize);
+            observe(text, 'paste',   delayedResize);
+            observe(text, 'drop',    delayedResize);
+            observe(text, 'keydown', delayedResize);
 
-//         this.init()
-//     }
-
-//     init() {
-//         this.observer = new MutationObserver(this.mutationCallback)
-//         this.observe()
-//     }
-
-//     observe() {
-//         this.observer.observe(this.targetNode, { attributes: true })
-//     }
-
-//     disconnect() {
-//         this.observer.disconnect()
-//     }
-
-//     mutationCallback = mutationsList => {
-//         for(let mutation of mutationsList) {
-//             if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-//                 let currentClassState = mutation.target.classList.contains(this.classToWatch)
-//                 if(this.lastClassState !== currentClassState) {
-//                     this.lastClassState = currentClassState
-//                     if(currentClassState) {
-//                         this.classAddedCallback()
-//                     }
-//                     else {
-//                         this.classRemovedCallback()
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+            resize();
+        }
+    }
+    init(2000);
+}

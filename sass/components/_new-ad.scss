@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
 
-    @media (min-width: $laptop-l) {
+    @media (min-width: 1441px) {
         flex-direction: row-reverse;
         justify-content: space-between;
         
