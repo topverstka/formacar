@@ -2,6 +2,10 @@
     max-width: 306px;
     width: 100%;
 
+    @media (min-width: $laptop-l) {
+        min-width: 306px;
+    }
+
     @media (max-width: $laptop) {
         max-width: 250px;
     }

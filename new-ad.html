@@ -571,7 +571,7 @@
         <!-- na - new ad -->
         <div class="content">
             <div class="container">
-                <div class="content_na__wrap">
+                <div class="na-content__wrap">
                     <div class="na-content">
                         <section class="na-margin na-cat">
                             <div class="na-cat__wrap">
@@ -588,6 +588,19 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </section>
+                        <section class="na-margin na-block na-result">
+                            <div class="na-block__header">
+                                <div class="na-block__header-info">
+                                    <div class="na-block__brand-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                    <div class="na-block__header-info-list">
+                                        <span class="na-title na-block__header-info-item na-block__header-info-brand">Audi</span>
+                                        <span class="na-title na-block__header-info-item na-block__header-info-model">Q3</span>
+                                        <span class="na-title na-block__header-info-item na-block__header-info-version">I (8U) Рестайлинг</span>
+                                    </div>
+                                </div>
+                                <button class="na-block__close"><svg><use href='./img/sprite.svg#close-circle'></use></svg></button>
                             </div>
                         </section>
                         <section class="na-margin na-block na-brand" data-type="brand" data-title="Марка">
@@ -853,10 +866,19 @@
                                             <div class="select-dropdown">
                                                 <ul class="select-dropdown__list">
                                                     <li class="select-dropdown__item">Седан</li>
-                                                    <li class="select-dropdown__item">Хетчбэк</li>
-                                                    <li class="select-dropdown__item">Минивен</li>
-                                                    <li class="select-dropdown__item">Суперкар</li>
+                                                    <li class="select-dropdown__item">Лимузин</li>
+                                                    <li class="select-dropdown__item">Купе</li>
+                                                    <li class="select-dropdown__item">Универсал</li>
+                                                    <li class="select-dropdown__item">Комби (Хэтчбек)</li>
                                                     <li class="select-dropdown__item">Кабриолет</li>
+                                                    <li class="select-dropdown__item">Фургон</li>
+                                                    <li class="select-dropdown__item">Родстер</li>
+                                                    <li class="select-dropdown__item">Пикап</li>
+                                                    <li class="select-dropdown__item">Фаэтон</li>
+                                                    <li class="select-dropdown__item">Ландо</li>
+                                                    <li class="select-dropdown__item">Минивэн</li>
+                                                    <li class="select-dropdown__item">Кроссовер</li>
+                                                    <li class="select-dropdown__item">Тарга</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1011,8 +1033,13 @@
 											</div>
 											<div class="select-dropdown">
 												<ul class="select-dropdown__list">
-													<li class="select-dropdown__item">Бензин</li>
+													<li class="select-dropdown__item">Атмосферный</li>
 													<li class="select-dropdown__item">Дизель</li>
+													<li class="select-dropdown__item">Электро</li>
+													<li class="select-dropdown__item">Газовый</li>
+													<li class="select-dropdown__item">Бензин</li>
+													<li class="select-dropdown__item">Гибрид</li>
+													<li class="select-dropdown__item">Турбированный</li>
 												</ul>
 											</div>
 										</div>
@@ -1039,9 +1066,10 @@
 											</div>
 											<div class="select-dropdown">
 												<ul class="select-dropdown__list">
+													<li class="select-dropdown__item">Автоматическая</li>
+													<li class="select-dropdown__item">Механическая</li>
 													<li class="select-dropdown__item">Роботизированная</li>
-													<li class="select-dropdown__item">Автомат</li>
-													<li class="select-dropdown__item">Механика</li>
+													<li class="select-dropdown__item">Вариатор</li>
 												</ul>
 											</div>
 										</div>
@@ -1059,9 +1087,9 @@
 											</div>
 											<div class="select-dropdown">
 												<ul class="select-dropdown__list">
-													<li class="select-dropdown__item">Полный</li>
-													<li class="select-dropdown__item">Задний</li>
 													<li class="select-dropdown__item">Передний</li>
+													<li class="select-dropdown__item">Задний</li>
+													<li class="select-dropdown__item">Полный</li>
 												</ul>
 											</div>
 										</div>
@@ -1185,11 +1213,38 @@
                                 <div class="na-row">
                                     <h2 class="na-title na-row__title">Город</h2>
                                     <div class="na-row__block">
-                                        <form method="GET" class="textfield textfield_search clear-by-cross">
+                                        <!-- <form method="GET" class="textfield textfield_search clear-by-cross">
 											<input id="search-cities" type="text">
 											<label for="search-cities">Введите город</label>
 											<button type="submit" class="textfield_search-submit"><svg><use href='./img/sprite.svg#search'></use></svg></button>
-										</form>
+										</form> -->
+										<div class="select-city">
+											<div class="textfield textfield_search clear-by-cross">
+												<input type="text">
+												<label>Введите город</label>
+												<button class="textfield_search-submit"><svg><use href='./img/sprite.svg#search'></use></svg></button>
+											</div>
+											<div class="select-city-dropdown">
+												<ul class="select-city-dropdown__list">
+													<li class="select-city-dropdown__item">
+														<span class="select-city-dropdown__city">Казань</span>
+														<span class="select-city-dropdown__region">Республика Татарстан</span>
+													</li>
+													<li class="select-city-dropdown__item">
+														<span class="select-city-dropdown__city">Казань</span>
+														<span class="select-city-dropdown__region">Республика Татарстан</span>
+													</li>
+													<li class="select-city-dropdown__item">
+														<span class="select-city-dropdown__city">Казань</span>
+														<span class="select-city-dropdown__region">Республика Татарстан</span>
+													</li>
+													<li class="select-city-dropdown__item">
+														<span class="select-city-dropdown__city">Казань</span>
+														<span class="select-city-dropdown__region">Республика Татарстан</span>
+													</li>
+												</ul>
+											</div>
+										</div>
                                     </div>
                                 </div>
                             </div>
@@ -1221,20 +1276,7 @@
                     <div class="na-sidebar" id="na-sidebar">
                         <div class="na-sidebar__wrap">
                             <h2 class="na-title">Заполнение</h2>
-                            <ul class="na-sidebar__list">
-                                <!-- <li class="na-sidebar__item">Марка</li>
-                                <li class="na-sidebar__item">Модель</li>
-                                <li class="na-sidebar__item">Поколение</li>
-                                <li class="na-sidebar__item">Кузов</li>
-                                <li class="na-sidebar__item">Модификация</li>
-                                <li class="na-sidebar__item">Год выпуска</li>
-                                <li class="na-sidebar__item">Пробег</li>
-                                <li class="na-sidebar__item">Другие параметры</li>
-                                <li class="na-sidebar__item">Цена</li>
-                                <li class="na-sidebar__item">Описание</li>
-                                <li class="na-sidebar__item">Контакты</li>
-                                <li class="na-sidebar__item">Фото и/или видео</li> -->
-                            </ul>
+                            <ul class="na-sidebar__list"></ul>
                         </div>
                     </div>
                 </div>

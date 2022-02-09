@@ -156,38 +156,41 @@
 }
 
 .textfield__show-pass {
-    opacity: 1;
 
     &._show {
+        visibility: visible;
+        opacity: 1;
+    }
 
-        & .eye-show {
-            display: block;
-            opacity: 1;
-            visibility: visible;
-        }
+    &._active {
 
         & .eye-hide {
-            display: none;
-            opacity: 0;
-            visibility: hidden;
+            display: block;
         }
 
-        &._active {
-
-            & .eye-hide {
-                display: block;
-                opacity: 1;
-                visibility: visible;
-            }
-    
-            & .eye-show {
-                display: none;
-                opacity: 0;
-                visibility: hidden;
-            }
-
+        & .eye-show {
+            display: none;
         }
     }
+
+}
+
+.eye-show,
+.eye-hide {
+    opacity: .5;
+    transition: $tr;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.eye-show {
+    display: block;
+}
+
+.eye-hide {
+    display: none;
 }
 
 // Checkbox

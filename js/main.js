@@ -1584,50 +1584,6 @@ function searchMobMenu() {
     })
 }
 
-// Select'ы
-select()
-function select() {
-    const selectElems = findAll('.select')
-
-    for (let i = 0; i < selectElems.length; i++) {
-        const select = selectElems[i];
-        const selectedItem = select.querySelector('.select-dropdown__item._selected')
-
-        if (selectedItem) {
-            const sTitle = select.querySelector('.select-input__title')
-
-            sTitle.innerText = selectedItem.innerHTML
-            select.classList.add('_item-select')
-        }
-    }
-
-    window.addEventListener('click', e => {
-        const target = e.target
-
-        if (find('.select._open') && !target.classList.contains('select') && !target.closest('.select._open')) {
-            find('.select._open').classList.remove('_open')
-        }
-
-        if (target.classList.contains('select-input')) {
-            target.parentElement.classList.toggle('_open')
-        }
-
-        if (target.classList.contains('select-dropdown__item')) {
-            const parent = target.closest('.select')
-            const sTitle = parent.querySelector('.select-input__title')
-            const neighbourTargets = target.parentElement.querySelectorAll('.select-dropdown__item')
-
-            sTitle.innerText = target.innerText
-
-            removeAll(neighbourTargets, '_selected')
-            target.classList.add('_selected')
-
-            parent.classList.remove('_open')
-            parent.classList.add('_item-select')
-        }
-    })
-}
-
 // Маска телефона
 window.addEventListener("DOMContentLoaded", function() {
     [].forEach.call( document.querySelectorAll('.mask-phone input'), function(input) {
@@ -1683,7 +1639,7 @@ naSidebar()
 function naSidebar() {
     const sidebar = document.getElementById('na-sidebar')
     const list = sidebar.querySelector('.na-sidebar__list')
-    const blockElems = findAll('.na-block')
+    const blockElems = findAll('[data-type][data-title]')
 
     for (let i = 0; i < blockElems.length; i++) {
         const block = blockElems[i]
@@ -1691,8 +1647,6 @@ function naSidebar() {
         const type = block.dataset.type
 
         list.innerHTML = list.innerHTML + `<li class="na-sidebar__item na-sidebar__item-${type}">${title}</li>`
-    
-        // ========
     }
 
 
@@ -1702,4 +1656,107 @@ function naSidebar() {
 activeItemSidebar()
 function activeItemSidebar() {
     
+}
+
+
+
+// Выбор города
+selectCity()
+function selectCity() {
+    const selectElems = findAll('.select-city')
+    
+    for (let i = 0; i < selectElems.length; i++) {
+        const select = selectElems[i];
+        const input = select.querySelector('.textfield input')
+        const clear = select.querySelector('.textfield__clear')
+
+        input.addEventListener('input', e => {
+            if (input.value != '') {
+                select.classList.add('_open')
+
+                // Отправляем запрос в БД, получаем и выводим список городов, в которых есть строка, введенная в текстовое поле
+            }
+            else {
+                select.classList.remove('_open')
+            }
+        })
+
+        clear.addEventListener('click', e => {
+            select.classList.remove('_open')
+        })
+
+        // Выбор города
+        const itemElems = select.querySelectorAll('.select-city-dropdown__item')
+
+        for (let i = 0; i < itemElems.length; i++) {
+            const item = itemElems[i];
+            
+            item.addEventListener('click', e => {
+                const city = item.querySelector('.select-city-dropdown__city')
+                
+                input.value = city.innerText
+                select.classList.add('_item-select')
+                // clearList(select)
+            })
+        }
+    }
+
+    // Отчистить список городов
+    function clearList(select) {
+        const list = select.querySelector('.select-city-dropdown__list')
+        list.innerHTML = ''
+    }
+}
+
+// Списки выбора
+select()
+function select() {
+    // Проверяем есть ли выбранные элементы при загрузке страницы. Если есть, то селект заполняется
+    const selectedItemElems = document.querySelectorAll('.select-dropdown__item._selected')
+
+    for (let i = 0; i < selectedItemElems.length; i++) {
+        const selectedItem = selectedItemElems[i];
+        const select = selectedItem.closest('.select')
+        const sTitle = select.querySelector('.select-input__title')
+
+        sTitle.innerText = selectedItem.innerHTML
+        select.classList.add('_item-select')
+    }
+
+    // Если пользователь кликнул по селекту, то он открывается/закрывается. Также он закроется если кликнуть вне его области
+    window.addEventListener('click', e => {
+        const target = e.target
+
+        // Если пользователь кликнул вне зоны селекта
+        if (!target.classList.contains('select') && !target.closest('.select._open')) {
+            if (find('.select._open')) {
+                find('.select._open').classList.remove('_open')
+            }
+
+            // для селекта с выбором городов
+            if (find('.select-city._open')) {
+                find('.select-city._open').classList.remove('_open')
+            }
+        }
+
+        // Если пользователь кликнул по шапке селекта
+        if (target.classList.contains('select-input')) {
+            target.parentElement.classList.toggle('_open')
+        }
+
+        // Если пользователь выбрал пункт из списка селекта
+        if (target.classList.contains('select-dropdown__item')) {
+            const parent = target.closest('.select')
+            const sTitle = parent.querySelector('.select-input__title')
+            const neighbourTargets = target.parentElement.querySelectorAll('.select-dropdown__item')
+
+            sTitle.innerText = target.innerText
+
+            removeAll(neighbourTargets, '_selected')
+            target.classList.add('_selected')
+
+            parent.classList.remove('_open')
+            parent.classList.add('_item-select')
+        }
+    })
 }

@@ -1,8 +1,35 @@
+.na-content__wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: $laptop-l) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        
+        &::before {
+            content: '';
+            max-width: 306px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 1700px) {
+        justify-content: space-between;
+    }
+}
+
 // Контентная часть
 .na-content {
     max-width: 876px;
     width: calc(100% - 306px);
-    padding-right: 24px;
+    margin-right: 24px; 
+
+    @media (min-width: $laptop-l) {
+        min-width: 876px;
+        margin: 0 0 0 24px;
+    }
 
     @media (max-width: $laptop) {
         width: calc(100% - 250px);
@@ -45,7 +72,6 @@
 
 // Белые блоки с выбором пунктов для создания объявления
 .na-block {
-    min-height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -290,6 +316,7 @@
     width: 100%;
 
     & .select,
+    & .select-city,
     & .textfield {
         max-width: 306px;
 
