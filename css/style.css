@@ -9003,11 +9003,21 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .na-model__list {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 15px 24px;
 }
 
 .na-model__list > * {
   width: 20%;
+}
+
+@media (max-width: 1024px) {
+  .na-model__list > * {
+    width: 25%;
+  }
 }
 
 .na-version__list {

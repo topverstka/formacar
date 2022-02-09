@@ -178,11 +178,17 @@ function clearByCross() {
         btn.addEventListener('click', e => {
             input.value = ''
             input.focus()
+            input.classList.remove('_full')
             btn.classList.remove('_show')
 
             if (btn.parentElement.querySelector('textarea')) {
                 const textarea = btn.parentElement.querySelector('textarea')
                 textarea.style.height = 'auto'
+            }
+
+            if (btn.closest('[data-form-valid=submit-disabled]')) {
+                const form = btn.closest('[data-form-valid=submit-disabled]')
+                btnSubmitDisabled(form, form.querySelector('[type=submit]'))
             }
         })
 
@@ -1776,7 +1782,7 @@ function emptyInput() {
     for (let i = 0; i < inputElems.length; i++) {
         const input = inputElems[i];
         
-        input.addEventListener('change', e => {
+        input.addEventListener('input', e => {
             if (input.value != '') {
                 input.classList.add('_full')
             }
@@ -1852,26 +1858,26 @@ function validFormChangeDisabledSubmit() {
     
     for (let i = 0; i < formElems.length; i++) {
         const form = formElems[i]
-        const btnSubmit = form.querySelector('[type=submit]')
         const inputElems = form.querySelectorAll('input')
+        const btnSubmit = form.querySelector('[type=submit]')
         
         for (let i = 0; i < inputElems.length; i++) {
             const input = inputElems[i];
             
-            input.addEventListener('change', e => {
-                console.log(checkValidTextfields(form))
-                if (checkValidTextfields(form)) {
-                    btnSubmit.disabled = false
-                }
-                else {
-                    btnSubmit.disabled = true
-                }
+            input.addEventListener('input', e => {
+                btnSubmitDisabled(form, btnSubmit)
             })
-
-            input.onchange = e => {
-                console.log(input.value)
-            }
         }
+    }
+}
+
+// Установка или удаление атрибута disabled
+function btnSubmitDisabled(form, btnSubmit) {
+    if (checkValidTextfields(form)) {
+        btnSubmit.disabled = false
+    }
+    else {
+        btnSubmit.disabled = true
     }
 }
 

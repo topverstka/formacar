@@ -1,7 +1,12 @@
 .na-model__list {
+    justify-content: space-between;
     gap: 15px 24px;
 
     & > * {
         width: 20%;
+
+        @media (max-width: $laptop) {
+            width: 25%;
+        }
     }
 }
