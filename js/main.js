@@ -451,57 +451,6 @@ function menu() {
 	})
 }
 
-// Плейсхолдер текстовых полей
-labelTextfield()
-function labelTextfield() {
-    const textfieldElems = document.querySelectorAll('.textfield')
-
-    for (let i = 0; i < textfieldElems.length; i++) {
-        const parent = textfieldElems[i];
-        const input = parent.querySelector('input, textarea')
-        const label = parent.querySelector('label')
-
-        input.addEventListener('focus', e => {
-            label.classList.add('_change-label')
-        })
-
-        input.addEventListener('blur', e => {
-            if (input.value === '') {
-                label.classList.remove('_change-label')
-            }
-        })
-    }
-}
-
-// В инпуте могут быть только цифры если у textfield есть класс only-digit
-onlyDigit()
-function onlyDigit() {
-    const textfieldElems = document.querySelectorAll('.only-digit')
-
-    for (let i = 0; i < textfieldElems.length; i++) {
-        const input = textfieldElems[i].querySelector('input')
-
-        input.addEventListener('keypress', function(e) {
-            const inputValue = e.charCode;
-        
-            if(!(inputValue >= 48 && inputValue <= 57) && (inputValue != 43 && inputValue != 0 && inputValue != 40 && inputValue != 41 && inputValue != 45)) {
-                e.preventDefault();
-            }
-        }); 
-    }
-}
-
-// changeRangeInputCities()
-function changeRangeInputCities() {
-    const block = find('.location__radius')
-    const elemValue = block.querySelector('.location__radius-value span')
-    const range = block.querySelector('.location__radius-range input')
-
-    range.addEventListener('input', e => {
-        elemValue.innerText = range.value
-    })
-}
-
 // Фиксация шапки
 // fixHeader()
 function fixHeader() {
@@ -1635,7 +1584,7 @@ window.addEventListener("DOMContentLoaded", function() {
 // }
 
 // Наполнение сайдбара пунктами с названиями блоков для заполнения
-naSidebar()
+if (document.getElementById('na-sidebar')) naSidebar()
 function naSidebar() {
     const sidebar = document.getElementById('na-sidebar')
     const list = sidebar.querySelector('.na-sidebar__list')
@@ -1648,8 +1597,6 @@ function naSidebar() {
 
         list.innerHTML = list.innerHTML + `<li class="na-sidebar__item na-sidebar__item-${type}">${title}</li>`
     }
-
-
 }
 
 // Активация пунктов сайдбара, если блоки не пустые
@@ -1658,7 +1605,20 @@ function activeItemSidebar() {
     
 }
 
+// Создание текстового поля у селекта для дальнейшего его прослушивания
+selectCreateInput()
+function selectCreateInput() {
+    const selectElems = findAll('.select')
 
+    for (let i = 0; i < selectElems.length; i++) {
+        const select = selectElems[i];
+        const input = document.createElement('input')
+        input.type = 'text'
+        // input.classList.add('_full')
+        
+        select.prepend(input)
+    }
+}
 
 // Выбор города
 selectCity()
@@ -1695,7 +1655,7 @@ function selectCity() {
                 const city = item.querySelector('.select-city-dropdown__city')
                 
                 input.value = city.innerText
-                select.classList.add('_item-select')
+                select.classList.add('_valid')
                 // clearList(select)
             })
         }
@@ -1718,9 +1678,13 @@ function select() {
         const selectedItem = selectedItemElems[i];
         const select = selectedItem.closest('.select')
         const sTitle = select.querySelector('.select-input__title')
+        const sInput = select.querySelector('input')
 
-        sTitle.innerText = selectedItem.innerHTML
-        select.classList.add('_item-select')
+        sTitle.innerText = selectedItem.innerText
+        sInput.value = selectedItem.innerText
+        sInput.classList.add('_full')
+        // console.log(sInput)
+        select.classList.add('_valid')
     }
 
     // Если пользователь кликнул по селекту, то он открывается/закрывается. Также он закроется если кликнуть вне его области
@@ -1746,17 +1710,224 @@ function select() {
 
         // Если пользователь выбрал пункт из списка селекта
         if (target.classList.contains('select-dropdown__item')) {
-            const parent = target.closest('.select')
-            const sTitle = parent.querySelector('.select-input__title')
+            const select = target.closest('.select')
+            const sTitle = select.querySelector('.select-input__title')
+            const sInput = select.querySelector('input')
             const neighbourTargets = target.parentElement.querySelectorAll('.select-dropdown__item')
 
             sTitle.innerText = target.innerText
+            sInput.value = target.innerText
+            sInput.classList.add('_full')
+            // console.log(sInput)
 
             removeAll(neighbourTargets, '_selected')
             target.classList.add('_selected')
 
-            parent.classList.remove('_open')
-            parent.classList.add('_item-select')
+            select.classList.remove('_open')
+            select.classList.add('_valid')
+
+            if (select.closest('[data-form-valid=submit-disabled]')) {
+                const form = select.closest('[data-form-valid=submit-disabled]')
+                const btnSubmit = form.querySelector('[type=submit]')
+
+                if (checkValidTextfields(form)) {
+                    btnSubmit.disabled = false
+                }
+                else {
+                    btnSubmit.disabled = true
+                }
+            }
         }
     })
 }
+
+
+// Плейсхолдер текстовых полей
+labelTextfield()
+function labelTextfield() {
+    const textfieldElems = document.querySelectorAll('.textfield')
+
+    for (let i = 0; i < textfieldElems.length; i++) {
+        const textfield = textfieldElems[i];
+        const input = textfield.querySelector('input, textarea')
+        const label = textfield.querySelector('label')
+
+        input.addEventListener('focus', e => {
+            label.classList.add('_change-label')
+        })
+
+        input.addEventListener('blur', e => {
+            if (input.value === '') {
+                label.classList.remove('_change-label')
+            }
+        })
+    }
+}
+
+// Проверка инпутов на пустоту
+emptyInput()
+function emptyInput() {
+    const inputElems = findAll('input')
+
+    for (let i = 0; i < inputElems.length; i++) {
+        const input = inputElems[i];
+        
+        input.addEventListener('change', e => {
+            if (input.value != '') {
+                input.classList.add('_full')
+            }
+            else {
+                input.classList.remove('_full')
+            }
+        })
+    }
+}
+
+// Валидация текстовых полей
+validTextfield()
+function validTextfield() {
+    const textfieldElems = document.querySelectorAll('.textfield')
+
+    for (let i = 0; i < textfieldElems.length; i++) {
+        const textfield = textfieldElems[i];
+        const input = textfield.querySelector('input, textarea')
+
+        input.addEventListener('change', e => {
+            
+            if (input.type === 'email') {
+                if (validateEmail(input.value)) {
+                    textfield.classList.add('_valid')
+                }
+                else {
+                    textfield.classList.remove('_valid')
+                }
+            }
+        })
+    }
+
+    // Валидность email
+    function validateEmail(email) {
+        var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return pattern .test(email);
+    }
+}
+
+// В инпуте могут быть только цифры если у textfield есть класс only-digit
+onlyDigit()
+function onlyDigit() {
+    const textfieldElems = document.querySelectorAll('.only-digit')
+
+    for (let i = 0; i < textfieldElems.length; i++) {
+        const input = textfieldElems[i].querySelector('input')
+
+        input.addEventListener('keypress', function(e) {
+            const inputValue = e.charCode;
+        
+            if(!(inputValue >= 48 && inputValue <= 57) && (inputValue != 43 && inputValue != 0 && inputValue != 40 && inputValue != 41 && inputValue != 45)) {
+                e.preventDefault();
+            }
+        }); 
+    }
+}
+
+// changeRangeInputCities()
+function changeRangeInputCities() {
+    const block = find('.location__radius')
+    const elemValue = block.querySelector('.location__radius-value span')
+    const range = block.querySelector('.location__radius-range input')
+
+    range.addEventListener('input', e => {
+        elemValue.innerText = range.value
+    })
+}
+
+// Валидация формы. У кнопки удаляется disabled если все поля заполнены
+validFormChangeDisabledSubmit()
+function validFormChangeDisabledSubmit() {
+    const formElems = findAll('[data-form-valid=submit-disabled]')
+    
+    for (let i = 0; i < formElems.length; i++) {
+        const form = formElems[i]
+        const btnSubmit = form.querySelector('[type=submit]')
+        const inputElems = form.querySelectorAll('input')
+        // const selectElems = form.querySelectorAll('.select')
+        
+        for (let i = 0; i < inputElems.length; i++) {
+            const input = inputElems[i];
+            
+            input.addEventListener('change', e => {
+                console.log(checkValidTextfields(form))
+                if (checkValidTextfields(form)) {
+                    btnSubmit.disabled = false
+                }
+                else {
+                    btnSubmit.disabled = true
+                }
+            })
+
+            input.onchange = e => {
+                console.log(input.value)
+            }
+        }
+    }
+}
+
+function checkValidTextfields(form) {
+    
+    const inputElems = form.querySelectorAll('input')
+    let valid = true
+
+    for (let i = 0; i < inputElems.length; i++) {
+        const input = inputElems[i];
+        
+        if (!input.classList.contains('_full')) {
+            valid = false
+        }
+    }
+
+    return valid
+}
+
+// class ClassWatcher {
+
+//     constructor(targetNode, classToWatch, classAddedCallback, classRemovedCallback) {
+//         this.targetNode = targetNode
+//         this.classToWatch = classToWatch
+//         this.classAddedCallback = classAddedCallback
+//         this.classRemovedCallback = classRemovedCallback
+//         this.observer = null
+//         this.lastClassState = targetNode.classList.contains(this.classToWatch)
+
+//         this.init()
+//     }
+
+//     init() {
+//         this.observer = new MutationObserver(this.mutationCallback)
+//         this.observe()
+//     }
+
+//     observe() {
+//         this.observer.observe(this.targetNode, { attributes: true })
+//     }
+
+//     disconnect() {
+//         this.observer.disconnect()
+//     }
+
+//     mutationCallback = mutationsList => {
+//         for(let mutation of mutationsList) {
+//             if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+//                 let currentClassState = mutation.target.classList.contains(this.classToWatch)
+//                 if(this.lastClassState !== currentClassState) {
+//                     this.lastClassState = currentClassState
+//                     if(currentClassState) {
+//                         this.classAddedCallback()
+//                     }
+//                     else {
+//                         this.classRemovedCallback()
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

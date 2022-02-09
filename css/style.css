@@ -4491,9 +4491,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   pointer-events: all;
 }
 
-.select._item-select .select-input__title {
+.select._valid .select-input__title {
   font-weight: 500;
   color: var(--text-primary);
+}
+
+.select input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 
 .select-input {
