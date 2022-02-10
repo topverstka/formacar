@@ -338,6 +338,10 @@
     flex-wrap: wrap;
     gap: 8px 48px;
 
+    @media (max-width: $mobile-l) {
+        row-gap: 20px;
+    }
+
     & > * {
         
         &:not(:last-child) {
