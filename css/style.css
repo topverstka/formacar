@@ -9536,7 +9536,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   height: 30px;
 }
 
-.modal-auth__header {
+.modal-auth__headerr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9553,7 +9553,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   text-align: center;
 }
 
-.modal-auth__header-img {
+.modal-auth__headerr-img {
   width: 192px;
   height: 192px;
   display: -webkit-box;
@@ -9684,6 +9684,57 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-size: 18px;
   font-weight: 500;
   text-align: center;
+}
+
+.modal-valid-ad .modal__popup {
+  max-width: 363px;
+}
+
+.modal-valid-ad._error .modal-valid-ad__body_error {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal-valid-ad._done .modal-valid-ad__body_done {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal-valid-ad__body {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-valid-ad__img {
+  max-width: 140px;
+  width: 100%;
+}
+
+.modal-valid-ad__title {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.modal-valid-ad__title span {
+  color: var(--text-accent);
+}
+
+.modal-valid-ad__btn {
+  margin-top: 30px;
 }
 
 /* Стили анимации пульсации кругов */

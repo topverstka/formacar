@@ -1751,7 +1751,6 @@ function select() {
     })
 }
 
-
 // Плейсхолдер текстовых полей
 labelTextfield()
 function labelTextfield() {
