@@ -1547,37 +1547,87 @@ function searchMobMenu() {
 // Маска телефона
 window.addEventListener("DOMContentLoaded", function() {
     [].forEach.call( document.querySelectorAll('.mask-phone input'), function(input) {
-    var keyCode;
-    function mask(event) {
-        event.keyCode && (keyCode = event.keyCode);
-        var pos = this.selectionStart;
-        if (pos < 3) event.preventDefault();
-        var matrix = "+7 (___) ___-__-__",
-            i = 0,
-            def = matrix.replace(/\D/g, ""),
-            val = this.value.replace(/\D/g, ""),
-            new_value = matrix.replace(/[_\d]/g, function(a) {
-                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
-            });
-        i = new_value.indexOf("_");
-        if (i != -1) {
-            i < 5 && (i = 3);
-            new_value = new_value.slice(0, i)
-        }
-        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
-            function(a) {
-                return "\\d{1," + a.length + "}"
-            }).replace(/[+()]/g, "\\$&");
-        reg = new RegExp("^" + reg + "$");
-        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
-        if (event.type == "blur" && this.value.length < 5)  this.value = ""
-    }
-    input.addEventListener("input", mask, false);
-    input.addEventListener("focus", mask, false);
-    input.addEventListener("blur", mask, false);
-    input.addEventListener("keydown", mask, false)
+    
+        input.addEventListener('focus', e => {
+            if (input.value === '') {
+                input.value = '+'
+            }
+        })
+
+        input.addEventListener('blur', e => {
+            if (input.value === '+') {
+                input.value = ''
+            }
+        })
+
+            
+
+    // var keyCode;
+    // function mask(event) {
+    //     event.keyCode && (keyCode = event.keyCode);
+    //     var pos = this.selectionStart;
+    //     if (pos < 3) event.preventDefault();
+    //     var matrix = "+7 (___) ___-__-__",
+    //         i = 0,
+    //         def = matrix.replace(/\D/g, ""),
+    //         val = this.value.replace(/\D/g, ""),
+    //         new_value = matrix.replace(/[_\d]/g, function(a) {
+    //             return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+    //         });
+    //     i = new_value.indexOf("_");
+    //     if (i != -1) {
+    //         i < 5 && (i = 3);
+    //         new_value = new_value.slice(0, i)
+    //     }
+    //     var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+    //         function(a) {
+    //             return "\\d{1," + a.length + "}"
+    //         }).replace(/[+()]/g, "\\$&");
+    //     reg = new RegExp("^" + reg + "$");
+    //     if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+    //     if (event.type == "blur" && this.value.length < 5)  this.value = ""
+    // }
+    // input.addEventListener("input", mask, false);
+    // input.addEventListener("focus", mask, false);
+    // input.addEventListener("blur", mask, false);
+    // input.addEventListener("keydown", mask, false)
   });
 });
+
+// Показать больше пунктов списка
+showMoreList()
+function showMoreList() {
+    const listElems = findAll('[data-list]')
+
+    for (let i = 0; i < listElems.length; i++) {
+        const list = listElems[i];
+        const more = list.nextElementSibling
+        const itemElems = list.querySelectorAll('.na-brand__item')
+        
+        console.log(list, more)
+        more.addEventListener('click', e => {
+            if (!more.classList.contains('_show')) {
+                const moreTitle = more.querySelector('.na-more__title')
+                let newMoreTitle
+    
+                for (let i = 0; i < itemElems.length; i++) {
+                    const item = itemElems[i];
+                    item.style.display = 'block'
+                }
+    
+                switch (moreTitle.innerHTML) {
+                    case 'Все марки':
+                        newMoreTitle = 'Популярные марки'
+                    case 'Все модели':
+                        newMoreTitle = 'Популярные модели'
+                }
+    
+                moreTitle.innerHTML = newMoreTitle
+                more.classList.add('_show')
+            }
+        })
+    }
+}
 
 
 // Максимальная и минимальная ширина текстового поля - textarea
