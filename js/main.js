@@ -245,35 +245,6 @@ function showPassword() {
     }
 }
 
-// Фиксация сайдбара на странице пустой формы
-fixNASidebar()
-function fixNASidebar() {
-    const sidebar = find('.na-sidebar')
-
-    window.addEventListener('scroll', e => {
-        const rect = sidebar.getBoundingClientRect()
-
-        if (rect.top <= 0) {
-            // sidebar.style.top = -rect.top + 'px'
-        }
-
-        // console.log(window.scrollY, sidebar.getBoundingClientRect().top)
-    })
-}
-
-// // Показывает стрелку "наверх" при скролле, равному высоте экрана
-// const windowHeight = document.querySelector('html').clientHeight,
-//       arrowUp = document.querySelector('.arrow-up');
-
-// window.addEventListener('scroll', function() {
-//   if (window.pageYOffset >= windowHeight ) {
-//     arrowUp.classList.add('_show');
-//   }
-//   if (window.pageYOffset <= windowHeight ) {
-//     arrowUp.classList.remove('_show');
-//   }
-// });
-
 // Переход к началу страницы
 // arrowUp.addEventListener('click', () => {
 //   window.scrollBy(0,-window.pageYOffset);

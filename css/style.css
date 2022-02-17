@@ -5522,7 +5522,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .breadcrumbs__item {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--text-second-l);
   white-space: nowrap;
 }
@@ -5533,8 +5533,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   width: 15px;
   height: 15px;
   background: center/contain no-repeat url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_1717_11236' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='5' y='3' width='5' height='9'%3E%3Cpath d='M5.17166 11.7036C5.39975 11.9321 5.76749 11.9321 5.99558 11.7036L9.86384 7.82874C10.0454 7.64688 10.0454 7.35312 9.86384 7.17126L5.99558 3.29636C5.76749 3.06788 5.39975 3.06788 5.17166 3.29636C4.94356 3.52485 4.94356 3.89322 5.17166 4.1217L8.54184 7.50233L5.167 10.883C4.94356 11.1068 4.94356 11.4798 5.17166 11.7036Z' fill='black'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_1717_11236)'%3E%3Crect width='15' height='15' fill='%23B4B4BF'/%3E%3C/g%3E%3C/svg%3E");
-  vertical-align: middle;
-  padding: 0 5px;
+  vertical-align: bottom;
+  margin: 0 5px;
 }
 
 @media (max-width: 425px) {
@@ -9129,6 +9129,47 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   -webkit-transition: var(--tr);
   -o-transition: var(--tr);
   transition: var(--tr);
+}
+
+.ma-tab__header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ma-tab__button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-second-l);
+}
+
+.ma-tab__button:not(:last-child) {
+  margin-right: 48px;
+}
+
+.ma-tab__button._active {
+  color: var(--text-primary);
+}
+
+.ma-tab__button-quantity {
+  margin-left: 7px;
+}
+
+.ma-tab__body {
+  margin-top: 20px;
 }
 
 .modal-lang__header {

@@ -1,0 +1,39 @@
+// Таб на странице "Мои объявления"
+.ma-tab {
+
+}
+
+// Шапка с кнопками
+.ma-tab__header {
+    display: flex;
+    align-items: center;
+}
+
+// Кнопки
+.ma-tab__button {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: $text-second-l;
+
+    &:not(:last-child) {
+        margin-right: 48px;
+    }
+
+    &._active {
+        color: $text-primary;
+    }
+}
+
+.ma-tab__button-title {
+}
+
+.ma-tab__button-quantity {
+    margin-left: 7px;
+}
+
+// Контейнер с карточками
+.ma-tab__body {
+    margin-top: 20px;
+}
