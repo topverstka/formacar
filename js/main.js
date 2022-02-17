@@ -2026,3 +2026,37 @@ function resizeHeightTextarea() {
     }
     init(2000);
 }
+
+// Табы на странице "Мои объявления"
+tabsMineAd()
+function tabsMineAd() {
+    const btnElems = findAll('[data-tab-btn]')
+
+    for (let i = 0; i < btnElems.length; i++) {
+        const btn = btnElems[i];
+        
+        btn.addEventListener('click', e => {
+            const data = btn.dataset.tabBtn
+            const cardElems = findAll(`[data-tab-card=${data}]`)
+            const preload = find('.ma-tab__preload')
+
+            removeAll('[data-tab-card]._show', '_show')
+            preload.classList.add('_show')
+
+            setTimeout(e => {
+                preload.classList.remove('_show')
+
+                for (let i = 0; i < cardElems.length; i++) {
+                    const card = cardElems[i];
+    
+                    setTimeout(e => {
+                        card.classList.add('_show')
+                    }, (i+1)*100)
+                }
+            }, 1000)
+
+            removeAll(btnElems, '_active')
+            btn.classList.add('_active')
+        })
+    }
+}

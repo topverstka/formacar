@@ -501,11 +501,7 @@
 													<span class="search__result-not-found-text">По запросу “<span></span>”<br>Ничего не найдено</span>
 												</div>
 												<div class="search__result-loading">
-													<div class="search__result-loading-icon">
-														<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-															<path d="M20 40C16.0444 40 12.1776 38.827 8.88859 36.6294C5.59961 34.4318 3.03616 31.3082 1.52241 27.6537C0.00865634 23.9991 -0.38741 19.9778 0.384295 16.0982C1.156 12.2186 3.06082 8.65491 5.85787 5.85786C8.65492 3.06081 12.2186 1.156 16.0982 0.384294C19.9778 -0.38741 23.9991 0.00865721 27.6537 1.52241C31.3082 3.03616 34.4318 5.59961 36.6294 8.8886C38.827 12.1776 40 16.0444 40 20L35 20C35 17.0333 34.1203 14.1332 32.472 11.6664C30.8238 9.19971 28.4811 7.27712 25.7403 6.14181C22.9994 5.00649 19.9834 4.70944 17.0736 5.28822C14.1639 5.867 11.4912 7.29561 9.3934 9.3934C7.29561 11.4912 5.867 14.1639 5.28822 17.0736C4.70944 19.9834 5.00649 22.9994 6.14181 25.7403C7.27712 28.4811 9.19971 30.8238 11.6664 32.472C14.1332 34.1203 17.0333 35 20 35L20 40Z" fill="#AFAFAF"/>
-														</svg>																										
-													</div>
+													<div class="search__result-loading-icon"><svg><use href='./img/sprite.svg#preload'></use></svg></div>
 												</div>
 											</div>
 										</div>
@@ -586,20 +582,29 @@
                         <div class="mine-ad__body">
                             <div class="ma-tab">
                                 <div class="ma-tab__header">
-                                    <button class="ma-tab__button _active">
-                                        <span class="ma-tab__button-title">Активные</span>
+                                    <button class="ma-tab__button _active" data-tab-btn="published">
+                                        <span class="ma-tab__button-title">Опубликовано</span>
                                         <span class="ma-tab__button-quantity">7</span>
                                     </button>
-                                    <button class="ma-tab__button">
-                                        <span class="ma-tab__button-title">Завершенные</span>
-                                        <span class="ma-tab__button-quantity">8</span>
+                                    <button class="ma-tab__button" data-tab-btn="inspection">
+                                        <span class="ma-tab__button-title">На проверке</span>
+                                        <span class="ma-tab__button-quantity">4</span>
                                     </button>
-                                    <button class="ma-tab__button">
+                                    <button class="ma-tab__button" data-tab-btn="rejected">
+                                        <span class="ma-tab__button-title">Отклонено</span>
+                                        <span class="ma-tab__button-quantity">2</span>
+                                    </button>
+                                    <button class="ma-tab__button" data-tab-btn="inactive">
+                                        <span class="ma-tab__button-title">Завершенные</span>
+                                        <span class="ma-tab__button-quantity">1</span>
+                                    </button>
+                                    <button class="ma-tab__button" data-tab-btn="draft">
                                         <span class="ma-tab__button-title">Черновик</span>
+                                        <span class="ma-tab__button-quantity">1</span>
                                     </button>
                                 </div>
                                 <div class="ma-tab__body">
-                                    <div class="ma-card ma-card_paid ma-card_published">
+                                    <div class="ma-card ma-card_published ma-card_paid _show" data-tab-card="published">
                                         <div class="ma-card__wrap">
                                             <div class="ma-card__slider">
                                                 <div class="swiper-wrapper">
@@ -652,7 +657,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="ma-card ma-card_published">
+                                    <div class="ma-card ma-card_published ma-card_paid _show" data-tab-card="published">
                                         <div class="ma-card__wrap">
                                             <div class="ma-card__slider">
                                                 <div class="swiper-wrapper">
@@ -705,61 +710,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="ma-card ma-card_inspection">
-                                        <div class="ma-card__wrap">
-                                            <div class="ma-card__slider">
-                                                <div class="swiper-wrapper">
-                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/1.png" alt=""></div>
-                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/2.png" alt=""></div>
-                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/3.png" alt=""></div>
-                                                </div>
-                                                <div class="ma-card__pagination"></div>
-                                                <div class="ma-card__label-paid"><svg><use href='./img/sprite.svg#label-paid'></use></svg></div>
-                                            </div>
-                                            <div class="ma-card__content">
-                                                <div class="ma-card__content-header">
-                                                    <h3 class="ma-card__title">Audi Q3 I (8U) Рестайлинг 2018</h3>
-                                                    <span class="ma-card__price"><span>3 500 000</span> ₽</span>
-                                                </div>
-                                                <div class="ma-card__content-body">
-                                                    <div class="ma-card__parameters">
-                                                        <div class="ma-card__parameters-block">
-                                                            <div class="ma-card__parameter">
-                                                                <span class="ma-card__parameter-title">Пробег</span>
-                                                                <span class="ma-card__parameter-value">120 000 км</span>
-                                                            </div>
-                                                            <div class="ma-card__parameter">
-                                                                <span class="ma-card__parameter-title">Двигатель</span>
-                                                                <span class="ma-card__parameter-value">3.2 л / 450 л.с. / Бензин</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ma-card__parameters-block">
-                                                            <div class="ma-card__parameter">
-                                                                <span class="ma-card__parameter-title">Цвет</span>
-                                                                <span class="ma-card__parameter-value">Серый</span>
-                                                            </div>
-                                                            <div class="ma-card__parameter">
-                                                                <span class="ma-card__parameter-title">Привод</span>
-                                                                <span class="ma-card__parameter-value">Полный</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ma-card__info">
-                                                        <span class="ma-card__info-item ma-card__info-date">18 апреля, 22:00</span>
-                                                        <span class="ma-card__info-item ma-card__info-location">Россия, Краснодар</span>
-                                                    </div>
-                                                </div>
-                                                <div class="ma-card__content-footer">
-                                                    <button class="btn btn_icon btn_icon-left btn_icon-info ma-card__setting-btn">Информация</button>
-                                                    <button class="btn btn_icon btn_icon-left btn_icon-edit ma-card__setting-btn">Редактировать</button>
-                                                    <button class="btn btn_icon btn_icon-left btn_icon-delete ma-card__setting-btn">Снять с публикации</button>
-                                                    <button class="btn btn_icon btn_icon-left btn_icon-promote ma-card__setting-btn">Продвинуть</button>
-                                                </div>
-                                            </div>
-                                            <!-- <span class="ma-card__condition">опубликовано</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="ma-card ma-card_rejected">
+                                    <div class="ma-card ma-card_published _show" data-tab-card="published">
                                         <div class="ma-card__wrap">
                                             <div class="ma-card__slider">
                                                 <div class="swiper-wrapper">
@@ -812,7 +763,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="ma-card ma-card_inactive">
+                                    <div class="ma-card ma-card_published _show" data-tab-card="published">
                                         <div class="ma-card__wrap">
                                             <div class="ma-card__slider">
                                                 <div class="swiper-wrapper">
@@ -865,7 +816,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="ma-card ma-card_draft">
+                                    <div class="ma-card ma-card_published _show" data-tab-card="published">
                                         <div class="ma-card__wrap">
                                             <div class="ma-card__slider">
                                                 <div class="swiper-wrapper">
@@ -917,6 +868,521 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="ma-card ma-card_published _show" data-tab-card="published">
+                                        <div class="ma-card__wrap">
+                                            <div class="ma-card__slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/1.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/2.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/3.png" alt=""></div>
+                                                </div>
+                                                <div class="ma-card__pagination"></div>
+                                                <div class="ma-card__label-paid"><svg><use href='./img/sprite.svg#label-paid'></use></svg></div>
+                                            </div>
+                                            <div class="ma-card__content">
+                                                <div class="ma-card__content-header">
+                                                    <h3 class="ma-card__title">Audi Q3 I (8U) Рестайлинг 2018</h3>
+                                                    <span class="ma-card__price"><span>3 500 000</span> ₽</span>
+                                                </div>
+                                                <div class="ma-card__content-body">
+                                                    <div class="ma-card__parameters">
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Пробег</span>
+                                                                <span class="ma-card__parameter-value">120 000 км</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Двигатель</span>
+                                                                <span class="ma-card__parameter-value">3.2 л / 450 л.с. / Бензин</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Цвет</span>
+                                                                <span class="ma-card__parameter-value">Серый</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Привод</span>
+                                                                <span class="ma-card__parameter-value">Полный</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ma-card__info">
+                                                        <span class="ma-card__info-item ma-card__info-date">18 апреля, 22:00</span>
+                                                        <span class="ma-card__info-item ma-card__info-location">Россия, Краснодар</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ma-card__content-footer">
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-info ma-card__setting-btn">Информация</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-edit ma-card__setting-btn">Редактировать</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-delete ma-card__setting-btn">Снять с публикации</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-promote ma-card__setting-btn">Продвинуть</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ma-card ma-card_published _show" data-tab-card="published">
+                                        <div class="ma-card__wrap">
+                                            <div class="ma-card__slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/1.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/2.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/3.png" alt=""></div>
+                                                </div>
+                                                <div class="ma-card__pagination"></div>
+                                                <div class="ma-card__label-paid"><svg><use href='./img/sprite.svg#label-paid'></use></svg></div>
+                                            </div>
+                                            <div class="ma-card__content">
+                                                <div class="ma-card__content-header">
+                                                    <h3 class="ma-card__title">Audi Q3 I (8U) Рестайлинг 2018</h3>
+                                                    <span class="ma-card__price"><span>3 500 000</span> ₽</span>
+                                                </div>
+                                                <div class="ma-card__content-body">
+                                                    <div class="ma-card__parameters">
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Пробег</span>
+                                                                <span class="ma-card__parameter-value">120 000 км</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Двигатель</span>
+                                                                <span class="ma-card__parameter-value">3.2 л / 450 л.с. / Бензин</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Цвет</span>
+                                                                <span class="ma-card__parameter-value">Серый</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Привод</span>
+                                                                <span class="ma-card__parameter-value">Полный</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ma-card__info">
+                                                        <span class="ma-card__info-item ma-card__info-date">18 апреля, 22:00</span>
+                                                        <span class="ma-card__info-item ma-card__info-location">Россия, Краснодар</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ma-card__content-footer">
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-info ma-card__setting-btn">Информация</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-edit ma-card__setting-btn">Редактировать</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-delete ma-card__setting-btn">Снять с публикации</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-promote ma-card__setting-btn">Продвинуть</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ma-card ma-card_inspection" data-tab-card="inspection">
+                                        <div class="ma-card__wrap">
+                                            <div class="ma-card__slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/1.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/2.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/3.png" alt=""></div>
+                                                </div>
+                                                <div class="ma-card__pagination"></div>
+                                                <div class="ma-card__label-paid"><svg><use href='./img/sprite.svg#label-paid'></use></svg></div>
+                                            </div>
+                                            <div class="ma-card__content">
+                                                <div class="ma-card__content-header">
+                                                    <h3 class="ma-card__title">Audi Q3 I (8U) Рестайлинг 2018</h3>
+                                                    <span class="ma-card__price"><span>3 500 000</span> ₽</span>
+                                                </div>
+                                                <div class="ma-card__content-body">
+                                                    <div class="ma-card__parameters">
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Пробег</span>
+                                                                <span class="ma-card__parameter-value">120 000 км</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Двигатель</span>
+                                                                <span class="ma-card__parameter-value">3.2 л / 450 л.с. / Бензин</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Цвет</span>
+                                                                <span class="ma-card__parameter-value">Серый</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Привод</span>
+                                                                <span class="ma-card__parameter-value">Полный</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ma-card__info">
+                                                        <span class="ma-card__info-item ma-card__info-date">18 апреля, 22:00</span>
+                                                        <span class="ma-card__info-item ma-card__info-location">Россия, Краснодар</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ma-card__content-footer">
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-info ma-card__setting-btn">Информация</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ma-card ma-card_inspection" data-tab-card="inspection">
+                                        <div class="ma-card__wrap">
+                                            <div class="ma-card__slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/1.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/2.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/3.png" alt=""></div>
+                                                </div>
+                                                <div class="ma-card__pagination"></div>
+                                                <div class="ma-card__label-paid"><svg><use href='./img/sprite.svg#label-paid'></use></svg></div>
+                                            </div>
+                                            <div class="ma-card__content">
+                                                <div class="ma-card__content-header">
+                                                    <h3 class="ma-card__title">Audi Q3 I (8U) Рестайлинг 2018</h3>
+                                                    <span class="ma-card__price"><span>3 500 000</span> ₽</span>
+                                                </div>
+                                                <div class="ma-card__content-body">
+                                                    <div class="ma-card__parameters">
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Пробег</span>
+                                                                <span class="ma-card__parameter-value">120 000 км</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Двигатель</span>
+                                                                <span class="ma-card__parameter-value">3.2 л / 450 л.с. / Бензин</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Цвет</span>
+                                                                <span class="ma-card__parameter-value">Серый</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Привод</span>
+                                                                <span class="ma-card__parameter-value">Полный</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ma-card__info">
+                                                        <span class="ma-card__info-item ma-card__info-date">18 апреля, 22:00</span>
+                                                        <span class="ma-card__info-item ma-card__info-location">Россия, Краснодар</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ma-card__content-footer">
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-info ma-card__setting-btn">Информация</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ma-card ma-card_inspection" data-tab-card="inspection">
+                                        <div class="ma-card__wrap">
+                                            <div class="ma-card__slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/1.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/2.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/3.png" alt=""></div>
+                                                </div>
+                                                <div class="ma-card__pagination"></div>
+                                                <div class="ma-card__label-paid"><svg><use href='./img/sprite.svg#label-paid'></use></svg></div>
+                                            </div>
+                                            <div class="ma-card__content">
+                                                <div class="ma-card__content-header">
+                                                    <h3 class="ma-card__title">Audi Q3 I (8U) Рестайлинг 2018</h3>
+                                                    <span class="ma-card__price"><span>3 500 000</span> ₽</span>
+                                                </div>
+                                                <div class="ma-card__content-body">
+                                                    <div class="ma-card__parameters">
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Пробег</span>
+                                                                <span class="ma-card__parameter-value">120 000 км</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Двигатель</span>
+                                                                <span class="ma-card__parameter-value">3.2 л / 450 л.с. / Бензин</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Цвет</span>
+                                                                <span class="ma-card__parameter-value">Серый</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Привод</span>
+                                                                <span class="ma-card__parameter-value">Полный</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ma-card__info">
+                                                        <span class="ma-card__info-item ma-card__info-date">18 апреля, 22:00</span>
+                                                        <span class="ma-card__info-item ma-card__info-location">Россия, Краснодар</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ma-card__content-footer">
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-info ma-card__setting-btn">Информация</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ma-card ma-card_inspection" data-tab-card="inspection">
+                                        <div class="ma-card__wrap">
+                                            <div class="ma-card__slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/1.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/2.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/3.png" alt=""></div>
+                                                </div>
+                                                <div class="ma-card__pagination"></div>
+                                                <div class="ma-card__label-paid"><svg><use href='./img/sprite.svg#label-paid'></use></svg></div>
+                                            </div>
+                                            <div class="ma-card__content">
+                                                <div class="ma-card__content-header">
+                                                    <h3 class="ma-card__title">Audi Q3 I (8U) Рестайлинг 2018</h3>
+                                                    <span class="ma-card__price"><span>3 500 000</span> ₽</span>
+                                                </div>
+                                                <div class="ma-card__content-body">
+                                                    <div class="ma-card__parameters">
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Пробег</span>
+                                                                <span class="ma-card__parameter-value">120 000 км</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Двигатель</span>
+                                                                <span class="ma-card__parameter-value">3.2 л / 450 л.с. / Бензин</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Цвет</span>
+                                                                <span class="ma-card__parameter-value">Серый</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Привод</span>
+                                                                <span class="ma-card__parameter-value">Полный</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ma-card__info">
+                                                        <span class="ma-card__info-item ma-card__info-date">18 апреля, 22:00</span>
+                                                        <span class="ma-card__info-item ma-card__info-location">Россия, Краснодар</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ma-card__content-footer">
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-info ma-card__setting-btn">Информация</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ma-card ma-card_rejected" data-tab-card="rejected">
+                                        <div class="ma-card__wrap">
+                                            <div class="ma-card__slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/1.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/2.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/3.png" alt=""></div>
+                                                </div>
+                                                <div class="ma-card__pagination"></div>
+                                                <div class="ma-card__label-paid"><svg><use href='./img/sprite.svg#label-paid'></use></svg></div>
+                                            </div>
+                                            <div class="ma-card__content">
+                                                <div class="ma-card__content-header">
+                                                    <h3 class="ma-card__title">Audi Q3 I (8U) Рестайлинг 2018</h3>
+                                                    <span class="ma-card__price"><span>3 500 000</span> ₽</span>
+                                                </div>
+                                                <div class="ma-card__content-body">
+                                                    <div class="ma-card__parameters">
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Пробег</span>
+                                                                <span class="ma-card__parameter-value">120 000 км</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Двигатель</span>
+                                                                <span class="ma-card__parameter-value">3.2 л / 450 л.с. / Бензин</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Цвет</span>
+                                                                <span class="ma-card__parameter-value">Серый</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Привод</span>
+                                                                <span class="ma-card__parameter-value">Полный</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ma-card__info">
+                                                        <span class="ma-card__info-item ma-card__info-date">18 апреля, 22:00</span>
+                                                        <span class="ma-card__info-item ma-card__info-location">Россия, Краснодар</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ma-card__content-footer">
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-info ma-card__setting-btn">Информация</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-edit ma-card__setting-btn">Редактировать</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-delete ma-card__setting-btn">Снять с публикации</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ma-card ma-card_rejected" data-tab-card="rejected">
+                                        <div class="ma-card__wrap">
+                                            <div class="ma-card__slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/1.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/2.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/3.png" alt=""></div>
+                                                </div>
+                                                <div class="ma-card__pagination"></div>
+                                                <div class="ma-card__label-paid"><svg><use href='./img/sprite.svg#label-paid'></use></svg></div>
+                                            </div>
+                                            <div class="ma-card__content">
+                                                <div class="ma-card__content-header">
+                                                    <h3 class="ma-card__title">Audi Q3 I (8U) Рестайлинг 2018</h3>
+                                                    <span class="ma-card__price"><span>3 500 000</span> ₽</span>
+                                                </div>
+                                                <div class="ma-card__content-body">
+                                                    <div class="ma-card__parameters">
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Пробег</span>
+                                                                <span class="ma-card__parameter-value">120 000 км</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Двигатель</span>
+                                                                <span class="ma-card__parameter-value">3.2 л / 450 л.с. / Бензин</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Цвет</span>
+                                                                <span class="ma-card__parameter-value">Серый</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Привод</span>
+                                                                <span class="ma-card__parameter-value">Полный</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ma-card__info">
+                                                        <span class="ma-card__info-item ma-card__info-date">18 апреля, 22:00</span>
+                                                        <span class="ma-card__info-item ma-card__info-location">Россия, Краснодар</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ma-card__content-footer">
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-info ma-card__setting-btn">Информация</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-edit ma-card__setting-btn">Редактировать</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-delete ma-card__setting-btn">Снять с публикации</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ma-card ma-card_inactive" data-tab-card="inactive">
+                                        <div class="ma-card__wrap">
+                                            <div class="ma-card__slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/1.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/2.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/3.png" alt=""></div>
+                                                </div>
+                                                <div class="ma-card__pagination"></div>
+                                                <div class="ma-card__label-paid"><svg><use href='./img/sprite.svg#label-paid'></use></svg></div>
+                                            </div>
+                                            <div class="ma-card__content">
+                                                <div class="ma-card__content-header">
+                                                    <h3 class="ma-card__title">Audi Q3 I (8U) Рестайлинг 2018</h3>
+                                                    <span class="ma-card__price"><span>3 500 000</span> ₽</span>
+                                                </div>
+                                                <div class="ma-card__content-body">
+                                                    <div class="ma-card__parameters">
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Пробег</span>
+                                                                <span class="ma-card__parameter-value">120 000 км</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Двигатель</span>
+                                                                <span class="ma-card__parameter-value">3.2 л / 450 л.с. / Бензин</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Цвет</span>
+                                                                <span class="ma-card__parameter-value">Серый</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Привод</span>
+                                                                <span class="ma-card__parameter-value">Полный</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ma-card__info">
+                                                        <span class="ma-card__info-item ma-card__info-date">18 апреля, 22:00</span>
+                                                        <span class="ma-card__info-item ma-card__info-location">Россия, Краснодар</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ma-card__content-footer">
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-edit ma-card__setting-btn">Редактировать</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-publish-again ma-card__setting-btn">Опубликовать повторно</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ma-card ma-card_draft" data-tab-card="draft">
+                                        <div class="ma-card__wrap">
+                                            <div class="ma-card__slider">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/1.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/2.png" alt=""></div>
+                                                    <div class="swiper-slide ma-card__slide"><img src="./img/recent/3.png" alt=""></div>
+                                                </div>
+                                                <div class="ma-card__pagination"></div>
+                                                <div class="ma-card__label-paid"><svg><use href='./img/sprite.svg#label-paid'></use></svg></div>
+                                            </div>
+                                            <div class="ma-card__content">
+                                                <div class="ma-card__content-header">
+                                                    <h3 class="ma-card__title">Audi Q3 I (8U) Рестайлинг 2018</h3>
+                                                    <span class="ma-card__price"><span>3 500 000</span> ₽</span>
+                                                </div>
+                                                <div class="ma-card__content-body">
+                                                    <div class="ma-card__parameters">
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Пробег</span>
+                                                                <span class="ma-card__parameter-value">120 000 км</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Двигатель</span>
+                                                                <span class="ma-card__parameter-value">3.2 л / 450 л.с. / Бензин</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ma-card__parameters-block">
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Цвет</span>
+                                                                <span class="ma-card__parameter-value">Серый</span>
+                                                            </div>
+                                                            <div class="ma-card__parameter">
+                                                                <span class="ma-card__parameter-title">Привод</span>
+                                                                <span class="ma-card__parameter-value">Полный</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ma-card__info">
+                                                        <span class="ma-card__info-item ma-card__info-date">18 апреля, 22:00</span>
+                                                        <span class="ma-card__info-item ma-card__info-location">Россия, Краснодар</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ma-card__content-footer">
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-edit ma-card__setting-btn">Редактировать</button>
+                                                    <button class="btn btn_icon btn_icon-left btn_icon-delete ma-card__setting-btn">Удалить</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ma-tab__preload">
+                                        <div class="ma-tab__preload-icon"><svg><use href='./img/sprite.svg#preload'></use></svg></div>
                                     </div>
                                 </div>
                             </div>
