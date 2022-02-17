@@ -1,0 +1,310 @@
+// Карточка "Мое объявление"
+.ma-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: $radius;
+    background: #fff;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 12px 8px;
+        border-radius: 0 10px;
+    }
+
+    // #Модификаторы
+    // Опубликовано
+    &.ma-card_published {
+
+        &::after {
+            content: 'Опубликовано';
+            background: #02BC4D;
+        }
+
+        // Объявление оплачено
+        &.ma-card_paid {
+            
+            & .ma-card__label-paid {
+                display: block;
+            }
+        }
+    }
+
+    // На проверке
+    &.ma-card_inspection {
+
+        &::after {
+            content: 'На проверке';
+            background: #F4783C;
+        }
+    }
+
+    // Отклонено
+    &.ma-card_rejected {
+
+        &::after {
+            content: 'Отклонено';
+            background: #E21932;
+        }
+
+        & .ma-card__slide {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #CC3334;
+                opacity: .3;
+            }
+        }
+    }
+
+    // Неактивно
+    &.ma-card_inactive {
+
+        &::after {
+            content: 'Неактивно';
+            color: $text-accent;
+            background: #D1DFFC;
+        }
+
+        & .ma-card__slide {
+            opacity: .7;
+        }
+    }
+
+    // Черновик
+    &.ma-card_draft {
+
+        &::after {
+            content: 'Черновик';
+            color: $text-second-d;
+            background: #EEF1F9;
+        }
+    }
+}
+
+// Состояние объявления
+// .ma-card__condition {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     display: block;
+//     font-size: 12px;
+//     font-weight: 700;
+//     color: #fff;
+//     text-transform: uppercase;
+//     padding: 12px 8px;
+//     border-radius: 0 10px;
+// }
+
+.ma-card__wrap {
+    height: 100%;
+    display: flex;
+}
+
+// Слайдер в карточке
+.ma-card__slider {
+    position: relative;
+    min-width: 250px;
+    width: 250px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper-slide {
+
+}
+
+.ma-card__slide {
+
+    & img {
+        object-fit: cover;
+    }
+}
+
+// Пагинация
+.ma-card__pagination {
+    position: absolute;
+    z-index: 1;
+    bottom: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 24px);
+    display: flex;
+    gap: 0 4px;
+
+    & .swiper-pagination-bullet {
+        position: relative;
+        display: block;
+        width: 33.333%;
+        height: 3px;
+        background: rgba(255,255,255,.8);
+        border-radius: 0;
+        margin: 0;
+
+        &-active {
+            background: $icon-blue-l;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 500%;
+        }
+    }
+}
+
+// Значок оплаты
+.ma-card__label-paid {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+}
+
+// Контентная часть
+.ma-card__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+// Шапка контента
+.ma-card__content-header {
+    padding-right: 120px;
+}
+
+.ma-card__title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.ma-card__price {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+// Тело контента
+.ma-card__content-body {
+    margin-bottom: 12px;
+}
+
+.ma-card__parameters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 12px;
+}
+
+.ma-card__parameters-block {
+
+    &:nth-child(1) {
+        margin-right: 12px;
+    }
+
+    &:nth-child(2) {
+
+        & .ma-card__parameter-title {
+            width: 22%;
+        }
+    }
+}
+
+.ma-card__parameter {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.ma-card__parameter-title {
+    min-width: fit-content;
+    width: 30%;
+    display: inline-block;
+    color: $text-second-d;
+}
+
+.ma-card__parameter-value {
+    // font-size: 12px;
+    margin-left: 20px;
+}
+
+.ma-card__info {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.ma-card__info-item {
+    font-size: 12px;
+    font-weight: 400;
+    color: $text-second-d;
+
+    &:not(:last-child) {
+        margin-right: 50px;
+    }
+}
+
+.ma-card__info-date {
+
+}
+
+.ma-card__info-location {
+
+}
+
+// Подвал контента
+.ma-card__content-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid $outline-l;
+    padding: 12px 0 10px 0;
+    margin: auto 0 0 0;
+}
+
+// Кнопка настройки
+.ma-card__setting-btn {
+    width: fit-content;
+    height: auto;
+    font-size: 11px;
+    font-weight: 700;
+    color: $text-accent;
+    text-transform: none;
+    text-align: left;
+    padding: 3px 0;
+
+    &::after {
+        min-width: 16px;
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+    }
+
+    &:not(:last-child) {
+        margin-right: 24px;
+    }
+}

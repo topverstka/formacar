@@ -475,11 +475,7 @@ function catLinksMenu() {
 }
 
 const sliderRecent = new Swiper('.s-recent__slider', {
-
-//   slidesPerView: 4, // Кол-во показываемых слайдов
   spaceBetween: 24, // Расстояние между слайдами
-//   loop: true, // Бесконечный слайдер
-//   freeMode: true, // Слайдеры не зафиксированны
 
   breakpoints: {
     1025: {
@@ -501,6 +497,68 @@ const sliderRecent = new Swiper('.s-recent__slider', {
     prevEl: '.s-recent__arrow-prev',
   }
 });
+
+const sliderMACard = new Swiper('.ma-card__slider', {
+  spaceBetween: 0, // Расстояние между слайдами
+
+//   breakpoints: {
+//     1025: {
+//         slidesPerView: 4,
+//     },
+//     768: {
+//         slidesPerView: 3,
+//         allowTouchMove: false
+//     },
+//     0: {
+//         slidesPerView: 2,
+//         spaceBetween: 12,
+//         allowTouchMove: true
+//     }
+//   },
+
+//   navigation: {
+//     nextEl: '.s-recent__arrow-next',
+//     prevEl: '.s-recent__arrow-prev',
+//   }
+
+    pagination: {
+        el: '.ma-card__pagination',
+        clickable: true,
+    },
+});
+
+// const swiper = new Swiper('.swiper-container', {
+  
+//   slidesPerView: 1, // Кол-во показываемых слайдов
+//   spaceBetween: 0, // Расстояние между слайдами
+//   loop: true, // Бесконечный слайдер
+//   freeMode: true, // Слайдеры не зафиксированны
+
+//   breakpoints: {
+//     1200: {
+
+//     },
+//     700: {
+
+//     },
+//     400: {
+
+//     }
+//   },
+
+//   pagination: {
+//     el: '.swiper-pagination',
+//   },
+
+//   navigation: {
+//     nextEl: '.swiper__arrow-next',
+//     prevEl: '.swiper__arrow-prev',
+//   },
+
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+// });
 
 setTimeout(e => {
     const sliderInsideRecentCard = new Swiper('.recent-card__slider', {
