@@ -777,7 +777,6 @@ function changeLang(e) {
     const target = e.target
     const langTitleElems = findAll('.change-lang__title')
     
-    e.preventDefault()
     for (let i = 0; i < langTitleElems.length; i++) {
         const langTitle = langTitleElems[i];
         

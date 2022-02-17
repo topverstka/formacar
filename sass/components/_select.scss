@@ -60,6 +60,10 @@
     height: 24px;
     pointer-events: none;
     transition: $tr;
+
+    & svg {
+        fill: $icon-second;
+    }
 }
 
 .select-dropdown,

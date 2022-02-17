@@ -1,0 +1,88 @@
+// Пагинация
+.pagin {
+    margin-top: 20px;
+}
+
+.pagin__wrap {
+    display: flex;
+    align-items: center;
+}
+
+.pagin__more-btn {
+    max-width: 136px;
+}
+
+.pagin__body {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.pagin__arrow {
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $minHover) {
+        
+        &:hover {
+            
+            & .pagin__arrow-title {
+                color: $text-primary;
+            }
+
+            & .pagin__arrow-icon svg {
+                fill: $text-primary !important;
+            }
+        }
+    }
+}
+
+.pagin__arrow-prev {
+
+}
+
+.pagin__arrow-next {
+
+}
+
+.pagin__arrow-icon {
+    width: 24px;
+    height: 24px;
+
+    & svg {
+        fill: $icon-second;
+        transition: $tr;
+    }
+}
+
+.pagin__arrow-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: $text-second-l;
+    padding: 5px 10px;
+    transition: $tr;
+}
+
+.pagin__list {
+    display: flex;
+    align-items: center;
+}
+
+.pagin__item {
+    font-size: 12px;
+    font-weight: 600;
+    color: $text-second-l;
+    padding: 5px 10px;
+
+    &._current {
+        color: $text-primary;
+        user-select: none;
+    }
+
+    @media (min-width: $minHover) {
+        
+        &:hover {
+            color: $text-primary;
+        }
+    }
+}
