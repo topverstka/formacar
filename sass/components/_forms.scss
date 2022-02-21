@@ -1,4 +1,4 @@
-// Поиск
+// Поле ввода
 .textfield {
     position: relative;
     width: 100%;
@@ -30,11 +30,12 @@
     &:focus {
         border: 1px solid $input-focus;
 
-        & ~ .textfield__clear._show{
-            opacity: 1;
-            visibility: visible;
-            // pointer-events: all;
-        }
+    }
+
+    & .textfield__clear._show{
+        opacity: 1;
+        visibility: visible;
+        // pointer-events: all;
     }
 
     /* Скрытие скролла */
@@ -51,9 +52,6 @@
 
 .textfield textarea {
     height: auto;
-    // min-height: 74px;
-    // max-height: 500px;
-    // height: 74px;
     padding: 20px 30px 20px 20px;
     overflow-y: auto;
     resize: none;
@@ -65,7 +63,7 @@
 
     & ~ .textfield__clear {
         top: 20px;
-        transform: translate(0,0)
+        transform: translate(0,0);
     }
 
     @media (max-width: $mobile-l) {
@@ -75,14 +73,6 @@
             top: 12px;
             left: 10px;
         }
-    }
-}
-
-.textfield-l input {
-    height: 50px; 
-
-    @media (max-width: $mobile-l) {
-        height: 40px;
     }
 }
 
@@ -103,6 +93,41 @@
     
     &._change-label {
         display: none;
+    }
+}
+
+.textfield-l input {
+    height: 50px; 
+
+    @media (max-width: $mobile-l) {
+        height: 40px;
+    }
+}
+
+.textfield-s {
+
+    & input {
+        height: 36px;
+        font-size: 12px;
+    }
+
+    & label {
+        font-size: 12px;
+    }
+}
+
+.textfield-double {
+    display: flex;
+
+    & .textfield {
+
+        &:nth-child(1) input {
+            border-radius: $radius 0 0 $radius;
+        }
+
+        &:nth-child(2) input {
+            border-radius: 0 $radius $radius 0;
+        }
     }
 }
 
@@ -162,6 +187,14 @@
 
     & svg path {
         transition: $tr;
+    }
+}
+
+.textfield__clear {
+
+    &._show {
+        opacity: 1;
+        visibility: visible;
     }
 }
 

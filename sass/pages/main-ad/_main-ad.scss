@@ -1,2 +1,9 @@
 @import './_ma-tab';
 @import '../../components/_ma-card';
+
+.ma-pagin {
+
+    @media (max-width: $tablet) {
+        display: none;
+    }
+}

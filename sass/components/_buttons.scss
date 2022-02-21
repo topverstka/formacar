@@ -102,7 +102,7 @@ $m-icon: 30px; // Отступ иконки от текста
         background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.8059 3.75499C14.0659 4.01499 14.0659 4.43499 13.8059 4.69499L12.5859 5.91499L10.0859 3.41499L11.3059 2.19499C11.4305 2.07016 11.5996 2 11.7759 2C11.9523 2 12.1214 2.07016 12.2459 2.19499L13.8059 3.75499ZM1.99927 13.6683V11.6417C1.99927 11.5483 2.0326 11.4683 2.09927 11.4017L9.3726 4.12834L11.8726 6.62834L4.5926 13.9017C4.5326 13.9683 4.44593 14.0017 4.35927 14.0017H2.3326C2.14593 14.0017 1.99927 13.855 1.99927 13.6683Z' fill='%23B4B4BF'/%3E%3C/svg%3E");
     }
     
-    &-delete::after {
+    &-remove-public::after {
         background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.88379 5.89453L10.3099 10.4537' stroke='%23B4B4BF' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M10.3999 5.89453L5.88365 10.4108' stroke='%23B4B4BF' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='8' r='7.25' stroke='%23B4B4BF' stroke-width='1.5'/%3E%3C/svg%3E");
     }
     
@@ -117,6 +117,18 @@ $m-icon: 30px; // Отступ иконки от текста
     &-delete::after {
         background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.8' d='M3.44454 3.83236V3.08236H1.94454V3.83236H3.44454ZM14.0551 3.83236V3.08236H12.5551V3.83236H14.0551ZM0.799805 3.08236C0.385591 3.08236 0.0498047 3.41815 0.0498047 3.83236C0.0498047 4.24657 0.385591 4.58236 0.799805 4.58236V3.08236ZM15.1998 4.58236C15.614 4.58236 15.9498 4.24657 15.9498 3.83236C15.9498 3.41815 15.614 3.08236 15.1998 3.08236V4.58236ZM6.47612 7.24289C6.47612 6.82867 6.14033 6.49289 5.72612 6.49289C5.31191 6.49289 4.97612 6.82867 4.97612 7.24289H6.47612ZM4.97612 11.7903C4.97612 12.2045 5.31191 12.5403 5.72612 12.5403C6.14033 12.5403 6.47612 12.2045 6.47612 11.7903H4.97612ZM11.0235 7.24289C11.0235 6.82867 10.6877 6.49289 10.2735 6.49289C9.85927 6.49289 9.52349 6.82867 9.52349 7.24289H11.0235ZM9.52349 11.7903C9.52349 12.2045 9.85927 12.5403 10.2735 12.5403C10.6877 12.5403 11.0235 12.2045 11.0235 11.7903H9.52349ZM12.5551 3.83236V12.2008H14.0551V3.83236H12.5551ZM10.3051 14.4508H5.69454V15.9508H10.3051V14.4508ZM3.44454 12.2008V3.83236H1.94454V12.2008H3.44454ZM0.799805 4.58236H15.1998V3.08236H0.799805V4.58236ZM4.97612 7.24289V11.7903H6.47612V7.24289H4.97612ZM9.52349 7.24289V11.7903H11.0235V7.24289H9.52349ZM8.71559 0.0507812H7.66296V1.55078H8.71559V0.0507812ZM7.66296 0.0507812C5.5512 0.0507812 3.83928 1.7627 3.83928 3.87447H5.33928C5.33928 2.59113 6.37963 1.55078 7.66296 1.55078V0.0507812ZM5.69454 14.4508C4.4519 14.4508 3.44454 13.4434 3.44454 12.2008H1.94454C1.94454 14.2718 3.62347 15.9508 5.69454 15.9508V14.4508ZM12.5393 3.87447C12.5393 1.7627 10.8274 0.0507812 8.71559 0.0507812V1.55078C9.99893 1.55078 11.0393 2.59113 11.0393 3.87447H12.5393ZM12.5551 12.2008C12.5551 13.4434 11.5477 14.4508 10.3051 14.4508V15.9508C12.3761 15.9508 14.0551 14.2718 14.0551 12.2008H12.5551Z' fill='%23B4B4BF'/%3E%3C/svg%3E");
     }
+    
+    &-setting::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.21802 16H6.30602C6.12356 16 5.94658 15.9377 5.80442 15.8233C5.66226 15.709 5.56346 15.5494 5.52442 15.3712L5.19882 13.864C4.76446 13.6737 4.3526 13.4357 3.97082 13.1544L2.50122 13.6224C2.32727 13.6779 2.13958 13.6722 1.96931 13.6063C1.79905 13.5403 1.65646 13.4181 1.56522 13.26L0.106017 10.7392C0.0157331 10.5809 -0.0181572 10.3967 0.00989074 10.2166C0.0379386 10.0365 0.126264 9.87133 0.260417 9.748L1.40042 8.708C1.34857 8.23689 1.34857 7.76151 1.40042 7.2904L0.260417 6.2528C0.126074 6.12942 0.0376285 5.96406 0.00957603 5.78383C-0.0184764 5.60359 0.0155283 5.41918 0.106017 5.2608L1.56202 2.7384C1.65326 2.58025 1.79585 2.45807 1.96611 2.39215C2.13638 2.32623 2.32407 2.32053 2.49802 2.376L3.96762 2.844C4.16282 2.7 4.36602 2.5656 4.57562 2.444C4.77802 2.3304 4.98602 2.2272 5.19882 2.1352L5.52522 0.6296C5.56407 0.451358 5.66268 0.29175 5.80469 0.177239C5.94671 0.0627279 6.12359 0.000191973 6.30602 0H9.21802C9.40044 0.000191973 9.57733 0.0627279 9.71934 0.177239C9.86135 0.29175 9.95996 0.451358 9.99882 0.6296L10.3284 2.136C10.5524 2.2352 10.7716 2.3464 10.9836 2.4704C11.1812 2.5848 11.3724 2.7104 11.5564 2.8456L13.0268 2.3776C13.2007 2.32233 13.3882 2.32814 13.5583 2.39405C13.7284 2.45996 13.8708 2.58202 13.962 2.74L15.418 5.2624C15.6036 5.588 15.5396 6 15.2636 6.2536L14.1236 7.2936C14.1755 7.76471 14.1755 8.24009 14.1236 8.7112L15.2636 9.7512C15.5396 10.0056 15.6036 10.4168 15.418 10.7424L13.962 13.2648C13.8708 13.4229 13.7282 13.5451 13.5579 13.6111C13.3877 13.677 13.2 13.6827 13.026 13.6272L11.5564 13.1592C11.1749 13.4403 10.7633 13.678 10.3292 13.868L9.99882 15.3712C9.9598 15.5493 9.86112 15.7087 9.71913 15.8231C9.57713 15.9374 9.40033 15.9998 9.21802 16V16ZM7.75882 4.8C6.91012 4.8 6.09619 5.13714 5.49608 5.73726C4.89596 6.33737 4.55882 7.15131 4.55882 8C4.55882 8.84869 4.89596 9.66263 5.49608 10.2627C6.09619 10.8629 6.91012 11.2 7.75882 11.2C8.60751 11.2 9.42144 10.8629 10.0216 10.2627C10.6217 9.66263 10.9588 8.84869 10.9588 8C10.9588 7.15131 10.6217 6.33737 10.0216 5.73726C9.42144 5.13714 8.60751 4.8 7.75882 4.8V4.8Z' fill='%23B4B4BF'/%3E%3C/svg%3E");
+    }
+    
+    &-filter::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.3335 17.5V11.6667M3.3335 8.33333V2.5M10.0001 17.5V10M10.0001 6.66667V2.5M16.6668 17.5V13.3333M16.6668 10V2.5M0.833496 11.6667H5.8335M7.50015 6.66667H12.5001M14.1668 13.3333H19.1668' stroke='%23383838' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    
+    &-reset-filter::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20.2872' height='2.02872' rx='1.01436' transform='matrix(0.697097 0.716977 -0.697097 0.716977 1.63599 0)' fill='%23467EF3'/%3E%3Crect width='20.2872' height='2.02872' rx='1.01436' transform='matrix(-0.697097 0.716977 -0.697097 -0.716977 15.7781 1.45508)' fill='%23467EF3'/%3E%3C/svg%3E");
+    }
 }
 
 .btn_icon-left {
@@ -127,104 +139,38 @@ $m-icon: 30px; // Отступ иконки от текста
     }
 }
 
-// Основная кнопка
-// .btn {
-//     width: 100%;
-//     height: 48px;
-//     font-size: 14px;
-//     font-weight: 700;
-//     line-height: 22px;
-//     color: #fff;
-//     text-transform: uppercase;
-//     padding: 9px;
-//     background: $btn-primary-default;
-//     border-radius: $radius;
-//     transition: $tr;
+.ad-tab {
+    position: relative;
+    display: flex;
+    width: 100%;
 
-//     @media (max-width: $laptop-m) {
-//         font-size: 12px;
-//         line-height: 1.5;
-//     }
+    & input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
 
-//     &:hover {
-        
-//         @media (min-width: $minHover) {
-//             box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
-//         }
-//     }
+        &:checked + label {
+            color: #fff;
+            background: $icon-primary-l;
+        }
+    }
 
-//     &:active {
-//         background: $btn-primary-pressed;
-//     }
-// }
-
-// // Второстепенная кнопка
-// .btn-second {
-//     width: 100%;
-//     height: 48px;
-//     font-size: 14px;
-//     font-weight: 700;
-//     line-height: 22px;
-//     color: $text-accent;
-//     text-transform: uppercase;
-//     padding: 9px;
-//     background: $btn-second-default;
-//     border-radius: $radius;
-//     // overflow: hidden;
-//     transition: $tr;
-
-//     @media (max-width: $laptop-m) {
-//         font-size: 12px;
-//         line-height: 1.5;
-//     }
-
-//     &:hover {
-        
-//         @media (min-width: $minHover) {
-//             box-shadow: 0px 5px 20px rgba(70, 126, 243, 0.5);
-//         }
-//     }
-
-//     &:active {
-//         background: $btn-second-pressed;
-//     }
-// }
-
-// .btn-icon {
-
-// }
-
-// .btn-linear {
-//     width: 100%;
-//     font-size: 14px;
-//     font-weight: 700;
-//     line-height: 22px;
-//     color: $text-accent;
-//     text-transform: uppercase;
-//     padding: 5px;
-//     transition: $tr;
-
-//     @media (max-width: $laptop-m) {
-//         font-size: 12px;
-//         line-height: 1.5;
-//     }
-
-//     &:hover {
-        
-//         @media (min-width: $minHover) {
-//             color: $btn-primary-pressed;
-//         }
-//     }
-
-//     &:active {
-//         color: $btn-primary-pressed;
-//     }
-// }
-
-.btn_disabled {
-    color: $text-second-d;
-    background: #F8F8F8;
-    pointer-events: none;
+    & label {
+        width: 100%;
+        font-size: 11px;
+        font-weight: 600;
+        color: $text-second-d;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 10px;
+        background: $bg-second-l;
+        border-radius: $radius;
+        transition: $tr;
+    }
 }
 
 // Ссылки
@@ -241,39 +187,3 @@ $m-icon: 30px; // Отступ иконки от текста
         color: $text-accent;
     }
 }
-
-// Стрелка в слайдерах
-// .slider-arrow {
-//     width: 56px;
-//     height: 56px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     background: $accent-primary;
-//     border-radius: 50%;
-
-//     &:hover {
-        
-//         @media (min-width: $minHover) {
-//             background: $accent-hover;
-//         }
-//     }
-
-//     &:active {
-//         background: $accent-active;
-//     }
-
-//     &.swiper-button-disabled {
-//         background: #F8F8F8; 
-//         // pointer-events: none;
-
-//         & svg path {
-//             fill: $text-second-d;
-//         }
-//     }
-
-//     & svg {
-//         width: 24px;
-//         height: 24px;
-//     }
-// }

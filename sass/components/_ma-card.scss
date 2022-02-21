@@ -7,6 +7,22 @@
     background: #fff;
     overflow: hidden;
 
+    @media (max-width: $tablet) {
+        overflow: initial;
+        
+        &:nth-child(even) {
+
+            & .ma-card__settings {
+                left: auto;
+                right: 0;
+            }
+        }
+
+        &:hover {
+            z-index: 1;
+        }
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -19,6 +35,10 @@
         text-transform: uppercase;
         padding: 12px 8px;
         border-radius: 0 10px;
+
+        @media (max-width: $tablet) {
+            z-index: 1;
+        }
     }
 
     // #Модификаторы
@@ -27,7 +47,16 @@
 
         &::after {
             content: 'Опубликовано';
-            background: #02BC4D;
+            background-color: #02BC4D;
+
+            @media (max-width: $tablet) {
+                content: '';
+                display: block;
+                width: 35px;
+                height: 35px;
+                background: center/24px 24px no-repeat url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.79506 15.8754L5.32506 12.4054C5.13823 12.2181 4.88458 12.1129 4.62006 12.1129C4.35554 12.1129 4.10189 12.2181 3.91506 12.4054C3.52506 12.7954 3.52506 13.4254 3.91506 13.8154L8.09506 17.9954C8.48506 18.3854 9.11506 18.3854 9.50506 17.9954L20.0851 7.41538C20.4751 7.02538 20.4751 6.39538 20.0851 6.00538C19.8982 5.81812 19.6446 5.71289 19.3801 5.71289C19.1155 5.71289 18.8619 5.81812 18.6751 6.00538L8.79506 15.8754Z' fill='white'/%3E%3C/svg%3E");
+                background-color: #02BC4D;
+            }
         }
 
         // Объявление оплачено
@@ -35,6 +64,10 @@
             
             & .ma-card__label-paid {
                 display: block;
+
+                @media (max-width: $tablet) {
+                    display: none; 
+                }
             }
         }
     }
@@ -44,7 +77,16 @@
 
         &::after {
             content: 'На проверке';
-            background: #F4783C;
+            background-color: #F4783C;
+
+            @media (max-width: $tablet) {
+                content: '';
+                display: block;
+                width: 35px;
+                height: 35px;
+                background: center/22px 22px no-repeat url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.4997 20.6673C16.5623 20.6673 20.6663 16.5633 20.6663 11.5007C20.6663 6.43804 16.5623 2.33398 11.4997 2.33398C6.43706 2.33398 2.33301 6.43804 2.33301 11.5007C2.33301 16.5633 6.43706 20.6673 11.4997 20.6673Z' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.5 6V11.5L15.1667 13.3333' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                background-color: #F4783C;
+            }
         }
     }
 
@@ -53,7 +95,16 @@
 
         &::after {
             content: 'Отклонено';
-            background: #E21932;
+            background-color: #E21932;
+
+            @media (max-width: $tablet) {
+                content: '';
+                display: block;
+                width: 35px;
+                height: 35px;
+                background: center/22px 22px no-repeat url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11.4996' cy='11.4996' r='9.15' stroke='white' stroke-width='1.5'/%3E%3Crect x='4.90039' y='6.2207' width='1.65' height='17.8131' transform='rotate(-45 4.90039 6.2207)' fill='white'/%3E%3C/svg%3E");
+                background-color: #E21932;
+            }
         }
 
         & .ma-card__slide {
@@ -78,7 +129,16 @@
         &::after {
             content: 'Неактивно';
             color: $text-accent;
-            background: #D1DFFC;
+            background-color: #D1DFFC;
+
+            @media (max-width: $tablet) {
+                content: '';
+                display: block;
+                width: 35px;
+                height: 35px;
+                background: center/22px 22px no-repeat url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11.5' cy='11.5' r='11' fill='%23467EF3'/%3E%3Ccircle cx='11.5004' cy='15.9008' r='1.1' fill='white'/%3E%3Cpath d='M11.5 7.09961V12.0496' stroke='white' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+                background-color: #D1DFFC;
+            }
         }
 
         & .ma-card__slide {
@@ -92,7 +152,16 @@
         &::after {
             content: 'Черновик';
             color: $text-second-d;
-            background: #EEF1F9;
+            background-color: #EEF1F9;
+
+            @media (max-width: $tablet) {
+                content: '';
+                display: block;
+                width: 35px;
+                height: 35px;
+                background: center/22px 22px no-repeat url("data:image/svg+xml,%3Csvg width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_916_17508' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='3' y='3' width='17' height='17'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.4832 5.66116C19.8407 6.01866 19.8407 6.59616 19.4832 6.95366L17.8057 8.63116L14.3682 5.19366L16.0457 3.51616C16.217 3.34451 16.4495 3.24805 16.6919 3.24805C16.9344 3.24805 17.1669 3.34451 17.3382 3.51616L19.4832 5.66116ZM3.24902 19.292V16.5053C3.24902 16.377 3.29486 16.267 3.38652 16.1753L13.3874 6.17451L16.8249 9.61201L6.81486 19.6128C6.73236 19.7045 6.61319 19.7503 6.49402 19.7503H3.70736C3.45069 19.7503 3.24902 19.5487 3.24902 19.292Z' fill='black'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_916_17508)'%3E%3Crect x='0.5' y='0.5' width='22' height='22' fill='%23B4B4BF'/%3E%3C/g%3E%3C/svg%3E");
+                background-color: #eef1f9;
+            }
         }
     }
 }
@@ -112,8 +181,14 @@
 // }
 
 .ma-card__wrap {
+    width: 100%;
     height: 100%;
     display: flex;
+    // overflow: hidden;
+
+    @media (max-width: $tablet) {
+        flex-direction: column;
+    }
 }
 
 // Слайдер в карточке
@@ -123,6 +198,17 @@
     width: 250px;
     height: 100%;
     overflow: hidden;
+    
+    @media (max-width: $tablet) {
+        min-width: auto;
+        width: 100%;
+        max-height: 120px;
+        border-radius: $radius $radius 0 0;
+    }
+
+    @media (max-width: $mobile) {
+        max-height: 102px;
+    }
 }
 
 .swiper-slide {
@@ -146,6 +232,10 @@
     width: calc(100% - 24px);
     display: flex;
     gap: 0 4px;
+
+    @media (max-width: $mobile-l) {
+        display: none;
+    }
 
     & .swiper-pagination-bullet {
         position: relative;
@@ -186,76 +276,149 @@
 // Контентная часть
 .ma-card__content {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0 20px;
+    padding: 0 20px;
+
+    @media (max-width: $tablet) {
+        padding: 0 12px;
+    }
+
+    @media (max-width: $mobile-l) {
+        padding: 0 8px;
+    }
 }
 
 // Шапка контента
 .ma-card__content-header {
     padding-right: 120px;
+
+    @media (max-width: $tablet) {
+        padding-right: 0;
+    }
 }
 
 .ma-card__title {
     font-size: 16px;
     font-weight: 500;
     margin-top: 10px;
+
+    @media (max-width: $tablet-s) {
+        font-size: 14px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 11px;
+    }
 }
 
 .ma-card__price {
+    display: inline-block;
     font-size: 18px;
     font-weight: 700;
     margin-top: 5px;
+
+    @media (max-width: $tablet-s) {
+        font-size: 16px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 12px;
+        margin-top: 4px;
+    }
 }
 
 // Тело контента
 .ma-card__content-body {
-    margin-bottom: 12px;
-}
+    margin: 12px 0;
 
-.ma-card__parameters {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 12px;
-}
-
-.ma-card__parameters-block {
-
-    &:nth-child(1) {
-        margin-right: 12px;
-    }
-
-    &:nth-child(2) {
-
-        & .ma-card__parameter-title {
-            width: 22%;
-        }
+    @media (max-width: $mobile-l) {
+        margin-bottom: 5px;
     }
 }
 
-.ma-card__parameter {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    font-weight: 400;
+.ma-card__table {
+
+    & tr td {
+        font-size: 12px;
+    }
+
+    @media (max-width: $tablet) {
+        display: initial;
+    }
 }
 
-.ma-card__parameter-title {
-    min-width: fit-content;
-    width: 30%;
-    display: inline-block;
-    color: $text-second-d;
-}
+// .ma-card__table {
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     margin-top: 12px;
 
-.ma-card__parameter-value {
-    // font-size: 12px;
-    margin-left: 20px;
-}
+//     @media (max-width: $tablet) {
+//         display: block;
+//     }
+
+//     @media (max-width: $mobile-l) {
+//         margin-top: 8px;
+//     }
+// }
+
+// .ma-card__parameters-block {
+
+//     &:nth-child(1) {
+//         margin-right: 12px;
+//     }
+
+//     &:nth-child(2) {
+
+//         & .ma-card__parameter-title {
+//             width: 22%;
+//         }
+//     }
+// }
+
+// .ma-card__parameter {
+//     // display: flex;
+//     // align-items: center;
+//     font-size: 12px;
+//     font-weight: 400;
+// }
+
+// .ma-card__parameter-title {
+//     min-width: fit-content;
+//     width: 30%;
+//     display: inline-block;
+//     color: $text-second-d;
+
+//     @media (max-width: $tablet-s) {
+//         display: none;
+//     }
+// }
+
+// .ma-card__parameter-value {
+//     // font-size: 12px;
+//     // margin-left: 20px;
+//     padding-left: 20px;
+
+//     @media (max-width: $tablet-s) {
+//         padding-left: 0;
+//     }
+// }
 
 .ma-card__info {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 50px;
     margin-top: 12px;
+
+    @media (max-width: $tablet) {
+        gap: 5px 32px;
+    }
+
+    @media (max-width: $mobile-l) {
+        gap: 2px 12px;
+    }
 }
 
 .ma-card__info-item {
@@ -264,7 +427,11 @@
     color: $text-second-d;
 
     &:not(:last-child) {
-        margin-right: 50px;
+        // margin-right: 50px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 10px;
     }
 }
 
@@ -278,12 +445,26 @@
 
 // Подвал контента
 .ma-card__content-footer {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    position: relative;
+    // display: flex;
+    // align-items: center;
+    // flex-wrap: wrap;
     border-top: 1px solid $outline-l;
     padding: 12px 0 10px 0;
     margin: auto 0 0 0;
+    
+    // @media (max-width: $tablet) {
+
+    //     & > .ma-card__setting-btn {
+    //         display: none;
+    //     }
+    // }
+
+    @media (max-width: $mobile-l) {
+        padding: 4px 0;
+        margin-bottom: 4px;
+        border-top: none;
+    }
 }
 
 // Кнопка настройки
@@ -304,7 +485,85 @@
         margin-right: 10px;
     }
 
-    &:not(:last-child) {
-        margin-right: 24px;
+    // &:not(:last-child) {
+    //     margin-right: 24px;
+    // }
+
+    &.btn_icon-setting {
+        display: none;
+
+        @media (max-width: $tablet) {
+            position: relative;
+            display: flex;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 12px;
+                transform: translateY(-100%);
+            }
+
+            &:hover {
+
+                & + .ma-card__settings {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        }
+    }
+}
+
+// Плашка с настройками объявления
+.ma-card__settings {
+
+    @media (max-width: $tablet) {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        transform: translate(0, -100%);
+        background: #fff;
+        border-radius: $radius;
+        box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
+        // animation: showSettings $tr linear forwards;
+        opacity: 0;
+        transition: $tr;
+        pointer-events: none;
+
+        &:hover {
+            opacity: 1;
+            pointer-events: all;
+        }
+    
+        // @keyframes showSettings {
+        //     from {
+        //         opacity: 0;
+        //     }
+        //     to {
+        //         opacity: 1;
+        //     }
+        // }
+    }
+}
+
+.ma-card__settings-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px 24px;
+
+    @media (max-width: $tablet) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 20px 0;
+    }
+
+    @media (max-width: $mobile-l) {
+        padding: 12px; 
     }
 }

@@ -1,0 +1,160 @@
+.la-card {
+    background-color: #fff;
+    border-radius: $radius;
+    overflow: hidden;
+}
+
+// Большое объявление
+.la-card_big {
+
+    & .la-card__title {
+        font-size: 20px;
+    }
+
+    & .la-card__price {
+        font-size: 24px;
+        padding: 4px 10px;
+    }
+
+    & .la-card__slide {
+        width: 334px;
+        height: 250px;
+    }
+
+    & .la-card__options {
+        display: flex;
+    }
+}
+
+// Продвинутое объявление
+.la-card_paid {
+
+    & .la-card__price {
+        display: inline-block;
+        color: #fff;
+        background-color: #02BC4D;
+        border-radius: 3px;
+        padding: 2px 8px;
+    }
+}
+
+.la-card__wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+// Шапка карточки
+.la-card__header {
+    padding: 0 16px;
+}
+
+.la-card__title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.la-card__price {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+// Слайдер
+.la-card__slider {
+    width: 100%;
+    padding: 0 16px;
+    margin-top: 12px;
+}
+
+.swiper-wrapper {
+
+}
+
+.swiper-slide {
+}
+
+.la-card__slide {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    
+    &:first-child {
+        border-radius: $radius 0 0 $radius;
+    }
+    
+    &:last-child {
+        border-radius: 0 $radius $radius 0;
+    }
+}
+
+.swiper-pagination {
+
+}
+
+// Контентная часть
+.la-card__content {
+    margin: 12px 0;
+    padding: 0 16px;
+}
+
+// Подвал
+.la-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $outline-l;
+    padding: 12px 0;
+    margin: auto 16px 0 16px;
+}
+
+.la-card__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.la-card__info-item {
+    font-size: 14px;
+    font-weight: 400;
+    color: $text-second-d;
+
+    &:not(:last-child) {
+        margin-bottom: 2px;
+    }
+}
+
+.la-card__location {
+
+}
+
+.la-card__date {
+
+}
+
+.la-card__like {
+    margin-right: 5px;
+}
+
+// Доп. опции для большой карточки
+.la-card__options {
+    display: none;
+    align-items: center;
+    border-top: 1px solid $outline-l;
+    padding: 12px 16px;
+}
+
+.la-card__options-btn {
+    width: fit-content;
+    font-size: 12px;
+    height: 40px;
+    padding: 0 12px;
+
+    &:first-child {
+        width: 192px;
+    }
+
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+}

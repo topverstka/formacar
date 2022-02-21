@@ -105,6 +105,7 @@ body {
 @import 'components/_regions-checkbox';
 @import 'components/_select';
 @import 'components/_pagin';
+@import 'components/_card-table';
 
 // Текстовые компоненты
 @import 'components/text/_text';
@@ -126,6 +127,7 @@ body {
 @import 'pages/_choose-cat';
 @import 'pages/empty-form/_empty-form';
 @import 'pages/main-ad/_main-ad';
+@import 'pages/list-ad/_list-ad';
 
 // Модальные окна
 @import 'components/modals/_lang';

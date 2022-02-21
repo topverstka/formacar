@@ -262,40 +262,40 @@
     }
 }
 
-.recent-card__info-table {
+// .recent-card__info-table {
 
-    & tr {
+//     & tr {
 
-        &:not(:last-child) {
-            margin-bottom: 5px;
-        }
+//         &:not(:last-child) {
+//             margin-bottom: 5px;
+//         }
 
-        & td {
-            font-size: 14px;
-            font-weight: 400;
+//         & td {
+//             font-size: 14px;
+//             font-weight: 400;
 
-            &:nth-child(1) {
-                color: $text-second-l;
+//             &:nth-child(1) {
+//                 color: $text-second-l;
 
-                @media (max-width: $tablet-s) {
-                    display: none;
-                }
-            }
+//                 @media (max-width: $tablet-s) {
+//                     display: none;
+//                 }
+//             }
 
-            &:nth-child(2) {
-                padding-left: 20px;
+//             &:nth-child(2) {
+//                 padding-left: 20px;
 
-                @media (max-width: $tablet-s) {
-                    padding: 0;
-                }
-            }
+//                 @media (max-width: $tablet-s) {
+//                     padding: 0;
+//                 }
+//             }
 
-            @media (max-width: $laptop-l) {
-                font-size: 12px;
-            }
-        }
-    }
-}
+//             @media (max-width: $laptop-l) {
+//                 font-size: 12px;
+//             }
+//         }
+//     }
+// }
 
 .recent-card__footer {
     display: flex;
@@ -345,7 +345,7 @@
     }
 }
 
-.recent-card__like {
+.like {
     min-width: 30px;
     width: 30px;
     height: 30px;

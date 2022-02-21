@@ -1,0 +1,7 @@
+.list-ad__body {
+    display: flex;
+    justify-content: space-between;
+}
+
+@import './_ad-content'; 
+@import './_ad-sidebar';

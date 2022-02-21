@@ -5,11 +5,39 @@
 
 // Шапка с кнопками
 .ma-tab__header {
+}
+
+.ma-tab__header-list {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 48px;
+
+    @media (max-width: $tablet) {
+        display: none;
+    }
 }
 
 // Кнопки
+.ma-tab__filter-btn {
+    display: none;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: none;
+    padding: 0;
+
+    @media (max-width: $tablet) {
+        display: flex;
+    }
+
+    &::after {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+}
+
 .ma-tab__button {
     display: flex;
     align-items: center;
@@ -17,9 +45,9 @@
     font-weight: 700;
     color: $text-second-l;
 
-    &:not(:last-child) {
-        margin-right: 48px;
-    }
+    // &:not(:last-child) {
+    //     margin-right: 48px;
+    // }
 
     &._active {
         color: $text-primary;
@@ -44,7 +72,16 @@
     margin-top: 20px;
 
     @media (max-width: $laptop-l) {
-        grid-template-columns: minmax(max-content, 966px);
+        grid-template-columns: minmax(min-content, 966px);
+    }
+
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    @media (max-width: $mobile-l) {
+        gap: 10px;
     }
 
     & .ma-card {
@@ -56,11 +93,11 @@
 
             @keyframes showCard {
                 from {
-                    // transform: translateY(20px);
+                    // transform: scale(.9);
                     opacity: 0;
                 }
                 to {
-                    // transform: translateY(0);
+                    // transform: scale(1);
                     opacity: 1;
                 }
             }
@@ -75,6 +112,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
+    pointer-events: none;
     transition: $tr;
 
     &._show {

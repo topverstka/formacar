@@ -1,0 +1,118 @@
+.ad-filter {
+    background: #fff;
+    border-radius: $radius;
+    padding: 20px;
+}
+
+.ad-filter__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 20px;
+}
+
+.ad-filter__reset-btn {
+    font-size: 12px;
+    padding: 0;
+    margin-left: 40px;
+
+    &::after {
+        min-width: 16px;
+        width: 16px;
+        height: 16px;
+        margin-left: 10px;
+    }
+}
+
+.ad-filter__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.ad-filter__btn-list {
+    display: flex;
+    align-items: center;
+}
+
+.ad-filter__show-btn {
+    min-width: 295px;
+}
+
+.ad-filter__option-list {
+    display: flex;
+    align-items: center;
+}
+
+.ad-filter__option-select {
+
+    &._open {
+
+        & .select-input__chevron {
+            transform: none;
+        }
+    }
+
+    & .select-input {
+        border: none;
+    }
+
+    &._valid .select-input__title {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $text-accent;
+    }
+
+    & .select-dropdown__item {
+        white-space: nowrap;
+
+        &._selected {
+            color: $text-accent;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    & .select-input__chevron {
+        position: initial;
+        top: auto;
+        right: auto;
+        transform: none;
+        margin-left: 10px;
+    }
+}
+
+.ad-filter__grid-list {
+    margin-left: 30px;
+}
+
+.ad-filter__grid-btn {
+    width: 24px;
+    height: 24px;
+
+    @media (min-width: $minHover) {
+        
+        &:hover {
+            
+            & svg {
+                stroke: $icon-blue-l;
+            }
+        }
+    }
+
+    &._active {
+        
+        & svg {
+            stroke: $icon-blue-l;
+        }
+    }
+
+    & svg {
+        fill: none;
+        stroke: $icon-second;
+        transition: $tr;
+    }
+}

@@ -41,6 +41,14 @@ function getSiblings(elem) {
     return siblings;
 }
 
+// Расстояния между элементом и верхней границей страницы
+function offsetPage(elem) {
+    var rect = elem.getBoundingClientRect(),
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+}
+
 function bodyLock(con) {
     if (con === true) {
         body.classList.add('_lock');
@@ -191,6 +199,13 @@ function clearByCross() {
                 btnSubmitDisabled(form, form.querySelector('[type=submit]'))
             }
         })
+
+        if (input.value != '') {
+            btn.classList.add('_show')
+        }
+        else {
+            btn.classList.remove('_show')
+        }
 
         input.addEventListener('input', e => {
             if (input.value != '') {
@@ -498,6 +513,23 @@ const sliderRecent = new Swiper('.s-recent__slider', {
   }
 });
 
+// Адаптивная ширина слайдера
+if (window.innerWidth <= 768) adaptiveWidthSliderMACard()
+// window.addEventListener('resize', e => {
+//     adaptiveWidthSliderMACard()
+// })
+function adaptiveWidthSliderMACard() {
+    const sliderElems = findAll('.ma-card__slider')
+
+    for (let i = 0; i < sliderElems.length; i++) {
+        const slider = sliderElems[i];
+        const card = slider.closest('.ma-card')
+        const cardWidth = card.offsetWidth
+
+        slider.style.width = cardWidth + 'px'
+    }
+}
+
 const sliderMACard = new Swiper('.ma-card__slider', {
   spaceBetween: 0, // Расстояние между слайдами
 
@@ -525,6 +557,16 @@ const sliderMACard = new Swiper('.ma-card__slider', {
         el: '.ma-card__pagination',
         clickable: true,
     },
+});
+
+const sliderLACard = new Swiper('.la-card__slider', {
+    spaceBetween: 4,
+    slidesPerView: 'auto',
+
+    // pagination: {
+    //     el: '.ma-card__pagination',
+    //     clickable: true,
+    // },
 });
 
 // const swiper = new Swiper('.swiper-container', {
@@ -763,7 +805,7 @@ function closeModal(modal) {
 // Лайк поста
 liked()
 function liked() {
-    const likeElems = findAll('.like')
+    const likeElems = findAll('[data-like]')
     
     for (let i = 0; i < likeElems.length; i++) {
         const elem = likeElems[i]
@@ -1839,6 +1881,10 @@ function labelTextfield() {
         const input = textfield.querySelector('input, textarea')
         const label = textfield.querySelector('label')
 
+        if (input.value != '') {
+            label.classList.add('_change-label')
+        }
+
         input.addEventListener('focus', e => {
             label.classList.add('_change-label')
         })
@@ -2036,6 +2082,7 @@ function tabsMineAd() {
         const btn = btnElems[i];
         
         btn.addEventListener('click', e => {
+            if (btn.classList.contains('_active')) return
             const data = btn.dataset.tabBtn
             const cardElems = findAll(`[data-tab-card=${data}]`)
             const preload = find('.ma-tab__preload')
@@ -2059,4 +2106,36 @@ function tabsMineAd() {
             btn.classList.add('_active')
         })
     }
+}
+
+// Открытие плашки при нажатии на кнопку "Управление" на странице "Мои объявления" на разрешении меньше 768px
+if (window.innerWidth <= 768) openModalSettingsOnAdaptiveMineAd()
+function openModalSettingsOnAdaptiveMineAd() {
+    // const btnSettingsElems = findAll('[data-open-settings]')
+
+    window.addEventListener('click', e => {
+
+        if (e.target.getAttribute('data-open-settings') != null) {
+
+            if (!document.querySelector('.ma-card__settings')) {
+                const btnSettings = e.target
+                const offsetPageBtn = offsetPage(btnSettings)
+                const popup = document.createElement('div')
+    
+                popup.classList.add('ma-card__settings')
+                popup.innerHTML = `
+                    <div class="ma-card__settings-list">
+                        <button class="btn btn_icon btn_icon-left btn_icon-info ma-card__setting-btn">Информация</button>
+                        <button class="btn btn_icon btn_icon-left btn_icon-edit ma-card__setting-btn">Редактировать</button>
+                        <button class="btn btn_icon btn_icon-left btn_icon-remove-public ma-card__setting-btn">Снять с публикации</button>
+                        <button class="btn btn_icon btn_icon-left btn_icon-promote ma-card__setting-btn">Продвинуть</button>
+                    </div>
+                `
+                popup.style.left = offsetPageBtn.left + 'px'
+                popup.style.top = offsetPageBtn.top + 'px'
+                document.body.append(popup)
+                console.log(offsetPage(btnSettings))
+            }
+        }
+    })
 }

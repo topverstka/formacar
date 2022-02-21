@@ -1,0 +1,40 @@
+.card-table {
+
+    &_row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    & tr {
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+
+        & td {
+            font-size: 14px;
+            font-weight: 400;
+
+            &:nth-child(1) {
+                display: inline-block;
+                color: $text-second-l;
+
+                @media (max-width: $tablet-s) {
+                    display: none;
+                }
+            }
+
+            &:nth-child(2) {
+                padding-left: 20px;
+
+                @media (max-width: $tablet-s) {
+                    padding: 0;
+                }
+            }
+
+            @media (max-width: $laptop-l) {
+                font-size: 12px;
+            }
+        }
+    }
+}
