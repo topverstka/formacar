@@ -8,6 +8,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px 20px;
+
+    @media (max-width: $tablet-l) {
+        gap: 10px;
+    }
+
+    @media (max-width: $tablet) {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .ad-filter__reset-btn {
@@ -20,6 +28,10 @@
         width: 16px;
         height: 16px;
         margin-left: 10px;
+    }
+
+    @media (max-width: $tablet-l) {
+        margin-left: 20px;
     }
 }
 
@@ -37,6 +49,27 @@
 
 .ad-filter__show-btn {
     min-width: 295px;
+    padding: 0 16px;
+    
+    @media (max-width: $tablet-l) {
+        min-width: auto;
+        white-space: nowrap;
+    }
+}
+
+.ad-filter__show-btn-pc {
+
+    @media (max-width: $tablet-l) {
+        display: none;
+    }
+}
+
+.ad-filter__show-btn-mob {
+    display: none;
+
+    @media (max-width: $tablet-l) {
+        display: block;
+    }
 }
 
 .ad-filter__option-list {
@@ -55,6 +88,7 @@
 
     & .select-input {
         border: none;
+        padding: 0;
     }
 
     &._valid .select-input__title {
@@ -81,12 +115,34 @@
         top: auto;
         right: auto;
         transform: none;
+        width: 20px;
+        height: 20px;
         margin-left: 10px;
+    }
+
+    &_mob {
+        display: none;
+        
+        @media (max-width: $tablet) {
+            width: fit-content;
+            display: block;
+        }
+    }
+
+    &_pc {
+        
+        @media (max-width: $tablet) {
+            display: none;
+        }
     }
 }
 
 .ad-filter__grid-list {
-    margin-left: 30px;
+    margin-left: 40px;
+
+    @media (max-width: $tablet-l) {
+        margin-left: 20px;
+    }
 }
 
 .ad-filter__grid-btn {

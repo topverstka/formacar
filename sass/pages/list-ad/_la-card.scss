@@ -19,6 +19,11 @@
     & .la-card__slide {
         width: 334px;
         height: 250px;
+
+        @media (max-width: 1570px) {
+            width: 266px;
+            height: 200px;
+        }
     }
 
     & .la-card__options {

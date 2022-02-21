@@ -97,6 +97,15 @@ window.addEventListener('click', e => {
     // }
 })
 
+// Отступ Раздела с контентом на расстояние равное ширине расширенного фильтра
+if (window.innerWidth > 1280) indentContentListAD()
+function indentContentListAD() {
+    const content = find('.ad-content')
+    const advancedFilter = find('.advanced-filter')
+
+    content.style.width =  `calc(100% - ${advancedFilter.offsetWidth + 30}px)`
+}
+
 // Валидация формы
 // function validationForm() {
 //     const name = find('#user_name')

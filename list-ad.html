@@ -514,9 +514,24 @@
                         <div class="list-ad__body">
                             <div class="ad-content">
 								<div class="ad-filter">
+									<div class="select ad-filter__option-select ad-filter__option-select_mob">
+										<div class="select-input">
+											<span class="select-input__title">По актуальности</span>
+											<div class="select-input__chevron">
+												<svg><use href='./img/sprite.svg#filter-chevron'></use></svg>
+											</div>
+										</div>
+										<div class="select-dropdown">
+											<ul class="select-dropdown__list">
+												<li class="select-dropdown__item _selected">По актуальности</li>
+												<li class="select-dropdown__item">По возрастанию цены</li>
+												<li class="select-dropdown__item">По убыванию цены</li>
+											</ul>
+										</div>
+									</div>
 									<div class="ad-filter__body">
 										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Марка</span>
+											<span class="advanced-filter__subtitle">Марка</span>
 											<div class="select select_s">
 												<div class="select-input">
 													<span class="select-input__title">Не выбрано</span>
@@ -535,7 +550,7 @@
 											</div>
 										</div>
 										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Модель</span>
+											<span class="advanced-filter__subtitle">Модель</span>
 											<div class="select select_s">
 												<div class="select-input">
 													<span class="select-input__title">Не выбрано</span>
@@ -554,7 +569,7 @@
 											</div>
 										</div>
 										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Поколение</span>
+											<span class="advanced-filter__subtitle">Поколение</span>
 											<div class="select select_s">
 												<div class="select-input">
 													<span class="select-input__title">Не выбрано</span>
@@ -573,7 +588,7 @@
 											</div>
 										</div>
 										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Тип кузова</span>
+											<span class="advanced-filter__subtitle">Тип кузова</span>
 											<div class="select select_s">
 												<div class="select-input">
 													<span class="select-input__title">Не выбрано</span>
@@ -592,7 +607,7 @@
 											</div>
 										</div>
 										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Модификация</span>
+											<span class="advanced-filter__subtitle">Модификация</span>
 											<div class="select select_s">
 												<div class="select-input">
 													<span class="select-input__title">Не выбрано</span>
@@ -611,8 +626,8 @@
 											</div>
 										</div>
 										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Цена</span>
-											<div class="textfield-double ad-sidebar__double-input">
+											<span class="advanced-filter__subtitle">Цена</span>
+											<div class="textfield-double advanced-filter__double-input">
 												<div class="textfield textfield-s clear-by-cross">
 													<input type="text" id="">
 													<label for="">От</label>
@@ -624,13 +639,208 @@
 											</div>
 										</div>
 									</div>
+									<div class="advanced-filter">
+										<div class="acc advanced-filter__wrap">
+											<div class="acc-header acc-open advanced-filter__header">
+												<h3 class="advanced-filter__title">Расширенный поиск</h3>
+												<div class="advanced-filter__chevron"><svg><use href='./img/sprite.svg#chevron'></use></svg></div>
+											</div>
+											<div class="acc-body advanced-filter__body">
+												<div class="advanced-filter__owner-list">
+													<div class="ad-tab">
+														<input type="radio" name="owner" checked>
+														<label>Все</label>
+													</div>
+													<div class="ad-tab">
+														<input type="radio" name="owner">
+														<label>Компания</label>
+													</div>
+													<div class="ad-tab">
+														<input type="radio" name="owner">
+														<label>Частный</label>
+													</div>
+												</div>
+												<div class="advanced-filter__list-section">
+													<div class="list-ad__form-section">
+														<span class="advanced-filter__subtitle">Год выпуска</span>
+														<div class="textfield-double advanced-filter__double-input">
+															<div class="textfield textfield-s clear-by-cross">
+																<input type="text" id="">
+																<label for="">От</label>
+															</div>
+															<div class="textfield textfield-s clear-by-cross">
+																<input type="text" id="">
+																<label for="">До</label>
+															</div>
+														</div>
+													</div>
+													<div class="list-ad__form-section">
+														<span class="advanced-filter__subtitle">Пробег</span>
+														<div class="textfield-double advanced-filter__double-input">
+															<div class="textfield textfield-s clear-by-cross">
+																<input type="text" id="">
+																<label for="">От</label>
+															</div>
+															<div class="textfield textfield-s clear-by-cross">
+																<input type="text" id="">
+																<label for="">До</label>
+															</div>
+														</div>
+													</div>
+													<div class="list-ad__form-section">
+														<span class="advanced-filter__subtitle">Состояние</span>
+														<div class="textfield textfield-s clear-by-cross">
+															<input type="text" id="" value="Новый">
+															<label for="">Укажите состояние</label>
+														</div>
+													</div>
+													<div class="list-ad__form-section">
+														<span class="advanced-filter__subtitle">Количество дверей</span>
+														<div class="textfield textfield-s clear-by-cross">
+															<input type="text" id="" value="2">
+															<label for="">Укажите кол-во</label>
+														</div>
+													</div>
+													<div class="list-ad__form-section">
+														<span class="advanced-filter__subtitle">Цвет</span>
+														<div class="select select_s">
+															<div class="select-input">
+																<span class="select-input__title">Не выбрано</span>
+																<div class="select-input__chevron">
+																	<svg><use href='./img/sprite.svg#chevron'></use></svg>
+																</div>
+															</div>
+															<div class="select-dropdown">
+																<ul class="select-dropdown__list">
+																	<li class="select-dropdown__item">Россия</li>
+																	<li class="select-dropdown__item">Англия</li>
+																	<li class="select-dropdown__item">Германия</li>
+																	<li class="select-dropdown__item">Америка</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="list-ad__form-section">
+														<span class="advanced-filter__subtitle">Тип двигателя</span>
+														<div class="select select_s">
+															<div class="select-input">
+																<span class="select-input__title">Не выбрано</span>
+																<div class="select-input__chevron">
+																	<svg><use href='./img/sprite.svg#chevron'></use></svg>
+																</div>
+															</div>
+															<div class="select-dropdown">
+																<ul class="select-dropdown__list">
+																	<li class="select-dropdown__item">Россия</li>
+																	<li class="select-dropdown__item">Англия</li>
+																	<li class="select-dropdown__item">Германия</li>
+																	<li class="select-dropdown__item">Америка</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="list-ad__form-section">
+														<span class="advanced-filter__subtitle">Мощность двигателя</span>
+														<div class="textfield-double advanced-filter__double-input">
+															<div class="textfield textfield-s clear-by-cross">
+																<input type="text" id="">
+																<label for="">От</label>
+															</div>
+															<div class="textfield textfield-s clear-by-cross">
+																<input type="text" id="">
+																<label for="">До</label>
+															</div>
+														</div>
+													</div>
+													<div class="list-ad__form-section">
+														<span class="advanced-filter__subtitle">Коробка передач</span>
+														<div class="select select_s">
+															<div class="select-input">
+																<span class="select-input__title">Не выбрано</span>
+																<div class="select-input__chevron">
+																	<svg><use href='./img/sprite.svg#chevron'></use></svg>
+																</div>
+															</div>
+															<div class="select-dropdown">
+																<ul class="select-dropdown__list">
+																	<li class="select-dropdown__item">Россия</li>
+																	<li class="select-dropdown__item">Англия</li>
+																	<li class="select-dropdown__item">Германия</li>
+																	<li class="select-dropdown__item">Америка</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="list-ad__form-section">
+														<span class="advanced-filter__subtitle">Привод</span>
+														<div class="select select_s">
+															<div class="select-input">
+																<span class="select-input__title">Не выбрано</span>
+																<div class="select-input__chevron">
+																	<svg><use href='./img/sprite.svg#chevron'></use></svg>
+																</div>
+															</div>
+															<div class="select-dropdown">
+																<ul class="select-dropdown__list">
+																	<li class="select-dropdown__item">Россия</li>
+																	<li class="select-dropdown__item">Англия</li>
+																	<li class="select-dropdown__item">Германия</li>
+																	<li class="select-dropdown__item">Америка</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="list-ad__form-section">
+														<span class="advanced-filter__subtitle">Руль</span>
+														<div class="select select_s">
+															<div class="select-input">
+																<span class="select-input__title">Не выбрано</span>
+																<div class="select-input__chevron">
+																	<svg><use href='./img/sprite.svg#chevron'></use></svg>
+																</div>
+															</div>
+															<div class="select-dropdown">
+																<ul class="select-dropdown__list">
+																	<li class="select-dropdown__item">Россия</li>
+																	<li class="select-dropdown__item">Англия</li>
+																	<li class="select-dropdown__item">Германия</li>
+																	<li class="select-dropdown__item">Америка</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+													<div class="list-ad__form-section">
+														<span class="advanced-filter__subtitle">Владельцев в ПТС</span>
+														<div class="select select_s">
+															<div class="select-input">
+																<span class="select-input__title">Не выбрано</span>
+																<div class="select-input__chevron">
+																	<svg><use href='./img/sprite.svg#chevron'></use></svg>
+																</div>
+															</div>
+															<div class="select-dropdown">
+																<ul class="select-dropdown__list">
+																	<li class="select-dropdown__item">Россия</li>
+																	<li class="select-dropdown__item">Англия</li>
+																	<li class="select-dropdown__item">Германия</li>
+																	<li class="select-dropdown__item">Америка</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+												<button class="btn btn_primary advanced-filter__show-btn">показать <span>NNN</span> объявлений</button>
+											</div>
+										</div>
+									</div>
 									<div class="ad-filter__footer">
 										<div class="ad-filter__btn-list">
-											<button class="btn btn_primary ad-filter__show-btn">показать <span>NNN</span> объявлений</button>
+											<button class="btn btn_primary ad-filter__show-btn ad-filter__show-btn-pc">показать <span>NNN</span> объявлений</button>
+											<button class="btn btn_primary ad-filter__show-btn ad-filter__show-btn-mob"><span>NNN</span> объявлений</button>
 											<button class="btn btn_linear btn_icon btn_icon-reset-filter ad-filter__reset-btn">Сбросить</button>
 										</div>
 										<div class="ad-filter__option-list">
-											<div class="select ad-filter__option-select">
+											<div class="select ad-filter__option-select ad-filter__option-select_pc">
 												<div class="select-input">
 													<span class="select-input__title">По актуальности</span>
 													<div class="select-input__chevron">
@@ -1008,198 +1218,6 @@
 										</div>
 									</div>
 								</div>
-                            </div>
-                            <div class="ad-sidebar">
-                                <div class="ad-sidebar__wrap">
-                                    <div class="ad-sidebar__header">
-                                        <h3 class="ad-sidebar__title">Расширенный поиск</h3>
-                                        <div class="ad-sidebar__chevron"><svg><use href='./img/sprite.svg#chevron'></use></svg></div>
-                                    </div>
-                                    <div class="ad-sidebar__body">
-										<div class="ad-sidebar__owner-list">
-											<div class="ad-tab">
-												<input type="radio" name="owner" checked>
-												<label>Все</label>
-											</div>
-											<div class="ad-tab">
-												<input type="radio" name="owner">
-												<label>Компания</label>
-											</div>
-											<div class="ad-tab">
-												<input type="radio" name="owner">
-												<label>Частный</label>
-											</div>
-										</div>
-										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Год выпуска</span>
-											<div class="textfield-double ad-sidebar__double-input">
-												<div class="textfield textfield-s clear-by-cross">
-													<input type="text" id="">
-													<label for="">От</label>
-												</div>
-												<div class="textfield textfield-s clear-by-cross">
-													<input type="text" id="">
-													<label for="">До</label>
-												</div>
-											</div>
-										</div>
-										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Пробег</span>
-											<div class="textfield-double ad-sidebar__double-input">
-												<div class="textfield textfield-s clear-by-cross">
-													<input type="text" id="">
-													<label for="">От</label>
-												</div>
-												<div class="textfield textfield-s clear-by-cross">
-													<input type="text" id="">
-													<label for="">До</label>
-												</div>
-											</div>
-										</div>
-										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Состояние</span>
-											<div class="textfield textfield-s clear-by-cross">
-												<input type="text" id="" value="Новый">
-												<label for="">Укажите состояние</label>
-											</div>
-										</div>
-										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Количество дверей</span>
-											<div class="textfield textfield-s clear-by-cross">
-												<input type="text" id="" value="2">
-												<label for="">Укажите кол-во</label>
-											</div>
-										</div>
-										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Цвет</span>
-											<div class="select select_s">
-												<div class="select-input">
-													<span class="select-input__title">Не выбрано</span>
-													<div class="select-input__chevron">
-														<svg><use href='./img/sprite.svg#chevron'></use></svg>
-													</div>
-												</div>
-												<div class="select-dropdown">
-													<ul class="select-dropdown__list">
-														<li class="select-dropdown__item">Россия</li>
-														<li class="select-dropdown__item">Англия</li>
-														<li class="select-dropdown__item">Германия</li>
-														<li class="select-dropdown__item">Америка</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Тип двигателя</span>
-											<div class="select select_s">
-												<div class="select-input">
-													<span class="select-input__title">Не выбрано</span>
-													<div class="select-input__chevron">
-														<svg><use href='./img/sprite.svg#chevron'></use></svg>
-													</div>
-												</div>
-												<div class="select-dropdown">
-													<ul class="select-dropdown__list">
-														<li class="select-dropdown__item">Россия</li>
-														<li class="select-dropdown__item">Англия</li>
-														<li class="select-dropdown__item">Германия</li>
-														<li class="select-dropdown__item">Америка</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Мощность двигателя</span>
-											<div class="textfield-double ad-sidebar__double-input">
-												<div class="textfield textfield-s clear-by-cross">
-													<input type="text" id="">
-													<label for="">От</label>
-												</div>
-												<div class="textfield textfield-s clear-by-cross">
-													<input type="text" id="">
-													<label for="">До</label>
-												</div>
-											</div>
-										</div>
-										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Коробка передач</span>
-											<div class="select select_s">
-												<div class="select-input">
-													<span class="select-input__title">Не выбрано</span>
-													<div class="select-input__chevron">
-														<svg><use href='./img/sprite.svg#chevron'></use></svg>
-													</div>
-												</div>
-												<div class="select-dropdown">
-													<ul class="select-dropdown__list">
-														<li class="select-dropdown__item">Россия</li>
-														<li class="select-dropdown__item">Англия</li>
-														<li class="select-dropdown__item">Германия</li>
-														<li class="select-dropdown__item">Америка</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Привод</span>
-											<div class="select select_s">
-												<div class="select-input">
-													<span class="select-input__title">Не выбрано</span>
-													<div class="select-input__chevron">
-														<svg><use href='./img/sprite.svg#chevron'></use></svg>
-													</div>
-												</div>
-												<div class="select-dropdown">
-													<ul class="select-dropdown__list">
-														<li class="select-dropdown__item">Россия</li>
-														<li class="select-dropdown__item">Англия</li>
-														<li class="select-dropdown__item">Германия</li>
-														<li class="select-dropdown__item">Америка</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Руль</span>
-											<div class="select select_s">
-												<div class="select-input">
-													<span class="select-input__title">Не выбрано</span>
-													<div class="select-input__chevron">
-														<svg><use href='./img/sprite.svg#chevron'></use></svg>
-													</div>
-												</div>
-												<div class="select-dropdown">
-													<ul class="select-dropdown__list">
-														<li class="select-dropdown__item">Россия</li>
-														<li class="select-dropdown__item">Англия</li>
-														<li class="select-dropdown__item">Германия</li>
-														<li class="select-dropdown__item">Америка</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="list-ad__form-section">
-											<span class="ad-sidebar__subtitle">Владельцев в ПТС</span>
-											<div class="select select_s">
-												<div class="select-input">
-													<span class="select-input__title">Не выбрано</span>
-													<div class="select-input__chevron">
-														<svg><use href='./img/sprite.svg#chevron'></use></svg>
-													</div>
-												</div>
-												<div class="select-dropdown">
-													<ul class="select-dropdown__list">
-														<li class="select-dropdown__item">Россия</li>
-														<li class="select-dropdown__item">Англия</li>
-														<li class="select-dropdown__item">Германия</li>
-														<li class="select-dropdown__item">Америка</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<button class="btn btn_primary ad-sidebar__show-btn">показать <span>NNN</span> объявлений</button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
