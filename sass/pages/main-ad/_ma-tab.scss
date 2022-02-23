@@ -1,20 +1,29 @@
 // Таб на странице "Мои объявления"
-.ma-tab {
-
-}
+.ma-tab {}
 
 // Шапка с кнопками
-.ma-tab__header {
-}
+.ma-tab__header {}
 
 .ma-tab__header-list {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px 48px;
-
     @media (max-width: $tablet) {
         display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 20px 0;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        width: max-content;
+        position: absolute;
+        z-index: 9;
+        &._active {
+            display: flex
+        }
     }
 }
 
@@ -26,11 +35,15 @@
     font-weight: 600;
     text-transform: none;
     padding: 0;
-
+    &._active_color {
+        color: $btn-primary-default;
+        &::after {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.3335 17.5V11.6667M3.3335 8.33333V2.5M10.0001 17.5V10M10.0001 6.66667V2.5M16.6668 17.5V13.3333M16.6668 10V2.5M0.833496 11.6667H5.8335M7.50015 6.66667H12.5001M14.1668 13.3333H19.1668' stroke='%23467EF3' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+    }
     @media (max-width: $tablet) {
         display: flex;
     }
-
     &::after {
         width: 20px;
         height: 20px;
@@ -44,21 +57,33 @@
     font-size: 16px;
     font-weight: 700;
     color: $text-second-l;
-
     // &:not(:last-child) {
     //     margin-right: 48px;
     // }
-
     &._active {
         color: $text-primary;
+    }
+    @media (max-width: $tablet) {
+        &._active .ma-tab__button-title {
+            color: $btn-primary-default
+        }
     }
 }
 
 .ma-tab__button-title {
+    @media (max-width: $tablet) {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        color: $text-second-d
+    }
 }
 
 .ma-tab__button-quantity {
     margin-left: 7px;
+    @media (max-width: $tablet) {
+        display: none
+    }
 }
 
 // Контейнер с карточками
@@ -70,27 +95,30 @@
     grid-auto-rows: minmax(185px, max-content);
     gap: 24px;
     margin-top: 20px;
-
     @media (max-width: $laptop-l) {
         grid-template-columns: minmax(min-content, 966px);
     }
-
     @media (max-width: $tablet) {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
-
     @media (max-width: $mobile-l) {
         gap: 10px;
+        column-count: 2;
+        display: block;
+        .ma-card {
+            break-inside: avoid;
+            margin-bottom: 10px;
+        }
+        .ma-card:nth-of-type(5) table {
+            display: none
+        }
     }
-
     & .ma-card {
         display: none;
-
         &._show {
             display: block;
             animation: showCard .3s ease-in-out forwards;
-
             @keyframes showCard {
                 from {
                     // transform: scale(.9);
@@ -114,7 +142,6 @@
     opacity: 0;
     pointer-events: none;
     transition: $tr;
-
     &._show {
         opacity: 1;
     }

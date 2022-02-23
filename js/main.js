@@ -1,25 +1,24 @@
-
 // Служебные переменные
 const d = document;
 const body = document.querySelector('body');
 
 // Служебные функции
 function find(selector) {
-	return document.querySelector(selector)
+    return document.querySelector(selector)
 }
 
 function findAll(selectors) {
-	return document.querySelectorAll(selectors)
+    return document.querySelectorAll(selectors)
 }
 
 // Удаляет у всех элементов items класс itemClass
-function removeAll(items,itemClass) {   
+function removeAll(items, itemClass) {
     if (typeof items == 'string') {
-      items = document.querySelectorAll(items)
+        items = document.querySelectorAll(items)
     }
     for (let i = 0; i < items.length; i++) {
-      const item = items[i]
-      item.classList.remove(itemClass)
+        const item = items[i]
+        item.classList.remove(itemClass)
     }
 }
 
@@ -44,8 +43,8 @@ function getSiblings(elem) {
 // Расстояния между элементом и верхней границей страницы
 function offsetPage(elem) {
     var rect = elem.getBoundingClientRect(),
-    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
 }
 
@@ -55,15 +54,14 @@ function bodyLock(con) {
     } else if (con === false) {
         body.classList.remove('_lock');
     } else if (con === undefined) {
-		if (!body.classList.contains('_lock')) {
-			body.classList.add('_lock');
-		}
-		else {
-			body.classList.remove('_lock')
-		}
-	} else {
-		console.error('Неопределенный аргумент у функции bodyLock()')
-	}
+        if (!body.classList.contains('_lock')) {
+            body.classList.add('_lock');
+        } else {
+            body.classList.remove('_lock')
+        }
+    } else {
+        console.error('Неопределенный аргумент у функции bodyLock()')
+    }
 }
 
 const popups = ['.search', '.menu']
@@ -77,9 +75,9 @@ window.addEventListener('click', e => {
         (find('.menu._show') && !(e.target.classList.contains('header') || e.target.closest('.header')))
     ) {
         console.log('menu close')
-        
-		find('.burger').classList.remove('_close')
-		find('.menu').classList.remove('_show')
+
+        find('.burger').classList.remove('_close')
+        find('.menu').classList.remove('_show')
         find('.menu-bg').classList.remove('_show')
     }
 
@@ -99,11 +97,11 @@ window.addEventListener('click', e => {
 
 // Отступ Раздела с контентом на расстояние равное ширине расширенного фильтра
 if (window.innerWidth > 1280) indentContentListAD()
+
 function indentContentListAD() {
     const content = find('.ad-content')
     const advancedFilter = find('.advanced-filter')
-
-    content.style.width =  `calc(100% - ${advancedFilter.offsetWidth + 30}px)`
+    content !== null ? content.style.width = `calc(100% - ${advancedFilter.offsetWidth + 30}px)` : '';
 }
 
 // Валидация формы
@@ -141,24 +139,24 @@ function indentContentListAD() {
 //         btnSend.classList.add('send-preloader')
 
 //         e.preventDefault()
-        
+
 //         let con = validationForm()
 
 //         if (con === true) {
 //             const formData = new FormData()
 //             const action = form.getAttribute('action')
-    
+
 //             let response = await fetch(action, {
 //                 method: 'POST',
 //                 body: formData
 //             })
-            
+
 //             // settimeout здесь для того, чтобы показать работу отправки формы. В дальнейшем это нужно убрать
 //             setTimeout(() => {
 //                 if (response.ok) {
 //                     console.log('Successful')
 //                     form.reset()
-    
+
 //                     modal.classList.remove('_show')
 //                     find('#send-done').classList.add('_show')
 //                     btnSend.classList.remove('send-preloader')
@@ -166,7 +164,7 @@ function indentContentListAD() {
 //                 else {
 //                     console.log('Error')
 //                     form.reset()
-    
+
 //                     modal.classList.remove('_show')
 //                     find('#send-error').classList.add('_show')
 //                     btnSend.classList.remove('send-preloader')
@@ -179,14 +177,15 @@ function indentContentListAD() {
 
 // Текстовым полям, которые имеют класс clear-by-cross, будет добавлена кнопка, кликнув по которой, содержимое инпута очиститься
 clearByCross()
+
 function clearByCross() {
     const textfieldElems = findAll('.clear-by-cross')
-    
+
     for (let i = 0; i < textfieldElems.length; i++) {
         const textfield = textfieldElems[i];
         const input = textfield.querySelector('input, textarea')
         const btn = document.createElement('div')
-        
+
         btn.classList.add('textfield__clear')
         btn.innerHTML = `<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 0C4.97 0 0.5 4.47 0.5 10C0.5 15.53 4.97 20 10.5 20C16.03 20 20.5 15.53 20.5 10C20.5 4.47 16.03 0 10.5 0Z" fill="#B4B4BF"/><path d="M14.0833 13.5835C13.7583 13.9085 13.2333 13.9085 12.9083 13.5835L10.4999 11.1752L8.09159 13.5835C7.76659 13.9085 7.24159 13.9085 6.91659 13.5835C6.76055 13.4278 6.67285 13.2164 6.67285 12.996C6.67285 12.7756 6.76055 12.5642 6.91659 12.4085L9.32492 10.0002L6.91659 7.59185C6.76055 7.43615 6.67285 7.22478 6.67285 7.00435C6.67285 6.78391 6.76055 6.57254 6.91659 6.41685C7.24159 6.09185 7.76659 6.09185 8.09159 6.41685L10.4999 8.82518L12.9083 6.41685C13.2333 6.09185 13.7583 6.09185 14.0833 6.41685C14.4083 6.74185 14.4083 7.26685 14.0833 7.59185L11.6749 10.0002L14.0833 12.4085C14.3999 12.7252 14.3999 13.2585 14.0833 13.5835Z" fill="white"/></svg>`
 
@@ -211,16 +210,14 @@ function clearByCross() {
 
         if (input.value != '') {
             btn.classList.add('_show')
-        }
-        else {
+        } else {
             btn.classList.remove('_show')
         }
 
         input.addEventListener('input', e => {
             if (input.value != '') {
                 btn.classList.add('_show')
-            }
-            else {
+            } else {
                 btn.classList.remove('_show')
             }
         })
@@ -229,14 +226,15 @@ function clearByCross() {
 
 // Текстовым полям, которые имеют класс show-pass-by-eye, будет добавлена кнопка, кликнув по которой, пароль будет показан
 showPassword()
+
 function showPassword() {
     const textfieldElems = findAll('.show-pass-by-eye')
-    
+
     for (let i = 0; i < textfieldElems.length; i++) {
         const textfield = textfieldElems[i];
         const input = textfield.querySelector('input')
         const btn = document.createElement('div')
-        
+
         btn.classList.add('textfield__show-pass')
         btn.innerHTML = "<svg class='eye-show'><use href='./img/sprite.svg#eye-show'></use></svg><svg class='eye-hide'><use href='./img/sprite.svg#eye-hide'></use></svg>"
 
@@ -250,8 +248,7 @@ function showPassword() {
 
             if (input.classList.contains('_show-pass')) {
                 input.type = 'text'
-            }
-            else {
+            } else {
                 input.type = 'password'
             }
 
@@ -261,8 +258,7 @@ function showPassword() {
         input.addEventListener('input', e => {
             if (input.value != '') {
                 btn.classList.add('_show')
-            }
-            else {
+            } else {
                 btn.classList.remove('_show')
             }
         })
@@ -276,6 +272,7 @@ function showPassword() {
 
 // Добавление выбора локации в мобильное меню
 addLocationToMobMenu()
+
 function addLocationToMobMenu() {
     if (window.innerWidth <= 920) {
         const location = find('.location_several-cities')
@@ -288,6 +285,7 @@ function addLocationToMobMenu() {
 
 // Поиск по сайту
 siteSearch()
+
 function siteSearch() {
     const form = find('.textfield_search-header')
     const input = form.querySelector('input')
@@ -300,33 +298,33 @@ function siteSearch() {
     const notFound = find('.search__result-not-found')
 
     form.addEventListener('submit', e => {
-        e.preventDefault()
-        siteSearchPopup(input)
-        showLoader()
-
-        if (find('.menu._show')) {
-            find('.menu').classList.remove('_show')
-            burger.classList.remove('_close')
-        }
-        
-        // Имитация загрузки результатов поиска
-        setTimeout(e => { 
-            siteSearchData(input)   
-        }, 1500)
-    })
-    // input.addEventListener('input', e => {
-    //     if (input.value != '') { 
-    //         clear.classList.add('_show')
-    //     }
-    // })
-    input.addEventListener('focus', e => {
-        siteSearchFocus(input)
-    })
-    // input.addEventListener('blur', e => {
-    //     siteSearchBlur(input)
-    // })
-    clear.addEventListener('click', e => {
+            e.preventDefault()
             siteSearchPopup(input)
+            showLoader()
+
+            if (find('.menu._show')) {
+                find('.menu').classList.remove('_show')
+                burger.classList.remove('_close')
+            }
+
+            // Имитация загрузки результатов поиска
+            setTimeout(e => {
+                siteSearchData(input)
+            }, 1500)
+        })
+        // input.addEventListener('input', e => {
+        //     if (input.value != '') { 
+        //         clear.classList.add('_show')
+        //     }
+        // })
+    input.addEventListener('focus', e => {
+            siteSearchFocus(input)
+        })
+        // input.addEventListener('blur', e => {
+        //     siteSearchBlur(input)
+        // })
+    clear.addEventListener('click', e => {
+        siteSearchPopup(input)
     })
 
     function siteSearchFocus(input) {
@@ -348,13 +346,12 @@ function siteSearch() {
 
     function siteSearchPopup(input) {
         const value = input.value
-    
+
         if (value != '') {
             search.classList.add('_show')
             menuBg.classList.add('_show')
             clear.classList.add('_show')
-        }
-        else {
+        } else {
             search.classList.remove('_show')
             menuBg.classList.remove('_show')
             clear.classList.remove('_show')
@@ -364,7 +361,7 @@ function siteSearch() {
 
     function showLoader() {
         const cardsShow = findAll('.search__result-list .s-result-card')
-        
+
         for (let i = 0; i < cardsShow.length; i++) {
             const card = cardsShow[i];
             card.remove()
@@ -373,7 +370,7 @@ function siteSearch() {
         notFound.classList.remove('_show')
         loader.classList.add('_show')
     }
-    
+
     async function siteSearchData(input) {
         const value = input.value
         const result = find('.search__result-list')
@@ -386,29 +383,28 @@ function siteSearch() {
             const dataArr = []
 
             // console.log(data.length)
-            
+
             data.forEach(elem => { if (elem['title'].toLowerCase() === value.toLowerCase()) dataArr.push(elem['category']) })
-            
+
             if (dataArr.length === 0) {
                 loader.classList.remove('_show')
                 notFound.classList.add('_show')
                 notFound.querySelector('.search__result-not-found-text span').innerText = value
-            }
-            else {
+            } else {
                 const quantityCat = dataArr.reduce((arr, elem) => {
                     arr[elem] = (arr[elem] || 0) + 1
                     return arr
                 }, {})
-    
+
                 // console.log(value, data, quantityCat)
                 loader.classList.remove('_show')
-    
+
                 for (const [title, quantity] of Object.entries(quantityCat)) {
                     const card = document.createElement('a')
                     card.setAttribute('href', '#')
                     card.classList.add('link', 's-result-card')
-                    card.innerHTML = 
-                    `
+                    card.innerHTML =
+                        `
                         <div class="s-result-card__wrap">
                             <div class="s-result-card__text">
                                 <h4 class="s-result-card__title">${value}</h4>
@@ -417,13 +413,12 @@ function siteSearch() {
                             <span class="s-result-card__quantity">${quantity}</span>
                         </div>
                     `
-    
+
                     result.append(card)
                 }
             }
 
-        }
-        else {
+        } else {
             console.log('Error' + response.status)
         }
     }
@@ -431,30 +426,29 @@ function siteSearch() {
 
 // Мобильное меню
 menu()
+
 function menu() {
-	const burger = find('.burger')
-	const menu = find('.menu');
+    const burger = find('.burger')
+    const menu = find('.menu');
     const menuMob = find('#mob-menu')
     const menuBg = find('.menu-bg')
 
-	burger.addEventListener('click', (e) => {
-        
+    burger.addEventListener('click', (e) => {
+
         if (window.innerWidth > 920) {
             burger.classList.toggle('_close')
             menu.classList.toggle('_show')
-    
+
             if (menu.classList.contains('_show')) {
                 menuBg.classList.add('_show')
-            }
-            else {
+            } else {
                 menuBg.classList.remove('_show')
             }
-        }
-        else {
+        } else {
             openModal(menuMob)
             window.location.hash = 'mob-menu'
         }
-	})
+    })
 }
 
 // Фиксация шапки
@@ -468,8 +462,7 @@ function fixHeader() {
     window.addEventListener('scroll', e => {
         if (window.scrollY > 200) {
             headerBottom.classList.add('_hide')
-        }
-        else {
+        } else {
             headerBottom.classList.remove('_hide')
         }
     })
@@ -477,12 +470,13 @@ function fixHeader() {
 
 // Отображение ссылок при наведении на соответствующую категорию в меню
 catLinksMenu()
+
 function catLinksMenu() {
     const catElems = findAll('.menu__left-item')
 
     for (let i = 0; i < catElems.length; i++) {
         const cat = catElems[i];
-        
+
         cat.addEventListener('mouseenter', e => {
             const catData = cat.dataset.menuCat
             const catLinks = find(`[data-menu-links=${catData}]`)
@@ -499,34 +493,34 @@ function catLinksMenu() {
 }
 
 const sliderRecent = new Swiper('.s-recent__slider', {
-  spaceBetween: 24, // Расстояние между слайдами
+    spaceBetween: 24, // Расстояние между слайдами
 
-  breakpoints: {
-    1025: {
-        slidesPerView: 4,
+    breakpoints: {
+        1025: {
+            slidesPerView: 4,
+        },
+        768: {
+            slidesPerView: 3,
+            allowTouchMove: false
+        },
+        0: {
+            slidesPerView: 2,
+            spaceBetween: 12,
+            allowTouchMove: true
+        }
     },
-    768: {
-        slidesPerView: 3,
-        allowTouchMove: false
-    },
-    0: {
-        slidesPerView: 2,
-        spaceBetween: 12,
-        allowTouchMove: true
+
+    navigation: {
+        nextEl: '.s-recent__arrow-next',
+        prevEl: '.s-recent__arrow-prev',
     }
-  },
-
-  navigation: {
-    nextEl: '.s-recent__arrow-next',
-    prevEl: '.s-recent__arrow-prev',
-  }
 });
 
 // Адаптивная ширина слайдера
 if (window.innerWidth <= 768) adaptiveWidthSliderMACard()
-// window.addEventListener('resize', e => {
-//     adaptiveWidthSliderMACard()
-// })
+    // window.addEventListener('resize', e => {
+    //     adaptiveWidthSliderMACard()
+    // })
 function adaptiveWidthSliderMACard() {
     const sliderElems = findAll('.ma-card__slider')
 
@@ -540,27 +534,27 @@ function adaptiveWidthSliderMACard() {
 }
 
 const sliderMACard = new Swiper('.ma-card__slider', {
-  spaceBetween: 0, // Расстояние между слайдами
+    spaceBetween: 0, // Расстояние между слайдами
+    observer: true,
+    //   breakpoints: {
+    //     1025: {
+    //         slidesPerView: 4,
+    //     },
+    //     768: {
+    //         slidesPerView: 3,
+    //         allowTouchMove: false
+    //     },
+    //     0: {
+    //         slidesPerView: 2,
+    //         spaceBetween: 12,
+    //         allowTouchMove: true
+    //     }
+    //   },
 
-//   breakpoints: {
-//     1025: {
-//         slidesPerView: 4,
-//     },
-//     768: {
-//         slidesPerView: 3,
-//         allowTouchMove: false
-//     },
-//     0: {
-//         slidesPerView: 2,
-//         spaceBetween: 12,
-//         allowTouchMove: true
-//     }
-//   },
-
-//   navigation: {
-//     nextEl: '.s-recent__arrow-next',
-//     prevEl: '.s-recent__arrow-prev',
-//   }
+    //   navigation: {
+    //     nextEl: '.s-recent__arrow-next',
+    //     prevEl: '.s-recent__arrow-prev',
+    //   }
 
     pagination: {
         el: '.ma-card__pagination',
@@ -579,7 +573,7 @@ const sliderLACard = new Swiper('.la-card__slider', {
 });
 
 // const swiper = new Swiper('.swiper-container', {
-  
+
 //   slidesPerView: 1, // Кол-во показываемых слайдов
 //   spaceBetween: 0, // Расстояние между слайдами
 //   loop: true, // Бесконечный слайдер
@@ -617,26 +611,26 @@ setTimeout(e => {
         slidesPerView: 'auto',
 
         breakpoints: {
-          1440: {
-              // slidesPerView: 'auto',
-          },
-          768: {
-      
-          },
-          500: {
-            slidesPerView: 'auto',
-            spaceBetween: 4,
-          },
-          0: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            allowTouchMove: false
-          }
+            1440: {
+                // slidesPerView: 'auto',
+            },
+            768: {
+
+            },
+            500: {
+                slidesPerView: 'auto',
+                spaceBetween: 4,
+            },
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                allowTouchMove: false
+            }
         },
-      
+
         navigation: {
-          nextEl: '.recent-card__slider-arrow_next',
-          prevEl: '.recent-card__slider-arrow_prev',
+            nextEl: '.recent-card__slider-arrow_next',
+            prevEl: '.recent-card__slider-arrow_prev',
         }
     });
 }, 500)
@@ -644,64 +638,65 @@ setTimeout(e => {
 const sliderNews = new Swiper('.s-news__slider', {
     spaceBetween: 24,
 
-//   slidesPerView: 4, // Кол-во показываемых слайдов
-//   spaceBetween: 24, // Расстояние между слайдами
-//   loop: true, // Бесконечный слайдер
-//   freeMode: true, // Слайдеры не зафиксированны
+    //   slidesPerView: 4, // Кол-во показываемых слайдов
+    //   spaceBetween: 24, // Расстояние между слайдами
+    //   loop: true, // Бесконечный слайдер
+    //   freeMode: true, // Слайдеры не зафиксированны
 
-  breakpoints: {
-    1025: {
-        slidesPerView: 4
+    breakpoints: {
+        1025: {
+            slidesPerView: 4
+        },
+        768: {
+            slidesPerView: 3,
+            allowTouchMove: false
+        },
+        500: {
+            slidesPerView: 2,
+            allowTouchMove: true
+        },
+        0: {
+            slidesPerView: 1.3,
+        }
     },
-    768: {
-        slidesPerView: 3,
-        allowTouchMove: false
-    },
-    500: {
-        slidesPerView: 2,
-        allowTouchMove: true
-    },
-    0: {
-        slidesPerView: 1.3,
+
+    navigation: {
+        nextEl: '.s-news__arrow-next',
+        prevEl: '.s-news__arrow-prev',
     }
-  },
-
-  navigation: {
-    nextEl: '.s-news__arrow-next',
-    prevEl: '.s-news__arrow-prev',
-  }
 });
 
 const sliderShops = new Swiper('.s-shops__slider', {
     spaceBetween: 24,
 
     breakpoints: {
-    1025: {
-        slidesPerView: 4
-    },
-    768: {
-        slidesPerView: 3,
-        allowTouchMove: false
-    },
-    425: {
-        slidesPerView: 2,
-        allowTouchMove: true
-    },
-    0: {
-        slidesPerView: 1,
-        spaceBetween: 12,
-    }
+        1025: {
+            slidesPerView: 4
+        },
+        768: {
+            slidesPerView: 3,
+            allowTouchMove: false
+        },
+        425: {
+            slidesPerView: 2,
+            allowTouchMove: true
+        },
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 12,
+        }
     },
 
     navigation: {
-    nextEl: '.s-shops__arrow-next',
-    prevEl: '.s-shops__arrow-prev',
+        nextEl: '.s-shops__arrow-next',
+        prevEl: '.s-shops__arrow-prev',
     }
 });
 
 // Функции для модальных окон
 // Открытие модальных окон при клике по кнопке
 openModalWhenClickingOnBtn()
+
 function openModalWhenClickingOnBtn() {
     const btnsOpenModal = document.querySelectorAll('[data-modal-open]');
 
@@ -720,6 +715,7 @@ function openModalWhenClickingOnBtn() {
 
 // Открытие модального окна, если в url указан его id
 openModalHash()
+
 function openModalHash() {
     if (window.location.hash) {
         const hash = window.location.hash.substring(1)
@@ -731,6 +727,7 @@ function openModalHash() {
 
 // Показываем/убираем модальное окно при изменения хеша в адресной строке
 checkHash()
+
 function checkHash() {
     window.addEventListener('hashchange', e => {
         const hash = window.location.hash
@@ -743,6 +740,7 @@ function checkHash() {
 
 // Закрытие модального окна при клике по заднему фону
 closeModalWhenClickingOnBg()
+
 function closeModalWhenClickingOnBg() {
     document.addEventListener('click', (e) => {
         const target = e.target
@@ -754,6 +752,7 @@ function closeModalWhenClickingOnBg() {
 
 // Закрытие модальных окон при клике по крестику
 closeModalWhenClickingOnCross()
+
 function closeModalWhenClickingOnCross() {
     const modalElems = document.querySelectorAll('.modal')
     for (let i = 0; i < modalElems.length; i++) {
@@ -770,6 +769,7 @@ function closeModalWhenClickingOnCross() {
 
 // Закрытие модальных окон при нажатии по клавише ESC
 closeModalWhenClickingOnESC()
+
 function closeModalWhenClickingOnESC() {
     const modalElems = document.querySelectorAll('.modal')
     for (let i = 0; i < modalElems.length; i++) {
@@ -793,7 +793,7 @@ function openModal(modal) {
     if (find('.modal._show')) {
         find('.modal._show').classList.remove('_show')
     }
-    
+
     modal.classList.add('_show')
     bodyLock(true)
 }
@@ -813,9 +813,10 @@ function closeModal(modal) {
 
 // Лайк поста
 liked()
+
 function liked() {
     const likeElems = findAll('[data-like]')
-    
+
     for (let i = 0; i < likeElems.length; i++) {
         const elem = likeElems[i]
         elem.addEventListener('click', e => elem.classList.toggle('_liked'))
@@ -827,10 +828,10 @@ function liked() {
 function changeLang(e) {
     const target = e.target
     const langTitleElems = findAll('.change-lang__title')
-    
+
     for (let i = 0; i < langTitleElems.length; i++) {
         const langTitle = langTitleElems[i];
-        
+
         langTitle.innerText = target.innerText
     }
     find('.modal-lang__link._active').classList.remove('_active')
@@ -840,6 +841,7 @@ function changeLang(e) {
 
 // функционал чекбоксов
 selectAllModalCountry()
+
 function selectAllModalCountry() {
     const mRegions = find('.modal-regions__countries')
     const selectAll = mRegions.querySelector('.regions-checkbox_select-all input')
@@ -849,7 +851,7 @@ function selectAllModalCountry() {
     selectAll.addEventListener('change', e => {
         for (let i = 0; i < checkboxRegionsElems.length; i++) {
             const checkbox = checkboxRegionsElems[i];
-            
+
             checkbox.checked = false
         }
 
@@ -858,8 +860,7 @@ function selectAllModalCountry() {
                 const checkbox = checkboxElems[i];
                 checkbox.checked = true
             }
-        }
-        else {
+        } else {
             for (let i = 0; i < checkboxElems.length; i++) {
                 const checkbox = checkboxElems[i];
                 checkbox.checked = false
@@ -871,7 +872,7 @@ function selectAllModalCountry() {
 
     for (let i = 0; i < checkboxElems.length; i++) {
         const checkbox = checkboxElems[i];
-        
+
         checkbox.addEventListener('click', e => {
             let cond = true
 
@@ -881,7 +882,7 @@ function selectAllModalCountry() {
 
             for (let i = 0; i < checkboxElems.length; i++) {
                 const checkbox = checkboxElems[i];
-                
+
                 if (!checkbox.checked) {
                     cond = false
                 }
@@ -911,8 +912,7 @@ function selectedCountry() {
     if (selectedC.length === 1) {
         oneCountry.classList.add('_show')
         oneCountry.querySelector('.modal-regions__one-country-text').innerText = selectedC[0].value
-    }
-    else {
+    } else {
         oneCountry.classList.remove('_show')
     }
 
@@ -920,8 +920,7 @@ function selectedCountry() {
         btnReset.classList.add('_show')
         moreTitle.classList.add('_show')
         moreTitle.innerText = 'Другие страны'
-    }
-    else {
+    } else {
         btnReset.classList.remove('_show')
         moreTitle.classList.remove('_show')
         moreTitle.innerText = ''
@@ -936,12 +935,12 @@ function selectedCountry() {
 
             if (i < 5 && showAll.classList.contains('_text-show') || showAll.classList.contains('_text-hide')) {
                 const chips = document.createElement('button')
-                
+
                 chips.classList.add('regions-chips')
                 chips.innerHTML = `<span class="regions-chips__title">${checkbox.value}</span>`
-                
+
                 chipsList.append(chips)
-                // arrC.push(checkbox.value)
+                    // arrC.push(checkbox.value)
             }
         }
 
@@ -951,8 +950,7 @@ function selectedCountry() {
         if (selectedC.length > 5) {
             showAll.querySelector('.modal-regions__show-all-quantity span').innerText = selectedC.length - 5
             showAll.classList.add('_show')
-        }
-        else {
+        } else {
             showAll.classList.remove('_show')
         }
 
@@ -973,8 +971,7 @@ function selectedCountry() {
                 selectedCountry()
             })
         }
-    }
-    else {
+    } else {
         chipsBlock.classList.remove('_show')
         chipsList.innerHTML = ''
     }
@@ -983,6 +980,7 @@ function selectedCountry() {
 
 // Показать все карточки городов
 showAllCities()
+
 function showAllCities() {
     const showAll = find('.modal-regions__show-all')
 
@@ -990,25 +988,24 @@ function showAllCities() {
         if (showAll.classList.contains('_text-show')) {
             showAll.classList.add('_text-hide')
             showAll.classList.remove('_text-show')
-        }
-        else {
+        } else {
             showAll.classList.add('_text-show')
             showAll.classList.remove('_text-hide')
         }
-    
+
         if (find('.modal-regions__acc-body .regions-checkbox input:checked')) {
             selectedRegions()
-            // console.log('selectedRegions')
-        }
-        else {
+                // console.log('selectedRegions')
+        } else {
             selectedCountry()
-            // console.log('selectedCountry')
+                // console.log('selectedCountry')
         }
     })
 }
 
 // Выбрать регионы страны
 activeRegion()
+
 function activeRegion() {
     const btn = find('.modal-regions__one-country')
     const title = find('.modal-regions__title')
@@ -1024,8 +1021,7 @@ function activeRegion() {
             blockR.classList.add('_show')
             title.innerText = 'Регион поиска'
             moreTitle.innerText = 'Все регионы'
-        }
-        else {
+        } else {
             blockC.classList.add('_show')
             blockR.classList.remove('_show')
             title.innerText = 'Страна поиска'
@@ -1036,6 +1032,7 @@ function activeRegion() {
 
 // Чекбоксы регионов
 checkboxesRegions()
+
 function checkboxesRegions() {
     const accElems = findAll('.modal-regions__acc')
 
@@ -1043,16 +1040,15 @@ function checkboxesRegions() {
         const acc = accElems[i];
         const selectAll = acc.querySelector('.regions-checkbox input')
         const checkboxElems = acc.querySelectorAll('.modal-regions__acc-body .regions-checkbox input')
-        
+
         selectAll.addEventListener('click', e => {
 
             if (selectAll.checked === true) {
-                for (let i = 0; i < checkboxElems.length; i++) {                    
+                for (let i = 0; i < checkboxElems.length; i++) {
                     checkboxElems[i].checked = true
                 }
-            }
-            else {
-                for (let i = 0; i < checkboxElems.length; i++) {                    
+            } else {
+                for (let i = 0; i < checkboxElems.length; i++) {
                     checkboxElems[i].checked = false
                 }
             }
@@ -1062,7 +1058,7 @@ function checkboxesRegions() {
 
         for (let i = 0; i < checkboxElems.length; i++) {
             const checkbox = checkboxElems[i];
-            
+
             checkbox.addEventListener('click', e => {
 
                 for (let i = 0; i < checkboxElems.length; i++) {
@@ -1094,13 +1090,13 @@ function selectedRegions() {
 
         for (let i = 0; i < selectedC.length; i++) {
             const checkbox = selectedC[i];
-            
+
             if (i < 5 && showAll.classList.contains('_text-show') || showAll.classList.contains('_text-hide')) {
                 const chips = document.createElement('button')
-                
+
                 chips.classList.add('regions-chips')
                 chips.innerHTML = `<span class="regions-chips__title">${checkbox.value}</span>`
-                
+
                 chipsList.append(chips)
             }
 
@@ -1109,17 +1105,15 @@ function selectedRegions() {
 
         // Сохраняем города в localStorage
         // localStorage.setItem('regions', JSON.stringify(arrC))
-    }
-    else {
+    } else {
         chipsBlock.classList.remove('_show')
         chipsList.innerHTML = ''
     }
-    
+
     if (selectedC.length > 5) {
         showAll.querySelector('.modal-regions__show-all-quantity span').innerText = selectedC.length - 5
         showAll.classList.add('_show')
-    }
-    else {
+    } else {
         showAll.classList.remove('_show')
     }
 
@@ -1144,6 +1138,7 @@ function selectedRegions() {
 
 // Сбросить настройки
 resetSettingsPlaces()
+
 function resetSettingsPlaces() {
     const modal = find('#regions')
     const btnElems = findAll('.location__reset')
@@ -1151,48 +1146,49 @@ function resetSettingsPlaces() {
     const blockC = find('.modal-regions__countries')
     const blockR = find('.modal-regions__regions')
     const oneCountry = find('.modal-regions__one-country')
-    
+
     for (let i = 0; i < btnElems.length; i++) {
         const btn = btnElems[i];
-        
+
         btn.addEventListener('click', e => {
             const checkboxElems = modal.querySelectorAll('.regions-checkbox input')
 
             for (let i = 0; i < checkboxElems.length; i++) {
                 const checkbox = checkboxElems[i];
-                
+
                 checkbox.checked = false
             }
-            
+
             blockC.classList.add('_show')
             blockR.classList.remove('_show')
             oneCountry.classList.remove('_active')
 
             title.innerText = 'Страна поиска'
-        
+
             selectedCountry()
             selectedRegions()
-            
+
             const countryElems = findAll('.regions-checkbox__input[data-space="country"]:checked')
             const regionElems = findAll('.regions-checkbox__input[data-space="region"]:checked')
-            
+
             localStorage.setItem('country', JSON.stringify([...countryElems].map(e => { return e.value })))
             localStorage.setItem('regions', JSON.stringify([...regionElems].map(e => { return e.value })))
 
             settingsPopupPlaces()
         })
-    }    
+    }
 }
 
 // Применить настройки городов и регионов
 applySettingsPlaces()
+
 function applySettingsPlaces() {
     const btn = find('.modal-regions__apply')
 
     btn.addEventListener('click', e => {
         const countryElems = findAll('.regions-checkbox__input[data-space="country"]:checked')
         const regionElems = findAll('.regions-checkbox__input[data-space="region"]:checked')
-        
+
         localStorage.setItem('country', JSON.stringify([...countryElems].map(e => { return e.value })))
         localStorage.setItem('regions', JSON.stringify([...regionElems].map(e => { return e.value })))
         settingsPopupPlaces()
@@ -1203,6 +1199,7 @@ function applySettingsPlaces() {
 
 // Настройка всплывашки
 settingsPopupPlaces()
+
 function settingsPopupPlaces() {
     const countries = find('.location__select_countries')
     const countriesList = find('.location__select_countries .location__countries')
@@ -1252,7 +1249,7 @@ function settingsPopupPlaces() {
             if (i < 5) {
                 const elem = document.createElement('span')
                 elem.innerText = country
-    
+
                 countriesList.append(elem)
             }
         }
@@ -1287,11 +1284,11 @@ function settingsPopupPlaces() {
                 if (i < 5) {
                     const elem = document.createElement('span')
                     elem.innerText = region
-        
+
                     regionsList.append(elem)
                 }
             }
-            
+
             if (regionsArr.length > 5) {
                 const elem = document.createElement('span')
                 elem.innerText = `+${regionsArr.length - 5}`
@@ -1299,7 +1296,7 @@ function settingsPopupPlaces() {
             }
         }
     }
-    
+
     function changeBtnPlace() {
 
         if (regionsArr.length === 0 && countryArr.length === 0) {
@@ -1321,7 +1318,7 @@ function settingsPopupPlaces() {
             places.innerText = countryArr[0]
             distance.classList.remove('_show')
             quantity.classList.remove('_show')
-            // distance.querySelector('span').innerText = radiusInput.value
+                // distance.querySelector('span').innerText = radiusInput.value
         }
 
         // Если выбрано больше 2 регионов
@@ -1330,15 +1327,14 @@ function settingsPopupPlaces() {
             if (regionsArr.length > 2) {
                 quantity.classList.add('_show')
                 quantity.querySelector('span').innerText = regionsArr.length - 2
-            }
-            else {
+            } else {
                 quantity.classList.remove('_show')
             }
             distance.classList.remove('_show')
 
             places.innerHTML = ''
             for (let i = 0; i < regionsArr.length; i++) {
-                
+
                 if (i < 2) {
                     const elem = document.createElement('span')
                     elem.innerText = regionsArr[i]
@@ -1354,15 +1350,14 @@ function settingsPopupPlaces() {
             if (countryArr.length > 2) {
                 quantity.classList.add('_show')
                 quantity.querySelector('span').innerText = countryArr.length - 2
-            }
-            else {
+            } else {
                 quantity.classList.remove('_show')
             }
             distance.classList.remove('_show')
 
             places.innerHTML = ''
             for (let i = 0; i < countryArr.length; i++) {
-                
+
                 if (i < 2) {
                     const elem = document.createElement('span')
                     elem.innerText = countryArr[i]
@@ -1378,17 +1373,17 @@ function settingsPopupPlaces() {
 
         for (let i = 0; i < arrBlocks.length; i++) {
             const elem = arrBlocks[i];
-            
+
             elem.classList.remove('_show')
         }
     }
-    
+
     function removeAllBlocksToBtn() {
         const arrBlocks = [places, distance, quantity]
 
         for (let i = 0; i < arrBlocks.length; i++) {
             const elem = arrBlocks[i];
-            
+
             elem.classList.remove('_show')
         }
     }
@@ -1396,6 +1391,7 @@ function settingsPopupPlaces() {
 
 // Показать всплывашку
 showPopupPlaces()
+
 function showPopupPlaces() {
     const location = find('.location')
 
@@ -1407,12 +1403,11 @@ function showPopupPlaces() {
         location.addEventListener('click', e => {
             location.classList.toggle('_show-popup')
         })
-    }
-    else {
+    } else {
         location.addEventListener('mouseenter', e => {
             location.classList.add('_show-popup')
         })
-    
+
         location.addEventListener('mouseleave', e => {
             location.classList.remove('_show-popup')
         })
@@ -1421,6 +1416,7 @@ function showPopupPlaces() {
 
 // Сохранить данные в всплывашке
 savePopupPlaces()
+
 function savePopupPlaces() {
     const save = find('.location__body-footer-btn-save')
     const location = find('.location')
@@ -1433,12 +1429,12 @@ function savePopupPlaces() {
         range.setAttribute('value', localStorage.getItem('distance'))
     }
 
-    
+
     save.addEventListener('click', e => {
         location.classList.remove('_show-popup')
         distanceBtn.innerText = range.value
         localStorage.setItem('distance', range.value)
-        
+
         if (menuMob.classList.contains('_show')) {
             closeModal()
         }
@@ -1447,9 +1443,10 @@ function savePopupPlaces() {
 
 // Выделение чекбоксов, значение value которых совпадает с элементом массива в localStorage
 loadCheckedFromLocalStorage()
+
 function loadCheckedFromLocalStorage() {
     const countryArr = localStorage.getItem('country') ? JSON.parse(localStorage.getItem('country')) : []
-    const regionsArr = localStorage.getItem('regions') ? JSON.parse(localStorage.getItem('regions')) : []    
+    const regionsArr = localStorage.getItem('regions') ? JSON.parse(localStorage.getItem('regions')) : []
 
     for (let i = 0; i < countryArr.length; i++) {
         const nameC = countryArr[i];
@@ -1457,11 +1454,11 @@ function loadCheckedFromLocalStorage() {
 
         checkbox.checked = true
     }
-    
+
     for (let i = 0; i < regionsArr.length; i++) {
         const nameR = regionsArr[i];
         const checkbox = find(`[data-space="region"][value="${nameR}"]`)
-        // console.log(checkbox)
+            // console.log(checkbox)
         checkbox.checked = true
     }
 
@@ -1471,10 +1468,11 @@ function loadCheckedFromLocalStorage() {
 
 // Открытие нужного блока при клике "Странам" и "Регионам" в всплывашке
 openDefiniteBlock()
+
 function openDefiniteBlock() {
     const btnC = find('.location__select_countries')
     const btnR = find('.location__select_regions')
-    
+
     const oneCountry = find('.modal-regions__one-country')
     const title = find('.modal-regions__title')
     const blockC = find('.modal-regions__countries')
@@ -1513,13 +1511,14 @@ function openDefiniteBlock() {
 //             showAllReg.classList.add('_text-show')
 //             showAllReg.classList.remove('_text-hide')
 //         }
-    
+
 //         selectedRegions()
 //     })
 // }
 
 // Выбор региона
 selectRegion()
+
 function selectRegion() {
     const btn = find('.modal-regions__one-country')
     const parent = btn.parentElement
@@ -1531,55 +1530,56 @@ function selectRegion() {
 
 // Аккордеоны
 accordions()
+
 function accordions() {
-  const hiddenSiblingAcc = false // Скрывать соседние аккордеоны. false если не нужно.
-  const accOpenElems = document.querySelectorAll('.acc-open')
-  
-  for (let i = 0; i < accOpenElems.length; i++) {
-    const accOpen = accOpenElems[i]
-    
-    accOpen.addEventListener('click', e => {
-      const container = (!accOpen.closest('.acc-body')) ? accOpen.parentElement.parentElement : accOpen.closest('.acc-body')
-      const parent = accOpen.closest('.acc')
-      const accBody = accOpen.closest('.acc-header').nextElementSibling
+    const hiddenSiblingAcc = false // Скрывать соседние аккордеоны. false если не нужно.
+    const accOpenElems = document.querySelectorAll('.acc-open')
 
-      parent.classList.toggle('_show') 
-      accOpen.classList.toggle('_show') 
-      
-      if (accBody.style.maxHeight) { 
-        accBody.style.maxHeight = null
-        parent.classList.remove('_show') 
-        accOpen.classList.remove('_show') 
-      }
-      else {
-        const adjacentElems = getSiblings(parent)
-        
-        if (hiddenSiblingAcc) {
-          for (let i = 0; i < adjacentElems.length; i++) {
-            const elem = adjacentElems[i]
-            const elemHeader = elem.querySelector('.acc-open')
-            const elemBody = elem.querySelector('.acc-body')
+    for (let i = 0; i < accOpenElems.length; i++) {
+        const accOpen = accOpenElems[i]
 
-            elem.classList.remove('_show') 
-            elemHeader.classList.remove('_show')  
-            elemBody.style.maxHeight = null
-          }
-        }
-        
-        accBody.style.maxHeight = accBody.scrollHeight + 'px'
-        container.style.maxHeight = parseInt(container.scrollHeight) + accBody.scrollHeight + 'px'
-      }
-    })
-  }
+        accOpen.addEventListener('click', e => {
+            const container = (!accOpen.closest('.acc-body')) ? accOpen.parentElement.parentElement : accOpen.closest('.acc-body')
+            const parent = accOpen.closest('.acc')
+            const accBody = accOpen.closest('.acc-header').nextElementSibling
+
+            parent.classList.toggle('_show')
+            accOpen.classList.toggle('_show')
+
+            if (accBody.style.maxHeight) {
+                accBody.style.maxHeight = null
+                parent.classList.remove('_show')
+                accOpen.classList.remove('_show')
+            } else {
+                const adjacentElems = getSiblings(parent)
+
+                if (hiddenSiblingAcc) {
+                    for (let i = 0; i < adjacentElems.length; i++) {
+                        const elem = adjacentElems[i]
+                        const elemHeader = elem.querySelector('.acc-open')
+                        const elemBody = elem.querySelector('.acc-body')
+
+                        elem.classList.remove('_show')
+                        elemHeader.classList.remove('_show')
+                        elemBody.style.maxHeight = null
+                    }
+                }
+
+                accBody.style.maxHeight = accBody.scrollHeight + 'px'
+                container.style.maxHeight = parseInt(container.scrollHeight) + accBody.scrollHeight + 'px'
+            }
+        })
+    }
 }
 
 // Слайдер диапазона
 rangeChangeCities()
+
 function rangeChangeCities() {
     const range = find('.location__radius-range input')
     const distance = find('.location__radius-value span')
-    // const distanceBtn = find('.location__distance span')
-    
+        // const distanceBtn = find('.location__distance span')
+
     rangesliderJs.create(range, {
         onSlide: e => { distance.innerText = e }
     })
@@ -1589,6 +1589,7 @@ function rangeChangeCities() {
 
 // Отступ у footer__top на планшете и ниже
 paddingFooterTopMobile()
+
 function paddingFooterTopMobile() {
     if (window.innerWidth <= 920) {
         const footerTop = find('.footer__top')
@@ -1601,6 +1602,7 @@ function paddingFooterTopMobile() {
 
 // Поиск в мобильном меню
 searchMobMenu()
+
 function searchMobMenu() {
     const mobMenu = find('#mob-menu')
     const mobMenuHeader = mobMenu.querySelector('.mob-menu__header')
@@ -1625,8 +1627,8 @@ function searchMobMenu() {
 
 // Маска телефона
 window.addEventListener("DOMContentLoaded", function() {
-    [].forEach.call( document.querySelectorAll('.mask-phone input'), function(input) {
-    
+    [].forEach.call(document.querySelectorAll('.mask-phone input'), function(input) {
+
         input.addEventListener('focus', e => {
             if (input.value === '') {
                 input.value = '+'
@@ -1639,42 +1641,43 @@ window.addEventListener("DOMContentLoaded", function() {
             }
         })
 
-            
 
-    // var keyCode;
-    // function mask(event) {
-    //     event.keyCode && (keyCode = event.keyCode);
-    //     var pos = this.selectionStart;
-    //     if (pos < 3) event.preventDefault();
-    //     var matrix = "+7 (___) ___-__-__",
-    //         i = 0,
-    //         def = matrix.replace(/\D/g, ""),
-    //         val = this.value.replace(/\D/g, ""),
-    //         new_value = matrix.replace(/[_\d]/g, function(a) {
-    //             return i < val.length ? val.charAt(i++) || def.charAt(i) : a
-    //         });
-    //     i = new_value.indexOf("_");
-    //     if (i != -1) {
-    //         i < 5 && (i = 3);
-    //         new_value = new_value.slice(0, i)
-    //     }
-    //     var reg = matrix.substr(0, this.value.length).replace(/_+/g,
-    //         function(a) {
-    //             return "\\d{1," + a.length + "}"
-    //         }).replace(/[+()]/g, "\\$&");
-    //     reg = new RegExp("^" + reg + "$");
-    //     if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
-    //     if (event.type == "blur" && this.value.length < 5)  this.value = ""
-    // }
-    // input.addEventListener("input", mask, false);
-    // input.addEventListener("focus", mask, false);
-    // input.addEventListener("blur", mask, false);
-    // input.addEventListener("keydown", mask, false)
-  });
+
+        // var keyCode;
+        // function mask(event) {
+        //     event.keyCode && (keyCode = event.keyCode);
+        //     var pos = this.selectionStart;
+        //     if (pos < 3) event.preventDefault();
+        //     var matrix = "+7 (___) ___-__-__",
+        //         i = 0,
+        //         def = matrix.replace(/\D/g, ""),
+        //         val = this.value.replace(/\D/g, ""),
+        //         new_value = matrix.replace(/[_\d]/g, function(a) {
+        //             return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+        //         });
+        //     i = new_value.indexOf("_");
+        //     if (i != -1) {
+        //         i < 5 && (i = 3);
+        //         new_value = new_value.slice(0, i)
+        //     }
+        //     var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+        //         function(a) {
+        //             return "\\d{1," + a.length + "}"
+        //         }).replace(/[+()]/g, "\\$&");
+        //     reg = new RegExp("^" + reg + "$");
+        //     if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        //     if (event.type == "blur" && this.value.length < 5)  this.value = ""
+        // }
+        // input.addEventListener("input", mask, false);
+        // input.addEventListener("focus", mask, false);
+        // input.addEventListener("blur", mask, false);
+        // input.addEventListener("keydown", mask, false)
+    });
 });
 
 // Показать больше пунктов списка
 showMoreList()
+
 function showMoreList() {
     const listElems = findAll('[data-list]')
 
@@ -1682,25 +1685,25 @@ function showMoreList() {
         const list = listElems[i];
         const more = list.nextElementSibling
         const itemElems = list.querySelectorAll('.na-brand__item')
-        
+
         console.log(list, more)
         more.addEventListener('click', e => {
             if (!more.classList.contains('_show')) {
                 const moreTitle = more.querySelector('.na-more__title')
                 let newMoreTitle
-    
+
                 for (let i = 0; i < itemElems.length; i++) {
                     const item = itemElems[i];
                     item.style.display = 'block'
                 }
-    
+
                 switch (moreTitle.innerHTML) {
                     case 'Все марки':
                         newMoreTitle = 'Популярные марки'
                     case 'Все модели':
                         newMoreTitle = 'Популярные модели'
                 }
-    
+
                 moreTitle.innerHTML = newMoreTitle
                 more.classList.add('_show')
             }
@@ -1725,6 +1728,7 @@ function showMoreList() {
 
 // Наполнение сайдбара пунктами с названиями блоков для заполнения
 if (document.getElementById('na-sidebar')) naSidebar()
+
 function naSidebar() {
     const sidebar = document.getElementById('na-sidebar')
     const list = sidebar.querySelector('.na-sidebar__list')
@@ -1741,12 +1745,14 @@ function naSidebar() {
 
 // Активация пунктов сайдбара, если блоки не пустые
 activeItemSidebar()
+
 function activeItemSidebar() {
-    
+
 }
 
 // Создание текстового поля у селекта для дальнейшего его прослушивания
 selectCreateInput()
+
 function selectCreateInput() {
     const selectElems = findAll('.select')
 
@@ -1754,16 +1760,17 @@ function selectCreateInput() {
         const select = selectElems[i];
         const input = document.createElement('input')
         input.type = 'text'
-        
+
         select.prepend(input)
     }
 }
 
 // Выбор города
 selectCity()
+
 function selectCity() {
     const selectElems = findAll('.select-city')
-    
+
     for (let i = 0; i < selectElems.length; i++) {
         const select = selectElems[i];
         const input = select.querySelector('.textfield input')
@@ -1774,8 +1781,7 @@ function selectCity() {
                 select.classList.add('_open')
 
                 // Отправляем запрос в БД, получаем и выводим список городов, в которых есть строка, введенная в текстовое поле
-            }
-            else {
+            } else {
                 select.classList.remove('_open')
             }
         })
@@ -1789,13 +1795,13 @@ function selectCity() {
 
         for (let i = 0; i < itemElems.length; i++) {
             const item = itemElems[i];
-            
+
             item.addEventListener('click', e => {
                 const city = item.querySelector('.select-city-dropdown__city')
-                
+
                 input.value = city.innerText
                 select.classList.add('_valid')
-                // clearList(select)
+                    // clearList(select)
             })
         }
     }
@@ -1809,6 +1815,7 @@ function selectCity() {
 
 // Списки выбора
 select()
+
 function select() {
     // Проверяем есть ли выбранные элементы при загрузке страницы. Если есть, то селект заполняется
     const selectedItemElems = document.querySelectorAll('.select-dropdown__item._selected')
@@ -1822,7 +1829,7 @@ function select() {
         sTitle.innerText = selectedItem.innerHTML
         sInput.value = selectedItem.innerText
         sInput.classList.add('_full')
-        // console.log(sInput)
+            // console.log(sInput)
         select.classList.add('_valid')
     }
 
@@ -1857,7 +1864,7 @@ function select() {
             sTitle.innerText = target.innerText
             sInput.value = target.innerText
             sInput.classList.add('_full')
-            // console.log(sInput)
+                // console.log(sInput)
 
             removeAll(neighbourTargets, '_selected')
             target.classList.add('_selected')
@@ -1871,8 +1878,7 @@ function select() {
 
                 if (checkValidTextfields(form)) {
                     btnSubmit.disabled = false
-                }
-                else {
+                } else {
                     btnSubmit.disabled = true
                 }
             }
@@ -1882,6 +1888,7 @@ function select() {
 
 // Плейсхолдер текстовых полей
 labelTextfield()
+
 function labelTextfield() {
     const textfieldElems = document.querySelectorAll('.textfield')
 
@@ -1908,17 +1915,17 @@ function labelTextfield() {
 
 // Проверка инпутов на пустоту
 emptyInput()
+
 function emptyInput() {
     const inputElems = findAll('input')
 
     for (let i = 0; i < inputElems.length; i++) {
         const input = inputElems[i];
-        
+
         input.addEventListener('input', e => {
             if (input.value != '') {
                 input.classList.add('_full')
-            }
-            else {
+            } else {
                 input.classList.remove('_full')
             }
         })
@@ -1927,6 +1934,7 @@ function emptyInput() {
 
 // Валидация текстовых полей
 validTextfield()
+
 function validTextfield() {
     const textfieldElems = document.querySelectorAll('.textfield')
 
@@ -1935,12 +1943,11 @@ function validTextfield() {
         const input = textfield.querySelector('input, textarea')
 
         input.addEventListener('change', e => {
-            
+
             if (input.type === 'email') {
                 if (validateEmail(input.value)) {
                     textfield.classList.add('_valid')
-                }
-                else {
+                } else {
                     textfield.classList.remove('_valid')
                 }
             }
@@ -1949,13 +1956,14 @@ function validTextfield() {
 
     // Валидность email
     function validateEmail(email) {
-        var pattern  = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return pattern .test(email);
+        var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return pattern.test(email);
     }
 }
 
 // В инпуте могут быть только цифры если у textfield есть класс only-digit
 onlyDigit()
+
 function onlyDigit() {
     const textfieldElems = document.querySelectorAll('.only-digit')
 
@@ -1964,11 +1972,11 @@ function onlyDigit() {
 
         input.addEventListener('keypress', function(e) {
             const inputValue = e.charCode;
-        
-            if(!(inputValue >= 48 && inputValue <= 57) && (inputValue != 43 && inputValue != 0 && inputValue != 40 && inputValue != 41 && inputValue != 45)) {
+
+            if (!(inputValue >= 48 && inputValue <= 57) && (inputValue != 43 && inputValue != 0 && inputValue != 40 && inputValue != 41 && inputValue != 45)) {
                 e.preventDefault();
             }
-        }); 
+        });
     }
 }
 
@@ -1985,17 +1993,18 @@ function changeRangeInputCities() {
 
 // Валидация формы. У кнопки удаляется disabled если все поля заполнены
 validFormChangeDisabledSubmit()
+
 function validFormChangeDisabledSubmit() {
     const formElems = findAll('[data-form-valid=submit-disabled]')
-    
+
     for (let i = 0; i < formElems.length; i++) {
         const form = formElems[i]
         const inputElems = form.querySelectorAll('input')
         const btnSubmit = form.querySelector('[type=submit]')
-        
+
         for (let i = 0; i < inputElems.length; i++) {
             const input = inputElems[i];
-            
+
             input.addEventListener('input', e => {
                 btnSubmitDisabled(form, btnSubmit)
             })
@@ -2007,20 +2016,19 @@ function validFormChangeDisabledSubmit() {
 function btnSubmitDisabled(form, btnSubmit) {
     if (checkValidTextfields(form)) {
         btnSubmit.disabled = false
-    }
-    else {
+    } else {
         btnSubmit.disabled = true
     }
 }
 
 function checkValidTextfields(form) {
-    
+
     const inputElems = form.querySelectorAll('input')
     let valid = true
 
     for (let i = 0; i < inputElems.length; i++) {
         const input = inputElems[i];
-        
+
         if (!input.classList.contains('_full')) {
             valid = false
         }
@@ -2031,49 +2039,49 @@ function checkValidTextfields(form) {
 
 // Изменение размера текстового поля textarea
 resizeHeightTextarea()
+
 function resizeHeightTextarea() {
     var observe;
     if (window.attachEvent) {
-        observe = function (element, event, handler) {
-            element.attachEvent('on'+event, handler);
+        observe = function(element, event, handler) {
+            element.attachEvent('on' + event, handler);
         };
-    }
-    else {
-        observe = function (element, event, handler) {
+    } else {
+        observe = function(element, event, handler) {
             element.addEventListener(event, handler, false);
         };
     }
-    function init (maxH) {
+
+    function init(maxH) {
         var textElems = findAll('textarea');
 
         for (let i = 0; i < textElems.length; i++) {
             const text = textElems[i];
-            var maxHeight=maxH;
-            var oldHeight=  text.scrollHeight;
+            var maxHeight = maxH;
+            var oldHeight = text.scrollHeight;
             var newHeight;
-            function resize () {
-    
-            text.style.height = 'auto';
-            newHeight= text.scrollHeight;
-            if(newHeight>oldHeight && newHeight>maxHeight)
-            {
-                text.style.height=oldHeight+'px';
-    
+
+            function resize() {
+
+                text.style.height = 'auto';
+                newHeight = text.scrollHeight;
+                if (newHeight > oldHeight && newHeight > maxHeight) {
+                    text.style.height = oldHeight + 'px';
+
+                } else {
+                    text.style.height = newHeight + 'px';
+                    oldHeight = text.scrollHeight;
+                }
+
             }
-            else{
-                text.style.height = newHeight+'px';
-                oldHeight=  text.scrollHeight;
-            }
-    
-            }
-            
-            function delayedResize () {
+
+            function delayedResize() {
                 window.setTimeout(resize, 0);
             }
-            observe(text, 'change',  resize);
-            observe(text, 'cut',     delayedResize);
-            observe(text, 'paste',   delayedResize);
-            observe(text, 'drop',    delayedResize);
+            observe(text, 'change', resize);
+            observe(text, 'cut', delayedResize);
+            observe(text, 'paste', delayedResize);
+            observe(text, 'drop', delayedResize);
             observe(text, 'keydown', delayedResize);
 
             resize();
@@ -2084,12 +2092,13 @@ function resizeHeightTextarea() {
 
 // Табы на странице "Мои объявления"
 tabsMineAd()
+
 function tabsMineAd() {
     const btnElems = findAll('[data-tab-btn]')
 
     for (let i = 0; i < btnElems.length; i++) {
         const btn = btnElems[i];
-        
+
         btn.addEventListener('click', e => {
             if (btn.classList.contains('_active')) return
             const data = btn.dataset.tabBtn
@@ -2104,21 +2113,30 @@ function tabsMineAd() {
 
                 for (let i = 0; i < cardElems.length; i++) {
                     const card = cardElems[i];
-    
+
                     setTimeout(e => {
                         card.classList.add('_show')
-                    }, (i+1)*100)
+                        sliderMACard.forEach(i => {
+                            i.update();
+                        });
+                        adaptiveWidthSliderMACard();
+                    }, (i + 1) * 100)
                 }
+
             }, 1000)
 
             removeAll(btnElems, '_active')
-            btn.classList.add('_active')
+            btn.classList.add('_active');
         })
     }
+
+
+
 }
 
 // Открытие плашки при нажатии на кнопку "Управление" на странице "Мои объявления" на разрешении меньше 768px
 if (window.innerWidth <= 768) openModalSettingsOnAdaptiveMineAd()
+
 function openModalSettingsOnAdaptiveMineAd() {
     // const btnSettingsElems = findAll('[data-open-settings]')
 
@@ -2130,7 +2148,7 @@ function openModalSettingsOnAdaptiveMineAd() {
                 const btnSettings = e.target
                 const offsetPageBtn = offsetPage(btnSettings)
                 const popup = document.createElement('div')
-    
+
                 popup.classList.add('ma-card__settings')
                 popup.innerHTML = `
                     <div class="ma-card__settings-list">
@@ -2146,5 +2164,23 @@ function openModalSettingsOnAdaptiveMineAd() {
                 console.log(offsetPage(btnSettings))
             }
         }
+
+        if (e.target.getAttribute('data-open-filter') != null) {
+            e.target.nextElementSibling.classList.toggle('_active');
+        }
+
+        if (e.target.classList.contains('ma-tab__button') || e.target.closest('.ma-tab__button')) {
+            const text = (e.target.closest('.ma-tab__button')) ? e.target.innerText : e.target.querySelector('.ma-tab__button-title').innerText;
+            e.target.closest('.ma-tab__header').querySelector('[data-open-filter]').innerText = text;
+            e.target.closest('.ma-tab__header').querySelector('.ma-tab__filter-btn').classList.add('_active_color');
+            e.target.closest('.ma-tab__header-list').classList.toggle('_active');
+        }
     })
 }
+
+
+window.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal-publication__not')) {
+        closeModal();
+    }
+});

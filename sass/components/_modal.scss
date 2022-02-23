@@ -10,12 +10,10 @@
     visibility: hidden;
     opacity: 0;
     transition: $tr;
-
     &._show {
         visibility: visible;
         opacity: 1;
         overflow-y: auto;
- 
         & .modal__wrap {
             transform: translate(0, 0);
         }
@@ -31,7 +29,7 @@
 .modal__wrap {
     min-height: 100%;
     transform: translate(0, 100vh);
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 30px 16px;
@@ -79,7 +77,6 @@
     right: 16px;
     width: 24px;
     height: 24px;
-
     & span {
         position: absolute;
         top: 50%;
@@ -88,11 +85,9 @@
         height: 2px;
         background: $text-primary;
         border-radius: 100px;
-
         &:nth-child(1) {
             transform: translate(-50%, -50%) rotate(45deg);
         }
-
         &:nth-child(2) {
             transform: translate(-50%, -50%) rotate(-45deg);
         }
@@ -113,8 +108,39 @@
     height: 100vh;
     border-radius: 0;
     padding: 0;
-
     @media (max-width: $mobile-l) {
         max-width: none;
     }
+}
+
+.modal-publication {
+    .modal__popup {
+        padding: 30px;
+        width: 370px;
+    }
+    .modal-auth__body {
+        display: flex;
+        button {
+            height: 40px
+        }
+    }
+}
+
+.modal-publication__picture {
+    width: 140px;
+    text-align: center;
+    margin: 0 auto 30px auto;
+    display: flex;
+}
+
+.modal-publication__title {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.modal-publication__yes {
+    margin-right: 10px;
+    background: $btn-primary-default;
+    color: #fff
 }
