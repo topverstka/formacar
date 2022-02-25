@@ -1,0 +1,113 @@
+.modal-show-phone {
+    z-index: 9
+}
+
+.modal-publication__info {
+    display: flex;
+    align-items: center;
+}
+
+.modal-publication__info-avatar {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.modal-publication__info-text {
+    margin-left: 20px
+}
+
+.modal-publication__info-text-name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 5px;
+    color: $text-primary;
+    @media (max-width: $tablet) {
+        font-size: 16px
+    }
+}
+
+.modal-publication__info-text-person {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: $text-second-l
+}
+
+.modal-show-shop .modal-publication__info-text-person {
+    color: $text-accent
+}
+
+.modal-show-phone .modal__popup {
+    width: 522px;
+    padding: 50px;
+    max-width: 100%;
+    z-index: 9;
+    @media (max-width: $tablet) {
+        width: 266px;
+        padding: 30px
+    }
+}
+
+.modal-show-phone .modal-auth__body {
+    display: flex;
+    button {
+        height: 40px
+    }
+    @media (max-width: $tablet) {
+        flex-direction: column;
+    }
+}
+
+.modal-show-phone__tel {
+    margin-right: 10px;
+    background: #02BC4D;
+    color: #fff;
+    @media (max-width: $tablet) {
+        margin-bottom: 10px;
+    }
+}
+
+.modal-show-phone__message {
+    background: $text-accent;
+    color: #fff;
+}
+
+.modal-show-phone .modal__close {
+    right: -36px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    @media (max-width: $tablet) {
+        position: static;
+        margin: 30px auto 0 auto;
+        display: flex;
+        margin-top: 30px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        height: 22px;
+        svg {
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            rect {
+                fill: $outline-d
+            }
+        }
+    }
+}
+
+.modal__close-text {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 22px;
+    color: $text-second-l;
+    text-transform: uppercase;
+    opacity: 0;
+    @media (max-width: $tablet) {
+        opacity: 1;
+    }
+}

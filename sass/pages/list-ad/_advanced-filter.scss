@@ -8,23 +8,22 @@
     width: 100%;
     background: #fff;
     border-radius: $radius;
-
     @media (max-width: 1570px) {
         max-width: none;
         width: 280px;
     }
-
-    @media (max-width: $laptop-m) {
+    @media (max-width: $laptop) {
         position: initial;
         width: 100%;
         margin-top: 20px;
     }
+    @media (max-width: $tablet-s) {
+        padding-right: 10px
+    }
 }
 
 .advanced-filter__wrap {
-
     &._show {
-
         & .advanced-filter__body {
             margin-bottom: 20px;
             overflow: initial;
@@ -39,20 +38,18 @@
     justify-content: space-between;
     padding: 20px;
     cursor: pointer;
-
     @media (max-width: $laptop-m) {
         justify-content: flex-start;
         padding: 0;
     }
-
+    @media (max-width:$tablet-s) {
+        margin-bottom: 20px;
+    }
     &._show {
-
         & .advanced-filter__title {
             color: $text-accent;
         }
-
         & .advanced-filter__chevron {
-            
             & svg {
                 transform: rotate(180deg);
                 fill: $icon-blue-l;
@@ -66,16 +63,17 @@
     font-weight: 700;
     text-transform: uppercase;
     transition: $tr;
+    @media (max-width: $tablet-s) {
+        font-size: 12px
+    }
 }
 
 .advanced-filter__chevron {
     width: 24px;
     height: 24px;
-
     & svg {
         transition: $tr;
     }
-
     @media (max-width: $laptop-m) {
         margin-left: 10px;
     }
@@ -87,18 +85,18 @@
     transition: $tr;
     padding: 0 20px;
     overflow: hidden;
-    
     @media (max-width: $laptop-m) {
         padding: 0;
         margin-top: 20px;
     }
-    
     & .list-ad__form-section {
         margin-bottom: 10px;
-
         @media (max-width: $laptop-m) {
             margin-bottom: 0;
         }
+    }
+    @media (max-width: $tablet-s) {
+        margin-top: 0
     }
 }
 
@@ -107,9 +105,7 @@
     align-items: center;
     column-gap: 10px;
     margin-bottom: 20px;
-
     @media (max-width: $laptop-m) {
-        
         & .ad-tab {
             width: 91px;
         }
@@ -117,26 +113,25 @@
 }
 
 .advanced-filter__list-section {
-
     @media (max-width: $laptop-m) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 10px 20px;
     }
-
     @media (max-width: $tablet-l) {
         gap: 10px;
     }
-
     @media (max-width: $tablet) {
         grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: $tablet-s) {
+        grid-template-columns: 1fr;
     }
 }
 
 // .list-ad__form-section {
 //     margin-bottom: 10px;
 // }
-
 // Заголовки у секций сайдбара
 .advanced-filter__subtitle {
     display: inline-block;
@@ -147,7 +142,6 @@
 
 .advanced-filter__show-btn {
     margin-top: 10px;
-
     @media (max-width: $laptop-m) {
         display: none;
     }

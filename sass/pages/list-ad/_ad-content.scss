@@ -2,19 +2,25 @@
     width: 100%;
     // min-width: 1100px;
     // margin-right: 280px;
-
     @media (max-width: 1570px) {
         // min-width: auto;
     }
 }
 
 @import './_ad-filter';
-
 .list-ad__card-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-top: 70px;
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $tablet-s) {
+        margin-top: 30px;
+        grid-gap: 30px 10px
+    }
 }
 
 @import './_la-card';
+@import './_la-card__tuning';

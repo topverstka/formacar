@@ -96,12 +96,14 @@ window.addEventListener('click', e => {
 })
 
 // Отступ Раздела с контентом на расстояние равное ширине расширенного фильтра
-if (window.innerWidth > 1280) indentContentListAD()
+if (window.innerWidth > 1024) indentContentListAD(window.innerWidth)
 
-function indentContentListAD() {
+function indentContentListAD(width) {
     const content = find('.ad-content')
     const advancedFilter = find('.advanced-filter')
-    content !== null ? content.style.width = `calc(100% - ${advancedFilter.offsetWidth + 30}px)` : '';
+        //content !== null ? content.style.width = `calc(100% - ${advancedFilter.offsetWidth + 30}px)` : '';
+    const width_display = width < 1281 ? 31 : 50;
+    content !== null ? content.style.width = `calc(100% - ${advancedFilter.offsetWidth + width_display}px)` : '';
 }
 
 // Валидация формы
@@ -562,14 +564,82 @@ const sliderMACard = new Swiper('.ma-card__slider', {
     },
 });
 
+function row_container() {
+    document.querySelectorAll('.la-card__wrap').forEach(i => {
+        i.closest('.list-ad__card-list').classList.add('list-ad__card-row');
+        let clone_header = i.querySelector('.la-card__header').cloneNode(true);
+        let clone_content = i.querySelector('.la-card__content').cloneNode(true);
+        let clone_footer = i.querySelector('.la-card__footer').cloneNode(true);
+        let clone_options = i.querySelector('.la-card__options').cloneNode(true);
+        i.classList.add('_active-row');
+        i.querySelector('.la-card__content').insertAdjacentHTML('beforebegin', '<div class="la-card__row-container"></div>');
+        i.querySelector('.la-card__row-container').insertAdjacentHTML('beforeend', clone_header.outerHTML);
+        i.querySelector('.la-card__row-container').insertAdjacentHTML('beforeend', clone_content.outerHTML);
+        i.querySelector('.la-card__row-container').insertAdjacentHTML('beforeend', clone_footer.outerHTML);
+        i.querySelector('.la-card__row-container').insertAdjacentHTML('beforeend', clone_options.outerHTML);
+
+    });
+}
+let html_list_ad = document.querySelector('.list-ad__card-list') !== null ? document.querySelector('.list-ad__card-list').innerHTML : '';
+
+function change_grid(i) {
+
+    if (window.innerWidth >= 500) {
+        document.querySelectorAll('.ad-filter__grid-list button').forEach(i => i.classList.remove('_active'));
+        i.classList.add('_active');
+        if (i.classList.contains('ad-filter__grid-btn-box')) {
+            document.querySelector('.list-ad__card-list').innerHTML = html_list_ad;
+            new Swiper('.la-card__slider', {
+                spaceBetween: 4,
+                slidesPerView: 'auto',
+                observer: true,
+                observeParents: true,
+
+                pagination: {
+                    el: '.ma-card__pagination',
+                    clickable: true,
+                },
+            });
+            document.querySelector('.list-ad__card-list').classList.remove('list-ad__card-row');
+        }
+
+        if (i.classList.contains('ad-filter__grid-btn-row')) {
+            if (!document.querySelector('.list-ad__card-list').classList.contains('list-ad__card-row')) {
+                row_container();
+            }
+        }
+    } else {
+        document.querySelectorAll('.ad-filter__grid-list button').forEach(i => i.classList.remove('_active'));
+        i.classList.add('_active');
+        if (i.classList.contains('ad-filter__grid-btn-box')) {
+            document.querySelector('.list-ad__card-list').classList.remove('list-ad__card-row');
+        }
+
+        if (i.classList.contains('ad-filter__grid-btn-row')) {
+            document.querySelector('.list-ad__card-list').classList.add('list-ad__card-row');
+        }
+    }
+    liked();
+    openModalWhenClickingOnBtn();
+}
+
+
+document.querySelectorAll('.ad-filter__grid-list button').forEach(i => {
+    i.addEventListener('click', e => {
+        change_grid(i);
+    });
+});
+
 const sliderLACard = new Swiper('.la-card__slider', {
     spaceBetween: 4,
     slidesPerView: 'auto',
+    observer: true,
+    observeParents: true,
 
-    // pagination: {
-    //     el: '.ma-card__pagination',
-    //     clickable: true,
-    // },
+    pagination: {
+        el: '.ma-card__pagination',
+        clickable: true,
+    },
 });
 
 // const swiper = new Swiper('.swiper-container', {
@@ -1816,7 +1886,13 @@ function selectCity() {
 // Списки выбора
 select()
 
+
+
+
+
+
 function select() {
+
     // Проверяем есть ли выбранные элементы при загрузке страницы. Если есть, то селект заполняется
     const selectedItemElems = document.querySelectorAll('.select-dropdown__item._selected')
 
@@ -1860,6 +1936,7 @@ function select() {
             const sTitle = select.querySelector('.select-input__title')
             const sInput = select.querySelector('input')
             const neighbourTargets = target.parentElement.querySelectorAll('.select-dropdown__item')
+            const Strack = target.closest('.list-ad__form-track')
 
             sTitle.innerText = target.innerText
             sInput.value = target.innerText
@@ -1882,9 +1959,91 @@ function select() {
                     btnSubmit.disabled = true
                 }
             }
+
+
+            if (Strack) {
+                add_clear_btn(select.querySelector('.select-input'));
+                select.classList.remove('_valid');
+                target.classList.remove('_valid');
+            }
+
+
         }
+
+        if (target.classList.contains('select-dropdown__all')) {
+            target.closest('.select-dropdown').querySelectorAll('.select-dropdown__checkbox-input').forEach(i => {
+                i.checked = false;
+            });
+            target.closest('.select').querySelector('.select-input__title').innerText = target.innerText;
+            target.closest('.select').querySelector('.select-input__title').setAttribute('data-title', target.innerText);
+        }
+
+
+        if (target.classList.contains('select-dropdown__checkbox-box') || target.closest('.select-dropdown__checkbox-box')) {
+
+            if (target.closest('.select-dropdown__checkbox-box')) {
+
+                let textDrop = target.closest('.select-dropdown__checkbox-box').querySelector('.select-dropdown__checkbox-text');
+                let textTitle = target.closest('.select').querySelector('.select-input__title');
+                if (target.closest('.select-dropdown__checkbox-box').querySelector('.select-dropdown__checkbox-input').checked) {
+
+                    if (textTitle.innerText === 'Не выбрано' || textTitle.innerText === textTitle.getAttribute('data-title')) {
+                        textTitle.innerHTML = '';
+                        textTitle.insertAdjacentHTML('beforeend', textDrop.innerText);
+                    } else {
+                        textTitle.insertAdjacentHTML('beforeend', ', ' + textDrop.innerText);
+                    }
+
+                    target.closest('.select').querySelector('.select-input__title').classList.add('_active_drop');
+                } else {
+
+
+                    let text_arr = [];
+                    text_arr.push(textTitle.innerText.split(','));
+
+                    let arr_stroke = text_arr.join(',');
+
+                    let str = arr_stroke;
+
+                    let text_push = text_arr[0].length > 1 ? ', ' + textDrop.innerText : textDrop.innerText;
+
+
+
+                    if (text_arr[0].indexOf(textDrop.innerText) === 0 && text_arr[0].length > 1) {
+                        text_push = textDrop.innerText + ', ';
+                    }
+
+                    let rExp = new RegExp(text_push, "g");
+
+                    textTitle.innerText = str.replace(rExp, '');
+
+                    if (textTitle.innerText === '') {
+                        textTitle.innerText = 'Не выбрано';
+                        target.closest('.select').querySelector('.select-input__title').classList.remove('_active_drop');
+                    }
+
+                }
+            }
+        }
+
+
     })
 }
+
+
+function add_clear_btn(element) {
+
+    const btn = document.createElement('div')
+    btn.classList.add('textfield__clear')
+    btn.innerHTML = `<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 0C4.97 0 0.5 4.47 0.5 10C0.5 15.53 4.97 20 10.5 20C16.03 20 20.5 15.53 20.5 10C20.5 4.47 16.03 0 10.5 0Z" fill="#B4B4BF"/><path d="M14.0833 13.5835C13.7583 13.9085 13.2333 13.9085 12.9083 13.5835L10.4999 11.1752L8.09159 13.5835C7.76659 13.9085 7.24159 13.9085 6.91659 13.5835C6.76055 13.4278 6.67285 13.2164 6.67285 12.996C6.67285 12.7756 6.76055 12.5642 6.91659 12.4085L9.32492 10.0002L6.91659 7.59185C6.76055 7.43615 6.67285 7.22478 6.67285 7.00435C6.67285 6.78391 6.76055 6.57254 6.91659 6.41685C7.24159 6.09185 7.76659 6.09185 8.09159 6.41685L10.4999 8.82518L12.9083 6.41685C13.2333 6.09185 13.7583 6.09185 14.0833 6.41685C14.4083 6.74185 14.4083 7.26685 14.0833 7.59185L11.6749 10.0002L14.0833 12.4085C14.3999 12.7252 14.3999 13.2585 14.0833 13.5835Z" fill="white"/></svg>`
+    element.append(btn);
+
+    btn.addEventListener('click', e => {
+        element.querySelector('.select-input__title').innerText = 'Не выбрано';
+        element.querySelector('.textfield__clear').remove();
+    });
+}
+
 
 // Плейсхолдер текстовых полей
 labelTextfield()
@@ -2182,5 +2341,9 @@ function openModalSettingsOnAdaptiveMineAd() {
 window.addEventListener('click', function(e) {
     if (e.target.classList.contains('modal-publication__not')) {
         closeModal();
+    }
+
+    if (e.target.classList.contains('btn-filter__list')) {
+        e.target.closest('.list-ad').querySelector('.ad-filter').classList.toggle('_active-filter');
     }
 });

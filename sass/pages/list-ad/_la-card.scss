@@ -1,45 +1,61 @@
+@import '../../components/modals/_person';
 .la-card {
     background-color: #fff;
     border-radius: $radius;
     overflow: hidden;
+    @media (max-width: $tablet-s) {
+        height: max-content
+    }
 }
 
 // Большое объявление
 .la-card_big {
-
     & .la-card__title {
         font-size: 20px;
     }
-
     & .la-card__price {
         font-size: 24px;
         padding: 4px 10px;
     }
-
     & .la-card__slide {
         width: 334px;
         height: 250px;
-
         @media (max-width: 1570px) {
             width: 266px;
             height: 200px;
         }
+        @media (max-width: $tablet-s) {
+            height: 102px;
+            margin-bottom: 8px;
+            width: 100%;
+            &:first-child {
+                border-radius: 0;
+            }
+            img {
+                object-fit: cover;
+            }
+        }
     }
-
     & .la-card__options {
         display: flex;
+    }
+    @media (max-width: $tablet-s) {
+        & span.la-card__price {
+            font-size: 16px;
+            line-height: 20px;
+            padding: 2px 8px;
+        }
     }
 }
 
 // Продвинутое объявление
 .la-card_paid {
-
     & .la-card__price {
         display: inline-block;
         color: #fff;
         background-color: #02BC4D;
         border-radius: 3px;
-        padding: 2px 8px;
+        padding: 4px 8px;
     }
 }
 
@@ -48,22 +64,196 @@
     display: flex;
     flex-direction: column;
     padding-top: 16px;
+    @media (max-width: $tablet-s) {
+        padding-top: 0;
+        position: relative;
+        padding-bottom: 8px;
+    }
+}
+
+.la-card__wrap {
+    &._active-row {
+        flex-direction: row;
+        padding-top: 0;
+        &>.la-card__header,
+        &>.la-card__content,
+        &>.la-card__footer,
+        &>.la-card__options {
+            display: none
+        }
+        .la-card__slider {
+            width: 200px;
+            overflow: hidden;
+            margin-top: 0;
+            padding: 0
+        }
+        .la-card__slide {
+            height: 100%;
+            width: 100%;
+            img {
+                object-fit: cover;
+            }
+        }
+        .la-card__row-container {
+            width: calc(100% - 200px);
+            padding: 16px 0;
+            margin-left: 4px;
+            position: relative;
+        }
+        .la-card__like {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+        }
+        .la-card__title {
+            br {
+                display: none
+            }
+        }
+        .la-card__price {
+            padding: 4px 10px;
+            font-size: 20px;
+        }
+        .la-card__content {
+            margin-bottom: 0;
+        }
+        .card-table {
+            display: flex
+        }
+        .la-card__footer {
+            border-top: 0;
+            padding-bottom: 0;
+        }
+        .la-card__info {
+            flex-direction: row-reverse;
+            font-size: 12px;
+        }
+        .la-card__options {
+            border-top: 0
+        }
+        .ma-card__label-paid {
+            position: absolute;
+            left: -41px;
+        }
+        .card-table tr td {
+            font-size: 12px
+        }
+        .card-table tbody:first-child {
+            margin-right: 50px
+        }
+        .la-card__info {
+            span {
+                font-size: 12px;
+            }
+            span:last-child {
+                margin-right: 50px;
+            }
+        }
+        .la-card__slider-fixed {
+            left: 10px
+        }
+        .ma-card__pagination {
+            bottom: 4px
+        }
+    }
+}
+
+.la-card:not(.la-card_big) {
+    .la-card__row-container {
+        padding: 10px 0
+    }
+    .la-card__price {
+        padding: 2px 8px;
+        font-size: 18px
+    }
+    @media (max-width: $tablet-s) {
+        .la-card__price {
+            font-size: 14px;
+        }
+    }
+}
+
+.la-card_big ._active-row .la-card__slider {
+    width: 318px
+}
+
+.la-card_big ._active-row .la-card__row-container {
+    width: calc(100% - 318px);
+}
+
+.list-ad__card-list:not(.list-ad__card-row) .ma-card__pagination {
+    display: none
+}
+
+.list-ad__card-row {
+    grid-template-columns: repeat(1, 1fr);
 }
 
 // Шапка карточки
 .la-card__header {
     padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    .ma-card__label-paid {
+        position: static;
+        display: block
+    }
+    @media (max-width:$tablet-s) {
+        order: 1;
+        padding: 0 8px;
+        .ma-card__label-paid {
+            position: absolute;
+            top: 0;
+            z-index: 9;
+            right: 0;
+            width: 25px;
+            height: 25px
+        }
+    }
+}
+
+.la-card__slider-fixed {
+    position: absolute;
+    top: 10px;
+    left: 26px;
+    z-index: 2;
+    background: #fff;
+    border-radius: 5px;
+    opacity: .8;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+    color: $text-primary;
+    @media (max-width: $tablet-s) {
+        display: none
+    }
 }
 
 .la-card__title {
     font-size: 16px;
     font-weight: 500;
+    line-height: 24px;
+    @media (max-width: $tablet-s) {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media (max-width: $tablet-s) {
+    .la-card__header h3.la-card__title {
+        font-size: 12px
+    }
 }
 
 .la-card__price {
     font-size: 18px;
     font-weight: 700;
     margin-top: 8px;
+    line-height: 20px;
+    @media (max-width: $tablet-s) {
+        margin-top: 4px
+    }
 }
 
 // Слайдер
@@ -71,37 +261,61 @@
     width: 100%;
     padding: 0 16px;
     margin-top: 12px;
+    position: relative;
+    @media (max-width: $tablet-s) {
+        order: 0;
+        padding: 0;
+        margin-top: 0
+    }
 }
 
-.swiper-wrapper {
+.swiper-wrapper {}
 
-}
-
-.swiper-slide {
-}
+.swiper-slide {}
 
 .la-card__slide {
     width: 200px;
     height: 150px;
     overflow: hidden;
-    
     &:first-child {
         border-radius: $radius 0 0 $radius;
     }
-    
     &:last-child {
         border-radius: 0 $radius $radius 0;
     }
+    @media (max-width: $tablet-s) {
+        height: 102px;
+        width: 100%;
+        margin-bottom: 8px;
+        &:first-child {
+            border-radius: 0;
+        }
+        img {
+            object-fit: cover;
+        }
+    }
 }
 
-.swiper-pagination {
-
-}
+.swiper-pagination {}
 
 // Контентная часть
 .la-card__content {
     margin: 12px 0;
     padding: 0 16px;
+    @media (max-width: $tablet-s) {
+        order: 2;
+        margin: 8px 0;
+        padding: 0 8px;
+        .card-table tr td:nth-child(1) {
+            // display: block;
+            // margin-right: 20px;
+            // line-height: 15px;
+            display: none
+        }
+        .card-table td {
+            margin-bottom: 5px;
+        }
+    }
 }
 
 // Подвал
@@ -112,6 +326,16 @@
     border-top: 1px solid $outline-l;
     padding: 12px 0;
     margin: auto 16px 0 16px;
+    @media (max-width: $tablet-s) {
+        order: 3;
+        border-top: 0;
+        padding: 0 8px;
+        margin: 0;
+        span {
+            font-size: 10px;
+            line-height: 12px
+        }
+    }
 }
 
 .la-card__info {
@@ -123,19 +347,14 @@
     font-size: 14px;
     font-weight: 400;
     color: $text-second-d;
-
     &:not(:last-child) {
         margin-bottom: 2px;
     }
 }
 
-.la-card__location {
+.la-card__location {}
 
-}
-
-.la-card__date {
-
-}
+.la-card__date {}
 
 .la-card__like {
     margin-right: 5px;
@@ -147,6 +366,12 @@
     align-items: center;
     border-top: 1px solid $outline-l;
     padding: 12px 16px;
+    @media (max-width: $tablet-s) {
+        order: 4;
+        margin: 16px 0 0 0;
+        padding: 0 8px;
+        border-top: 0;
+    }
 }
 
 .la-card__options-btn {
@@ -154,12 +379,89 @@
     font-size: 12px;
     height: 40px;
     padding: 0 12px;
-
     &:first-child {
         width: 192px;
     }
-
     &:not(:last-child) {
         margin-right: 10px;
+    }
+    @media (max-width:$laptop-m) {
+        padding: 0 4px
+    }
+    @media (max-width:$tablet-s) {
+        &:first-child {
+            color: transparent;
+            position: relative;
+            width: 58px;
+            &::after {
+                content: '';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: url(../img/icons/phone_mobile.svg) center center no-repeat;
+            }
+        }
+        &:last-child {
+            width: 58px;
+            position: relative;
+            color: transparent;
+            &::after {
+                content: '';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: url(../img/icons/message_mobile.svg) center center no-repeat;
+            }
+        }
+    }
+}
+
+// @media (max-width:$tablet-s) {
+//     &:first-child {
+//         color: transparent;
+//         position: relative;
+//         width: 124px;
+//         &::after {
+//             content: 'позвонить';
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             position: absolute;
+//             left: 0;
+//             top: 0;
+//             width: 100%;
+//             height: 100%;
+//             color: $text-accent;
+//             font-size: 12px;
+//         }
+//     }
+//     &:last-child {
+//         width: 97px
+//     }
+// }
+.la-card__header-hide.la-card__header-hide {
+    .ma-card__label-paid {
+        display: none
+    }
+    span.la-card__price {
+        background: transparent;
+        color: $text-primary;
+        padding: 0;
+    }
+}
+
+.list-ad__pagin {
+    @media (max-width: $tablet-s) {
+        display: none
     }
 }

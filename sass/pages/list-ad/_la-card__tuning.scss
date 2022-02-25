@@ -1,0 +1,187 @@
+.ad-content__tuning {
+    .card-table tr td {
+        font-size: 16px;
+        line-height: 20px;
+        color: #888888;
+        font-weight: 500;
+    }
+    @media (min-width: 1570px) {
+        width: 1326px;
+        .la-card_big .la-card__slide {
+            height: 200px;
+            img {
+                object-fit: cover;
+            }
+        }
+        .la-card_big.la-tuning .la-card__slide {
+            height: 100px
+        }
+        .la-card {
+            height: max-content
+        }
+        .la-card:not(.la-tuning) .la-card__footer {
+            border-top: 0;
+            padding-top: 0
+        }
+        .la-card:not(.la-tuning) .la-card__options {
+            border-top: 0;
+            padding-top: 8px;
+        }
+        .la-tuning .la-card__footer {
+            margin-top: 12px
+        }
+        .la-tuning .la-card__info-item {
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+}
+
+.ad-content__tuning .list-ad__card-list {
+    grid-template-columns: repeat(4, 1fr);
+    @media (min-width: 1570px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width:$laptop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width:$tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px 10px;
+    }
+}
+
+.ad-content__tuning .la-card__price {
+    font-size: 20px;
+    line-height: 20px;
+    padding: 4px 10px;
+    margin: 0 0 8px 0;
+}
+
+.ad-content__tuning .la-card__title {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.ad-content__tuning .la-card__content {
+    margin: 17px 0 10px 0
+}
+
+.ad-content__tuning .la-card__slider {
+    margin-top: 0
+}
+
+.ad-content__tuning .la-card__footer {
+    margin-top: 12px
+}
+
+.ad-content__tuning .list-ad__card-list {
+    grid-gap: 44px 24px
+}
+
+.la-tuning {
+    .la-tuning__box {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+    }
+    .la-card__slide {
+        width: 100px;
+        height: 100px;
+    }
+    .la-card__price {
+        font-size: 18px;
+        padding: 2px 8px;
+    }
+    .la-card__title {
+        line-height: 20px;
+    }
+    .la-card__content {
+        margin-top: 8px
+    }
+    .la-card__slider {
+        width: 100px;
+        margin: 0 16px 0 0;
+        overflow: hidden;
+        padding: 0;
+        height: max-content;
+        border-radius: 2px;
+        .la-card__slide {
+            border-radius: 2px;
+        }
+        .swiper-slide img {
+            object-fit: cover;
+        }
+        .ma-card__pagination {
+            display: flex;
+            bottom: 4px
+        }
+    }
+    .ma-card__label-paid {
+        position: absolute;
+        right: 16px;
+        z-index: 9;
+    }
+    .la-card__info-item {
+        font-size: 12px;
+        line-height: 15px;
+        color: #8A8B99;
+    }
+    .la-card__options {
+        display: none
+    }
+    .la-card__footer {
+        margin-top: 0
+    }
+    .la-tuning__box-text {
+        width: calc(100% - 135px);
+        margin-right: 19px;
+    }
+    .la-card__content {
+        margin-bottom: 12px;
+    }
+    .card-table tr td {
+        font-size: 16px;
+        line-height: 20px;
+        color: #888888;
+        font-weight: 500;
+    }
+    @media (max-width: $tablet) {
+        .la-tuning__box {
+            flex-direction: column-reverse;
+        }
+        .la-card__slider,
+        .la-card__slide {
+            width: 100%
+        }
+        .la-tuning__box-text {
+            width: 100%
+        }
+    }
+}
+
+.la-tuning__viewed {
+    .la-card__slider-fixed {
+        left: 0;
+        width: 100%;
+        bottom: 12px;
+        top: auto;
+    }
+    .ma-card__label-paid {
+        display: none
+    }
+    .la-card__price {
+        background: transparent;
+        color: $text-primary;
+        padding: 0;
+    }
+}
+
+.ad-filter__section-tab {
+    display: flex;
+    .advanced-filter__owner-list:first-child {
+        margin-right: 40px;
+        border-right: 1px solid #ECECEC;
+        padding-right: 40px;
+    }
+}

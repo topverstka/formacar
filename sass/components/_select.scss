@@ -1,27 +1,22 @@
 .select {
     position: relative;
-
     &._open {
-
         & .select-input__chevron {
             transform: translate(0, -50%) rotate(-180deg);
         }
-
-        & .select-dropdown{
+        & .select-dropdown {
             opacity: 1;
             visibility: visible;
+            z-index: 9;
             pointer-events: all;
         }
     }
-
     &._valid {
-
         & .select-input__title {
             font-weight: 500;
             color: $text-primary;
         }
     }
-
     & input {
         position: absolute;
         top: 0;
@@ -30,9 +25,7 @@
         height: 0;
         pointer-events: none;
     }
-    
     &_s {
-
         & .select-input {
             height: 36px;
         }
@@ -68,7 +61,6 @@
     height: 24px;
     pointer-events: none;
     transition: $tr;
-
     & svg {
         fill: $icon-second;
     }
@@ -94,18 +86,15 @@
 
 .select-dropdown__list,
 .select-city-dropdown__list {
-    max-height: 200px;
+    max-height: 456px;
     padding: 15px 0 20px;
     overflow-y: auto;
-
     &::-webkit-scrollbar {
         width: 6px;
     }
-
     &::-webkit-scrollbar-track {
         background: none;
     }
-    
     &::-webkit-scrollbar-thumb {
         background-color: $icon-second;
     }
@@ -120,16 +109,13 @@
     padding: 10px 20px;
     cursor: pointer;
     transition: $tr;
-
     &._selected {
-
         &::before {
             // opacity: 1;
             // visibility: visible;
             background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='10' stroke='%23B4B4BF'/%3E%3Ccircle cx='11' cy='11' r='6' fill='%23383838'/%3E%3C/svg%3E");
         }
     }
-
     &::before {
         content: '';
         // position: absolute;
@@ -140,7 +126,6 @@
         width: 16px;
         height: 16px;
         background: center / contain no-repeat url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='10.947' cy='10.947' rx='10.24' ry='10.24' stroke='%23B4B4BF'/%3E%3C/svg%3E");
-
         // background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.00002 16.2001L4.80002 12.0001L3.40002 13.4001L9.00002 19.0001L21 7.0001L19.6 5.6001L9.00002 16.2001Z' fill='%23467EF3'/%3E%3C/svg%3E") no-repeat;
         // background-size: contain;
         // background-position: center center;
@@ -149,35 +134,27 @@
         margin-right: 20px;
         transition: $tr;
     }
-
     &:hover {
-        
         @media (min-width: $minHover) {
             background: $bg-second-l;
         }
     }
-
     &:active {
         background: $bg-second-l;
     }
 }
 
-
 // Выпадающий список для выбора городов
 .select-city {
     position: relative;
-
     &._open {
-
-        & .select-city-dropdown{
+        & .select-city-dropdown {
             opacity: 1;
             visibility: visible;
             pointer-events: all;
         }
     }
-
     // &._item-select {
-
     //     & .select-input__title {
     //         font-weight: 500;
     //         color: $text-primary;
@@ -197,14 +174,11 @@
     padding: 10px 18px;
     cursor: pointer;
     transition: $tr;
-
     &:hover {
-        
         @media (min-width: $minHover) {
             background: $bg-second-l;
         }
     }
-
     &:active {
         background: $bg-second-l;
     }
@@ -220,4 +194,82 @@
     font-weight: 400;
     margin-top: 3px;
     color: $text-second-l;
+}
+
+
+/* Компонент выпадающего списка с чекбоксом */
+
+.select-dropdown__checkbox {
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .select-dropdown__checkbox-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        .select-dropdown__checkbox-label {
+            width: 20px;
+            height: 20px;
+            display: block;
+            border: 1px solid $outline-d;
+            border-radius: 4px;
+            position: relative;
+        }
+    }
+    .select-dropdown__checkbox-input {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 2;
+        cursor: pointer;
+    }
+}
+
+.select-dropdown__checkbox-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $text-second-d;
+    margin-left: 20px;
+}
+
+.select-dropdown__checkbox-input:checked+label {
+    background: $text-primary;
+    &:before {
+        content: '';
+        background: url("data:image/svg+xml,%3Csvg width='8' height='7' viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.03854 0.929263C6.39259 0.462043 7.07178 0.360491 7.55554 0.702441C8.0393 1.04439 8.14445 1.70035 7.79039 2.16757L4.43119 6.60046C4.06878 7.0787 3.36974 7.13233 2.93862 6.71496L0.317012 4.17696C-0.106383 3.76707 -0.105565 3.1033 0.318838 2.69438C0.743241 2.28546 1.43052 2.28625 1.85391 2.69614L3.49539 4.28526L6.03854 0.929263Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-position: 50% 45%
+    }
+}
+
+.select-dropdown__checkbox-input:checked+label+p {
+    color: $text-primary;
+}
+
+.list-ad__form-section-checkbox .select-input__title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    &._active_drop {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: $text-primary
+    }
+}
+
+.select-dropdown__all {
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid $outline-l;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $text-primary;
+    cursor: pointer;
 }
