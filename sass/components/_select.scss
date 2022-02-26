@@ -273,3 +273,29 @@
     color: $text-primary;
     cursor: pointer;
 }
+
+.list-ad__form-section-line-view {
+    .na-row__block.select-dropdown {
+        padding-left: 0;
+        padding-right: 0
+    }
+    .select-dropdown__all {
+        padding-left: 30px;
+        padding-right: 20px;
+        margin-bottom: 0;
+    }
+    .select-dropdown__checkbox {
+        padding: 10px 0;
+        padding-left: 30px;
+        &:not(:last-child) {
+            margin-bottom: 0;
+        }
+    }
+    .select-dropdown__checkbox .select-dropdown__checkbox-box .select-dropdown__checkbox-label {
+        opacity: 0;
+        position: absolute;
+    }
+    .select-dropdown__checkbox-text {
+        padding-left: 0
+    }
+}

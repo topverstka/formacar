@@ -584,7 +584,7 @@ let html_list_ad = document.querySelector('.list-ad__card-list') !== null ? docu
 
 function change_grid(i) {
 
-    if (window.innerWidth >= 500) {
+    if (window.innerWidth >= 768) {
         document.querySelectorAll('.ad-filter__grid-list button').forEach(i => i.classList.remove('_active'));
         i.classList.add('_active');
         if (i.classList.contains('ad-filter__grid-btn-box')) {

@@ -187,6 +187,108 @@
 
 .list-ad__card-row {
     grid-template-columns: repeat(1, 1fr);
+    @media (max-width: $tablet) {
+        .la-card__header {
+            order: 0;
+            margin: 16px 16px 12px 16px;
+            padding: 0
+        }
+        .la-card_big .la-card__slider {
+            margin-left: 16px;
+            border-radius: 10px 0px 0px 10px;
+            .la-card__slide {
+                height: 200px;
+                width: 266px;
+                &:first-child {
+                    border-radius: var(--radius) 0 0 var(--radius);
+                }
+                &:last-child {
+                    border-radius: 0 var(--radius) var(--radius) 0;
+                }
+            }
+        }
+        .la-card:not(.la-card_big) .la-card__slider {
+            margin-left: 16px;
+            border-radius: 10px 0px 0px 10px;
+            .la-card__slide {
+                height: 150px;
+                width: 200px;
+                &:first-child {
+                    border-radius: var(--radius) 0 0 var(--radius);
+                }
+                &:last-child {
+                    border-radius: 0 var(--radius) var(--radius) 0;
+                }
+            }
+        }
+        .la-card__content .card-table tr td:nth-child(1) {
+            display: block;
+            margin-right: 20px
+        }
+        .la-card__content {
+            padding: 0 16px
+        }
+        .la-card__footer {
+            padding: 12px 0 0 0;
+            margin: 0 16px;
+            border-top: 1px solid var(--outline-l);
+            span {
+                font-size: 12px;
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        .la-card__options {
+            padding: 12px 0 0 0;
+            margin: 12px 16px 0 16px;
+            border-top: 1px solid var(--outline-l);
+            button {
+                &:first-child {
+                    color: transparent;
+                    position: relative;
+                    width: 124px;
+                    &::after {
+                        content: 'позвонить';
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        color: $text-accent;
+                        font-size: 12px;
+                        background: transparent
+                    }
+                }
+                &:last-child {
+                    width: 97px;
+                    color: $btn-primary-default;
+                    &::after {
+                        background: transparent
+                    }
+                }
+            }
+        }
+        .la-card__wrap {
+            padding-bottom: 12px;
+        }
+        .la-card__header h3.la-card__title {
+            font-size: 16px;
+            line-height: 17px;
+            br {
+                display: none
+            }
+        }
+        .la-card__header .ma-card__label-paid {
+            position: static;
+            margin-right: 2px;
+            width: 27px;
+            height: 27px
+        }
+    }
 }
 
 // Шапка карточки
@@ -426,29 +528,6 @@
     }
 }
 
-// @media (max-width:$tablet-s) {
-//     &:first-child {
-//         color: transparent;
-//         position: relative;
-//         width: 124px;
-//         &::after {
-//             content: 'позвонить';
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             position: absolute;
-//             left: 0;
-//             top: 0;
-//             width: 100%;
-//             height: 100%;
-//             color: $text-accent;
-//             font-size: 12px;
-//         }
-//     }
-//     &:last-child {
-//         width: 97px
-//     }
-// }
 .la-card__header-hide.la-card__header-hide {
     .ma-card__label-paid {
         display: none

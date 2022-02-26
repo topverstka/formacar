@@ -11,6 +11,29 @@
     }
 }
 
+.ad-filter .ad-content__location {
+    display: none;
+    margin-bottom: 20px;
+    .location {
+        margin-left: 0
+    }
+    .location__header-wrap {
+        padding: 0;
+        height: 20px
+    }
+    @media (max-width: $tablet-l) {
+        display: block
+    }
+}
+
+.ad-content__location-header {
+    font-size: 12px;
+    font-weight: 500;
+    color: $text-primary;
+    line-height: 15px;
+    margin-bottom: 10px;
+}
+
 .ad-filter__body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
