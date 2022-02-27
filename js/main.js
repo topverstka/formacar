@@ -1961,11 +1961,11 @@ function select() {
             }
 
 
-            if (Strack) {
-                add_clear_btn(select.querySelector('.select-input'));
-                select.classList.remove('_valid');
-                target.classList.remove('_valid');
-            }
+            // if (Strack) {
+            //     add_clear_btn(select.querySelector('.select-input'));
+            //     select.classList.remove('_valid');
+            //     target.classList.remove('_valid');
+            // }
 
 
         }
