@@ -9657,6 +9657,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   height: 20px;
 }
 
+.ad-filter .ad-content__location .location__body {
+  left: 0;
+  width: 100%;
+}
+
 @media (max-width: 920px) {
   .ad-filter .ad-content__location {
     display: block;
