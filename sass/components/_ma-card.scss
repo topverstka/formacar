@@ -421,6 +421,12 @@
     text-transform: none;
     text-align: left;
     padding: 3px 0;
+    &:hover {
+        color: $btn-primary-pressed
+    }
+    &:focus {
+        color: rgba(70, 126, 243, 0.4);
+    }
     &::after {
         min-width: 16px;
         width: 16px;

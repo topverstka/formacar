@@ -9473,6 +9473,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding: 3px 0;
 }
 
+.ma-card__setting-btn:hover {
+  color: var(--btn-primary-pressed);
+}
+
+.ma-card__setting-btn:focus {
+  color: rgba(70, 126, 243, 0.4);
+}
+
 .ma-card__setting-btn::after {
   min-width: 16px;
   width: 16px;
