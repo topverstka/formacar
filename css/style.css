@@ -11193,6 +11193,40 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
+.ad-filter__section-tuning {
+  position: relative;
+  margin-bottom: 74px;
+}
+
+@media (max-width: 500px) {
+  .ad-filter__section-tuning .ad-filter__footer {
+    margin-top: 20px;
+  }
+  .ad-filter__section-tuning .ad-filter__option-list {
+    position: absolute;
+    left: 0;
+    bottom: -51px;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .ad-filter__section-tuning .ad-filter__option-list > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .ad-filter__section-tuning .ad-filter__option-list .select-input {
+    margin-bottom: 0;
+  }
+  .ad-filter__section-tuning .ad-filter__option-select_mob {
+    display: none;
+  }
+}
+
 .ad-content__tuning .list-ad__card-row {
   width: 966px;
   max-width: 100%;
@@ -11341,6 +11375,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
             order: 0;
     padding: 0;
     margin-bottom: 8px;
+    margin-top: 0;
   }
   .ad-content__tuning .list-ad__card-row .la-tuning__box .la-card__title {
     font-size: 14px;
@@ -11371,7 +11406,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
   .ad-content__tuning .list-ad__card-row .la-card__footer {
     padding-top: 10px;
-    margin-top: 8px;
+    margin-top: 14px;
   }
   .ad-content__tuning .list-ad__card-row .la-card__footer span:not(:last-child) {
     margin-bottom: 2px;
@@ -11480,6 +11515,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .ad-content__tuning .list-ad__card-row .la-card_big:not(.la-tuning) .la-card__title {
     font-size: 16px;
   }
+  .ad-content__tuning .list-ad__card-row .la-card_big:not(.la-tuning) .la-card__options-btn {
+    height: 40px;
+  }
 }
 
 .ad-content__tuning .list-ad__card-row .la-tuning:not(.la-tuning__viewed) .la-card__price {
@@ -11518,6 +11556,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
   .ad-content__tuning .list-ad__card-row .la-tuning:not(.la-tuning__viewed) .la-card__footer {
     margin-top: 12px;
+    padding-top: 10px;
+  }
+  .ad-content__tuning .list-ad__card-row .la-tuning:not(.la-tuning__viewed) .la-card__content {
+    margin-top: 0;
   }
 }
 

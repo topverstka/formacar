@@ -1981,6 +1981,13 @@ function select() {
         }
 
 
+        // if (target.classList.contains('color-radio') || target.closest('.select-dropdown__colors')) {
+        //     document.querySelectorAll('.color-radio input').forEach( i => {
+        //         console.log(i.checked)
+        //     });
+        // }
+
+
         if (target.classList.contains('select-dropdown__checkbox-box') || target.closest('.select-dropdown__checkbox-box')) {
 
             if (target.closest('.select-dropdown__checkbox-box')) {
