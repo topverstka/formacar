@@ -4333,6 +4333,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   transition: var(--tr);
 }
 
+@media (max-width: 500px) {
+  .select-dropdown,
+  .select-city-dropdown {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+}
+
 .select-dropdown__list,
 .select-city-dropdown__list {
   max-height: 456px;

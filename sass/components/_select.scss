@@ -82,6 +82,9 @@
     visibility: hidden;
     pointer-events: none;
     transition: $tr;
+    @media (max-width: $tablet-s) {
+        width: max-content
+    }
 }
 
 .select-dropdown__list,
