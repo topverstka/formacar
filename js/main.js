@@ -2347,3 +2347,10 @@ window.addEventListener('click', function(e) {
         e.target.closest('.list-ad').querySelector('.ad-filter').classList.toggle('_active-filter');
     }
 });
+
+// Запрет на ввод букв
+document.body.addEventListener('input', function(e) {
+    if (e.target.tagName === 'INPUT' && e.target.closest('.list-ad__form-section')) {
+        e.target.value = e.target.value.replace(/[^\d]/g, '');
+    }
+});

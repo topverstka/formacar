@@ -4662,6 +4662,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
       grid-template-columns: 1fr 1fr;
 }
 
+.card-table tr {
+  line-height: 15px;
+}
+
 .card-table tr:not(:last-child) {
   margin-bottom: 5px;
 }
@@ -9342,6 +9346,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-size: 16px;
   font-weight: 500;
   margin-top: 10px;
+  line-height: 20px;
 }
 
 @media (max-width: 500px) {
@@ -9361,6 +9366,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-size: 18px;
   font-weight: 700;
   margin-top: 5px;
+  line-height: 20px;
 }
 
 @media (max-width: 500px) {
@@ -9425,6 +9431,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-size: 12px;
   font-weight: 400;
   color: var(--text-second-d);
+  line-height: 15px;
 }
 
 @media (max-width: 425px) {
