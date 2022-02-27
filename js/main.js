@@ -519,10 +519,10 @@ const sliderRecent = new Swiper('.s-recent__slider', {
 });
 
 // Адаптивная ширина слайдера
-if (window.innerWidth <= 768) adaptiveWidthSliderMACard()
-    // window.addEventListener('resize', e => {
-    //     adaptiveWidthSliderMACard()
-    // })
+//if (window.innerWidth <= 768) adaptiveWidthSliderMACard()
+// window.addEventListener('resize', e => {
+//     adaptiveWidthSliderMACard()
+// })
 function adaptiveWidthSliderMACard() {
     const sliderElems = findAll('.ma-card__slider')
 
@@ -2278,7 +2278,7 @@ function tabsMineAd() {
                         sliderMACard.forEach(i => {
                             i.update();
                         });
-                        adaptiveWidthSliderMACard();
+
                     }, (i + 1) * 100)
                 }
 
