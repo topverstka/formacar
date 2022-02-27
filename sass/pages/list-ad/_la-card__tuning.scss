@@ -566,3 +566,11 @@
         }
     }
 }
+
+.ad-content__tuning .list-ad__card-row .la-tuning {
+    @media (max-width: $tablet-s) {
+        .ma-card__pagination {
+            display: flex
+        }
+    }
+}

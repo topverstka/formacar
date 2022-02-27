@@ -10388,7 +10388,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding-bottom: 15px;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1441px) {
   .list-ad__card-row .la-card:not(.la-card_big) .la-card__content {
     margin-top: 25px;
   }
@@ -11560,6 +11560,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
   .ad-content__tuning .list-ad__card-row .la-tuning:not(.la-tuning__viewed) .la-card__content {
     margin-top: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .ad-content__tuning .list-ad__card-row .la-tuning .ma-card__pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
