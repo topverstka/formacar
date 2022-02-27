@@ -10145,6 +10145,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   display: flex;
 }
 
+@media (max-width: 1440px) {
+  .la-card_big .la-card__title {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 500px) {
   .la-card_big span.la-card__price {
     font-size: 16px;
@@ -10489,6 +10495,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+}
+
+@media (max-width: 1440px) {
+  .la-card__title {
+    line-height: 20px;
+  }
 }
 
 @media (max-width: 500px) {
