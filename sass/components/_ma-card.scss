@@ -280,6 +280,8 @@
     }
     @media (max-width: $mobile-l) {
         font-size: 11px;
+        line-height: 13px;
+        margin-top: 8px
     }
 }
 
@@ -295,6 +297,7 @@
     @media (max-width: $mobile-l) {
         font-size: 12px;
         margin-top: 4px;
+        line-height: 15px;
     }
 }
 
@@ -303,6 +306,7 @@
     margin: 12px 0;
     @media (max-width: $mobile-l) {
         margin-bottom: 5px;
+        margin-top: 8px
     }
 }
 
@@ -383,6 +387,7 @@
     }
     @media (max-width: $mobile-l) {
         font-size: 10px;
+        line-height: 12px
     }
 }
 
@@ -409,7 +414,7 @@
     // }
     @media (max-width: $mobile-l) {
         padding: 4px 0;
-        margin-bottom: 4px;
+        margin-bottom: 0px;
         border-top: none;
     }
 }

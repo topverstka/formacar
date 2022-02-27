@@ -4711,6 +4711,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
+@media (max-width: 500px) {
+  .card-table tr {
+    line-height: 1.23;
+  }
+}
+
 .header {
   position: relative;
   z-index: 2;
@@ -9367,6 +9373,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 425px) {
   .ma-card__title {
     font-size: 11px;
+    line-height: 13px;
+    margin-top: 8px;
   }
 }
 
@@ -9388,6 +9396,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .ma-card__price {
     font-size: 12px;
     margin-top: 4px;
+    line-height: 15px;
   }
 }
 
@@ -9398,6 +9407,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 425px) {
   .ma-card__content-body {
     margin-bottom: 5px;
+    margin-top: 8px;
   }
 }
 
@@ -9446,6 +9456,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 425px) {
   .ma-card__info-item {
     font-size: 10px;
+    line-height: 12px;
   }
 }
 
@@ -9471,7 +9482,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 425px) {
   .ma-card__content-footer {
     padding: 4px 0;
-    margin-bottom: 4px;
+    margin-bottom: 0px;
     border-top: none;
   }
 }
@@ -9639,6 +9650,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 500px) {
   .ad-filter {
     padding: 10px;
+  }
+  .ad-filter:not(.ad-filter__section-tuning) {
     display: none;
   }
 }
@@ -10126,8 +10139,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   height: max-content;
 }
 
+@media (min-width: 1570px) {
+  .la-card .card-table tr {
+    line-height: 17px;
+  }
+}
+
 .la-card_big .la-card__title {
   font-size: 20px;
+  line-height: 24px;
 }
 
 .la-card_big .la-card__price {
@@ -10171,6 +10191,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 1440px) {
   .la-card_big .la-card__title {
     font-size: 16px;
+    line-height: 20px;
+  }
+  .la-card_big .la-card__price {
+    font-size: 20px;
   }
 }
 
@@ -10333,6 +10357,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 500px) {
   .la-card:not(.la-card_big) .la-card__price {
     font-size: 14px;
+    line-height: 17px;
   }
 }
 
@@ -10356,6 +10381,20 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .list-ad__card-row {
   -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr);
+}
+
+.list-ad__card-row .la-card__options {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+@media (min-width: 1440px) {
+  .list-ad__card-row .la-card:not(.la-card_big) .la-card__content {
+    margin-top: 25px;
+  }
+  .list-ad__card-row .la-card:not(.la-card_big) .la-card__footer {
+    padding-top: 24px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -10538,6 +10577,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   line-height: 24px;
 }
 
+@media (min-width: 1570px) {
+  .la-card__title {
+    line-height: 20px;
+  }
+}
+
 @media (max-width: 1440px) {
   .la-card__title {
     line-height: 20px;
@@ -10554,6 +10599,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 500px) {
   .la-card__header h3.la-card__title {
     font-size: 12px;
+    line-height: 15px;
   }
 }
 
@@ -10742,6 +10788,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 @media (max-width: 500px) {
+  .la-card__options-btn {
+    height: 44px;
+  }
   .la-card__options-btn:first-child {
     color: transparent;
     position: relative;
@@ -11132,6 +11181,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     margin-right: 0;
     padding-right: 0;
     border-right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .ad-filter__section-tab .advanced-filter__owner-list {
+    width: 100%;
+  }
+  .ad-filter__section-tab .advanced-filter__owner-list:first-child .ad-tab {
+    width: 50%;
   }
 }
 

@@ -28,5 +28,8 @@
                 font-size: 12px;
             }
         }
+        @media (max-width:$tablet-s) {
+            line-height: 1.23;
+        }
     }
 }

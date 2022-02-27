@@ -251,6 +251,16 @@
             border-right: 0
         }
     }
+    @media (max-width:$tablet-s) {
+        .advanced-filter__owner-list {
+            width: 100%
+        }
+        .advanced-filter__owner-list:first-child {
+            .ad-tab {
+                width: 50%
+            }
+        }
+    }
 }
 
 .ad-content__tuning .list-ad__card-row {

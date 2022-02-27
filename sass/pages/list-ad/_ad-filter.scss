@@ -6,8 +6,10 @@
         display: block
     }
     @media (max-width: $tablet-s) {
+        &:not(.ad-filter__section-tuning) {
+            display: none;
+        }
         padding: 10px;
-        display: none;
     }
 }
 

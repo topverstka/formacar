@@ -3,13 +3,19 @@
     background-color: #fff;
     border-radius: $radius;
     overflow: hidden;
-    height: max-content
+    height: max-content;
+    @media (min-width: 1570px) {
+        .card-table tr {
+            line-height: 17px
+        }
+    }
 }
 
 // Большое объявление
 .la-card_big {
     & .la-card__title {
         font-size: 20px;
+        line-height: 24px;
     }
     & .la-card__price {
         font-size: 24px;
@@ -39,7 +45,11 @@
     }
     @media (max-width: $laptop-l) {
         .la-card__title {
-            font-size: 16px
+            font-size: 16px;
+            line-height: 20px;
+        }
+        .la-card__price {
+            font-size: 20px;
         }
     }
     @media (max-width: $tablet-s) {
@@ -173,6 +183,7 @@
     @media (max-width: $tablet-s) {
         .la-card__price {
             font-size: 14px;
+            line-height: 17px;
         }
     }
 }
@@ -194,6 +205,20 @@
 
 .list-ad__card-row {
     grid-template-columns: repeat(1, 1fr);
+    .la-card__options {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .la-card:not(.la-card_big) {
+        @media (min-width: $laptop-l) {
+            .la-card__content {
+                margin-top: 25px
+            }
+            .la-card__footer {
+                padding-top: 24px
+            }
+        }
+    }
     @media (max-width: $tablet) {
         .la-card__header {
             order: 0;
@@ -354,6 +379,9 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
+    @media (min-width: 1570px) {
+        line-height: 20px
+    }
     @media (max-width: $laptop-l) {
         line-height: 20px;
     }
@@ -365,7 +393,8 @@
 
 @media (max-width: $tablet-s) {
     .la-card__header h3.la-card__title {
-        font-size: 12px
+        font-size: 12px;
+        line-height: 15px;
     }
 }
 
@@ -516,6 +545,7 @@
         padding: 0 4px
     }
     @media (max-width:$tablet-s) {
+        height: 44px;
         &:first-child {
             color: transparent;
             position: relative;
