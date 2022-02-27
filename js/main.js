@@ -577,6 +577,8 @@ function row_container() {
         i.querySelector('.la-card__row-container').insertAdjacentHTML('beforeend', clone_content.outerHTML);
         i.querySelector('.la-card__row-container').insertAdjacentHTML('beforeend', clone_footer.outerHTML);
         i.querySelector('.la-card__row-container').insertAdjacentHTML('beforeend', clone_options.outerHTML);
+        i.querySelector('.la-card__slider').style.height = i.querySelector('.la-card__row-container').offsetHeight + 'px';
+
 
     });
 }
