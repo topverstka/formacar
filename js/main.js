@@ -2346,6 +2346,12 @@ window.addEventListener('click', function(e) {
     if (e.target.classList.contains('btn-filter__list')) {
         e.target.closest('.list-ad').querySelector('.ad-filter').classList.toggle('_active-filter');
     }
+
+    if (e.target.closest('.ad-tab') && e.target.closest('.ad-tab').getAttribute('data-tab-filter')) {
+        let tab = e.target.closest('.ad-tab').getAttribute('data-tab-filter');
+        document.querySelector(`.ad-filter__body._active-tab`).classList.remove('_active-tab');
+        document.querySelector(`.ad-filter__body[data-tab-content=${tab}]`).classList.add('_active-tab');
+    }
 });
 
 // Запрет на ввод букв

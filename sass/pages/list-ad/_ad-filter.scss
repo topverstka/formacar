@@ -42,6 +42,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px 20px;
+    &._active-tab {
+        display: grid;
+    }
     @media (max-width: $tablet-l) {
         gap: 10px;
     }
@@ -50,6 +53,13 @@
     }
     @media (max-width: $tablet-s) {
         grid-template-columns: 1fr
+    }
+}
+
+.ad-filter__box .ad-filter__body {
+    display: none;
+    &._active-tab {
+        display: grid
     }
 }
 

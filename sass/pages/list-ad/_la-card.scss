@@ -3,9 +3,7 @@
     background-color: #fff;
     border-radius: $radius;
     overflow: hidden;
-    @media (max-width: $tablet-s) {
-        height: max-content
-    }
+    height: max-content
 }
 
 // Большое объявление
@@ -88,6 +86,7 @@
         }
         .la-card__slider {
             width: 200px;
+            min-height: 143px;
             overflow: hidden;
             margin-top: 0;
             padding: 0
@@ -179,11 +178,14 @@
 }
 
 .la-card_big ._active-row .la-card__slider {
-    width: 318px
+    width: 318px;
+    height: 221px;
 }
 
 .la-card_big ._active-row .la-card__row-container {
     width: calc(100% - 318px);
+    padding-bottom: 0;
+    height: min-content;
 }
 
 .list-ad__card-list:not(.list-ad__card-row) .ma-card__pagination {
@@ -470,6 +472,10 @@
     color: $text-second-d;
     &:not(:last-child) {
         margin-bottom: 2px;
+    }
+    @media (max-width: $laptop-l) {
+        font-size: 12px;
+        line-height: 17px;
     }
 }
 

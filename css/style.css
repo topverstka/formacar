@@ -9684,6 +9684,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   gap: 10px 20px;
 }
 
+.ad-filter__body._active-tab {
+  display: -ms-grid;
+  display: grid;
+}
+
 @media (max-width: 920px) {
   .ad-filter__body {
     gap: 10px;
@@ -9702,6 +9707,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+}
+
+.ad-filter__box .ad-filter__body {
+  display: none;
+}
+
+.ad-filter__box .ad-filter__body._active-tab {
+  display: -ms-grid;
+  display: grid;
 }
 
 .ad-filter__reset-btn {
@@ -10107,14 +10121,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   background-color: #fff;
   border-radius: var(--radius);
   overflow: hidden;
-}
-
-@media (max-width: 500px) {
-  .la-card {
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
-  }
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .la-card_big .la-card__title {
@@ -10218,6 +10227,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .la-card__wrap._active-row .la-card__slider {
   width: 200px;
+  min-height: 143px;
   overflow: hidden;
   margin-top: 0;
   padding: 0;
@@ -10328,10 +10338,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .la-card_big ._active-row .la-card__slider {
   width: 318px;
+  height: 221px;
 }
 
 .la-card_big ._active-row .la-card__row-container {
   width: calc(100% - 318px);
+  padding-bottom: 0;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
 }
 
 .list-ad__card-list:not(.list-ad__card-row) .ma-card__pagination {
@@ -10670,6 +10685,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .la-card__info-item:not(:last-child) {
   margin-bottom: 2px;
+}
+
+@media (max-width: 1440px) {
+  .la-card__info-item {
+    font-size: 12px;
+    line-height: 17px;
+  }
 }
 
 .la-card__like {
