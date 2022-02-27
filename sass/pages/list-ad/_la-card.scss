@@ -294,6 +294,17 @@
             height: 27px
         }
     }
+    @media (max-width:$tablet-s) {
+        .la-card_big span.la-card__price {
+            font-size: 18px;
+            line-height: 22px;
+            padding: 4px 10px;
+            margin-top: 8px
+        }
+        .ma-card__pagination {
+            display: none
+        }
+    }
 }
 
 // Шапка карточки
