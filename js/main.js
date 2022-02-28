@@ -1979,6 +1979,7 @@ function select() {
             });
             target.closest('.select').querySelector('.select-input__title').innerText = target.innerText;
             target.closest('.select').querySelector('.select-input__title').setAttribute('data-title', target.innerText);
+            target.closest('.select').querySelector('.select-input__title').classList.add('_active_drop');
         }
 
 
