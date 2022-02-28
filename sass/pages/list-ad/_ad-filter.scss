@@ -2,12 +2,12 @@
     background: #fff;
     border-radius: $radius;
     padding: 20px;
-    &._active-filter {
-        display: block
-    }
     @media (max-width: $tablet-s) {
         &:not(.ad-filter__section-tuning) {
             display: none;
+            &._active-filter {
+                display: block
+            }
         }
         padding: 10px;
     }

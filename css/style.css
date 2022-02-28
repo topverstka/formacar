@@ -9647,16 +9647,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   padding: 20px;
 }
 
-.ad-filter._active-filter {
-  display: block;
-}
-
 @media (max-width: 500px) {
   .ad-filter {
     padding: 10px;
   }
   .ad-filter:not(.ad-filter__section-tuning) {
     display: none;
+  }
+  .ad-filter:not(.ad-filter__section-tuning)._active-filter {
+    display: block;
   }
 }
 
