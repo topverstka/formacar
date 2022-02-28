@@ -11,9 +11,6 @@
         .la-card_big:not(.la-tuning) .la-card__title {
             font-size: 20px
         }
-        .la-card_big.la-tuning .la-card__title {
-            font-size: 18px
-        }
         .la-card_big .la-card__slide {
             height: 200px;
             img {
@@ -118,7 +115,6 @@
 }
 
 .ad-content__tuning .la-card__price {
-    font-size: 20px;
     line-height: 20px;
     padding: 4px 10px;
     margin: 0 0 8px 0;
@@ -223,6 +219,11 @@
         }
         .la-tuning__box-text {
             width: 100%
+        }
+    }
+    @media (max-width: $tablet-s) {
+        span.la-card__price {
+            font-size: 14px
         }
     }
 }
@@ -448,6 +449,11 @@
             top: auto;
         }
     }
+    @media (max-width: $tablet-s) {
+        .la-tuning .la-card__price {
+            font-size: 16px
+        }
+    }
 }
 
 .ad-content__tuning .list-ad__card-row .la-card_big:not(.la-tuning) {
@@ -479,6 +485,14 @@
         }
         .la-card__options {
             padding-top: 16px
+        }
+        .la-card__price {
+            font-size: 24px
+        }
+    }
+    @media (max-width: $laptop-l) {
+        .la-card__title {
+            font-size: 18px
         }
     }
     @media (max-width: $tablet) {
@@ -579,6 +593,16 @@
 }
 
 .ad-content__tuning .list-ad__card-row .la-tuning {
+    @media (min-width: 1570px) {
+        .la-card__title {
+            font-size: 18px
+        }
+    }
+    @media (max-width: $laptop-l) {
+        .la-card__price {
+            font-size: 18px
+        }
+    }
     @media (max-width: $tablet-s) {
         .ma-card__pagination {
             display: flex

@@ -10945,9 +10945,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .ad-content__tuning .la-card_big:not(.la-tuning) .la-card__title {
     font-size: 20px;
   }
-  .ad-content__tuning .la-card_big.la-tuning .la-card__title {
-    font-size: 18px;
-  }
   .ad-content__tuning .la-card_big .la-card__slide {
     height: 200px;
   }
@@ -11082,7 +11079,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .ad-content__tuning .la-card__price {
-  font-size: 20px;
   line-height: 20px;
   padding: 4px 10px;
   margin: 0 0 8px 0;
@@ -11220,6 +11216,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
   .la-tuning .la-tuning__box-text {
     width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .la-tuning span.la-card__price {
+    font-size: 14px;
   }
 }
 
@@ -11509,6 +11511,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
+@media (max-width: 500px) {
+  .ad-content__tuning .list-ad__card-row .la-tuning .la-card__price {
+    font-size: 16px;
+  }
+}
+
 .ad-content__tuning .list-ad__card-row .la-card_big:not(.la-tuning) .la-card__slider {
   width: 318px;
 }
@@ -11545,6 +11553,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
   .ad-content__tuning .list-ad__card-row .la-card_big:not(.la-tuning) .la-card__options {
     padding-top: 16px;
+  }
+  .ad-content__tuning .list-ad__card-row .la-card_big:not(.la-tuning) .la-card__price {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .ad-content__tuning .list-ad__card-row .la-card_big:not(.la-tuning) .la-card__title {
+    font-size: 18px;
   }
 }
 
@@ -11649,6 +11666,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
   .ad-content__tuning .list-ad__card-row .la-tuning:not(.la-tuning__viewed) .la-card__content {
     margin-top: 0;
+  }
+}
+
+@media (min-width: 1570px) {
+  .ad-content__tuning .list-ad__card-row .la-tuning .la-card__title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .ad-content__tuning .list-ad__card-row .la-tuning .la-card__price {
+    font-size: 18px;
   }
 }
 
