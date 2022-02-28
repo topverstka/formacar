@@ -9262,7 +9262,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     max-height: 120px;
     border-radius: var(--radius) var(--radius) 0 0;
   }
-  .ma-card__slider .ma-card__slide {
+  .ma-card__slider .ma-card__slide,
+  .ma-card__slider img {
     border-radius: var(--radius) var(--radius) 0 0;
   }
 }
