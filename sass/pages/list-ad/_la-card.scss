@@ -236,6 +236,12 @@
         &.list-ad__card-auto .la-card:not(.la-card_big) .la-card__slider {
             width: 259px
         }
+        &.list-ad__card-auto .la-card:not(.la-card_big) .la-card__price {
+            font-size: 20px
+        }
+        &.list-ad__card-auto .la-card_big .la-card__price {
+            font-size: 24px
+        }
     }
     @media (max-width: $laptop-l) {
         &.list-ad__card-auto .la-card_big .la-card__title {

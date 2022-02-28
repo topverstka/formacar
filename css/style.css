@@ -10429,6 +10429,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .list-ad__card-row.list-ad__card-auto .la-card:not(.la-card_big) .la-card__slider {
     width: 259px;
   }
+  .list-ad__card-row.list-ad__card-auto .la-card:not(.la-card_big) .la-card__price {
+    font-size: 20px;
+  }
+  .list-ad__card-row.list-ad__card-auto .la-card_big .la-card__price {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 1440px) {
