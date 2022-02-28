@@ -10400,6 +10400,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
+@media (min-width: 1570px) {
+  .list-ad__card-row.list-ad__card-auto .la-card:not(.la-card_big) .la-card__title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .list-ad__card-row.list-ad__card-auto .la-card_big .la-card__title {
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 768px) {
   .list-ad__card-row .la-card__header {
     -webkit-box-ordinal-group: 1;
@@ -10494,11 +10506,17 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .list-ad__card-row .la-card__wrap {
     padding-bottom: 12px;
   }
-  .list-ad__card-row .la-card__header h3.la-card__title {
+  .list-ad__card-row.list-ad__card-auto .la-card_big .la-card__header h3.la-card__title {
     font-size: 16px;
     line-height: 17px;
   }
-  .list-ad__card-row .la-card__header h3.la-card__title br {
+  .list-ad__card-row.list-ad__card-auto .la-card_big .la-card__header h3.la-card__title br {
+    display: none;
+  }
+  .list-ad__card-row.list-ad__card-auto .la-card:not(.la-card_big) .la-card__header h3.la-card__title {
+    font-size: 14px;
+  }
+  .list-ad__card-row.list-ad__card-auto .la-card:not(.la-card_big) .la-card__header h3.la-card__title br {
     display: none;
   }
   .list-ad__card-row .la-card__header .ma-card__label-paid {
