@@ -9364,6 +9364,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 768px) {
   .ma-card__content {
     padding: 0 12px;
+    height: auto;
   }
 }
 
