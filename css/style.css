@@ -8994,14 +8994,37 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 425px) {
   .ma-tab__body {
     gap: 10px;
-    -webkit-column-count: 2;
-            column-count: 2;
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
   }
   .ma-tab__body .ma-card {
-    -webkit-column-break-inside: avoid;
-            break-inside: avoid;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
     margin-bottom: 10px;
+    width: 48%;
+  }
+  .ma-tab__body._active_masonry {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+  }
+  .ma-tab__body._active_masonry .ma-card {
+    width: 49%;
+  }
+  .ma-tab__body._active_masonry .ma-card:nth-of-type(odd) {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .ma-tab__body._active_masonry .ma-card:nth-of-type(even) {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }
 

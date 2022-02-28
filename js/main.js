@@ -2371,3 +2371,9 @@ document.body.addEventListener('input', function(e) {
         e.target.value = e.target.value.replace(/[^0-9\.\,]/g, '');
     }
 });
+
+
+if (document.querySelector('.ma-tab__body')) {
+    document.querySelector('.ma-tab__body').style.height = document.querySelector('.ma-tab__body').offsetHeight + 'px';
+    document.querySelector('.ma-tab__body').classList.add('_active_masonry');
+}

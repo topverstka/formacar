@@ -105,11 +105,27 @@
     }
     @media (max-width: $mobile-l) {
         gap: 10px;
-        column-count: 2;
-        display: block;
+        // column-count: 2;
+        // display: block;
+        display: flex;
+        flex-flow: wrap;
         .ma-card {
-            break-inside: avoid;
+            // break-inside: avoid;
+            height: max-content;
             margin-bottom: 10px;
+            width: 48%;
+        }
+        &._active_masonry {
+            flex-flow: column wrap;
+            .ma-card {
+                width: 49%;
+                &:nth-of-type(odd) {
+                    order: 1
+                }
+                &:nth-of-type(even) {
+                    order: 2
+                }
+            }
         }
     }
     & .ma-card {
