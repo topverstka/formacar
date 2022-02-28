@@ -2396,7 +2396,7 @@ function add_masonry(tab) {
 }
 
 window.addEventListener('DOMContentLoaded', function() {
-    setTimeout(() => add_masonry(), 1);
+    setTimeout(() => add_masonry(), 9);
 
 });
 
