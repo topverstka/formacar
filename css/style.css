@@ -9004,7 +9004,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
-    margin-bottom: 10px;
     width: 48%;
   }
   .ma-tab__body._active_masonry {
