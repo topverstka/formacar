@@ -2381,7 +2381,6 @@ function add_masonry(tab) {
             let active_btn = document.querySelector('.ma-tab__button._active').getAttribute('data-tab-btn');
             let numb = 0;
             document.querySelectorAll(`.ma-card[data-tab-card=${active_btn}]`).forEach((i, index) => {
-
                 if (index % 2 === 0) {
                     numb += i.offsetHeight;
                 }
@@ -2397,7 +2396,7 @@ function add_masonry(tab) {
 }
 
 window.addEventListener('DOMContentLoaded', function() {
-    add_masonry();
+    setTimeout(() => add_masonry(), 1);
 
 });
 
