@@ -113,6 +113,7 @@
             padding: 16px 0;
             margin-left: 4px;
             position: relative;
+            height: max-content;
         }
         .la-card__like {
             position: absolute;
@@ -174,7 +175,13 @@
 
 .la-card:not(.la-card_big) {
     .la-card__row-container {
-        padding: 10px 0
+        padding: 10px 0;
+        &>.la-card__header.la-card__header-hide+.la-card__content {
+            margin-top: 26px
+        }
+        &>.la-card__header.la-card__header-hide+.la-card__content+.la-card__footer {
+            padding-top: 26px
+        }
     }
     .la-card__price {
         padding: 2px 8px;
@@ -222,6 +229,12 @@
     @media (min-width: 1570px) {
         &.list-ad__card-auto .la-card:not(.la-card_big) .la-card__title {
             font-size: 18px;
+        }
+        &.list-ad__card-auto .la-card:not(.la-card_big) .la-card__row-container {
+            width: calc(100% - 263px);
+        }
+        &.list-ad__card-auto .la-card:not(.la-card_big) .la-card__slider {
+            width: 259px
         }
     }
     @media (max-width: $laptop-l) {
