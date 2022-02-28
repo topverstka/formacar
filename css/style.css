@@ -8985,14 +8985,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 @media (max-width: 768px) {
   .ma-tab__body {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-}
-
-@media (max-width: 425px) {
-  .ma-tab__body {
     gap: 10px;
     display: -webkit-box;
     display: -ms-flexbox;

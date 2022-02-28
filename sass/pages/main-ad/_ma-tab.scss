@@ -100,10 +100,8 @@
         grid-template-columns: minmax(min-content, 966px);
     }
     @media (max-width: $tablet) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
-    @media (max-width: $mobile-l) {
+        // grid-template-columns: repeat(2, 1fr);
+        // gap: 24px;
         gap: 10px;
         // column-count: 2;
         // display: block;

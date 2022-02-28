@@ -2289,7 +2289,7 @@ function tabsMineAd() {
                         sliderMACard.forEach(i => {
                             i.update();
                         });
-
+                        add_masonry();
                     }, (i + 1) * 100)
                 }
 
@@ -2297,6 +2297,7 @@ function tabsMineAd() {
 
             removeAll(btnElems, '_active')
             btn.classList.add('_active');
+
         })
     }
 
@@ -2373,9 +2374,23 @@ document.body.addEventListener('input', function(e) {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (document.querySelector('.ma-tab__body')) {
-        document.querySelector('.ma-tab__body').style.height = document.querySelector('.ma-tab__body').offsetHeight + 'px';
-        document.querySelector('.ma-tab__body').classList.add('_active_masonry');
+
+function add_masonry(tab) {
+    if (window.innerWidth <= 768) {
+        if (document.querySelector('.ma-tab__body')) {
+            let active_btn = document.querySelector('.ma-tab__button._active').getAttribute('data-tab-btn');
+            let numb = 0;
+            document.querySelectorAll(`.ma-card[data-tab-card=${active_btn}]`).forEach((i, index) => {
+
+                if (index % 2 === 0) {
+                    numb += i.offsetHeight;
+                }
+            });
+            let result_masonry = numb + 40;
+            document.querySelector('.ma-tab__body').style.height = result_masonry + 'px';
+            document.querySelector('.ma-tab__body').classList.add('_active_masonry');
+        }
     }
-});
+}
+
+document.addEventListener('DOMContentLoaded', () => add_masonry());
