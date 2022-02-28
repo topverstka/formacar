@@ -9081,9 +9081,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 @media (max-width: 768px) {
-  .ma-card {
-    overflow: initial;
-  }
   .ma-card:nth-child(even) .ma-card__settings {
     left: auto;
     right: 0;

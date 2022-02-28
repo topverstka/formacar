@@ -7,7 +7,7 @@
     background: #fff;
     overflow: hidden;
     @media (max-width: $tablet) {
-        overflow: initial;
+        //overflow: initial;
         &:nth-child(even) {
             & .ma-card__settings {
                 left: auto;
