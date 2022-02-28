@@ -9104,7 +9104,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   color: #fff;
   text-transform: uppercase;
   padding: 12px 8px;
-  border-radius: 0 10px 0 10px;
+  border-radius: 0 8px 0 10px;
 }
 
 @media (max-width: 768px) {
@@ -10942,6 +10942,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .ad-content__tuning {
     width: 1326px;
   }
+  .ad-content__tuning .la-card_big:not(.la-tuning) .la-card__title {
+    font-size: 20px;
+  }
+  .ad-content__tuning .la-card_big.la-tuning .la-card__title {
+    font-size: 18px;
+  }
   .ad-content__tuning .la-card_big .la-card__slide {
     height: 200px;
   }
@@ -11187,8 +11193,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .la-tuning .la-tuning__box-text {
-  width: calc(100% - 135px);
-  margin-right: 19px;
+  width: calc(100% - 116px);
 }
 
 .la-tuning .la-card__content {

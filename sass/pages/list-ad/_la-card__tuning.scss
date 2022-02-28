@@ -8,6 +8,12 @@
     }
     @media (min-width: 1570px) {
         width: 1326px;
+        .la-card_big:not(.la-tuning) .la-card__title {
+            font-size: 20px
+        }
+        .la-card_big.la-tuning .la-card__title {
+            font-size: 18px
+        }
         .la-card_big .la-card__slide {
             height: 200px;
             img {
@@ -196,8 +202,7 @@
         margin-top: 0
     }
     .la-tuning__box-text {
-        width: calc(100% - 135px);
-        margin-right: 19px;
+        width: calc(100% - 116px);
     }
     .la-card__content {
         margin-bottom: 12px;
