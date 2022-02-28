@@ -2386,7 +2386,6 @@ function add_masonry(tab) {
                     numb += i.offsetHeight;
                 }
             });
-            console.log(numb);
             let result_masonry = numb + 40;
             document.querySelector('.ma-tab__body').style.height = result_masonry + 'px';
             document.querySelector('.ma-tab__body').classList.add('_active_masonry');
@@ -2398,7 +2397,7 @@ function add_masonry(tab) {
 }
 
 window.addEventListener('DOMContentLoaded', function() {
-    setTimeout(() => add_masonry(), 1);
+    add_masonry();
 
 });
 
