@@ -2386,7 +2386,7 @@ function add_masonry(tab) {
                 }
             });
             let result_masonry = numb + 40;
-            document.querySelector('.ma-tab__body').style.height = numb + 'px';
+            document.querySelector('.ma-tab__body').style.height = result_masonry + 'px';
             document.querySelector('.ma-tab__body').classList.add('_active_masonry');
             sliderMACard.forEach(i => {
                 i.update();
