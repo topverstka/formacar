@@ -619,6 +619,7 @@ function change_grid(i) {
 
         if (i.classList.contains('ad-filter__grid-btn-row')) {
             document.querySelector('.list-ad__card-list').classList.add('list-ad__card-row');
+            liked();
         }
     }
     liked();
