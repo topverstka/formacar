@@ -11031,6 +11031,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   margin: 0 0 8px 0;
 }
 
+@media (max-width: 500px) {
+  .ad-content__tuning .la-card__price {
+    margin-bottom: 0;
+  }
+}
+
 .ad-content__tuning .la-card__title {
   font-weight: 500;
   font-size: 16px;
@@ -11046,6 +11052,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .ad-content__tuning .la-card__footer {
   margin-top: 12px;
+}
+
+@media (max-width: 500px) {
+  .ad-content__tuning .la-card__footer {
+    margin-top: 0;
+  }
 }
 
 .la-tuning .la-tuning__box {
