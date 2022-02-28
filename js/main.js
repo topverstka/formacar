@@ -2367,6 +2367,6 @@ window.addEventListener('click', function(e) {
 // Запрет на ввод букв
 document.body.addEventListener('input', function(e) {
     if (e.target.tagName === 'INPUT' && e.target.closest('.list-ad__form-section')) {
-        e.target.value = e.target.value.replace(/[^\d]/g, '');
+        e.target.value = e.target.value.replace(/[^0-9\.\,]/g, '');
     }
 });
