@@ -366,6 +366,11 @@
         .ma-card__pagination {
             display: none
         }
+        &.list-ad__card-auto .la-card:not(.la-card_big) span.la-card__price {
+            margin-top: 8px;
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
 }
 

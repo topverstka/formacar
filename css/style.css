@@ -10568,6 +10568,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .list-ad__card-row .ma-card__pagination {
     display: none;
   }
+  .list-ad__card-row.list-ad__card-auto .la-card:not(.la-card_big) span.la-card__price {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 
 .la-card__header {
