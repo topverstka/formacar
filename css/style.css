@@ -8896,6 +8896,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-weight: 600;
   text-transform: none;
   padding: 0;
+  color: var(--text-primary);
 }
 
 .ma-tab__filter-btn._active_color {

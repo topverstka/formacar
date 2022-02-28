@@ -35,6 +35,7 @@
     font-weight: 600;
     text-transform: none;
     padding: 0;
+    color: $text-primary;
     &._active_color {
         color: $btn-primary-default;
         &::after {
