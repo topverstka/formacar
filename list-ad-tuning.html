@@ -42,7 +42,7 @@
                                 <div class="header__top-content">
                                     <div class="header__top-buttons">
                                         <button class="btn btn_second header__sign-in" data-modal-open="auth">Войти</button>
-                                        <button class="btn btn_primary header__sell">Продать</button>
+                                        <a href="" class="btn btn_primary header__sell">Продать</a>
                                     </div>
                                     <div class="user__options">
                                         <div class="user-option">
@@ -514,389 +514,391 @@
                         <div class="list-ad__body">
                             <div class="ad-content__tuning">
                                 <div class="ad-filter ad-filter__section-tuning">
-                                    <div class="select ad-filter__option-select ad-filter__option-select_mob">
-                                        <div class="select-input">
-                                            <span class="select-input__title">По актуальности</span>
-                                            <div class="select-input__chevron">
-                                                <svg><use href='./img/sprite.svg#filter-chevron'></use></svg>
+                                    <form action="">
+                                        <div class="select ad-filter__option-select ad-filter__option-select_mob">
+                                            <div class="select-input">
+                                                <span class="select-input__title">По актуальности</span>
+                                                <div class="select-input__chevron">
+                                                    <svg><use href='./img/sprite.svg#filter-chevron'></use></svg>
+                                                </div>
+                                            </div>
+                                            <div class="select-dropdown">
+                                                <ul class="select-dropdown__list">
+                                                    <li class="select-dropdown__item _selected">По актуальности</li>
+                                                    <li class="select-dropdown__item">По возрастанию цены</li>
+                                                    <li class="select-dropdown__item">По убыванию цены</li>
+                                                </ul>
                                             </div>
                                         </div>
-                                        <div class="select-dropdown">
-                                            <ul class="select-dropdown__list">
-                                                <li class="select-dropdown__item _selected">По актуальности</li>
-                                                <li class="select-dropdown__item">По возрастанию цены</li>
-                                                <li class="select-dropdown__item">По убыванию цены</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="ad-filter__section-tab">
-                                        <div class="advanced-filter__owner-list">
-                                            <div class="ad-tab" data-tab-filter="discs">
-                                                <input type="radio" name="owner_d" checked>
-                                                <label>Диски</label>
+                                        <div class="ad-filter__section-tab">
+                                            <div class="advanced-filter__owner-list">
+                                                <div class="ad-tab" data-tab-filter="discs">
+                                                    <input type="radio" name="owner_d" checked>
+                                                    <label>Диски</label>
+                                                </div>
+                                                <div class="ad-tab" data-tab-filter="tires">
+                                                    <input type="radio" name="owner_d">
+                                                    <label>Шины</label>
+                                                </div>
                                             </div>
-                                            <div class="ad-tab" data-tab-filter="tires">
-                                                <input type="radio" name="owner_d">
-                                                <label>Шины</label>
-                                            </div>
-                                        </div>
-                                        <div class="advanced-filter__owner-list">
-                                            <div class="ad-tab">
-                                                <input type="radio" name="owner" checked>
-                                                <label>Все</label>
-                                            </div>
-                                            <div class="ad-tab">
-                                                <input type="radio" name="owner">
-                                                <label>Компания</label>
-                                            </div>
-                                            <div class="ad-tab">
-                                                <input type="radio" name="owner">
-                                                <label>Частный</label>
+                                            <div class="advanced-filter__owner-list">
+                                                <div class="ad-tab">
+                                                    <input type="radio" name="owner" checked>
+                                                    <label>Все</label>
+                                                </div>
+                                                <div class="ad-tab">
+                                                    <input type="radio" name="owner">
+                                                    <label>Компания</label>
+                                                </div>
+                                                <div class="ad-tab">
+                                                    <input type="radio" name="owner">
+                                                    <label>Частный</label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="ad-filter__box">
-                                        <div class="ad-filter__body _active-tab" data-tab-content="discs">
-                                            <div class="list-ad__form-section list-ad__form-section-checkbox">
-                                                <span class="advanced-filter__subtitle">Бренд</span>
-                                                <div class="select select_s">
-                                                    <div class="select-input">
-                                                        <span class="select-input__title">Не выбрано</span>
-                                                        <div class="select-input__chevron">
-                                                            <svg><use href='./img/sprite.svg#chevron'></use></svg>
+                                        <div class="ad-filter__box">
+                                            <div class="ad-filter__body _active-tab" data-tab-content="discs">
+                                                <div class="list-ad__form-section list-ad__form-section-checkbox">
+                                                    <span class="advanced-filter__subtitle">Бренд</span>
+                                                    <div class="select select_s">
+                                                        <div class="select-input">
+                                                            <span class="select-input__title">Не выбрано</span>
+                                                            <div class="select-input__chevron">
+                                                                <svg><use href='./img/sprite.svg#chevron'></use></svg>
+                                                            </div>
+                                                        </div>
+                                                        <div class="na-row__block select-dropdown">
+                                                            <div class="select-dropdown__all">
+                                                                Все бренды
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">Rotiform</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">80</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">90</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A1</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A3</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A4</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A4 allroad</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A5</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A6</p>
+                                                                </div>
+
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="na-row__block select-dropdown">
-                                                        <div class="select-dropdown__all">
-                                                            Все бренды
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">Rotiform</p>
+                                                </div>
+                                                <div class="list-ad__form-section">
+                                                    <span class="advanced-filter__subtitle">Диаметр</span>
+                                                    <div class="select select_s">
+                                                        <div class="select-input">
+                                                            <span class="select-input__title">Не выбрано</span>
+                                                            <div class="select-input__chevron">
+                                                                <svg><use href='./img/sprite.svg#chevron'></use></svg>
                                                             </div>
-
                                                         </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">80</p>
-                                                            </div>
-
+                                                        <div class="select-dropdown">
+                                                            <ul class="select-dropdown__list">
+                                                                <li class="select-dropdown__item">18</li>
+                                                                <li class="select-dropdown__item">19</li>
+                                                                <li class="select-dropdown__item">20</li>
+                                                                <li class="select-dropdown__item">21</li>
+                                                                <li class="select-dropdown__item">22</li>
+                                                                <li class="select-dropdown__item">23</li>
+                                                                <li class="select-dropdown__item">24</li>
+                                                                <li class="select-dropdown__item">25</li>
+                                                            </ul>
                                                         </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">90</p>
-                                                            </div>
-
+                                                    </div>
+                                                </div>
+                                                <div class="list-ad__form-section">
+                                                    <span class="advanced-filter__subtitle">Цена</span>
+                                                    <div class="textfield-double advanced-filter__double-input">
+                                                        <div class="textfield textfield-s clear-by-cross">
+                                                            <input type="text" id="">
+                                                            <label for="">От</label>
                                                         </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A1</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A3</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A4</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A4 allroad</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A5</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A6</p>
-                                                            </div>
-
+                                                        <div class="textfield textfield-s clear-by-cross">
+                                                            <input type="text" id="">
+                                                            <label for="">До</label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="list-ad__form-section">
-                                                <span class="advanced-filter__subtitle">Диаметр</span>
-                                                <div class="select select_s">
+                                            <div class="ad-filter__body" data-tab-content="tires">
+                                                <div class="list-ad__form-section list-ad__form-section-checkbox">
+                                                    <span class="advanced-filter__subtitle">Бренд</span>
+                                                    <div class="select select_s">
+                                                        <div class="select-input">
+                                                            <span class="select-input__title">Не выбрано</span>
+                                                            <div class="select-input__chevron">
+                                                                <svg><use href='./img/sprite.svg#chevron'></use></svg>
+                                                            </div>
+                                                        </div>
+                                                        <div class="na-row__block select-dropdown">
+                                                            <div class="select-dropdown__all">
+                                                                Все бренды
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">Rotiform</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">80</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">90</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A1</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A3</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A4</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A4 allroad</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A5</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="select-dropdown__checkbox">
+                                                                <div class="select-dropdown__checkbox-box">
+                                                                    <input type="checkbox" class="select-dropdown__checkbox-input">
+                                                                    <label for="" class="select-dropdown__checkbox-label"></label>
+                                                                    <p class="select-dropdown__checkbox-text">A6</p>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-ad__form-section">
+                                                    <span class="advanced-filter__subtitle">Сезон</span>
+                                                    <div class="select select_s">
+                                                        <div class="select-input">
+                                                            <span class="select-input__title">Не выбрано</span>
+                                                            <div class="select-input__chevron">
+                                                                <svg><use href='./img/sprite.svg#chevron'></use></svg>
+                                                            </div>
+                                                        </div>
+                                                        <div class="select-dropdown">
+                                                            <ul class="select-dropdown__list">
+                                                                <li class="select-dropdown__item">Зима</li>
+                                                                <li class="select-dropdown__item">Лето</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-ad__form-section">
+                                                    <span class="advanced-filter__subtitle">Диаметр</span>
+                                                    <div class="select select_s">
+                                                        <div class="select-input">
+                                                            <span class="select-input__title">Не выбрано</span>
+                                                            <div class="select-input__chevron">
+                                                                <svg><use href='./img/sprite.svg#chevron'></use></svg>
+                                                            </div>
+                                                        </div>
+                                                        <div class="select-dropdown">
+                                                            <ul class="select-dropdown__list">
+                                                                <li class="select-dropdown__item">18</li>
+                                                                <li class="select-dropdown__item">19</li>
+                                                                <li class="select-dropdown__item">20</li>
+                                                                <li class="select-dropdown__item">21</li>
+                                                                <li class="select-dropdown__item">22</li>
+                                                                <li class="select-dropdown__item">23</li>
+                                                                <li class="select-dropdown__item">24</li>
+                                                                <li class="select-dropdown__item">25</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-ad__form-section">
+                                                    <span class="advanced-filter__subtitle">Высота профиля, %</span>
+                                                    <div class="select select_s">
+                                                        <div class="select-input">
+                                                            <span class="select-input__title">Не выбрано</span>
+                                                            <div class="select-input__chevron">
+                                                                <svg><use href='./img/sprite.svg#chevron'></use></svg>
+                                                            </div>
+                                                        </div>
+                                                        <div class="select-dropdown">
+                                                            <ul class="select-dropdown__list">
+                                                                <li class="select-dropdown__item">60</li>
+                                                                <li class="select-dropdown__item">65</li>
+                                                                <li class="select-dropdown__item">70</li>
+                                                                <li class="select-dropdown__item">75</li>
+                                                                <li class="select-dropdown__item">85</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-ad__form-section">
+                                                    <span class="advanced-filter__subtitle">Ширина профиля, %</span>
+                                                    <div class="select select_s">
+                                                        <div class="select-input">
+                                                            <span class="select-input__title">Не выбрано</span>
+                                                            <div class="select-input__chevron">
+                                                                <svg><use href='./img/sprite.svg#chevron'></use></svg>
+                                                            </div>
+                                                        </div>
+                                                        <div class="select-dropdown">
+                                                            <ul class="select-dropdown__list">
+                                                                <li class="select-dropdown__item">215</li>
+                                                                <li class="select-dropdown__item">235</li>
+                                                                <li class="select-dropdown__item">245</li>
+                                                                <li class="select-dropdown__item">255</li>
+                                                                <li class="select-dropdown__item">265</li>
+                                                                <li class="select-dropdown__item">275</li>
+                                                                <li class="select-dropdown__item">285</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-ad__form-section">
+                                                    <span class="advanced-filter__subtitle">Цена</span>
+                                                    <div class="textfield-double advanced-filter__double-input">
+                                                        <div class="textfield textfield-s clear-by-cross">
+                                                            <input type="text" id="">
+                                                            <label for="">От</label>
+                                                        </div>
+                                                        <div class="textfield textfield-s clear-by-cross">
+                                                            <input type="text" id="">
+                                                            <label for="">До</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="ad-filter__footer">
+                                            <div class="ad-filter__btn-list">
+                                                <button class="btn btn_primary ad-filter__show-btn ad-filter__show-btn-pc">показать <span>NNN</span> объявлений</button>
+                                                <button class="btn btn_primary ad-filter__show-btn ad-filter__show-btn-mob"><span>NNN</span> объявлений</button>
+                                                <button class="btn btn_linear btn_icon btn_icon-reset-filter ad-filter__reset-btn">Сбросить</button>
+                                            </div>
+                                            <div class="ad-filter__option-list">
+                                                <div class="select ad-filter__option-select ad-filter__option-select_pc">
                                                     <div class="select-input">
-                                                        <span class="select-input__title">Не выбрано</span>
+                                                        <span class="select-input__title">Сортировать по</span>
                                                         <div class="select-input__chevron">
-                                                            <svg><use href='./img/sprite.svg#chevron'></use></svg>
+                                                            <svg><use href='./img/sprite.svg#filter-chevron'></use></svg>
                                                         </div>
                                                     </div>
                                                     <div class="select-dropdown">
                                                         <ul class="select-dropdown__list">
-                                                            <li class="select-dropdown__item">18</li>
-                                                            <li class="select-dropdown__item">19</li>
-                                                            <li class="select-dropdown__item">20</li>
-                                                            <li class="select-dropdown__item">21</li>
-                                                            <li class="select-dropdown__item">22</li>
-                                                            <li class="select-dropdown__item">23</li>
-                                                            <li class="select-dropdown__item">24</li>
-                                                            <li class="select-dropdown__item">25</li>
+                                                            <li class="select-dropdown__item _selected">По актуальности</li>
+                                                            <li class="select-dropdown__item">По возрастанию цены</li>
+                                                            <li class="select-dropdown__item">По убыванию цены</li>
                                                         </ul>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="list-ad__form-section">
-                                                <span class="advanced-filter__subtitle">Цена</span>
-                                                <div class="textfield-double advanced-filter__double-input">
-                                                    <div class="textfield textfield-s clear-by-cross">
-                                                        <input type="text" id="">
-                                                        <label for="">От</label>
-                                                    </div>
-                                                    <div class="textfield textfield-s clear-by-cross">
-                                                        <input type="text" id="">
-                                                        <label for="">До</label>
-                                                    </div>
+                                                <div class="ad-filter__grid-list">
+                                                    <button class="ad-filter__grid-btn ad-filter__grid-btn-box"><svg><use href='./img/sprite.svg#grid-box'></use></svg></button>
+                                                    <button class="ad-filter__grid-btn ad-filter__grid-btn-row _active"><svg><use href='./img/sprite.svg#grid-row'></use></svg></button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="ad-filter__body" data-tab-content="tires">
-                                            <div class="list-ad__form-section list-ad__form-section-checkbox">
-                                                <span class="advanced-filter__subtitle">Бренд</span>
-                                                <div class="select select_s">
-                                                    <div class="select-input">
-                                                        <span class="select-input__title">Не выбрано</span>
-                                                        <div class="select-input__chevron">
-                                                            <svg><use href='./img/sprite.svg#chevron'></use></svg>
-                                                        </div>
-                                                    </div>
-                                                    <div class="na-row__block select-dropdown">
-                                                        <div class="select-dropdown__all">
-                                                            Все бренды
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">Rotiform</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">80</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">90</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A1</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A3</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A4</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A4 allroad</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A5</p>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="select-dropdown__checkbox">
-                                                            <div class="select-dropdown__checkbox-box">
-                                                                <input type="checkbox" class="select-dropdown__checkbox-input">
-                                                                <label for="" class="select-dropdown__checkbox-label"></label>
-                                                                <p class="select-dropdown__checkbox-text">A6</p>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-ad__form-section">
-                                                <span class="advanced-filter__subtitle">Сезон</span>
-                                                <div class="select select_s">
-                                                    <div class="select-input">
-                                                        <span class="select-input__title">Не выбрано</span>
-                                                        <div class="select-input__chevron">
-                                                            <svg><use href='./img/sprite.svg#chevron'></use></svg>
-                                                        </div>
-                                                    </div>
-                                                    <div class="select-dropdown">
-                                                        <ul class="select-dropdown__list">
-                                                            <li class="select-dropdown__item">Зима</li>
-                                                            <li class="select-dropdown__item">Лето</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-ad__form-section">
-                                                <span class="advanced-filter__subtitle">Диаметр</span>
-                                                <div class="select select_s">
-                                                    <div class="select-input">
-                                                        <span class="select-input__title">Не выбрано</span>
-                                                        <div class="select-input__chevron">
-                                                            <svg><use href='./img/sprite.svg#chevron'></use></svg>
-                                                        </div>
-                                                    </div>
-                                                    <div class="select-dropdown">
-                                                        <ul class="select-dropdown__list">
-                                                            <li class="select-dropdown__item">18</li>
-                                                            <li class="select-dropdown__item">19</li>
-                                                            <li class="select-dropdown__item">20</li>
-                                                            <li class="select-dropdown__item">21</li>
-                                                            <li class="select-dropdown__item">22</li>
-                                                            <li class="select-dropdown__item">23</li>
-                                                            <li class="select-dropdown__item">24</li>
-                                                            <li class="select-dropdown__item">25</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-ad__form-section">
-                                                <span class="advanced-filter__subtitle">Высота профиля, %</span>
-                                                <div class="select select_s">
-                                                    <div class="select-input">
-                                                        <span class="select-input__title">Не выбрано</span>
-                                                        <div class="select-input__chevron">
-                                                            <svg><use href='./img/sprite.svg#chevron'></use></svg>
-                                                        </div>
-                                                    </div>
-                                                    <div class="select-dropdown">
-                                                        <ul class="select-dropdown__list">
-                                                            <li class="select-dropdown__item">60</li>
-                                                            <li class="select-dropdown__item">65</li>
-                                                            <li class="select-dropdown__item">70</li>
-                                                            <li class="select-dropdown__item">75</li>
-                                                            <li class="select-dropdown__item">85</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-ad__form-section">
-                                                <span class="advanced-filter__subtitle">Ширина профиля, %</span>
-                                                <div class="select select_s">
-                                                    <div class="select-input">
-                                                        <span class="select-input__title">Не выбрано</span>
-                                                        <div class="select-input__chevron">
-                                                            <svg><use href='./img/sprite.svg#chevron'></use></svg>
-                                                        </div>
-                                                    </div>
-                                                    <div class="select-dropdown">
-                                                        <ul class="select-dropdown__list">
-                                                            <li class="select-dropdown__item">215</li>
-                                                            <li class="select-dropdown__item">235</li>
-                                                            <li class="select-dropdown__item">245</li>
-                                                            <li class="select-dropdown__item">255</li>
-                                                            <li class="select-dropdown__item">265</li>
-                                                            <li class="select-dropdown__item">275</li>
-                                                            <li class="select-dropdown__item">285</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-ad__form-section">
-                                                <span class="advanced-filter__subtitle">Цена</span>
-                                                <div class="textfield-double advanced-filter__double-input">
-                                                    <div class="textfield textfield-s clear-by-cross">
-                                                        <input type="text" id="">
-                                                        <label for="">От</label>
-                                                    </div>
-                                                    <div class="textfield textfield-s clear-by-cross">
-                                                        <input type="text" id="">
-                                                        <label for="">До</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="ad-filter__footer">
-                                        <div class="ad-filter__btn-list">
-                                            <button class="btn btn_primary ad-filter__show-btn ad-filter__show-btn-pc">показать <span>NNN</span> объявлений</button>
-                                            <button class="btn btn_primary ad-filter__show-btn ad-filter__show-btn-mob"><span>NNN</span> объявлений</button>
-                                            <button class="btn btn_linear btn_icon btn_icon-reset-filter ad-filter__reset-btn">Сбросить</button>
-                                        </div>
-                                        <div class="ad-filter__option-list">
-                                            <div class="select ad-filter__option-select ad-filter__option-select_pc">
-                                                <div class="select-input">
-                                                    <span class="select-input__title">Сортировать по</span>
-                                                    <div class="select-input__chevron">
-                                                        <svg><use href='./img/sprite.svg#filter-chevron'></use></svg>
-                                                    </div>
-                                                </div>
-                                                <div class="select-dropdown">
-                                                    <ul class="select-dropdown__list">
-                                                        <li class="select-dropdown__item _selected">По актуальности</li>
-                                                        <li class="select-dropdown__item">По возрастанию цены</li>
-                                                        <li class="select-dropdown__item">По убыванию цены</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="ad-filter__grid-list">
-                                                <button class="ad-filter__grid-btn ad-filter__grid-btn-box"><svg><use href='./img/sprite.svg#grid-box'></use></svg></button>
-                                                <button class="ad-filter__grid-btn ad-filter__grid-btn-row _active"><svg><use href='./img/sprite.svg#grid-row'></use></svg></button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                                 <div class="list-ad__card-list list-ad__card-row">
                                     <div class="la-card la-card__all-swiper la-card_big la-tuning la-tuning__viewed la-card_paid _hide-card">
