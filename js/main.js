@@ -603,11 +603,18 @@ function change_grid(i) {
                 },
             });
             document.querySelector('.list-ad__card-list').classList.remove('list-ad__card-row');
+            document.querySelectorAll('.la-card[data-views-section]').forEach(i => {
+                i.setAttribute('data-views-section', 'box')
+            });
         }
 
         if (i.classList.contains('ad-filter__grid-btn-row')) {
             if (!document.querySelector('.list-ad__card-list').classList.contains('list-ad__card-row')) {
+                document.querySelectorAll('.la-card[data-views-section]').forEach(i => {
+                    i.setAttribute('data-views-section', 'row')
+                });
                 row_container();
+
             }
         }
     } else {
@@ -615,23 +622,36 @@ function change_grid(i) {
         i.classList.add('_active');
         if (i.classList.contains('ad-filter__grid-btn-box')) {
             document.querySelector('.list-ad__card-list').classList.remove('list-ad__card-row');
+            document.querySelectorAll('.la-card[data-views-section]').forEach(i => {
+                i.setAttribute('data-views-section', 'box')
+            });
         }
 
         if (i.classList.contains('ad-filter__grid-btn-row')) {
             document.querySelector('.list-ad__card-list').classList.add('list-ad__card-row');
+            document.querySelectorAll('.la-card[data-views-section]').forEach(i => {
+                i.setAttribute('data-views-section', 'row')
+            });
             liked();
         }
     }
+    find('.ma-tab__preload').classList.remove('_show');
+    findAll('.la-card').forEach(i => i.classList.remove('_hide-card'));
     liked();
     openModalWhenClickingOnBtn();
 }
 
 
 document.querySelectorAll('.ad-filter__grid-list button').forEach(i => {
+    change_grid(i);
     i.addEventListener('click', e => {
         change_grid(i);
     });
 });
+
+if (find('.list-ad__filter-mob-list')) {
+    find('.list-ad__filter-mob-list').querySelector('.ad-filter__grid-btn-row').classList.add('_active');
+}
 
 const sliderLACard = new Swiper('.la-card__slider', {
     spaceBetween: 4,

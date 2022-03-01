@@ -4,6 +4,9 @@
     border-radius: $radius;
     overflow: hidden;
     height: max-content;
+    &._hide-card {
+        display: none
+    }
     @media (min-width: 1570px) {
         .card-table tr {
             line-height: 17px
@@ -212,6 +215,7 @@
 
 .list-ad__card-row {
     grid-template-columns: repeat(1, 1fr);
+    position: relative;
     .la-card__options {
         padding-top: 15px;
         padding-bottom: 15px;
@@ -638,4 +642,12 @@
     @media (max-width: $tablet-s) {
         display: none
     }
+}
+
+.la-card_big:not(._hide-card)[data-views-section=row] {
+    display: block;
+}
+
+.la-card_big:not(._hide-card)[data-views-section=box] {
+    display: none;
 }
