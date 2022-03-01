@@ -181,6 +181,7 @@
 
 .ad-filter__grid-list {
     margin-left: 40px;
+    display: flex;
     @media (max-width: $tablet-l) {
         margin-left: 20px;
     }
@@ -211,6 +212,10 @@
         stroke: $icon-second;
         transition: $tr;
     }
+}
+
+.ad-filter__grid-btn-box {
+    margin-right: 10px
 }
 
 .ad-filter__option-list {

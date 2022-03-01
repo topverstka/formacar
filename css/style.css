@@ -9915,6 +9915,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .ad-filter__grid-list {
   margin-left: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (max-width: 920px) {
@@ -9949,6 +9952,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   stroke: var(--icon-second);
   -webkit-transition: var(--tr);
   transition: var(--tr);
+}
+
+.ad-filter__grid-btn-box {
+  margin-right: 10px;
 }
 
 .ad-filter__option-list .select-dropdown {
