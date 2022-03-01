@@ -591,14 +591,29 @@ function change_grid(i) {
         i.classList.add('_active');
         if (i.classList.contains('ad-filter__grid-btn-box')) {
             document.querySelector('.list-ad__card-list').innerHTML = html_list_ad;
-            new Swiper('.la-card__slider', {
+            new Swiper('.la-card__all-swiper-big .la-card__slider', {
+                spaceBetween: 4,
+                slidesPerView: 1.25,
+                observer: true,
+                observeParents: true,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 'auto',
+                    }
+                },
+                pagination: {
+                    el: '.la-card__all-swiper-big .ma-card__pagination',
+                    clickable: true,
+                },
+            });
+            new Swiper('.la-card__all-swiper .la-card__slider', {
                 spaceBetween: 4,
                 slidesPerView: 'auto',
                 observer: true,
                 observeParents: true,
 
                 pagination: {
-                    el: '.ma-card__pagination',
+                    el: '.la-card__all-swiper .ma-card__pagination',
                     clickable: true,
                 },
             });
@@ -653,17 +668,35 @@ if (find('.list-ad__filter-mob-list')) {
     find('.list-ad__filter-mob-list').querySelector('.ad-filter__grid-btn-row').classList.add('_active');
 }
 
-const sliderLACard = new Swiper('.la-card__slider', {
+const sliderLACard = new Swiper('.la-card__all-swiper .la-card__slider', {
     spaceBetween: 4,
     slidesPerView: 'auto',
     observer: true,
     observeParents: true,
 
     pagination: {
-        el: '.ma-card__pagination',
+        el: '.la-card__all-swiper .ma-card__pagination',
         clickable: true,
     },
 });
+
+const sliderLACard_1 = new Swiper('.la-card__all-swiper-big .la-card__slider', {
+    spaceBetween: 4,
+    slidesPerView: 1.25,
+    observer: true,
+    observeParents: true,
+    breakpoints: {
+        768: {
+            slidesPerView: 'auto',
+        }
+    },
+    pagination: {
+        el: '.la-card__all-swiper-big .ma-card__pagination',
+        clickable: true,
+    },
+});
+
+
 
 // const swiper = new Swiper('.swiper-container', {
 

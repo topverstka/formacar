@@ -514,7 +514,10 @@
             }
         }
         .la-card__slider {
-            width: 266px;
+            width: 100%;
+            padding-left: 0;
+            overflow: hidden;
+            padding-right: 32px;
             height: 200px;
             margin-top: 10px;
             .la-card__slide {
@@ -603,7 +606,7 @@
             font-size: 18px
         }
     }
-    @media (max-width: $tablet-s) {
+    @media (max-width: $tablet) {
         .ma-card__pagination {
             display: flex
         }

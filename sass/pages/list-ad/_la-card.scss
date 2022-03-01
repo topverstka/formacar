@@ -31,15 +31,17 @@
             width: 266px;
             height: 200px;
         }
+        @media (max-width:$tablet) {
+            img {
+                object-fit: cover;
+            }
+        }
         @media (max-width: $tablet-s) {
             height: 102px;
             margin-bottom: 8px;
             width: 100%;
             &:first-child {
                 border-radius: 0;
-            }
-            img {
-                object-fit: cover;
             }
         }
     }
@@ -375,6 +377,18 @@
             font-size: 16px;
             line-height: 20px;
         }
+    }
+}
+
+@media (max-width: $tablet) {
+    .list-ad__card-row .la-card__all-swiper-big .la-card__slider,
+    .list-ad__card-row.list-ad__card-auto .la-card__slider {
+        width: 100%;
+        overflow: hidden;
+        padding-right: 32px;
+        border-radius: 2px;
+        padding-left: 0;
+        margin-left: 16px;
     }
 }
 
