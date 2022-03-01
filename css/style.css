@@ -10606,7 +10606,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .list-ad__card-row .la-card__all-swiper-big .la-card__slider,
   .list-ad__card-row.list-ad__card-auto .la-card__slider {
     width: 100%;
-    overflow: hidden;
     padding-right: 32px;
     border-radius: 2px;
     padding-left: 0;
@@ -11625,7 +11624,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .ad-content__tuning .list-ad__card-row .la-card_big:not(.la-tuning) .la-card__slider {
     width: 100%;
     padding-left: 0;
-    overflow: hidden;
     padding-right: 32px;
     height: 200px;
     margin-top: 10px;
