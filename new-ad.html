@@ -43,7 +43,7 @@
                                 <div class="header__top-content">
                                     <div class="header__top-buttons">
                                         <button class="btn btn_second header__sign-in" data-modal-open="auth">Войти</button>
-                                        <a href="" class="btn btn_primary header__sell">Продать</a>
+                                        <button class="btn btn_primary header__sell">Продать</button>
                                     </div>
                                     <div class="user__options">
                                         <div class="user-option">
@@ -568,47 +568,48 @@
             <div class="container">
                 <div class="na-content__wrap">
                     <div class="na-content">
-                        <section class="na-margin na-cat">
-                            <div class="na-cat__wrap">
-                                <div class="section__header">
-                                    <h1 class="section-title">Новое объявление</h1>
-                                </div>
-                                <div class="section__body">
-                                    <div class="na-cat__list">
-                                        <div class="choose-cat-card na-cat-card choose-cat-card_colorful " style="background-color: #9578FA;">
-                                            <div class="choose-cat-card__wrap">
-                                                <h3 class="choose-cat-card__title">Легковые автомобили</h3>
+                        <form action="">
+                            <section class="na-margin na-cat">
+                                <div class="na-cat__wrap">
+                                    <div class="section__header">
+                                        <h1 class="section-title">Новое объявление</h1>
+                                    </div>
+                                    <div class="section__body">
+                                        <div class="na-cat__list">
+                                            <div class="choose-cat-card na-cat-card choose-cat-card_colorful " style="background-color: #9578FA;">
+                                                <div class="choose-cat-card__wrap">
+                                                    <h3 class="choose-cat-card__title">Легковые автомобили</h3>
+                                                </div>
+                                                <a href="../choose-cat.html" class="na-cat-card__close"><svg><use href='./img/sprite.svg#close-circle'></use></svg></a>
                                             </div>
-                                            <a href="../choose-cat.html" class="na-cat-card__close"><svg><use href='./img/sprite.svg#close-circle'></use></svg></a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                        <section class="na-margin na-block na-result">
-                            <div class="na-block__header">
-                                <div class="na-block__header-info">
-                                    <div class="na-block__brand-icon"><img src="./img/brands/audi.png" alt=""></div>
-                                    <div class="na-block__header-info-list">
-                                        <span class="na-title na-block__header-info-item na-block__header-info-brand">Audi</span>
-                                        <span class="na-title na-block__header-info-item na-block__header-info-model">Q3</span>
-                                        <span class="na-title na-block__header-info-item na-block__header-info-version">I (8U) Рестайлинг</span>
+                            </section>
+                            <section class="na-margin na-block na-result">
+                                <div class="na-block__header">
+                                    <div class="na-block__header-info">
+                                        <div class="na-block__brand-icon"><img src="./img/brands/audi.png" alt=""></div>
+                                        <div class="na-block__header-info-list">
+                                            <span class="na-title na-block__header-info-item na-block__header-info-brand">Audi</span>
+                                            <span class="na-title na-block__header-info-item na-block__header-info-model">Q3</span>
+                                            <span class="na-title na-block__header-info-item na-block__header-info-version">I (8U) Рестайлинг</span>
+                                        </div>
                                     </div>
+                                    <button class="na-block__close"><svg><use href='./img/sprite.svg#close-circle'></use></svg></button>
                                 </div>
-                                <button class="na-block__close"><svg><use href='./img/sprite.svg#close-circle'></use></svg></button>
-                            </div>
-                        </section>
-                        <form action="">
+                            </section>
+
                             <section class="na-margin na-block na-brand" data-type="brand" data-title="Марка">
                                 <div class="na-block__header">
                                     <h2 class="na-title">Выбор марки</h2>
                                 </div>
                                 <div class="na-block__body">
-                                    <form method="GET" class="textfield textfield-l textfield_search clear-by-cross na-block__search">
+                                    <div class="textfield textfield-l textfield_search clear-by-cross na-block__search">
                                         <input id="search-cities" type="text">
                                         <label for="search-cities">Выберите марку</label>
                                         <button type="submit" class="textfield_search-submit"><svg><use href='./img/sprite.svg#search'></use></svg></button>
-                                    </form>
+                                    </div>
                                     <div class="na-list na-brand__list" data-list>
                                         <div class="na-brand__item">
                                             <div class="na-brand__radio">
@@ -755,11 +756,11 @@
                                     <button class="na-block__close"><svg><use href='./img/sprite.svg#close-circle'></use></svg></button>
                                 </div>
                                 <div class="na-block__body">
-                                    <form method="GET" class="textfield textfield-l textfield_search clear-by-cross na-block__search">
+                                    <div class="textfield textfield-l textfield_search clear-by-cross na-block__search">
                                         <input id="search-cities" type="text">
                                         <label for="search-cities">Выберите модель</label>
                                         <button type="submit" class="textfield_search-submit"><svg><use href='./img/sprite.svg#search'></use></svg></button>
-                                    </form>
+                                    </div>
                                     <div class="na-list na-model__list" data-list>
                                         <div class="na-brand__item">
                                             <div class="na-brand__radio">
@@ -1318,7 +1319,7 @@
                                     <p class="na-text">Краткое описание запретов.</p>
                                 </div>
                                 <div class="na-block__body">
-                                    <form action="/img" class="dropzone na-dropzone" id="my-great-dropzone">
+                                    <div class="dropzone na-dropzone" id="my-great-dropzone">
                                         <div class="na-dropzone__block">
                                             <div class="na-dropzone__icon"><svg><use href='./img/sprite.svg#dropzone-plus'></use></svg></div>
                                             <div class="na-dropzone__content">
@@ -1330,7 +1331,7 @@
                                         <div class="na-dropzone__add-more">
                                             <div class="na-dropzone__add-more-icon"><svg><use href='./img/sprite.svg#dropzone-plus'></use></svg></div>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </section>
                             <button class="btn btn_primary btn_icon btn_icon-arrow na-submit" disabled>Продолжить</button>
@@ -2445,6 +2446,7 @@
             paramName: "file", // The name that will be used to transfer the file
             maxFilesize: 2, // MB
             addRemoveLinks: true,
+            url: '/img',
             init: function() {
                 this.on('addedfile', file => {
                     const form = this.element

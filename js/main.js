@@ -659,7 +659,9 @@ function change_grid(i) {
 
 document.querySelectorAll('.ad-filter__grid-list button').forEach(i => {
     change_grid(i);
+    liked();
     i.addEventListener('click', e => {
+        e.preventDefault();
         change_grid(i);
     });
 });
