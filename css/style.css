@@ -9971,6 +9971,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   mix-blend-mode: color-dodge;
 }
 
+.select-dropdown__colors.select-dropdown {
+  padding: 25px;
+}
+
 .ad-filter__body .list-ad__form-section-checkbox ._active_drop {
   font-weight: 500;
   font-size: 14px;
