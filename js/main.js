@@ -2055,6 +2055,13 @@ function select() {
         // }
 
 
+        if (target.closest('.color-radio')) {
+            if (target.closest('.color-radio').querySelector('input').checked) {
+                target.closest('.select').querySelector('.select-input__title').innerText = '';
+            }
+        }
+
+
         if (target.classList.contains('select-dropdown__checkbox-box') || target.closest('.select-dropdown__checkbox-box')) {
 
             if (target.closest('.select-dropdown__checkbox-box')) {
@@ -2502,6 +2509,10 @@ window.addEventListener('resize', function() {
 })
 
 function field_validation(e) {
+
+    if (document.querySelector('.placeholder_error')) {
+        e.preventDefault();
+    }
     document.querySelectorAll('.placeholder').forEach(i => {
 
         if (i.type === 'radio') {
@@ -2559,6 +2570,7 @@ function field_validation(e) {
             }
 
             if (i.classList.contains('select-input')) {
+
                 if (i.querySelector('.select-input__title').innerText === 'Не выбрано') {
                     i.classList.add('error_input');
                     if (!i.closest('.section_placeholder').querySelector('.placeholder_error')) {
@@ -2571,6 +2583,10 @@ function field_validation(e) {
                         i.closest('.section_placeholder').querySelector('.placeholder_error').remove()
                     }
                 }
+            }
+
+            if (i.classList.contains('select-input-colors')) {
+
             }
         }
     });
