@@ -2016,6 +2016,10 @@ function select() {
             select.classList.remove('_open')
             select.classList.add('_valid')
 
+            if (document.querySelector('.placeholder_error')) {
+                field_validation(e)
+            }
+
             if (select.closest('[data-form-valid=submit-disabled]')) {
                 const form = select.closest('[data-form-valid=submit-disabled]')
                 const btnSubmit = form.querySelector('[type=submit]')
@@ -2475,6 +2479,13 @@ document.body.addEventListener('input', function(e) {
         // });
 
     }
+
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.classList.contains('placeholder')) {
+        if (document.querySelector('.placeholder_error')) {
+            field_validation(e)
+        }
+    }
+
 });
 
 
