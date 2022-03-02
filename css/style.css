@@ -4740,7 +4740,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-size: 12px;
   line-height: 17px;
   position: absolute;
-  bottom: -21px;
+  bottom: -18px;
 }
 
 input.error_input,
@@ -4762,7 +4762,7 @@ div.error_input {
 }
 
 .na-row.na-row-color .placeholder_error {
-  bottom: -6px;
+  bottom: -2px;
 }
 
 .ad-filter__body .placeholder_error {
@@ -4774,7 +4774,7 @@ div.error_input {
 }
 
 .na-descr .placeholder_error {
-  bottom: -17px;
+  bottom: -15px;
 }
 
 .header {
