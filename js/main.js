@@ -2433,7 +2433,14 @@ window.addEventListener('click', function(e) {
         let tab = e.target.closest('.ad-tab').getAttribute('data-tab-filter');
         document.querySelector(`.ad-filter__body._active-tab`).classList.remove('_active-tab');
         document.querySelector(`.ad-filter__body[data-tab-content=${tab}]`).classList.add('_active-tab');
+        document.querySelectorAll('.error_input').forEach(el => el.classList.remove('error_input'));
+        document.querySelectorAll('.placeholder_error').forEach(el => el.remove('placeholder_error'));
     }
+
+    if (e.target.classList.contains('na-submit') || e.target.classList.contains('ad-filter__show-btn') || e.target.classList.contains('advanced-filter__show-btn')) {
+        field_validation(e);
+    }
+
 });
 
 // Запрет на ввод букв
@@ -2493,3 +2500,78 @@ window.addEventListener('load', function() {
 window.addEventListener('resize', function() {
     add_masonry();
 })
+
+function field_validation(e) {
+    document.querySelectorAll('.placeholder').forEach(i => {
+
+        if (i.type === 'radio') {
+
+            let temporary_class = i.closest('.na-row__block-radio').querySelectorAll('.placeholder');
+
+            if (i.closest('.na-row-color__list')) {
+
+                for (let j = 0; j < temporary_class.length; j++) {
+                    if (!temporary_class[j].checked) {
+                        if (!i.closest('.section_placeholder').querySelector('.placeholder_error')) {
+                            i.closest('.section_placeholder').insertAdjacentHTML('beforeend', '<div class="placeholder_error">Необходимо выбрать цвет</div>');
+                            e.preventDefault();
+                        }
+                    } else {
+                        if (i.closest('.section_placeholder').querySelector('.placeholder_error')) {
+                            i.closest('.section_placeholder').querySelector('.placeholder_error').remove()
+                        }
+                        return false;
+                    }
+                }
+
+            } else {
+
+                for (let j = 0; j < temporary_class.length; j++) {
+                    if (!temporary_class[j].checked) {
+                        if (!i.closest('.section_placeholder').querySelector('.placeholder_error')) {
+                            i.closest('.section_placeholder').insertAdjacentHTML('beforeend', '<div class="placeholder_error">Необходимо выбрать вариант</div>');
+                            e.preventDefault();
+                        }
+                    } else {
+                        if (i.closest('.section_placeholder').querySelector('.placeholder_error')) {
+                            i.closest('.section_placeholder').querySelector('.placeholder_error').remove()
+                        }
+                        return false;
+                    }
+                }
+            }
+
+        } else {
+
+            if (!i.classList.contains('select-input')) {
+                if (i.value === '') {
+                    i.classList.add('error_input');
+                    if (!i.closest('.section_placeholder').querySelector('.placeholder_error')) {
+                        i.closest('.section_placeholder').insertAdjacentHTML('beforeend', '<div class="placeholder_error">Необходимо заполнить поле</div>');
+                        e.preventDefault();
+                    }
+                } else {
+                    i.classList.remove('error_input');
+                    if (i.closest('.section_placeholder').querySelector('.placeholder_error')) {
+                        i.closest('.section_placeholder').querySelector('.placeholder_error').remove()
+                    }
+                }
+            }
+
+            if (i.classList.contains('select-input')) {
+                if (i.querySelector('.select-input__title').innerText === 'Не выбрано') {
+                    i.classList.add('error_input');
+                    if (!i.closest('.section_placeholder').querySelector('.placeholder_error')) {
+                        i.closest('.section_placeholder').insertAdjacentHTML('beforeend', '<div class="placeholder_error">Необходимо заполнить поле</div>');
+                        e.preventDefault();
+                    }
+                } else {
+                    i.classList.remove('error_input');
+                    if (i.closest('.section_placeholder').querySelector('.placeholder_error')) {
+                        i.closest('.section_placeholder').querySelector('.placeholder_error').remove()
+                    }
+                }
+            }
+        }
+    });
+}

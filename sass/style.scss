@@ -1,7 +1,6 @@
 @import '_fonts'; // Шрифты
 @import '_variables'; // Переменные
 @import '_reset'; // Сброс css
-
 // Миксин для перевода px в vw
 @function vw($px) {
     @return $px/(1920 / 100vw);
@@ -17,7 +16,6 @@
 //     background: $accent-primary;
 //     color: #fff;
 // }
-
 // Стиль скроллбара
 // body::-webkit-scrollbar {
 //     position: fixed;
@@ -26,15 +24,12 @@
 //     width: .6em;
 //     height: 100%;
 // }
-
 // body::-webkit-scrollbar-track {
 //     background: #FEF1EB;
 // }
-
 // body::-webkit-scrollbar-thumb {
 //     background-color: #CAC1BC;
 // }
-
 *::-webkit-input-placeholder {
     color: $input-placeholder;
 }
@@ -47,7 +42,6 @@ body {
     font-style: normal;
     line-height: 1.3;
     background: $bg-page;
-
     &._lock {
         overflow: hidden;
     }
@@ -60,10 +54,8 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-
     &_sidebar {
         overflow: initial;
-
         @media (max-width: $tablet) {
             overflow: hidden;
         }
@@ -77,11 +69,9 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-
     @media (max-width: $tablet) {
         margin-top: 40px;
     }
-
     @media (max-width: $mobile-l) {
         margin-top: 30px;
     }
@@ -93,9 +83,7 @@ body {
 @import 'libs/_swiper';
 @import 'libs/_rangeslider-js';
 @import 'libs/_dropzone';
-
 @import '_grid'; // Сетка
-
 // Компоненты
 @import 'components/_buttons';
 @import 'components/_forms';
@@ -106,11 +94,10 @@ body {
 @import 'components/_select';
 @import 'components/_pagin';
 @import 'components/_card-table';
-
+@import 'components/_placeholder';
 // Текстовые компоненты
 @import 'components/text/_text';
 @import 'components/text/_titles';
-
 // Секции
 @import 'sections/_header';
 @import 'sections/_breadcrumbs';
@@ -122,20 +109,16 @@ body {
 @import 'sections/_search';
 @import 'sections/_footer';
 @import 'sections/_mob-menu';
-
 // Страницы
 @import 'pages/_choose-cat';
 @import 'pages/empty-form/_empty-form';
 @import 'pages/main-ad/_main-ad';
 @import 'pages/list-ad/_list-ad';
-
 // Модальные окна
 @import 'components/modals/_lang';
 @import 'components/modals/_regions';
 @import 'components/modals/_auth';
 @import 'components/modals/_valid-ad';
-
 // Страницы
-
 // Анимация
 @import 'components/_animation';

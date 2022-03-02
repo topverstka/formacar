@@ -6,11 +6,9 @@
 
 .textfield_search-header {
     max-width: 450px;
-
     @media (max-width: $laptop-l) {
         max-width: 330px;
     }
-
     @media (max-width: 1120px) {
         max-width: 250px;
     }
@@ -26,28 +24,22 @@
     border-radius: $radius;
     padding: 0 30px 0 20px;
     transition: border-color $tr;
-
     &:focus {
         border: 1px solid $input-focus;
-
     }
-
-    & .textfield__clear._show{
+    & .textfield__clear._show {
         opacity: 1;
         visibility: visible;
         // pointer-events: all;
     }
-
     /* Скрытие скролла */
     /* хром, сафари */
     &::-webkit-scrollbar {
         width: 0;
     }
-
     /* ie 10+ */
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
-
 }
 
 .textfield textarea {
@@ -55,21 +47,17 @@
     padding: 20px 30px 20px 20px;
     overflow-y: auto;
     resize: none;
-
-    & + label {
+    &+label {
         top: 20px;
         transform: none;
     }
-
-    & ~ .textfield__clear {
+    &~.textfield__clear {
         top: 20px;
-        transform: translate(0,0);
+        transform: translate(0, 0);
     }
-
     @media (max-width: $mobile-l) {
         padding: 12px 10px;
-
-        & + label {
+        &+label {
             top: 12px;
             left: 10px;
         }
@@ -90,27 +78,23 @@
     text-overflow: ellipsis;
     overflow: hidden;
     pointer-events: none;
-    
     &._change-label {
         display: none;
     }
 }
 
 .textfield-l input {
-    height: 50px; 
-
+    height: 50px;
     @media (max-width: $mobile-l) {
         height: 40px;
     }
 }
 
 .textfield-s {
-
     & input {
         height: 36px;
         font-size: 12px;
     }
-
     & label {
         font-size: 12px;
     }
@@ -118,13 +102,10 @@
 
 .textfield-double {
     display: flex;
-
     & .textfield {
-
         &:nth-child(1) input {
             border-radius: $radius 0 0 $radius;
         }
-
         &:nth-child(2) input {
             border-radius: 0 $radius $radius 0;
         }
@@ -132,11 +113,9 @@
 }
 
 .textfield_search {
-
     & input {
         padding: 10px 40px;
     }
-
     & label {
         left: 40px;
     }
@@ -167,31 +146,24 @@
     visibility: hidden;
     // pointer-events: none;
     transition: $tr;
-    
     & svg {
         transition: $tr;
     }
-
     &:hover {
-        
         @media (min-width: $minHover) {
-            
             & svg path {
-
                 &:nth-child(1) {
                     fill: $icon-primary-l;
                 }
             }
         }
     }
-
     & svg path {
         transition: $tr;
     }
 }
 
 .textfield__clear {
-
     &._show {
         opacity: 1;
         visibility: visible;
@@ -199,30 +171,24 @@
 }
 
 .textfield__show-pass {
-
     &._show {
         visibility: visible;
         opacity: 1;
     }
-
     &._active {
-
         & .eye-hide {
             display: block;
         }
-
         & .eye-show {
             display: none;
         }
     }
-
 }
 
 .eye-show,
 .eye-hide {
     opacity: .5;
     transition: $tr;
-
     &:hover {
         opacity: 1;
     }
@@ -239,7 +205,6 @@
 // Checkbox
 .checkbox {
     position: relative;
-    
     & input {
         position: absolute;
         top: 0;
@@ -248,24 +213,17 @@
         height: 100%;
         opacity: 0;
         cursor: pointer;
-
         &:checked {
-
-            & + label {
-
+            &+label {
                 &::before {
                     background-color: #383838;
                     border-color: #383838;
                 }
             }
         }
-
         &:hover {
-            
             @media (min-width: $minHover) {
-                
                 & + label {
-                    
                     &::before {
                         border-color: #383838;
                     }
@@ -273,12 +231,10 @@
             }
         }
     }
-
     & label {
         display: flex;
         align-items: center;
         font-size: 14px;
-
         &::before {
             content: '';
             display: block;
@@ -300,7 +256,6 @@
 // Radio-элемент
 .radio {
     position: relative;
-
     & input {
         position: absolute;
         top: 0;
@@ -309,26 +264,21 @@
         height: 100%;
         opacity: 0;
         cursor: pointer;
-
         &:checked {
-
-            & + label {
+            &+label {
                 color: $text-primary;
-
                 &::before {
                     background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='10' stroke='%23B4B4BF'/%3E%3Ccircle cx='11' cy='11' r='6' fill='%23383838'/%3E%3C/svg%3E");
                 }
             }
         }
     }
-
     & label {
         display: flex;
         align-items: center;
         font-size: 14px;
         font-weight: 500;
         color: $text-second-d;
-
         &::before {
             content: '';
             min-width: 22px;
@@ -339,10 +289,8 @@
             margin-right: 20px;
             transition: $tr;
         }
-
         @media (max-width: $mobile-l) {
             // font-size: 14px;
-
             // &::before {
             //     margin-right: 10px;
             // }
@@ -355,69 +303,55 @@
 //     flex-direction: column;
 //     align-items: center;
 // }
-
 // .form-elem {
 //     position: relative;
 //     width: 100%;
-
 //     &:not(:first-child) {
 //         margin: 8px 0 0 0;
 //     }
 // }
-
 // .form-elem input {
 //     height: 60px;
 // }
-
 // .form-elem textarea {
 //     max-width: 100%;
 //     min-width: 100%;
 //     min-height: 164px;
 //     transition: 0s;
 // }
-
 // .form-elem__area {
 //     width: 100%;
 //     background: #F9F9F9;
 //     border-radius: 8px;
 //     padding: 30px 12px 12px 12px;
 //     transition: $tr;
-
 //     &:hover {
 //         background: #F4F4F4;
 //     }
-
 //     &:focus {
-
 //         & + .form-elem__label {
 //             font-size: 10px;
 //             color: $text-second-d;
 //             transform: translate(0, calc(-50% - 9px));
 //         }
 //     }
-
 //     &:not(:placeholder-shown).form-elem__area:not(:focus) {
 //         // border: 1px solid $accent-primary;
-
 //         & + .form-elem__label {
 //             font-size: 10px;
 //             color: $text-second-d;
 //             transform: translate(0, calc(-50% - 9px)); 
 //         }
 //     }
-
 //     &._error {
 //         border: 1px solid $input-error !important;
-
 //         & + .form-elem__label {
-
 //             &::after {
 //                 opacity: 1;
 //             }
 //         }
 //     }
 // }
-
 // .form-elem__label {
 //     position: absolute;
 //     top: 30px;
@@ -428,7 +362,6 @@
 //     font-weight: 400;
 //     pointer-events: none;
 //     transition: $tr;
-
 //     &::after {
 //         content: 'Error';
 //         font-size: inherit;
@@ -437,7 +370,6 @@
 //         opacity: 0;
 //     }
 // }
-
 // .form-elem__required {
 //     position: absolute;
 //     top: 50%;

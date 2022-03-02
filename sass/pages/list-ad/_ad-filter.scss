@@ -43,7 +43,7 @@
 .ad-filter__body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px 20px;
+    gap: 20px 20px;
     &._active-tab {
         display: grid;
     }

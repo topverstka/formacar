@@ -1,0 +1,42 @@
+.placeholder_error {
+    color: $input-error;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    position: absolute;
+    bottom: -21px;
+}
+
+input.error_input,
+textarea.error_input,
+div.error_input {
+    border: 1px solid $input-error
+}
+
+.section_placeholder {
+    position: relative;
+}
+
+.na-row.section_placeholder .placeholder_error {
+    bottom: -5px
+}
+
+.na-row.section_placeholder-radio .placeholder_error {
+    bottom: -14px
+}
+
+.na-row.na-row-color .placeholder_error {
+    bottom: -6px
+}
+
+.ad-filter__body .placeholder_error {
+    bottom: -18px
+}
+
+.list-ad__form-section .placeholder_error {
+    bottom: -19px
+}
+
+.na-descr .placeholder_error {
+    bottom: -17px
+}

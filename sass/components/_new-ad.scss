@@ -3,18 +3,15 @@
     width: 100%;
     display: flex;
     justify-content: center;
-
     @media (min-width: 1441px) {
         flex-direction: row-reverse;
         justify-content: space-between;
-        
         &::before {
             content: '';
             max-width: 306px;
             width: 100%;
         }
     }
-
     @media (max-width: 1700px) {
         justify-content: space-between;
     }
@@ -24,21 +21,17 @@
 .na-content {
     max-width: 876px;
     width: calc(100% - 306px);
-    margin-right: 24px; 
-
+    margin-right: 24px;
     @media (min-width: $laptop-l) {
         min-width: 876px;
         margin: 0 0 0 24px;
     }
-
     @media (max-width: $laptop) {
         width: calc(100% - 250px);
     }
-
     @media (max-width: $tablet-l) {
         width: calc(100% - 200px);
     }
-
     @media (max-width: $tablet) {
         width: 100%;
         margin: 0;
@@ -48,23 +41,18 @@
 // Отступы белых блоков
 .na-margin {
     margin-bottom: 40px;
-
     @media (max-width: $tablet) {
         margin-bottom: 30px;
     }
-
     @media (max-width: $mobile-l) {
         margin-bottom: 20px;
     }
-
     // @media (max-width: $laptop-m) {
     //     margin-bottom: 100px;
     // }
-
     // @media (max-width: $laptop) {
     //     margin-bottom: 80px;
     // }
-
     // @media (max-width: $mobile-l) {
     //     margin-bottom: 50px;
     // }
@@ -78,7 +66,6 @@
     background: #fff;
     border-radius: $radius;
     padding: 20px;
-
     @media (max-width: $mobile-l) {
         min-height: 80px;
         padding: 10px;
@@ -89,11 +76,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-
     @media (max-width: $mobile-l) {
         margin-bottom: 10px;
     }
-
     &_column {
         flex-direction: column;
         align-items: flex-start;
@@ -120,14 +105,12 @@
     display: flex;
 }
 
-.na-block__brand-title {
-}
+.na-block__brand-title {}
 
 .na-block__header-info-list {
     display: flex;
     align-items: center;
     margin-left: 20px;
-
     @media (max-width: $mobile-l) {
         margin-left: 10px;
     }
@@ -135,11 +118,9 @@
 
 .na-block__header-info-item {
     position: relative;
-    
     &:not(:last-child) {
         margin-right: 10px;
         padding-right: 10px;
-
         &::after {
             content: '';
             position: absolute;
@@ -154,12 +135,9 @@
 }
 
 .na-block__body {
-
-    & > .na-row {
-
+    &>.na-row {
         &:not(:last-child) {
             margin-bottom: 30px;
-
             @media (max-width: $mobile-l) {
                 // margin-bottom: 20px;
             }
@@ -178,22 +156,19 @@
 
 // Поиск в блоках
 .na-block__search {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 // Заголовок на странице создания объявления. Используется на всей странице
 .na-title {
     font-size: 18px;
     font-weight: 600;
-
     @media (max-width: $tablet) {
         font-size: 16px;
     }
-
     @media (max-width: $mobile-l) {
         font-size: 14px;
     }
-
     @media (max-width: $mobile-m) {
         font-size: 12px;
     }
@@ -203,15 +178,12 @@
 .na-subtitle {
     font-size: 16px;
     font-weight: 600;
-
     @media (max-width: $tablet) {
         font-size: 15px;
     }
-
     @media (max-width: $mobile-l) {
         font-size: 14px;
     }
-
     @media (max-width: $mobile) {
         font-size: 12px;
     }
@@ -223,7 +195,6 @@
     font-weight: 400;
     color: $text-second-d;
     margin-top: 10px;
-
     @media (max-width: $mobile-l) {
         font-size: 10px;
         margin-top: 5px;
@@ -239,11 +210,9 @@
     flex-wrap: wrap;
     gap: 5px 24px;
     // margin-top: 20px;
-
     // & > * {
     //     width: 22%;
     // }
-
     @media (max-width: $mobile-m) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -275,18 +244,16 @@
     width: 16px;
     height: 16px;
     display: flex;
-    margin-left: 8px; 
+    margin-left: 8px;
 }
 
 // Блок с названием и инпутом, селектом или radio-элементами
 .na-row {
     display: flex;
     align-items: center;
-
-    @media (max-width: $laptop){
+    @media (max-width: $laptop) {
         justify-content: space-between;
     }
-
     @media (max-width: $tablet-s) {
         flex-direction: column;
         align-items: flex-start;
@@ -297,16 +264,13 @@
     max-width: 286px;
     width: 100%;
     margin-right: 24px;
-
-    @media (max-width: $laptop){
+    @media (max-width: $laptop) {
         max-width: 259px;
     }
-
     @media (max-width: $tablet) {
         max-width: none;
         width: 70%;
     }
-
     @media (max-width: $tablet-s) {
         margin: 0 0 10px 0;
     }
@@ -314,18 +278,14 @@
 
 .na-row__block {
     width: 100%;
-
     & .select,
     & .select-city,
     & .textfield {
         max-width: 306px;
-
-        @media (max-width: $laptop){
+        @media (max-width: $laptop) {
             margin-right: 0;
             max-width: 367px;
         }
-       
-
         @media (max-width: $tablet-s) {
             max-width: none;
         }
@@ -337,13 +297,10 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 8px 48px;
-
     @media (max-width: $mobile-l) {
         row-gap: 20px;
     }
-
-    & > * {
-        
+    &>* {
         &:not(:last-child) {
             // margin: 4px 48px 4px 0;
             // margin-right: 48px;
@@ -371,47 +328,37 @@
     border-radius: $radius;
     transition: $tr;
     background-color: #F6F8FD;
-
     & .dz-button {
         display: none;
     }
-
     // Перемещение файлов на область загрузки
     &.dz-drag-hover {
         background-color: #F6F8FD;
-
         & .na-dropzone__add-more {
             border-style: solid;
             background-color: #F6F8FD;
-
             & .na-dropzone__add-more-icon {
                 transform: translate(-50%, -50%) scale(1.1);
             }
         }
-
         &:not(.dz-started.dz-drag-hover) {
-
             & .na-dropzone__icon {
                 transform: scale(1.1);
             }
         }
     }
-
     // Выбраны картинки
     &.dz-started {
         border: none;
         padding: 0;
         background-color: transparent;
-
         & .na-dropzone__block {
             display: none;
         }
-
         & .na-dropzone__add-more {
             display: inline-block;
         }
     }
-
     // Удалить картинку
     & .dz-remove {
         position: absolute;
@@ -439,11 +386,9 @@
 .na-dropzone__icon {
     // min-width: 30px;
     transition: $tr;
-    
     & svg {
         width: 30px;
         height: 30px;
-        
     }
 }
 
@@ -456,19 +401,15 @@
 .na-dropzone__title {
     font-size: 13px;
     font-weight: 500;
-
     @media (max-width: $mobile-l) {
         display: none;
         font-size: 12px;
     }
-
     & span {
         color: $text-accent;
     }
-
     &-mobile {
         display: none;
-
         @media (max-width: $mobile-l) {
             display: inline;
         }
@@ -480,7 +421,6 @@
     font-weight: 400;
     color: $text-second-d;
     margin-top: 5px;
-
     @media (max-width: $mobile-l) {
         font-size: 12px;
         margin: 0;
@@ -497,11 +437,9 @@
     border-radius: $radius;
     pointer-events: none;
     cursor: pointer;
-
     @media (max-width: $mobile-l) {
         width: 46%;
         height: auto;
-
         &::after {
             content: '';
             padding-top: 100%;
@@ -519,4 +457,3 @@
     height: 30px;
     transition: $tr;
 }
-
