@@ -199,6 +199,13 @@ function clearByCross() {
             input.classList.remove('_full')
             btn.classList.remove('_show')
 
+            if (btn.closest('.select-search')) {
+                btn.closest('.select-search').classList.remove('_open');
+                btn.closest('.select-search').querySelectorAll('.select-dropdown__checkbox-input').forEach(el => {
+                    el.checked = false;
+                });
+            }
+
             if (btn.parentElement.querySelector('textarea')) {
                 const textarea = btn.parentElement.querySelector('textarea')
                 textarea.style.height = 'auto'
@@ -1882,7 +1889,7 @@ function activeItemSidebar() {
 selectCreateInput()
 
 function selectCreateInput() {
-    const selectElems = findAll('.select')
+    const selectElems = findAll('.select:not(.select-search)')
 
     for (let i = 0; i < selectElems.length; i++) {
         const select = selectElems[i];
@@ -1985,7 +1992,9 @@ function select() {
 
         // Если пользователь кликнул по шапке селекта
         if (target.classList.contains('select-input')) {
-            target.parentElement.classList.toggle('_open')
+            if (!target.parentElement.classList.contains('select-search')) {
+                target.parentElement.classList.toggle('_open')
+            }
         }
 
         // Если пользователь выбрал пункт из списка селекта
@@ -2035,6 +2044,7 @@ function select() {
             target.closest('.select').querySelector('.select-input__title').innerText = target.innerText;
             target.closest('.select').querySelector('.select-input__title').setAttribute('data-title', target.innerText);
             target.closest('.select').querySelector('.select-input__title').classList.add('_active_drop');
+            target.closest('.select').children[0].value = target.innerText
         }
 
 
@@ -2051,13 +2061,17 @@ function select() {
 
                 let textDrop = target.closest('.select-dropdown__checkbox-box').querySelector('.select-dropdown__checkbox-text');
                 let textTitle = target.closest('.select').querySelector('.select-input__title');
+                let textInput = target.closest('.select').children[0];
                 if (target.closest('.select-dropdown__checkbox-box').querySelector('.select-dropdown__checkbox-input').checked) {
 
                     if (textTitle.innerText === 'Не выбрано' || textTitle.innerText === textTitle.getAttribute('data-title')) {
                         textTitle.innerHTML = '';
                         textTitle.insertAdjacentHTML('beforeend', textDrop.innerText);
+                        textInput.value = '';
+                        textInput.value = textDrop.innerText;
                     } else {
                         textTitle.insertAdjacentHTML('beforeend', ', ' + textDrop.innerText);
+                        textInput.value += ', ' + textDrop.innerText;
                     }
 
                     target.closest('.select').querySelector('.select-input__title').classList.add('_active_drop');
@@ -2082,9 +2096,10 @@ function select() {
                     let rExp = new RegExp(text_push, "g");
 
                     textTitle.innerText = str.replace(rExp, '');
-
+                    textInput.value = str.replace(rExp, '');
                     if (textTitle.innerText === '') {
                         textTitle.innerText = 'Не выбрано';
+                        textInput.value = '';
                         target.closest('.select').querySelector('.select-input__title').classList.remove('_active_drop');
                     }
 
@@ -2423,8 +2438,28 @@ window.addEventListener('click', function(e) {
 
 // Запрет на ввод букв
 document.body.addEventListener('input', function(e) {
-    if (e.target.tagName === 'INPUT' && e.target.closest('.list-ad__form-section')) {
+    if (e.target.tagName === 'INPUT' && e.target.closest('.list-ad__form-section') && !e.target.closest('.select-search')) {
         e.target.value = e.target.value.replace(/[^0-9\.\,]/g, '');
+    }
+
+    if (e.target.closest('.select-search') && e.target.tagName === 'INPUT' && !e.target.closest('.select-dropdown__checkbox-input')) {
+        if (e.target.value.length > 0) {
+            e.target.parentElement.classList.add('_open');
+        } else {
+            e.target.parentElement.classList.remove('_open');
+        }
+        if (e.target.value === '') {
+            e.target.closest('.select').querySelector('.select-input__title').innerText = 'Не выбрано';
+            e.target.closest('.select').querySelector('.select-input__title').classList.remove('_active_drop');
+        }
+        // e.target.closest('.list-ad__form-section').querySelectorAll('.select-dropdown__checkbox-text').forEach(i => {
+        //     if (i.innerText.toUpperCase().indexOf(e.target.value.toUpperCase()) > -1) {
+        //         i.closest('.select-dropdown__checkbox').style.display = 'block'
+        //     } else {
+        //         i.closest('.select-dropdown__checkbox').style.display = 'none';
+        //     }
+        // });
+
     }
 });
 
