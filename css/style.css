@@ -10071,6 +10071,10 @@ div.error_input {
   color: var(--text-primary);
 }
 
+.ad-filter__body .select-search input {
+  z-index: 2;
+}
+
 .list-ad__card-list {
   display: -ms-grid;
   display: grid;
