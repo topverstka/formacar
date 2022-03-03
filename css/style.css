@@ -8233,6 +8233,7 @@ div.error_input {
 @media (max-width: 425px) {
   .na-block__header {
     margin-bottom: 10px;
+    display: none;
   }
 }
 
@@ -8251,6 +8252,12 @@ div.error_input {
   height: 1px;
   background: var(--outline-l);
   margin: 10px 0 30px;
+}
+
+@media (max-width: 425px) {
+  .na-block__separator {
+    display: none;
+  }
 }
 
 .na-block__header-info {
