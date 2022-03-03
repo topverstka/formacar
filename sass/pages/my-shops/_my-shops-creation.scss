@@ -1,0 +1,28 @@
+.my-shop-creation__wrap {
+    width: 856px;
+    @media (min-width: 1570px) {
+        width: 876px
+    }
+    @media (max-width: 1279px) {
+        width: 717px
+    }
+    @media (max-width:$tablet) {
+        width: 100%
+    }
+}
+
+.my-shop-creation__wrap .na-margin {
+    @media (max-width: $tablet-s) {
+        margin-bottom: 10px;
+    }
+}
+
+.my-shop-creation__wrap .na-block__body>.na-row:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.my-shop-creation__wrap .na-block__header {
+    @media (max-width: $mobile-l) {
+        display: block
+    }
+}

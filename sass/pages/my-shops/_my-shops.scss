@@ -1,0 +1,189 @@
+.my-shops__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 24px;
+    margin-bottom: 50px;
+    @media (max-width: 1279px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width:992px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width:$tablet) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px
+    }
+}
+
+.my-shops__list-your-shop {
+    background: #7588F0;
+    border-radius: 10px;
+    padding: 20px 16px;
+    // width: 317px;
+    position: relative;
+    @media (max-width: $mobile-l) {
+        padding: 10px;
+        margin-bottom: 31px;
+    }
+}
+
+.my-shops__list-your-shop .my-shops__list-card-title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: $ffHeader;
+    @media (max-width: $mobile-l) {
+        font-size: 16px;
+        margin-bottom: 10px;
+        line-height: 20px
+    }
+}
+
+.my-shops__list-your-shop .my-shops__list-card-text {
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    margin-bottom: 46px;
+    font-weight: normal;
+    @media (max-width: $mobile-l) {
+        margin-bottom: 30px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+.my-shops__list-your-shop .my-shops__list-card-btn {
+    background: #FFFFFF;
+    border-radius: 7px;
+    padding: 12px 10px;
+    color: $btn-primary-default;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    position: relative;
+    @media (max-width: 1439px) {
+        color: transparent;
+        width: 125px;
+        height: 40px;
+        &::after {
+            content: 'Создать';
+            color: $btn-primary-default;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    @media (max-width: 1279px) {
+        width: max-content;
+        &::after {
+            content: 'Создать магазин';
+        }
+    }
+    @media (max-width:$mobile-m) {
+        width: 125px;
+        &::after {
+            content: 'Создать';
+        }
+    }
+}
+
+.my-shops__list-your-shop .my-shops__list-card-picture {
+    position: absolute;
+    width: 138px;
+    height: 119px;
+    object-fit: cover;
+    right: 0;
+    bottom: -30px;
+    @media (max-width: $mobile-l) {
+        bottom: -40px
+    }
+}
+
+.my-shops__list-card-created {
+    border-radius: 10px 10px 0px 0px;
+    filter: drop-shadow(0px 15px 25px rgba(204, 214, 240, 0.5));
+    position: relative;
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    &[data-status=inspection]::after {
+        content: 'На проверке';
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 9px;
+        text-transform: uppercase;
+        color: #fff;
+        width: 110px;
+        height: 33px;
+        background: #F4783C;
+        border-radius: 0 9px 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &[data-status=completed]::after {
+        content: '';
+        width: 36px;
+        height: 36px;
+        right: 10px;
+        top: 10px;
+        background: url(../img/shops/icon-completed.svg) no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.my-shops__list-card-created-picture {
+    border-radius: 10px 10px 0px 0px;
+    background: #7588F0;
+    height: 167px;
+    img {
+        border-radius: 10px 10px 0px 0px;
+        object-fit: cover
+    }
+}
+
+.my-shops__list-card-created-content {
+    padding: 12px;
+    background: #fff;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.my-shops__list-card-title {
+    font-size: 16px;
+    line-height: 22px;
+    color: #383838;
+    margin-bottom: 8px;
+    font-weight: bold;
+    @media (max-width: $mobile-l) {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.my-shops__list-card-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #383838;
+    @media (max-width: $mobile-l) {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.my-shops__list-card {
+    height: max-content
+}

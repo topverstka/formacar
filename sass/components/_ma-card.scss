@@ -572,3 +572,75 @@
             padding: 12px;
         }
     }
+    
+    // Страница Избранные объявления
+    .mine-ad__favorites .ma-card__slider {
+        min-width: 200px;
+        width: 200px;
+        @media (max-width: $tablet) {
+            min-width: 100%;
+            width: 100%
+        }
+    }
+    
+    .mine-ad__favorites .ma-card {
+        height: max-content
+    }
+    
+    .mine-ad__favorites .ma-tab__body {
+        grid-auto-rows: auto;
+    }
+    
+    .mine-ad__favorites .la-card__like {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        z-index: 9;
+        @media (max-width: $tablet) {
+            top: auto;
+            bottom: 11px;
+            right: 8px;
+        }
+    }
+    
+    .mine-ad__favorites .ma-card[data-tab-status=published] {
+        .ma-card__label-paid {
+            display: block
+        }
+        .la-card__slider-fixed {
+            display: none
+        }
+    }
+    
+    .mine-ad__favorites .ma-card[data-tab-status=sold] {
+        .ma-card__content,
+        .swiper-wrapper {
+            filter: opacity(0.5);
+        }
+        .la-card__slider-fixed {
+            display: block;
+            left: 10px;
+            top: 10px;
+            background: #CC3334;
+            color: #fff;
+            opacity: .8;
+        }
+        @media (max-width: $tablet) {
+            .la-card__slider-fixed {
+                font-size: 10px;
+                padding: 0 5px;
+            }
+        }
+    }
+    
+    .mine-ad__favorites .ma-card__content-body {
+        margin-bottom: 10px;
+    }
+    
+    .mine-ad__favorites .ma-card__info {
+        @media (max-width: $tablet) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            width: 80%;
+        }
+    }

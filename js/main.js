@@ -2611,3 +2611,11 @@ function field_validation(e) {
         e.preventDefault();
     }
 }
+
+if (document.querySelector('.mine-ad__favorites')) {
+
+    document.querySelectorAll('.mine-ad__favorites .ma-card__slider').forEach(i => {
+        i.style.height = i.closest('.ma-card__wrap').querySelector('.ma-card__content').offsetHeight + 'px';
+    });
+
+}
