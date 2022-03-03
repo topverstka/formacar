@@ -116,7 +116,7 @@
         &._active_masonry {
             flex-flow: column wrap;
             .ma-card {
-                width: 49%;
+                // width: 49%;
                 &:nth-of-type(odd) {
                     order: 1
                 }

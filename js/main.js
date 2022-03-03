@@ -2512,11 +2512,16 @@ function add_masonry(tab) {
 
 window.addEventListener('load', function() {
     add_masonry();
-
+    if (document.querySelector('.ma-card')) {
+        document.querySelectorAll('.ma-card').forEach(i => {
+            i.style.width = document.querySelector('.swiper-slide').offsetWidth + 'px'
+        });
+    }
 });
 
 window.addEventListener('resize', function() {
     add_masonry();
+
 })
 
 function field_validation(e) {
