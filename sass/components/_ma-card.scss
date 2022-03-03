@@ -29,7 +29,7 @@
             color: #fff;
             text-transform: uppercase;
             padding: 12px 8px;
-            border-radius: 0 8px 0 10px;
+            border-radius: 0 10px 0 10px;
             @media (max-width: $tablet) {
                 z-index: 1;
             }
@@ -243,7 +243,10 @@
             max-height: 102px;
             height: 102px;
             max-width: 100%;
-            min-width: 100%
+            min-width: 100%;
+            .swiper-wrapper {
+                border-radius: var(--radius) var(--radius) 0 0;
+            }
         }
     }
     

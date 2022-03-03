@@ -9197,7 +9197,7 @@ div.error_input {
   color: #fff;
   text-transform: uppercase;
   padding: 12px 8px;
-  border-radius: 0 8px 0 10px;
+  border-radius: 0 10px 0 10px;
 }
 
 @media (max-width: 768px) {
@@ -9430,6 +9430,9 @@ div.error_input {
     height: 102px;
     max-width: 100%;
     min-width: 100%;
+  }
+  .ma-card__slider .swiper-wrapper {
+    border-radius: var(--radius) var(--radius) 0 0;
   }
 }
 

@@ -2513,9 +2513,11 @@ function add_masonry(tab) {
 window.addEventListener('load', function() {
     add_masonry();
     if (document.querySelector('.ma-card')) {
-        document.querySelectorAll('.ma-card').forEach(i => {
-            i.style.width = document.querySelector('.swiper-slide').offsetWidth + 'px'
-        });
+        if (window.offsetWidth <= 768) {
+            document.querySelectorAll('.ma-card').forEach(i => {
+                i.style.width = document.querySelector('.swiper-slide').offsetWidth + 'px'
+            });
+        }
     }
 });
 
