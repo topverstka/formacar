@@ -2513,7 +2513,7 @@ function add_masonry(tab) {
 window.addEventListener('load', function() {
     add_masonry();
     if (document.querySelector('.ma-card')) {
-        if (window.offsetWidth <= 768) {
+        if (window.innerWidth <= 768) {
             document.querySelectorAll('.ma-card').forEach(i => {
                 i.style.width = document.querySelector('.swiper-slide').offsetWidth + 'px'
             });
