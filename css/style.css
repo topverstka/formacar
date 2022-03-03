@@ -4765,6 +4765,12 @@ div.error_input {
   bottom: 24px;
 }
 
+@media (max-width: 425px) {
+  .na-row.na-row-color .placeholder_error {
+    bottom: 11px;
+  }
+}
+
 .ad-filter__body .placeholder_error {
   bottom: -18px;
 }
@@ -8216,7 +8222,7 @@ div.error_input {
 @media (max-width: 425px) {
   .na-block {
     min-height: 80px;
-    padding: 10px;
+    padding: 10px 10px 25px 10px;
   }
 }
 
@@ -8321,6 +8327,15 @@ div.error_input {
 .na-block__body > .na-row.na-row-color {
   padding-bottom: 47px;
   margin-bottom: 30px;
+}
+
+@media (max-width: 425px) {
+  .na-block__body > .na-row:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  .na-block__body > .na-row.na-row-color {
+    padding-bottom: 30px;
+  }
 }
 
 .na-block__close {

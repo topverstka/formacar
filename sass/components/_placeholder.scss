@@ -26,7 +26,10 @@ div.error_input {
 }
 
 .na-row.na-row-color .placeholder_error {
-    bottom: 24px
+    bottom: 24px;
+    @media (max-width: $mobile-l) {
+        bottom: 11px
+    }
 }
 
 .ad-filter__body .placeholder_error {
