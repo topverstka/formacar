@@ -141,10 +141,14 @@
 .na-block__body {
     &>.na-row {
         &:not(:last-child) {
-            margin-bottom: 30px;
+            margin-bottom: 47px;
             @media (max-width: $mobile-l) {
                 // margin-bottom: 20px;
             }
+        }
+        &.na-row-color {
+            padding-bottom: 47px;
+            margin-bottom: 30px;
         }
     }
 }

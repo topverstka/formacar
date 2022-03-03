@@ -4762,7 +4762,7 @@ div.error_input {
 }
 
 .na-row.na-row-color .placeholder_error {
-  bottom: -2px;
+  bottom: 24px;
 }
 
 .ad-filter__body .placeholder_error {
@@ -8315,6 +8315,11 @@ div.error_input {
 }
 
 .na-block__body > .na-row:not(:last-child) {
+  margin-bottom: 47px;
+}
+
+.na-block__body > .na-row.na-row-color {
+  padding-bottom: 47px;
   margin-bottom: 30px;
 }
 
