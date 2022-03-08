@@ -12482,6 +12482,7 @@ div.error_input {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    min-height: 167px;
   }
 }
 
@@ -12522,6 +12523,13 @@ div.error_input {
   .my-shops-view__content .my-shops-view__shop__content {
     width: 68%;
     padding-left: 23px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .my-shops-view__content .my-shops-view__right-col {
     width: 100%;
@@ -12547,6 +12555,7 @@ div.error_input {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    margin-top: auto;
   }
   .my-shops-view__content .my-shops-view__shop-list li {
     font-size: 11px;
@@ -12635,8 +12644,68 @@ div.error_input {
   margin-right: 24px;
 }
 
+@media (min-width: 1570px) {
+  .my-shops-view__left-col {
+    margin-right: 50px;
+  }
+  .my-shops-view__left-col .my-shops-view__shop {
+    width: 399px;
+  }
+}
+
 .my-shops-view__right-col {
   width: 80%;
+}
+
+@media (min-width: 1570px) {
+  .my-shops-view__right-col {
+    width: 1027px;
+  }
+  .my-shops-view__right-col.my-shops-view__right-col-empty {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1120px) {
+  .my-shops-view__right-col .my-shop-view__right-empty {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .my-shops-view__right-col .my-shop-view__right-empty-picture {
+    margin: 0;
+  }
+  .my-shops-view__right-col .my-shop-view__right-empty-box {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .my-shops-view__right-col .my-shop-view__right-empty {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .my-shops-view__right-col .my-shop-view__right-empty-text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .my-shops-view__right-col .my-shops-view__shop-btn {
+    width: 277px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .my-shops-view__right-col .my-shop-view__right-empty-box {
+    margin-left: 0;
+  }
 }
 
 .my-shops-view__shop__content {

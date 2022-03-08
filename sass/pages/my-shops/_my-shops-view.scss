@@ -7,7 +7,8 @@
     }
     @media (max-width: 1120px) {
         width: 100%;
-        display: flex
+        display: flex;
+        min-height: 167px;
     }
 }
 
@@ -34,7 +35,9 @@
         }
         .my-shops-view__shop__content {
             width: 68%;
-            padding-left: 23px
+            padding-left: 23px;
+            display: flex;
+            flex-direction: column;
         }
         .my-shops-view__right-col {
             width: 100%
@@ -56,6 +59,7 @@
         .my-shops-view__shop-list {
             display: flex;
             align-items: flex-start;
+            margin-top: auto;
             li {
                 font-size: 11px;
                 svg {
@@ -133,11 +137,54 @@
 }
 
 .my-shops-view__left-col {
-    margin-right: 24px
+    margin-right: 24px;
+    @media (min-width: 1570px) {
+        margin-right: 50px;
+        .my-shops-view__shop {
+            width: 399px
+        }
+    }
 }
 
 .my-shops-view__right-col {
-    width: 80%
+    width: 80%;
+    @media (min-width: 1570px) {
+        width: 1027px;
+        &.my-shops-view__right-col-empty {
+            width: 100%
+        }
+    }
+    @media (max-width:1120px) {
+        .my-shop-view__right-empty {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+        }
+        .my-shop-view__right-empty-picture {
+            margin: 0
+        }
+        .my-shop-view__right-empty-box {
+            margin-left: 20px
+        }
+    }
+    @media (max-width: $tablet) {
+        .my-shop-view__right-empty {
+            flex-direction: column;
+        }
+        .my-shop-view__right-empty-text {
+            font-size: 12px;
+            line-height: 15px;
+        }
+        .my-shops-view__shop-btn {
+            width: 277px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .my-shop-view__right-empty-box {
+            margin-left: 0
+        }
+    }
 }
 
 .my-shops-view__shop__content {
