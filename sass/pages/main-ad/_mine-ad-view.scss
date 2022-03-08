@@ -1,0 +1,496 @@
+.mine-ad-view {
+    margin-bottom: 100px;
+    @media (max-width: $mobile-l) {
+        margin-bottom: 20px;
+    }
+}
+
+.mine-ad-view__content {
+    display: flex;
+    .mine-ad-view__left {
+        width: 746px
+    }
+    .mine-ad-view__right {
+        width: 416px;
+        margin-left: 50px;
+    }
+    @media (min-width:1570px) {
+        .mine-ad-view__left {
+            width: 876px
+        }
+        .mine-ad-view__right {
+            width: 426px;
+            margin-left: 24px
+        }
+    }
+    @media (max-width:1300px) {
+        .mine-ad-view__left {
+            width: 778px
+        }
+        .mine-ad-view__right {
+            width: 391px;
+        }
+    }
+    @media (max-width:1265px) {
+        .mine-ad-view__left {
+            width: 635px
+        }
+        .mine-ad-view__right {
+            width: 305px;
+            margin-left: 24px;
+        }
+    }
+    @media (max-width:992px) {
+        .mine-ad-view__left {
+            width: 70%
+        }
+        .mine-ad-view__right {
+            width: 30%
+        }
+    }
+    @media (max-width: $tablet-l) {
+        flex-direction: column;
+        align-items: center;
+        .mine-ad-view__left {
+            width: 100%
+        }
+        .mine-ad-view__right {
+            width: 100%;
+            margin-left: 0
+        }
+    }
+}
+
+.mine-ad-view__top-line {
+    width: 1212px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+    @media (min-width: 1570px) {
+        width: 1326px
+    }
+    @media (max-width:1350px) {
+        width: 100%
+    }
+    @media (max-width:1265px) {
+        width: 964px
+    }
+    @media (max-width:1024px) {
+        width: 100%
+    }
+    @media (max-width: $tablet-l) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+.mine-ad-view .section__header {
+    margin-bottom: 5px
+}
+
+.mine-ad-view__information {
+    display: flex;
+    width: max-content;
+    p {
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: normal;
+        color: $text-second-d;
+        &:not(:last-child) {
+            margin-right: 30px
+        }
+        svg {
+            margin-right: 10px;
+            width: 17px;
+            height: 17px
+        }
+    }
+    p.mine-ad-view__information-adress {
+        font-weight: 500;
+        color: $text-primary;
+        margin-right: 50px
+    }
+    .mine-ad-view__information-views {
+        display: flex;
+    }
+    @media (max-width:1265px) {
+        p {
+            font-size: 12px;
+            line-height: 15px;
+        }
+    }
+    @media (max-width: $tablet) {
+        flex-wrap: wrap;
+        .mine-ad-view__information-adress {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+    }
+    @media (max-width: $mobile-l) {
+        .mine-ad-view__information-adress {
+            font-size: 10px
+        }
+        p {
+            font-size: 9px;
+            &:not(:last-child) {
+                margin-right: 26px
+            }
+            svg {
+                margin-right: 5px;
+                width: 15px;
+                height: 15px
+            }
+        }
+    }
+}
+
+.mine-ad-view__comment {
+    padding: 20px 30px;
+    background: #FFFFFF;
+    border-radius: $radius;
+    margin-top: 19px;
+    @media (max-width: $mobile-l) {
+        padding: 10px;
+        margin: 10px 0
+    }
+}
+
+.mine-ad-view__comment-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    &:not(:last-child) {
+        margin-bottom: 29px;
+    }
+    @media (max-width:1265px) {
+        font-size: 12px;
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+    @media (max-width: $mobile-l) {
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+.mine-ad-view__comment-header {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: $text-primary;
+    margin-bottom: 18px;
+    font-family: $ffHeader;
+    @media (max-width: $mobile-l) {
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 10px;
+    }
+}
+
+.mine-ad-view__price {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 34px;
+    color: $text-primary;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @media (max-width: 1265px) {
+        font-size: 24px;
+        line-height: 29px;
+    }
+    @media (max-width: $tablet-l) {
+        position: static;
+        margin-bottom: 20px;
+    }
+    @media (max-width: $mobile-l) {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+.mine-ad-view__personal {
+    border-radius: $radius;
+    background: #fff;
+}
+
+.mine-ad-view__personal__header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F6F8FD;
+    padding: 11px 20px;
+    @media (max-width: $mobile-l) {
+        padding: 10px
+    }
+}
+
+.mine-ad-view__personal-header-picture {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    margin-right: 12px;
+    border-radius: 50%;
+    @media (max-width: $mobile-l) {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px
+    }
+}
+
+.mine-ad-view__personal__header-name {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    @media (max-width: $mobile-l) {
+        font-size: 12px;
+        line-height: 15px;
+        margin-bottom: 0;
+    }
+}
+
+.mine-ad-view__personal__header-persone {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $text-second-l;
+    @media (max-width: $mobile-l) {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+.mine-ad-view__personal-footer {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media (max-width: 1265px) {
+        flex-direction: column;
+        button {
+            width: 100%;
+            &:first-child {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    @media (max-width: $tablet-l) {
+        flex-direction: row;
+        button:first-child {
+            margin-bottom: 0;
+        }
+        .mine-ad-view__personal-edit {
+            width: 45%;
+        }
+        .mine-ad-view__personal-remove-public {
+            width: 52%;
+        }
+        .mine-ad-view__personal-sell {
+            margin-top: 10px
+        }
+        button {
+            padding-left: 0;
+            padding-right: 0;
+            &::after {
+                display: none
+            }
+        }
+    }
+    @media (max-width: $mobile-l) {
+        padding: 10px;
+        button {
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mine-ad-view__personal-sell {
+            font-size: 10px
+        }
+    }
+}
+
+.mine-ad-view__personal-btn {
+    position: relative;
+    &:not(.mine-ad-view__personal-sell) {
+        background: $bg-page;
+        border-radius: $radius;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 22px;
+        color: $btn-primary-default;
+    }
+}
+
+.mine-ad-view__personal-edit {
+    padding: 9px 15px 9px 41px;
+    width: 156px;
+    &::after {
+        content: '';
+        background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.8059 3.75499C14.0659 4.01499 14.0659 4.43499 13.8059 4.69499L12.5859 5.91499L10.0859 3.41499L11.3059 2.19499C11.4305 2.07016 11.5996 2 11.7759 2C11.9523 2 12.1214 2.07016 12.2459 2.19499L13.8059 3.75499ZM1.99927 13.6683V11.6417C1.99927 11.5483 2.0326 11.4683 2.09927 11.4017L9.3726 4.12834L11.8726 6.62834L4.5926 13.9017C4.5326 13.9683 4.44593 14.0017 4.35927 14.0017H2.3326C2.14593 14.0017 1.99927 13.855 1.99927 13.6683Z' fill='%23467EF3'/%3E%3C/svg%3E");
+        position: absolute;
+        left: 15px;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.mine-ad-view__personal-remove-public {
+    padding: 9px 23px 9px 49px;
+    width: 205px;
+    &::after {
+        content: '';
+        background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.88379 5.89453L10.3099 10.4537' stroke='%23467EF3' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M10.3999 5.89453L5.88365 10.4108' stroke='%23467EF3' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='8' r='7.25' stroke='%23467EF3' stroke-width='1.5'/%3E%3C/svg%3E");
+        position: absolute;
+        left: 23px;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @media (min-width:1570px) {
+        width: 215px;
+        &::after {
+            left: 28px
+        }
+    }
+    @media (max-width:1350px) {
+        padding-right: 10px;
+        padding-left: 36px;
+        width: 180px;
+        &::after {
+            left: 10px
+        }
+    }
+}
+
+.mine-ad-view__personal-sell {
+    background: #02BC4D;
+    border-radius: $radius;
+    padding: 11px 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    margin-top: 15px;
+    width: 100%;
+    text-transform: uppercase;
+    @media (max-width: 1265px) {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+.mine-ad-view__characteristics {
+    background: #fff;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: $radius;
+    table {
+        width: 100%;
+        td {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 17px;
+            &:first-child {
+                color: $text-second-d
+            }
+        }
+        tr:not(:last-child) td {
+            padding-bottom: 15px;
+        }
+    }
+    @media (max-width:1265px) {
+        table td {
+            font-size: 12px;
+            line-height: 15px
+        }
+    }
+    @media (max-width: $mobile-l) {
+        table tr:not(:last-child) td {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.mine-ad-view__slider {
+    overflow: hidden;
+    height: 681px;
+    border-radius: 0 0 $radius $radius;
+    .swiper {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media (max-width:1265px) {
+        height: 531px
+    }
+    @media (max-width:$mobile-l) {
+        height: 353px
+    }
+}
+
+.mine-ad-view__slider-top {
+    height: 600px;
+    width: 100%;
+    margin-bottom: 0;
+    background: #E2E6F3;
+    border-radius: $radius $radius 0 0;
+    .swiper-button-next {
+        position: absolute;
+        right: 17px;
+        top: 50%;
+        z-index: 9;
+        cursor: pointer;
+    }
+    .swiper-button-prev {
+        position: absolute;
+        left: 17px;
+        top: 50%;
+        z-index: 9;
+        cursor: pointer;
+    }
+    @media (max-width:1265px) {
+        height: 450px
+    }
+    @media (max-width:$mobile-l) {
+        height: 300px;
+        .swiper-button-next {
+            width: 10px;
+            right: 10px
+        }
+        .swiper-button-prev {
+            width: 10px;
+            left: 10px
+        }
+    }
+}
+
+.mine-ad-view__slider-thumbs {
+    height: 78px;
+    margin-top: 3px;
+    border-radius: 0 0 $radius $radius;
+    .swiper-slide {
+        width: 120px;
+        height: 100%;
+        img {
+            object-fit: cover;
+        }
+    }
+    @media (max-width:$tablet-s) {
+        height: 50px;
+        .swiper-slide {
+            width: 75px
+        }
+    }
+}
+
+.mine-ad-view-recent .section__header {
+    margin-bottom: 20px;
+}

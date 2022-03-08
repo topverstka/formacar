@@ -2452,6 +2452,18 @@ window.addEventListener('click', function(e) {
         field_validation(e);
     }
 
+    if (e.target.classList.contains('modal-payment-method__content-list-item') || e.target.closest('.modal-payment-method__content-list-item')) {
+        e.target.closest('.modal-payment-method__content-list').querySelector('.modal-payment-method__content-list-item._active-payment').classList.remove('_active-payment');
+        e.target.closest('.modal-payment-method__content-list-item').classList.add('_active-payment');
+    }
+
+    if (e.target.classList.contains('modal-show-rate__content-item-btn')) {
+        let attrParent = e.target.closest('.modal-show-rate__content-item').getAttribute('data-tab-info');
+        document.querySelector('.modal-payment-method__content-line._active-line').classList.remove('_active-line');
+        document.querySelector(`.modal-payment-method__content-line[data-line=${attrParent}]`).classList.add('_active-line');
+        openModal(document.querySelector('#payment-method'));
+    }
+
 });
 
 // Запрет на ввод букв
@@ -2618,4 +2630,16 @@ if (document.querySelector('.mine-ad__favorites')) {
         i.style.height = i.closest('.ma-card__wrap').querySelector('.ma-card__content').offsetHeight + 'px';
     });
 
+}
+
+if (document.querySelector('.modal-show-rate')) {
+    document.querySelector('.modal-show-rate').addEventListener('mouseover', function(e) {
+        if (e.target.classList.contains('modal-show-rate__content-item') || e.target.closest('.modal-show-rate__content-item')) {
+            let tab_attr = e.target.closest('.modal-show-rate__content-item').getAttribute('data-tab-info');
+            e.target.closest('.modal-show-rate__content-list').querySelector('.modal-show-rate__content-item._item-active').classList.remove('_item-active');
+            e.target.closest('.modal-show-rate__content-item').classList.add('_item-active');
+            e.target.closest('.modal-show-rate__content').querySelector('.modal-show-rate__content-info-item._item-active').classList.remove('_item-active');
+            e.target.closest('.modal-show-rate__content').querySelector(`.modal-show-rate__content-info-item[data-content-info=${tab_attr}]`).classList.add('_item-active');
+        }
+    });
 }
