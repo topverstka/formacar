@@ -14160,6 +14160,10 @@ div.error_input {
   margin-bottom: 20px;
 }
 
+.mine-ad-view-recent .section-slider-arrows {
+  display: none;
+}
+
 .modal-lang__header {
   display: -webkit-box;
   display: -ms-flexbox;
