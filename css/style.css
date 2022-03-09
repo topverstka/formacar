@@ -12837,6 +12837,21 @@ div.error_input {
   margin-top: 16px;
   text-transform: uppercase;
   line-height: 22px;
+  -webkit-transition: var(--tr);
+  transition: var(--tr);
+}
+
+.my-shops-view__shop-btn:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), #467EF3;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #467EF3;
+  -webkit-filter: drop-shadow(2px 2px 10px rgba(43, 85, 173, 0.2));
+          filter: drop-shadow(2px 2px 10px rgba(43, 85, 173, 0.2));
+}
+
+.my-shops-view__shop-btn:focus {
+  background: rgba(70, 126, 243, 0.4);
+  -webkit-filter: drop-shadow(2px 2px 10px rgba(43, 85, 173, 0.2));
+          filter: drop-shadow(2px 2px 10px rgba(43, 85, 173, 0.2));
 }
 
 .my-shops-view__shop-btn svg {

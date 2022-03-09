@@ -246,6 +246,15 @@
     margin-top: 16px;
     text-transform: uppercase;
     line-height: 22px;
+    transition: $tr;
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #467EF3;
+        filter: drop-shadow(2px 2px 10px rgba(43, 85, 173, 0.2));
+    }
+    &:focus {
+        background: rgba(70, 126, 243, 0.4);
+        filter: drop-shadow(2px 2px 10px rgba(43, 85, 173, 0.2));
+    }
     svg {
         width: 24px;
         height: 24px;
