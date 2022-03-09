@@ -648,11 +648,19 @@
         margin-bottom: 10px;
     }
     
-    .mine-ad__favorites .ma-card__info {
+    .mine-ad__favorites .ma-card {
         @media (max-width: $tablet) {
-            flex-direction: column-reverse;
-            align-items: flex-start;
-            width: 80%;
+            .ma-card__info {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                width: 80%;
+            }
+            &.ma-card_tire {
+                .ma-card__info,
+                .ma-card__content-body {
+                    margin-top: 8px
+                }
+            }
         }
     }
     
