@@ -608,7 +608,16 @@
             display: block
         }
         .la-card__slider-fixed {
-            display: none
+            left: 10px;
+            top: 10px;
+            display: block
+        }
+        @media (max-width: $tablet) {
+            .la-card__slider-fixed {
+                top: 5px;
+                left: 5px;
+                padding: 0 5px
+            }
         }
     }
     
@@ -629,6 +638,8 @@
             .la-card__slider-fixed {
                 font-size: 10px;
                 padding: 0 5px;
+                top: 5px;
+                left: 5px;
             }
         }
     }
@@ -642,5 +653,12 @@
             flex-direction: column-reverse;
             align-items: flex-start;
             width: 80%;
+        }
+    }
+    
+    .mine-ad__favorites .ma-card__label-paid {
+        @media (max-width: $tablet) {
+            top: 0;
+            right: 0
         }
     }
