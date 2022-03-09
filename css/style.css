@@ -13029,6 +13029,21 @@ div.error_input {
   line-height: 15px;
   text-transform: uppercase;
   display: none;
+  -webkit-transition: var(--tr);
+  transition: var(--tr);
+}
+
+.modal-show-rate__content-item-btn:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), #467EF3;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #467EF3;
+  -webkit-filter: drop-shadow(2px 2px 10px rgba(43, 85, 173, 0.2));
+          filter: drop-shadow(2px 2px 10px rgba(43, 85, 173, 0.2));
+}
+
+.modal-show-rate__content-item-btn:focus {
+  background: rgba(70, 126, 243, 0.4);
+  -webkit-filter: drop-shadow(2px 2px 10px rgba(43, 85, 173, 0.2));
+          filter: drop-shadow(2px 2px 10px rgba(43, 85, 173, 0.2));
 }
 
 .modal-show-rate__content-item-top {
