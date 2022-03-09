@@ -14214,6 +14214,19 @@ div.error_input {
   display: none;
 }
 
+.mine-ad-view-recent .la-card__slider-fixed {
+  left: 10px;
+}
+
+@media (max-width: 500px) {
+  .mine-ad-view-recent .la-card__slider-fixed {
+    display: block;
+    padding: 0 5px;
+    left: 5px;
+    top: 5px;
+  }
+}
+
 .modal-lang__header {
   display: -webkit-box;
   display: -ms-flexbox;

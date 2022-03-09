@@ -498,3 +498,13 @@
 .mine-ad-view-recent .section-slider-arrows {
     display: none
 }
+
+.mine-ad-view-recent .la-card__slider-fixed {
+    left: 10px;
+    @media (max-width: $tablet-s) {
+        display: block;
+        padding: 0 5px;
+        left: 5px;
+        top: 5px
+    }
+}
