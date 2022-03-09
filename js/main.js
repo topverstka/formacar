@@ -542,9 +542,22 @@ function adaptiveWidthSliderMACard() {
     }
 }
 
+function updateFraction(slider) {
+
+    if (slider.$el[0].children[1].children.length <= 1) {
+        slider.$el[0].children[1].remove()
+    }
+
+}
+
 const sliderMACard = new Swiper('.ma-card__slider', {
     spaceBetween: 0, // Расстояние между слайдами
     observer: true,
+    on: {
+        init: function() {
+            setTimeout(() => updateFraction(this), 0);
+        }
+    },
     //   breakpoints: {
     //     1025: {
     //         slidesPerView: 4,
@@ -608,6 +621,11 @@ function change_grid(i) {
                         slidesPerView: 'auto',
                     }
                 },
+                on: {
+                    init: function() {
+                        setTimeout(() => updateFraction(this), 0);
+                    }
+                },
                 pagination: {
                     el: '.la-card__all-swiper-big .ma-card__pagination',
                     clickable: true,
@@ -618,6 +636,11 @@ function change_grid(i) {
                 slidesPerView: 'auto',
                 observer: true,
                 observeParents: true,
+                on: {
+                    init: function() {
+                        setTimeout(() => updateFraction(this), 0);
+                    }
+                },
 
                 pagination: {
                     el: '.la-card__all-swiper .ma-card__pagination',
@@ -683,6 +706,12 @@ const sliderLACard = new Swiper('.la-card__all-swiper .la-card__slider', {
     observer: true,
     observeParents: true,
 
+    on: {
+        init: function() {
+            setTimeout(() => updateFraction(this), 0);
+        }
+    },
+
     pagination: {
         el: '.la-card__all-swiper .ma-card__pagination',
         clickable: true,
@@ -697,6 +726,11 @@ const sliderLACard_1 = new Swiper('.la-card__all-swiper-big .la-card__slider', {
     breakpoints: {
         768: {
             slidesPerView: 'auto',
+        }
+    },
+    on: {
+        init: function() {
+            setTimeout(() => updateFraction(this), 0);
         }
     },
     pagination: {
