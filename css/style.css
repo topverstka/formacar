@@ -13937,6 +13937,21 @@ div.error_input {
   .mine-ad-view__personal-footer button:first-child {
     margin-bottom: 15px;
   }
+  .mine-ad-view__personal-footer .mine-ad-view__personal-edit::after {
+    left: 26%;
+  }
+  .mine-ad-view__personal-footer .mine-ad-view__personal-remove-public::after {
+    left: 20%;
+  }
+}
+
+@media (min-width: 920px) and (max-width: 1010px) {
+  .mine-ad-view__personal-footer .mine-ad-view__personal-edit::after {
+    left: 22%;
+  }
+  .mine-ad-view__personal-footer .mine-ad-view__personal-remove-public::after {
+    left: 14%;
+  }
 }
 
 @media (max-width: 920px) {

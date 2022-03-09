@@ -277,6 +277,20 @@
                 margin-bottom: 15px;
             }
         }
+        .mine-ad-view__personal-edit::after {
+            left: 26%
+        }
+        .mine-ad-view__personal-remove-public::after {
+            left: 20%
+        }
+    }
+    @media (min-width: $tablet-l) and (max-width: 1010px) {
+        .mine-ad-view__personal-edit::after {
+            left: 22%
+        }
+        .mine-ad-view__personal-remove-public::after {
+            left: 14%
+        }
     }
     @media (max-width: $tablet-l) {
         flex-direction: row;
