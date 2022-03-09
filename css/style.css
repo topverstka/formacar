@@ -14225,7 +14225,8 @@ div.error_input {
   margin-bottom: 20px;
 }
 
-.mine-ad-view-recent .section-slider-arrows {
+.mine-ad-view-recent .section-slider-arrows,
+.mine-ad-view-recent .section-arrow {
   display: none;
 }
 
