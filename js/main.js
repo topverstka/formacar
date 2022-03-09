@@ -2650,3 +2650,42 @@ if (document.querySelector('.modal-show-rate')) {
         }
     });
 }
+
+if (document.querySelector('.mine-ad-view__user-favorites-line-left')) {
+    let textFavorites, textFavoritesAdd, textFavoritesMake;
+    if (window.innerWidth <= 1265) {
+        textFavoritesAdd = 'В избранном';
+        textFavorites = 'В избранное';
+        textFavoritesMake = 'Подать жалобу';
+        find('.mine-ad-view__user-favorites-line-text').innerText = textFavorites;
+    } else {
+        textFavoritesAdd = 'Добавлено в избранное';
+        textFavorites = 'Добавить в избранное';
+        textFavoritesMake = 'Пожаловаться на объявление';
+    }
+
+    document.querySelector('.mine-ad-view__user-favorites-line-left').addEventListener('click', function(e) {
+        if (this.querySelector('.like')) {
+            if (this.querySelector('.like').classList.contains('_liked')) {
+                this.closest('.mine-ad-view__user-favorites-line').querySelector('.mine-ad-view__user-favorites-line-text').innerText = textFavoritesAdd;
+                this.closest('.mine-ad-view__user-favorites-line-left').classList.add('_active-line');
+            } else {
+                this.closest('.mine-ad-view__user-favorites-line').querySelector('.mine-ad-view__user-favorites-line-text').innerText = textFavorites;
+                this.closest('.mine-ad-view__user-favorites-line-left').classList.remove('_active-line');
+            }
+        }
+
+        if (this.closest('._active_complain')) {
+            this.closest('._active_complain').querySelector('.mine-ad-view__user-favorites-line-complain .complain-line-active').remove();
+            this.closest('._active_complain').classList.remove('_active_complain');
+        }
+
+    });
+
+    document.querySelector('.mine-ad-view__user-favorites-line-complain').addEventListener('click', function(e) {
+        if (!this.closest('.mine-ad-view__user-favorites-line').classList.contains('_active_complain')) {
+            this.closest('.mine-ad-view__user-favorites-line').classList.add('_active_complain');
+            this.insertAdjacentHTML('beforeend', `<p class="complain-line-active">${textFavoritesMake}</p>`);
+        }
+    });
+}

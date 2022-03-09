@@ -537,3 +537,172 @@
         }
     }
 }
+
+.mine-ad-view__personal-footer-user {
+    .la-card__options-btn {
+        width: 48%
+    }
+    @media (max-width:1265px) {
+        flex-direction: row;
+    }
+    @media (max-width:1020px) {
+        .btn_second.la-card__options-btn {
+            &:first-child {
+                color: transparent;
+                position: relative;
+                &::after {
+                    content: 'ПОЗВОНИТЬ';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: #467EF3;
+                    font-weight: bold;
+                    font-size: 10px;
+                    line-height: 12px;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    background: transparent
+                }
+            }
+            &:last-child {
+                color: transparent;
+                position: relative;
+                &::after {
+                    content: 'Написать';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: #467EF3;
+                    font-weight: bold;
+                    font-size: 10px;
+                    line-height: 12px;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    background: transparent
+                }
+            }
+        }
+    }
+}
+
+.mine-ad-view__user-favorites {
+    margin-top: 10px;
+    .mine-ad-view__user-favorites-line {
+        display: flex;
+        background: #fff;
+        border-radius: 10px;
+        position: relative;
+        transition: $tr;
+        overflow: hidden;
+        cursor: pointer;
+        &._active_complain {
+            .mine-ad-view__user-favorites-line-left {
+                width: 70px;
+                justify-content: center;
+                padding-left: 0;
+                padding-right: 0;
+                .mine-ad-view__user-favorites-line-text {
+                    display: none
+                }
+            }
+            .mine-ad-view__user-favorites-line-complain {
+                width: 82%;
+                background: rgba(204, 51, 52, 0.15);
+                &::after {
+                    opacity: 0;
+                }
+                svg {
+                    rect {
+                        fill: #CC3334;
+                    }
+                    circle {
+                        stroke: #CC3334
+                    }
+                }
+            }
+        }
+        &:hover {
+            background: #D1DFFC;
+            .like svg path {
+                stroke: #467EF3
+            }
+            .mine-ad-view__user-favorites-line-text {
+                color: #467EF3;
+            }
+            .mine-ad-view__user-favorites-line-complain::after {
+                opacity: 0;
+            }
+        }
+    }
+    .mine-ad-view__user-favorites-line-left {
+        display: flex;
+        align-items: center;
+        padding: 15px 0 15px 20px;
+        width: 82%;
+        &._active-line {
+            .mine-ad-view__user-favorites-line-text {
+                color: #383838;
+            }
+        }
+    }
+    .mine-ad-view__user-favorites-line-text {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: #AFAFAF;
+        margin-left: 10px
+    }
+    .like {
+        margin-left: 0
+    }
+    @media (max-width: $mobile-m) {
+        .mine-ad-view__user-favorites-line-complain svg {
+            width: 20px;
+            height: 20px
+        }
+    }
+}
+
+.mine-ad-view__user-favorites-line-complain {
+    margin-left: auto;
+    height: auto;
+    background: #fff;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        width: 1px;
+        height: 67%;
+        background: #ECECEC;
+        margin: auto;
+        display: flex;
+        transform: translateY(-50%);
+    }
+}
+
+.complain-line-active {
+    font-weight: 600;
+    font-size: 12px;
+    color: #CC3334;
+    line-height: 15px;
+    text-transform: uppercase;
+    margin-left: 10px;
+}

@@ -1,5 +1,8 @@
 .my-shop-creation__wrap {
     width: 856px;
+    .textfield label {
+        width: 100%
+    }
     @media (min-width: 1570px) {
         width: 876px
     }

@@ -12484,6 +12484,10 @@ div.error_input {
   width: 856px;
 }
 
+.my-shop-creation__wrap .textfield label {
+  width: 100%;
+}
+
 @media (min-width: 1570px) {
   .my-shop-creation__wrap {
     width: 876px;
@@ -14265,6 +14269,220 @@ div.error_input {
     height: 20px;
     min-width: 20px;
   }
+}
+
+.mine-ad-view__personal-footer-user .la-card__options-btn {
+  width: 48%;
+}
+
+@media (max-width: 1265px) {
+  .mine-ad-view__personal-footer-user {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (max-width: 1020px) {
+  .mine-ad-view__personal-footer-user .btn_second.la-card__options-btn:first-child {
+    color: transparent;
+    position: relative;
+  }
+  .mine-ad-view__personal-footer-user .btn_second.la-card__options-btn:first-child::after {
+    content: 'ПОЗВОНИТЬ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #467EF3;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-transform: uppercase;
+    background: transparent;
+  }
+  .mine-ad-view__personal-footer-user .btn_second.la-card__options-btn:last-child {
+    color: transparent;
+    position: relative;
+  }
+  .mine-ad-view__personal-footer-user .btn_second.la-card__options-btn:last-child::after {
+    content: 'Написать';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #467EF3;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-transform: uppercase;
+    background: transparent;
+  }
+}
+
+.mine-ad-view__user-favorites {
+  margin-top: 10px;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  -webkit-transition: var(--tr);
+  transition: var(--tr);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line._active_complain .mine-ad-view__user-favorites-line-left {
+  width: 70px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line._active_complain .mine-ad-view__user-favorites-line-left .mine-ad-view__user-favorites-line-text {
+  display: none;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line._active_complain .mine-ad-view__user-favorites-line-complain {
+  width: 82%;
+  background: rgba(204, 51, 52, 0.15);
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line._active_complain .mine-ad-view__user-favorites-line-complain::after {
+  opacity: 0;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line._active_complain .mine-ad-view__user-favorites-line-complain svg rect {
+  fill: #CC3334;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line._active_complain .mine-ad-view__user-favorites-line-complain svg circle {
+  stroke: #CC3334;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line:hover {
+  background: #D1DFFC;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line:hover .like svg path {
+  stroke: #467EF3;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line:hover .mine-ad-view__user-favorites-line-text {
+  color: #467EF3;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line:hover .mine-ad-view__user-favorites-line-complain::after {
+  opacity: 0;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 0 15px 20px;
+  width: 82%;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line-left._active-line .mine-ad-view__user-favorites-line-text {
+  color: #383838;
+}
+
+.mine-ad-view__user-favorites .mine-ad-view__user-favorites-line-text {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #AFAFAF;
+  margin-left: 10px;
+}
+
+.mine-ad-view__user-favorites .like {
+  margin-left: 0;
+}
+
+@media (max-width: 375px) {
+  .mine-ad-view__user-favorites .mine-ad-view__user-favorites-line-complain svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.mine-ad-view__user-favorites-line-complain {
+  margin-left: auto;
+  height: auto;
+  background: #fff;
+  width: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mine-ad-view__user-favorites-line-complain svg {
+  width: 30px;
+  height: 30px;
+}
+
+.mine-ad-view__user-favorites-line-complain::after {
+  content: '';
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  width: 1px;
+  height: 67%;
+  background: #ECECEC;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.complain-line-active {
+  font-weight: 600;
+  font-size: 12px;
+  color: #CC3334;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-left: 10px;
 }
 
 .modal-lang__header {
