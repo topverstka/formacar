@@ -14414,12 +14414,18 @@ div.error_input {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 0;
+  padding-left: 4px;
   padding-right: 0;
 }
 
 .mine-ad-view__user-favorites .mine-ad-view__user-favorites-line._active_complain .mine-ad-view__user-favorites-line-left .mine-ad-view__user-favorites-line-text {
   display: none;
+}
+
+@media (max-width: 375px) {
+  .mine-ad-view__user-favorites .mine-ad-view__user-favorites-line._active_complain .mine-ad-view__user-favorites-line-left {
+    padding-left: 0;
+  }
 }
 
 .mine-ad-view__user-favorites .mine-ad-view__user-favorites-line._active_complain .mine-ad-view__user-favorites-line-complain {

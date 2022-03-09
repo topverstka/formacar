@@ -607,10 +607,13 @@
             .mine-ad-view__user-favorites-line-left {
                 width: 70px;
                 justify-content: center;
-                padding-left: 0;
+                padding-left: 4px;
                 padding-right: 0;
                 .mine-ad-view__user-favorites-line-text {
                     display: none
+                }
+                @media (max-width:$mobile-m) {
+                    padding-left: 0
                 }
             }
             .mine-ad-view__user-favorites-line-complain {
