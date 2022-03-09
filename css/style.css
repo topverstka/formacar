@@ -14218,12 +14218,23 @@ div.error_input {
   left: 10px;
 }
 
+.mine-ad-view-recent .like {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+}
+
 @media (max-width: 500px) {
   .mine-ad-view-recent .la-card__slider-fixed {
     display: block;
     padding: 0 5px;
     left: 5px;
     top: 5px;
+  }
+  .mine-ad-view-recent .like {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
   }
 }
 
