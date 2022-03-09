@@ -12470,6 +12470,12 @@ div.error_input {
   height: max-content;
 }
 
+@media (max-width: 768px) {
+  .page-my-shop .footer {
+    padding-top: 0;
+  }
+}
+
 .my-shop-creation__wrap {
   width: 856px;
 }

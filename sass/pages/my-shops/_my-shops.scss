@@ -201,3 +201,11 @@
 .my-shops__list-card {
     height: max-content
 }
+
+.page-my-shop {
+    @media (max-width: $tablet) {
+        .footer {
+            padding-top: 0
+        }
+    }
+}
