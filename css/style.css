@@ -13413,6 +13413,15 @@ div.error_input {
           align-items: center;
   position: relative;
   cursor: pointer;
+  -webkit-transition: var(--tr);
+  transition: var(--tr);
+}
+
+@media (min-width: 769px) {
+  .modal-payment-method__content-list-item:hover {
+    -webkit-box-shadow: var(--card-shadow);
+            box-shadow: var(--card-shadow);
+  }
 }
 
 .modal-payment-method__content-list-item._active-payment {

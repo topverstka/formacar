@@ -749,6 +749,12 @@
     align-items: center;
     position: relative;
     cursor: pointer;
+    transition: $tr;
+    @media (min-width: $minHover) {
+        &:hover {
+            box-shadow: $card-shadow;
+        }
+    }
     &._active-payment {
         background: linear-gradient(0deg, rgba(70, 126, 243, 0.2), rgba(70, 126, 243, 0.2)), #FFFFFF;
         &::after {
