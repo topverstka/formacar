@@ -15,6 +15,13 @@
     }
 }
 
+.my-shops__list-link {
+    transition: $tr;
+    &:hover {
+        box-shadow: $card-shadow;
+    }
+}
+
 .my-shops__list-your-shop {
     background: #7588F0;
     border-radius: 10px;

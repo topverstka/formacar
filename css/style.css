@@ -12221,6 +12221,16 @@ div.error_input {
   }
 }
 
+.my-shops__list-link {
+  -webkit-transition: var(--tr);
+  transition: var(--tr);
+}
+
+.my-shops__list-link:hover {
+  -webkit-box-shadow: var(--card-shadow);
+          box-shadow: var(--card-shadow);
+}
+
 .my-shops__list-your-shop {
   background: #7588F0;
   border-radius: 10px;
