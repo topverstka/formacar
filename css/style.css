@@ -12288,6 +12288,17 @@ div.error_input {
   line-height: 15px;
   text-transform: uppercase;
   position: relative;
+  -webkit-filter: drop-shadow(0px 3px 9px rgba(58, 58, 58, 0.12)) drop-shadow(0px 3px 10px rgba(173, 173, 173, 0.04));
+          filter: drop-shadow(0px 3px 9px rgba(58, 58, 58, 0.12)) drop-shadow(0px 3px 10px rgba(173, 173, 173, 0.04));
+  -webkit-transition: var(--tr);
+  transition: var(--tr);
+}
+
+@media (min-width: 769px) {
+  .my-shops__list-your-shop .my-shops__list-card-btn:hover {
+    -webkit-box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+  }
 }
 
 @media (max-width: 1439px) {

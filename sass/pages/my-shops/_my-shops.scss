@@ -71,6 +71,13 @@
     line-height: 15px;
     text-transform: uppercase;
     position: relative;
+    filter: drop-shadow(0px 3px 9px rgba(58, 58, 58, 0.12)) drop-shadow(0px 3px 10px rgba(173, 173, 173, 0.04));
+    transition: $tr;
+    @media (min-width: $minHover) {
+        &:hover {
+            box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+        }
+    }
     @media (max-width: 1439px) {
         color: transparent;
         width: 125px;
