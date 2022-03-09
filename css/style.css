@@ -8750,6 +8750,10 @@ div.error_input {
   transition: var(--tr);
 }
 
+.na-block-padding {
+  padding-bottom: 32px;
+}
+
 .na-result .na-block__header {
   margin-bottom: 0;
 }

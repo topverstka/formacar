@@ -2556,11 +2556,12 @@ function field_validation(e) {
                     if (!temporary_class[j].checked) {
                         if (!i.closest('.section_placeholder').querySelector('.placeholder_error')) {
                             i.closest('.section_placeholder').insertAdjacentHTML('beforeend', '<div class="placeholder_error">Необходимо выбрать цвет</div>');
-
+                            i.closest('.na-margin') ? i.closest('.na-margin').classList.add('na-block-padding') : '';
                         }
                     } else {
                         if (i.closest('.section_placeholder').querySelector('.placeholder_error')) {
-                            i.closest('.section_placeholder').querySelector('.placeholder_error').remove()
+                            i.closest('.section_placeholder').querySelector('.placeholder_error').remove();
+                            i.closest('.na-margin') ? i.closest('.na-margin').classList.remove('na-block-padding') : '';
                         }
                         return false;
                     }
@@ -2572,11 +2573,12 @@ function field_validation(e) {
                     if (!temporary_class[j].checked) {
                         if (!i.closest('.section_placeholder').querySelector('.placeholder_error')) {
                             i.closest('.section_placeholder').insertAdjacentHTML('beforeend', '<div class="placeholder_error">Необходимо выбрать вариант</div>');
-
+                            i.closest('.na-margin') ? i.closest('.na-margin').classList.add('na-block-padding') : '';
                         }
                     } else {
                         if (i.closest('.section_placeholder').querySelector('.placeholder_error')) {
-                            i.closest('.section_placeholder').querySelector('.placeholder_error').remove()
+                            i.closest('.section_placeholder').querySelector('.placeholder_error').remove();
+                            i.closest('.na-margin') ? i.closest('.na-margin').classList.remove('na-block-padding') : '';
                         }
                         return false;
                     }
@@ -2590,12 +2592,13 @@ function field_validation(e) {
                     i.classList.add('error_input');
                     if (!i.closest('.section_placeholder').querySelector('.placeholder_error')) {
                         i.closest('.section_placeholder').insertAdjacentHTML('beforeend', '<div class="placeholder_error">Необходимо заполнить поле</div>');
-
+                        i.closest('.na-margin') ? i.closest('.na-margin').classList.add('na-block-padding') : '';
                     }
                 } else {
                     i.classList.remove('error_input');
                     if (i.closest('.section_placeholder').querySelector('.placeholder_error')) {
-                        i.closest('.section_placeholder').querySelector('.placeholder_error').remove()
+                        i.closest('.section_placeholder').querySelector('.placeholder_error').remove();
+                        i.closest('.na-margin') ? i.closest('.na-margin').classList.remove('na-block-padding') : '';
                     }
                 }
             }
@@ -2606,12 +2609,13 @@ function field_validation(e) {
                     i.classList.add('error_input');
                     if (!i.closest('.section_placeholder').querySelector('.placeholder_error')) {
                         i.closest('.section_placeholder').insertAdjacentHTML('beforeend', '<div class="placeholder_error">Необходимо заполнить поле</div>');
-
+                        i.closest('.na-margin') ? i.closest('.na-margin').classList.add('na-block-padding') : '';
                     }
                 } else {
                     i.classList.remove('error_input');
                     if (i.closest('.section_placeholder').querySelector('.placeholder_error')) {
-                        i.closest('.section_placeholder').querySelector('.placeholder_error').remove()
+                        i.closest('.section_placeholder').querySelector('.placeholder_error').remove();
+                        i.closest('.na-margin') ? i.closest('.na-margin').classList.remove('na-block-padding') : '';
                     }
                 }
             }
