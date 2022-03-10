@@ -63,6 +63,10 @@
 
 .modal-show-phone__tel {
     margin-right: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #02BC4D;
     color: #fff;
     @media (max-width: $tablet) {

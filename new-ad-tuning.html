@@ -184,10 +184,10 @@
                                     <div class="location__body-wrap">
                                         <button class="location__select location__select_countries" data-modal-open="regions">
 											<span class="location__select-left">
-												<h3 class="location__title">Страна поиска</h3>
-												<p class="location__countries"><span>Россия</span></p>
+												<span class="location__title">Страна поиска</span>
+												<span class="location__countries"><span>Россия</span></span>
 												<!-- <span class="location__empty">Выбрать страну поиска</span> -->
-											</span>
+                                            </span>
 											<span class="location__select-arrow">
 												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
@@ -206,9 +206,9 @@
 										</button>
                                         <button class="location__select location__select_regions" data-modal-open="regions">
 											<span class="location__select-left">
-												<h3 class="location__title">Регион, город, населённый пункт</h3>
-												<p class="location__countries"><span>Краснодар</span></p>
-											</span>
+												<span class="location__title">Регион, город, населённый пункт</span>
+												<span class="location__countries"><span>Краснодар</span></span>
+                                            </span>
 											<span class="location__select-arrow">
 												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
@@ -567,7 +567,7 @@
             <div class="container">
                 <div class="na-content__wrap">
                     <div class="na-content">
-                        <form action="">
+                        <form action="/">
                             <section class="na-margin na-cat">
                                 <div class="na-cat__wrap">
                                     <div class="section__header">
@@ -591,8 +591,8 @@
                                 </div>
                                 <div class="na-block__body section_placeholder">
                                     <div class="textfield clear-by-cross">
-                                        <input type="text" class="placeholder" id="">
-                                        <label for="">Введите текст</label>
+                                        <input type="text" class="placeholder" id="title_input">
+                                        <label for="title_input">Введите текст</label>
                                     </div>
                                 </div>
                             </section>
@@ -602,8 +602,8 @@
                                 </div>
                                 <div class="na-block__body">
                                     <div class="textfield textfield-l textfield_search clear-by-cross na-block__search">
-                                        <input id="search-cities" type="text">
-                                        <label for="search-cities">Выберите марку</label>
+                                        <input id="search-cities-input" type="text">
+                                        <label for="search-cities-input">Выберите марку</label>
                                         <button type="submit" class="textfield_search-submit"><svg><use href='./img/sprite.svg#search'></use></svg></button>
                                     </div>
                                     <div class="na-list na-brand__list" data-list>
@@ -732,8 +732,8 @@
                                         <h2 class="na-title na-row__title">Цена</h2>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross only-digit">
-                                                <input type="text" class="placeholder" id="">
-                                                <label for="">Введите цену</label>
+                                                <input type="text" class="placeholder" id="price_input">
+                                                <label for="price_input">Введите цену</label>
                                             </div>
                                         </div>
                                     </div>
@@ -745,8 +745,8 @@
                                 </div>
                                 <div class="na-block__body section_placeholder">
                                     <div class="textfield clear-by-cross">
-                                        <textarea name="" class="placeholder" id=""></textarea>
-                                        <label for="">Введите текст</label>
+                                        <textarea name="descr_input" class="placeholder" id="descr_input"></textarea>
+                                        <label for="descr_input">Введите текст</label>
                                     </div>
                                 </div>
                             </section>
@@ -756,8 +756,8 @@
                                         <h3 class="na-title na-row__title">Контактное лицо</h3>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross">
-                                                <input type="text" class="placeholder" id="">
-                                                <label for="">Введите имя</label>
+                                                <input type="text" class="placeholder" id="contacts_input">
+                                                <label for="contacts_input">Введите имя</label>
                                             </div>
                                         </div>
                                     </div>
@@ -765,7 +765,7 @@
                                         <h3 class="na-title na-row__title">Номер телефона</h3>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross only-digit mask-phone">
-                                                <input type="text" id="" class="placeholder" placeholder="+7 (___) ___-__-__">
+                                                <input type="text" id="mask-phone" class="placeholder" placeholder="+7 (___) ___-__-__">
                                                 <!-- <label for="">+7 (___) ___-__-__</label> -->
                                             </div>
                                         </div>
@@ -986,11 +986,11 @@
                     <button class="modal-regions__one-country">
 						<span class="modal-regions__one-country-wrap">
 							<span class="modal-regions__one-country-text"></span>
-							<div class="modal-regions__one-country-arrow">
+							<span class="modal-regions__one-country-arrow">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
 								</svg>
-							</div>
+							</span>
 						</span>
 					</button>
                     <div class="modal-regions__chips">

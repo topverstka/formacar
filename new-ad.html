@@ -184,10 +184,10 @@
                                     <div class="location__body-wrap">
                                         <button class="location__select location__select_countries" data-modal-open="regions">
 											<span class="location__select-left">
-												<h3 class="location__title">Страна поиска</h3>
-												<p class="location__countries"><span>Россия</span></p>
+												<span class="location__title">Страна поиска</span>
+												<span class="location__countries"><span>Россия</span></span>
 												<!-- <span class="location__empty">Выбрать страну поиска</span> -->
-											</span>
+                                            </span>
 											<span class="location__select-arrow">
 												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
@@ -206,9 +206,9 @@
 										</button>
                                         <button class="location__select location__select_regions" data-modal-open="regions">
 											<span class="location__select-left">
-												<h3 class="location__title">Регион, город, населённый пункт</h3>
-												<p class="location__countries"><span>Краснодар</span></p>
-											</span>
+												<span class="location__title">Регион, город, населённый пункт</span>
+												<span class="location__countries"><span>Краснодар</span></span>
+                                            </span>
 											<span class="location__select-arrow">
 												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
@@ -568,7 +568,7 @@
             <div class="container">
                 <div class="na-content__wrap">
                     <div class="na-content">
-                        <form action="">
+                        <form method="GET" action="/">
                             <section class="na-margin na-cat">
                                 <div class="na-cat__wrap">
                                     <div class="section__header">
@@ -591,9 +591,9 @@
                                     <div class="na-block__header-info">
                                         <div class="na-block__brand-icon"><img src="./img/brands/audi.png" alt=""></div>
                                         <div class="na-block__header-info-list">
-                                            <span class="na-title na-block__header-info-item na-block__header-info-brand">Audi</span>
-                                            <span class="na-title na-block__header-info-item na-block__header-info-model">Q3</span>
-                                            <span class="na-title na-block__header-info-item na-block__header-info-version">I (8U) Рестайлинг</span>
+                                            <h2 class="na-title na-block__header-info-item na-block__header-info-brand">Audi</h2>
+                                            <h2 class="na-title na-block__header-info-item na-block__header-info-model">Q3</h2>
+                                            <h2 class="na-title na-block__header-info-item na-block__header-info-version">I (8U) Рестайлинг</h2>
                                         </div>
                                     </div>
                                     <button class="na-block__close"><svg><use href='./img/sprite.svg#close-circle'></use></svg></button>
@@ -606,8 +606,8 @@
                                 </div>
                                 <div class="na-block__body">
                                     <div class="textfield textfield-l textfield_search clear-by-cross na-block__search section_placeholder">
-                                        <input id="search-cities" class="placeholder" type="text">
-                                        <label for="search-cities">Выберите марку</label>
+                                        <input id="search-cities-input" class="placeholder" type="text">
+                                        <label for="search-cities-input">Выберите марку</label>
                                         <button type="submit" class="textfield_search-submit"><svg><use href='./img/sprite.svg#search'></use></svg></button>
                                     </div>
                                     <div class="na-list na-brand__list" data-list>
@@ -749,16 +749,16 @@
                                     <div class="na-block__header-info">
                                         <div class="na-block__brand-icon"><img src="./img/brands/audi.png" alt=""></div>
                                         <div class="na-block__header-info-list">
-                                            <span class="na-title na-block__header-info-item na-block__header-info-brand">Audi</span>
-                                            <span class="na-title na-block__header-info-item na-block__header-info-model">Q3</span>
+                                            <h2 class="na-title na-block__header-info-item na-block__header-info-brand">Audi</h2>
+                                            <h2 class="na-title na-block__header-info-item na-block__header-info-model">Q3</h2>
                                         </div>
                                     </div>
                                     <button class="na-block__close"><svg><use href='./img/sprite.svg#close-circle'></use></svg></button>
                                 </div>
                                 <div class="na-block__body">
                                     <div class="textfield textfield-l textfield_search clear-by-cross na-block__search section_placeholder">
-                                        <input id="search-cities" class="placeholder" type="text">
-                                        <label for="search-cities">Выберите модель</label>
+                                        <input id="search-cities_form" class="placeholder" type="text">
+                                        <label for="search-cities_form">Выберите модель</label>
                                         <button type="submit" class="textfield_search-submit"><svg><use href='./img/sprite.svg#search'></use></svg></button>
                                     </div>
                                     <div class="na-list na-model__list" data-list>
@@ -876,9 +876,9 @@
                                     <div class="na-block__header-info">
                                         <div class="na-block__brand-icon"><img src="./img/brands/audi.png" alt=""></div>
                                         <div class="na-block__header-info-list">
-                                            <span class="na-title na-block__header-info-item na-block__header-info-brand">Audi</span>
-                                            <span class="na-title na-block__header-info-item na-block__header-info-model">Q3</span>
-                                            <span class="na-title na-block__header-info-item na-block__header-info-version">I (8U) Рестайлинг</span>
+                                            <h2 class="na-title na-block__header-info-item na-block__header-info-brand">Audi</h2>
+                                            <h2 class="na-title na-block__header-info-item na-block__header-info-model">Q3</h2>
+                                            <h2 class="na-title na-block__header-info-item na-block__header-info-version">I (8U) Рестайлинг</h2>
                                         </div>
                                     </div>
                                     <button class="na-block__close"><svg><use href='./img/sprite.svg#close-circle'></use></svg></button>
@@ -886,36 +886,36 @@
                                 <div class="na-block__body">
                                     <div class="na-list na-list_max-content na-version__list">
                                         <div class="radio">
-                                            <input type="radio" name="ad-version">
-                                            <label for="">2018 - 2021 II (F3)</label>
+                                            <input type="radio" name="ad-version" id="ad-version">
+                                            <label for="ad-version">2018 - 2021 II (F3)</label>
                                         </div>
                                         <div class="radio">
-                                            <input type="radio" name="ad-version">
-                                            <label for="">2014 - 2018 I (U8) Рестайлинг</label>
+                                            <input type="radio" name="ad-version" id="ad-version-1">
+                                            <label for="ad-version">2014 - 2018 I (U8) Рестайлинг</label>
                                         </div>
                                         <div class="radio">
-                                            <input type="radio" name="ad-version">
-                                            <label for="">2011 - 2014 I (8U)</label>
+                                            <input type="radio" name="ad-version" id="ad-version-2">
+                                            <label for="ad-version">2011 - 2014 I (8U)</label>
                                         </div>
                                         <div class="radio">
-                                            <input type="radio" name="ad-version">
-                                            <label for="">2011 - 2014 I (8U)</label>
+                                            <input type="radio" name="ad-version" id="ad-version-3">
+                                            <label for="ad-version">2011 - 2014 I (8U)</label>
                                         </div>
                                         <div class="radio">
-                                            <input type="radio" name="ad-version">
-                                            <label for="">2018 - 2021 II (F3)</label>
+                                            <input type="radio" name="ad-version" id="ad-version-4">
+                                            <label for="ad-version">2018 - 2021 II (F3)</label>
                                         </div>
                                         <div class="radio">
-                                            <input type="radio" name="ad-version">
-                                            <label for="">2014 - 2018 I (U8) Рестайлинг</label>
+                                            <input type="radio" name="ad-version" id="ad-version-5">
+                                            <label for="ad-version">2014 - 2018 I (U8) Рестайлинг</label>
                                         </div>
                                         <div class="radio">
-                                            <input type="radio" name="ad-version">
-                                            <label for="">2011 - 2014 I (8U)</label>
+                                            <input type="radio" name="ad-version" id="ad-version-7">
+                                            <label for="ad-version">2011 - 2014 I (8U)</label>
                                         </div>
                                         <div class="radio">
-                                            <input type="radio" name="ad-version">
-                                            <label for="">2011 - 2014 I (8U)</label>
+                                            <input type="radio" name="ad-version" id="ad-version-8">
+                                            <label for="ad-version">2011 - 2014 I (8U)</label>
                                         </div>
                                     </div>
                                 </div>
@@ -962,12 +962,12 @@
                                 <div class="na-block__body">
                                     <div class="na-list na-list_max-content na-version__list">
                                         <div class="radio">
-                                            <input type="radio" name="ad-modification">
-                                            <label for="">1.8 MT (211 л.с.)</label>
+                                            <input type="radio" name="ad-modification" id="ad-modification">
+                                            <label for="ad-modification">1.8 MT (211 л.с.)</label>
                                         </div>
                                         <div class="radio">
-                                            <input type="radio" name="ad-modification">
-                                            <label for="">1.4 MT (122 л.с.)</label>
+                                            <input type="radio" name="ad-modification" id="ad-modification-1">
+                                            <label for="ad-modification">1.4 MT (122 л.с.)</label>
                                         </div>
                                     </div>
                                 </div>
@@ -978,8 +978,8 @@
                                         <h2 class="na-title na-row__title">Год выпуска</h2>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross only-digit small-input">
-                                                <input type="text" class="placeholder" id="" maxlength="4" min="1950" max="2022">
-                                                <label for="">Введите год</label>
+                                                <input type="text" class="placeholder" id="year_input" maxlength="4">
+                                                <label for="year_input">Введите год</label>
                                             </div>
                                         </div>
                                     </div>
@@ -991,8 +991,8 @@
                                         <h2 class="na-title na-row__title">Пробег</h2>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross only-digit small-input">
-                                                <input type="text" class="placeholder" id="">
-                                                <label for="">Введите пробег</label>
+                                                <input type="text" class="placeholder" id="mileage">
+                                                <label for="mileage">Введите пробег</label>
                                             </div>
                                         </div>
                                     </div>
@@ -1009,64 +1009,64 @@
                                         <div class="na-row__block">
                                             <div class="na-row-color__list na-row__block-radio">
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="white">
-                                                    <label for="" style="background-color:#fff;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color" class="placeholder" data-color="white">
+                                                    <label for="ad-color" style="background-color:#fff;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="gray">
-                                                    <label for="" style="background-color:#C2C2C2;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-1" class="placeholder" data-color="gray">
+                                                    <label for="ad-color" style="background-color:#C2C2C2;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="flesh">
-                                                    <label for="" style="background-color:#F6E9E0;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-2" class="placeholder" data-color="flesh">
+                                                    <label for="ad-color" style="background-color:#F6E9E0;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="yellow">
-                                                    <label for="" style="background-color:#FFEC26;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-3" class="placeholder" data-color="yellow">
+                                                    <label for="ad-color" style="background-color:#FFEC26;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="orange">
-                                                    <label for="" style="background-color:#FFA553;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-4" class="placeholder" data-color="orange">
+                                                    <label for="ad-color" style="background-color:#FFA553;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="light-brown">
-                                                    <label for="" style="background-color:#CFAF3F;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-5" class="placeholder" data-color="light-brown">
+                                                    <label for="ad-color" style="background-color:#CFAF3F;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="pink">
-                                                    <label for="" style="background-color:#FFB8C3;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-6" class="placeholder" data-color="pink">
+                                                    <label for="ad-color" style="background-color:#FFB8C3;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="red">
-                                                    <label for="" style="background-color:#DE4C42;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-7" class="placeholder" data-color="red">
+                                                    <label for="ad-color" style="background-color:#DE4C42;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="brown">
-                                                    <label for="" style="background-color:#99570A;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-8" class="placeholder" data-color="brown">
+                                                    <label for="ad-color" style="background-color:#99570A;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="dark-brown">
-                                                    <label for="" style="background-color:#6A3339;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-9" class="placeholder" data-color="dark-brown">
+                                                    <label for="ad-color" style="background-color:#6A3339;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="lilac">
-                                                    <label for="" style="background-color:#944EF6;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-10" class="placeholder" data-color="lilac">
+                                                    <label for="ad-color" style="background-color:#944EF6;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="light-blue">
-                                                    <label for="" style="background-color:#4AA0FF;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-11" class="placeholder" data-color="light-blue">
+                                                    <label for="ad-color" style="background-color:#4AA0FF;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="blue">
-                                                    <label for="" style="background-color:#0060CC;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-12" class="placeholder" data-color="blue">
+                                                    <label for="ad-color" style="background-color:#0060CC;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="green">
-                                                    <label for="" style="background-color:#29CB4A;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-13" class="placeholder" data-color="green">
+                                                    <label for="ad-color" style="background-color:#29CB4A;"></label>
                                                 </div>
                                                 <div class="color-radio">
-                                                    <input type="radio" name="ad-color" class="placeholder" data-color="black">
-                                                    <label for="" style="background-color:#000000;"></label>
+                                                    <input type="radio" name="ad-color" id="ad-color-14" class="placeholder" data-color="black">
+                                                    <label for="ad-color" style="background-color:#000000;"></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -1076,16 +1076,16 @@
                                         <div class="na-row__block">
                                             <div class="na-row__block-list na-row__block-radio section_placeholder section_placeholder-radio">
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-condition">
-                                                    <label for="">Новый авто</label>
+                                                    <input type="radio" class="placeholder" name="ad-condition" id="ad-condition">
+                                                    <label for="ad-condition">Новый авто</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-condition">
-                                                    <label for="">Битый</label>
+                                                    <input type="radio" class="placeholder" name="ad-condition" id="ad-condition-1">
+                                                    <label for="ad-condition">Битый</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-condition">
-                                                    <label for="">Не битый</label>
+                                                    <input type="radio" class="placeholder" name="ad-condition" id="ad-condition-2">
+                                                    <label for="ad-condition">Не битый</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -1118,8 +1118,8 @@
                                         <h3 class="na-subtitle na-row__title">Мощность двигателя, л.с.</h3>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross only-digit small-input">
-                                                <input type="text" class="placeholder" id="">
-                                                <label for="">Введите значение</label>
+                                                <input type="text" class="placeholder" id="engine-power">
+                                                <label for="engine-power">Введите значение</label>
                                             </div>
                                         </div>
                                     </div>
@@ -1169,24 +1169,24 @@
                                         <div class="na-row__block">
                                             <div class="na-row__block-list na-row__block-radio section_placeholder section_placeholder-radio">
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-doors">
-                                                    <label for="">1</label>
+                                                    <input type="radio" class="placeholder" name="ad-doors" id="ad-doors">
+                                                    <label for="ad-doors">1</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-doors">
-                                                    <label for="">2</label>
+                                                    <input type="radio" class="placeholder" name="ad-doors" id="ad-doors-1">
+                                                    <label for="ad-doors">2</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-doors">
-                                                    <label for="">3</label>
+                                                    <input type="radio" class="placeholder" name="ad-doors" id="ad-doors-2">
+                                                    <label for="ad-doors">3</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-doors">
-                                                    <label for="">4</label>
+                                                    <input type="radio" class="placeholder" name="ad-doors" id="ad-doors-3">
+                                                    <label for="ad-doors">4</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-doors">
-                                                    <label for="">5</label>
+                                                    <input type="radio" class="placeholder" name="ad-doors" id="ad-doors-4">
+                                                    <label for="ad-doors">5</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -1196,12 +1196,12 @@
                                         <div class="na-row__block">
                                             <div class="na-row__block-list na-row__block-radio section_placeholder section_placeholder-radio">
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-wheel">
-                                                    <label for="">Левый</label>
+                                                    <input type="radio" class="placeholder" name="ad-wheel" id="ad-wheel">
+                                                    <label for="ad-wheel">Левый</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-wheel">
-                                                    <label for="">Правый</label>
+                                                    <input type="radio" class="placeholder" name="ad-wheel" id="ad-wheel-1">
+                                                    <label for="ad-wheel">Правый</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -1211,20 +1211,20 @@
                                         <div class="na-row__block">
                                             <div class="na-row__block-list na-row__block-radio section_placeholder section_placeholder-radio">
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-owners">
-                                                    <label for="">1</label>
+                                                    <input type="radio" class="placeholder" name="ad-owners" id="ad-owners">
+                                                    <label for="ad-owners">1</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-owners">
-                                                    <label for="">2</label>
+                                                    <input type="radio" class="placeholder" name="ad-owners" id="ad-owners-1">
+                                                    <label for="ad-owners">2</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-owners">
-                                                    <label for="">3</label>
+                                                    <input type="radio" class="placeholder" name="ad-owners" id="ad-owners-2">
+                                                    <label for="ad-owners">3</label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" class="placeholder" name="ad-owners">
-                                                    <label for="">4 и более</label>
+                                                    <input type="radio" class="placeholder" name="ad-owners" id="ad-owners-3">
+                                                    <label for="ad-owners">4 и более</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -1237,21 +1237,21 @@
                                         <h2 class="na-title na-row__title">Цена</h2>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross only-digit small-input">
-                                                <input type="text" class="placeholder" id="">
-                                                <label for="">Введите цену</label>
+                                                <input type="text" class="placeholder" id="price_na">
+                                                <label for="price_na">Введите цену</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </section>
-                            <section class="na-margin na-block na-descr  " data-type="descr" data-title="Описание">
+                            <section class="na-margin na-block na-descr" data-type="descr" data-title="Описание">
                                 <div class="na-block__header">
                                     <h2 class="na-title">Описание</h2>
                                 </div>
                                 <div class="na-block__body section_placeholder">
                                     <div class="textfield clear-by-cross">
-                                        <textarea id="text" class="placeholder"></textarea>
-                                        <label for="">Введите текст</label>
+                                        <textarea class="placeholder" id="na-descr-input" name="na-descr-input"></textarea>
+                                        <label for="na-descr-input">Введите текст</label>
                                     </div>
                                 </div>
                             </section>
@@ -1261,8 +1261,8 @@
                                         <h3 class="na-title na-row__title">Контактное лицо</h3>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross small-input">
-                                                <input type="text" class="placeholder" id="">
-                                                <label for="">Введите имя</label>
+                                                <input type="text" class="placeholder" id="na-contacts">
+                                                <label for="na-contacts">Введите имя</label>
                                             </div>
                                         </div>
                                     </div>
@@ -1270,7 +1270,7 @@
                                         <h3 class="na-title na-row__title">Номер телефона</h3>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross only-digit mask-phone small-input">
-                                                <input type="text" id="" class="placeholder" placeholder="+7 (___) ___-__-__">
+                                                <input type="text" id="mask-phone-input" class="placeholder" placeholder="+7 (___) ___-__-__">
                                                 <!-- <label for="">+7 (___) ___-__-__</label> -->
                                             </div>
                                         </div>
@@ -1491,11 +1491,11 @@
                     <button class="modal-regions__one-country">
 						<span class="modal-regions__one-country-wrap">
 							<span class="modal-regions__one-country-text"></span>
-							<div class="modal-regions__one-country-arrow">
+							<span class="modal-regions__one-country-arrow">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
 								</svg>
-							</div>
+							</span>
 						</span>
 					</button>
                     <div class="modal-regions__chips">

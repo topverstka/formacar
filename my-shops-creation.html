@@ -184,10 +184,10 @@
                                     <div class="location__body-wrap">
                                         <button class="location__select location__select_countries" data-modal-open="regions">
 											<span class="location__select-left">
-												<h3 class="location__title">Страна поиска</h3>
-												<p class="location__countries"><span>Россия</span></p>
+												<span class="location__title">Страна поиска</span>
+												<span class="location__countries"><span>Россия</span></span>
 												<!-- <span class="location__empty">Выбрать страну поиска</span> -->
-											</span>
+                                            </span>
 											<span class="location__select-arrow">
 												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
@@ -206,9 +206,9 @@
 										</button>
                                         <button class="location__select location__select_regions" data-modal-open="regions">
 											<span class="location__select-left">
-												<h3 class="location__title">Регион, город, населённый пункт</h3>
-												<p class="location__countries"><span>Краснодар</span></p>
-											</span>
+												<span class="location__title">Регион, город, населённый пункт</span>
+												<span class="location__countries"><span>Краснодар</span></span>
+                                            </span>
 											<span class="location__select-arrow">
 												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
@@ -577,7 +577,7 @@
                 <div class="my-shop-creation__wrap">
                     <div class="my-shop-creation__content">
 
-                        <form action="">
+                        <form action="/">
                             <section class="na-margin na-cat">
                                 <div class="na-cat__wrap">
                                     <div class="section__header">
@@ -592,8 +592,8 @@
                                 </div>
                                 <div class="na-block__body section_placeholder">
                                     <div class="textfield clear-by-cross">
-                                        <input type="text" class="placeholder" id="">
-                                        <label for="">Введите название компании</label>
+                                        <input type="text" class="placeholder" id="na-title-inp">
+                                        <label for="na-title-inp">Введите название компании</label>
                                     </div>
                                 </div>
                             </section>
@@ -603,8 +603,8 @@
                                 </div>
                                 <div class="na-block__body section_placeholder">
                                     <div class="textfield clear-by-cross">
-                                        <input type="text" class="placeholder" id="">
-                                        <label for="">Введите название магазина</label>
+                                        <input type="text" class="placeholder" id="na-name-inp">
+                                        <label for="na-name-inp">Введите название магазина</label>
                                     </div>
                                 </div>
                             </section>
@@ -614,8 +614,8 @@
                                 </div>
                                 <div class="na-block__body section_placeholder">
                                     <div class="textfield clear-by-cross">
-                                        <input type="text" class="placeholder" id="">
-                                        <label for="">Введите адрес</label>
+                                        <input type="text" class="placeholder" id="na-adress-inp">
+                                        <label for="na-adress-inp">Введите адрес</label>
                                     </div>
                                 </div>
                             </section>
@@ -625,8 +625,8 @@
                                         <h3 class="na-title na-row__title">ОГРН/ОГРНИП</h3>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross">
-                                                <input type="text" class="placeholder number-input" id="">
-                                                <label for="">Введите ОГРН/ОГРНИП</label>
+                                                <input type="text" class="placeholder number-input" id="na-ogrn-inp">
+                                                <label for="na-ogrn-inp">Введите ОГРН/ОГРНИП</label>
                                             </div>
                                         </div>
                                     </div>
@@ -634,8 +634,8 @@
                                         <h3 class="na-title na-row__title">ИНН</h3>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross">
-                                                <input type="text" class="placeholder number-input" id="">
-                                                <label for="">Введите ИНН</label>
+                                                <input type="text" class="placeholder number-input" id="na-inn-inp">
+                                                <label for="na-inn-inp">Введите ИНН</label>
                                             </div>
                                         </div>
                                     </div>
@@ -643,7 +643,7 @@
                                         <h3 class="na-title na-row__title">Номер телефона</h3>
                                         <div class="na-row__block section_placeholder">
                                             <div class="textfield clear-by-cross only-digit mask-phone">
-                                                <input type="text" class="placeholder" id="" placeholder="+7 (___) ___-__-__">
+                                                <input type="text" class="placeholder" id="mask-phone" placeholder="+7 (___) ___-__-__">
                                                 <!-- <label for="">+7 (___) ___-__-__</label> -->
                                             </div>
                                         </div>
@@ -656,8 +656,8 @@
                                 </div>
                                 <div class="na-block__body section_placeholder">
                                     <div class="textfield clear-by-cross">
-                                        <input type="text" class="placeholder" id="">
-                                        <label for="">Вставьте ссылку</label>
+                                        <input type="text" class="placeholder" id="na-site-inp">
+                                        <label for="na-site-inp">Вставьте ссылку</label>
                                     </div>
                                 </div>
                             </section>
@@ -668,8 +668,8 @@
                                 </div>
                                 <div class="na-block__body section_placeholder">
                                     <div class="textfield clear-by-cross">
-                                        <textarea name="" class="placeholder" id=""></textarea>
-                                        <label for="">Введите текст</label>
+                                        <textarea name="na-descr-inp" class="placeholder" id="na-descr-inp"></textarea>
+                                        <label for="na-descr-inp">Введите текст</label>
                                     </div>
                                 </div>
                             </section>
@@ -846,11 +846,11 @@
                     <button class="modal-regions__one-country">
 						<span class="modal-regions__one-country-wrap">
 							<span class="modal-regions__one-country-text"></span>
-							<div class="modal-regions__one-country-arrow">
+							<span class="modal-regions__one-country-arrow">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M8.27465 18.7258C8.6396 19.0914 9.22798 19.0914 9.59293 18.7258L15.7821 12.526C16.0726 12.235 16.0726 11.765 15.7821 11.474L9.59293 5.27418C9.22798 4.90861 8.6396 4.90861 8.27465 5.27418C7.9097 5.63975 7.9097 6.22915 8.27465 6.59472L13.6669 12.0037L8.2672 17.4127C7.9097 17.7709 7.9097 18.3677 8.27465 18.7258Z" fill="#B4B4BF"/>
 								</svg>
-							</div>
+							</span>
 						</span>
 					</button>
                     <div class="modal-regions__chips">
@@ -1782,7 +1782,7 @@
                 <div class="modal-valid-ad__popup-wrap">
                     <div class="modal-valid-ad__body modal-valid-ad__body_error">
                         <div class="modal-valid-ad__img"><img class="modal-valid-ad__img-error" src="./img/valid-ad/valid_done.svg" alt=""></div>
-                        <span class="modal-valid-ad__title">Ваш магазин отправлен на проверку администратору.</span></span>
+                        <span class="modal-valid-ad__title">Ваш магазин отправлен на проверку администратору.</span>
                     </div>
                     <div class="modal-valid-ad__body modal-valid-ad__body_done">
                         <div class="modal-valid-ad__img"><img class="modal-valid-ad__img-done" src="./img/valid-ad/valid_done.svg" alt=""></div>
