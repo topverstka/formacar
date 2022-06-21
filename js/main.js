@@ -3030,3 +3030,13 @@ if (document.querySelector(".mine-ad-view__user-favorites-line-left")) {
       }
     });
 }
+
+const snacks = [...document.querySelectorAll(".snack")];
+if (snacks.length) {
+  snacks.forEach((snack) => {
+    const close = snack.querySelector(".snack__close");
+    close.addEventListener("click", () => {
+      snack.classList.remove("_show");
+    });
+  });
+}
