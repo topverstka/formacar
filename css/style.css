@@ -241,6 +241,10 @@ body._lock {
   }
 }
 
+.wrapper__outer {
+  overflow: visible;
+}
+
 .content {
   width: 100%;
   height: 100%;
@@ -15116,31 +15120,52 @@ div.error_input {
 /*
  * @snack
  * only mobile
+
+
+    <div class="snack snack--top _show" data-snack="app">
+      <button type="button" class="snack__close">
+        <span></span>
+        <span></span>
+      </button>
+      <picture class="snack__pic">
+        <img
+          src="./img/logos/logo-app.png"
+          alt="Установите мобильное приложение FormaCar"
+          class="snack__img"
+        />
+      </picture>
+      <div class="snack__info">
+        <h3 class="snack__title">FormaCar</h3>
+        <p class="snack__desc">Установите мобильное приложение FormaCar</p>
+        <a href="#appstore" class="snack__link">Установить</a>
+      </div>
+    </div>
+
+
  */
 .snack {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 3;
-  width: 100%;
-  padding: 10px 20px;
-  background-color: #424554;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   opacity: 0;
   pointer-events: none;
   -webkit-transition: all 0.6s ease-out;
   transition: all 0.6s ease-out;
 }
 
-@media (max-width: 576px) {
-  .snack {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
+.snack__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #424554;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out;
 }
 
 .snack--top {
@@ -15150,6 +15175,8 @@ div.error_input {
 }
 
 .snack._show {
+  position: -webkit-sticky;
+  position: sticky;
   -webkit-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
