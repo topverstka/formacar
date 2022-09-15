@@ -1,370 +1,357 @@
 .s-services {
-    margin-top: 50px;
+  margin-top: 50px;
 
-    @media (max-width: $laptop-l) {
-        margin-top: 0;
-    } 
+  @media (max-width: $laptop-l) {
+    margin-top: 0;
+  }
 }
 
 .s-services__wrap {
-
 }
 
 .s-services__list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 180px;
-    gap: 20px 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 180px;
+  gap: 20px 24px;
 
-    @media (max-width: 850px) {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    @media (max-width: $tablet) {
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: auto;
-    }
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+  }
 
-    @media (max-width: $mobile-m) {
-        gap: 11px 10px;
-    }
+  @media (max-width: $mobile-m) {
+    gap: 11px 10px;
+  }
 }
 
 // Карточки услуг
 .service-card {
-    position: relative;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 10px;
 
-    @media (max-width: $tablet) {
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
+  @media (max-width: $tablet) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 
-    @media (max-width: $tablet) {
-        height: 76px;
-    }
+  @media (max-width: $tablet) {
+    height: 76px;
+  }
 
-    &_colorful {
-        color: #fff;
-    }
+  &_colorful {
+    color: #fff;
+  }
 
-    &:hover {
-        
-        @media (min-width: $minHover) {
-            box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
-        }
+  &:hover {
+    @media (min-width: $minHover) {
+      box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
     }
+  }
 }
 
 .service-card__wrap {
-
 }
 
 .service-card__info {
-    position: absolute;
-    z-index: 1;
-    top: 20px;
-    left: 30px;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  z-index: 1;
 
-    @media (max-width: $tablet) {
-        top: 16px;
-        left: 16px;
-    }
+  @media (max-width: $tablet) {
+    top: 16px;
+    left: 16px;
+  }
 }
 
 .service-card__title {
-    font-family: $ffHeader;
-    font-size: 18px; 
-    text-transform: uppercase;
+  font-family: $ffHeader;
+  font-size: 18px;
+  text-transform: uppercase;
 
-    @media (max-width: $laptop) {
-        font-size: 16px;
-    }
+  @media (max-width: $laptop) {
+    font-size: 16px;
+  }
 
-    @media (max-width: $tablet) {
-        font-size: 14px;
-    }
+  @media (max-width: $tablet) {
+    font-size: 14px;
+  }
 }
 
 .service-card__correction {
-    font-family: $ffLabel;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: .5px;
-    text-transform: uppercase;
+  font-family: $ffLabel;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .service-card__img {
-    position: absolute;
-    // pointer-events: none;
+  position: absolute;
+  // pointer-events: none;
 }
 
 .s-services__list {
+  & .service-card {
+    &:nth-child(1) {
+      & .service-card__img {
+        bottom: 0;
+        left: 117px;
+        width: 383px;
 
-    & .service-card {
-    
-        &:nth-child(1) {
-    
-            & .service-card__img {
-                left: 117px;
-                bottom: 0;
-                width: 383px;
-    
-                @media (max-width: $laptop-l) {
-                    left: auto;
-                    right: 0;
-                    width: 306px;
-                }
-
-                @media (max-width: $mobile-l) {
-                    right: -64px;
-                }
-            }
-    
-            @media (max-width: $tablet) {
-                height: 170px;
-            }
+        @media (max-width: $laptop-l) {
+          right: 0;
+          left: auto;
+          width: 306px;
         }
-    
-        &:nth-child(2) {
-    
-            & .service-card__img {
-                right: -11px;
-                bottom: -15px;
-                width: 263px;
-    
-                @media (max-width: $laptop-l) {
-                    width: 200px;
-                }
-    
-                @media (max-width: $laptop) {
-                    right: -23px;
-                    bottom: -33px;
-                    width: 183px;
-                }
 
-                @media (max-width: $tablet) {
-                    right: -20px;
-                    bottom: -10px;
-                    width: 160px;                
-                }
-
-                @media (max-width: $mobile-l) {
-                    right: -55px;               
-                }
-            }
-    
-            @media (max-width: $tablet) {
-                height: 170px;
-                grid-column-start: 1;
-                grid-column-end: 2;
-            }
+        @media (max-width: $mobile-l) {
+          right: -64px;
         }
-    
-        &:nth-child(3) {
-    
-            & .service-card__img {
-                right: -224px;
-                bottom: 7px;
-                width: 573px;
-    
-                @media (max-width: $laptop-l) {
-                    bottom: 0;
-                    width: 493px;
-                }
-    
-                @media (max-width: $laptop) {
-                    right: -264px;
-                }
+      }
 
-                @media (max-width: $tablet) {
-                    right: -230px;
-                    bottom: 0;
-                    width: 456px;
-                }
-                
-                @media (max-width: $mobile-l) {
-                    right: -278px;
-                }
-            }
-    
-            @media (max-width: $tablet) {
-                height: 170px;
-                grid-column-start: 2;
-                grid-column-end: 3;
-            }
-        }
-    
-        &:nth-child(4) {
-    
-            & .service-card__img {
-                left: 113px;
-                bottom: -20px;
-                width: 348px;
-    
-                @media (max-width: $laptop-l) {
-                    left: 94px;
-                    width: 254px;
-                }
-    
-                @media (max-width: $laptop) {
-                    left: 52px;
-                    bottom: -13px;
-                }
-    
-                @media (max-width: $tablet) {
-                    left: auto;
-                    right: 12px; 
-                    width: 166px;
-                }
-
-                @media (max-width: $mobile-l) {
-                    right: -41px;
-                    bottom: -23px;
-                }
-            }
-        }
-    
-        &:nth-child(5) {
-    
-            & .service-card__img {
-                left: 93px;
-                bottom: -13px;
-                width: 351px;
-    
-                @media (max-width: $laptop-l) {
-                    left: 75px;
-                    bottom: -9px;
-                    width: 252px;
-                }
-    
-                @media (max-width: $laptop) {
-                    left: 14px;
-                    bottom: -7px;
-                    width: 240px;
-                }
-    
-                @media (max-width: $tablet) {
-                    left: auto;
-                    right: 12px; 
-                    width: 171px;
-                }
-
-                @media (max-width: $mobile-l) {
-                    right: -26px;
-                    bottom: -20px;
-                }
-            }
-        }
-    
-        &:nth-child(6) {
-    
-            & .service-card__img {
-                left: 125px;
-                bottom: -95px;
-                width: 356px;
-    
-                @media (max-width: $laptop-l) {
-                    left: 89px;
-                    bottom: -76px;
-                    width: 256px;
-                }
-    
-                @media (max-width: $laptop-m) {
-                    left: 83px;
-                    width: 240px;
-                }
-    
-                @media (max-width: $laptop) {
-                    left: auto;
-                    right: -30px;
-                    bottom: -66px;
-                    width: 200px;
-                    height: 200px;
-                }
-
-                @media (max-width: $tablet) {
-                    width: 168px;
-                    height: 163px;
-                }
-
-                @media (max-width: $mobile-l) {
-                    right: -23px;
-                    bottom: -87px;
-                }
-            }
-        }
-    
-        &:nth-child(7) {
-    
-            & .service-card__img {
-                left: 133px;
-                bottom: -61px;
-                width: 320px;
-    
-                @media (max-width: $laptop-l) {
-                    left: 106px;
-                    bottom: -89px;
-                    width: 200px;
-                    height: 245px;
-                    transform: scale(-1,1);
-                }
-    
-                @media (max-width: $laptop) {
-                    left: auto;
-                    right: -24px;
-                    bottom: -93px;
-                    width: 165px;
-                    height: 284px;
-                }
-
-                @media (max-width: $tablet) {
-                    width: 144px;
-                    height: auto;
-                    right: 3px;
-                    bottom: -52px;
-                }
-            }
-        }
-    
-        &:nth-child(8) {
-    
-            & .service-card__img {
-                right: 9px;
-                bottom: -53px;
-                width: 214px;
-    
-                @media (max-width: $laptop-l) {
-                    right: 7px;
-                    bottom: -73px;
-                    width: 182px;
-                }
-    
-                @media (max-width: $laptop-m) {
-                    right: -26px;
-                }
-    
-                @media (max-width: $laptop) {
-                    right: -32px;
-                    bottom: -52px;
-                    width: 182px;
-                    height: 227px;
-                }
-
-                @media (max-width: $tablet) {
-                    width: 104px;
-                    height: auto;
-                    right: 13px;
-                    bottom: -35px;
-                }
-            }
-
-            @media (min-width: 769px) and (max-width: 850px) {
-                grid-column-start: 2;
-                grid-column-end: 4;
-            }
-        }
+      @media (max-width: $tablet) {
+        height: 170px;
+      }
     }
+
+    &:nth-child(2) {
+      & .service-card__img {
+        right: -11px;
+        bottom: -15px;
+        width: 263px;
+
+        @media (max-width: $laptop-l) {
+          width: 200px;
+        }
+
+        @media (max-width: $laptop) {
+          right: -23px;
+          bottom: -33px;
+          width: 183px;
+        }
+
+        @media (max-width: $tablet) {
+          right: -20px;
+          bottom: -10px;
+          width: 160px;
+        }
+
+        @media (max-width: $mobile-l) {
+          right: -55px;
+        }
+      }
+
+      @media (max-width: $tablet) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        height: 170px;
+      }
+    }
+
+    &:nth-child(3) {
+      & .service-card__img {
+        right: -224px;
+        bottom: 7px;
+        width: 573px;
+
+        @media (max-width: $laptop-l) {
+          bottom: 0;
+          width: 493px;
+        }
+
+        @media (max-width: $laptop) {
+          right: -264px;
+        }
+
+        @media (max-width: $tablet) {
+          right: -230px;
+          bottom: 0;
+          width: 456px;
+        }
+
+        @media (max-width: $mobile-l) {
+          right: -278px;
+        }
+      }
+
+      @media (max-width: $tablet) {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        height: 170px;
+      }
+    }
+
+    &:nth-child(4) {
+      & .service-card__img {
+        bottom: -20px;
+        left: 113px;
+        width: 348px;
+
+        @media (max-width: $laptop-l) {
+          left: 94px;
+          width: 254px;
+        }
+
+        @media (max-width: $laptop) {
+          bottom: -13px;
+          left: 52px;
+        }
+
+        @media (max-width: $tablet) {
+          right: 12px;
+          left: auto;
+          width: 166px;
+        }
+
+        @media (max-width: $mobile-l) {
+          right: -41px;
+          bottom: -23px;
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      & .service-card__img {
+        bottom: -13px;
+        left: 93px;
+        width: 351px;
+
+        @media (max-width: $laptop-l) {
+          bottom: -9px;
+          left: 75px;
+          width: 252px;
+        }
+
+        @media (max-width: $laptop) {
+          bottom: -7px;
+          left: 14px;
+          width: 240px;
+        }
+
+        @media (max-width: $tablet) {
+          right: 12px;
+          left: auto;
+          width: 171px;
+        }
+
+        @media (max-width: $mobile-l) {
+          right: -26px;
+          bottom: -20px;
+        }
+      }
+    }
+
+    &:nth-child(6) {
+      & .service-card__img {
+        bottom: -95px;
+        left: 125px;
+        width: 356px;
+
+        @media (max-width: $laptop-l) {
+          bottom: -76px;
+          left: 89px;
+          width: 256px;
+        }
+
+        @media (max-width: $laptop-m) {
+          left: 83px;
+          width: 240px;
+        }
+
+        @media (max-width: $laptop) {
+          right: -30px;
+          bottom: -66px;
+          left: auto;
+          width: 200px;
+          height: 200px;
+        }
+
+        @media (max-width: $tablet) {
+          width: 168px;
+          height: 163px;
+        }
+
+        @media (max-width: $mobile-l) {
+          right: -23px;
+          bottom: -87px;
+        }
+      }
+    }
+
+    &:nth-child(7) {
+      & .service-card__img {
+        bottom: -61px;
+        left: 133px;
+        width: 320px;
+
+        @media (max-width: $laptop-l) {
+          bottom: -89px;
+          left: 106px;
+          width: 200px;
+          height: 245px;
+          transform: scale(-1, 1);
+        }
+
+        @media (max-width: $laptop) {
+          right: -24px;
+          bottom: -93px;
+          left: auto;
+          width: 165px;
+          height: 284px;
+        }
+
+        @media (max-width: $tablet) {
+          right: 3px;
+          bottom: -52px;
+          width: 144px;
+          height: auto;
+        }
+      }
+    }
+
+    &:nth-child(8) {
+      & .service-card__img {
+        right: 9px;
+        bottom: -53px;
+        width: 214px;
+
+        @media (max-width: $laptop-l) {
+          right: 7px;
+          bottom: -73px;
+          width: 182px;
+        }
+
+        @media (max-width: $laptop-m) {
+          right: -26px;
+        }
+
+        @media (max-width: $laptop) {
+          right: -32px;
+          bottom: -52px;
+          width: 182px;
+          height: 227px;
+        }
+
+        @media (max-width: $tablet) {
+          right: 13px;
+          bottom: -35px;
+          width: 104px;
+          height: auto;
+        }
+      }
+
+      @media (min-width: 769px) and (max-width: 850px) {
+        grid-column-start: 2;
+        grid-column-end: 4;
+      }
+    }
+  }
 }
