@@ -1585,8 +1585,8 @@ function settingsPopupPlaces() {
 
   function changeBtnPlace() {
     if (regionsArr.length === 0 && countryArr.length === 0) {
-      places.innerText = "По всему миру";
-      distance.classList.remove("_show");
+      // places.innerText = "По всему миру";
+      // distance.classList.remove("_show");
       quantity.classList.remove("_show");
     }
 

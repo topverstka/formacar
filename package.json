@@ -1,0 +1,30 @@
+{
+  "name": "formacar",
+  "version": "1.0.0",
+  "description": "Для этого нужно добавить класс инпуту `.clear-by-cross`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/topverstka/formacar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/topverstka/formacar/issues"
+  },
+  "homepage": "https://github.com/topverstka/formacar#readme",
+  "devDependencies": {
+    "@wordpress/stylelint-config": "^21.0.0",
+    "editorconfig": "^0.15.3",
+    "editorconfig-checker": "^4.0.2",
+    "eslint": "^8.23.1",
+    "htmlhint": "^1.1.4",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.11.0",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^28.0.0"
+  }
+}

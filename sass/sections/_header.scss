@@ -112,7 +112,7 @@
   width: 150px;
   height: 25px;
   @media (min-width: 1100px) {
-    height: 27px;
+    height: 29px;
   }
 }
 
@@ -180,6 +180,9 @@
   @media (max-width: $laptop) {
     width: 100px;
   }
+  @media (min-width: 1101px) {
+    margin-top: -1px;
+  }
 }
 
 // Опции пользователя
@@ -187,6 +190,9 @@
   display: flex;
   align-items: center;
   margin: 0 0 0 20px;
+  @media (min-width: 1101px) {
+    margin-left: 22px;
+  }
 }
 
 .user-option {
@@ -221,6 +227,9 @@
   &:not(:last-child) {
     margin: 0 20px 0 0;
   }
+  &:first-child {
+    margin-right: 23px;
+  }
 }
 
 .user-option__header {
@@ -232,6 +241,9 @@
 .user-option__icon {
   display: flex;
   height: 28px;
+  @media (min-width: 1101px) {
+    height: 30px;
+  }
   & svg path {
     transition: $tr;
   }
@@ -257,6 +269,9 @@
   z-index: 2;
   display: none;
   margin: 0 0 0 20px;
+  @media (min-width: 1101px) {
+    margin-left: 23px;
+  }
   &:hover {
     @media (min-width: $minHover) {
       & .user-menu__header {
@@ -358,6 +373,9 @@
     @media (max-width: $laptop) {
       margin-right: 20px;
     }
+    @media (min-width: 1101px) {
+      margin-right: 28.5px;
+    }
   }
 }
 
@@ -372,6 +390,9 @@
   // padding: 16px 0;
   @media (max-width: $laptop) {
     font-size: 11px;
+  }
+  @media (min-width: 1101px) {
+    height: 49px;
   }
 }
 
@@ -401,6 +422,9 @@
   align-items: center;
   height: 50px;
   padding: 0 20px;
+  @media (min-width: 1101px) {
+    height: 49px;
+  }
 }
 
 .locaiton__icon {
@@ -417,6 +441,9 @@
   color: $text-accent;
   letter-spacing: 0.02em;
   white-space: nowrap;
+  @media (min-width: 1101px) {
+    font-size: 14px;
+  }
 }
 
 .location__places {
