@@ -4466,6 +4466,11 @@ div.error_input {
     margin-right: 28.5px;
   }
 }
+@media (min-width: 1801px) {
+  .header-nav__item:not(:last-child) {
+    margin-right: 41px;
+  }
+}
 
 .header-nav__link {
   display: flex;
@@ -4737,6 +4742,17 @@ div.error_input {
   }
 }
 
+@media (min-width: 1101px) {
+  .section.s-services {
+    margin-bottom: 100px;
+  }
+}
+@media (min-width: 1801px) {
+  .section.s-services {
+    margin-bottom: 120px;
+  }
+}
+
 .s-services {
   margin-top: 50px;
 }
@@ -4829,7 +4845,7 @@ div.error_input {
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
 }
 
 .service-card__img {
@@ -4966,9 +4982,9 @@ div.error_input {
 }
 @media (max-width: 1440px) {
   .s-services__list .service-card:nth-child(5) .service-card__img {
-    bottom: -9px;
-    left: 75px;
-    width: 252px;
+    bottom: -14px;
+    left: 74px;
+    width: 256px;
   }
 }
 @media (max-width: 1024px) {
@@ -4998,7 +5014,7 @@ div.error_input {
 }
 @media (max-width: 1440px) {
   .s-services__list .service-card:nth-child(6) .service-card__img {
-    bottom: -76px;
+    bottom: -91px;
     left: 89px;
     width: 256px;
   }
@@ -5038,8 +5054,8 @@ div.error_input {
 @media (max-width: 1440px) {
   .s-services__list .service-card:nth-child(7) .service-card__img {
     bottom: -89px;
-    left: 106px;
-    width: 200px;
+    left: 93px;
+    width: 226px;
     height: 245px;
     transform: scale(-1, 1);
   }
@@ -5068,7 +5084,7 @@ div.error_input {
 }
 @media (max-width: 1440px) {
   .s-services__list .service-card:nth-child(8) .service-card__img {
-    right: 7px;
+    right: -7px;
     bottom: -73px;
     width: 182px;
   }
@@ -5101,13 +5117,24 @@ div.error_input {
   }
 }
 
+@media (min-width: 1101px) {
+  .s-recent .section__header {
+    margin-bottom: 22px;
+  }
+}
+@media (min-width: 1801px) {
+  .s-recent .section__header {
+    margin-bottom: 48px;
+  }
+}
+
 .s-recent__body {
   position: relative;
 }
 @media (min-width: 920px) {
   .s-recent__body:hover .section-slider-arrow:not(.section-slider-arrow.swiper-button-disabled) {
-    opacity: 1;
     pointer-events: all;
+    opacity: 1;
   }
 }
 
@@ -5116,9 +5143,9 @@ div.error_input {
 }
 
 .recent-card {
+  overflow: hidden;
   background: #fff;
   border-radius: var(--radius);
-  overflow: hidden;
   transition: var(--tr);
 }
 @media (max-width: 500px) {
@@ -5131,8 +5158,8 @@ div.error_input {
     box-shadow: 0px 15px 25px rgba(204, 214, 240, 0.5);
   }
   .recent-card:hover .recent-card__slider-arrow:not(.recent-card__slider-arrow.swiper-button-disabled) {
-    opacity: 1;
     pointer-events: all;
+    opacity: 1;
   }
 }
 @media (max-width: 1024px) {
@@ -5185,25 +5212,30 @@ div.error_input {
 
 .recent-card__price {
   display: block;
+  margin: 5px 0 0 0;
   font-size: 18px;
   font-weight: 700;
-  margin: 8px 0 0 0;
+}
+@media (min-width: 1101px) {
+  .recent-card__price {
+    letter-spacing: -0.02em;
+  }
 }
 @media (max-width: 500px) {
   .recent-card__price {
-    font-size: 14px;
     margin: 4px 0 0 0;
+    font-size: 14px;
   }
 }
 
 .recent-card__link {
   position: absolute;
-  z-index: 2;
   top: 0;
   left: 0;
+  z-index: 2;
+  display: block;
   width: 100%;
   height: 80%;
-  display: block;
 }
 
 .recent-card__slider {
@@ -5243,8 +5275,8 @@ div.error_input {
     border-radius: 10px 10px 0 0;
   }
   .recent-card__slider .swiper-slide img {
-    border-radius: 10px 10px 0 0;
     overflow: hidden;
+    border-radius: 10px 10px 0 0;
   }
 }
 .recent-card__slider .swiper-slide:first-child {
@@ -5260,18 +5292,18 @@ div.error_input {
 
 .recent-card__slider-arrow {
   position: absolute;
-  z-index: 1;
   top: 50%;
-  transform: translate(0, -50%);
+  z-index: 1;
   width: 32px;
   height: 32px;
-  opacity: 0;
   pointer-events: none;
+  opacity: 0;
+  transform: translate(0, -50%);
 }
 @media (max-width: 920px) {
   .recent-card__slider-arrow {
-    opacity: 1;
     pointer-events: all;
+    opacity: 1;
   }
 }
 @media (max-width: 500px) {
@@ -5315,9 +5347,9 @@ div.error_input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #ECECEC;
   padding-top: 12px;
   margin-top: 12px;
+  border-top: 1px solid #ececec;
 }
 @media (max-width: 500px) {
   .recent-card__footer {
@@ -5367,16 +5399,16 @@ div.error_input {
 }
 
 .like {
-  min-width: 30px;
-  width: 30px;
-  height: 30px;
   display: flex;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
   margin: 0 0 0 8px;
 }
 @media (max-width: 500px) {
   .like {
-    min-width: 20px;
     width: 20px;
+    min-width: 20px;
     height: 20px;
   }
 }

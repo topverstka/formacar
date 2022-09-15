@@ -1,4 +1,10 @@
-.s-recent {
+.s-recent .section__header {
+  @media (min-width: 1101px) {
+    margin-bottom: 22px;
+  }
+  @media (min-width: 1801px) {
+    margin-bottom: 48px;
+  }
 }
 
 .s-recent__wrap {
@@ -111,9 +117,12 @@
 
 .recent-card__price {
   display: block;
-  margin: 8px 0 0 0;
+  margin: 5px 0 0 0;
   font-size: 18px;
   font-weight: 700;
+  @media (min-width: 1101px) {
+    letter-spacing: -0.02em;
+  }
 
   @media (max-width: $tablet-s) {
     margin: 4px 0 0 0;

@@ -1,3 +1,11 @@
+.section.s-services {
+  @media (min-width: 1101px) {
+    margin-bottom: 100px;
+  }
+  @media (min-width: 1801px) {
+    margin-bottom: 120px;
+  }
+}
 .s-services {
   margin-top: 50px;
 
@@ -90,7 +98,7 @@
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
 }
 
 .service-card__img {
@@ -225,9 +233,12 @@
         width: 351px;
 
         @media (max-width: $laptop-l) {
-          bottom: -9px;
-          left: 75px;
-          width: 252px;
+          // bottom: -9px;
+          // left: 75px;
+          // width: 252px;
+          bottom: -14px;
+          left: 74px;
+          width: 256px;
         }
 
         @media (max-width: $laptop) {
@@ -256,7 +267,8 @@
         width: 356px;
 
         @media (max-width: $laptop-l) {
-          bottom: -76px;
+          // bottom: -76px;
+          bottom: -91px;
           left: 89px;
           width: 256px;
         }
@@ -294,8 +306,10 @@
 
         @media (max-width: $laptop-l) {
           bottom: -89px;
-          left: 106px;
-          width: 200px;
+          // left: 106px;
+          // width: 200px;
+          left: 93px;
+          width: 226px;
           height: 245px;
           transform: scale(-1, 1);
         }
@@ -324,7 +338,7 @@
         width: 214px;
 
         @media (max-width: $laptop-l) {
-          right: 7px;
+          right: -7px;
           bottom: -73px;
           width: 182px;
         }
