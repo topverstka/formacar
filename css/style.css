@@ -4621,6 +4621,9 @@ div.error_input {
   display: flex;
   height: 28px;
 }
+.user-option__icon svg {
+  width: auto;
+}
 @media (min-width: 1101px) {
   .user-option__icon {
     height: 30px;
