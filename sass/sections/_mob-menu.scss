@@ -1,24 +1,19 @@
 .mob-menu {
-
     @media (min-width: 921px) {
         display: none;
     }
 }
 
 .mob-menu_auth {
-
     & .mob-menu__item-sign-in {
-        display: none;
-    }
-
-    & .mob-menu__item-auth {
         display: flex;
     }
+    & .mob-menu__item-auth {
+        display: none;
+    }
 }
 
-.mob-menu__wrap {
-
-}
+.mob-menu__wrap {}
 
 .mob-menu__popup {
     height: 100%;
@@ -27,13 +22,10 @@
 .mob-menu__header {
     position: relative;
     z-index: 1;
-
     &._search {
-
         & .mob-menu__cancel-search {
             display: block;
         }
-
         & .mob-menu__close {
             display: none;
         }
@@ -62,7 +54,6 @@
     width: 25px;
     height: 25px;
     margin: 0 0 0 20px;
-
     & span {
         position: absolute;
         top: 50%;
@@ -79,25 +70,28 @@
     padding: 20px 15px 40px;
     // overflow: hidden;
     transition: $tr;
+    &._auth {
+        .mob-menu__item-sign-in {
+            display: none;
+        }
+        .mob-menu__item-auth {
+            display: flex;
+        }
+    }
 }
 
-.mob-menu__body-wrap {
+.mob-menu__body-wrap {}
 
-}
-
-.mob-menu__list {
-
-}
+.mob-menu__list {}
 
 .mob-menu__item {
-    
     &:not(:last-child) {
         margin: 0 0 20px 0;
     }
 }
 
 .mob-menu__item-auth {
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: space-between;
     // margin: 0 0 10px 0;
@@ -113,7 +107,6 @@
     height: 45px;
     border-radius: 50%;
     overflow: hidden;
-
     & img {
         object-fit: cover;
     }
@@ -138,25 +131,20 @@
     font-weight: 500;
     // padding: 10px 0;
     transition: $tr;
-
     &:active {
         color: $text-accent;
     }
 }
 
-.mob-menu__link_accent {
-
-}
+.mob-menu__link_accent {}
 
 .mob-menu__link_icon {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     & .mob-menu__link-text {
         color: $text-accent;
     }
-
     & .mob-menu__link-icon {
         width: 30px;
         height: 30px;
@@ -186,16 +174,13 @@
     background: #fff;
     opacity: 0;
     transition: $tr;
-
     &._show {
         opacity: 1;
         transform: translate(0, 100%);
     }
 }
 
-.mob-search__wrap {
-
-}
+.mob-search__wrap {}
 
 .mob-search__services {
     background: $bg-second-l;
@@ -204,14 +189,12 @@
 
 .mob-search__services-wrap {
     padding: 15px 0;
-
 }
 
 .mob-search__services-list {
     display: flex;
     padding: 0 15px 10px;
     overflow-x: auto;
-
     &::-webkit-scrollbar {
         height: 0;
     }
@@ -222,7 +205,6 @@
     width: 72px;
     display: flex;
     flex-direction: column;
-
     &:not(:last-child) {
         margin: 0 15px 0 0;
     }
@@ -234,7 +216,6 @@
     border-radius: $radius;
     overflow: hidden;
     background: #fff;
-
     & img {
         object-fit: cover;
     }
@@ -258,13 +239,9 @@
     font-weight: 600;
 }
 
-.mob-search__section-body {
+.mob-search__section-body {}
 
-}
-
-.mob-search__section-list {
-
-}
+.mob-search__section-list {}
 
 // Карточки разделов
 .ms-section-card {
@@ -289,22 +266,14 @@
     margin: 2px 0 0 0;
 }
 
-.ms-section-card__quantity {
-
-}
+.ms-section-card__quantity {}
 
 // Раздел с результатом
-.mob-search__result {
+.mob-search__result {}
 
-}
+.mob-search__result-wrap {}
 
-.mob-search__result-wrap {
-
-}
-
-.mob-search__result-header {
-
-}
+.mob-search__result-header {}
 
 // Ничего не найдено
 .mob-search__not-found {
@@ -338,15 +307,12 @@
 // Локация
 .mob-menu__location {
     margin: 0;
-
     &._show-popup {
         background: none;
     }
-
     & .location__header-wrap {
         padding: 0;
     }
-
     // & .location__body {
     //     width: 100%;
     //     position: initial;
@@ -360,9 +326,7 @@
 
 // Подменю "Маркетплейс"
 .mob-sub-menu {
-
     &._show {
-        
         & .mob-sub-menu__body {
             margin: 20px 0 0 0;
         }
@@ -374,23 +338,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     &._show {
-
         & .mob-sub-menu__header-title {
             color: $text-accent;
             font-weight: 700;
         }
-
         & .mob-sub-menu__header-icon {
             transform: rotate(-180deg);
-
             & svg {
-
                 & path {
-
                     &:nth-child(2) {
-                        fill: $btn-second-disabled; 
+                        fill: $btn-second-disabled;
                     }
                 }
             }
@@ -418,7 +376,6 @@
 
 .mob-sub-menu__block {
     margin: 0 0 30px 20px;
-
     // &:not(:last-child) {
     //     margin-bottom: 30px;
     // }
@@ -434,7 +391,6 @@
 }
 
 .mob-sub-menu__item {
-
     &:not(:last-child) {
         margin: 0 0 5px 0;
     }
