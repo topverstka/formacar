@@ -12112,12 +12112,22 @@ div.error_input {
   z-index: 9;
   cursor: pointer;
 }
+.mine-ad-view__slider-top .swiper-button-next svg {
+  width: 24px;
+  height: 43px;
+  display: block;
+}
 .mine-ad-view__slider-top .swiper-button-prev {
   position: absolute;
   left: 17px;
   top: 50%;
   z-index: 9;
   cursor: pointer;
+}
+.mine-ad-view__slider-top .swiper-button-prev svg {
+  width: 24px;
+  height: 43px;
+  display: block;
 }
 @media (max-width: 1265px) {
   .mine-ad-view__slider-top {
@@ -12128,11 +12138,11 @@ div.error_input {
   .mine-ad-view__slider-top {
     height: 300px;
   }
-  .mine-ad-view__slider-top .swiper-button-next {
+  .mine-ad-view__slider-top .swiper-button-next svg {
     width: 10px;
     right: 10px;
   }
-  .mine-ad-view__slider-top .swiper-button-prev {
+  .mine-ad-view__slider-top .swiper-button-prev svg {
     width: 10px;
     left: 10px;
   }
