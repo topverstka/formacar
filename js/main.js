@@ -101,18 +101,23 @@ window.addEventListener("click", (e) => {
 });
 
 // Отступ Раздела с контентом на расстояние равное ширине расширенного фильтра
-if (window.innerWidth > 1024) indentContentListAD(window.innerWidth);
+indentContentListAD(window.innerWidth)
+window.addEventListener('resize', () => indentContentListAD(window.innerWidth))
 
 function indentContentListAD(width) {
   const content = find(".ofr-content");
+  if (content === null) return
+
   const advancedFilter = find(".advanced-filter");
-  //content !== null ? content.style.width = `calc(100% - ${advancedFilter.offsetWidth + 30}px)` : '';
-  const width_display = width < 1281 ? 31 : 50;
-  content !== null
-    ? (content.style.width = `calc(100% - ${
-        advancedFilter.offsetWidth + width_display
-      }px)`)
-    : "";
+  const width_display = width < 1280 ? 31 : 50;
+
+
+	if (window.innerWidth > 1280) {
+	content.style.width = `calc(100% - ${advancedFilter.offsetWidth + width_display}px)`
+	}
+	else {
+	content.style.width = '100%'
+	}
 }
 
 // Текстовым полям, которые имеют класс clear-by-cross, будет добавлена кнопка, кликнув по которой, содержимое инпута очиститься

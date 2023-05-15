@@ -8,11 +8,12 @@
     width: 100%;
     background: #fff;
     border-radius: $radius;
+
     @media (max-width: 1570px) {
         max-width: none;
         width: 280px;
     }
-    @media (max-width: $laptop) {
+    @media (max-width: $laptop-m) {
         position: initial;
         width: 100%;
         margin-top: 20px;
@@ -85,17 +86,20 @@
     transition: $tr;
     padding: 0 20px;
     overflow: hidden;
+
     @media (max-width: $laptop-m) {
         padding: 0;
         margin-top: 20px;
     }
+
     & .list-ofr__form-section {
         margin-bottom: 20px;
         @media (max-width: $laptop-m) {
             margin-bottom: 0;
         }
     }
-    @media (max-width: $tablet-s) {
+
+	@media (max-width: $tablet-s) {
         margin-top: 0
     }
 }
