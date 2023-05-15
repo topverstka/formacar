@@ -73,6 +73,22 @@
     }
 }
 
+.btn_green {
+    color: #fff;
+    background: #02BC4D;
+
+    &:hover {
+
+        @media (min-width: $minHover) {
+            box-shadow: 0px 5px 20px hsla(144, 98%, 37%, 0.5);
+        }
+    }
+
+    &:active {
+        background: #029a3f;
+    }
+}
+
 $m-icon: 30px; // Отступ иконки от текста
 
 .btn_icon {

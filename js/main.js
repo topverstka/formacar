@@ -824,12 +824,13 @@ closeModalWhenClickingOnCross();
 
 function closeModalWhenClickingOnCross() {
   const modalElems = document.querySelectorAll(".modal");
+
   for (let i = 0; i < modalElems.length; i++) {
     const modal = modalElems[i];
-    const closeThisModal = modal.querySelector(".modal__close");
+    const closerArr = modal.querySelectorAll('.modal__close, [data-modal-close]')
 
-    if (closeThisModal) {
-      closeThisModal.addEventListener("click", () => {
+    for (const closer of closerArr) {
+      closer.addEventListener("click", () => {
         closeModal(modal);
       });
     }
