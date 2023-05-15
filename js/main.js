@@ -486,7 +486,7 @@ const sliderMACard = new Swiper(".ma-card__slider", {
 
 function row_container() {
   document.querySelectorAll(".la-card__wrap").forEach((i) => {
-    i.closest(".list-ad__card-list").classList.add("list-ad__card-row");
+    i.closest(".list-ofr__card-list").classList.add("list-ofr__card-row");
     let clone_header = i.querySelector(".la-card__header").cloneNode(true);
     let clone_content = i.querySelector(".la-card__content").cloneNode(true);
     let clone_footer = i.querySelector(".la-card__footer").cloneNode(true);
@@ -517,8 +517,8 @@ function row_container() {
   });
 }
 let html_list_ad =
-  document.querySelector(".list-ad__card-list") !== null
-    ? document.querySelector(".list-ad__card-list").innerHTML
+  document.querySelector(".list-ofr__card-list") !== null
+    ? document.querySelector(".list-ofr__card-list").innerHTML
     : "";
 
 function change_grid(i) {
@@ -528,7 +528,7 @@ function change_grid(i) {
       .forEach((i) => i.classList.remove("_active"));
     i.classList.add("_active");
     if (i.classList.contains("ofr-filter__grid-btn-box")) {
-      document.querySelector(".list-ad__card-list").innerHTML = html_list_ad;
+      document.querySelector(".list-ofr__card-list").innerHTML = html_list_ad;
       new Swiper(".la-card__all-swiper-big .la-card__slider", {
         spaceBetween: 4,
         slidesPerView: 1.25,
@@ -566,8 +566,8 @@ function change_grid(i) {
         },
       });
       document
-        .querySelector(".list-ad__card-list")
-        .classList.remove("list-ad__card-row");
+        .querySelector(".list-ofr__card-list")
+        .classList.remove("list-ofr__card-row");
       document.querySelectorAll(".la-card[data-views-section]").forEach((i) => {
         i.setAttribute("data-views-section", "box");
       });
@@ -576,8 +576,8 @@ function change_grid(i) {
     if (i.classList.contains("ofr-filter__grid-btn-row")) {
       if (
         !document
-          .querySelector(".list-ad__card-list")
-          .classList.contains("list-ad__card-row")
+          .querySelector(".list-ofr__card-list")
+          .classList.contains("list-ofr__card-row")
       ) {
         document
           .querySelectorAll(".la-card[data-views-section]")
@@ -594,8 +594,8 @@ function change_grid(i) {
     i.classList.add("_active");
     if (i.classList.contains("ofr-filter__grid-btn-box")) {
       document
-        .querySelector(".list-ad__card-list")
-        .classList.remove("list-ad__card-row");
+        .querySelector(".list-ofr__card-list")
+        .classList.remove("list-ofr__card-row");
       document.querySelectorAll(".la-card[data-views-section]").forEach((i) => {
         i.setAttribute("data-views-section", "box");
       });
@@ -603,8 +603,8 @@ function change_grid(i) {
 
     if (i.classList.contains("ofr-filter__grid-btn-row")) {
       document
-        .querySelector(".list-ad__card-list")
-        .classList.add("list-ad__card-row");
+        .querySelector(".list-ofr__card-list")
+        .classList.add("list-ofr__card-row");
       document.querySelectorAll(".la-card[data-views-section]").forEach((i) => {
         i.setAttribute("data-views-section", "row");
       });
@@ -626,8 +626,8 @@ document.querySelectorAll(".ofr-filter__grid-list button").forEach((i) => {
   });
 });
 
-if (find(".list-ad__filter-mob-list")) {
-  find(".list-ad__filter-mob-list")
+if (find(".list-ofr__filter-mob-list")) {
+  find(".list-ofr__filter-mob-list")
     .querySelector(".ofr-filter__grid-btn-row")
     .classList.add("_active");
 }
@@ -1880,7 +1880,7 @@ function select() {
     const sTitle = select.querySelector(".select-input__title");
     const sInput = select.querySelector("input");
 
-    sTitle.innerText = selectedItem.innerHTML;
+    sTitle.innerText = selectedItem.innerHTML.trim();
     sInput.value = selectedItem.innerText;
     sInput.classList.add("_full");
     select.classList.add("_valid");
@@ -1920,7 +1920,7 @@ function select() {
       const neighbourTargets = target.parentElement.querySelectorAll(
         ".select-dropdown__item"
       );
-      const strack = target.closest(".list-ad__form-track");
+      const strack = target.closest(".list-ofr__form-track");
 
       sTitle.innerText = target.innerText;
       sInput.value = target.innerText;
@@ -2436,7 +2436,7 @@ document.body.addEventListener("input", function (e) {
   if (
     e.target.classList.contains("number-input") ||
     (e.target.tagName === "INPUT" &&
-      e.target.closest(".list-ad__form-section") &&
+      e.target.closest(".list-ofr__form-section") &&
       !e.target.closest(".select-search"))
   ) {
     e.target.value = e.target.value.replace(/[^0-9\.\,]/g, "");

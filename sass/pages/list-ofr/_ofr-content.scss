@@ -7,8 +7,8 @@
     }
 }
 
-@import './_ad-filter';
-.list-ad__card-list {
+@import './_ofr-filter';
+.list-ofr__card-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;

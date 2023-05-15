@@ -211,11 +211,11 @@
     height: min-content;
 }
 
-.list-ad__card-list:not(.list-ad__card-row) .ma-card__pagination {
+.list-ofr__card-list:not(.list-ofr__card-row) .ma-card__pagination {
     display: none
 }
 
-.list-ad__card-row {
+.list-ofr__card-row {
     grid-template-columns: repeat(1, 1fr);
     position: relative;
     .la-card__options {
@@ -233,24 +233,24 @@
         }
     }
     @media (min-width: 1570px) {
-        &.list-ad__card-auto .la-card:not(.la-card_big) .la-card__title {
+        &.list-ofr__card-auto .la-card:not(.la-card_big) .la-card__title {
             font-size: 18px;
         }
-        &.list-ad__card-auto .la-card:not(.la-card_big) .la-card__row-container {
+        &.list-ofr__card-auto .la-card:not(.la-card_big) .la-card__row-container {
             width: calc(100% - 263px);
         }
-        &.list-ad__card-auto .la-card:not(.la-card_big) .la-card__slider {
+        &.list-ofr__card-auto .la-card:not(.la-card_big) .la-card__slider {
             width: 259px
         }
-        &.list-ad__card-auto .la-card:not(.la-card_big) .la-card__price {
+        &.list-ofr__card-auto .la-card:not(.la-card_big) .la-card__price {
             font-size: 20px
         }
-        &.list-ad__card-auto .la-card_big .la-card__price {
+        &.list-ofr__card-auto .la-card_big .la-card__price {
             font-size: 24px
         }
     }
     @media (max-width: $laptop-l) {
-        &.list-ad__card-auto .la-card_big .la-card__title {
+        &.list-ofr__card-auto .la-card_big .la-card__title {
             font-size: 18px
         }
     }
@@ -342,14 +342,14 @@
         .la-card__wrap {
             padding-bottom: 12px;
         }
-        &.list-ad__card-auto .la-card_big .la-card__header h3.la-card__title {
+        &.list-ofr__card-auto .la-card_big .la-card__header h3.la-card__title {
             font-size: 16px;
             line-height: 17px;
             br {
                 display: none
             }
         }
-        &.list-ad__card-auto .la-card:not(.la-card_big) .la-card__header h3.la-card__title {
+        &.list-ofr__card-auto .la-card:not(.la-card_big) .la-card__header h3.la-card__title {
             font-size: 14px;
             br {
                 display: none
@@ -372,7 +372,7 @@
         .ma-card__pagination {
             display: none
         }
-        &.list-ad__card-auto .la-card:not(.la-card_big) span.la-card__price {
+        &.list-ofr__card-auto .la-card:not(.la-card_big) span.la-card__price {
             margin-top: 8px;
             font-size: 16px;
             line-height: 20px;
@@ -381,8 +381,8 @@
 }
 
 @media (max-width: $tablet) {
-    .list-ad__card-row .la-card__all-swiper-big .la-card__slider,
-    .list-ad__card-row.list-ad__card-auto .la-card__slider {
+    .list-ofr__card-row .la-card__all-swiper-big .la-card__slider,
+    .list-ofr__card-row.list-ofr__card-auto .la-card__slider {
         width: 100%;
         padding-right: 32px;
         border-radius: 2px;
@@ -651,7 +651,7 @@
     }
 }
 
-.list-ad__pagin {
+.list-ofr__pagin {
     @media (max-width: $tablet-s) {
         display: none
     }

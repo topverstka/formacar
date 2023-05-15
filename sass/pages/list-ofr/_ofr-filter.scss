@@ -186,7 +186,7 @@
         margin-left: 20px;
     }
     @media (max-width: $tablet-s) {
-        &:not(.list-ad__filter-mob-list) {
+        &:not(.list-ofr__filter-mob-list) {
             display: none
         }
     }
@@ -241,13 +241,13 @@
     padding: 25px
 }
 
-.ofr-filter__body .list-ad__form-section-checkbox ._active_drop {
+.ofr-filter__body .list-ofr__form-section-checkbox ._active_drop {
     font-weight: 500;
     font-size: 14px;
     color: $text-primary
 }
 
-.list-ad__form-section .textfield input {
+.list-ofr__form-section .textfield input {
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
