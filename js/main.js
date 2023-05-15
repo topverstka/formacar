@@ -101,24 +101,23 @@ window.addEventListener("click", (e) => {
 });
 
 // Отступ Раздела с контентом на расстояние равное ширине расширенного фильтра
-indentContentListAD(window.innerWidth)
-window.addEventListener('resize', () => indentContentListAD(window.innerWidth))
+// indentContentListAD(window.innerWidth)
+// window.addEventListener('resize', () => indentContentListAD(window.innerWidth))
 
-function indentContentListAD(width) {
-  const content = find(".ofr-content");
-  if (content === null) return
+// function indentContentListAD(width) {
+//   const content = find(".ofr-content");
+//   if (content === null) return
 
-  const advancedFilter = find(".advanced-filter");
-  const width_display = width < 1280 ? 31 : 50;
+//   const advancedFilter = find(".advanced-filter");
+//   const widthDisplay = width < 1280 ? 31 : 50;
 
-
-	if (window.innerWidth > 1280) {
-	content.style.width = `calc(100% - ${advancedFilter.offsetWidth + width_display}px)`
-	}
-	else {
-	content.style.width = '100%'
-	}
-}
+// 	if (window.innerWidth > 1280) {
+//     content.style.width = `calc(100% - ${advancedFilter.offsetWidth + widthDisplay}px)`
+// 	}
+// 	else {
+//     content.style.width = '100%'
+// 	}
+// }
 
 // Текстовым полям, которые имеют класс clear-by-cross, будет добавлена кнопка, кликнув по которой, содержимое инпута очиститься
 clearByCross();
@@ -489,51 +488,53 @@ const sliderMACard = new Swiper(".ma-card__slider", {
   },
 });
 
-function row_container() {
-  document.querySelectorAll(".la-card__wrap").forEach((i) => {
-    i.closest(".list-ofr__card-list").classList.add("list-ofr__card-row");
-    let clone_header = i.querySelector(".la-card__header").cloneNode(true);
-    let clone_content = i.querySelector(".la-card__content").cloneNode(true);
-    let clone_footer = i.querySelector(".la-card__footer").cloneNode(true);
-    let clone_options = i.querySelector(".la-card__options").cloneNode(true);
-    i.classList.add("_active-row");
-    i.querySelector(".la-card__content").insertAdjacentHTML(
+function rowContainer() {
+  document.querySelectorAll(".la-card__wrap").forEach((card) => {
+    card.closest(".list-ofr__card-list").classList.add("list-ofr__card-row");
+
+    let cloneHeader = card.querySelector(".la-card__header").cloneNode(true);
+    let cloneContent = card.querySelector(".la-card__content").cloneNode(true);
+    let cloneFooter = card.querySelector(".la-card__footer").cloneNode(true);
+    let cloneOptions = card.querySelector(".la-card__options").cloneNode(true);
+
+    card.classList.add("_active-row");
+    card.querySelector(".la-card__content").insertAdjacentHTML(
       "beforebegin",
       '<div class="la-card__row-container"></div>'
     );
-    i.querySelector(".la-card__row-container").insertAdjacentHTML(
+    card.querySelector(".la-card__row-container").insertAdjacentHTML(
       "beforeend",
-      clone_header.outerHTML
+      cloneHeader.outerHTML
     );
-    i.querySelector(".la-card__row-container").insertAdjacentHTML(
+    card.querySelector(".la-card__row-container").insertAdjacentHTML(
       "beforeend",
-      clone_content.outerHTML
+      cloneContent.outerHTML
     );
-    i.querySelector(".la-card__row-container").insertAdjacentHTML(
+    card.querySelector(".la-card__row-container").insertAdjacentHTML(
       "beforeend",
-      clone_footer.outerHTML
+      cloneFooter.outerHTML
     );
-    i.querySelector(".la-card__row-container").insertAdjacentHTML(
+    card.querySelector(".la-card__row-container").insertAdjacentHTML(
       "beforeend",
-      clone_options.outerHTML
+      cloneOptions.outerHTML
     );
-    i.querySelector(".la-card__slider").style.height =
-      i.querySelector(".la-card__row-container").offsetHeight + "px";
+    // card.querySelector(".la-card__slider").style.height =
+    //   card.querySelector(".la-card__row-container").offsetHeight + "px";
   });
 }
-let html_list_ad =
-  document.querySelector(".list-ofr__card-list") !== null
-    ? document.querySelector(".list-ofr__card-list").innerHTML
-    : "";
+let htmlListAd = document.querySelector(".list-ofr__card-list") !== null ? document.querySelector(".list-ofr__card-list").innerHTML : "";
 
-function change_grid(i) {
+function changeGrid(button) {
+  const filterGrid = button.dataset.gridFilter
+
   if (window.innerWidth >= 768) {
-    document
-      .querySelectorAll(".ofr-filter__grid-list button")
-      .forEach((i) => i.classList.remove("_active"));
-    i.classList.add("_active");
-    if (i.classList.contains("ofr-filter__grid-btn-box")) {
-      document.querySelector(".list-ofr__card-list").innerHTML = html_list_ad;
+    document.querySelectorAll(".ofr-filter__grid-list button").forEach((i) => i.classList.remove("_active"));
+    button.classList.add("_active");
+
+    if (filterGrid === 'box') {
+      localStorage.setItem('grid-filter', 'box')
+      document.querySelector(".list-ofr__card-list").innerHTML = htmlListAd;
+
       new Swiper(".la-card__all-swiper-big .la-card__slider", {
         spaceBetween: 4,
         slidesPerView: 1.25,
@@ -570,66 +571,67 @@ function change_grid(i) {
           clickable: true,
         },
       });
-      document
-        .querySelector(".list-ofr__card-list")
-        .classList.remove("list-ofr__card-row");
-      document.querySelectorAll(".la-card[data-views-section]").forEach((i) => {
-        i.setAttribute("data-views-section", "box");
+
+      document.querySelector(".list-ofr__card-list").classList.remove("list-ofr__card-row");
+      document.querySelectorAll(".la-card[data-views-section]").forEach((card) => {
+        card.setAttribute("data-views-section", "box");
       });
     }
-
-    if (i.classList.contains("ofr-filter__grid-btn-row")) {
-      if (
-        !document
-          .querySelector(".list-ofr__card-list")
-          .classList.contains("list-ofr__card-row")
-      ) {
-        document
-          .querySelectorAll(".la-card[data-views-section]")
-          .forEach((i) => {
-            i.setAttribute("data-views-section", "row");
-          });
-        row_container();
+    if (filterGrid === 'row') {
+      localStorage.setItem('grid-filter', 'row')
+      if (!document.querySelector(".list-ofr__card-list").classList.contains("list-ofr__card-row")) {
+        document.querySelectorAll(".la-card[data-views-section]").forEach((card) => {
+          card.setAttribute("data-views-section", "row");
+        });
+        rowContainer();
       }
     }
   } else {
-    document
-      .querySelectorAll(".ofr-filter__grid-list button")
-      .forEach((i) => i.classList.remove("_active"));
-    i.classList.add("_active");
-    if (i.classList.contains("ofr-filter__grid-btn-box")) {
-      document
-        .querySelector(".list-ofr__card-list")
-        .classList.remove("list-ofr__card-row");
-      document.querySelectorAll(".la-card[data-views-section]").forEach((i) => {
-        i.setAttribute("data-views-section", "box");
+    document.querySelectorAll(".ofr-filter__grid-list button").forEach((button) => button.classList.remove("_active"));
+    button.classList.add("_active");
+
+    if (filterGrid === 'box') {
+      localStorage.setItem('grid-filter', 'box')
+      document.querySelector(".list-ofr__card-list").classList.remove("list-ofr__card-row");
+      document.querySelectorAll(".la-card[data-views-section]").forEach((card) => {
+        card.setAttribute("data-views-section", "box");
       });
     }
-
-    if (i.classList.contains("ofr-filter__grid-btn-row")) {
-      document
-        .querySelector(".list-ofr__card-list")
-        .classList.add("list-ofr__card-row");
-      document.querySelectorAll(".la-card[data-views-section]").forEach((i) => {
-        i.setAttribute("data-views-section", "row");
+    if (filterGrid === 'row') {
+      localStorage.setItem('grid-filter', 'row')
+      document.querySelector(".list-ofr__card-list").classList.add("list-ofr__card-row");
+      document.querySelectorAll(".la-card[data-views-section]").forEach((card) => {
+        card.setAttribute("data-views-section", "row");
       });
-      liked();
     }
   }
+
   find(".ma-tab__preload").classList.remove("_show");
-  findAll(".la-card").forEach((i) => i.classList.remove("_hide-card"));
-  liked();
+  // findAll(".la-card").forEach((card) => card.classList.remove("_hide-card"));
   openModalWhenClickingOnBtn();
 }
 
-document.querySelectorAll(".ofr-filter__grid-list button").forEach((i) => {
-  change_grid(i);
-  liked();
-  i.addEventListener("click", (e) => {
-    e.preventDefault();
-    change_grid(i);
+const filterGridFromLocalStorage = localStorage.getItem('grid-filter')
+let filterGrid
+
+if (document.querySelector('.ofr-filter')) {
+  if (filterGridFromLocalStorage) {
+    filterGrid = filterGridFromLocalStorage
+  } else {
+    filterGrid = 'row'
+  }
+
+  document.querySelectorAll(`.ofr-filter__grid-list button[data-grid-filter=${filterGrid}]`).forEach(button => {
+    changeGrid(button);
+  })
+
+  document.querySelectorAll(".ofr-filter__grid-list button").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      changeGrid(button);
+    });
   });
-});
+}
 
 if (find(".list-ofr__filter-mob-list")) {
   find(".list-ofr__filter-mob-list")
@@ -879,14 +881,16 @@ function closeModal(modal) {
 
 // Лайк поста
 liked();
-
 function liked() {
-  const likeElems = findAll("[data-like]");
+  document.addEventListener('click', e => {
+    const target = e.target
 
-  for (let i = 0; i < likeElems.length; i++) {
-    const elem = likeElems[i];
-    elem.addEventListener("click", (e) => elem.classList.toggle("_liked"));
-  }
+    if (target.hasAttribute('data-like') || target.closest('[data-like]')) {
+      const btn = target.hasAttribute('data-like') ? target : target.closest('[data-like]')
+
+      btn.classList.toggle('_liked')
+    }
+  })
 }
 
 // Смена языка

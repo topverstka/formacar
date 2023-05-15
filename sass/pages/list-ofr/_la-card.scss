@@ -3,7 +3,9 @@
     background-color: #fff;
     border-radius: $radius;
     overflow: hidden;
-    height: max-content;
+    // height: max-content;
+	height: 100%;
+
     &._hide-card {
         display: none
     }
@@ -396,13 +398,18 @@
     padding: 0 16px;
     display: flex;
     justify-content: space-between;
+    gap: 12px;
+
     .ma-card__label-paid {
+        flex-shrink: 0;
         position: static;
         display: block
     }
+
     @media (max-width:$tablet-s) {
         order: 1;
         padding: 0 8px;
+
         .ma-card__label-paid {
             position: absolute;
             top: 0;
@@ -576,9 +583,12 @@
 // Доп. опции для большой карточки
 .la-card__options {
     display: none;
+    flex-wrap: wrap;
     align-items: center;
     border-top: 1px solid $outline-l;
     padding: 12px 16px;
+    gap: 8px 12px;
+
     @media (max-width: $tablet-s) {
         order: 4;
         margin: 16px 0 0 0;
@@ -588,18 +598,20 @@
 }
 
 .la-card__options-btn {
+    flex-grow: 1;
     width: fit-content;
     font-size: 12px;
     height: 40px;
     padding: 0 12px;
+
     &:first-child {
         width: 192px;
     }
     &:not(:last-child) {
-        margin-right: 10px;
+        // margin-right: 10px;
     }
     @media (max-width:$laptop-m) {
-        padding: 0 4px
+        // padding: 0 4px
     }
     @media (max-width:$tablet-s) {
         height: 44px;
@@ -661,6 +673,6 @@
     display: block;
 }
 
-.la-card_big:not(._hide-card)[data-views-section=box] {
-    display: none;
-}
+// .la-card_big:not(._hide-card)[data-views-section=box] {
+//     display: none;
+// }

@@ -1,9 +1,18 @@
 .ofr-content {
-    width: 100%;
+    // width: 100%;
     // min-width: 1100px;
     // margin-right: 280px;
+    width: calc(100% - 430px);
+
+
+
     @media (max-width: 1570px) {
+        width: calc(100% - 330px);
         // min-width: auto;
+    }
+
+    @media (max-width: $laptop-m) {
+        width: 100%;
     }
 }
 
