@@ -1,67 +1,67 @@
-.mine-ad-view {
+.mine-ofr-view {
     margin-bottom: 100px;
     @media (max-width: $mobile-l) {
         margin-bottom: 20px;
     }
 }
 
-.mine-ad-view__content {
+.mine-ofr-view__content {
     display: flex;
-    .mine-ad-view__left {
+    .mine-ofr-view__left {
         width: 746px
     }
-    .mine-ad-view__right {
+    .mine-ofr-view__right {
         width: 416px;
         margin-left: 50px;
     }
     @media (min-width:1570px) {
-        .mine-ad-view__left {
+        .mine-ofr-view__left {
             width: 876px
         }
-        .mine-ad-view__right {
+        .mine-ofr-view__right {
             width: 426px;
             margin-left: 24px
         }
     }
     @media (max-width:1300px) {
-        .mine-ad-view__left {
+        .mine-ofr-view__left {
             width: 778px
         }
-        .mine-ad-view__right {
+        .mine-ofr-view__right {
             width: 391px;
         }
     }
     @media (max-width:1265px) {
-        .mine-ad-view__left {
+        .mine-ofr-view__left {
             width: 635px
         }
-        .mine-ad-view__right {
+        .mine-ofr-view__right {
             width: 305px;
             margin-left: 24px;
         }
     }
     @media (max-width:992px) {
-        .mine-ad-view__left {
+        .mine-ofr-view__left {
             width: 70%
         }
-        .mine-ad-view__right {
+        .mine-ofr-view__right {
             width: 30%
         }
     }
     @media (max-width: $tablet-l) {
         flex-direction: column;
         align-items: center;
-        .mine-ad-view__left {
+        .mine-ofr-view__left {
             width: 100%
         }
-        .mine-ad-view__right {
+        .mine-ofr-view__right {
             width: 100%;
             margin-left: 0
         }
     }
 }
 
-.mine-ad-view__top-line {
+.mine-ofr-view__top-line {
     width: 1212px;
     display: flex;
     align-items: flex-end;
@@ -86,11 +86,11 @@
     }
 }
 
-.mine-ad-view .section__header {
+.mine-ofr-view .section__header {
     margin-bottom: 5px
 }
 
-.mine-ad-view__information {
+.mine-ofr-view__information {
     display: flex;
     width: max-content;
     p {
@@ -107,12 +107,12 @@
             height: 17px
         }
     }
-    p.mine-ad-view__information-adress {
+    p.mine-ofr-view__information-adress {
         font-weight: 500;
         color: $text-primary;
         margin-right: 50px
     }
-    .mine-ad-view__information-views {
+    .mine-ofr-view__information-views {
         display: flex;
     }
     @media (max-width:1265px) {
@@ -123,13 +123,13 @@
     }
     @media (max-width: $tablet) {
         flex-wrap: wrap;
-        .mine-ad-view__information-adress {
+        .mine-ofr-view__information-adress {
             width: 100%;
             margin-bottom: 5px;
         }
     }
     @media (max-width: $mobile-l) {
-        .mine-ad-view__information-adress {
+        .mine-ofr-view__information-adress {
             font-size: 10px
         }
         p {
@@ -146,7 +146,7 @@
     }
 }
 
-.mine-ad-view__comment {
+.mine-ofr-view__comment {
     padding: 20px 30px;
     background: #FFFFFF;
     border-radius: $radius;
@@ -157,7 +157,7 @@
     }
 }
 
-.mine-ad-view__comment-text {
+.mine-ofr-view__comment-text {
     font-weight: 500;
     font-size: 14px;
     line-height: 22px;
@@ -176,7 +176,7 @@
     }
 }
 
-.mine-ad-view__comment-header {
+.mine-ofr-view__comment-header {
     font-weight: 500;
     font-size: 18px;
     line-height: 23px;
@@ -190,7 +190,7 @@
     }
 }
 
-.mine-ad-view__price {
+.mine-ofr-view__price {
     font-weight: bold;
     font-size: 28px;
     line-height: 34px;
@@ -213,12 +213,12 @@
     }
 }
 
-.mine-ad-view__personal {
+.mine-ofr-view__personal {
     border-radius: $radius;
     background: #fff;
 }
 
-.mine-ad-view__personal__header {
+.mine-ofr-view__personal__header {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #F6F8FD;
@@ -228,7 +228,7 @@
     }
 }
 
-.mine-ad-view__personal-header-picture {
+.mine-ofr-view__personal-header-picture {
     width: 58px;
     height: 58px;
     object-fit: cover;
@@ -241,7 +241,7 @@
     }
 }
 
-.mine-ad-view__personal__header-name {
+.mine-ofr-view__personal__header-name {
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
@@ -253,7 +253,7 @@
     }
 }
 
-.mine-ad-view__personal__header-persone {
+.mine-ofr-view__personal__header-persone {
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
@@ -264,7 +264,7 @@
     }
 }
 
-.mine-ad-view__personal-footer {
+.mine-ofr-view__personal-footer {
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -277,18 +277,18 @@
                 margin-bottom: 15px;
             }
         }
-        .mine-ad-view__personal-edit::after {
+        .mine-ofr-view__personal-edit::after {
             left: 26%
         }
-        .mine-ad-view__personal-remove-public::after {
+        .mine-ofr-view__personal-remove-public::after {
             left: 20%
         }
     }
     @media (min-width: $tablet-l) and (max-width: 1010px) {
-        .mine-ad-view__personal-edit::after {
+        .mine-ofr-view__personal-edit::after {
             left: 22%
         }
-        .mine-ad-view__personal-remove-public::after {
+        .mine-ofr-view__personal-remove-public::after {
             left: 14%
         }
     }
@@ -297,13 +297,13 @@
         button:first-child {
             margin-bottom: 0;
         }
-        .mine-ad-view__personal-edit {
+        .mine-ofr-view__personal-edit {
             width: 45%;
         }
-        .mine-ad-view__personal-remove-public {
+        .mine-ofr-view__personal-remove-public {
             width: 52%;
         }
-        .mine-ad-view__personal-sell {
+        .mine-ofr-view__personal-sell {
             margin-top: 10px
         }
         button {
@@ -322,15 +322,15 @@
             justify-content: center;
             align-items: center;
         }
-        .mine-ad-view__personal-sell {
+        .mine-ofr-view__personal-sell {
             font-size: 10px
         }
     }
 }
 
-.mine-ad-view__personal-btn {
+.mine-ofr-view__personal-btn {
     position: relative;
-    &:not(.mine-ad-view__personal-sell) {
+    &:not(.mine-ofr-view__personal-sell) {
         background: $bg-page;
         border-radius: $radius;
         font-weight: bold;
@@ -340,7 +340,7 @@
     }
 }
 
-.mine-ad-view__personal-edit {
+.mine-ofr-view__personal-edit {
     padding: 9px 15px 9px 41px;
     width: 156px;
     &::after {
@@ -355,7 +355,7 @@
     }
 }
 
-.mine-ad-view__personal-remove-public {
+.mine-ofr-view__personal-remove-public {
     padding: 9px 23px 9px 49px;
     width: 205px;
     &::after {
@@ -384,7 +384,7 @@
     }
 }
 
-.mine-ad-view__personal-sell {
+.mine-ofr-view__personal-sell {
     background: #02BC4D;
     border-radius: $radius;
     padding: 11px 0;
@@ -401,7 +401,7 @@
     }
 }
 
-.mine-ad-view__characteristics {
+.mine-ofr-view__characteristics {
     background: #fff;
     padding: 20px;
     margin-top: 10px;
@@ -433,7 +433,7 @@
     }
 }
 
-.mine-ad-view__slider {
+.mine-ofr-view__slider {
     overflow: hidden;
     height: 681px;
     border-radius: 0 0 $radius $radius;
@@ -450,7 +450,7 @@
     }
 }
 
-.mine-ad-view__slider-top {
+.mine-ofr-view__slider-top {
     height: 600px;
     width: 100%;
     margin-bottom: 0;
@@ -500,7 +500,7 @@
     }
 }
 
-.mine-ad-view__slider-thumbs {
+.mine-ofr-view__slider-thumbs {
     height: 78px;
     margin-top: 3px;
     border-radius: 0 0 $radius $radius;
@@ -519,16 +519,16 @@
     }
 }
 
-.mine-ad-view-recent .section__header {
+.mine-ofr-view-recent .section__header {
     margin-bottom: 20px;
 }
 
-.mine-ad-view-recent .section-slider-arrows,
-.mine-ad-view-recent .section-arrow {
+.mine-ofr-view-recent .section-slider-arrows,
+.mine-ofr-view-recent .section-arrow {
     display: none
 }
 
-.mine-ad-view-recent {
+.mine-ofr-view-recent {
     .la-card__slider-fixed {
         left: 10px;
     }
@@ -552,7 +552,7 @@
     }
 }
 
-.mine-ad-view__personal-footer-user {
+.mine-ofr-view__personal-footer-user {
     .la-card__options-btn {
         width: 48%
     }
@@ -607,9 +607,9 @@
     }
 }
 
-.mine-ad-view__user-favorites {
+.mine-ofr-view__user-favorites {
     margin-top: 10px;
-    .mine-ad-view__user-favorites-line {
+    .mine-ofr-view__user-favorites-line {
         display: flex;
         background: #fff;
         border-radius: 10px;
@@ -618,19 +618,19 @@
         overflow: hidden;
         cursor: pointer;
         &._active_complain {
-            .mine-ad-view__user-favorites-line-left {
+            .mine-ofr-view__user-favorites-line-left {
                 width: 70px;
                 justify-content: center;
                 padding-left: 4px;
                 padding-right: 0;
-                .mine-ad-view__user-favorites-line-text {
+                .mine-ofr-view__user-favorites-line-text {
                     display: none
                 }
                 @media (max-width:$mobile-m) {
                     padding-left: 0
                 }
             }
-            .mine-ad-view__user-favorites-line-complain {
+            .mine-ofr-view__user-favorites-line-complain {
                 width: 82%;
                 background: rgba(204, 51, 52, 0.15);
                 &::after {
@@ -651,26 +651,26 @@
             .like svg path {
                 stroke: #467EF3
             }
-            .mine-ad-view__user-favorites-line-text {
+            .mine-ofr-view__user-favorites-line-text {
                 color: #467EF3;
             }
-            .mine-ad-view__user-favorites-line-complain::after {
+            .mine-ofr-view__user-favorites-line-complain::after {
                 opacity: 0;
             }
         }
     }
-    .mine-ad-view__user-favorites-line-left {
+    .mine-ofr-view__user-favorites-line-left {
         display: flex;
         align-items: center;
         padding: 15px 0 15px 20px;
         width: 82%;
         &._active-line {
-            .mine-ad-view__user-favorites-line-text {
+            .mine-ofr-view__user-favorites-line-text {
                 color: #383838;
             }
         }
     }
-    .mine-ad-view__user-favorites-line-text {
+    .mine-ofr-view__user-favorites-line-text {
         font-weight: 600;
         font-size: 12px;
         line-height: 15px;
@@ -682,14 +682,14 @@
         margin-left: 0
     }
     @media (max-width: $mobile-m) {
-        .mine-ad-view__user-favorites-line-complain svg {
+        .mine-ofr-view__user-favorites-line-complain svg {
             width: 20px;
             height: 20px
         }
     }
 }
 
-.mine-ad-view__user-favorites-line-complain {
+.mine-ofr-view__user-favorites-line-complain {
     margin-left: auto;
     height: auto;
     background: #fff;

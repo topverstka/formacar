@@ -104,7 +104,7 @@ window.addEventListener("click", (e) => {
 if (window.innerWidth > 1024) indentContentListAD(window.innerWidth);
 
 function indentContentListAD(width) {
-  const content = find(".ad-content");
+  const content = find(".ofr-content");
   const advancedFilter = find(".advanced-filter");
   //content !== null ? content.style.width = `calc(100% - ${advancedFilter.offsetWidth + 30}px)` : '';
   const width_display = width < 1281 ? 31 : 50;
@@ -524,10 +524,10 @@ let html_list_ad =
 function change_grid(i) {
   if (window.innerWidth >= 768) {
     document
-      .querySelectorAll(".ad-filter__grid-list button")
+      .querySelectorAll(".ofr-filter__grid-list button")
       .forEach((i) => i.classList.remove("_active"));
     i.classList.add("_active");
-    if (i.classList.contains("ad-filter__grid-btn-box")) {
+    if (i.classList.contains("ofr-filter__grid-btn-box")) {
       document.querySelector(".list-ad__card-list").innerHTML = html_list_ad;
       new Swiper(".la-card__all-swiper-big .la-card__slider", {
         spaceBetween: 4,
@@ -573,7 +573,7 @@ function change_grid(i) {
       });
     }
 
-    if (i.classList.contains("ad-filter__grid-btn-row")) {
+    if (i.classList.contains("ofr-filter__grid-btn-row")) {
       if (
         !document
           .querySelector(".list-ad__card-list")
@@ -589,10 +589,10 @@ function change_grid(i) {
     }
   } else {
     document
-      .querySelectorAll(".ad-filter__grid-list button")
+      .querySelectorAll(".ofr-filter__grid-list button")
       .forEach((i) => i.classList.remove("_active"));
     i.classList.add("_active");
-    if (i.classList.contains("ad-filter__grid-btn-box")) {
+    if (i.classList.contains("ofr-filter__grid-btn-box")) {
       document
         .querySelector(".list-ad__card-list")
         .classList.remove("list-ad__card-row");
@@ -601,7 +601,7 @@ function change_grid(i) {
       });
     }
 
-    if (i.classList.contains("ad-filter__grid-btn-row")) {
+    if (i.classList.contains("ofr-filter__grid-btn-row")) {
       document
         .querySelector(".list-ad__card-list")
         .classList.add("list-ad__card-row");
@@ -617,7 +617,7 @@ function change_grid(i) {
   openModalWhenClickingOnBtn();
 }
 
-document.querySelectorAll(".ad-filter__grid-list button").forEach((i) => {
+document.querySelectorAll(".ofr-filter__grid-list button").forEach((i) => {
   change_grid(i);
   liked();
   i.addEventListener("click", (e) => {
@@ -628,7 +628,7 @@ document.querySelectorAll(".ad-filter__grid-list button").forEach((i) => {
 
 if (find(".list-ad__filter-mob-list")) {
   find(".list-ad__filter-mob-list")
-    .querySelector(".ad-filter__grid-btn-row")
+    .querySelector(".ofr-filter__grid-btn-row")
     .classList.add("_active");
 }
 
@@ -2370,21 +2370,21 @@ window.addEventListener("click", function (e) {
 
   if (e.target.classList.contains("btn-filter__list")) {
     e.target
-      .closest(".list-ad")
-      .querySelector(".ad-filter")
+      .closest(".list-ofr")
+      .querySelector(".ofr-filter")
       .classList.toggle("_active-filter");
   }
 
   if (
-    e.target.closest(".ad-tab") &&
-    e.target.closest(".ad-tab").getAttribute("data-tab-filter")
+    e.target.closest(".ofr-tab") &&
+    e.target.closest(".ofr-tab").getAttribute("data-tab-filter")
   ) {
-    let tab = e.target.closest(".ad-tab").getAttribute("data-tab-filter");
+    let tab = e.target.closest(".ofr-tab").getAttribute("data-tab-filter");
     document
-      .querySelector(`.ad-filter__body._active-tab`)
+      .querySelector(`.ofr-filter__body._active-tab`)
       .classList.remove("_active-tab");
     document
-      .querySelector(`.ad-filter__body[data-tab-content=${tab}]`)
+      .querySelector(`.ofr-filter__body[data-tab-content=${tab}]`)
       .classList.add("_active-tab");
     document
       .querySelectorAll(".error_input")
@@ -2396,7 +2396,7 @@ window.addEventListener("click", function (e) {
 
   if (
     e.target.classList.contains("na-submit") ||
-    e.target.classList.contains("ad-filter__show-btn") ||
+    e.target.classList.contains("ofr-filter__show-btn") ||
     e.target.classList.contains("advanced-filter__show-btn")
   ) {
     field_validation(e);
@@ -2708,13 +2708,13 @@ if (document.querySelector(".modal-show-rate")) {
     });
 }
 
-if (document.querySelector(".mine-ad-view__user-favorites-line-left")) {
+if (document.querySelector(".mine-ofr-view__user-favorites-line-left")) {
   let textFavorites, textFavoritesAdd, textFavoritesMake;
   if (window.innerWidth <= 1265) {
     textFavoritesAdd = "В избранном";
     textFavorites = "В избранное";
     textFavoritesMake = "Подать жалобу";
-    find(".mine-ad-view__user-favorites-line-text").innerText = textFavorites;
+    find(".mine-ofr-view__user-favorites-line-text").innerText = textFavorites;
   } else {
     textFavoritesAdd = "Добавлено в избранное";
     textFavorites = "Добавить в избранное";
@@ -2722,22 +2722,22 @@ if (document.querySelector(".mine-ad-view__user-favorites-line-left")) {
   }
 
   document
-    .querySelector(".mine-ad-view__user-favorites-line-left")
+    .querySelector(".mine-ofr-view__user-favorites-line-left")
     .addEventListener("click", function (e) {
       if (this.querySelector(".like")) {
         if (this.querySelector(".like").classList.contains("_liked")) {
-          this.closest(".mine-ad-view__user-favorites-line").querySelector(
-            ".mine-ad-view__user-favorites-line-text"
+          this.closest(".mine-ofr-view__user-favorites-line").querySelector(
+            ".mine-ofr-view__user-favorites-line-text"
           ).innerText = textFavoritesAdd;
-          this.closest(".mine-ad-view__user-favorites-line-left").classList.add(
+          this.closest(".mine-ofr-view__user-favorites-line-left").classList.add(
             "_active-line"
           );
         } else {
-          this.closest(".mine-ad-view__user-favorites-line").querySelector(
-            ".mine-ad-view__user-favorites-line-text"
+          this.closest(".mine-ofr-view__user-favorites-line").querySelector(
+            ".mine-ofr-view__user-favorites-line-text"
           ).innerText = textFavorites;
           this.closest(
-            ".mine-ad-view__user-favorites-line-left"
+            ".mine-ofr-view__user-favorites-line-left"
           ).classList.remove("_active-line");
         }
       }
@@ -2745,7 +2745,7 @@ if (document.querySelector(".mine-ad-view__user-favorites-line-left")) {
       if (this.closest("._active_complain")) {
         this.closest("._active_complain")
           .querySelector(
-            ".mine-ad-view__user-favorites-line-complain .complain-line-active"
+            ".mine-ofr-view__user-favorites-line-complain .complain-line-active"
           )
           .remove();
         this.closest("._active_complain").classList.remove("_active_complain");
@@ -2753,14 +2753,14 @@ if (document.querySelector(".mine-ad-view__user-favorites-line-left")) {
     });
 
   document
-    .querySelector(".mine-ad-view__user-favorites-line-complain")
+    .querySelector(".mine-ofr-view__user-favorites-line-complain")
     .addEventListener("click", function (e) {
       if (
-        !this.closest(".mine-ad-view__user-favorites-line").classList.contains(
+        !this.closest(".mine-ofr-view__user-favorites-line").classList.contains(
           "_active_complain"
         )
       ) {
-        this.closest(".mine-ad-view__user-favorites-line").classList.add(
+        this.closest(".mine-ofr-view__user-favorites-line").classList.add(
           "_active_complain"
         );
         this.insertAdjacentHTML(

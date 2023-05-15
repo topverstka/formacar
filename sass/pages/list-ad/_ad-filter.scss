@@ -1,9 +1,9 @@
-.ad-filter {
+.ofr-filter {
     background: #fff;
     border-radius: $radius;
     padding: 20px;
     @media (max-width: $tablet-s) {
-        &:not(.ad-filter__section-tuning) {
+        &:not(.ofr-filter__section-tuning) {
             display: none;
             &._active-filter {
                 display: block
@@ -13,7 +13,7 @@
     }
 }
 
-.ad-filter .ad-content__location {
+.ofr-filter .ofr-content__location {
     display: none;
     margin-bottom: 20px;
     .location {
@@ -32,7 +32,7 @@
     }
 }
 
-.ad-content__location-header {
+.ofr-content__location-header {
     font-size: 12px;
     font-weight: 500;
     color: $text-primary;
@@ -40,7 +40,7 @@
     margin-bottom: 10px;
 }
 
-.ad-filter__body {
+.ofr-filter__body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 20px;
@@ -58,14 +58,14 @@
     }
 }
 
-.ad-filter__box .ad-filter__body {
+.ofr-filter__box .ofr-filter__body {
     display: none;
     &._active-tab {
         display: grid
     }
 }
 
-.ad-filter__reset-btn {
+.ofr-filter__reset-btn {
     font-size: 12px;
     padding: 0;
     margin-left: 40px;
@@ -80,7 +80,7 @@
     }
 }
 
-.ad-filter__footer {
+.ofr-filter__footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,12 +90,12 @@
     }
 }
 
-.ad-filter__btn-list {
+.ofr-filter__btn-list {
     display: flex;
     align-items: center;
 }
 
-.ad-filter__show-btn {
+.ofr-filter__show-btn {
     min-width: 295px;
     padding: 0 16px;
     @media (max-width: $tablet-l) {
@@ -104,13 +104,13 @@
     }
 }
 
-.ad-filter__show-btn-pc {
+.ofr-filter__show-btn-pc {
     @media (max-width: $tablet-l) {
         display: none;
     }
 }
 
-.ad-filter__show-btn-mob {
+.ofr-filter__show-btn-mob {
     display: none;
     @media (max-width: $tablet-l) {
         display: block;
@@ -120,12 +120,12 @@
     }
 }
 
-.ad-filter__option-list {
+.ofr-filter__option-list {
     display: flex;
     align-items: center;
 }
 
-.ad-filter__option-select {
+.ofr-filter__option-select {
     &._open {
         & .select-input__chevron {
             transform: none;
@@ -179,7 +179,7 @@
     }
 }
 
-.ad-filter__grid-list {
+.ofr-filter__grid-list {
     margin-left: 40px;
     display: flex;
     @media (max-width: $tablet-l) {
@@ -192,7 +192,7 @@
     }
 }
 
-.ad-filter__grid-btn {
+.ofr-filter__grid-btn {
     width: 24px;
     height: 24px;
     @media (min-width: $minHover) {
@@ -214,11 +214,11 @@
     }
 }
 
-.ad-filter__grid-btn-box {
+.ofr-filter__grid-btn-box {
     margin-right: 10px
 }
 
-.ad-filter__option-list {
+.ofr-filter__option-list {
     .select-dropdown {
         width: 209px
     }
@@ -241,7 +241,7 @@
     padding: 25px
 }
 
-.ad-filter__body .list-ad__form-section-checkbox ._active_drop {
+.ofr-filter__body .list-ad__form-section-checkbox ._active_drop {
     font-weight: 500;
     font-size: 14px;
     color: $text-primary
@@ -254,6 +254,6 @@
     color: $text-primary
 }
 
-.ad-filter__body .select-search input {
+.ofr-filter__body .select-search input {
     z-index: 2
 }

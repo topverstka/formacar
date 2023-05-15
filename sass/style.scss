@@ -116,17 +116,17 @@ body {
 // Страницы
 @import "pages/_choose-cat";
 @import "pages/empty-form/_empty-form";
-@import "pages/main-ad/_main-ad";
-@import "pages/list-ad/_list-ad";
+@import "pages/main-ofr/_main-ofr";
+@import "pages/list-ofr/_list-ofr";
 @import "pages/my-shops/_my-shops";
 @import "pages/my-shops/_my-shops-creation";
 @import "pages/my-shops/_my-shops-view";
-@import "pages/main-ad/_mine-ad-view";
+@import "pages/main-ofr/_mine-ofr-view";
 // Модальные окна
 @import "components/modals/_lang";
 @import "components/modals/_regions";
 @import "components/modals/_auth";
-@import "components/modals/_valid-ad";
+@import "components/modals/_valid-ofr";
 @import "components/modals/_snack";
 // Страницы
 // Анимация
