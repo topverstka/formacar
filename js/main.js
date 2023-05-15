@@ -78,7 +78,6 @@ window.addEventListener("click", (e) => {
     (find(".menu._show") &&
       !(e.target.classList.contains("header") || e.target.closest(".header")))
   ) {
-    console.log("menu close");
 
     find(".burger").classList.remove("_close");
     find(".menu").classList.remove("_show");
@@ -99,12 +98,6 @@ window.addEventListener("click", (e) => {
       find(".menu-bg").classList.remove("_show");
     }
   }
-
-  // Закрытие всплывашек при клике по фону, если они открыты
-  // if (find('.mob-menu__location._show-popup') && !(e.target.classList.contains('location__body') || e.target.closest('.location__body'))) {
-  //     find('.mob-menu__location._show-popup').classList.remove('_show-popup')
-  //     console.log('ok')
-  // }
 });
 
 // Отступ Раздела с контентом на расстояние равное ширине расширенного фильтра
@@ -121,77 +114,6 @@ function indentContentListAD(width) {
       }px)`)
     : "";
 }
-
-// Валидация формы
-// function validationForm() {
-//     const name = find('#user_name')
-//     const phone = find('#user_phone')
-//     const email = find('#user_email')
-
-//     let con = true
-
-//     for (let i = 0; i < [name, phone, email].length; i++) {
-//         const elem = [name, phone, email][i];
-//         const elemValue = elem.value.trim()
-
-//         if (elemValue === '') {
-//             elem.classList.add('_error')
-//             con = false
-//         } else {
-//             elem.classList.remove('_error')
-//             con = true
-//         }
-//     }
-
-//     return con
-// }
-
-// Отправка формы
-// sumbitForm()
-// function sumbitForm() {
-//     const form = find('.modal__form')
-
-//     form.addEventListener('submit', async e => {
-//         const modal = find('.modal._show')
-//         const btnSend = form.querySelector('[type=submit]')
-//         btnSend.classList.add('send-preloader')
-
-//         e.preventDefault()
-
-//         let con = validationForm()
-
-//         if (con === true) {
-//             const formData = new FormData()
-//             const action = form.getAttribute('action')
-
-//             let response = await fetch(action, {
-//                 method: 'POST',
-//                 body: formData
-//             })
-
-//             // settimeout здесь для того, чтобы показать работу отправки формы. В дальнейшем это нужно убрать
-//             setTimeout(() => {
-//                 if (response.ok) {
-//                     console.log('Successful')
-//                     form.reset()
-
-//                     modal.classList.remove('_show')
-//                     find('#send-done').classList.add('_show')
-//                     btnSend.classList.remove('send-preloader')
-//                 }
-//                 else {
-//                     console.log('Error')
-//                     form.reset()
-
-//                     modal.classList.remove('_show')
-//                     find('#send-error').classList.add('_show')
-//                     btnSend.classList.remove('send-preloader')
-//                 }
-//             }, 2000)
-
-//         }
-//     })
-// }
 
 // Текстовым полям, которые имеют класс clear-by-cross, будет добавлена кнопка, кликнув по которой, содержимое инпута очиститься
 clearByCross();
@@ -294,11 +216,6 @@ function showPassword() {
   }
 }
 
-// Переход к началу страницы
-// arrowUp.addEventListener('click', () => {
-//   window.scrollBy(0,-window.pageYOffset);
-// });
-
 // Добавление выбора локации в мобильное меню
 addLocationToMobMenu();
 
@@ -341,17 +258,9 @@ function siteSearch() {
       siteSearchData(input);
     }, 1500);
   });
-  // input.addEventListener('input', e => {
-  //     if (input.value != '') {
-  //         clear.classList.add('_show')
-  //     }
-  // })
   input.addEventListener("focus", (e) => {
     siteSearchFocus(input);
   });
-  // input.addEventListener('blur', e => {
-  //     siteSearchBlur(input)
-  // })
   clear.addEventListener("click", (e) => {
     siteSearchPopup(input);
   });
@@ -367,11 +276,6 @@ function siteSearch() {
       }
     }
   }
-
-  // function siteSearchBlur(input) {
-  //     search.classList.remove('_show')
-  //     menuBg.classList.remove('_show')
-  // }
 
   function siteSearchPopup(input) {
     const value = input.value;
@@ -410,8 +314,6 @@ function siteSearch() {
       let data = await response.json();
       const dataArr = [];
 
-      // console.log(data.length)
-
       data.forEach((elem) => {
         if (elem["title"].toLowerCase() === value.toLowerCase())
           dataArr.push(elem["category"]);
@@ -429,7 +331,6 @@ function siteSearch() {
           return arr;
         }, {});
 
-        // console.log(value, data, quantityCat)
         loader.classList.remove("_show");
 
         for (const [title, quantity] of Object.entries(quantityCat)) {
@@ -577,26 +478,6 @@ const sliderMACard = new Swiper(".ma-card__slider", {
       setTimeout(() => updateFraction(this), 0);
     },
   },
-  //   breakpoints: {
-  //     1025: {
-  //         slidesPerView: 4,
-  //     },
-  //     768: {
-  //         slidesPerView: 3,
-  //         allowTouchMove: false
-  //     },
-  //     0: {
-  //         slidesPerView: 2,
-  //         spaceBetween: 12,
-  //         allowTouchMove: true
-  //     }
-  //   },
-
-  //   navigation: {
-  //     nextEl: '.s-recent__arrow-next',
-  //     prevEl: '.s-recent__arrow-prev',
-  //   }
-
   pagination: {
     el: ".ma-card__pagination",
     clickable: true,
@@ -790,48 +671,13 @@ const sliderLACard_1 = new Swiper(".la-card__all-swiper-big .la-card__slider", {
   },
 });
 
-// const swiper = new Swiper('.swiper-container', {
-
-//   slidesPerView: 1, // Кол-во показываемых слайдов
-//   spaceBetween: 0, // Расстояние между слайдами
-//   loop: true, // Бесконечный слайдер
-//   freeMode: true, // Слайдеры не зафиксированны
-
-//   breakpoints: {
-//     1200: {
-
-//     },
-//     700: {
-
-//     },
-//     400: {
-
-//     }
-//   },
-
-//   pagination: {
-//     el: '.swiper-pagination',
-//   },
-
-//   navigation: {
-//     nextEl: '.swiper__arrow-next',
-//     prevEl: '.swiper__arrow-prev',
-//   },
-
-//   scrollbar: {
-//     el: '.swiper-scrollbar',
-//   },
-// });
-
 setTimeout((e) => {
   const sliderInsideRecentCard = new Swiper(".recent-card__slider", {
     spaceBetween: 4,
     slidesPerView: "auto",
 
     breakpoints: {
-      1440: {
-        // slidesPerView: 'auto',
-      },
+      1440: {},
       768: {},
       500: {
         slidesPerView: "auto",
@@ -853,11 +699,6 @@ setTimeout((e) => {
 
 const sliderNews = new Swiper(".s-news__slider", {
   spaceBetween: 24,
-
-  //   slidesPerView: 4, // Кол-во показываемых слайдов
-  //   spaceBetween: 24, // Расстояние между слайдами
-  //   loop: true, // Бесконечный слайдер
-  //   freeMode: true, // Слайдеры не зафиксированны
 
   breakpoints: {
     1025: {
@@ -1030,7 +871,6 @@ function closeModal(modal) {
   bodyLock(false);
   resetHash();
 }
-// }
 
 // Лайк поста
 liked();
@@ -1175,7 +1015,6 @@ function selectedCountry() {
         chips.innerHTML = `<span class="regions-chips__title">${checkbox.value}</span>`;
 
         chipsList.append(chips);
-        // arrC.push(checkbox.value)
       }
     }
 
@@ -1231,10 +1070,8 @@ function showAllCities() {
 
     if (find(".modal-regions__acc-body .regions-checkbox input:checked")) {
       selectedRegions();
-      // console.log('selectedRegions')
     } else {
       selectedCountry();
-      // console.log('selectedCountry')
     }
   });
 }
@@ -1322,7 +1159,6 @@ function selectedRegions() {
   const showAll = find(".modal-regions__show-all");
 
   if (selectedC.length > 0) {
-    // let arrC = []
     chipsBlock.classList.add("_show");
     chipsList.innerHTML = "";
 
@@ -1340,8 +1176,6 @@ function selectedRegions() {
 
         chipsList.append(chips);
       }
-
-      // arrC.push(checkbox.value)
     }
 
     // Сохраняем города в localStorage
@@ -1585,8 +1419,6 @@ function settingsPopupPlaces() {
 
   function changeBtnPlace() {
     if (regionsArr.length === 0 && countryArr.length === 0) {
-      // places.innerText = "По всему миру";
-      // distance.classList.remove("_show");
       quantity.classList.remove("_show");
     }
 
@@ -1603,7 +1435,6 @@ function settingsPopupPlaces() {
       places.innerText = countryArr[0];
       distance.classList.remove("_show");
       quantity.classList.remove("_show");
-      // distance.querySelector('span').innerText = radiusInput.value
     }
 
     // Если выбрано больше 2 регионов
@@ -1742,8 +1573,8 @@ function loadCheckedFromLocalStorage() {
   for (let i = 0; i < regionsArr.length; i++) {
     const nameR = regionsArr[i];
     const checkbox = find(`[data-space="region"][value="${nameR}"]`);
-    // console.log(checkbox)
-    checkbox.checked = true;
+
+	checkbox.checked = true;
   }
 
   selectedCountry();
@@ -1779,26 +1610,6 @@ function openDefiniteBlock() {
     moreTitle.innerText = "Все регионы";
   });
 }
-
-// Показать все карточки городов
-// showAllRegions()
-// function showAllRegions() {
-//     const showAllReg = find('.modal-regions__show-all')
-
-//     showAllReg.addEventListener('click', e => {
-//         console.log(showAllReg)
-//         if (showAllReg.classList.contains('_text-show')) {
-//             showAllReg.classList.add('_text-hide')
-//             showAllReg.classList.remove('_text-show')
-//         }
-//         else {
-//             showAllReg.classList.add('_text-show')
-//             showAllReg.classList.remove('_text-hide')
-//         }
-
-//         selectedRegions()
-//     })
-// }
 
 // Выбор региона
 selectRegion();
@@ -1865,7 +1676,6 @@ rangeChangeCities();
 function rangeChangeCities() {
   const range = find(".location__radius-range input");
   const distance = find(".location__radius-value span");
-  // const distanceBtn = find('.location__distance span')
 
   rangesliderJs.create(range, {
     onSlide: (e) => {
@@ -1930,36 +1740,6 @@ window.addEventListener("DOMContentLoaded", function () {
           input.value = "";
         }
       });
-
-      // var keyCode;
-      // function mask(event) {
-      //     event.keyCode && (keyCode = event.keyCode);
-      //     var pos = this.selectionStart;
-      //     if (pos < 3) event.preventDefault();
-      //     var matrix = "+7 (___) ___-__-__",
-      //         i = 0,
-      //         def = matrix.replace(/\D/g, ""),
-      //         val = this.value.replace(/\D/g, ""),
-      //         new_value = matrix.replace(/[_\d]/g, function(a) {
-      //             return i < val.length ? val.charAt(i++) || def.charAt(i) : a
-      //         });
-      //     i = new_value.indexOf("_");
-      //     if (i != -1) {
-      //         i < 5 && (i = 3);
-      //         new_value = new_value.slice(0, i)
-      //     }
-      //     var reg = matrix.substr(0, this.value.length).replace(/_+/g,
-      //         function(a) {
-      //             return "\\d{1," + a.length + "}"
-      //         }).replace(/[+()]/g, "\\$&");
-      //     reg = new RegExp("^" + reg + "$");
-      //     if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
-      //     if (event.type == "blur" && this.value.length < 5)  this.value = ""
-      // }
-      // input.addEventListener("input", mask, false);
-      // input.addEventListener("focus", mask, false);
-      // input.addEventListener("blur", mask, false);
-      // input.addEventListener("keydown", mask, false)
     }
   );
 });
@@ -1975,7 +1755,6 @@ function showMoreList() {
     const more = list.nextElementSibling;
     const itemElems = list.querySelectorAll(".na-brand__item");
 
-    console.log(list, more);
     more.addEventListener("click", (e) => {
       if (!more.classList.contains("_show")) {
         const moreTitle = more.querySelector(".na-more__title");
@@ -1999,20 +1778,6 @@ function showMoreList() {
     });
   }
 }
-
-// Максимальная и минимальная ширина текстового поля - textarea
-// widthTextarea()
-// function widthTextarea() {
-//     const taElems = findAll('textarea')
-
-//     for (let i = 0; i < taElems.length; i++) {
-//         const ta = taElems[i];
-//         const taWidth = ta.offsetWidth
-
-//         ta.style.maxWidth = taWidth + 'px'
-//         ta.style.minWidth = taWidth + 'px'
-//     }
-// }
 
 // Наполнение сайдбара пунктами с названиями блоков для заполнения
 if (document.getElementById("na-sidebar")) naSidebar();
@@ -2089,7 +1854,6 @@ function selectCity() {
 
         input.value = city.innerText;
         select.classList.add("_valid");
-        // clearList(select)
       });
     }
   }
@@ -2119,7 +1883,6 @@ function select() {
     sTitle.innerText = selectedItem.innerHTML;
     sInput.value = selectedItem.innerText;
     sInput.classList.add("_full");
-    // console.log(sInput)
     select.classList.add("_valid");
   }
 
@@ -2157,12 +1920,11 @@ function select() {
       const neighbourTargets = target.parentElement.querySelectorAll(
         ".select-dropdown__item"
       );
-      const Strack = target.closest(".list-ad__form-track");
+      const strack = target.closest(".list-ad__form-track");
 
       sTitle.innerText = target.innerText;
       sInput.value = target.innerText;
       sInput.classList.add("_full");
-      // console.log(sInput)
 
       removeAll(neighbourTargets, "_selected");
       target.classList.add("_selected");
@@ -2184,12 +1946,6 @@ function select() {
           btnSubmit.disabled = true;
         }
       }
-
-      // if (Strack) {
-      //     add_clear_btn(select.querySelector('.select-input'));
-      //     select.classList.remove('_valid');
-      //     target.classList.remove('_valid');
-      // }
     }
 
     if (target.classList.contains("select-dropdown__all")) {
@@ -2212,12 +1968,6 @@ function select() {
         .classList.add("_active_drop");
       target.closest(".select").children[0].value = target.innerText;
     }
-
-    // if (target.classList.contains('color-radio') || target.closest('.select-dropdown__colors')) {
-    //     document.querySelectorAll('.color-radio input').forEach( i => {
-    //         console.log(i.checked)
-    //     });
-    // }
 
     if (
       target.closest(".color-radio") &&
@@ -2568,8 +2318,6 @@ function tabsMineAd() {
 if (window.innerWidth <= 768) openModalSettingsOnAdaptiveMineAd();
 
 function openModalSettingsOnAdaptiveMineAd() {
-  // const btnSettingsElems = findAll('[data-open-settings]')
-
   window.addEventListener("click", (e) => {
     if (e.target.getAttribute("data-open-settings") != null) {
       if (!document.querySelector(".ma-card__settings")) {
@@ -2589,7 +2337,6 @@ function openModalSettingsOnAdaptiveMineAd() {
         popup.style.left = offsetPageBtn.left + "px";
         popup.style.top = offsetPageBtn.top + "px";
         document.body.append(popup);
-        console.log(offsetPage(btnSettings));
       }
     }
 
@@ -2714,13 +2461,6 @@ document.body.addEventListener("input", function (e) {
         .querySelector(".select-input__title")
         .classList.remove("_active_drop");
     }
-    // e.target.closest('.list-ad__form-section').querySelectorAll('.select-dropdown__checkbox-text').forEach(i => {
-    //     if (i.innerText.toUpperCase().indexOf(e.target.value.toUpperCase()) > -1) {
-    //         i.closest('.select-dropdown__checkbox').style.display = 'block'
-    //     } else {
-    //         i.closest('.select-dropdown__checkbox').style.display = 'none';
-    //     }
-    // });
   }
 
   if (
