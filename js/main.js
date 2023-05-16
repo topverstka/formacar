@@ -915,6 +915,7 @@ selectAllModalCountry();
 
 function selectAllModalCountry() {
   const mRegions = find(".modal-regions__countries");
+  if (!mRegions) return
   const selectAll = mRegions.querySelector(
     ".regions-checkbox_select-all input"
   );
@@ -1068,6 +1069,7 @@ showAllCities();
 
 function showAllCities() {
   const showAll = find(".modal-regions__show-all");
+  if (!showAll) return
 
   showAll.addEventListener("click", (e) => {
     if (showAll.classList.contains("_text-show")) {
@@ -1091,22 +1093,23 @@ activeRegion();
 
 function activeRegion() {
   const btn = find(".modal-regions__one-country");
+  if (!btn) return
   const title = find(".modal-regions__title");
-  const blockC = find(".modal-regions__countries");
-  const blockR = find(".modal-regions__regions");
+  const blockCountries = find(".modal-regions__countries");
+  const blockRegions = find(".modal-regions__regions");
   const moreTitle = find(".modal-regions__more-title");
 
   btn.addEventListener("click", (e) => {
     btn.classList.toggle("_active");
 
     if (btn.classList.contains("_active")) {
-      blockC.classList.remove("_show");
-      blockR.classList.add("_show");
+      blockCountries.classList.remove("_show");
+      blockRegions.classList.add("_show");
       title.innerText = "Регион поиска";
       moreTitle.innerText = "Все регионы";
     } else {
-      blockC.classList.add("_show");
-      blockR.classList.remove("_show");
+      blockCountries.classList.add("_show");
+      blockRegions.classList.remove("_show");
       title.innerText = "Страна поиска";
       moreTitle.innerText = "Другие страны";
     }
@@ -1290,6 +1293,7 @@ applySettingsPlaces();
 
 function applySettingsPlaces() {
   const btn = find(".modal-regions__apply");
+  if (!btn) return
 
   btn.addEventListener("click", (e) => {
     const countryElems = findAll(
@@ -2250,7 +2254,7 @@ function resizeHeightTextarea() {
   }
 
   function init(maxH) {
-    var textElems = findAll("textarea");
+    var textElems = findAll("[data-resize-height]");
 
     for (let i = 0; i < textElems.length; i++) {
       const text = textElems[i];
@@ -2267,10 +2271,12 @@ function resizeHeightTextarea() {
           text.style.height = newHeight + "px";
           oldHeight = text.scrollHeight;
         }
+
+        console.log(text.scrollHeight)
       }
 
       function delayedResize() {
-        window.setTimeout(resize, 0);
+        setTimeout(resize, 0);
       }
       observe(text, "change", resize);
       observe(text, "cut", delayedResize);
@@ -2789,4 +2795,25 @@ if (snacks.length) {
       snack.classList.remove("_show");
     });
   });
+}
+
+
+// Функционал чата (смена окон "Создать диалог" и "Список чатов")
+const chatWrap = document.querySelector('.chat-wrap')
+
+if (chatWrap) {
+  const btnSearch = chatWrap.querySelector('.chat-sidebar__search-icon')
+  const btnNewDialog = chatWrap.querySelector('.chat-sidebar__new-dialog')
+  const sidebarChatList = chatWrap.querySelector('[data-sidebar=chat-list]')
+  const sidebarNewDialog = chatWrap.querySelector('[data-sidebar=new-dialog]')
+
+  btnSearch.addEventListener('click', e => {
+    sidebarNewDialog.classList.remove('is-show')
+    sidebarChatList.classList.add('is-show')
+  })
+
+  btnNewDialog.addEventListener('click', e => {
+    sidebarChatList.classList.remove('is-show')
+    sidebarNewDialog.classList.add('is-show')
+  })
 }
