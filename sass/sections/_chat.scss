@@ -549,3 +549,19 @@
 	--size: 24px;
 	@include mask(center/20px no-repeat url(../img/icons/send.svg));
 }
+
+.chat-blocked {
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 16px;
+	background-color: #F6F8FD;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.chat-blocked__text {
+	color: #CC3334;
+	font-size: 14px;
+}
