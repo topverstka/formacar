@@ -1,9 +1,18 @@
 @import "_fonts"; // Шрифты
 @import "_variables"; // Переменные
 @import "_reset"; // Сброс css
+
 // Миксин для перевода px в vw
 @function vw($px) {
   @return $px/(1920 / 100vw);
+}
+
+// Добавление префикса маски
+@mixin mask( $value ) {
+	$prefixes: '-webkit-', '';
+	@each $prefix in $prefixes {
+		#{$prefix}mask: $value;
+	}
 }
 
 // Общие стили для страниц
@@ -113,6 +122,7 @@ body {
 @import "sections/_search";
 @import "sections/_footer";
 @import "sections/_mob-menu";
+@import "sections/_chat";
 // Страницы
 @import "pages/_choose-cat";
 @import "pages/empty-form/_empty-form";
