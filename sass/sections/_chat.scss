@@ -532,6 +532,14 @@
 	width: 100%;
 	margin: 20px 0;
 
+	&.is-file {
+
+		.chat-msg__content {
+			display: flex;
+			align-items: flex-end;
+		}
+	}
+
 	&.is-inter {
 
 		.chat-msg__content {
@@ -559,7 +567,9 @@
 	position: relative;
 	max-width: 300px;
 	border-radius: 16px;
-	padding: 10px 70px 10px 10px;
+	// padding: 10px 70px 10px 10px;
+	padding: 10px;
+	padding-bottom: 6px;
 }
 
 // Стилизация текста
@@ -601,9 +611,18 @@
 }
 
 .chat-msg__info {
-	position: absolute;
-	bottom: 4px;
-	right: 10px;
+	display: inline;
+	float: right;
+	padding-left: 10px;
+	padding-top: 4px;
+	// position: absolute;
+	// bottom: 4px;
+	// right: 10px;
+
+
+}
+
+.chat-msg__info-wrap {
 
 	.chat-msg.is-mine & {
 		display: flex;
@@ -621,7 +640,6 @@
 	}
 
 	.chat-msg.is-mine.is-read & {
-
 		&::after {
 			@include mask(center/contain no-repeat url('../img/icons/msg-read.svg'));
 		}
