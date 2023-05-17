@@ -541,6 +541,11 @@
 	}
 
 	&.is-inter {
+		// padding-right: 115px;
+
+		// @media (max-width: $mobile-l) {
+		// 	padding-right: 65px;
+		// }
 
 		.chat-msg__content {
 			background-color: #EEF1F9;
@@ -549,6 +554,11 @@
 	}
 
 	&.is-mine {
+		// padding-left: 115px;
+
+		// @media (max-width: $mobile-l) {
+		// 	padding-left: 65px;
+		// }
 
 		.chat-msg__content {
 			background-color: #5891F0;
@@ -565,11 +575,18 @@
 
 .chat-msg__content {
 	position: relative;
-	max-width: 300px;
+	// max-width: 300px;
+	// max-width: 480px;
+	// max-width: 100%;
+	max-width: calc(100% - 115px);
 	border-radius: 16px;
 	// padding: 10px 70px 10px 10px;
 	padding: 10px;
 	padding-bottom: 6px;
+
+	@media (max-width: $mobile-l) {
+		max-width: calc(100% - 65px)
+	}
 }
 
 // Стилизация текста
