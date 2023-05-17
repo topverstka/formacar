@@ -78,7 +78,6 @@ window.addEventListener("click", (e) => {
     (find(".menu._show") &&
       !(e.target.classList.contains("header") || e.target.closest(".header")))
   ) {
-    console.log("menu close");
 
     find(".burger").classList.remove("_close");
     find(".menu").classList.remove("_show");
@@ -99,98 +98,25 @@ window.addEventListener("click", (e) => {
       find(".menu-bg").classList.remove("_show");
     }
   }
-
-  // Закрытие всплывашек при клике по фону, если они открыты
-  // if (find('.mob-menu__location._show-popup') && !(e.target.classList.contains('location__body') || e.target.closest('.location__body'))) {
-  //     find('.mob-menu__location._show-popup').classList.remove('_show-popup')
-  //     console.log('ok')
-  // }
 });
 
 // Отступ Раздела с контентом на расстояние равное ширине расширенного фильтра
-if (window.innerWidth > 1024) indentContentListAD(window.innerWidth);
+// indentContentListAD(window.innerWidth)
+// window.addEventListener('resize', () => indentContentListAD(window.innerWidth))
 
-function indentContentListAD(width) {
-  const content = find(".ad-content");
-  const advancedFilter = find(".advanced-filter");
-  //content !== null ? content.style.width = `calc(100% - ${advancedFilter.offsetWidth + 30}px)` : '';
-  const width_display = width < 1281 ? 31 : 50;
-  content !== null
-    ? (content.style.width = `calc(100% - ${
-        advancedFilter.offsetWidth + width_display
-      }px)`)
-    : "";
-}
+// function indentContentListAD(width) {
+//   const content = find(".ofr-content");
+//   if (content === null) return
 
-// Валидация формы
-// function validationForm() {
-//     const name = find('#user_name')
-//     const phone = find('#user_phone')
-//     const email = find('#user_email')
+//   const advancedFilter = find(".advanced-filter");
+//   const widthDisplay = width < 1280 ? 31 : 50;
 
-//     let con = true
-
-//     for (let i = 0; i < [name, phone, email].length; i++) {
-//         const elem = [name, phone, email][i];
-//         const elemValue = elem.value.trim()
-
-//         if (elemValue === '') {
-//             elem.classList.add('_error')
-//             con = false
-//         } else {
-//             elem.classList.remove('_error')
-//             con = true
-//         }
-//     }
-
-//     return con
-// }
-
-// Отправка формы
-// sumbitForm()
-// function sumbitForm() {
-//     const form = find('.modal__form')
-
-//     form.addEventListener('submit', async e => {
-//         const modal = find('.modal._show')
-//         const btnSend = form.querySelector('[type=submit]')
-//         btnSend.classList.add('send-preloader')
-
-//         e.preventDefault()
-
-//         let con = validationForm()
-
-//         if (con === true) {
-//             const formData = new FormData()
-//             const action = form.getAttribute('action')
-
-//             let response = await fetch(action, {
-//                 method: 'POST',
-//                 body: formData
-//             })
-
-//             // settimeout здесь для того, чтобы показать работу отправки формы. В дальнейшем это нужно убрать
-//             setTimeout(() => {
-//                 if (response.ok) {
-//                     console.log('Successful')
-//                     form.reset()
-
-//                     modal.classList.remove('_show')
-//                     find('#send-done').classList.add('_show')
-//                     btnSend.classList.remove('send-preloader')
-//                 }
-//                 else {
-//                     console.log('Error')
-//                     form.reset()
-
-//                     modal.classList.remove('_show')
-//                     find('#send-error').classList.add('_show')
-//                     btnSend.classList.remove('send-preloader')
-//                 }
-//             }, 2000)
-
-//         }
-//     })
+// 	if (window.innerWidth > 1280) {
+//     content.style.width = `calc(100% - ${advancedFilter.offsetWidth + widthDisplay}px)`
+// 	}
+// 	else {
+//     content.style.width = '100%'
+// 	}
 // }
 
 // Текстовым полям, которые имеют класс clear-by-cross, будет добавлена кнопка, кликнув по которой, содержимое инпута очиститься
@@ -294,11 +220,6 @@ function showPassword() {
   }
 }
 
-// Переход к началу страницы
-// arrowUp.addEventListener('click', () => {
-//   window.scrollBy(0,-window.pageYOffset);
-// });
-
 // Добавление выбора локации в мобильное меню
 addLocationToMobMenu();
 
@@ -341,17 +262,9 @@ function siteSearch() {
       siteSearchData(input);
     }, 1500);
   });
-  // input.addEventListener('input', e => {
-  //     if (input.value != '') {
-  //         clear.classList.add('_show')
-  //     }
-  // })
   input.addEventListener("focus", (e) => {
     siteSearchFocus(input);
   });
-  // input.addEventListener('blur', e => {
-  //     siteSearchBlur(input)
-  // })
   clear.addEventListener("click", (e) => {
     siteSearchPopup(input);
   });
@@ -367,11 +280,6 @@ function siteSearch() {
       }
     }
   }
-
-  // function siteSearchBlur(input) {
-  //     search.classList.remove('_show')
-  //     menuBg.classList.remove('_show')
-  // }
 
   function siteSearchPopup(input) {
     const value = input.value;
@@ -410,8 +318,6 @@ function siteSearch() {
       let data = await response.json();
       const dataArr = [];
 
-      // console.log(data.length)
-
       data.forEach((elem) => {
         if (elem["title"].toLowerCase() === value.toLowerCase())
           dataArr.push(elem["category"]);
@@ -429,7 +335,6 @@ function siteSearch() {
           return arr;
         }, {});
 
-        // console.log(value, data, quantityCat)
         loader.classList.remove("_show");
 
         for (const [title, quantity] of Object.entries(quantityCat)) {
@@ -577,77 +482,59 @@ const sliderMACard = new Swiper(".ma-card__slider", {
       setTimeout(() => updateFraction(this), 0);
     },
   },
-  //   breakpoints: {
-  //     1025: {
-  //         slidesPerView: 4,
-  //     },
-  //     768: {
-  //         slidesPerView: 3,
-  //         allowTouchMove: false
-  //     },
-  //     0: {
-  //         slidesPerView: 2,
-  //         spaceBetween: 12,
-  //         allowTouchMove: true
-  //     }
-  //   },
-
-  //   navigation: {
-  //     nextEl: '.s-recent__arrow-next',
-  //     prevEl: '.s-recent__arrow-prev',
-  //   }
-
   pagination: {
     el: ".ma-card__pagination",
     clickable: true,
   },
 });
 
-function row_container() {
-  document.querySelectorAll(".la-card__wrap").forEach((i) => {
-    i.closest(".list-ad__card-list").classList.add("list-ad__card-row");
-    let clone_header = i.querySelector(".la-card__header").cloneNode(true);
-    let clone_content = i.querySelector(".la-card__content").cloneNode(true);
-    let clone_footer = i.querySelector(".la-card__footer").cloneNode(true);
-    let clone_options = i.querySelector(".la-card__options").cloneNode(true);
-    i.classList.add("_active-row");
-    i.querySelector(".la-card__content").insertAdjacentHTML(
+function rowContainer() {
+  document.querySelectorAll(".la-card__wrap").forEach((card) => {
+    card.closest(".list-ofr__card-list").classList.add("list-ofr__card-row");
+
+    let cloneHeader = card.querySelector(".la-card__header").cloneNode(true);
+    let cloneContent = card.querySelector(".la-card__content").cloneNode(true);
+    let cloneFooter = card.querySelector(".la-card__footer").cloneNode(true);
+    let cloneOptions = card.querySelector(".la-card__options").cloneNode(true);
+
+    card.classList.add("_active-row");
+    card.querySelector(".la-card__content").insertAdjacentHTML(
       "beforebegin",
       '<div class="la-card__row-container"></div>'
     );
-    i.querySelector(".la-card__row-container").insertAdjacentHTML(
+    card.querySelector(".la-card__row-container").insertAdjacentHTML(
       "beforeend",
-      clone_header.outerHTML
+      cloneHeader.outerHTML
     );
-    i.querySelector(".la-card__row-container").insertAdjacentHTML(
+    card.querySelector(".la-card__row-container").insertAdjacentHTML(
       "beforeend",
-      clone_content.outerHTML
+      cloneContent.outerHTML
     );
-    i.querySelector(".la-card__row-container").insertAdjacentHTML(
+    card.querySelector(".la-card__row-container").insertAdjacentHTML(
       "beforeend",
-      clone_footer.outerHTML
+      cloneFooter.outerHTML
     );
-    i.querySelector(".la-card__row-container").insertAdjacentHTML(
+    card.querySelector(".la-card__row-container").insertAdjacentHTML(
       "beforeend",
-      clone_options.outerHTML
+      cloneOptions.outerHTML
     );
-    i.querySelector(".la-card__slider").style.height =
-      i.querySelector(".la-card__row-container").offsetHeight + "px";
+    // card.querySelector(".la-card__slider").style.height =
+    //   card.querySelector(".la-card__row-container").offsetHeight + "px";
   });
 }
-let html_list_ad =
-  document.querySelector(".list-ad__card-list") !== null
-    ? document.querySelector(".list-ad__card-list").innerHTML
-    : "";
+let htmlListAd = document.querySelector(".list-ofr__card-list") !== null ? document.querySelector(".list-ofr__card-list").innerHTML : "";
 
-function change_grid(i) {
+function changeGrid(button) {
+  const filterGrid = button.dataset.gridFilter
+
   if (window.innerWidth >= 768) {
-    document
-      .querySelectorAll(".ad-filter__grid-list button")
-      .forEach((i) => i.classList.remove("_active"));
-    i.classList.add("_active");
-    if (i.classList.contains("ad-filter__grid-btn-box")) {
-      document.querySelector(".list-ad__card-list").innerHTML = html_list_ad;
+    document.querySelectorAll(".ofr-filter__grid-list button").forEach((i) => i.classList.remove("_active"));
+    button.classList.add("_active");
+
+    if (filterGrid === 'box') {
+      localStorage.setItem('grid-filter', 'box')
+      document.querySelector(".list-ofr__card-list").innerHTML = htmlListAd;
+
       new Swiper(".la-card__all-swiper-big .la-card__slider", {
         spaceBetween: 4,
         slidesPerView: 1.25,
@@ -684,70 +571,71 @@ function change_grid(i) {
           clickable: true,
         },
       });
-      document
-        .querySelector(".list-ad__card-list")
-        .classList.remove("list-ad__card-row");
-      document.querySelectorAll(".la-card[data-views-section]").forEach((i) => {
-        i.setAttribute("data-views-section", "box");
+
+      document.querySelector(".list-ofr__card-list").classList.remove("list-ofr__card-row");
+      document.querySelectorAll(".la-card[data-views-section]").forEach((card) => {
+        card.setAttribute("data-views-section", "box");
       });
     }
-
-    if (i.classList.contains("ad-filter__grid-btn-row")) {
-      if (
-        !document
-          .querySelector(".list-ad__card-list")
-          .classList.contains("list-ad__card-row")
-      ) {
-        document
-          .querySelectorAll(".la-card[data-views-section]")
-          .forEach((i) => {
-            i.setAttribute("data-views-section", "row");
-          });
-        row_container();
+    if (filterGrid === 'row') {
+      localStorage.setItem('grid-filter', 'row')
+      if (!document.querySelector(".list-ofr__card-list").classList.contains("list-ofr__card-row")) {
+        document.querySelectorAll(".la-card[data-views-section]").forEach((card) => {
+          card.setAttribute("data-views-section", "row");
+        });
+        rowContainer();
       }
     }
   } else {
-    document
-      .querySelectorAll(".ad-filter__grid-list button")
-      .forEach((i) => i.classList.remove("_active"));
-    i.classList.add("_active");
-    if (i.classList.contains("ad-filter__grid-btn-box")) {
-      document
-        .querySelector(".list-ad__card-list")
-        .classList.remove("list-ad__card-row");
-      document.querySelectorAll(".la-card[data-views-section]").forEach((i) => {
-        i.setAttribute("data-views-section", "box");
+    document.querySelectorAll(".ofr-filter__grid-list button").forEach((button) => button.classList.remove("_active"));
+    button.classList.add("_active");
+
+    if (filterGrid === 'box') {
+      localStorage.setItem('grid-filter', 'box')
+      document.querySelector(".list-ofr__card-list").classList.remove("list-ofr__card-row");
+      document.querySelectorAll(".la-card[data-views-section]").forEach((card) => {
+        card.setAttribute("data-views-section", "box");
       });
     }
-
-    if (i.classList.contains("ad-filter__grid-btn-row")) {
-      document
-        .querySelector(".list-ad__card-list")
-        .classList.add("list-ad__card-row");
-      document.querySelectorAll(".la-card[data-views-section]").forEach((i) => {
-        i.setAttribute("data-views-section", "row");
+    if (filterGrid === 'row') {
+      localStorage.setItem('grid-filter', 'row')
+      document.querySelector(".list-ofr__card-list").classList.add("list-ofr__card-row");
+      document.querySelectorAll(".la-card[data-views-section]").forEach((card) => {
+        card.setAttribute("data-views-section", "row");
       });
-      liked();
     }
   }
+
   find(".ma-tab__preload").classList.remove("_show");
-  findAll(".la-card").forEach((i) => i.classList.remove("_hide-card"));
-  liked();
+  // findAll(".la-card").forEach((card) => card.classList.remove("_hide-card"));
   openModalWhenClickingOnBtn();
 }
 
-document.querySelectorAll(".ad-filter__grid-list button").forEach((i) => {
-  change_grid(i);
-  liked();
-  i.addEventListener("click", (e) => {
-    e.preventDefault();
-    change_grid(i);
-  });
-});
+const filterGridFromLocalStorage = localStorage.getItem('grid-filter')
+let filterGrid
 
-if (find(".list-ad__filter-mob-list")) {
-  find(".list-ad__filter-mob-list")
-    .querySelector(".ad-filter__grid-btn-row")
+if (document.querySelector('.ofr-filter')) {
+  if (filterGridFromLocalStorage) {
+    filterGrid = filterGridFromLocalStorage
+  } else {
+    filterGrid = 'row'
+  }
+
+  document.querySelectorAll(`.ofr-filter__grid-list button[data-grid-filter=${filterGrid}]`).forEach(button => {
+    changeGrid(button);
+  })
+
+  document.querySelectorAll(".ofr-filter__grid-list button").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      changeGrid(button);
+    });
+  });
+}
+
+if (find(".list-ofr__filter-mob-list")) {
+  find(".list-ofr__filter-mob-list")
+    .querySelector(".ofr-filter__grid-btn-row")
     .classList.add("_active");
 }
 
@@ -790,48 +678,13 @@ const sliderLACard_1 = new Swiper(".la-card__all-swiper-big .la-card__slider", {
   },
 });
 
-// const swiper = new Swiper('.swiper-container', {
-
-//   slidesPerView: 1, // Кол-во показываемых слайдов
-//   spaceBetween: 0, // Расстояние между слайдами
-//   loop: true, // Бесконечный слайдер
-//   freeMode: true, // Слайдеры не зафиксированны
-
-//   breakpoints: {
-//     1200: {
-
-//     },
-//     700: {
-
-//     },
-//     400: {
-
-//     }
-//   },
-
-//   pagination: {
-//     el: '.swiper-pagination',
-//   },
-
-//   navigation: {
-//     nextEl: '.swiper__arrow-next',
-//     prevEl: '.swiper__arrow-prev',
-//   },
-
-//   scrollbar: {
-//     el: '.swiper-scrollbar',
-//   },
-// });
-
 setTimeout((e) => {
   const sliderInsideRecentCard = new Swiper(".recent-card__slider", {
     spaceBetween: 4,
     slidesPerView: "auto",
 
     breakpoints: {
-      1440: {
-        // slidesPerView: 'auto',
-      },
+      1440: {},
       768: {},
       500: {
         slidesPerView: "auto",
@@ -853,11 +706,6 @@ setTimeout((e) => {
 
 const sliderNews = new Swiper(".s-news__slider", {
   spaceBetween: 24,
-
-  //   slidesPerView: 4, // Кол-во показываемых слайдов
-  //   spaceBetween: 24, // Расстояние между слайдами
-  //   loop: true, // Бесконечный слайдер
-  //   freeMode: true, // Слайдеры не зафиксированны
 
   breakpoints: {
     1025: {
@@ -976,12 +824,13 @@ closeModalWhenClickingOnCross();
 
 function closeModalWhenClickingOnCross() {
   const modalElems = document.querySelectorAll(".modal");
+
   for (let i = 0; i < modalElems.length; i++) {
     const modal = modalElems[i];
-    const closeThisModal = modal.querySelector(".modal__close");
+    const closerArr = modal.querySelectorAll('.modal__close, [data-modal-close]')
 
-    if (closeThisModal) {
-      closeThisModal.addEventListener("click", () => {
+    for (const closer of closerArr) {
+      closer.addEventListener("click", () => {
         closeModal(modal);
       });
     }
@@ -1030,18 +879,19 @@ function closeModal(modal) {
   bodyLock(false);
   resetHash();
 }
-// }
 
 // Лайк поста
 liked();
-
 function liked() {
-  const likeElems = findAll("[data-like]");
+  document.addEventListener('click', e => {
+    const target = e.target
 
-  for (let i = 0; i < likeElems.length; i++) {
-    const elem = likeElems[i];
-    elem.addEventListener("click", (e) => elem.classList.toggle("_liked"));
-  }
+    if (target.hasAttribute('data-like') || target.closest('[data-like]')) {
+      const btn = target.hasAttribute('data-like') ? target : target.closest('[data-like]')
+
+      btn.classList.toggle('_liked')
+    }
+  })
 }
 
 // Смена языка
@@ -1065,6 +915,7 @@ selectAllModalCountry();
 
 function selectAllModalCountry() {
   const mRegions = find(".modal-regions__countries");
+  if (!mRegions) return
   const selectAll = mRegions.querySelector(
     ".regions-checkbox_select-all input"
   );
@@ -1175,7 +1026,6 @@ function selectedCountry() {
         chips.innerHTML = `<span class="regions-chips__title">${checkbox.value}</span>`;
 
         chipsList.append(chips);
-        // arrC.push(checkbox.value)
       }
     }
 
@@ -1219,6 +1069,7 @@ showAllCities();
 
 function showAllCities() {
   const showAll = find(".modal-regions__show-all");
+  if (!showAll) return
 
   showAll.addEventListener("click", (e) => {
     if (showAll.classList.contains("_text-show")) {
@@ -1231,10 +1082,8 @@ function showAllCities() {
 
     if (find(".modal-regions__acc-body .regions-checkbox input:checked")) {
       selectedRegions();
-      // console.log('selectedRegions')
     } else {
       selectedCountry();
-      // console.log('selectedCountry')
     }
   });
 }
@@ -1244,22 +1093,23 @@ activeRegion();
 
 function activeRegion() {
   const btn = find(".modal-regions__one-country");
+  if (!btn) return
   const title = find(".modal-regions__title");
-  const blockC = find(".modal-regions__countries");
-  const blockR = find(".modal-regions__regions");
+  const blockCountries = find(".modal-regions__countries");
+  const blockRegions = find(".modal-regions__regions");
   const moreTitle = find(".modal-regions__more-title");
 
   btn.addEventListener("click", (e) => {
     btn.classList.toggle("_active");
 
     if (btn.classList.contains("_active")) {
-      blockC.classList.remove("_show");
-      blockR.classList.add("_show");
+      blockCountries.classList.remove("_show");
+      blockRegions.classList.add("_show");
       title.innerText = "Регион поиска";
       moreTitle.innerText = "Все регионы";
     } else {
-      blockC.classList.add("_show");
-      blockR.classList.remove("_show");
+      blockCountries.classList.add("_show");
+      blockRegions.classList.remove("_show");
       title.innerText = "Страна поиска";
       moreTitle.innerText = "Другие страны";
     }
@@ -1322,7 +1172,6 @@ function selectedRegions() {
   const showAll = find(".modal-regions__show-all");
 
   if (selectedC.length > 0) {
-    // let arrC = []
     chipsBlock.classList.add("_show");
     chipsList.innerHTML = "";
 
@@ -1340,8 +1189,6 @@ function selectedRegions() {
 
         chipsList.append(chips);
       }
-
-      // arrC.push(checkbox.value)
     }
 
     // Сохраняем города в localStorage
@@ -1446,6 +1293,7 @@ applySettingsPlaces();
 
 function applySettingsPlaces() {
   const btn = find(".modal-regions__apply");
+  if (!btn) return
 
   btn.addEventListener("click", (e) => {
     const countryElems = findAll(
@@ -1585,8 +1433,6 @@ function settingsPopupPlaces() {
 
   function changeBtnPlace() {
     if (regionsArr.length === 0 && countryArr.length === 0) {
-      // places.innerText = "По всему миру";
-      // distance.classList.remove("_show");
       quantity.classList.remove("_show");
     }
 
@@ -1603,7 +1449,6 @@ function settingsPopupPlaces() {
       places.innerText = countryArr[0];
       distance.classList.remove("_show");
       quantity.classList.remove("_show");
-      // distance.querySelector('span').innerText = radiusInput.value
     }
 
     // Если выбрано больше 2 регионов
@@ -1742,8 +1587,8 @@ function loadCheckedFromLocalStorage() {
   for (let i = 0; i < regionsArr.length; i++) {
     const nameR = regionsArr[i];
     const checkbox = find(`[data-space="region"][value="${nameR}"]`);
-    // console.log(checkbox)
-    checkbox.checked = true;
+
+	checkbox.checked = true;
   }
 
   selectedCountry();
@@ -1779,26 +1624,6 @@ function openDefiniteBlock() {
     moreTitle.innerText = "Все регионы";
   });
 }
-
-// Показать все карточки городов
-// showAllRegions()
-// function showAllRegions() {
-//     const showAllReg = find('.modal-regions__show-all')
-
-//     showAllReg.addEventListener('click', e => {
-//         console.log(showAllReg)
-//         if (showAllReg.classList.contains('_text-show')) {
-//             showAllReg.classList.add('_text-hide')
-//             showAllReg.classList.remove('_text-show')
-//         }
-//         else {
-//             showAllReg.classList.add('_text-show')
-//             showAllReg.classList.remove('_text-hide')
-//         }
-
-//         selectedRegions()
-//     })
-// }
 
 // Выбор региона
 selectRegion();
@@ -1865,7 +1690,6 @@ rangeChangeCities();
 function rangeChangeCities() {
   const range = find(".location__radius-range input");
   const distance = find(".location__radius-value span");
-  // const distanceBtn = find('.location__distance span')
 
   rangesliderJs.create(range, {
     onSlide: (e) => {
@@ -1930,36 +1754,6 @@ window.addEventListener("DOMContentLoaded", function () {
           input.value = "";
         }
       });
-
-      // var keyCode;
-      // function mask(event) {
-      //     event.keyCode && (keyCode = event.keyCode);
-      //     var pos = this.selectionStart;
-      //     if (pos < 3) event.preventDefault();
-      //     var matrix = "+7 (___) ___-__-__",
-      //         i = 0,
-      //         def = matrix.replace(/\D/g, ""),
-      //         val = this.value.replace(/\D/g, ""),
-      //         new_value = matrix.replace(/[_\d]/g, function(a) {
-      //             return i < val.length ? val.charAt(i++) || def.charAt(i) : a
-      //         });
-      //     i = new_value.indexOf("_");
-      //     if (i != -1) {
-      //         i < 5 && (i = 3);
-      //         new_value = new_value.slice(0, i)
-      //     }
-      //     var reg = matrix.substr(0, this.value.length).replace(/_+/g,
-      //         function(a) {
-      //             return "\\d{1," + a.length + "}"
-      //         }).replace(/[+()]/g, "\\$&");
-      //     reg = new RegExp("^" + reg + "$");
-      //     if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
-      //     if (event.type == "blur" && this.value.length < 5)  this.value = ""
-      // }
-      // input.addEventListener("input", mask, false);
-      // input.addEventListener("focus", mask, false);
-      // input.addEventListener("blur", mask, false);
-      // input.addEventListener("keydown", mask, false)
     }
   );
 });
@@ -1975,7 +1769,6 @@ function showMoreList() {
     const more = list.nextElementSibling;
     const itemElems = list.querySelectorAll(".na-brand__item");
 
-    console.log(list, more);
     more.addEventListener("click", (e) => {
       if (!more.classList.contains("_show")) {
         const moreTitle = more.querySelector(".na-more__title");
@@ -1999,20 +1792,6 @@ function showMoreList() {
     });
   }
 }
-
-// Максимальная и минимальная ширина текстового поля - textarea
-// widthTextarea()
-// function widthTextarea() {
-//     const taElems = findAll('textarea')
-
-//     for (let i = 0; i < taElems.length; i++) {
-//         const ta = taElems[i];
-//         const taWidth = ta.offsetWidth
-
-//         ta.style.maxWidth = taWidth + 'px'
-//         ta.style.minWidth = taWidth + 'px'
-//     }
-// }
 
 // Наполнение сайдбара пунктами с названиями блоков для заполнения
 if (document.getElementById("na-sidebar")) naSidebar();
@@ -2089,7 +1868,6 @@ function selectCity() {
 
         input.value = city.innerText;
         select.classList.add("_valid");
-        // clearList(select)
       });
     }
   }
@@ -2116,10 +1894,9 @@ function select() {
     const sTitle = select.querySelector(".select-input__title");
     const sInput = select.querySelector("input");
 
-    sTitle.innerText = selectedItem.innerHTML;
+    sTitle.innerText = selectedItem.innerHTML.trim();
     sInput.value = selectedItem.innerText;
     sInput.classList.add("_full");
-    // console.log(sInput)
     select.classList.add("_valid");
   }
 
@@ -2157,12 +1934,11 @@ function select() {
       const neighbourTargets = target.parentElement.querySelectorAll(
         ".select-dropdown__item"
       );
-      const Strack = target.closest(".list-ad__form-track");
+      const strack = target.closest(".list-ofr__form-track");
 
       sTitle.innerText = target.innerText;
       sInput.value = target.innerText;
       sInput.classList.add("_full");
-      // console.log(sInput)
 
       removeAll(neighbourTargets, "_selected");
       target.classList.add("_selected");
@@ -2184,12 +1960,6 @@ function select() {
           btnSubmit.disabled = true;
         }
       }
-
-      // if (Strack) {
-      //     add_clear_btn(select.querySelector('.select-input'));
-      //     select.classList.remove('_valid');
-      //     target.classList.remove('_valid');
-      // }
     }
 
     if (target.classList.contains("select-dropdown__all")) {
@@ -2212,12 +1982,6 @@ function select() {
         .classList.add("_active_drop");
       target.closest(".select").children[0].value = target.innerText;
     }
-
-    // if (target.classList.contains('color-radio') || target.closest('.select-dropdown__colors')) {
-    //     document.querySelectorAll('.color-radio input').forEach( i => {
-    //         console.log(i.checked)
-    //     });
-    // }
 
     if (
       target.closest(".color-radio") &&
@@ -2490,7 +2254,7 @@ function resizeHeightTextarea() {
   }
 
   function init(maxH) {
-    var textElems = findAll("textarea");
+    var textElems = findAll("[data-resize-height]");
 
     for (let i = 0; i < textElems.length; i++) {
       const text = textElems[i];
@@ -2507,10 +2271,12 @@ function resizeHeightTextarea() {
           text.style.height = newHeight + "px";
           oldHeight = text.scrollHeight;
         }
+
+        console.log(text.scrollHeight)
       }
 
       function delayedResize() {
-        window.setTimeout(resize, 0);
+        setTimeout(resize, 0);
       }
       observe(text, "change", resize);
       observe(text, "cut", delayedResize);
@@ -2568,8 +2334,6 @@ function tabsMineAd() {
 if (window.innerWidth <= 768) openModalSettingsOnAdaptiveMineAd();
 
 function openModalSettingsOnAdaptiveMineAd() {
-  // const btnSettingsElems = findAll('[data-open-settings]')
-
   window.addEventListener("click", (e) => {
     if (e.target.getAttribute("data-open-settings") != null) {
       if (!document.querySelector(".ma-card__settings")) {
@@ -2589,7 +2353,6 @@ function openModalSettingsOnAdaptiveMineAd() {
         popup.style.left = offsetPageBtn.left + "px";
         popup.style.top = offsetPageBtn.top + "px";
         document.body.append(popup);
-        console.log(offsetPage(btnSettings));
       }
     }
 
@@ -2623,21 +2386,21 @@ window.addEventListener("click", function (e) {
 
   if (e.target.classList.contains("btn-filter__list")) {
     e.target
-      .closest(".list-ad")
-      .querySelector(".ad-filter")
+      .closest(".list-ofr")
+      .querySelector(".ofr-filter")
       .classList.toggle("_active-filter");
   }
 
   if (
-    e.target.closest(".ad-tab") &&
-    e.target.closest(".ad-tab").getAttribute("data-tab-filter")
+    e.target.closest(".ofr-tab") &&
+    e.target.closest(".ofr-tab").getAttribute("data-tab-filter")
   ) {
-    let tab = e.target.closest(".ad-tab").getAttribute("data-tab-filter");
+    let tab = e.target.closest(".ofr-tab").getAttribute("data-tab-filter");
     document
-      .querySelector(`.ad-filter__body._active-tab`)
+      .querySelector(`.ofr-filter__body._active-tab`)
       .classList.remove("_active-tab");
     document
-      .querySelector(`.ad-filter__body[data-tab-content=${tab}]`)
+      .querySelector(`.ofr-filter__body[data-tab-content=${tab}]`)
       .classList.add("_active-tab");
     document
       .querySelectorAll(".error_input")
@@ -2649,7 +2412,7 @@ window.addEventListener("click", function (e) {
 
   if (
     e.target.classList.contains("na-submit") ||
-    e.target.classList.contains("ad-filter__show-btn") ||
+    e.target.classList.contains("ofr-filter__show-btn") ||
     e.target.classList.contains("advanced-filter__show-btn")
   ) {
     field_validation(e);
@@ -2689,7 +2452,7 @@ document.body.addEventListener("input", function (e) {
   if (
     e.target.classList.contains("number-input") ||
     (e.target.tagName === "INPUT" &&
-      e.target.closest(".list-ad__form-section") &&
+      e.target.closest(".list-ofr__form-section") &&
       !e.target.closest(".select-search"))
   ) {
     e.target.value = e.target.value.replace(/[^0-9\.\,]/g, "");
@@ -2714,13 +2477,6 @@ document.body.addEventListener("input", function (e) {
         .querySelector(".select-input__title")
         .classList.remove("_active_drop");
     }
-    // e.target.closest('.list-ad__form-section').querySelectorAll('.select-dropdown__checkbox-text').forEach(i => {
-    //     if (i.innerText.toUpperCase().indexOf(e.target.value.toUpperCase()) > -1) {
-    //         i.closest('.select-dropdown__checkbox').style.display = 'block'
-    //     } else {
-    //         i.closest('.select-dropdown__checkbox').style.display = 'none';
-    //     }
-    // });
   }
 
   if (
@@ -2968,13 +2724,13 @@ if (document.querySelector(".modal-show-rate")) {
     });
 }
 
-if (document.querySelector(".mine-ad-view__user-favorites-line-left")) {
+if (document.querySelector(".mine-ofr-view__user-favorites-line-left")) {
   let textFavorites, textFavoritesAdd, textFavoritesMake;
   if (window.innerWidth <= 1265) {
     textFavoritesAdd = "В избранном";
     textFavorites = "В избранное";
     textFavoritesMake = "Подать жалобу";
-    find(".mine-ad-view__user-favorites-line-text").innerText = textFavorites;
+    find(".mine-ofr-view__user-favorites-line-text").innerText = textFavorites;
   } else {
     textFavoritesAdd = "Добавлено в избранное";
     textFavorites = "Добавить в избранное";
@@ -2982,22 +2738,22 @@ if (document.querySelector(".mine-ad-view__user-favorites-line-left")) {
   }
 
   document
-    .querySelector(".mine-ad-view__user-favorites-line-left")
+    .querySelector(".mine-ofr-view__user-favorites-line-left")
     .addEventListener("click", function (e) {
       if (this.querySelector(".like")) {
         if (this.querySelector(".like").classList.contains("_liked")) {
-          this.closest(".mine-ad-view__user-favorites-line").querySelector(
-            ".mine-ad-view__user-favorites-line-text"
+          this.closest(".mine-ofr-view__user-favorites-line").querySelector(
+            ".mine-ofr-view__user-favorites-line-text"
           ).innerText = textFavoritesAdd;
-          this.closest(".mine-ad-view__user-favorites-line-left").classList.add(
+          this.closest(".mine-ofr-view__user-favorites-line-left").classList.add(
             "_active-line"
           );
         } else {
-          this.closest(".mine-ad-view__user-favorites-line").querySelector(
-            ".mine-ad-view__user-favorites-line-text"
+          this.closest(".mine-ofr-view__user-favorites-line").querySelector(
+            ".mine-ofr-view__user-favorites-line-text"
           ).innerText = textFavorites;
           this.closest(
-            ".mine-ad-view__user-favorites-line-left"
+            ".mine-ofr-view__user-favorites-line-left"
           ).classList.remove("_active-line");
         }
       }
@@ -3005,7 +2761,7 @@ if (document.querySelector(".mine-ad-view__user-favorites-line-left")) {
       if (this.closest("._active_complain")) {
         this.closest("._active_complain")
           .querySelector(
-            ".mine-ad-view__user-favorites-line-complain .complain-line-active"
+            ".mine-ofr-view__user-favorites-line-complain .complain-line-active"
           )
           .remove();
         this.closest("._active_complain").classList.remove("_active_complain");
@@ -3013,14 +2769,14 @@ if (document.querySelector(".mine-ad-view__user-favorites-line-left")) {
     });
 
   document
-    .querySelector(".mine-ad-view__user-favorites-line-complain")
+    .querySelector(".mine-ofr-view__user-favorites-line-complain")
     .addEventListener("click", function (e) {
       if (
-        !this.closest(".mine-ad-view__user-favorites-line").classList.contains(
+        !this.closest(".mine-ofr-view__user-favorites-line").classList.contains(
           "_active_complain"
         )
       ) {
-        this.closest(".mine-ad-view__user-favorites-line").classList.add(
+        this.closest(".mine-ofr-view__user-favorites-line").classList.add(
           "_active_complain"
         );
         this.insertAdjacentHTML(
@@ -3039,4 +2795,25 @@ if (snacks.length) {
       snack.classList.remove("_show");
     });
   });
+}
+
+
+// Функционал чата (смена окон "Создать диалог" и "Список чатов")
+const chatWrap = document.querySelector('.chat-wrap')
+
+if (chatWrap) {
+  const btnSearch = chatWrap.querySelector('.chat-sidebar__search-icon')
+  const btnNewDialog = chatWrap.querySelector('.chat-sidebar__new-dialog')
+  const sidebarChatList = chatWrap.querySelector('[data-sidebar=chat-list]')
+  const sidebarNewDialog = chatWrap.querySelector('[data-sidebar=new-dialog]')
+
+  btnSearch.addEventListener('click', e => {
+    sidebarNewDialog.classList.remove('is-show')
+    sidebarChatList.classList.add('is-show')
+  })
+
+  btnNewDialog.addEventListener('click', e => {
+    sidebarChatList.classList.remove('is-show')
+    sidebarNewDialog.classList.add('is-show')
+  })
 }

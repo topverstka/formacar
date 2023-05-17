@@ -1,0 +1,74 @@
+.modal-ofcon__wrap {
+
+}
+
+.modal-ofcon__popup {
+	max-width: 520px;
+	width: 100%;
+
+	@media (max-width: $mobile-l) {
+			padding: 24px;
+	}
+}
+
+.modal-ofcon__popup-wrap {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal-ofcon__info {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	@media (max-width: $mobile-l) {
+		gap: 12px;
+	}
+}
+
+.modal-ofcon__avatar {
+	width: 60px;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	flex-shrink: 0;
+	border-radius: 50%;
+
+	@media (max-width: $mobile-l) {
+		width: 50px;
+	}
+}
+
+.modal-ofcon__info-content {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.modal-ofcon__name {
+	font-size: 18px;
+	font-weight: 700;
+
+	@media (max-width: $mobile-l) {
+		font-size: 16px;
+	}
+}
+
+.modal-ofcon__type {
+	color: $text-second-d;
+
+	&.is-company {
+		color: $accent-primary;
+	}
+}
+
+.modal-ofcon__contacts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 30px;
+
+	& > * {
+		width: auto;
+		flex-grow: 1;
+	}
+}

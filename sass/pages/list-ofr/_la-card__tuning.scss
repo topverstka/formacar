@@ -1,0 +1,613 @@
+.ofr-content__tuning {
+    width: 100%;
+    .card-table tr td {
+        font-size: 16px;
+        line-height: 20px;
+        color: #888888;
+        font-weight: 500;
+    }
+    @media (min-width: 1570px) {
+        width: 1326px;
+        .la-card_big:not(.la-tuning) .la-card__title {
+            font-size: 20px
+        }
+        .la-card_big .la-card__slide {
+            height: 200px;
+            img {
+                object-fit: cover;
+            }
+        }
+        .la-card_big.la-tuning .la-card__slide {
+            height: 100px
+        }
+        .la-card {
+            height: max-content
+        }
+        .la-card:not(.la-tuning) .la-card__footer {
+            border-top: 0;
+            padding-top: 0
+        }
+        .la-card:not(.la-tuning) .la-card__options {
+            border-top: 0;
+            padding-top: 8px;
+        }
+        .la-tuning .la-card__footer {
+            margin-top: 12px
+        }
+        .la-tuning .la-card__info-item {
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+    @media (max-width: $tablet) {
+        .la-card__header-left {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .la-tuning .la-card__price {
+            padding: 0;
+            margin-bottom: 0;
+        }
+        .la-card__price {
+            width: max-content
+        }
+        .la-card .la-card__title {
+            line-height: 15px;
+            margin-bottom: 4px;
+        }
+        .la-card .la-card__content {
+            margin: 8px 0;
+        }
+        .la-card .card-table tr td {
+            display: block;
+            font-size: 12px;
+            line-height: 15px;
+            font-weight: normal;
+            color: #383838;
+            margin-bottom: 0;
+        }
+        .la-card .la-card__info-item {
+            font-size: 10px;
+            line-height: 12px;
+        }
+        .la-card.la-card_paid .ma-card__pagination,
+        .la-card__options {
+            display: none
+        }
+        .la-card .la-card__slider-fixed {
+            display: block;
+            width: max-content;
+            left: 5px;
+            top: 5px;
+            bottom: auto;
+            padding: 0 5px;
+        }
+        .la-card:not(.la-tuning) .la-card__slider-fixed {
+            display: none
+        }
+        .la-tuning__box {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .la-card .ma-card__label-paid {
+            right: 0
+        }
+        .la-card.la-tuning:not(.la-tuning__viewed) .la-card__price {
+            padding: 2px 8px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.ofr-content__tuning .list-ofr__card-list {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 24px;
+    @media (min-width: 1570px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width:$laptop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width:$tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px 10px;
+    }
+}
+
+.ofr-content__tuning .la-card__price {
+    line-height: 20px;
+    padding: 4px 10px;
+    margin: 0 0 8px 0;
+    @media (max-width: $tablet-s) {
+        margin-bottom: 0;
+    }
+}
+
+.ofr-content__tuning .la-card__title {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.ofr-content__tuning .la-card__content {
+    margin: 17px 0 10px 0
+}
+
+.ofr-content__tuning .la-card__slider {
+    margin-top: 0
+}
+
+.ofr-content__tuning .la-card__footer {
+    margin-top: 12px;
+    @media (max-width: $tablet-s) {
+        margin-top: 0
+    }
+}
+
+.la-tuning {
+    .la-tuning__box {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+    }
+    .la-card__slide {
+        width: 100px;
+        height: 100px;
+    }
+    .la-card__price {
+        font-size: 18px;
+        padding: 2px 8px;
+    }
+    .la-card__title {
+        line-height: 20px;
+    }
+    .la-card__content {
+        margin-top: 8px
+    }
+    .la-card__slider {
+        width: 100px;
+        margin: 0 16px 0 0;
+        overflow: hidden;
+        padding: 0;
+        height: max-content;
+        border-radius: 2px;
+        .la-card__slide {
+            border-radius: 2px;
+        }
+        .swiper-slide img {
+            object-fit: cover;
+        }
+        .ma-card__pagination {
+            display: flex;
+            bottom: 4px
+        }
+    }
+    .ma-card__label-paid {
+        position: absolute;
+        right: 16px;
+        z-index: 9;
+    }
+    .la-card__info-item {
+        font-size: 12px;
+        line-height: 15px;
+        color: #8A8B99;
+    }
+    .la-card__options {
+        display: none
+    }
+    .la-card__footer {
+        margin-top: 0
+    }
+    .la-tuning__box-text {
+        width: calc(100% - 116px);
+    }
+    .la-card__content {
+        margin-bottom: 12px;
+    }
+    .card-table tr td {
+        font-size: 16px;
+        line-height: 20px;
+        color: #888888;
+        font-weight: 500;
+    }
+    @media (max-width: $tablet) {
+        .la-tuning__box {
+            flex-direction: column-reverse;
+        }
+        .la-card__slider,
+        .la-card__slide {
+            width: 100%
+        }
+        .la-tuning__box-text {
+            width: 100%
+        }
+    }
+    @media (max-width: $tablet-s) {
+        span.la-card__price {
+            font-size: 14px
+        }
+    }
+}
+
+.la-tuning__viewed {
+    .la-card__slider-fixed {
+        left: 0;
+        width: 100%;
+        bottom: 12px;
+        top: auto;
+    }
+    .ma-card__label-paid {
+        display: none
+    }
+    .la-card__price {
+        background: transparent;
+        color: $text-primary;
+        padding: 0;
+    }
+}
+
+.ofr-filter__section-tab {
+    display: flex;
+    .advanced-filter__owner-list:first-child {
+        margin-right: 40px;
+        border-right: 1px solid #ECECEC;
+        padding-right: 40px;
+    }
+    @media (max-width:$tablet) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        .advanced-filter__owner-list:first-child {
+            margin-right: 0;
+            padding-right: 0;
+            border-right: 0
+        }
+    }
+    @media (max-width:$tablet-s) {
+        .advanced-filter__owner-list {
+            width: 100%
+        }
+        .advanced-filter__owner-list:first-child {
+            .ofr-tab {
+                width: 50%
+            }
+        }
+    }
+}
+
+.ofr-filter__section-tuning {
+    position: relative;
+    margin-bottom: 74px;
+    @media (max-width: $tablet-s) {
+        .ofr-filter__footer {
+            margin-top: 20px
+        }
+        .ofr-filter__option-list {
+            position: absolute;
+            left: 0;
+            bottom: -51px;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            &>div {
+                display: flex;
+            }
+            .select-input {
+                margin-bottom: 0;
+            }
+        }
+        .ofr-filter__option-select_mob {
+            display: none
+        }
+    }
+}
+
+.ofr-content__tuning .list-ofr__card-row {
+    width: 966px;
+    max-width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 24px 0;
+    .la-tuning__box {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+    }
+    .la-tuning__box-text>.la-card__header,
+    .la-tuning__box-text>.la-card__content {
+        display: none
+    }
+    .la-card__row-container {
+        width: 100%;
+        padding: 10px 0;
+    }
+    .la-card__header-left {
+        display: flex;
+        flex-direction: column;
+    }
+    .la-card__price {
+        padding: 0;
+        order: 1;
+    }
+    .la-card__title {
+        order: 0;
+        margin-bottom: 5px;
+    }
+    .card-table tr td {
+        font-size: 16px
+    }
+    .la-card__footer {
+        padding-top: 22px
+    }
+    .la-card__content {
+        margin-top: 12px
+    }
+    .la-card__price {
+        margin-bottom: 0;
+    }
+    .la-card__slider {
+        min-height: auto;
+        width: 200px;
+        margin-right: 0
+    }
+    .la-tuning__box-text {
+        margin-right: 0;
+        width: calc(100% - 200px);
+    }
+    .la-card__slider-fixed {
+        width: max-content;
+        top: 9px;
+        bottom: auto;
+        left: 9px;
+    }
+    .la-card__options {
+        button:first-child {
+            width: 180px
+        }
+        button:last-child {
+            padding: 12px
+        }
+    }
+    @media (min-width: 1570px) {
+        width: 1326px;
+        .la-card__content {
+            margin-top: 30px
+        }
+        .la-tuning__box .la-card__slide {
+            height: 100%
+        }
+        .la-card__footer {
+            padding-top: 30px
+        }
+        .la-card__slider {
+            width: 252px
+        }
+        .la-tuning__box-text {
+            width: calc(100% - 252px);
+        }
+    }
+    @media (max-width:$laptop) {
+        width: 100%
+    }
+    @media (max-width: $tablet) {
+        width: 100%;
+        grid-gap: 10px 0;
+        .la-tuning__box {
+            flex-direction: row;
+        }
+        .la-tuning__box-text .la-card__header,
+        .la-tuning__box-text .la-card__content {
+            display: block
+        }
+        .la-card__header {
+            margin-bottom: 0;
+        }
+        .la-tuning__box .la-card__price {
+            order: 0;
+            padding: 0;
+            margin-bottom: 8px;
+            margin-top: 0
+        }
+        .la-tuning__box .la-card__title {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .la-card__content {
+            margin-top: 0;
+        }
+        .card-table tr td {
+            font-size: 12px;
+            color: #888888;
+            font-weight: 500;
+        }
+        .la-card__slider {
+            width: 100px;
+            height: 100px;
+            margin-right: 16px;
+            margin-top: 16px;
+            border-radius: 2px;
+            .la-card__slide.swiper-slide {
+                width: 100%;
+                height: 100%;
+                border-radius: 2px;
+            }
+        }
+        .la-tuning__box-text {
+            width: calc(100% - 132px);
+        }
+        .la-card__footer {
+            padding-top: 10px;
+            margin-top: 14px;
+            span:not(:last-child) {
+                margin-bottom: 2px;
+            }
+        }
+        .la-card__slider-fixed {
+            left: 0;
+            right: 0;
+            margin: auto;
+            bottom: 10px;
+            top: auto;
+        }
+    }
+    @media (max-width: $tablet-s) {
+        .la-tuning .la-card__price {
+            font-size: 16px
+        }
+    }
+}
+
+.ofr-content__tuning .list-ofr__card-row .la-card_big:not(.la-tuning) {
+    .la-card__slider {
+        width: 318px
+    }
+    .la-card__row-container {
+        padding: 16px 0
+    }
+    .la-card__price {
+        width: max-content;
+        padding: 4px 10px;
+    }
+    .la-card__footer {
+        margin-top: 8px
+    }
+    .la-tuning__box-text {
+        width: calc(100% - 318px);
+    }
+    .la-card__options {
+        padding-bottom: 0;
+    }
+    @media (min-width: 1570px) {
+        .la-card__content {
+            margin-top: 16px
+        }
+        .la-card__footer {
+            margin-top: 24px
+        }
+        .la-card__options {
+            padding-top: 16px
+        }
+        .la-card__price {
+            font-size: 24px
+        }
+    }
+    @media (max-width: $laptop-l) {
+        .la-card__title {
+            font-size: 18px
+        }
+    }
+    @media (max-width: $tablet) {
+        margin-bottom: 10px;
+        .la-tuning__box {
+            flex-direction: column;
+        }
+        .la-tuning__box-text {
+            width: 100%
+        }
+        .la-card__price {
+            margin-top: 0;
+            line-height: 20px;
+        }
+        .la-card__options {
+            display: flex;
+            button {
+                width: 124px
+            }
+        }
+        .la-card__slider {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 32px;
+            height: 200px;
+            margin-top: 10px;
+            .la-card__slide {
+                &:first-child {
+                    border-radius: var(--radius) 0 0 var(--radius);
+                }
+                &:last-child {
+                    border-radius: 0 var(--radius) var(--radius) 0;
+                }
+            }
+        }
+        .la-card__info-item {
+            font-size: 12px;
+            line-height: 15px;
+        }
+        .la-card__footer {
+            border-top: 0;
+            margin-top: 12px;
+            padding-top: 0;
+        }
+        .ma-card__label-paid {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+        .la-card__content {
+            margin-bottom: 0;
+        }
+        .la-card__title {
+            font-size: 16px
+        }
+        .la-card__options-btn {
+            height: 40px
+        }
+    }
+}
+
+.ofr-content__tuning .list-ofr__card-row .la-tuning:not(.la-tuning__viewed) {
+    .la-card__price {
+        width: max-content;
+        padding: 2px 8px;
+    }
+    @media (min-width: 1570px) {
+        .la-card__price {
+            padding: 4px 8px;
+        }
+        .la-card__footer {
+            padding-top: 23px
+        }
+    }
+    @media (max-width: $laptop-l) {
+        .la-card__content {
+            margin-top: 16px
+        }
+        .la-card__footer {
+            padding-top: 16px
+        }
+    }
+    @media (max-width: $tablet) {
+        .ma-card__label-paid {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+        .la-card__price {
+            margin: 0 0 8px 0;
+        }
+        .la-card__footer {
+            margin-top: 12px;
+            padding-top: 10px
+        }
+        .la-card__content {
+            margin-top: 0
+        }
+    }
+}
+
+.ofr-content__tuning .list-ofr__card-row .la-tuning {
+    @media (min-width: 1570px) {
+        .la-card__title {
+            font-size: 18px
+        }
+    }
+    @media (max-width: $laptop-l) {
+        .la-card__price {
+            font-size: 18px
+        }
+    }
+    @media (max-width: $tablet) {
+        .ma-card__pagination {
+            display: flex
+        }
+    }
+}

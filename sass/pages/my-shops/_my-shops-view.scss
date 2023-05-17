@@ -502,10 +502,10 @@
             width: 20px;
             height: 20px
         }
-        &.ad-available::before {
+        &.ofr-available::before {
             background: url(../img/icons/popup-icon-check.svg);
         }
-        &.ad-blocked::before {
+        &.ofr-blocked::before {
             background: url(../img/icons/popup-icon-blocked.svg);
         }
         &:not(:last-child) {

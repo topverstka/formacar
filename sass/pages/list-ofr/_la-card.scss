@@ -1,0 +1,678 @@
+@import '../../components/modals/_person';
+.la-card {
+    background-color: #fff;
+    border-radius: $radius;
+    overflow: hidden;
+    // height: max-content;
+	height: 100%;
+
+    &._hide-card {
+        display: none
+    }
+    @media (min-width: 1570px) {
+        .card-table tr {
+            line-height: 17px
+        }
+    }
+}
+
+// Большое объявление
+.la-card_big {
+    & .la-card__title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    & .la-card__price {
+        font-size: 24px;
+        padding: 4px 10px;
+    }
+    & .la-card__slide {
+        width: 334px;
+        height: 250px;
+        @media (max-width: 1570px) {
+            width: 266px;
+            height: 200px;
+        }
+        @media (max-width:$tablet) {
+            img {
+                object-fit: cover;
+            }
+        }
+        @media (max-width: $tablet-s) {
+            height: 102px;
+            margin-bottom: 8px;
+            width: 100%;
+            &:first-child {
+                border-radius: 0;
+            }
+        }
+    }
+    & .la-card__options {
+        display: flex;
+    }
+    @media (max-width: $laptop-l) {
+        .la-card__title {
+            font-size: 16px;
+            line-height: 20px;
+        }
+        .la-card__price {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: $tablet-s) {
+        & span.la-card__price {
+            font-size: 16px;
+            line-height: 20px;
+            padding: 2px 8px;
+        }
+    }
+}
+
+// Продвинутое объявление
+.la-card_paid {
+    & .la-card__price {
+        display: inline-block;
+        color: #fff;
+        background-color: #02BC4D;
+        border-radius: 3px;
+        padding: 4px 8px;
+    }
+}
+
+.la-card__wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    @media (max-width: $tablet-s) {
+        padding-top: 0;
+        position: relative;
+        padding-bottom: 8px;
+    }
+}
+
+.la-card__wrap {
+    &._active-row {
+        flex-direction: row;
+        padding-top: 0;
+        &>.la-card__header,
+        &>.la-card__content,
+        &>.la-card__footer,
+        &>.la-card__options {
+            display: none
+        }
+        .la-card__slider {
+            width: 200px;
+            min-height: 143px;
+            overflow: hidden;
+            margin-top: 0;
+            padding: 0
+        }
+        .la-card__slide {
+            height: 100%;
+            width: 100%;
+            img {
+                object-fit: cover;
+            }
+        }
+        .la-card__row-container {
+            width: calc(100% - 200px);
+            padding: 16px 0;
+            margin-left: 4px;
+            position: relative;
+            height: max-content;
+        }
+        .la-card__like {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+        }
+        .la-card__title {
+            br {
+                display: none
+            }
+        }
+        .la-card__price {
+            padding: 4px 10px;
+            font-size: 20px;
+        }
+        .la-card__content {
+            margin-bottom: 0;
+        }
+        .card-table {
+            display: flex
+        }
+        .la-card__footer {
+            border-top: 0;
+            padding-bottom: 0;
+        }
+        .la-card__info {
+            flex-direction: row-reverse;
+            font-size: 12px;
+        }
+        .la-card__options {
+            border-top: 0
+        }
+        .ma-card__label-paid {
+            position: absolute;
+            left: -41px;
+        }
+        .card-table tr td {
+            font-size: 12px
+        }
+        .card-table tbody:first-child {
+            margin-right: 50px
+        }
+        .la-card__info {
+            span {
+                font-size: 12px;
+            }
+            span:last-child {
+                margin-right: 50px;
+            }
+        }
+        .la-card__slider-fixed {
+            left: 10px
+        }
+        .ma-card__pagination {
+            bottom: 4px
+        }
+    }
+}
+
+.la-card:not(.la-card_big) {
+    .la-card__row-container {
+        padding: 10px 0;
+        &>.la-card__header.la-card__header-hide+.la-card__content {
+            margin-top: 26px
+        }
+        &>.la-card__header.la-card__header-hide+.la-card__content+.la-card__footer {
+            padding-top: 26px
+        }
+    }
+    .la-card__price {
+        padding: 2px 8px;
+        font-size: 18px
+    }
+    @media (max-width: $tablet-s) {
+        .la-card__price {
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+}
+
+.la-card_big ._active-row .la-card__slider {
+    width: 318px;
+    height: 221px;
+}
+
+.la-card_big ._active-row .la-card__row-container {
+    width: calc(100% - 318px);
+    padding-bottom: 0;
+    height: min-content;
+}
+
+.list-ofr__card-list:not(.list-ofr__card-row) .ma-card__pagination {
+    display: none
+}
+
+.list-ofr__card-row {
+    grid-template-columns: repeat(1, 1fr);
+    position: relative;
+    .la-card__options {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .la-card:not(.la-card_big) {
+        @media (min-width: 1441px) {
+            .la-card__content {
+                margin-top: 25px
+            }
+            .la-card__footer {
+                padding-top: 24px
+            }
+        }
+    }
+    @media (min-width: 1570px) {
+        &.list-ofr__card-auto .la-card:not(.la-card_big) .la-card__title {
+            font-size: 18px;
+        }
+        &.list-ofr__card-auto .la-card:not(.la-card_big) .la-card__row-container {
+            width: calc(100% - 263px);
+        }
+        &.list-ofr__card-auto .la-card:not(.la-card_big) .la-card__slider {
+            width: 259px
+        }
+        &.list-ofr__card-auto .la-card:not(.la-card_big) .la-card__price {
+            font-size: 20px
+        }
+        &.list-ofr__card-auto .la-card_big .la-card__price {
+            font-size: 24px
+        }
+    }
+    @media (max-width: $laptop-l) {
+        &.list-ofr__card-auto .la-card_big .la-card__title {
+            font-size: 18px
+        }
+    }
+    @media (max-width: $tablet) {
+        .la-card__header {
+            order: 0;
+            margin: 16px 16px 12px 16px;
+            padding: 0
+        }
+        .la-card_big .la-card__slider {
+            margin-left: 16px;
+            border-radius: 10px 0px 0px 10px;
+            .la-card__slide {
+                height: 200px;
+                width: 266px;
+                &:first-child {
+                    border-radius: var(--radius) 0 0 var(--radius);
+                }
+                &:last-child {
+                    border-radius: 0 var(--radius) var(--radius) 0;
+                }
+            }
+        }
+        .la-card:not(.la-card_big) .la-card__slider {
+            margin-left: 16px;
+            border-radius: 10px 0px 0px 10px;
+            .la-card__slide {
+                height: 150px;
+                width: 200px;
+                &:first-child {
+                    border-radius: var(--radius) 0 0 var(--radius);
+                }
+                &:last-child {
+                    border-radius: 0 var(--radius) var(--radius) 0;
+                }
+            }
+        }
+        .la-card__content .card-table tr td:nth-child(1) {
+            display: block;
+            margin-right: 20px
+        }
+        .la-card__content {
+            padding: 0 16px
+        }
+        .la-card__footer {
+            padding: 12px 0 0 0;
+            margin: 0 16px;
+            border-top: 1px solid var(--outline-l);
+            span {
+                font-size: 12px;
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        .la-card__options {
+            padding: 12px 0 0 0;
+            margin: 12px 16px 0 16px;
+            border-top: 1px solid var(--outline-l);
+            button {
+                &:first-child {
+                    color: transparent;
+                    position: relative;
+                    width: 124px;
+                    &::after {
+                        content: 'позвонить';
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        color: $text-accent;
+                        font-size: 12px;
+                        background: transparent
+                    }
+                }
+                &:last-child {
+                    width: 97px;
+                    color: $btn-primary-default;
+                    &::after {
+                        background: transparent
+                    }
+                }
+            }
+        }
+        .la-card__wrap {
+            padding-bottom: 12px;
+        }
+        &.list-ofr__card-auto .la-card_big .la-card__header h3.la-card__title {
+            font-size: 16px;
+            line-height: 17px;
+            br {
+                display: none
+            }
+        }
+        &.list-ofr__card-auto .la-card:not(.la-card_big) .la-card__header h3.la-card__title {
+            font-size: 14px;
+            br {
+                display: none
+            }
+        }
+        .la-card__header .ma-card__label-paid {
+            position: static;
+            margin-right: 2px;
+            width: 27px;
+            height: 27px
+        }
+    }
+    @media (max-width:$tablet-s) {
+        .la-card_big span.la-card__price {
+            font-size: 18px;
+            line-height: 22px;
+            padding: 4px 10px;
+            margin-top: 8px
+        }
+        .ma-card__pagination {
+            display: none
+        }
+        &.list-ofr__card-auto .la-card:not(.la-card_big) span.la-card__price {
+            margin-top: 8px;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .list-ofr__card-row .la-card__all-swiper-big .la-card__slider,
+    .list-ofr__card-row.list-ofr__card-auto .la-card__slider {
+        width: 100%;
+        padding-right: 32px;
+        border-radius: 2px;
+        padding-left: 0;
+        margin-left: 16px;
+    }
+}
+
+// Шапка карточки
+.la-card__header {
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    .ma-card__label-paid {
+        flex-shrink: 0;
+        position: static;
+        display: block
+    }
+
+    @media (max-width:$tablet-s) {
+        order: 1;
+        padding: 0 8px;
+
+        .ma-card__label-paid {
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            right: 0;
+            width: 25px;
+            height: 25px
+        }
+    }
+}
+
+.la-card__slider-fixed {
+    position: absolute;
+    top: 10px;
+    left: 26px;
+    z-index: 2;
+    background: #fff;
+    border-radius: 5px;
+    opacity: .8;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+    color: $text-primary;
+    @media (max-width: $tablet-s) {
+        display: none
+    }
+}
+
+.la-card__title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    @media (min-width: 1570px) {
+        line-height: 20px;
+    }
+    @media (max-width: $laptop-l) {
+        line-height: 20px;
+    }
+    @media (max-width: $tablet-s) {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media (max-width: $tablet-s) {
+    .la-card__header h3.la-card__title {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+.la-card__price {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 8px;
+    line-height: 20px;
+    @media (max-width: $tablet-s) {
+        margin-top: 4px
+    }
+}
+
+// Слайдер
+.la-card__slider {
+    width: 100%;
+    padding: 0 16px;
+    margin-top: 12px;
+    position: relative;
+    @media (max-width: $tablet-s) {
+        order: 0;
+        padding: 0;
+        margin-top: 0
+    }
+}
+
+.swiper-wrapper {}
+
+.swiper-slide {}
+
+.la-card__slide {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    &:first-child {
+        border-radius: $radius 0 0 $radius;
+    }
+    &:last-child {
+        border-radius: 0 $radius $radius 0;
+    }
+    @media (max-width: $tablet-s) {
+        height: 102px;
+        width: 100%;
+        margin-bottom: 8px;
+        &:first-child {
+            border-radius: 0;
+        }
+        img {
+            object-fit: cover;
+        }
+    }
+}
+
+.swiper-pagination {}
+
+// Контентная часть
+.la-card__content {
+    margin: 12px 0;
+    padding: 0 16px;
+    @media (max-width: $tablet-s) {
+        order: 2;
+        margin: 8px 0;
+        padding: 0 8px;
+        .card-table tr td:nth-child(1) {
+            // display: block;
+            // margin-right: 20px;
+            // line-height: 15px;
+            display: none
+        }
+        .card-table td {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+// Подвал
+.la-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $outline-l;
+    padding: 12px 0;
+    margin: auto 16px 0 16px;
+    @media (max-width: $tablet-s) {
+        order: 3;
+        border-top: 0;
+        padding: 0 8px;
+        margin: 0;
+        span {
+            font-size: 10px;
+            line-height: 12px
+        }
+    }
+}
+
+.la-card__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.la-card__info-item {
+    font-size: 14px;
+    font-weight: 400;
+    color: $text-second-d;
+    &:not(:last-child) {
+        margin-bottom: 2px;
+    }
+    @media (max-width: $laptop-l) {
+        font-size: 12px;
+        line-height: 17px;
+    }
+}
+
+.la-card__location {}
+
+.la-card__date {}
+
+.la-card__like {
+    margin-right: 5px;
+}
+
+// Доп. опции для большой карточки
+.la-card__options {
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    border-top: 1px solid $outline-l;
+    padding: 12px 16px;
+    gap: 8px 12px;
+
+    @media (max-width: $tablet-s) {
+        order: 4;
+        margin: 16px 0 0 0;
+        padding: 0 8px;
+        border-top: 0;
+    }
+}
+
+.la-card__options-btn {
+    flex-grow: 1;
+    width: fit-content;
+    font-size: 12px;
+    height: 40px;
+    padding: 0 12px;
+
+    &:first-child {
+        width: 192px;
+    }
+    &:not(:last-child) {
+        // margin-right: 10px;
+    }
+    @media (max-width:$laptop-m) {
+        // padding: 0 4px
+    }
+    @media (max-width:$tablet-s) {
+        height: 44px;
+        &:first-child {
+            color: transparent;
+            position: relative;
+            width: 58px;
+            &::after {
+                content: '';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: url(../img/icons/phone_mobile.svg) center center no-repeat;
+            }
+        }
+        &:last-child {
+            width: 58px;
+            position: relative;
+            color: transparent;
+            &::after {
+                content: '';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: url(../img/icons/message_mobile.svg) center center no-repeat;
+            }
+        }
+    }
+}
+
+.la-card__header-hide.la-card__header-hide {
+    .ma-card__label-paid {
+        display: none
+    }
+    span.la-card__price {
+        background: transparent;
+        color: $text-primary;
+        padding: 0;
+    }
+}
+
+.list-ofr__pagin {
+    @media (max-width: $tablet-s) {
+        display: none
+    }
+}
+
+.la-card_big:not(._hide-card)[data-views-section=row] {
+    display: block;
+}
+
+// .la-card_big:not(._hide-card)[data-views-section=box] {
+//     display: none;
+// }

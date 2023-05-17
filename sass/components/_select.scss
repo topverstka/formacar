@@ -45,11 +45,26 @@
     cursor: pointer;
 }
 
+.select-input__title-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 30px 0 12px;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
 .select-input__title {
     font-size: 14px;
     font-weight: 400;
     color: $input-placeholder;
-    pointer-events: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .select-input__chevron {
@@ -68,6 +83,7 @@
 
 .select-dropdown,
 .select-city-dropdown {
+	max-height: 300px;
     width: 100%;
     position: absolute;
     z-index: 1;
@@ -77,11 +93,13 @@
     border-radius: 10px;
     box-shadow: $card-shadow;
     background: #fff;
-    overflow: hidden;
+    // overflow: hidden;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: $tr;
+	overflow: auto;
+
     @media (max-width: $tablet-s) {
         width: max-content
     }
@@ -238,6 +256,7 @@
 
 .select-dropdown__checkbox-input:checked+label {
     background: $text-primary;
+
     &:before {
         content: '';
         background: url("data:image/svg+xml,%3Csvg width='8' height='7' viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.03854 0.929263C6.39259 0.462043 7.07178 0.360491 7.55554 0.702441C8.0393 1.04439 8.14445 1.70035 7.79039 2.16757L4.43119 6.60046C4.06878 7.0787 3.36974 7.13233 2.93862 6.71496L0.317012 4.17696C-0.106383 3.76707 -0.105565 3.1033 0.318838 2.69438C0.743241 2.28546 1.43052 2.28625 1.85391 2.69614L3.49539 4.28526L6.03854 0.929263Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat;
@@ -254,10 +273,11 @@
     color: $text-primary;
 }
 
-.list-ad__form-section-checkbox .select-input__title {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+.list-ofr__form-section-checkbox .select-input__title {
+    // text-overflow: ellipsis;
+    // overflow: hidden;
+    // white-space: nowrap;
+
     &._active_drop {
         font-weight: 500;
         font-size: 12px;
@@ -277,7 +297,7 @@
     cursor: pointer;
 }
 
-.list-ad__form-section-line-view {
+.list-ofr__form-section-line-view {
     .na-row__block.select-dropdown {
         padding-left: 0;
         padding-right: 0

@@ -1,0 +1,35 @@
+.ofr-content {
+    // width: 100%;
+    // min-width: 1100px;
+    // margin-right: 280px;
+    width: calc(100% - 430px);
+
+
+
+    @media (max-width: 1570px) {
+        width: calc(100% - 330px);
+        // min-width: auto;
+    }
+
+    @media (max-width: $laptop-m) {
+        width: 100%;
+    }
+}
+
+@import './_ofr-filter';
+.list-ofr__card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 70px;
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $tablet-s) {
+        margin-top: 11px;
+        grid-gap: 30px 10px
+    }
+}
+
+@import './_la-card';
+@import './_la-card__tuning';

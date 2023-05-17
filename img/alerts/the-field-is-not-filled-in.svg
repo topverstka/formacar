@@ -1,0 +1,20 @@
+<svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="16" y="28.8221" width="68.4543" height="92.7446" rx="6" transform="rotate(-20.365 16 28.8221)" fill="#BDB3FB"/>
+<rect x="29.5429" y="36.7493" width="48.5805" height="3.31231" rx="1.65615" transform="rotate(-20.365 29.5429 36.7493)" fill="#F8F9FB"/>
+<rect x="38.764" y="61.5914" width="48.5805" height="3.31231" rx="1.65615" transform="rotate(-20.365 38.764 61.5914)" fill="#F8F9FB"/>
+<rect x="48.3772" y="86.6603" width="48.5805" height="3.31231" rx="1.65615" transform="rotate(-20.365 48.3772 86.6603)" fill="#F8F9FB"/>
+<rect x="34.1541" y="49.1717" width="48.5805" height="3.31231" rx="1.65615" transform="rotate(-20.365 34.1541 49.1717)" fill="#F8F9FB"/>
+<rect x="43.3751" y="74.0112" width="48.5805" height="3.31231" rx="1.65615" transform="rotate(-20.365 43.3751 74.0112)" fill="#F8F9FB"/>
+<rect x="101.444" y="13.0999" width="80.2961" height="108.788" rx="6" transform="rotate(10 101.444 13.0999)" fill="#DBE7F8"/>
+<rect x="110.449" y="29.1549" width="56.9843" height="3.88529" rx="1.94265" transform="rotate(10 110.449 29.1549)" fill="white"/>
+<rect x="105.053" y="59.764" width="56.9843" height="3.88529" rx="1.94265" transform="rotate(10 105.053 59.764)" fill="white"/>
+<rect x="96.956" y="105.678" width="56.9843" height="3.88529" rx="1.94265" transform="rotate(10 96.956 105.678)" fill="white"/>
+<rect x="107.751" y="44.4594" width="56.9843" height="3.88529" rx="1.94265" transform="rotate(10 107.751 44.4594)" fill="white"/>
+<rect x="99.6557" y="90.3756" width="56.9843" height="3.88529" rx="1.94265" transform="rotate(10 99.6557 90.3756)" fill="white"/>
+<rect x="102.354" y="75.0685" width="56.9843" height="3.88529" rx="1.94265" transform="rotate(10 102.354 75.0685)" fill="white"/>
+<path d="M172.796 71.8085C162.591 74.4085 155.072 83.33 155.072 93.9361C155.072 101.707 159.108 108.573 165.28 112.712L172.796 71.8085Z" fill="#C6D8EF" fill-opacity="0.5"/>
+<path d="M80.7639 103.849L89.6263 31.5863L95.7618 47.2659L85.536 101.804L80.7639 103.849Z" fill="#B2A7F0"/>
+<path d="M181.065 116.932C192.256 116.932 201.327 107.86 201.327 96.6694C201.327 85.4787 192.256 76.4069 181.065 76.4069C169.874 76.4069 160.802 85.4787 160.802 96.6694C160.802 107.86 169.874 116.932 181.065 116.932Z" fill="#F2243D"/>
+<rect x="189.1" y="85.199" width="5" height="27" transform="rotate(45 189.1 85.199)" fill="white"/>
+<rect x="192.636" y="104.291" width="5" height="27" transform="rotate(135 192.636 104.291)" fill="white"/>
+</svg>
