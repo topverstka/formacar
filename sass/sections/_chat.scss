@@ -14,6 +14,7 @@
 }
 
 .chat-wrap {
+	height: 650px;
 	display: flex;
 	justify-content: center;
 	border-radius: 10px;
@@ -73,11 +74,13 @@
 	background-color: #fff;
 	border-right: 1px solid #ECECEC;
 	display: none;
+	flex-direction: column;
 
 	@media (min-width: $laptop) {
 
 		&.is-show {
-			display: initial;
+			// display: initial;
+			display: flex;
 		}
 	}
 
@@ -90,6 +93,7 @@
 }
 
 .chat-sidebar__header {
+	flex-shrink: 0;
 	height: 60px;
 	display: flex;
 	align-items: center;
@@ -141,7 +145,19 @@
 }
 
 .chat-sidebar__content {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	overflow: auto;
+}
 
+.chat-sidebar__content-list {
+	overflow: auto;
+	flex-grow: 1;
+	max-height: 100%;
+	display: flex;
+	flex-direction: column;
+	@include scrollbar();
 }
 
 .chat-sidebar__content-title {
@@ -277,9 +293,10 @@
 }
 
 .chat-info {
+	height: 60px;
 	display: flex;
 	align-items: center;
-	padding: 6px var(--chat-indent);
+	padding: 0 var(--chat-indent);
 	gap: 16px;
 	background-color: #fff;
 
@@ -307,7 +324,7 @@
 }
 
 .chat-user__avatar {
-	width: 60px;
+	width: 48px;
 	aspect-ratio: 1/1;
 	border-radius: 50%;
 	overflow: hidden;
@@ -497,10 +514,25 @@
 
 // Контент чата
 .chat-content {
-	max-height: 500px;
+	// max-height: 500px;
 	overflow: auto;
 	// overscroll-behavior: contain;
 	// height: 200px;
+
+	@include scrollbar();
+
+	// &::-webkit-scrollbar {
+	// 		width: 6px;
+	// 		height: 100%;
+	// }
+
+  // &::-webkit-scrollbar-track {
+  //     background: #cecece;
+  // }
+
+  // &::-webkit-scrollbar-thumb {
+  //     background-color: #cecece;
+  // }
 }
 
 .chat-content__wrap {

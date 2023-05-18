@@ -2798,10 +2798,17 @@ if (snacks.length) {
 }
 
 
+/**
+ * ===================
+ * Чат
+ * ===================
+ */
 // Функционал чата (смена окон "Создать диалог" и "Список чатов")
-const chatWrap = document.querySelector('.chat-wrap')
+swapSidebarChat()
+function swapSidebarChat() {
+  const chatWrap = document.querySelector('.chat-wrap')
+  if (!chatWrap) return
 
-if (chatWrap) {
   const btnSearch = chatWrap.querySelector('.chat-sidebar__search-icon')
   const btnNewDialog = chatWrap.querySelector('.chat-sidebar__new-dialog')
   const sidebarChatList = chatWrap.querySelector('[data-sidebar=chat-list]')
@@ -2816,4 +2823,36 @@ if (chatWrap) {
     sidebarChatList.classList.remove('is-show')
     sidebarNewDialog.classList.add('is-show')
   })
+}
+
+// Фиксация поля ввода
+fixToolsChat()
+function fixToolsChat() {
+  const chatWrap = document.querySelector('.chat-wrap')
+  if (!chatWrap) return
+
+  const chat = chatWrap.querySelector('.chat')
+  const chatContent = chat.querySelector('.chat-content')
+  const tools = chatWrap.querySelector('.chat-tools')
+  const fix = () => {
+    const windowHeight = window.innerHeight
+    const chatRect = chat.getBoundingClientRect()
+    const chatIndentWindowBottom = chatRect.y + chatRect.height - windowHeight
+
+    if (chatIndentWindowBottom < 0) {
+      chatContent.style.marginBottom = null
+      tools.style.width = null
+      tools.style.position = 'static'
+      tools.style.bottom = null
+    } else {
+      chatContent.style.marginBottom = tools.clientHeight + chatIndentWindowBottom + 'px'
+      tools.style.width = chat.clientWidth + 'px'
+      tools.style.position = 'fixed'
+      tools.style.bottom = 0
+    }
+  }
+
+  fix()
+  window.addEventListener('scroll', fix)
+
 }

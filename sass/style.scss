@@ -15,6 +15,22 @@
 	}
 }
 
+// Скроллбар
+@mixin scrollbar($width: 6px, $height: 100%, $thumb: #cecece, $track: transparent) {
+  &::-webkit-scrollbar {
+      width: $width;
+      height: $height;
+  }
+
+  &::-webkit-scrollbar-track {
+      background: $track;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: $thumb;
+  }
+}
+
 // Общие стили для страниц
 // Стиль выделения элементов на странице
 // ::selection {
