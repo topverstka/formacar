@@ -463,6 +463,10 @@
 	gap: 16px;
 	padding: 10px var(--chat-indent);
 	background-color: #EEF1F9;
+
+	@media (max-width: $mobile-l) {
+		gap: 12px;
+	}
 }
 
 .chat-offer-info {
@@ -515,7 +519,8 @@
 // Контент чата
 .chat-content {
 	// max-height: 500px;
-	overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 	// overscroll-behavior: contain;
 	// height: 200px;
 

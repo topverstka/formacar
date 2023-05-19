@@ -2791,8 +2791,11 @@ const snacks = [...document.querySelectorAll(".snack")];
 if (snacks.length) {
   snacks.forEach((snack) => {
     const close = snack.querySelector(".snack__close");
+    const eventResize = new Event("resize")
+
     close.addEventListener("click", () => {
       snack.classList.remove("_show");
+      window.dispatchEvent(eventResize)
     });
   });
 }
@@ -2834,18 +2837,36 @@ function fixToolsChat() {
   const chat = chatWrap.querySelector('.chat')
   const chatContent = chat.querySelector('.chat-content')
   const tools = chatWrap.querySelector('.chat-tools')
+  const sidebarContentAll = chatWrap.querySelectorAll('.chat-sidebar__content')
+
   const fix = () => {
     const windowHeight = window.innerHeight
     const chatRect = chat.getBoundingClientRect()
-    const chatIndentWindowBottom = chatRect.y + chatRect.height - windowHeight
+    const windowIndentBottom = chatRect.y + chatRect.height - windowHeight
 
-    if (chatIndentWindowBottom < 0) {
-      chatContent.style.marginBottom = null
+    if (windowIndentBottom < 0) {
+      if (sidebarContentAll.length !== 0) {
+        sidebarContentAll.forEach(sidebarContent => {
+          sidebarContent.style.marginBottom = null
+        })
+      }
+      if (chatContent) {
+        chatContent.style.marginBottom = null
+      }
+
       tools.style.width = null
       tools.style.position = 'static'
       tools.style.bottom = null
     } else {
-      chatContent.style.marginBottom = tools.clientHeight + chatIndentWindowBottom + 'px'
+      if (sidebarContentAll.length !== 0) {
+        sidebarContentAll.forEach(sidebarContent => {
+          sidebarContent.style.marginBottom = windowIndentBottom + 'px'
+        })
+      }
+      if (chatContent) {
+        chatContent.style.marginBottom = tools.clientHeight + windowIndentBottom + 'px'
+      }
+
       tools.style.width = chat.clientWidth + 'px'
       tools.style.position = 'fixed'
       tools.style.bottom = 0
@@ -2854,5 +2875,5 @@ function fixToolsChat() {
 
   fix()
   window.addEventListener('scroll', fix)
-
+  window.addEventListener('resize', fix)
 }
