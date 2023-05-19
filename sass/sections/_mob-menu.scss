@@ -1,4 +1,6 @@
 .mob-menu {
+    background-color: #fff;
+
     @media (min-width: 921px) {
         display: none;
     }
@@ -22,6 +24,7 @@
 .mob-menu__header {
     position: relative;
     z-index: 1;
+
     &._search {
         & .mob-menu__cancel-search {
             display: block;
