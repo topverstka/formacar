@@ -1,0 +1,96 @@
+.my-shops-view-buyer .ma-tab__body {
+   margin-top: 0;
+}
+
+.ma-card__favorite svg {
+   width: 22.5px;
+   height: 19px;
+   position: absolute;
+   right: 23px;
+   top: 15px;
+   cursor: pointer;
+}
+
+.ma-card__block-buy .ma-card__content {
+   justify-content: space-between;
+}
+
+.ma-card__block-buy .ma-card__content-header {
+   margin-bottom: auto;
+}
+
+.ma-card__block-buy .ma-card__content-body {
+   margin: 12px 0;
+   height: 100%;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+}
+
+.ma-card__block-hit .ma-card__slider {
+   min-width: 310px;
+}
+
+.ma-card__block-hit .ma-card__title {
+   font-size: 18px;
+}
+
+.ma-card__block-hit .ma-card__price-hit {
+   font-size: 24px;
+}
+
+.ma-card__viewed {
+   color: #383838;
+   font-size: 11px;
+   width: 100px;
+   height: 24px;
+   border-radius: 5px;
+   background-color: #fff;
+   opacity: .8;
+   position: absolute;
+   left: 0;
+   top: 0;
+   z-index: 2;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   left: 9px;
+   top: 9px;
+}
+
+.ma-card__price-hit {
+   background-color: #02BC4D;
+   border-radius: 3px;
+   color: #fff;
+   padding: 3px 10px;
+}
+
+.ma-card__hit {
+   top: 5px;
+   right: 10px;
+   position: absolute;
+   z-index: 2;
+}
+
+.ma-card__hit img {
+   width: 24px;
+   height: 28px;
+}
+
+.ma-card__block-hit .ma-card__favorite svg {
+   width: 28px;
+   height: 24px;
+}
+
+.ma-card__btns {
+   display: flex;
+   gap: 10px;
+   margin-top: 16px;
+}
+
+.ma-card__btn {
+   height: 40px;
+   width: auto;
+   padding: 0 20px;
+   font-size: 12px;
+}

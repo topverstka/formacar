@@ -202,6 +202,14 @@
                 <td>Магазин просмотр (пустой)</td>
                 <td>my-shops-view-empty.html</td>
             </tr>
+            <tr>
+                <td>Магазин просмотр покупатель</td>
+                <td>my-shops-view-buyer.html</td>
+            </tr>
+            <tr>
+                <td>Магазин просмотр покупатель (пустой)</td>
+                <td>my-shops-view-buyer-empty.html</td>
+            </tr>
         </table>
 
         <h2>Новые модалки</h2>
@@ -276,7 +284,7 @@
             const tr = trElems[i];
             const trTitle = tr.querySelectorAll('td')[0]
             const trLink = tr.querySelectorAll('td')[1]
-                // const url = 'https://topverstka.github.io/enrollee/catalog/' + trLink.innerText
+            // const url = 'https://topverstka.github.io/enrollee/catalog/' + trLink.innerText
             const url = trLink.innerText
 
             trTitle.setAttribute('title', trTitle.innerText)
