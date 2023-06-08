@@ -2,13 +2,13 @@
    margin-top: 0;
 }
 
-.ma-card__favorite svg {
+.ma-card__block-buy .like {
    width: 22.5px;
    height: 19px;
-   position: absolute;
-   right: 23px;
-   top: 15px;
-   cursor: pointer;
+}
+
+.ma-card__block-buy .like:hover svg path{
+   stroke: var(--icon-blue-l);
 }
 
 .ma-card__block-buy .ma-card__content {
@@ -77,7 +77,7 @@
    height: 28px;
 }
 
-.ma-card__block-hit .ma-card__favorite svg {
+.ma-card__block-hit .like {
    width: 28px;
    height: 24px;
 }
