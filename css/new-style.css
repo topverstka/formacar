@@ -7,7 +7,7 @@
    height: 19px;
 }
 
-.ma-card__block-buy .like:hover svg path{
+.ma-card__block-buy .like:hover svg path {
    stroke: var(--icon-blue-l);
 }
 
@@ -27,6 +27,18 @@
    flex-direction: column;
 }
 
+.ma-card__block-buy .ma-card__slider {
+   min-width: 260px;
+}
+
+.mine-ad__favorites .ma-card {
+   height: 180px;
+}
+
+.ma-card__block-hit {
+   height: auto !important;
+}
+
 .ma-card__block-hit .ma-card__slider {
    min-width: 310px;
 }
@@ -37,6 +49,10 @@
 
 .ma-card__block-hit .ma-card__price-hit {
    font-size: 24px;
+}
+
+.ma-card__block-buy .like {
+   right: 10px;
 }
 
 .ma-card__viewed {
@@ -93,4 +109,34 @@
    width: auto;
    padding: 0 20px;
    font-size: 12px;
+}
+
+
+@media screen and (max-width: 768px) {
+   .mine-ad__favorites .ma-card {
+      height: auto;
+   }
+
+   .ma-card__block-buy .ma-card__slider {
+      min-width: 100%;
+   }
+
+   .ma-card__btns {
+      display: none;
+   }
+
+   .ma-card__block-buy .like {
+      right: 0;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .ma-card__block-hit .ma-card__price-hit {
+      font-size: 18px;
+   }
+
+   .ma-card__block-hit .ma-card__title {
+      font-size: 16px;
+   }
+
 }
