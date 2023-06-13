@@ -128,6 +128,10 @@
    .ma-card__block-buy .like {
       right: 0;
    }
+
+   .my-shops-view__right-col .my-shop-view__right-empty-text-two {
+      font-size: 14px;
+   }
 }
 
 @media screen and (max-width: 500px) {
