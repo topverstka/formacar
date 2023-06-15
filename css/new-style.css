@@ -135,12 +135,14 @@
 }
 
 @media screen and (max-width: 500px) {
-   .ma-card__block-hit .ma-card__price-hit {
-      font-size: 18px;
+   .ma-card__block-hit .ma-card__price-hit, .ma-card__block-hit .ma-card__title {
+      font-size: 12px;
    }
 
-   .ma-card__block-hit .ma-card__title {
-      font-size: 16px;
-   }
+}
 
+@media screen and (max-width: 425px) {
+   .ma-card__block-buy .ma-card__pagination {
+      display: flex;
+   }
 }
