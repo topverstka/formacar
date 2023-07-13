@@ -11,7 +11,7 @@ function findAll(selectors) {
   return document.querySelectorAll(selectors);
 }
 
-// Удаляет у всех элементов items класс itemClass
+// Удаляет у всех элементов items класс itemClass 
 function removeAll(items, itemClass) {
   if (typeof items == "string") {
     items = document.querySelectorAll(items);
@@ -1588,7 +1588,7 @@ function loadCheckedFromLocalStorage() {
     const nameR = regionsArr[i];
     const checkbox = find(`[data-space="region"][value="${nameR}"]`);
 
-	checkbox.checked = true;
+    checkbox.checked = true;
   }
 
   selectedCountry();
@@ -1815,7 +1815,7 @@ function naSidebar() {
 // Активация пунктов сайдбара, если блоки не пустые
 activeItemSidebar();
 
-function activeItemSidebar() {}
+function activeItemSidebar() { }
 
 // Создание текстового поля у селекта для дальнейшего его прослушивания
 selectCreateInput();
