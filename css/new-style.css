@@ -199,6 +199,15 @@
    display: flex;
 }
 
+.menu__right {
+   max-height: 100%;
+}
+
+.menu__right-child {
+   display: flex;
+   flex-wrap: wrap;
+}
+
 @media (max-width: 920px) {
    .mine-ofr-view__personal-information::before {
       content: none;
