@@ -147,11 +147,11 @@
    background-color: #E21932;
 }
 
-/* Статус отклонено */
-.mine-ofr-view-status__red {
-   background-color: #E21932;
+/* Статус черновик */
+.mine-ofr-view-status__draft {
+   background-color: #EEF1F9;
+   color: #888888;
 }
-
 
 .select-dropdown,
 .select-city-dropdown {
@@ -206,6 +206,11 @@
 .menu__right-child {
    display: flex;
    flex-wrap: wrap;
+}
+
+.mine-ofr-view__primary {
+   background-color: var(--btn-primary-default);
+   color: #fff;
 }
 
 @media (max-width: 920px) {
