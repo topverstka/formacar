@@ -368,7 +368,18 @@
 .header-nav__list {
     display: flex;
     align-items: center;
+    overflow-x: auto;
 }
+
+
+.header-nav__list::-webkit-scrollbar {
+    height: 3px;
+}
+
+.header-nav__list::-webkit-scrollbar-thumb {
+    background: $outline-d;
+}
+
 
 .header-nav__item {
     &:not(:last-child) {
