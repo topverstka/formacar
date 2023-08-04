@@ -408,6 +408,10 @@
     }
 }
 
+.header-nav__link--active {
+   color: var(--text-accent: #467EF3);
+}
+
 // Местоположение
 .location {
     position: relative;
