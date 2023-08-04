@@ -71,6 +71,32 @@
     }
 }
 
+.s-shops__slider:not(.s-shops__slider--moved) .shop-card {
+    max-width: 100%;
+    margin-right: 24px;
+
+    @media (min-width: $mobile-l) {
+        max-width: 49%;
+    }
+
+    @media (min-width: $tablet) {
+        // max-width: 32.2%;
+        max-width: 31%;
+    }
+
+    @media (min-width: $laptop + 1) {
+        max-width: 23.4%;
+    }
+
+    @media (min-width: $laptop-l + 1) {
+        max-width: 23.7%;
+    }
+
+    @media (min-width: $desktop-s) {
+        max-width: 23.9%;
+    }
+}
+
 .shop-card__wrap {
 
 }

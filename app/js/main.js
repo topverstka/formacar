@@ -450,6 +450,12 @@ const sliderRecent = new Swiper(".s-recent__slider", {
     prevEl: ".s-recent__arrow-prev",
   },
 });
+sliderRecent.on('slideChange', function() {
+  const MOVED_CLASS = 's-recent__slider--moved';
+  if (!this.el.classList.contains(MOVED_CLASS)) {
+    this.el.classList.add(MOVED_CLASS)
+  }
+})
 
 // Адаптивная ширина слайдера
 //if (window.innerWidth <= 768) adaptiveWidthSliderMACard()
@@ -729,6 +735,12 @@ const sliderNews = new Swiper(".s-news__slider", {
     prevEl: ".s-news__arrow-prev",
   },
 });
+sliderNews.on('slideChange', function() {
+  const MOVED_CLASS = 's-news__slider--moved';
+  if (!this.el.classList.contains(MOVED_CLASS)) {
+    this.el.classList.add(MOVED_CLASS)
+  }
+})
 
 const sliderShops = new Swiper(".s-shops__slider", {
   spaceBetween: 24,
@@ -756,6 +768,12 @@ const sliderShops = new Swiper(".s-shops__slider", {
     prevEl: ".s-shops__arrow-prev",
   },
 });
+sliderShops.on('slideChange', function() {
+  const MOVED_CLASS = 's-shops__slider--moved';
+  if (!this.el.classList.contains(MOVED_CLASS)) {
+    this.el.classList.add(MOVED_CLASS)
+  }
+})
 
 // Функции для модальных окон
 // Открытие модальных окон при клике по кнопке

@@ -74,6 +74,20 @@
   }
 }
 
+.s-recent__slider:not(.s-recent__slider--moved) .recent-card {
+    max-width: 47.7%;
+    margin-right: 12px;
+
+    @media (min-width: $tablet) {
+        max-width: 31%;
+        margin-right: 24px;
+    }
+
+    @media (min-width: $laptop-l) {
+        max-width: 23.4%;
+    }
+}
+
 .recent-card__wrap {
   display: flex;
   flex-direction: column;
