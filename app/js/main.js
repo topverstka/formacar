@@ -613,7 +613,7 @@ function changeGrid(button) {
   }
 
   find(".ma-tab__preload").classList.remove("_show");
-  // findAll(".la-card").forEach((card) => card.classList.remove("_hide-card"));
+  findAll(".la-card").forEach((card) => card.classList.remove("_hide-card"));
   openModalWhenClickingOnBtn();
 }
 

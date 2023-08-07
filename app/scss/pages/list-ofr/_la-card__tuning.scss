@@ -231,9 +231,9 @@
 .la-tuning__viewed {
     .la-card__slider-fixed {
         left: 0;
-        width: 100%;
-        bottom: 12px;
-        top: auto;
+        width: auto;
+        bottom: unset;
+        top: 10px;
     }
     .ma-card__label-paid {
         display: none
