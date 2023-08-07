@@ -298,19 +298,35 @@
         .modal__popup {
             background: transparent;
             padding: 0;
-            width: 320px;
+            // width: 320px;
+            width: 100%;
         }
         .modal-show-rate__content-list {
             display: none
         }
         .modal-show-rate__content {
-            overflow-y: scroll;
-            padding-top: 20px;
+            // overflow-y: scroll;
+
+            width: auto;
+            overflow-x: auto;
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 20px;
+            padding-right: 70px;
         }
         .modal-show-rate__content-info {
+            padding-top: 35px;
             width: max-content;
+            align-items: flex-start;
             flex-direction: row-reverse;
             margin-left: 0
+        }
+        .modal-auth__close.modal__close {
+            right: 20px;
+            top: -20px;
+        }
+        .modal__close-text {
+            opacity: 0;
         }
         .modal-show-rate__content-info-item {
             width: 268px;
@@ -340,6 +356,17 @@
             top: -13px
         }
     }
+    @media (max-width: $mobile-l) {
+        .modal-show-rate__content {
+            padding-right: 40px;
+        }
+    }
+    @media (max-width: $mobile) {
+        .modal-show-rate__content {
+            padding-right: 50px;
+        }
+    }
+
 }
 
 .modal-show-rate__content-list-title {
@@ -512,6 +539,17 @@
             margin-bottom: 15px;
         }
     }
+    @media (max-width: $tablet) {
+        margin-top: 15px;
+        li {
+            line-height: 1.1;
+        }
+    }
+}
+.modal-show-rate__content-info-list li:not(:last-child) {
+    @media (max-width: $tablet) {
+        margin-bottom: 12px;
+    }
 }
 
 .modal-show-rate__content-info-item {
@@ -618,6 +656,12 @@
         padding: 20px;
         .modal-show-rate__content-item-btn {
             display: block
+        }
+    }
+    @media (max-width: $mobile-l) {
+        padding-top: 14px;
+        .modal-show-rate__content-item-btn {
+            margin-top: 10px;
         }
     }
 }
