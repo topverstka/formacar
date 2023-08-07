@@ -382,6 +382,21 @@
     }
 }
 
+.la-card .la-card__slider {
+    @media (max-width: $mobile-l) {
+        margin-left: 0;
+    }
+}
+
+.la-card .la-card__row-container {
+    width: 90%;
+}
+
+.la-card__wrap._active-row .la-card__like {
+    right: -10px;
+    top: unset;
+}
+
 @media (max-width: $tablet) {
     .list-ofr__card-row .la-card__all-swiper-big .la-card__slider,
     .list-ofr__card-row.list-ofr__card-auto .la-card__slider {
