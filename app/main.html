@@ -3284,6 +3284,85 @@
         </div>
     </div>
 
+    <div class="modal modal-info modal-feedback" id="feedback">
+        <div class="modal__wrap modal-auth__wrap">
+            <div class="modal__popup">
+                <div class="modal-auth__popup-wrap">
+                    <div class="modal-auth__headerr">
+                        <h2 class="modal-auth__title">Обратная связь</h2>
+                        <p class="modal-info__text">Заполните форму ниже или отправьте электронное письмо на адрес <a class="modal-info__link" href="mailto:support@formacar.com">support@formacar.com</a></p>
+                    </div>
+                    <div class="modal-auth__body">
+                        <form action="#" class="sign-up__form" data-form-valid="submit-disabled">
+                            <div class="textfield clear-by-cross">
+                                <input type="email" name="email" id="feedback-email" />
+                                <label for="feedback-email">Ваш адрес электронной почты</label>
+                            </div>
+                            <div class="textfield clear-by-cross">
+                                <input type="text" name="subject" id="feedback-subject" />
+                                <label for="feedback-subject">Тема обращения</label>
+                            </div>
+
+                            <div class="textfield clear-by-cross">
+                                <textarea name="feedback_message" class="placeholder" id="na-descr-inp" data-resize-height></textarea>
+                                <label for="na-descr-inp">Введите текст</label>
+                            </div>
+
+                            <div class="modal-info__row">
+                                <button class="btn btn_second">Отмена</button>
+                                <button type="submit" class="btn btn_primary sign-up__submit" disabled>Отправить письмо</button>
+                            </div>
+                                
+
+                            <p class="modal-auth__label">
+                                Нажимая на кнопку «ОТПРАВИТЬ» или используя адрес <br>
+                                обратной связи support@formacar.com, <br>
+                                я даю <a href="" class="link">согласие на обработку персональных данных.</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <button class="modal__close modal-auth__close">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z"
+                        fill="#F6F8FD" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M20.6255 9.62558C20.153 9.1531 19.3869 9.15317 18.9144 9.62572L14.9234 13.6167L11.0088 9.70209C10.5363 9.22962 9.77024 9.22968 9.29769 9.70224C8.82513 10.1748 8.82507 10.9409 9.29755 11.4134L13.2121 15.328L9.22117 19.3189C8.74861 19.7915 8.74855 20.5576 9.22103 21.0301C9.69351 21.5025 10.4596 21.5025 10.9322 21.0299L14.9231 17.039L18.8377 20.9535C19.3102 21.426 20.0763 21.426 20.5488 20.9534C21.0214 20.4808 21.0215 19.7147 20.549 19.2423L16.6344 15.3277L20.6254 11.3367C21.0979 10.8642 21.098 10.0981 20.6255 9.62558Z"
+                        fill="#B4B4BF" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal-info" id="success">
+        <div class="modal__wrap modal-info__wrap">
+            <div class="modal__popup modal-info__popup">
+                <div class="modal-info__popup-wrap">
+                    <button class="modal__close modal-info__close">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z"
+                                fill="#F6F8FD" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20.6255 9.62558C20.153 9.1531 19.3869 9.15317 18.9144 9.62572L14.9234 13.6167L11.0088 9.70209C10.5363 9.22962 9.77024 9.22968 9.29769 9.70224C8.82513 10.1748 8.82507 10.9409 9.29755 11.4134L13.2121 15.328L9.22117 19.3189C8.74861 19.7915 8.74855 20.5576 9.22103 21.0301C9.69351 21.5025 10.4596 21.5025 10.9322 21.0299L14.9231 17.039L18.8377 20.9535C19.3102 21.426 20.0763 21.426 20.5488 20.9534C21.0214 20.4808 21.0215 19.7147 20.549 19.2423L16.6344 15.3277L20.6254 11.3367C21.0979 10.8642 21.098 10.0981 20.6255 9.62558Z"
+                                fill="#B4B4BF" />
+                        </svg>
+                    </button>
+                    <img class="modal-info__img" src="./img/alerts/successfully.svg" alt="" width="220" height="140">
+                    <div class="modal-info__content">
+                        <h2 class="modal-info__title">Запрос отправлен</h2>
+                        <p class="modal-info__text">Мы получили ваш запрос. Поддержка свяжется с вами в течение 24 часов. </p>
+                    </div>
+                    <div class="modal-info__footer">
+                        <button class="btn btn_primary">ок</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Подключение скриптов -->
     <script src="./js/libs/swiper-bundle.min.js"></script>
     <script src="./js/libs/rangeslider-js.min.js"></script>

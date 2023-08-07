@@ -56,3 +56,20 @@
 	width: 30px;
 	height: 30px;
 }
+
+.modal-info__link {
+	color: var(--text-accent);
+	border-bottom: 1px solid;
+	transition: $tr;
+}
+.modal-info__link:hover {
+	@media (any-hover:hover) {
+		border-bottom-color: transparent;
+	}
+}
+
+.modal-info__row {
+	display: grid;
+	grid-template-columns: 0.415fr 1fr;
+	column-gap: 10px;
+}
