@@ -269,6 +269,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
     @media (max-width: 1265px) {
         flex-direction: column;
         button {
@@ -297,12 +301,14 @@
         button:first-child {
             margin-bottom: 0;
         }
+        /*
         .mine-ofr-view__personal-edit {
             width: 45%;
         }
         .mine-ofr-view__personal-remove-public {
             width: 52%;
         }
+        */
         .mine-ofr-view__personal-sell {
             margin-top: 10px
         }
@@ -330,7 +336,8 @@
 
 .mine-ofr-view__personal-btn {
     position: relative;
-    &:not(.mine-ofr-view__personal-sell) {
+    width: 100%;
+    &:not(.mine-ofr-view__personal-sell):not(.mine-ofr-view__personal-remove) {
         background: $bg-page;
         border-radius: $radius;
         font-weight: bold;
@@ -339,10 +346,13 @@
         color: $btn-primary-default;
     }
 }
+.mine-ofr-view__personal-btn--double {
+    grid-column-end: span 2;
+}
 
 .mine-ofr-view__personal-edit {
     padding: 9px 15px 9px 41px;
-    width: 156px;
+    // width: 156px;
     &::after {
         content: '';
         background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.8059 3.75499C14.0659 4.01499 14.0659 4.43499 13.8059 4.69499L12.5859 5.91499L10.0859 3.41499L11.3059 2.19499C11.4305 2.07016 11.5996 2 11.7759 2C11.9523 2 12.1214 2.07016 12.2459 2.19499L13.8059 3.75499ZM1.99927 13.6683V11.6417C1.99927 11.5483 2.0326 11.4683 2.09927 11.4017L9.3726 4.12834L11.8726 6.62834L4.5926 13.9017C4.5326 13.9683 4.44593 14.0017 4.35927 14.0017H2.3326C2.14593 14.0017 1.99927 13.855 1.99927 13.6683Z' fill='%23467EF3'/%3E%3C/svg%3E");
@@ -357,7 +367,7 @@
 
 .mine-ofr-view__personal-remove-public {
     padding: 9px 23px 9px 49px;
-    width: 205px;
+    // width: 205px;
     &::after {
         content: '';
         background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.88379 5.89453L10.3099 10.4537' stroke='%23467EF3' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M10.3999 5.89453L5.88365 10.4108' stroke='%23467EF3' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='8' r='7.25' stroke='%23467EF3' stroke-width='1.5'/%3E%3C/svg%3E");
@@ -369,7 +379,7 @@
         transform: translateY(-50%);
     }
     @media (min-width:1570px) {
-        width: 215px;
+        // width: 215px;
         &::after {
             left: 28px
         }
@@ -377,28 +387,51 @@
     @media (max-width:1350px) {
         padding-right: 10px;
         padding-left: 36px;
-        width: 180px;
+        // width: 180px;
         &::after {
             left: 10px
         }
     }
 }
 
-.mine-ofr-view__personal-sell {
-    background: #02BC4D;
+.mine-ofr-view__personal-btn--double.mine-ofr-view__personal-btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-left: 23px;
+    padding-right: 23px;
+
+    &::after {
+        position: static;
+        transform: none;
+        display: block;
+        margin-right: 10px;
+    }
+}
+
+.mine-ofr-view__personal-sell,
+.mine-ofr-view__personal-remove {
     border-radius: $radius;
     padding: 11px 0;
     font-weight: bold;
     font-size: 14px;
     line-height: 17px;
     color: #fff;
-    margin-top: 15px;
     width: 100%;
     text-transform: uppercase;
     @media (max-width: 1265px) {
         font-size: 12px;
         line-height: 15px;
     }
+}
+
+.mine-ofr-view__personal-sell {
+    background: #02BC4D;
+}
+
+.mine-ofr-view__personal-remove {
+    background: var(--btn-primary-danger);
 }
 
 .mine-ofr-view__characteristics {
@@ -553,9 +586,6 @@
 }
 
 .mine-ofr-view__personal-footer-user {
-    .la-card__options-btn {
-        width: 48%
-    }
     @media (max-width:1265px) {
         flex-direction: row;
     }
