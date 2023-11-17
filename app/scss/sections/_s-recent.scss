@@ -86,6 +86,9 @@
     @media (min-width: $laptop-l) {
         max-width: 23.4%;
     }
+    @media (min-width: $desktop-s) {
+        max-width: 24.4%;
+    }
 }
 
 .recent-card__wrap {

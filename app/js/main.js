@@ -11,7 +11,7 @@ function findAll(selectors) {
   return document.querySelectorAll(selectors);
 }
 
-// Удаляет у всех элементов items класс itemClass 
+// Удаляет у всех элементов items класс itemClass
 function removeAll(items, itemClass) {
   if (typeof items == "string") {
     items = document.querySelectorAll(items);
@@ -431,6 +431,12 @@ const sliderRecent = new Swiper(".s-recent__slider", {
   spaceBetween: 24, // Расстояние между слайдами
 
   breakpoints: {
+    // 1920: {
+		// 	spaceBetween: 29,
+		// },
+    // 1440: {
+		// 	spaceBetween: 24,
+		// },
     1025: {
       slidesPerView: 4,
     },
