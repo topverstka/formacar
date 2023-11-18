@@ -163,7 +163,7 @@ body {
 @import "_new"; // Сброс css
 
 .b_hide-mobile {
-	@media (max-width: $mobile-l) {
+	@media (max-width: 850px) {
 		display: none;
 	}
 }
