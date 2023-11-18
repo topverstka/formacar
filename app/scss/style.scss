@@ -161,3 +161,9 @@ body {
 @import "components/_animation";
 // Новые стили
 @import "_new"; // Сброс css
+
+.b_hide-mobile {
+	@media (max-width: $mobile-l) {
+		display: none;
+	}
+}
